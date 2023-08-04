@@ -1,0 +1,48 @@
+﻿g_strdup_printf
+printf
+fprintf
+monitor_printf
+qemu_printf
+snprintf
+__builtin___snprintf_chk ×
+error_printf
+g_string_append_printf
+vfprintf
+sprintf
+g_strdup_vprintf
+__builtin___sprintf_chk ×
+vsnprintf
+__builtin___vsnprintf_chk ×
+error_vprintf_unless_qmp
+error_printf_unless_qmp
+monitor_vprintf
+error_vprintf
+monitor_readline_printf
+qprintf
+vprintf
+g_string_append_vprintf
+g_string_vprintf
+qemu_vfprintf
+qemu_fprintf
+qemu_vprintf
+qemu_chr_fe_printf
+g_string_printf
+qemu_mac_strdup_printf
+g_snprintf
+relpath_printf
+xen_pv_printf
+xen_device_backend_printf
+xen_device_frontend_printf
+xs_node_vprintf
+xs_node_printf
+g_vasprintf
+trace_xs_node_vprintf
+_nocheck__trace_xs_node_vprintf ×
+v9fs_path_sprintf
+v9fs_string_sprintf
+vasprintf
+disas_gstring_printf
+asprintf
+g_sprintf
+dprintf
+readline_printf_func

@@ -1,0 +1,2376 @@
+AC 3
+GPR 34 extract_ac_15_14 47 img_format 30 
+
+ADDRESS 4
+GPR 26 extract_s__se11_0_10_9_8_7_6_5_4_3_2_1_0_s1 8 extract_s__se14_0_13_to_1_s1 11 g_autoptr_cleanup_generic_gfree 35 
+
+ARM_CPU 3
+arm_get_cpu_by_id 6 armv7m_load_kernel 11 define_cortex_a72_a57_a53_cp_reginfo 5 
+
+BUS 5
+VIRTIO_BUS_GET_CLASS 23 bus_cold_reset 9 qbus_set_hotplug_handler 17 qdev_get_parent_bus 33 qdev_realize 56 
+
+DEVICE 54
+SYS_BUS_DEVICE 120 acpi_send_event 9 device_add_bootindex_property 39 device_cold_reset 26 device_is_in_reset 5 i2c_init_bus 11 ide_bus_init 7 isa_new 12 isa_realize_and_unref 13 memory_region_init_io 49 npcm7xx_connect_dram 5 npcm7xx_create_soc 5 npcm7xx_load_bootrom 5 npcm7xx_load_kernel 5 object_initialize_child_internal 80 object_initialize_child_with_props 8 object_new 30 object_property_add_child 22 object_property_set_bool 26 object_property_set_int 51 object_property_set_link 46 qdev_alias_all_properties 7 qdev_connect_clock_in 20 qdev_connect_gpio_out 61 qdev_connect_gpio_out_named 24 qdev_get_child_bus 33 qdev_get_gpio_in 124 qdev_get_gpio_in_named 25 qdev_get_parent_bus 84 qdev_init_clock_in 31 qdev_init_clock_out 11 qdev_init_gpio_in 68 qdev_init_gpio_in_named 30 qdev_init_gpio_in_named_with_opaque 5 qdev_init_gpio_out 41 qdev_init_gpio_out_named 29 qdev_pass_gpios 8 qdev_prop_set_bit 27 qdev_prop_set_chr 26 qdev_prop_set_string 22 qdev_prop_set_uint32 72 qdev_prop_set_uint64 23 qdev_property_add_static 6 qdev_realize 195 qdev_unplug 5 qemu_sglist_init 6 register_init_block32 16 scsi_bus_init 8 vhost_dev_disable_notifiers 20 vhost_dev_enable_notifiers 10 vhost_dev_start 10 vhost_dev_stop 10 vmstate_register_ram 8 vmstate_unregister_ram 5 
+
+DEVICE_CLASS 23
+ACPI_DEV_AML_IF_CLASS 15 ASPEED_SMC_CLASS 12 I2C_SLAVE_CLASS 21 IMX_CCM_CLASS 5 INTERRUPT_STATS_PROVIDER_CLASS 5 IPMI_INTERFACE_CLASS 5 PCI_DEVICE_CLASS 25 PCI_HOST_BRIDGE_CLASS 8 PNV_CHIP_CLASS 5 PNV_XSCOM_INTERFACE_CLASS 6 POWERPC_CPU_CLASS 321 RESETTABLE_CLASS 24 SYS_BUS_DEVICE_CLASS 6 SYS_BUS_EHCI_CLASS 7 TPM_IF_CLASS 5 USB_DEVICE_CLASS 16 VIO_SPAPR_DEVICE_CLASS 5 VIRTIO_CCW_DEVICE_CLASS 14 VIRTIO_DEVICE_CLASS 27 VIRTIO_PCI_CLASS 26 XIVE_NOTIFIER_CLASS 6 device_class_set_parent_realize 56 device_class_set_props 561 
+
+FPR 5
+extract_fd_15_14_13_12_11 70 extract_fs_20_19_18_17_16 120 extract_ft_15_14_13_12_11 8 extract_ft_25_24_23_22_21 128 img_format 326 
+
+Field_m_Slot_inst_get 6
+Field_n_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 
+
+Field_n_Slot_inst_get 6
+Field_m_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 
+
+Field_op0_Slot_inst16b_get 5
+Field_i_Slot_inst16b_get 10 Field_r_Slot_inst16b_get 10 Field_s_Slot_inst16b_get 10 Field_t_Slot_inst16b_get 10 Field_z_Slot_inst16b_get 10 
+
+Field_op0_Slot_inst_get 9
+Field_m_Slot_inst_get 5 Field_n_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 Field_sr_Slot_inst_get 5 Field_t_Slot_inst_get 5 Field_thi3_Slot_inst_get 5 
+
+Field_op1_Slot_inst_get 9
+Field_m_Slot_inst_get 5 Field_n_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 Field_sr_Slot_inst_get 5 Field_t_Slot_inst_get 5 Field_thi3_Slot_inst_get 5 
+
+Field_op2_Slot_inst_get 9
+Field_m_Slot_inst_get 5 Field_n_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 Field_sr_Slot_inst_get 5 Field_t_Slot_inst_get 5 Field_thi3_Slot_inst_get 5 
+
+Field_r_Slot_inst16b_get 3
+Field_op0_Slot_inst16b_get 10 Field_s_Slot_inst16b_get 10 Field_t_Slot_inst16b_get 10 
+
+Field_r_Slot_inst_get 8
+Field_m_Slot_inst_get 5 Field_n_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_s_Slot_inst_get 5 Field_t_Slot_inst_get 5 Field_thi3_Slot_inst_get 5 
+
+Field_s_Slot_inst16b_get 3
+Field_op0_Slot_inst16b_get 10 Field_r_Slot_inst16b_get 10 Field_t_Slot_inst16b_get 10 
+
+Field_s_Slot_inst_get 7
+Field_m_Slot_inst_get 5 Field_n_Slot_inst_get 5 Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_t_Slot_inst_get 5 
+
+Field_sr_Slot_inst_get 3
+Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 
+
+Field_t_Slot_inst16b_get 3
+Field_op0_Slot_inst16b_get 10 Field_r_Slot_inst16b_get 10 Field_s_Slot_inst16b_get 10 
+
+Field_t_Slot_inst_get 5
+Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 Field_s_Slot_inst_get 5 
+
+Field_thi3_Slot_inst_get 4
+Field_op0_Slot_inst_get 5 Field_op1_Slot_inst_get 5 Field_op2_Slot_inst_get 5 Field_r_Slot_inst_get 5 
+
+GPEX_HOST 4
+SYS_BUS_DEVICE 7 gpex_set_irq_num 7 memory_region_init_alias 7 qdev_new 7 
+
+GPR 11
+AC 34 ADDRESS 26 decode_gpr_gpr3 21 decode_gpr_gpr4 5 extract_rd_15_14_13_12_11 130 extract_rs_20_19_18_17_16 340 extract_rt_25_24_23_22_21 391 extract_rt_41_40_39_38_37 10 extract_rt_9_8_7_6_5 6 extract_ru_7_6_5_4_3 6 img_format 950 
+
+ISA_DEVICE 5
+isa_bus_from_device 6 isa_get_irq 10 isa_register_ioport 15 isa_register_portio_list 8 qdev_set_legacy_instance_id 7 
+
+MACHINE 3
+MACHINE_GET_CLASS 37 qdev_get_machine 67 riscv_socket_fdt_write_id 7 
+
+MACHINE_CLASS 4
+ASPEED_MACHINE_CLASS 22 NMI_CLASS 5 SUN4M_MACHINE_CLASS 9 machine_class_allow_dynamic_sysbus_dev 10 
+
+MACHINE_GET_CLASS 3
+MACHINE 37 S390_CCW_MACHINE_CLASS 26 device_is_dynamic_sysbus 8 
+
+PCIE_PORT 7
+pci_bridge_exitfn 5 pci_bridge_initfn 5 pcie_aer_init 5 pcie_cap_deverr_init 5 pcie_cap_exit 5 pcie_cap_init 5 pcie_port_init_reg 5 
+
+PCIE_SLOT 3
+pci_bridge_exitfn 6 pcie_cap_exit 6 pcie_chassis_del_slot 6 
+
+PCI_DEVICE 8
+msix_vector_unuse 6 nvme_sctrl 5 pci_bridge_reset 6 pci_dma_read 27 pci_dma_sglist_init 6 pci_dma_write 27 pcie_cap_deverr_reset 6 vmw_shmem_ld32 6 
+
+PFLASH_CFI01 6
+qdev_new 9 qdev_prop_set_bit 8 qdev_prop_set_string 9 qdev_prop_set_uint16 7 qdev_prop_set_uint64 9 qdev_prop_set_uint8 9 
+
+QAUTHZ 4
+object_unparent 12 qauthz_is_allowed 13 qauthz_list_file_new 5 qauthz_list_new 6 
+
+QIO_CHANNEL 14
+object_unref 27 qemu_file_new_input 5 qemu_file_new_output 7 qio_channel_buffer_new 6 qio_channel_file_new_fd 6 qio_channel_set_delay 9 qio_channel_set_feature 8 qio_channel_set_name 33 qio_channel_socket_new 19 qio_channel_socket_new_fd 7 qio_channel_tls_handshake 8 qio_channel_tls_new_server 5 tcp_chr_set_client_ioc_name 5 yank_register_function 5 
+
+RESETTABLE_CLASS 3
+DEVICE_CLASS 24 MOS6522_CLASS 5 resettable_class_set_parent_phases 31 
+
+Rc 5
+gen_405_mulladd_insn 42 rA 46 rB 56 rC 11 rD 52 
+
+SOCKET_CHARDEV 3
+tcp_chr_change_state 8 tcp_chr_new_client 5 tcp_chr_set_client_ioc_name 5 
+
+SYS_BUS_DEVICE 22
+DEVICE 120 GPEX_HOST 7 memory_region_init_io 89 object_dynamic_cast_assert 26 object_initialize_child_internal 49 object_property_set_int 24 object_property_set_link 63 qdev_get_gpio_in 31 qdev_init_gpio_in 25 qdev_new 175 qdev_prop_set_bit 23 qdev_prop_set_uint32 72 ssi_create_bus 9 sysbus_connect_irq 179 sysbus_init_irq 259 sysbus_init_mmio 441 sysbus_mmio_get_region 110 sysbus_mmio_map 157 sysbus_mmio_map_overlap 9 sysbus_pass_irq 26 sysbus_realize 121 sysbus_realize_and_unref 178 
+
+VIRTIO_DEVICE 7
+do_vhost_user_cleanup 6 virtio_add_queue 22 virtio_cleanup 23 virtio_del_queue 7 virtio_init 20 virtio_ldl_p 8 virtio_ldq_p 6 
+
+__atomic_load_8 3
+__atomic_compare_exchange_8 40 g_once_init_enter 46 g_once_init_leave 46 
+
+__builtin_extract_return_addr 68
+__builtin_return_address 2072 access_prepare 8 allocation_tag_mem 5 bf_load 7 check_hwrena 6 check_msacsr_cause 26 convert_unicode 6 cpu_ldl_le_data_ra 32 cpu_ldub_data_ra 29 cpu_raise_exception_ra 6 cpu_stb_mmuidx_ra 6 cpu_stl_le_data_ra 29 cpu_svm_check_intercept_param 16 do_check_ieee_exceptions 7 do_float_check_status 142 do_frsp 11 f_to_float32 5 float_invalid_cvt 26 float_invalid_op_addsub 14 float_invalid_op_div 7 float_invalid_op_madd 24 float_invalid_op_mul 7 float_invalid_op_sqrt 13 float_invalid_op_vxsnan 65 float_invalid_op_vxvc 13 float_zero_divide_excp 11 g_to_float64 10 handle_exceptions 54 load_segment_ra 7 pauth_check_trap 9 raise_exception_err_ra 22 raise_exception_format2 8 raise_exception_ra 21 raise_exception_sync_helper 7 riscv_raise_exception 8 sme_ld1 18 sme_ld1_mte 18 sme_st1 18 sme_st1_mte 18 sve_ld1_z 52 sve_ld1_z_mte 52 sve_ldN_r 46 sve_ldN_r_mte 46 sve_ldff1_z 52 sve_ldff1_z_mte 52 sve_ldnfff1_r 50 sve_ldnfff1_r_mte 50 sve_st1_z 31 sve_st1_z_mte 31 sve_stN_r 37 sve_stN_r_mte 37 tcg_s390_program_interrupt 18 update_fcr31 248 update_fcsr0 55 update_fpscr 24 update_fpsw 8 update_fpu_flags 13 update_fr0_op 44 vec_update_fcsr0 63 vext_ldst_index 32 vext_ldst_stride 16 vext_ldst_us 10 vext_ldst_whole 20 vfc128 6 vfc32 6 vfc64 6 vop32_2 6 vop64_2 6 
+
+__builtin_signbit 3
+g_assertion_message_cmpnum 10 qemu_strtod 5 qemu_strtod_finite 7 
+
+__builtin_va_end 6
+AUD_vlog 5 __builtin_va_start 123 build_append_namestringv 6 qdict_from_vjsonf_nofail 6 vreport 5 vsnprintf 5 
+
+__builtin_va_start 6
+AUD_vlog 5 __builtin_va_end 123 build_append_namestringv 6 qdict_from_vjsonf_nofail 6 vreport 5 vsnprintf 5 
+
+_spr_register 9
+init_excp_7450 6 register_74xx_sprs 8 register_7xx_sprs 5 register_high_BATs 8 register_low_BATs 13 register_non_embedded_sprs 13 register_sdr1_sprs 13 register_thrm_sprs 6 vscr_init 8 
+
+access_get_byte 3
+access_prepare 30 access_set_byte 22 cpu_mmu_index 10 
+
+access_prepare 4
+__builtin_extract_return_addr 8 access_get_byte 30 access_set_byte 33 cpu_mmu_index 24 
+
+access_set_byte 3
+access_get_byte 22 access_prepare 33 cpu_mmu_index 11 
+
+acpi_add_table 4
+bios_linker_loader_alloc 5 g_array_append_vals 5 g_array_free 5 g_array_new 5 
+
+adc_read_con 4
+adc_write_con 12 g_assertion_message_cmpnum 5 qtest_init 6 qtest_quit 6 
+
+adc_write_con 3
+adc_read_con 12 qtest_init 6 qtest_quit 6 
+
+add_drive_with_mbr 4
+add_scsi_controller 5 add_scsi_disk 5 create_args 13 test_override 9 
+
+add_scsi_controller 3
+add_drive_with_mbr 5 add_scsi_disk 5 create_args 5 
+
+add_scsi_disk 3
+add_drive_with_mbr 5 add_scsi_controller 5 create_args 5 
+
+address_space_translate 3
+memory_access_is_direct 9 prepare_mmio_access 9 qemu_map_ram_ptr 10 
+
+address_space_translate_cached 3
+memory_access_is_direct 9 prepare_mmio_access 9 qemu_map_ram_ptr 9 
+
+ahci_boot_and_enable 3
+ahci_port_clear 7 ahci_port_select 9 ahci_shutdown 13 
+
+ahci_command_commit 4
+ahci_command_create 5 ahci_command_free 7 ahci_command_issue 10 ahci_command_verify 13 
+
+ahci_command_free 3
+ahci_command_commit 7 ahci_command_issue 5 ahci_command_verify 8 
+
+ahci_command_issue 3
+ahci_command_commit 10 ahci_command_free 5 ahci_command_verify 10 
+
+ahci_command_verify 3
+ahci_command_commit 13 ahci_command_free 8 ahci_command_issue 10 
+
+ahci_port_clear 4
+ahci_boot_and_enable 7 ahci_io 11 ahci_port_select 22 ahci_shutdown 7 
+
+ahci_port_select 4
+ahci_boot_and_enable 9 ahci_io 11 ahci_port_clear 22 ahci_shutdown 9 
+
+ahci_shutdown 4
+ahci_boot 10 ahci_boot_and_enable 13 ahci_port_clear 7 ahci_port_select 9 
+
+aio_context_acquire 3
+aio_context_release 27 bdrv_get_aio_context 91 blk_get_aio_context 50 
+
+aio_context_release 3
+aio_context_acquire 27 bdrv_get_aio_context 91 blk_get_aio_context 50 
+
+aml_append 28
+aml_call0 5 aml_call2 5 aml_create_dword_field 8 aml_device 85 aml_dword_memory 6 aml_else 20 aml_field 26 aml_if 41 aml_increment 5 aml_interrupt 12 aml_io 13 aml_irq_no_flags 8 aml_memory32_fixed 15 aml_method 63 aml_name_decl 39 aml_named_field 13 aml_notify 8 aml_opcode 24 aml_operation_region 13 aml_or 5 aml_package 17 aml_qword_memory 7 aml_resource_template 37 aml_return 31 aml_scope 37 aml_store 28 aml_while 14 init_aml_allocator 7 
+
+aml_equal 4
+aml_arg 11 aml_if 16 aml_int 17 aml_lnot 7 
+
+aml_if 4
+aml_append 41 aml_equal 16 aml_lless 5 aml_lnot 7 
+
+aml_increment 5
+aml_append 5 aml_index 5 aml_lless 5 aml_local 5 aml_store 5 
+
+aml_index 7
+aml_derefof 7 aml_increment 5 aml_int 7 aml_lless 5 aml_local 6 aml_return 6 aml_store 8 
+
+aml_int 9
+aml_and 10 aml_create_dword_field 8 aml_equal 17 aml_index 7 aml_lless 6 aml_name_decl 41 aml_operation_region 13 aml_or 7 aml_shiftleft 5 
+
+aml_lless 7
+aml_if 5 aml_increment 5 aml_index 5 aml_int 6 aml_local 6 aml_store 6 aml_while 6 
+
+aml_local 5
+aml_increment 5 aml_index 6 aml_lless 6 aml_return 12 aml_store 20 
+
+aml_name_decl 5
+aml_append 39 aml_eisaid 17 aml_int 41 aml_resource_template 35 aml_string 30 
+
+aml_return 3
+aml_append 31 aml_index 6 aml_local 12 
+
+aml_store 6
+aml_append 28 aml_derefof 6 aml_increment 5 aml_index 8 aml_lless 6 aml_local 20 
+
+arm_current_el 6
+arm_hcr_el2_eff 33 arm_is_secure_below_el3 14 arm_mdcr_el2_eff 7 arm_sctlr 6 pauth_check_trap 18 pauth_key_enabled 16 
+
+arm_dc_feature 8
+gen_bx 5 load_reg 36 load_reg_var 6 op_ldrex 9 op_strex 9 store_reg 32 unallocated_encoding 32 vfp_access_check 41 
+
+assert_job_status_is 3
+create_common 6 job_enter 5 job_start 7 
+
+atomic_mmu_lookup 6
+__atomic_compare_exchange_1 9 __atomic_compare_exchange_2 20 __atomic_compare_exchange_4 21 __atomic_compare_exchange_8 21 __atomic_load_2 18 atomic_trace_rmw_post 384 
+
+avr_full_offset 3
+rA 45 rB 47 rD 47 
+
+bdrv_co_create_file 5
+bdrv_co_open 16 qdict_rename_keys 6 qemu_opts_to_qdict_filtered 8 qobject_input_visitor_new_flat_confused 7 visit_type_BlockdevCreateOptions 7 
+
+bdrv_co_open 5
+bdrv_co_create_file 16 bdrv_co_unref 8 qdict_rename_keys 6 qobject_input_visitor_new_flat_confused 7 visit_type_BlockdevCreateOptions 7 
+
+bdrv_co_unref 3
+bdrv_co_open 8 bdrv_co_open_blockdev_ref 9 blk_co_new_with_bs 8 
+
+bdrv_create 3
+qemu_opt_set_number 5 qemu_opts_create 5 qemu_opts_del 5 
+
+bdrv_dec_in_flight 3
+bdrv_co_is_inserted 5 bdrv_inc_in_flight 18 tracked_request_begin 5 
+
+bdrv_dirty_bitmap_first 3
+bdrv_dirty_bitmap_get_persistence 7 bdrv_dirty_bitmap_name 6 bdrv_dirty_bitmap_next 8 
+
+bdrv_dirty_bitmap_next 3
+bdrv_dirty_bitmap_first 8 bdrv_dirty_bitmap_get_persistence 7 bdrv_dirty_bitmap_name 5 
+
+bdrv_get_aio_context 8
+aio_context_acquire 91 aio_context_release 91 bdrv_all_snapshots_includes_bs 6 bdrv_can_snapshot 5 bdrv_first 5 bdrv_next 5 bdrv_try_change_aio_context 9 qmp_get_root_bs 6 
+
+bind 4
+getsockname 6 listen 11 qemu_socket 12 socket_set_fast_reuse 5 
+
+bios_linker_loader_alloc 3
+acpi_add_table 5 bios_linker_loader_add_pointer 6 build_rsdp 5 
+
+blk_by_legacy_dinfo 4
+drive_get 53 pflash_cfi01_register 12 qdev_prop_set_drive 13 qdev_prop_set_drive_err 32 
+
+blk_co_new_with_bs 5
+bdrv_co_open_blockdev_ref 16 bdrv_co_unref 8 blk_co_pwrite 6 blk_co_unref 10 blk_set_allow_write_beyond_eof 8 
+
+blk_get_aio_context 3
+aio_context_acquire 50 aio_context_release 50 dma_blk_io 6 
+
+blk_get_stats 4
+block_acct_done 30 block_acct_failed 21 block_acct_invalid 15 block_acct_start 34 
+
+blk_new 4
+blk_attach_dev 5 blk_insert_bs 27 blk_unref 20 qemu_get_aio_context 27 
+
+blk_set_allow_write_beyond_eof 3
+blk_co_new_with_bs 8 blk_co_pwrite 6 blk_co_unref 9 
+
+blk_unref 4
+blk_new 20 img_open 12 monitor_remove_blk 7 test_setup 8 
+
+check_ieee_exc 3
+handle_ieee_exc 66 s390_vec_read_float32 5 s390_vec_read_float64 5 
+
+check_msacsr_cause 4
+__builtin_extract_return_addr 26 clear_msacsr_cause 37 get_enabled_exceptions 37 update_msacsr 37 
+
+check_of64a32s 3
+check_pair 6 check_r0_write 5 load_pair 5 
+
+check_pair 3
+check_of64a32s 6 check_r0_write 5 load_pair 15 
+
+check_r0_write 3
+check_of64a32s 5 check_pair 5 cpu_R 83 
+
+check_size_align 3
+check_size_impl 9 choose_vector_type 10 do_dup 10 
+
+choose_vector_type 3
+check_size_align 10 check_size_impl 10 tcg_swap_vecop_list 7 
+
+cirrus_src 15
+rop_8_0 12 rop_8_1 12 rop_8_notdst 12 rop_8_notsrc 12 rop_8_notsrc_and_dst 12 rop_8_notsrc_and_notdst 12 rop_8_notsrc_or_dst 12 rop_8_notsrc_or_notdst 12 rop_8_src 12 rop_8_src_and_dst 12 rop_8_src_and_notdst 12 rop_8_src_notxor_dst 12 rop_8_src_or_dst 12 rop_8_src_or_notdst 12 rop_8_src_xor_dst 12 
+
+clear_msacsr_cause 3
+check_msacsr_cause 37 get_enabled_exceptions 37 update_msacsr 37 
+
+clear_tco_status 7
+load_tco 9 reset_on_second_timeout 9 set_tco_timeout 9 start_tco 9 stop_tco 7 test_end 9 test_init 9 
+
+clear_vec_high 4
+fp_access_check 17 read_vec_element 18 write_vec_element 34 write_vec_element_i32 30 
+
+close 12
+connect 10 dup2 6 fd_is_socket 7 ftruncate 15 g_file_open_tmp 18 ioctl 22 listen 10 mkstemp 11 open 47 qemu_socket 17 socket_set_fast_reuse 6 uffd_open 5 
+
+close_preserve_errno 5
+local_opendir_nofollow 17 local_set_mapped_file_attrat 6 local_set_xattrat 6 openat_dir 6 unlinkat_preserve_errno 5 
+
+cpu_exec 6
+cpu_exec_end 21 cpu_exec_start 21 cpu_exec_step_atomic 18 env_cpu 21 process_queued_cpu_work 20 target_exception_dump 12 
+
+cpu_exec_end 5
+cpu_exec 21 cpu_exec_start 21 cpu_exec_step_atomic 18 env_cpu 21 process_queued_cpu_work 20 
+
+cpu_exec_realizefn 3
+cpu_reset 15 error_propagate 21 qemu_init_vcpu 21 
+
+cpu_exec_start 5
+cpu_exec 21 cpu_exec_end 21 cpu_exec_step_atomic 18 env_cpu 21 process_queued_cpu_work 20 
+
+cpu_exec_step_atomic 5
+cpu_exec 18 cpu_exec_end 18 cpu_exec_start 18 env_cpu 18 process_queued_cpu_work 18 
+
+cpu_mmu_index 4
+access_get_byte 10 access_prepare 24 access_set_byte 11 allocation_tag_mem 12 
+
+cpu_mmu_index_kernel 4
+cpu_ldl_le_mmuidx_ra 11 cpu_lduw_le_mmuidx_ra 7 cpu_stl_le_mmuidx_ra 12 cpu_stw_le_mmuidx_ra 10 
+
+cpu_reg 8
+auth_branch_target 10 do_gpr_ld 18 gen_a64_set_pc 8 gen_check_sp_alignment 17 gen_mte_check1 7 gen_mte_checkN 6 read_cpu_reg_sp 9 sve_access_check 21 
+
+cpu_reg_sp 3
+check_atomic_align 10 gen_mte_check1 17 gen_mte_checkN 7 
+
+create_args 4
+add_drive_with_mbr 13 add_scsi_controller 5 add_scsi_disk 5 test_override 9 
+
+create_common 4
+assert_job_status_is 6 cancel_common 7 job_enter 5 job_start 6 
+
+create_device_tree 4
+qemu_fdt_add_subnode 13 qemu_fdt_setprop 10 qemu_fdt_setprop_cell 13 qemu_fdt_setprop_string 13 
+
+cris_alu 9
+cris_alu_alloc_temps 21 cris_cc_mask 63 dec10_prep_move_m 5 dec_prep_alu_m 33 dec_prep_alu_r 47 do_postinc 18 memsize_z 14 memsize_zz 42 tcg_temp_new_i32 23 
+
+cris_alu_alloc_temps 4
+cris_alu 21 cris_cc_mask 12 dec_prep_alu_r 24 memsize_zz 24 
+
+cris_cc_mask 11
+cris_alu 63 cris_alu_alloc_temps 12 cris_fetch 5 cris_prepare_jmp 10 cris_update_cc_op 7 dec_prep_alu_m 18 dec_prep_alu_r 13 do_postinc 19 memsize_z 14 memsize_zz 25 t_gen_mov_preg_TN 8 
+
+cris_prepare_jmp 3
+cris_cc_mask 10 dec10_prep_move_m 5 t_gen_mov_preg_TN 7 
+
+css_find_subch 3
+css_subch_visible 9 ioinst_disassemble_sch_ident 36 trace_ioinst_sch_id 24 
+
+ctx_future_vreg_off 6
+gen_log_reg_write 38 gen_vreg_load 78 get_result_gpr 26 tcg_gen_addi_ptr 255 tcg_gen_gvec_mov 54 vreg_src_off 342 
+
+ctx_log_pred_read 5
+ctx_log_reg_read 295 ctx_log_reg_write 212 ctx_log_reg_write_pair 26 ctx_log_vreg_read 34 ctx_log_vreg_write 38 
+
+ctx_log_reg_read 9
+ctx_log_pred_read 295 ctx_log_pred_write 44 ctx_log_reg_read_pair 22 ctx_log_reg_write 614 ctx_log_reg_write_pair 216 ctx_log_vreg_read 51 ctx_log_vreg_read_pair 30 ctx_log_vreg_write 106 ctx_log_vreg_write_pair 40 
+
+ctx_log_reg_read_pair 4
+ctx_log_pred_write 34 ctx_log_reg_read 22 ctx_log_reg_write 62 ctx_log_reg_write_pair 291 
+
+ctx_log_reg_write 6
+ctx_log_pred_read 212 ctx_log_reg_read 614 ctx_log_reg_read_pair 62 ctx_log_reg_write_pair 34 ctx_log_vreg_read 39 ctx_log_vreg_write 38 
+
+ctx_log_reg_write_pair 4
+ctx_log_pred_read 26 ctx_log_reg_read 216 ctx_log_reg_read_pair 291 ctx_log_reg_write 34 
+
+ctx_log_vreg_read 7
+ctx_log_pred_read 34 ctx_log_qreg_read 33 ctx_log_qreg_write 40 ctx_log_reg_read 51 ctx_log_reg_write 39 ctx_log_vreg_write 215 ctx_log_vreg_write_pair 57 
+
+ctx_log_vreg_write 4
+ctx_log_pred_read 38 ctx_log_reg_read 106 ctx_log_reg_write 38 ctx_log_vreg_read 215 
+
+ctx_log_vreg_write_pair 3
+ctx_log_reg_read 40 ctx_log_vreg_read 57 ctx_log_vreg_read_pair 50 
+
+ctz64 5
+vext_ldst_index 32 vext_ldst_stride 16 vext_ldst_us 8 vext_ldst_whole 20 vext_max_elems 16 
+
+decStatus 4
+decAddOp 9 decCheckMath 10 decCompareOp 24 decDivideOp 10 
+
+dec_prep_alu_m 3
+cris_alu 33 cris_cc_mask 18 do_postinc 35 
+
+dec_prep_alu_r 4
+cris_alu 47 cris_alu_alloc_temps 24 cris_cc_mask 13 memsize_zz 24 
+
+decode_gpr_gpr3 3
+GPR 21 extract_rs3_6_5_4 21 extract_rt3_9_8_7 23 
+
+deposit32 10
+ex_shift_2 5 ex_shift_4 5 expand_shl2 12 extract32 22 opfvf_trans 38 sextract32 58 tcg_gen_gvec_3_ptr 24 tcg_gen_gvec_4_ptr 96 tszimm_esz 5 vext_get_emul 7 
+
+dest_fpr 8
+gen_fp_exc_raise 6 gen_set_fpr_d 69 gen_set_fpr_hs 159 gen_set_rm 53 get_fpr_d 20 get_fpr_hs 42 has_ext 51 mark_fs_dirty 78 
+
+dest_gpr 9
+dest_gprh 16 do_sed_cond 9 gen_set_gpr 205 gen_set_gpr128 24 get_fpr_hs 23 get_gpr 25 get_gprh 5 has_ext 22 save_gpr 62 
+
+dest_gprh 4
+dest_gpr 16 gen_set_gpr128 24 get_gpr 6 get_gprh 5 
+
+device_del 3
+has_drive 7 qtest_initf 6 qtest_quit 10 
+
+dfp_check_for_XX 3
+dfp_check_for_OX 6 dfp_check_for_UX 6 dfp_check_for_VXSNAN 6 
+
+do_float_check_status 13
+__builtin_extract_return_addr 142 do_frsp 10 float_invalid_cvt 18 float_invalid_op_addsub 10 float_invalid_op_div 5 float_invalid_op_madd 24 float_invalid_op_mul 5 float_invalid_op_sqrt 9 float_invalid_op_vxsnan 48 float_invalid_op_vxvc 8 helper_compute_fprf_float128 20 helper_compute_fprf_float64 35 helper_reset_fpstatus 126 
+
+do_frsp 4
+__builtin_extract_return_addr 11 do_float_check_status 10 helper_compute_fprf_float64 9 helper_reset_fpstatus 10 
+
+do_postinc 3
+cris_alu 18 cris_cc_mask 19 dec_prep_alu_m 35 
+
+do_query 5
+qtest_init 5 qtest_quit 5 resp_get_error 6 resp_get_sve_vls 6 resp_has_props 7 
+
+do_sed_cond 4
+dest_gpr 9 load_gpr 0 nullify_over 0 save_gpr 7 
+
+do_syscall 3
+env_cpu 21 process_pending_signals 21 target_exception_dump 13 
+
+ehci_set_state 3
+ehci_get_fetch_addr 10 ehci_set_fetch_addr 5 get_dwords 7 
+
+env_archcpu 12
+arm_feature 28 init_excp_7450 6 ppc6xx_irq_init 18 raw_write 13 register_74xx_sprs 8 register_7xx_sprs 7 register_high_BATs 10 register_low_BATs 18 register_non_embedded_sprs 18 register_sdr1_sprs 18 register_thrm_sprs 8 vscr_init 8 
+
+env_cpu 24
+cpu_abort 23 cpu_exec 21 cpu_exec_end 21 cpu_exec_start 21 cpu_exec_step_atomic 18 cpu_loop_exit 28 cpu_loop_exit_atomic 6 cpu_loop_exit_restore 21 cpu_restore_state 8 do_syscall 21 g2h 6 process_pending_signals 21 process_queued_cpu_work 20 qemu_plugin_vcpu_mem_cb 13 target_exception_dump 13 tlb_flush 38 tlb_flush_by_mmuidx 13 tlb_flush_by_mmuidx_all_cpus_synced 7 tlb_flush_page 14 tlb_flush_page_by_mmuidx 5 tlb_force_broadcast 7 x86_ldl_phys 5 x86_ldq_phys 6 x86_stq_phys 5 
+
+error_free 3
+error_get_pretty 30 migrate_add_blocker 15 migrate_del_blocker 17 
+
+error_propagate 8
+cpu_exec_realizefn 21 error_get_pretty 224 ga_wait_child 5 hotplug_handler_pre_plug 5 memory_region_init_ram_nomigrate 6 visit_check_struct 286 visit_start_struct 288 visit_type_BlockDirtyBitmap_members 5 
+
+error_report 12
+fdt_strerror 56 findnode_nofail 5 load_elf 25 load_elf_strerror 7 load_image_targphys 33 load_ramdisk 5 load_uimage 7 qemu_find_file 26 sev_ioctl 5 size_to_str 16 strerror 112 tpm_emulator_strerror 11 
+
+error_set_from_qdev_prop_error 3
+g_free 7 object_field_prop_ptr 7 visit_type_str 20 
+
+error_setg_internal 20
+bdrv_find_dirty_bitmap 7 bdrv_find_node 12 bdrv_op_is_blocked 11 error_append_hint 55 full_name 16 g_free 20 id_wellformed 6 migrate_add_blocker 18 nbd_read64 5 object_dynamic_cast_assert 23 object_get_typename 49 qapi_enum_lookup 27 qbase64_decode 5 qemu_opts_absorb_qdict 16 qmp_get_blk 6 qobject_input_get_keyval 5 qobject_input_get_object 9 rocker_find 5 strcmp 24 visit_start_alternate 36 
+
+extF80M_isNaN 3
+extF80M_isSignalingNaN 11 extF80M_same 22 writeCase_z_extF80M 20 
+
+extF80M_isSignalingNaN 3
+extF80M_isNaN 11 extF80M_same 11 writeCase_z_extF80M 10 
+
+extF80M_same 3
+extF80M_isNaN 22 extF80M_isSignalingNaN 11 writeCase_z_extF80M 22 
+
+extract32 25
+deposit32 22 do_zero 8 ex_rvc_register 16 gen_gvec_op3_ool 21 gen_load_gpr 20 gen_load_mxu_gpr 44 gen_store_mxu_gpr 37 generate_exception_break 5 is_uhi 8 last_active_pred 6 neon_3same_fp_size 5 plus_1 13 plus_12 8 plus_2 5 rsub_16 5 rsub_32 5 sextract32 125 simd_data 104 simd_oprsz 90 tbi_check 5 tcma_check 5 times_2 34 times_2_plus_1 6 vop32_2 6 vop64_2 6 
+
+extract64 4
+allocation_tag_from_addr 7 amdvi_log_illegalcom_error 9 tbi_check 7 tcma_check 7 
+
+extractFloatx80Exp 6
+extractFloatx80Frac 24 extractFloatx80Sign 23 floatx80_make_compact 16 floatx80_move 5 normalizeFloatx80Subnormal 9 propagateFloatx80NaNOneArg 21 
+
+extractFloatx80Frac 7
+extractFloatx80Exp 24 extractFloatx80Sign 23 floatx80_make_compact 16 floatx80_move 5 normalizeFloatx80Subnormal 18 propagateFloatx80NaNOneArg 21 roundAndPackFloatx80 7 
+
+extractFloatx80Sign 4
+extractFloatx80Exp 23 extractFloatx80Frac 23 floatx80_move 5 propagateFloatx80NaNOneArg 20 
+
+extract_ac_15_14 3
+AC 47 extract_rs_20_19_18_17_16 38 extract_rt_25_24_23_22_21 42 
+
+extract_c0s_20_19_18_17_16 3
+extract_rt_25_24_23_22_21 16 extract_sel_15_14_13_12_11 16 img_format 16 
+
+extract_count3_14_13_12 4
+encode_count3_from_count 8 extract_rs_20_19_18_17_16 8 extract_rt_25_24_23_22_21 8 extract_s__se8_15_7_6_5_4_3_2_1_0 8 
+
+extract_fd_15_14_13_12_11 3
+FPR 70 extract_fs_20_19_18_17_16 70 extract_ft_25_24_23_22_21 70 
+
+extract_fs_20_19_18_17_16 3
+FPR 120 extract_fd_15_14_13_12_11 70 extract_ft_25_24_23_22_21 114 
+
+extract_ft_15_14_13_12_11 3
+FPR 8 extract_rs_20_19_18_17_16 8 extract_rt_25_24_23_22_21 8 
+
+extract_ft_25_24_23_22_21 3
+FPR 128 extract_fd_15_14_13_12_11 70 extract_fs_20_19_18_17_16 114 
+
+extract_lsb_4_3_2_1_0 4
+extract_msbt_10_9_8_7_6 8 extract_rs_20_19_18_17_16 8 extract_rt_25_24_23_22_21 8 img_format 8 
+
+extract_msbt_10_9_8_7_6 3
+extract_lsb_4_3_2_1_0 8 extract_rs_20_19_18_17_16 8 extract_rt_25_24_23_22_21 8 
+
+extract_rd_15_14_13_12_11 3
+GPR 130 extract_rs_20_19_18_17_16 130 extract_rt_25_24_23_22_21 130 
+
+extract_rs_20_19_18_17_16 14
+GPR 340 extract_ac_15_14 38 extract_count3_14_13_12 8 extract_ft_15_14_13_12_11 8 extract_lsb_4_3_2_1_0 8 extract_msbt_10_9_8_7_6 8 extract_rd_15_14_13_12_11 130 extract_rt_25_24_23_22_21 314 extract_ru_7_6_5_4_3 6 extract_s__se8_15_7_6_5_4_3_2_1_0 44 extract_sa_15_14_13_12 5 extract_sa_15_14_13_12_11 6 extract_shift_4_3_2_1_0 13 extract_u_11_10_9_8_7_6_5_4_3_2_1_0 25 
+
+extract_rt_25_24_23_22_21 19
+GPR 391 extract_ac_15_14 42 extract_c0s_20_19_18_17_16 16 extract_count3_14_13_12 8 extract_cs_20_19_18_17_16 10 extract_ft_15_14_13_12_11 8 extract_lsb_4_3_2_1_0 8 extract_msbt_10_9_8_7_6 8 extract_rd_15_14_13_12_11 130 extract_rs_20_19_18_17_16 314 extract_ru_7_6_5_4_3 6 extract_s__se11_0_10_9_8_7_6_5_4_3_2_1_0_s1 8 extract_s__se8_15_7_6_5_4_3_2_1_0 29 extract_sa_15_14_13_12 5 extract_sa_15_14_13_12_11 6 extract_sel_15_14_13_12_11 16 extract_shift_4_3_2_1_0 13 extract_u_11_10_9_8_7_6_5_4_3_2_1_0 20 extract_u_17_16_15_14_13_12_11 6 
+
+extract_ru_7_6_5_4_3 3
+GPR 6 extract_rs_20_19_18_17_16 6 extract_rt_25_24_23_22_21 6 
+
+extract_s__se11_0_10_9_8_7_6_5_4_3_2_1_0_s1 3
+ADDRESS 8 extract_rt_25_24_23_22_21 8 extract_u_17_16_15_14_13_12_11 6 
+
+extract_s__se8_15_7_6_5_4_3_2_1_0 4
+extract_count3_14_13_12 8 extract_rs_20_19_18_17_16 44 extract_rt_25_24_23_22_21 29 img_format 43 
+
+extract_sa_15_14_13_12 3
+extract_rs_20_19_18_17_16 5 extract_rt_25_24_23_22_21 5 img_format 5 
+
+extract_sa_15_14_13_12_11 3
+extract_rs_20_19_18_17_16 6 extract_rt_25_24_23_22_21 6 img_format 6 
+
+extract_sel_15_14_13_12_11 3
+extract_c0s_20_19_18_17_16 16 extract_rt_25_24_23_22_21 16 img_format 12 
+
+extract_shift_4_3_2_1_0 3
+extract_rs_20_19_18_17_16 13 extract_rt_25_24_23_22_21 13 img_format 13 
+
+extract_u_11_10_9_8_7_6_5_4_3_2_1_0 3
+extract_rs_20_19_18_17_16 25 extract_rt_25_24_23_22_21 20 img_format 16 
+
+extract_u_17_16_15_14_13_12_11 3
+extract_rt_25_24_23_22_21 6 extract_s__se11_0_10_9_8_7_6_5_4_3_2_1_0_s1 6 img_format 6 
+
+f128M_isNaN 3
+f128M_isSignalingNaN 12 f128M_same 24 writeCase_z_f128M 20 
+
+f128M_isSignalingNaN 3
+f128M_isNaN 12 f128M_same 12 writeCase_z_f128M 10 
+
+f128M_same 3
+f128M_isNaN 24 f128M_isSignalingNaN 12 writeCase_z_f128M 24 
+
+f16_isNaN 3
+f16_isSignalingNaN 12 f16_same 24 writeCase_z_f16 20 
+
+f16_isSignalingNaN 3
+f16_isNaN 12 f16_same 12 writeCase_z_f16 10 
+
+f16_same 3
+f16_isNaN 24 f16_isSignalingNaN 12 writeCase_z_f16 24 
+
+f32_isNaN 3
+f32_isSignalingNaN 12 f32_same 24 writeCase_z_f32 20 
+
+f32_isSignalingNaN 3
+f32_isNaN 12 f32_same 12 writeCase_z_f32 10 
+
+f32_same 3
+f32_isNaN 24 f32_isSignalingNaN 12 writeCase_z_f32 24 
+
+f64_isNaN 3
+f64_isSignalingNaN 12 f64_same 24 writeCase_z_f64 20 
+
+f64_isSignalingNaN 3
+f64_isNaN 12 f64_same 12 writeCase_z_f64 10 
+
+f64_same 3
+f64_isNaN 24 f64_isSignalingNaN 12 writeCase_z_f64 24 
+
+fdt_add_subnode 3
+fdt_setprop 66 fdt_setprop_cell 57 fdt_strerror 31 
+
+fdt_setprop 3
+fdt_add_subnode 66 fdt_setprop_cell 47 fdt_strerror 45 
+
+fdt_setprop_cell 3
+fdt_add_subnode 57 fdt_setprop 47 fdt_strerror 36 
+
+fdt_strerror 4
+error_report 56 fdt_add_subnode 31 fdt_setprop 45 fdt_setprop_cell 36 
+
+find_mapping_for_cluster 4
+begin_of_direntry 5 cluster2sector 10 fat_eof 6 modified_fat_get 10 
+
+float16_is_infinity 3
+float16_is_neg 6 float16_is_zero 8 float16_squash_input_denormal 7 
+
+float16_is_neg 3
+float16_is_infinity 6 float16_is_signaling_nan 5 float16_is_zero 6 
+
+float16_is_signaling_nan 3
+float16_default_nan 5 float16_is_neg 5 float16_silence_nan 14 
+
+float16_is_zero 3
+float16_is_infinity 8 float16_is_neg 6 float16_squash_input_denormal 7 
+
+float32_is_zero 4
+float32_is_infinity 17 float32_is_normal 6 float32_is_zero_or_denormal 24 float32_squash_input_denormal 7 
+
+float_invalid_cvt 3
+__builtin_extract_return_addr 26 do_float_check_status 18 helper_reset_fpstatus 18 
+
+float_invalid_op_addsub 3
+__builtin_extract_return_addr 14 do_float_check_status 10 helper_reset_fpstatus 10 
+
+float_invalid_op_div 4
+__builtin_extract_return_addr 7 do_float_check_status 5 float_zero_divide_excp 7 helper_reset_fpstatus 5 
+
+float_invalid_op_madd 3
+__builtin_extract_return_addr 24 do_float_check_status 24 helper_reset_fpstatus 24 
+
+float_invalid_op_mul 3
+__builtin_extract_return_addr 7 do_float_check_status 5 helper_reset_fpstatus 5 
+
+float_invalid_op_sqrt 3
+__builtin_extract_return_addr 13 do_float_check_status 9 helper_reset_fpstatus 9 
+
+float_invalid_op_vxsnan 4
+__builtin_extract_return_addr 65 do_float_check_status 48 float_invalid_op_vxvc 12 helper_reset_fpstatus 52 
+
+float_invalid_op_vxvc 4
+__builtin_extract_return_addr 13 do_float_check_status 8 float_invalid_op_vxsnan 12 helper_reset_fpstatus 12 
+
+float_raise 7
+float16_silence_nan 7 float32_silence_nan 7 float32_to_floatx80 13 floatx80_add 16 floatx80_default_nan 21 floatx80_is_signaling_nan 8 floatx80_silence_nan 8 
+
+floatx80_add 4
+float32_to_floatx80 25 float_raise 16 floatx80_mul 16 floatx80_to_int32 9 
+
+floatx80_is_signaling_nan 3
+float_raise 8 floatx80_default_nan 5 floatx80_silence_nan 8 
+
+floatx80_move 3
+extractFloatx80Exp 5 extractFloatx80Frac 5 extractFloatx80Sign 5 
+
+floatx80_mul 3
+floatx80_add 16 floatx80_to_int32 9 packFloatx80 15 
+
+fp_access_check 5
+clear_vec_high 17 finalize_memop_asimd 12 gen_gvec_op3_ool 7 read_vec_element 21 write_vec_element 16 
+
+fprintf 7
+cpu_dump_state 12 g_strcmp0 54 lookup_symbol 21 qemu_log_trylock 15 qemu_log_unlock 15 strerror 72 target_disas 21 
+
+fpstatus_ptr 4
+gen_restore_rmode 14 gen_set_rmode 14 tcg_gen_gvec_2_ptr 27 tcg_gen_gvec_3_ptr 46 
+
+full_name 4
+error_setg_internal 16 qobject_input_get_keyval 10 qobject_input_get_object 18 to_qiv 14 
+
+fw_cfg_add_i16 3
+fw_cfg_add_i32 9 fw_cfg_add_i64 7 qemu_register_boot_set 8 
+
+fw_cfg_add_i32 4
+fw_cfg_add_i16 9 fw_cfg_add_i64 8 fw_cfg_add_string 7 qemu_register_boot_set 6 
+
+fw_cfg_add_i64 3
+fw_cfg_add_i16 7 fw_cfg_add_i32 8 qemu_register_boot_set 8 
+
+g_assertion_message 4
+g_assertion_message_cmpnum 116 g_assertion_message_cmpstr 23 g_assertion_message_expr 25 qmp_assertion_message_error 20 
+
+g_assertion_message_cmpnum 34
+__builtin_signbit 10 adc_read_con 5 g_assertion_message 116 g_assertion_message_cmpstr 44 g_assertion_message_expr 105 i2c_get8 13 iov_send_recv 7 max34451_i2c_get16 5 parse_uint 26 qdict_get_int 22 qemu_strtod 13 qemu_strtod_finite 12 qemu_strtoi 46 qemu_strtoi64 46 qemu_strtol 47 qemu_strtou64 46 qemu_strtoui 46 qemu_strtoul 46 qnum_get_int 7 qtest_readl 21 qvirtio_config_readq 10 readb 13 readl 22 send_dma_request 5 socket_connect 7 socket_listen 7 tim_read 12 tim_read_tcsr 6 tim_read_tdr 8 tim_timer_bit 10 timer_counter 35 timer_get_and_clr_int_sts 34 tpm_tis_i2c_readb 6 v9fs_rlerror 13 
+
+g_assertion_message_cmpstr 7
+g_assertion_message 23 g_assertion_message_cmpnum 44 g_assertion_message_expr 47 g_free 50 g_strcmp0 217 qdict_get_str 21 qtest_hmp 16 
+
+g_assertion_message_expr 3
+g_assertion_message 25 g_assertion_message_cmpnum 105 g_assertion_message_cmpstr 47 
+
+g_async_result_get_source_object 3
+g_async_initable_new_finish 26 g_object_unref 26 g_type_check_instance_cast 26 
+
+g_autoptr_cleanup_generic_gfree 9
+ADDRESS 35 g_date_time_format 5 g_malloc 30 g_malloc0 41 g_strdup_printf 113 make_cli 11 object_get_canonical_path 33 save_restore_list 5 virtio_9p_test_path 7 
+
+g_byte_array_new 3
+glib_autoptr_cleanup_GByteArray 5 xs_impl_read 9 xs_impl_write 5 
+
+g_datalist_id_set_data_full 4
+g_datalist_get_data 10 g_quark_from_string 9 g_quark_try_string 14 g_variant_get_strv 8 
+
+g_dbus_connection_emit_signal 3
+g_dbus_interface_skeleton_get_object_path 11 g_variant_ref_sink 11 g_variant_unref 11 
+
+g_dbus_gvalue_to_gvariant 3
+g_object_get_property 13 g_variant_type_checked_ 35 g_variant_unref 22 
+
+g_dbus_gvariant_to_gvalue 3
+g_object_set_property 13 g_variant_iter_next_value 26 g_variant_unref 37 
+
+g_dbus_interface_info_lookup_property 3
+g_quark_try_string 13 g_set_error 26 g_variant_iter_next 13 
+
+g_dbus_method_invocation_get_message 4
+g_dbus_message_get_unix_fd_list 13 g_dbus_method_invocation_get_method_info 13 g_dbus_method_invocation_return_error 13 g_value_set_object 13 
+
+g_dbus_method_invocation_get_method_info 3
+g_dbus_method_invocation_get_message 13 g_dbus_method_invocation_return_error 13 g_value_set_object 13 
+
+g_dbus_method_invocation_return_error 3
+dbus_display_error_quark 12 g_dbus_method_invocation_get_message 13 g_dbus_method_invocation_get_method_info 13 
+
+g_dbus_proxy_call_finish 3
+g_type_check_instance_cast 34 g_variant_get 34 g_variant_unref 45 
+
+g_dbus_proxy_call_sync 4
+g_type_check_instance_cast 34 g_variant_get 34 g_variant_new 36 g_variant_unref 34 
+
+g_dbus_proxy_call_with_unix_fd_list_finish 3
+g_type_check_instance_cast 5 g_variant_get 5 g_variant_unref 5 
+
+g_dbus_proxy_call_with_unix_fd_list_sync 4
+g_type_check_instance_cast 5 g_variant_get 5 g_variant_new 5 g_variant_unref 5 
+
+g_dbus_proxy_get_cached_property 4
+g_type_check_instance_cast 35 g_variant_get_string 7 g_variant_get_strv 8 g_variant_unref 35 
+
+g_dir_make_tmp 3
+g_free 18 g_rmdir 13 rmdir 9 
+
+g_free 61
+bdrv_snapshot_list 6 blk_get_attached_dev_id 5 error_set_from_qdev_prop_error 7 error_setg_internal 20 g_assertion_message_cmpstr 50 g_dir_make_tmp 18 g_malloc 128 g_malloc0 143 g_malloc0_n 128 g_malloc_n 32 g_path_get_basename 16 g_path_get_dirname 14 g_rmdir 13 g_signal_emitv 26 g_strcmp0 56 g_strconcat 9 g_strdup 69 g_strdup_printf 466 g_strdup_vprintf 12 g_strjoinv 9 g_try_malloc 20 g_try_malloc_n 11 generate_pattern 7 load_image_mr 5 load_image_targphys 20 local_opendir_nofollow 11 memcmp 21 memcpy 20 memory_region_snapshot_and_clear_dirty 10 memory_region_snapshot_get_dirty 6 memset 21 object_class_by_name 21 object_property_get_str 6 qauthz_list_file_new 5 qdev_get_dev_path 7 qemu_authz_listfile_test_save 5 qemu_fdt_add_subnode 89 qemu_fdt_setprop 74 qemu_fdt_setprop_cell 56 qemu_fdt_setprop_phandle 8 qemu_fdt_setprop_sized_cells_from_array 42 qemu_fdt_setprop_string 66 qemu_fdt_setprop_string_array 6 qemu_find_file 39 qemu_opt_get_del 12 qpci_device_find 11 qtest_hmp 19 readlink 5 riscv_socket_fdt_write_id 7 size_to_str 24 strcmp 23 strlen 38 test_acpi_create_args 5 unlink 30 vfio_get_dev_region_info 5 vfio_get_region_info 7 vhost_net_cleanup 5 virtqueue_detach_element 13 virtqueue_pop 21 virtqueue_push 24 visit_type_str 32 
+
+g_idle_source_new 5
+g_source_attach 13 g_source_set_callback 13 g_source_set_name 11 g_source_set_priority 11 g_source_unref 13 
+
+g_main_loop_new 3
+g_main_context_default 5 g_main_context_new 5 g_main_loop_run 9 
+
+g_malloc 5
+g_autoptr_cleanup_generic_gfree 30 g_free 128 generate_pattern 8 memcpy 20 memset 21 
+
+g_malloc0 4
+g_autoptr_cleanup_generic_gfree 41 g_free 143 ppc_dcr_register 5 xbzrle_encode_buffer 10 
+
+g_malloc0_n 5
+g_free 128 g_list_prepend 12 g_signal_emitv 26 g_value_init 24 memory_region_init_io 41 
+
+g_malloc_n 4
+g_free 32 memory_region_add_subregion 58 memory_region_init_ram 27 memory_region_init_rom 25 
+
+g_object_freeze_notify 3
+g_object_notify_by_pspec 11 g_object_thaw_notify 11 g_type_check_instance_cast 11 
+
+g_object_get_property 5
+g_dbus_gvalue_to_gvariant 13 g_object_class_find_property 13 g_type_check_instance_cast 13 g_value_init 13 g_value_unset 13 
+
+g_object_notify_by_pspec 3
+g_object_freeze_notify 11 g_object_thaw_notify 11 g_type_check_instance_cast 11 
+
+g_object_set_property 5
+g_dbus_gvariant_to_gvalue 13 g_object_class_find_property 13 g_type_check_instance_cast 13 g_value_set_variant 13 g_value_unset 13 
+
+g_object_thaw_notify 3
+g_object_freeze_notify 11 g_object_notify_by_pspec 11 g_type_check_instance_cast 11 
+
+g_once_init_leave 3
+__atomic_load_8 46 g_once_init_enter 46 g_type_interface_add_prerequisite 13 
+
+g_path_get_dirname 3
+g_free 14 g_path_get_basename 12 local_opendir_nofollow 11 
+
+g_quark_try_string 3
+g_datalist_id_set_data_full 14 g_dbus_interface_info_lookup_property 13 g_variant_iter_next 13 
+
+g_signal_emitv 4
+g_free 26 g_malloc0_n 26 g_signal_lookup 26 g_value_get_boolean 13 
+
+g_slist_foreach 3
+g_slist_free 22 g_slist_sort 7 object_class_get_list_sorted 7 
+
+g_slist_free 5
+g_slist_foreach 22 g_slist_sort 7 nvdimm_get_device_list 6 object_class_get_list 15 object_class_get_list_sorted 9 
+
+g_slist_sort 3
+g_slist_foreach 7 g_slist_free 7 object_class_get_list 10 
+
+g_source_attach 5
+g_idle_source_new 13 g_source_set_callback 19 g_source_set_name 12 g_source_set_priority 11 g_source_unref 21 
+
+g_source_set_callback 6
+g_idle_source_new 13 g_object_ref 11 g_source_attach 19 g_source_set_name 11 g_source_set_priority 11 g_source_unref 17 
+
+g_source_set_name 5
+g_idle_source_new 11 g_source_attach 12 g_source_set_callback 11 g_source_set_priority 11 g_source_unref 12 
+
+g_source_set_priority 5
+g_idle_source_new 11 g_source_attach 11 g_source_set_callback 11 g_source_set_name 11 g_source_unref 11 
+
+g_source_unref 5
+g_idle_source_new 13 g_source_attach 21 g_source_set_callback 17 g_source_set_name 12 g_source_set_priority 11 
+
+g_strcmp0 5
+fprintf 54 g_assertion_message_cmpstr 217 g_free 56 qdict_get_str 22 qtest_hmp 16 
+
+g_strdup 4
+append_arg 11 g_free 69 id_wellformed 5 qemu_opt_get 21 
+
+g_strdup_printf 13
+g_autoptr_cleanup_generic_gfree 113 g_free 466 g_get_tmp_dir 11 qemu_fdt_add_subnode 93 qemu_fdt_setprop 77 qemu_fdt_setprop_cell 58 qemu_fdt_setprop_phandle 9 qemu_fdt_setprop_sized_cells_from_array 44 qemu_fdt_setprop_string 70 qemu_fdt_setprop_string_array 7 readlink 5 riscv_socket_fdt_write_id 7 strlen 23 
+
+g_string_free 6
+g_string_append_printf 23 g_string_new 49 g_string_sized_new 5 qobject_to_json_pretty 8 xs_impl_unwatch 5 xs_impl_watch 5 
+
+g_string_new 7
+g_string_append_printf 35 g_string_free 49 g_string_printf 20 glib_autoptr_cleanup_GString 32 human_readable_text_from_str 8 xs_impl_unwatch 5 xs_impl_watch 5 
+
+g_type_check_instance_cast 45
+g_async_initable_get_type 26 g_async_initable_new_finish 26 g_async_result_get_source_object 26 g_dbus_interface_skeleton_get_connection 22 g_dbus_interface_skeleton_get_connections 11 g_dbus_interface_skeleton_get_object_path 22 g_dbus_interface_skeleton_get_type 39 g_dbus_object_skeleton_add_interface 6 g_dbus_proxy_call 45 g_dbus_proxy_call_finish 34 g_dbus_proxy_call_sync 34 g_dbus_proxy_call_with_unix_fd_list 5 g_dbus_proxy_call_with_unix_fd_list_finish 5 g_dbus_proxy_call_with_unix_fd_list_sync 5 g_dbus_proxy_get_cached_property 35 g_dbus_proxy_get_type 179 g_dbus_proxy_set_interface_info 13 g_initable_new 26 g_object_freeze_notify 11 g_object_get 16 g_object_get_property 13 g_object_new 14 g_object_notify 13 g_object_notify_by_pspec 11 g_object_ref 11 g_object_set 24 g_object_set_property 13 g_object_thaw_notify 11 g_object_unref 26 qemu_dbus_display1_audio_in_listener_skeleton_get_type 11 qemu_dbus_display1_audio_out_listener_skeleton_get_type 11 qemu_dbus_display1_audio_skeleton_get_type 11 qemu_dbus_display1_chardev_proxy_get_type 7 qemu_dbus_display1_chardev_skeleton_get_type 15 qemu_dbus_display1_clipboard_skeleton_get_type 11 qemu_dbus_display1_console_proxy_get_type 10 qemu_dbus_display1_console_skeleton_get_type 17 qemu_dbus_display1_keyboard_skeleton_get_type 11 qemu_dbus_display1_listener_skeleton_get_type 12 qemu_dbus_display1_listener_win32_d3d11_skeleton_get_type 5 qemu_dbus_display1_listener_win32_map_skeleton_get_type 5 qemu_dbus_display1_mouse_skeleton_get_type 11 qemu_dbus_display1_multi_touch_skeleton_get_type 11 qemu_dbus_display1_vm_proxy_get_type 7 qemu_dbus_display1_vm_skeleton_get_type 14 
+
+g_type_register_static_simple 4
+g_intern_static_string 41 g_type_add_instance_private 26 g_type_add_interface_static 26 g_type_interface_add_prerequisite 13 
+
+g_value_get_boolean 3
+g_signal_emitv 13 g_value_init 13 g_value_unset 13 
+
+g_value_init 6
+g_malloc0_n 24 g_object_get_property 13 g_strv_get_type 8 g_unix_fd_list_get_type 13 g_value_get_boolean 13 g_value_unset 26 
+
+g_value_set_object 3
+g_dbus_message_get_unix_fd_list 13 g_dbus_method_invocation_get_message 13 g_dbus_method_invocation_get_method_info 13 
+
+g_value_set_variant 3
+g_object_set_property 13 g_variant_iter_next_value 26 g_variant_unref 37 
+
+g_value_unset 4
+g_object_get_property 13 g_object_set_property 13 g_value_get_boolean 13 g_value_init 26 
+
+g_variant_builder_add 5
+g_variant_builder_clear 11 g_variant_builder_end 11 g_variant_builder_init 22 g_variant_take_ref 11 g_variant_unref 22 
+
+g_variant_builder_init 4
+g_variant_builder_add 22 g_variant_builder_clear 11 g_variant_builder_end 13 g_variant_type_checked_ 24 
+
+g_variant_get 7
+g_dbus_proxy_call_finish 34 g_dbus_proxy_call_sync 34 g_dbus_proxy_call_with_unix_fd_list_finish 5 g_dbus_proxy_call_with_unix_fd_list_sync 5 g_variant_iter_free 13 g_variant_iter_next 13 g_variant_unref 78 
+
+g_variant_get_strv 3
+g_datalist_id_set_data_full 8 g_dbus_proxy_get_cached_property 8 g_variant_unref 8 
+
+g_variant_iter_next 4
+g_dbus_interface_info_lookup_property 13 g_quark_try_string 13 g_variant_get 13 g_variant_iter_free 13 
+
+g_variant_iter_next_value 4
+g_dbus_gvariant_to_gvalue 26 g_value_set_variant 26 g_variant_iter_init 26 g_variant_unref 26 
+
+g_variant_new 7
+g_dbus_method_invocation_return_value 34 g_dbus_method_invocation_return_value_with_unix_fd_list 5 g_dbus_proxy_call 45 g_dbus_proxy_call_sync 36 g_dbus_proxy_call_with_unix_fd_list 5 g_dbus_proxy_call_with_unix_fd_list_sync 5 g_variant_ref_sink 11 
+
+g_variant_ref_sink 3
+g_dbus_connection_emit_signal 11 g_variant_new 11 g_variant_unref 11 
+
+g_variant_unref 16
+g_dbus_connection_emit_signal 11 g_dbus_gvalue_to_gvariant 22 g_dbus_gvariant_to_gvalue 37 g_dbus_proxy_call_finish 45 g_dbus_proxy_call_sync 34 g_dbus_proxy_call_with_unix_fd_list_finish 5 g_dbus_proxy_call_with_unix_fd_list_sync 5 g_dbus_proxy_get_cached_property 35 g_value_set_variant 37 g_variant_builder_add 22 g_variant_get 78 g_variant_get_string 7 g_variant_get_strv 8 g_variant_iter_next_value 26 g_variant_ref_sink 11 g_variant_take_ref 11 
+
+gen_405_mulladd_insn 4
+Rc 42 rA 42 rB 42 rD 42 
+
+gen_ZNSf 4
+gen_sub_CHf 5 gen_sub_Vf 5 tcg_gen_andi_i32 20 tcg_temp_new_i32 9 
+
+gen_addr_reg_index 4
+gen_qemu_ld64_i64 10 gen_qemu_st64_i64 10 gen_set_access_type 71 tcg_temp_new_i32 73 
+
+gen_avr_ptr 3
+rA 63 rB 109 rD 104 
+
+gen_cancel 3
+gen_store1 36 gen_store2 52 gen_store4 36 
+
+gen_check_sp_alignment 4
+cpu_reg 17 gen_mte_check1 8 gen_mte_checkN 7 read_cpu_reg_sp 12 
+
+gen_ea 3
+gen_addr_fault 37 gen_logic_cc 11 insn_opsize 24 
+
+gen_helper_compute_fprf_float64 3
+gen_helper_float_check_status 7 set_fpr 6 tcg_temp_new_i64 6 
+
+gen_helper_fbrev 3
+tcg_gen_add_i32 20 tcg_gen_mov_i32 40 tcg_temp_new_i32 20 
+
+gen_helper_fcircadd 5
+gen_read_ireg 40 gen_read_reg 40 tcg_constant_i32 20 tcg_gen_mov_i32 80 tcg_temp_new_i32 60 
+
+gen_helper_mul_h 5
+tcg_constant_i32 21 tcg_gen_ext16s_i32 84 tcg_gen_sari_i32 84 tcg_temp_new_i32 84 tcg_temp_new_i64 21 
+
+gen_helper_mulm_h 5
+tcg_constant_i32 5 tcg_gen_ext16s_i32 20 tcg_gen_sari_i32 20 tcg_temp_new_i32 20 tcg_temp_new_i64 5 
+
+gen_load_fpr64 3
+check_cp1_registers 6 gen_store_fpr64 16 tcg_temp_new_i64 18 
+
+gen_load_gpr 3
+extract32 20 gen_store_gpr 23 tcg_temp_new_i64 77 
+
+gen_load_gpr64 4
+gen_store_gpr64 22 rA 20 rB 41 tcg_temp_new_i64 46 
+
+gen_load_store_alignment 4
+tcg_gen_addi_i32 8 tcg_gen_mov_i32 8 tcg_gen_qemu_ld_i32 16 tcg_temp_new_i32 13 
+
+gen_log_reg_write 12
+ctx_future_vreg_off 38 gen_log_reg_write_pair 34 gen_set_usr_field 8 gen_vreg_load 38 gen_vreg_masked_store 8 gen_vreg_store 30 get_result_gpr 2424 get_result_gpr_pair 34 tcg_gen_add_i32 76 tcg_gen_addi_i32 78 tcg_gen_mov_i32 347 vreg_src_off 27 
+
+gen_log_reg_write_pair 5
+gen_cond_return 14 gen_log_reg_write 34 get_result_gpr 34 get_result_gpr_pair 1471 tcg_gen_concat_i32_i64 169 
+
+gen_mte_check1 4
+check_atomic_align 10 cpu_reg 7 cpu_reg_sp 17 gen_check_sp_alignment 8 
+
+gen_mte_checkN 3
+cpu_reg 6 cpu_reg_sp 7 gen_check_sp_alignment 7 
+
+gen_new_label 6
+gen_set_label 646 tcg_gen_br 347 tcg_gen_brcond_i32 24 tcg_gen_brcond_i64 145 tcg_gen_brcondi_i32 439 tcg_gen_brcondi_i64 169 
+
+gen_op_add_reg_T0 3
+gen_op_ld_v 5 gen_op_movl_T0_Dshift 7 gen_string_movl_A0_EDI 5 
+
+gen_op_ld_v 3
+gen_op_add_reg_T0 5 gen_op_movl_T0_Dshift 10 gen_op_st_rm_T0_A0 16 
+
+gen_op_movl_T0_Dshift 3
+gen_op_add_reg_T0 7 gen_op_ld_v 10 gen_string_movl_A0_EDI 5 
+
+gen_op_st_rm_T0_A0 3
+gen_op_ld_v 16 gen_op_mov_v_reg 24 set_cc_op 5 
+
+gen_qemu_ld64_i64 5
+gen_addr_reg_index 10 gen_set_access_type 7 tcg_gen_addi_i32 10 tcg_temp_new_i32 6 tcg_temp_new_i64 8 
+
+gen_qemu_st64_i64 5
+gen_addr_reg_index 10 gen_set_access_type 7 tcg_gen_addi_i32 10 tcg_temp_new_i32 6 tcg_temp_new_i64 8 
+
+gen_sat_i64_ovfl 8
+gen_set_usr_field_if 157 tcg_gen_add_i64 58 tcg_gen_deposit_i64 93 tcg_gen_extrl_i64_i32 51 tcg_gen_sari_i64 31 tcg_gen_sub_i64 28 tcg_temp_new_i32 157 tcg_temp_new_i64 313 
+
+gen_satu_i64_ovfl 3
+gen_set_usr_field_if 11 tcg_temp_new_i32 11 tcg_temp_new_i64 22 
+
+gen_set_access_type 5
+do_ea_calc 6 gen_addr_reg_index 71 gen_addr_spe_imm_index 18 gen_qemu_ld64_i64 7 gen_qemu_st64_i64 7 
+
+gen_set_fpr_d 5
+dest_fpr 69 gen_set_rm 15 get_fpr_d 16 has_ext 23 mark_fs_dirty 23 
+
+gen_set_fpr_hs 5
+dest_fpr 159 gen_set_rm 38 get_fpr_hs 38 has_ext 28 mark_fs_dirty 53 
+
+gen_set_gpr 5
+dest_gpr 205 get_fpr_hs 23 get_gpr 28 gpr_dst 52 has_ext 25 
+
+gen_set_gpr128 4
+dest_gpr 24 dest_gprh 24 get_gpr 6 get_gprh 5 
+
+gen_set_label 6
+gen_new_label 646 tcg_gen_br 347 tcg_gen_brcond_i32 23 tcg_gen_brcond_i64 145 tcg_gen_brcondi_i32 438 tcg_gen_brcondi_i64 169 
+
+gen_set_rm 15
+dest_fpr 53 gen_set_fpr_d 15 gen_set_fpr_hs 38 get_fpr_d 18 get_fpr_hs 36 has_ext 43 mark_fs_dirty 54 mark_vs_dirty 40 opfvf_check 20 opfvf_cmp_check 6 opfvf_trans 38 opfvf_widen_check 7 opfvv_check 17 opfvv_widen_check 7 vreg_ofs 39 
+
+gen_set_usr_field_if 5
+gen_sat_i32_ovfl 17 gen_sat_i64_ovfl 157 gen_satu_i32_ovfl 5 gen_satu_i64_ovfl 11 tcg_temp_new_i32 190 
+
+gen_store1 4
+gen_cancel 36 tcg_gen_mov_i32 58 tcg_gen_sextract_i32 53 tcg_temp_new_i32 129 
+
+gen_store2 4
+gen_cancel 52 tcg_gen_mov_i32 77 tcg_gen_sextract_i32 79 tcg_temp_new_i32 179 
+
+gen_store4 3
+gen_cancel 36 tcg_gen_mov_i32 61 tcg_temp_new_i32 71 
+
+gen_store_gpr64 3
+gen_load_gpr64 22 rD 32 tcg_temp_new_i64 32 
+
+gen_sub_CHf 6
+gen_ZNSf 5 gen_sub_Vf 24 tcg_gen_andi_i32 16 tcg_gen_mov_i32 5 tcg_gen_sub_i32 24 tcg_temp_new_i32 8 
+
+gen_sub_Vf 6
+gen_ZNSf 5 gen_sub_CHf 24 tcg_gen_andi_i32 16 tcg_gen_mov_i32 5 tcg_gen_sub_i32 24 tcg_temp_new_i32 8 
+
+gen_vreg_load 6
+ctx_future_vreg_off 78 ctx_tmp_vreg_off 36 gen_log_reg_write 38 get_result_gpr 38 tcg_gen_mov_i32 38 tcg_temp_new_i32 57 
+
+gen_vreg_masked_store 5
+gen_log_reg_write 8 get_result_gpr 8 tcg_gen_mov_i32 8 tcg_temp_new_i32 12 vreg_src_off 24 
+
+gen_vreg_store 5
+gen_log_reg_write 30 get_result_gpr 30 tcg_gen_mov_i32 30 tcg_temp_new_i32 45 vreg_src_off 54 
+
+gen_vsr_ptr 3
+xA 44 xB 106 xT 97 
+
+generate_pattern 3
+g_free 7 g_malloc 8 memcmp 7 
+
+get_address 3
+get_length 6 set_address 18 set_length 6 
+
+get_address_from_regs 3
+s390_cpu_pv_mem_rw 5 s390_cpu_virt_mem_rw 10 s390_program_interrupt 5 
+
+get_cluster_table 4
+get_l2_entry 6 qcow2_cache_entry_mark_dirty 5 qcow2_cache_put 7 set_l2_bitmap 5 
+
+get_cur_drv 4
+fd_seek 5 fdctrl_raise_irq 6 fdctrl_stop_transfer 7 fdctrl_to_command_phase 8 
+
+get_enabled_exceptions 3
+check_msacsr_cause 37 clear_msacsr_cause 37 update_msacsr 78 
+
+get_fid 6
+pdu_complete 25 pdu_marshal 15 pdu_unmarshal 50 put_fid 54 stat_to_qid 7 v9fs_co_lstat 5 
+
+get_field1 13
+gen_addi_and_wrap_i64 11 gen_program_exception 91 get_mem_index 31 have_field1 12 help_branch 16 load_freg 6 read_vec_element_i64 23 set_cc_static 39 store_reg32_i64 11 tcg_constant_i32 31 valid_vec_element 8 vec_full_reg_offset 62 write_vec_element_i64 24 
+
+get_float_exception_flags 6
+float32_to_int64 14 float64_to_int32 17 float64_to_int64 16 set_float_exception_flags 30 set_float_rounding_mode 47 set_x86_rounding_mode 6 
+
+get_fpr 4
+rA 22 rB 47 rC 10 tcg_temp_new_i64 57 
+
+get_fpr_d 5
+dest_fpr 20 gen_set_fpr_d 16 gen_set_rm 18 has_ext 29 mark_fs_dirty 20 
+
+get_fpr_hs 7
+dest_fpr 42 dest_gpr 23 gen_set_fpr_hs 38 gen_set_gpr 23 gen_set_rm 36 has_ext 33 mark_fs_dirty 42 
+
+get_gpr 5
+dest_gpr 25 dest_gprh 6 gen_set_gpr 28 gen_set_gpr128 6 get_gprh 12 
+
+get_gprh 4
+dest_gpr 5 dest_gprh 5 gen_set_gpr128 5 get_gpr 12 
+
+get_l2_bitmap 3
+get_l2_entry 12 has_subclusters 6 set_l2_bitmap 10 
+
+get_l2_entry 4
+get_cluster_table 6 get_l2_bitmap 12 set_l2_bitmap 10 set_l2_entry 12 
+
+get_length 3
+get_address 6 set_address 6 set_length 6 
+
+get_mem_index 12
+add_reg_for_lit 5 gen_aa32_ld_i32 22 gen_aa32_st_i32 18 gen_addi_and_wrap_i64 9 gen_ri2 5 get_field1 31 in1_la1 6 in2_a2 7 tcg_gen_qemu_ld_i128 5 tcg_gen_qemu_ld_i64 58 tcg_gen_qemu_st_i128 6 tcg_gen_qemu_st_i64 32 
+
+get_pci_device 6
+free_pci_device 14 ide_test_quit 6 ide_test_start 7 qpci_io_readb 22 send_dma_request 5 test_bmdma_teardown 5 
+
+get_result_gpr 13
+ctx_future_vreg_off 26 gen_cmp_jumpnv 40 gen_cmpi_jumpnv 40 gen_log_reg_write 2424 gen_log_reg_write_pair 34 gen_vreg_load 38 gen_vreg_masked_store 8 gen_vreg_store 30 get_result_gpr_pair 34 tcg_gen_add_i32 76 tcg_gen_addi_i32 77 tcg_gen_mov_i32 349 vreg_src_off 27 
+
+get_result_gpr_pair 5
+gen_cond_return 14 gen_log_reg_write 34 gen_log_reg_write_pair 1471 get_result_gpr 34 tcg_gen_concat_i32_i64 169 
+
+get_result_qreg 4
+tcg_gen_gvec_and 10 tcg_gen_gvec_mov 30 tcg_gen_gvec_or 10 vreg_src_off 40 
+
+get_seg_limit 3
+cpu_x86_load_seg_cache 14 get_seg_base 16 load_segment_ra 12 
+
+get_sigframe 5
+lock_user 29 target_save_altstack 14 trace_user_setup_frame 20 trace_user_setup_rt_frame 31 unlock_user 27 
+
+get_system_memory 4
+memory_region_add_subregion 166 memory_region_del_subregion 25 object_property_set_link 28 serial_mm_init 24 
+
+getaddrinfo 3
+freeaddrinfo 5 gai_strerror 5 memset 6 
+
+gpr_src 4
+gen_helper_asrtgt_d 10 gen_helper_asrtle_d 10 gpr_dst 21 tcg_gen_addi_i64 20 
+
+handle_exceptions 5
+__builtin_extract_return_addr 54 float_comp_to_cc 6 s390_restore_bfp_rounding_mode 24 s390_swap_bfp_rounding_mode 24 xxc_from_m34 24 
+
+has_ext 9
+dest_fpr 51 dest_gpr 22 gen_set_fpr_d 23 gen_set_fpr_hs 28 gen_set_gpr 25 gen_set_rm 43 get_fpr_d 29 get_fpr_hs 33 mark_fs_dirty 54 
+
+has_subclusters 3
+get_l2_bitmap 6 set_l2_bitmap 5 set_l2_entry 5 
+
+help_branch 5
+get_field1 16 have_field1 7 tcg_gen_addi_i64 14 tcg_gen_ld_i64 7 tcg_temp_new_i64 7 
+
+helper_compute_fprf_float128 3
+do_float_check_status 20 float128_muladd 8 helper_reset_fpstatus 20 
+
+helper_compute_fprf_float64 3
+do_float_check_status 35 do_frsp 9 helper_reset_fpstatus 35 
+
+helper_reset_fpstatus 12
+do_float_check_status 126 do_frsp 10 float_invalid_cvt 18 float_invalid_op_addsub 10 float_invalid_op_div 5 float_invalid_op_madd 24 float_invalid_op_mul 5 float_invalid_op_sqrt 9 float_invalid_op_vxsnan 52 float_invalid_op_vxvc 12 helper_compute_fprf_float128 20 helper_compute_fprf_float64 35 
+
+i2c_end_transfer 4
+i2c_nack 6 i2c_send 15 i2c_start_recv 5 i2c_start_send 8 
+
+i8254_pit_init 3
+i8259_init 5 isa_bus_new 5 isa_bus_register_input_irqs 5 
+
+i8259_init 3
+i8254_pit_init 5 isa_bus_new 6 isa_bus_register_input_irqs 10 
+
+icc_cs_from_env 4
+gicv3_cpuif_virt_update 7 gicv3_redist_affid 48 gicv3_use_ns_bank 8 icv_access 17 
+
+ide_bus_init 3
+DEVICE 7 ide_bus_init_output_irq 6 ide_bus_register_restart_cb 6 
+
+img_format 17
+AC 30 FPR 326 GPR 950 encode_count3_from_count 8 extract_c0s_20_19_18_17_16 16 extract_cs_20_19_18_17_16 10 extract_lsb_4_3_2_1_0 8 extract_s__se8_15_7_6_5_4_3_2_1_0 43 extract_sa_15_14_13_12 5 extract_sa_15_14_13_12_11 6 extract_sel_15_14_13_12_11 12 extract_shift_4_3_2_1_0 13 extract_u_11_10_9_8_7_6_5_4_3_2_1_0 16 extract_u_11_10_9_8_7_6_5_4_3__s3 5 extract_u_17_16_15_14_13_12_11 6 extract_u_17_to_2__s2 5 save_restore_list 5 
+
+init_excp_7450 7
+_spr_register 6 env_archcpu 6 register_74xx_sprs 6 register_low_BATs 6 register_non_embedded_sprs 6 register_sdr1_sprs 6 vscr_init 6 
+
+isa_bus_new 4
+i8254_pit_init 5 i8257_dma_init 6 i8259_init 6 isa_bus_register_input_irqs 10 
+
+isa_bus_register_input_irqs 3
+i8254_pit_init 5 i8259_init 10 isa_bus_new 10 
+
+job_enter 3
+assert_job_status_is 5 create_common 5 job_start 6 
+
+job_start 3
+assert_job_status_is 7 create_common 6 job_enter 6 
+
+load_elf 3
+error_report 25 load_elf_strerror 7 load_uimage 8 
+
+load_gpr 3
+do_sed_cond 0 nullify_end 21 nullify_over 26 
+
+load_image_targphys 4
+error_report 33 g_free 20 load_ramdisk 10 qemu_find_file 21 
+
+load_pair 3
+check_of64a32s 5 check_pair 15 tcg_temp_new_i64 5 
+
+load_reg 8
+arm_dc_feature 36 gen_logic_CC 6 mve_check_qreg_bank 14 mve_eci_check 19 mve_update_eci 16 store_reg 113 store_reg_kind 10 vfp_access_check 25 
+
+load_reg_var 3
+arm_dc_feature 6 tcg_gen_addi_i32 10 tcg_temp_new_i32 6 
+
+load_tco 7
+clear_tco_status 9 reset_on_second_timeout 9 set_tco_timeout 9 start_tco 9 stop_tco 7 test_end 9 test_init 9 
+
+local_opendir_nofollow 7
+close_preserve_errno 17 g_free 11 g_path_get_dirname 11 local_is_mapped_file_metadata 7 local_set_mapped_file_attrat 6 local_set_xattrat 6 unlinkat_preserve_errno 5 
+
+lock_user 10
+get_sigframe 29 ldl_le_p 26 stl_le_p 29 thunk_convert 6 thunk_type_size 10 trace_user_do_rt_sigreturn 15 trace_user_do_sigreturn 10 trace_user_setup_frame 11 trace_user_setup_rt_frame 17 unlock_user 481 
+
+mark_fs_dirty 7
+dest_fpr 78 gen_set_fpr_d 23 gen_set_fpr_hs 53 gen_set_rm 54 get_fpr_d 20 get_fpr_hs 42 has_ext 54 
+
+mark_vs_dirty 11
+MAXSZ 10 gen_set_rm 40 gen_set_rm_chkfrm 17 opfvv_check 17 opfvv_widen_check 7 opivv_check 19 opivv_cmp_check 6 reduction_check 8 require_rvv 26 vext_check_isa_ill 20 vreg_ofs 141 
+
+memcmp 3
+g_free 21 generate_pattern 7 net_crc32 5 
+
+memcpy 4
+fimd_swap_data 7 g_free 20 g_malloc 20 strlen 85 
+
+memory_access_is_direct 5
+address_space_translate 9 address_space_translate_cached 9 fuzz_dma_read_cb 9 invalidate_and_set_dirty 9 prepare_mmio_access 20 
+
+memory_region_add_subregion 10
+g_malloc_n 58 get_system_memory 166 memory_region_init 89 memory_region_init_alias 71 memory_region_init_io 126 memory_region_init_ram 64 memory_region_init_rom 41 memory_region_owner 5 sysbus_init_mmio 22 sysbus_mmio_get_region 67 
+
+memory_region_init 6
+address_space_init 20 memory_region_add_subregion 89 memory_region_init_alias 26 memory_region_init_io 75 pci_register_root_bus 14 sysbus_init_mmio 40 
+
+memory_region_init_alias 4
+GPEX_HOST 7 memory_region_add_subregion 71 memory_region_add_subregion_overlap 22 memory_region_init 26 
+
+memory_region_init_io 13
+DEVICE 49 SYS_BUS_DEVICE 89 g_malloc0_n 41 memory_region_add_subregion 126 memory_region_add_subregion_overlap 22 memory_region_init 75 memory_region_set_flush_coalesced 6 object_dynamic_cast_assert 23 omap_l4_attach 11 omap_l4_region_size 11 pci_register_bar 38 sysbus_init_mmio 358 vfio_pci_is 8 
+
+memset 7
+g_free 21 g_malloc 21 getaddrinfo 6 mptsas_reply 7 put_le16 5 qemu_try_memalign 10 virtio_input_add_config 5 
+
+memsize_zz 4
+cris_alu 42 cris_alu_alloc_temps 24 cris_cc_mask 25 dec_prep_alu_r 24 
+
+mve_check_qreg_bank 5
+load_reg 14 mve_eci_check 22 mve_no_predication 5 mve_update_eci 19 vfp_access_check 22 
+
+mve_eci_check 6
+load_reg 19 mve_check_qreg_bank 22 mve_no_predication 5 mve_update_and_store_eci 6 mve_update_eci 24 vfp_access_check 30 
+
+mve_eci_mask 5
+aa32_vfp_qreg 36 cpu_ldl_le_data_ra 25 cpu_stl_le_data_ra 24 mve_advance_vpt 113 mve_element_mask 113 
+
+mve_no_predication 4
+mve_check_qreg_bank 5 mve_eci_check 5 mve_update_eci 5 vfp_access_check 5 
+
+mve_update_eci 5
+load_reg 16 mve_check_qreg_bank 19 mve_eci_check 24 mve_no_predication 5 vfp_access_check 24 
+
+npcm7xx_connect_dram 4
+DEVICE 5 npcm7xx_create_soc 5 npcm7xx_load_bootrom 5 npcm7xx_load_kernel 5 
+
+npcm7xx_create_soc 4
+DEVICE 5 npcm7xx_connect_dram 5 npcm7xx_load_bootrom 10 npcm7xx_load_kernel 10 
+
+npcm7xx_load_bootrom 4
+DEVICE 5 npcm7xx_connect_dram 5 npcm7xx_create_soc 10 npcm7xx_load_kernel 10 
+
+npcm7xx_load_kernel 4
+DEVICE 5 npcm7xx_connect_dram 5 npcm7xx_create_soc 10 npcm7xx_load_bootrom 10 
+
+nullify_over 4
+do_sed_cond 0 load_const 7 load_gpr 26 nullify_end 46 
+
+nvme_aio_err 3
+nvme_cid 5 nvme_cq 5 nvme_enqueue_req_completion 5 
+
+nvme_cid 3
+nvme_aio_err 5 nvme_cq 5 nvme_enqueue_req_completion 5 
+
+nvme_cq 3
+nvme_aio_err 5 nvme_cid 5 nvme_enqueue_req_completion 10 
+
+nvme_enqueue_req_completion 3
+nvme_aio_err 5 nvme_cid 5 nvme_cq 10 
+
+object_class_by_name 3
+g_free 21 object_class_dynamic_cast 18 object_class_is_abstract 16 
+
+object_dynamic_cast 3
+VIRTIO_MD_PCI 8 object_get_typename 24 qcrypto_tls_creds_check_endpoint 6 
+
+object_dynamic_cast_assert 6
+SYS_BUS_DEVICE 26 error_setg_internal 23 memory_device_get_region_size 9 memory_region_init_io 23 xive_tctx_tm_read 5 xive_tctx_tm_write 5 
+
+object_get_typename 4
+XEN_DEVICE_GET_CLASS 5 error_setg_internal 49 object_dynamic_cast 24 qemu_new_nic 36 
+
+object_initialize_child_internal 6
+DEVICE 80 SYS_BUS_DEVICE 49 get_sse_irq_in 6 object_property_set_link 25 qdev_alias_all_properties 7 riscv_load_kernel 5 
+
+object_new 3
+DEVICE 30 object_property_add_child 20 object_unref 37 
+
+object_property_add_child 4
+DEVICE 22 object_new 20 object_unref 32 qdev_new 27 
+
+object_property_set_int 4
+DEVICE 51 SYS_BUS_DEVICE 24 object_property_set_link 24 qdev_realize 29 
+
+object_property_set_link 7
+DEVICE 46 SYS_BUS_DEVICE 63 get_system_memory 28 object_initialize_child_internal 25 object_property_set_int 24 pnv_xscom_add_subregion 6 qdev_new 23 
+
+object_unparent 4
+QAUTHZ 12 qauthz_list_file_new 5 qauthz_list_new 6 qdev_get_hotplug_handler 10 
+
+object_unref 5
+QIO_CHANNEL 27 object_new 37 object_property_add_child 32 qio_channel_buffer_new 6 qio_net_listener_disconnect 6 
+
+omap_findclk 3
+omap_clk_canidle 5 omap_clk_onoff 7 omap_clk_reparent 12 
+
+open_test_file 3
+qemu_fclose 14 qemu_file_get_error 12 vmstate_load_state 9 
+
+opfvf_trans 5
+deposit32 38 gen_set_rm 38 opfvf_check 20 opfvf_cmp_check 6 opfvf_widen_check 7 
+
+opfvv_check 3
+gen_set_rm 17 mark_vs_dirty 17 vreg_ofs 17 
+
+opfvv_widen_check 3
+gen_set_rm 7 mark_vs_dirty 7 vreg_ofs 7 
+
+palette_color 3
+palette_init 11 palette_put 11 palette_size 11 
+
+palette_fill 5
+palette_idx 11 palette_init 11 palette_put 11 palette_size 11 zrle_choose_palette_rle 11 
+
+palette_idx 6
+palette_fill 11 palette_init 11 palette_put 22 palette_size 11 vnc_write_u8 11 zrle_choose_palette_rle 11 
+
+palette_init 6
+palette_color 11 palette_fill 11 palette_idx 11 palette_put 14 palette_size 14 zrle_choose_palette_rle 11 
+
+palette_put 6
+palette_color 11 palette_fill 11 palette_idx 22 palette_init 14 palette_size 14 zrle_choose_palette_rle 11 
+
+palette_size 6
+palette_color 11 palette_fill 11 palette_idx 11 palette_init 14 palette_put 14 zrle_choose_palette_rle 11 
+
+pauth_check_trap 3
+__builtin_extract_return_addr 9 arm_current_el 18 pauth_key_enabled 16 
+
+pc_fw_cfg_init 3
+pc_fw_cfg_uninit 13 qtest_init 12 qtest_quit 14 
+
+pci_bridge_exitfn 9
+PCIE_PORT 5 PCIE_SLOT 6 msi_uninit 10 pci_bridge_initfn 8 pcie_aer_exit 6 pcie_cap_deverr_init 6 pcie_cap_exit 12 pcie_cap_init 6 pcie_port_init_reg 5 
+
+pci_bridge_initfn 6
+PCIE_PORT 5 msi_init 7 pci_bridge_exitfn 8 pcie_cap_deverr_init 6 pcie_cap_init 7 pcie_port_init_reg 6 
+
+pcie_aer_init 4
+PCIE_PORT 5 pcie_cap_deverr_init 7 pcie_cap_init 12 pcie_port_init_reg 5 
+
+pcie_cap_deverr_init 7
+PCIE_PORT 5 pci_bridge_exitfn 6 pci_bridge_initfn 6 pcie_aer_init 7 pcie_cap_exit 6 pcie_cap_init 6 pcie_port_init_reg 5 
+
+pcie_cap_exit 8
+PCIE_PORT 5 PCIE_SLOT 6 msi_uninit 10 pci_bridge_exitfn 12 pcie_aer_exit 8 pcie_cap_deverr_init 6 pcie_cap_init 6 pcie_port_init_reg 5 
+
+pcie_cap_init 7
+PCIE_PORT 5 pci_bridge_exitfn 6 pci_bridge_initfn 7 pcie_aer_init 12 pcie_cap_deverr_init 6 pcie_cap_exit 6 pcie_port_init_reg 6 
+
+pcie_port_init_reg 8
+PCIE_PORT 5 msi_init 5 pci_bridge_exitfn 5 pci_bridge_initfn 6 pcie_aer_init 5 pcie_cap_deverr_init 5 pcie_cap_exit 5 pcie_cap_init 6 
+
+pdu_complete 6
+get_fid 25 pdu_marshal 34 pdu_unmarshal 60 put_fid 27 stat_to_qid 15 v9fs_co_lstat 11 
+
+pdu_marshal 6
+get_fid 15 pdu_complete 34 pdu_unmarshal 17 put_fid 16 stat_to_qid 16 v9fs_co_lstat 6 
+
+pdu_unmarshal 6
+get_fid 50 pdu_complete 60 pdu_marshal 17 put_fid 27 stat_to_qid 8 v9fs_co_lstat 6 
+
+ppc_hash64_hpte0 3
+ppc_hash64_hpte1 10 ppc_hash64_map_hptes 10 ppc_hash64_unmap_hptes 10 
+
+pred_full_reg_offset 5
+pred_full_reg_size 10 pred_gvec_reg_size 5 sve_access_check 32 tcg_gen_addi_ptr 21 vec_full_reg_size 26 
+
+prepare_mmio_access 3
+address_space_translate 9 address_space_translate_cached 9 memory_access_is_direct 20 
+
+print_report 3
+cvtnum 5 qemu_io_free 6 tsub 7 
+
+probe_noshuf_load 5
+tcg_gen_mov_i32 203 tcg_gen_movi_i32 36 tcg_gen_qemu_ld_i32 386 tcg_gen_qemu_ld_i64 94 tcg_temp_new_i32 239 
+
+process_pending_signals 3
+do_syscall 21 env_cpu 21 target_exception_dump 13 
+
+process_queued_cpu_work 5
+cpu_exec 20 cpu_exec_end 20 cpu_exec_start 20 cpu_exec_step_atomic 18 env_cpu 20 
+
+propagateFloatx80NaNOneArg 3
+extractFloatx80Exp 21 extractFloatx80Frac 21 extractFloatx80Sign 20 
+
+ptimer_free 5
+ptimer_get_count 11 ptimer_init 11 ptimer_set_period 7 ptimer_transaction_begin 11 ptimer_transaction_commit 11 
+
+ptimer_init 4
+ptimer_free 11 ptimer_set_period 8 ptimer_transaction_begin 28 ptimer_transaction_commit 28 
+
+ptimer_run 5
+ptimer_set_count 26 ptimer_set_limit 24 ptimer_set_period 7 ptimer_transaction_begin 42 ptimer_transaction_commit 42 
+
+ptimer_set_count 3
+ptimer_run 26 ptimer_transaction_begin 37 ptimer_transaction_commit 37 
+
+ptimer_set_limit 3
+ptimer_run 24 ptimer_transaction_begin 38 ptimer_transaction_commit 38 
+
+ptimer_set_period 6
+ptimer_free 7 ptimer_get_count 8 ptimer_init 8 ptimer_run 7 ptimer_transaction_begin 6 ptimer_transaction_commit 10 
+
+ptimer_transaction_begin 10
+ptimer_free 11 ptimer_init 28 ptimer_run 42 ptimer_set_count 37 ptimer_set_freq 26 ptimer_set_limit 38 ptimer_set_period 6 ptimer_set_period_from_clock 9 ptimer_stop 46 ptimer_transaction_commit 94 
+
+ptimer_transaction_commit 10
+ptimer_free 11 ptimer_init 28 ptimer_run 42 ptimer_set_count 37 ptimer_set_freq 26 ptimer_set_limit 38 ptimer_set_period 10 ptimer_set_period_from_clock 9 ptimer_stop 46 ptimer_transaction_begin 94 
+
+put_fid 6
+get_fid 54 pdu_complete 27 pdu_marshal 16 pdu_unmarshal 27 stat_to_qid 8 v9fs_co_lstat 6 
+
+qapi_dealloc_visitor_new 4
+visit_end_struct 286 visit_free 1085 visit_start_struct 286 visit_type_BlockDirtyBitmap_members 5 
+
+qauthz_list_file_new 5
+QAUTHZ 5 g_free 5 object_unparent 5 qemu_authz_listfile_test_save 5 unlink 5 
+
+qauthz_list_new 3
+QAUTHZ 6 object_unparent 6 qauthz_is_allowed 6 
+
+qcow2_cache_entry_mark_dirty 3
+get_cluster_table 5 qcow2_cache_put 12 set_l2_entry 5 
+
+qcow2_cache_put 3
+get_cluster_table 7 qcow2_cache_entry_mark_dirty 12 qcow2_cache_get 12 
+
+qdev_connect_clock_in 3
+DEVICE 20 clock_new 10 qdev_get_clock_out 5 
+
+qdev_connect_gpio_out 3
+DEVICE 61 qdev_get_gpio_in 24 qdev_get_gpio_in_named 20 
+
+qdev_get_child_bus 4
+DEVICE 33 I2C_BUS 8 ISA_BUS 5 qdev_realize_and_unref 26 
+
+qdev_get_gpio_in 7
+DEVICE 124 SYS_BUS_DEVICE 31 qdev_connect_gpio_out 24 qdev_new 29 qdev_prop_set_uint32 28 sysbus_connect_irq 99 sysbus_create_varargs 9 
+
+qdev_get_parent_bus 3
+BUS 33 DEVICE 84 XEN_BUS 12 
+
+qdev_new 16
+GPEX_HOST 7 PFLASH_CFI01 9 SYS_BUS_DEVICE 175 object_property_add_child 27 object_property_set_link 23 qdev_get_gpio_in 29 qdev_prop_set_bit 30 qdev_prop_set_chr 23 qdev_prop_set_drive 9 qdev_prop_set_drive_err 32 qdev_prop_set_string 27 qdev_prop_set_uint16 13 qdev_prop_set_uint32 71 qdev_prop_set_uint64 20 qdev_prop_set_uint8 27 qdev_realize_and_unref 50 
+
+qdev_prop_set_bit 5
+DEVICE 27 PFLASH_CFI01 8 SYS_BUS_DEVICE 23 qdev_new 30 qdev_prop_set_uint32 26 
+
+qdev_prop_set_chr 3
+DEVICE 26 qdev_new 23 serial_hd 35 
+
+qdev_prop_set_drive_err 3
+blk_by_legacy_dinfo 32 qdev_new 32 qdev_realize_and_unref 60 
+
+qdev_prop_set_string 3
+DEVICE 22 PFLASH_CFI01 9 qdev_new 27 
+
+qdev_prop_set_uint16 3
+PFLASH_CFI01 7 qdev_new 13 qdev_prop_set_uint8 11 
+
+qdev_prop_set_uint32 5
+DEVICE 72 SYS_BUS_DEVICE 72 qdev_get_gpio_in 28 qdev_new 71 qdev_prop_set_bit 26 
+
+qdev_prop_set_uint64 3
+DEVICE 23 PFLASH_CFI01 9 qdev_new 20 
+
+qdev_prop_set_uint8 3
+PFLASH_CFI01 9 qdev_new 27 qdev_prop_set_uint16 11 
+
+qdev_realize 5
+BUS 56 DEVICE 195 object_initialize_child_with_props 8 object_property_set_int 29 sysbus_realize 29 
+
+qdev_realize_and_unref 3
+qdev_get_child_bus 26 qdev_new 50 qdev_prop_set_drive_err 60 
+
+qdict_first 3
+qdict_entry_key 11 qdict_entry_value 6 qdict_next 64 
+
+qdict_get_qdict 3
+qdict_get_str 21 qdict_haskey 30 qtest_qmp_eventwait_ref 11 
+
+qdict_get_str 6
+g_assertion_message_cmpstr 21 g_strcmp0 22 get_watchdog_action 6 qdict_get_qdict 21 qobject_check_type 20 strcmp 27 
+
+qdict_haskey 5
+qdict_get_qdict 30 qmp 15 qmp_assertion_message_error 21 qmp_fd 22 qtest_qmp 34 
+
+qdict_new 5
+bdrv_open 11 qdict_put_bool 12 qdict_put_int 19 qdict_put_null 5 qdict_put_str 44 
+
+qdict_next 3
+qdict_entry_key 11 qdict_entry_value 5 qdict_first 64 
+
+qdict_put_obj 5
+qapi_event_emit 42 qmp_event_build_dict 49 qobject_check_type 52 test_qapi_event_emit 7 visit_complete 49 
+
+qdict_put_str 5
+bdrv_open 12 qdict_new 44 qdict_rename_keys 6 qemu_opts_to_qdict_filtered 9 qobject_input_visitor_new_flat_confused 8 
+
+qdict_rename_keys 6
+bdrv_co_create_file 6 bdrv_co_open 6 qdict_put_str 6 qemu_opts_to_qdict_filtered 6 qobject_input_visitor_new_flat_confused 12 visit_type_BlockdevCreateOptions 6 
+
+qemu_authz_listfile_test_save 3
+g_free 5 qauthz_list_file_new 5 unlink 5 
+
+qemu_bh_new_full 3
+qemu_bh_delete 36 qemu_bh_schedule 43 qemu_coroutine_self 36 
+
+qemu_clock_get_ns 4
+cpu_ppc_get_tb 13 cpu_ppc_store_tb 9 sifive_pwm_ns_to_ticks 5 sse_counter_for_timestamp 5 
+
+qemu_console_surface 6
+dpy_gfx_update 19 framebuffer_update_display 9 surface_bits_per_pixel 18 surface_bytes_per_pixel 10 surface_data 23 surface_stride 18 
+
+qemu_fdt_add_subnode 11
+create_device_tree 13 g_free 89 g_strdup_printf 93 qemu_fdt_alloc_phandle 18 qemu_fdt_setprop 31 qemu_fdt_setprop_cell 35 qemu_fdt_setprop_phandle 16 qemu_fdt_setprop_sized_cells_from_array 89 qemu_fdt_setprop_string 35 qemu_fdt_setprop_string_array 14 riscv_socket_fdt_write_id 7 
+
+qemu_fdt_alloc_phandle 4
+qemu_fdt_add_subnode 18 qemu_fdt_setprop 16 qemu_fdt_setprop_cell 36 qemu_fdt_setprop_string 16 
+
+qemu_fdt_setprop 11
+create_device_tree 10 g_free 74 g_strdup_printf 77 qemu_fdt_add_subnode 31 qemu_fdt_alloc_phandle 16 qemu_fdt_setprop_cell 80 qemu_fdt_setprop_phandle 14 qemu_fdt_setprop_sized_cells_from_array 48 qemu_fdt_setprop_string 71 qemu_fdt_setprop_string_array 12 riscv_socket_fdt_write_id 6 
+
+qemu_fdt_setprop_cell 9
+create_device_tree 13 g_free 56 g_strdup_printf 58 qemu_fdt_add_subnode 35 qemu_fdt_alloc_phandle 36 qemu_fdt_setprop 80 qemu_fdt_setprop_sized_cells_from_array 21 qemu_fdt_setprop_string 45 riscv_socket_fdt_write_id 5 
+
+qemu_fdt_setprop_phandle 5
+g_free 8 g_strdup_printf 9 qemu_fdt_add_subnode 16 qemu_fdt_setprop 14 qemu_fdt_setprop_string 6 
+
+qemu_fdt_setprop_sized_cells_from_array 6
+g_free 42 g_strdup_printf 44 qemu_fdt_add_subnode 89 qemu_fdt_setprop 48 qemu_fdt_setprop_cell 21 qemu_fdt_setprop_string 50 
+
+qemu_fdt_setprop_string 11
+create_device_tree 13 g_free 66 g_strdup_printf 70 qemu_fdt_add_subnode 35 qemu_fdt_alloc_phandle 16 qemu_fdt_setprop 71 qemu_fdt_setprop_cell 45 qemu_fdt_setprop_phandle 6 qemu_fdt_setprop_sized_cells_from_array 50 qemu_fdt_setprop_string_array 5 riscv_socket_fdt_write_id 5 
+
+qemu_fdt_setprop_string_array 5
+g_free 6 g_strdup_printf 7 qemu_fdt_add_subnode 14 qemu_fdt_setprop 12 qemu_fdt_setprop_string 5 
+
+qemu_find_file 4
+error_report 26 g_free 39 load_image_mr 7 load_image_targphys 21 
+
+qemu_get_aio_context 3
+aio_bh_schedule_oneshot_full 22 aio_poll 34 blk_new 27 
+
+qemu_get_queue 5
+qemu_flush_queued_packets 36 qemu_format_nic_info_str 48 qemu_new_nic 34 qemu_receive_packet 8 qemu_send_packet 32 
+
+qemu_iovec_destroy 3
+qemu_iovec_concat 18 qemu_iovec_init 28 qemu_iovec_reset 16 
+
+qemu_iovec_init 4
+qemu_iovec_add 21 qemu_iovec_concat 20 qemu_iovec_destroy 28 qemu_iovec_reset 16 
+
+qemu_log 7
+access_str 5 get_comma 14 intid_in_lpi_range 5 object_get_canonical_path 23 print_syscall_err 10 qemu_get_thread_id 4676 virtio_gpu_find_resource 5 
+
+qemu_map_ram_ptr 3
+address_space_translate 10 address_space_translate_cached 9 invalidate_and_set_dirty 9 
+
+qemu_opt_get 3
+g_strdup 21 qemu_chr_parse_common 9 qemu_opt_get_bool 21 
+
+qemu_opt_set_number 3
+bdrv_create 5 qemu_opts_create 16 qemu_opts_del 7 
+
+qemu_opts_absorb_qdict 3
+error_setg_internal 16 qemu_opts_create 25 qemu_opts_del 23 
+
+qemu_opts_create 6
+bdrv_create 5 qemu_opt_get_size 8 qemu_opt_set 15 qemu_opt_set_number 16 qemu_opts_absorb_qdict 25 qemu_opts_del 39 
+
+qemu_opts_del 7
+bdrv_create 5 qemu_chr_new_from_opts 10 qemu_opt_get_size 8 qemu_opt_set_number 7 qemu_opts_absorb_qdict 23 qemu_opts_create 39 qemu_opts_parse 9 
+
+qemu_opts_to_qdict_filtered 3
+bdrv_co_create_file 8 qdict_put_str 9 qdict_rename_keys 6 
+
+qemu_register_boot_set 3
+fw_cfg_add_i16 8 fw_cfg_add_i32 6 fw_cfg_add_i64 8 
+
+qemu_socket 3
+bind 12 close 17 socket_set_fast_reuse 6 
+
+qio_channel_socket_new 3
+QIO_CHANNEL 19 qio_channel_socket_connect_sync 10 qio_channel_socket_listen_sync 8 
+
+qmp_assertion_message_error 3
+g_assertion_message 20 qdict_haskey 21 qmp_fd 20 
+
+qmp_event_build_dict 3
+qapi_event_emit 48 qdict_put_obj 49 test_qapi_event_emit 11 
+
+qmp_fd 3
+glib_autoptr_cleanup_QDict 18 qdict_haskey 22 qmp_assertion_message_error 20 
+
+qobject_check_type 17
+do_qmp_dispatch 6 object_property_get_qobject 10 qbool_get_bool 17 qdict_get 30 qdict_get_str 20 qdict_put_obj 52 qdict_size 69 qlist_entry_obj 17 qlist_pop 11 qnum_get_double 8 qnum_get_int 9 qnum_get_try_int 15 qnum_get_try_uint 5 qnum_get_uint 9 qstring_get_str 31 visit_complete 54 visitor_get 15 
+
+qobject_input_get_keyval 3
+error_setg_internal 5 full_name 10 to_qiv 6 
+
+qobject_input_get_object 3
+error_setg_internal 9 full_name 18 to_qiv 10 
+
+qobject_input_visitor_new_flat_confused 6
+bdrv_co_create_file 7 bdrv_co_open 7 qdict_put_str 8 qdict_rename_keys 12 visit_free 12 visit_type_BlockdevCreateOptions 14 
+
+qobject_input_visitor_new_qmp 6
+qobject_to_json 224 visit_check_struct 286 visit_end_struct 286 visit_free 286 visit_start_struct 286 visit_type_BlockDirtyBitmap_members 5 
+
+qobject_output_visitor_new_qmp 5
+visit_check_struct 44 visit_complete 328 visit_end_struct 44 visit_free 164 visit_start_struct 44 
+
+qpci_device_find 3
+g_free 11 qpci_config_writeb 5 qpci_new_pc 9 
+
+qtest_bufwrite 3
+qtest_init 6 qtest_outl 6 qtest_quit 6 
+
+qtest_hmp 4
+g_assertion_message_cmpstr 16 g_free 19 g_strcmp0 16 qtest_quit 18 
+
+qtest_init 17
+adc_read_con 6 adc_write_con 6 do_query 5 make_cli 11 pc_fw_cfg_init 12 qtest_bufwrite 6 qtest_outl 22 qtest_outw 22 qtest_quit 143 qtest_readl 30 qtest_writel 28 read_data 8 send_data 8 test_acpi_create_args 5 watchdog_read_wtcr 5 watchdog_write_wtcr 5 write_regs 7 
+
+qtest_initf 3
+device_del 6 process_device_remove 7 qtest_quit 57 
+
+qtest_irq_intercept_in 3
+qtest_quit 18 watchdog_read_wtcr 5 watchdog_write_wtcr 5 
+
+qtest_outl 4
+qtest_bufwrite 6 qtest_init 22 qtest_outw 22 qtest_quit 23 
+
+qtest_outw 3
+qtest_init 22 qtest_outl 22 qtest_quit 24 
+
+qtest_qmp 4
+qdict_haskey 34 qmp_expect_error_and_unref 6 qmp_rsp_is_err 5 qtest_quit 24 
+
+qtest_quit 23
+adc_read_con 6 adc_write_con 6 device_del 10 do_query 5 has_drive 7 pc_fw_cfg_init 14 process_device_remove 7 qtest_bufwrite 6 qtest_hmp 18 qtest_init 143 qtest_initf 57 qtest_irq_intercept_in 18 qtest_outb 12 qtest_outl 23 qtest_outw 24 qtest_qmp 24 qtest_readl 27 qtest_writel 25 read_data 8 send_data 8 watchdog_read_wtcr 5 watchdog_write_wtcr 5 write_regs 7 
+
+qtest_readl 7
+g_assertion_message_cmpnum 21 qtest_init 30 qtest_quit 27 qtest_writel 38 read_data 8 send_data 8 write_regs 7 
+
+qtest_writel 6
+qtest_init 28 qtest_quit 25 qtest_readl 38 read_data 5 send_data 5 write_regs 7 
+
+qvirtio_config_readq 8
+g_assertion_message_cmpnum 10 qvirtio_get_features 8 qvirtio_set_driver_ok 8 qvirtio_set_features 8 qvirtio_wait_used_elem 7 qvirtqueue_kick 7 qvirtqueue_setup 7 virtio_blk_request 7 
+
+qvirtio_get_features 5
+qvirtio_config_readq 8 qvirtio_set_driver_ok 14 qvirtio_set_features 15 qvirtqueue_setup 13 virtio_blk_request 7 
+
+qvirtio_set_driver_ok 5
+qvirtio_config_readq 8 qvirtio_get_features 14 qvirtio_set_features 14 qvirtqueue_setup 13 virtio_blk_request 7 
+
+qvirtio_set_features 5
+qvirtio_config_readq 8 qvirtio_get_features 15 qvirtio_set_driver_ok 14 qvirtqueue_setup 13 virtio_blk_request 7 
+
+qvirtio_wait_used_elem 4
+qvirtio_config_readq 7 qvirtqueue_add 42 qvirtqueue_kick 64 virtio_blk_request 8 
+
+qvirtqueue_add 4
+guest_free 14 qvirtio_wait_used_elem 42 qvirtqueue_kick 45 virtio_blk_request 6 
+
+qvirtqueue_kick 4
+qvirtio_config_readq 7 qvirtio_wait_used_elem 64 qvirtqueue_add 45 virtio_blk_request 8 
+
+qvirtqueue_setup 5
+qvirtio_config_readq 7 qvirtio_get_features 13 qvirtio_set_driver_ok 13 qvirtio_set_features 13 virtio_blk_request 14 
+
+rA 13
+Rc 46 SIMM 5 UIMM 6 avr_full_offset 45 crfD 24 gen_405_mulladd_insn 42 gen_avr_ptr 63 gen_load_gpr64 20 get_fpr 22 rB 160 rC 12 rD 92 rS 25 
+
+rB 11
+Rc 56 UIMM5 5 avr_full_offset 47 crfD 25 gen_405_mulladd_insn 42 gen_avr_ptr 109 gen_load_gpr64 41 get_fpr 47 rA 160 rC 9 rD 93 
+
+rC 5
+Rc 11 get_fpr 10 rA 12 rB 9 rD 13 
+
+rD 10
+Rc 52 UIMM5 5 avr_full_offset 47 gen_405_mulladd_insn 42 gen_avr_ptr 104 gen_store_gpr64 32 rA 92 rB 93 rC 13 set_fpr 48 
+
+read_cpu_reg_sp 3
+cpu_reg 9 gen_check_sp_alignment 12 tcg_gen_addi_i64 22 
+
+read_data 6
+match_rx_tx_data 8 qtest_init 8 qtest_quit 8 qtest_readl 8 qtest_writel 5 send_data 8 
+
+read_vec_element 4
+clear_vec_high 18 fp_access_check 21 tcg_temp_new_i64 30 write_vec_element 22 
+
+readline_set_completion_index 3
+readline_add_completion 6 readline_add_completion_of 12 strlen 19 
+
+register_74xx_sprs 7
+_spr_register 8 env_archcpu 8 init_excp_7450 6 register_low_BATs 8 register_non_embedded_sprs 8 register_sdr1_sprs 8 vscr_init 8 
+
+register_7xx_sprs 7
+_spr_register 5 env_archcpu 7 register_high_BATs 5 register_low_BATs 7 register_non_embedded_sprs 7 register_sdr1_sprs 7 register_thrm_sprs 6 
+
+register_high_BATs 6
+_spr_register 8 env_archcpu 10 register_7xx_sprs 5 register_low_BATs 10 register_non_embedded_sprs 10 register_sdr1_sprs 10 
+
+register_low_BATs 10
+_spr_register 13 env_archcpu 18 init_excp_7450 6 register_74xx_sprs 8 register_7xx_sprs 7 register_high_BATs 10 register_non_embedded_sprs 18 register_sdr1_sprs 18 register_thrm_sprs 8 vscr_init 8 
+
+register_non_embedded_sprs 10
+_spr_register 13 env_archcpu 18 init_excp_7450 6 register_74xx_sprs 8 register_7xx_sprs 7 register_high_BATs 10 register_low_BATs 18 register_sdr1_sprs 18 register_thrm_sprs 8 vscr_init 8 
+
+register_sdr1_sprs 10
+_spr_register 13 env_archcpu 18 init_excp_7450 6 register_74xx_sprs 8 register_7xx_sprs 7 register_high_BATs 10 register_low_BATs 18 register_non_embedded_sprs 18 register_thrm_sprs 8 vscr_init 8 
+
+register_thrm_sprs 6
+_spr_register 6 env_archcpu 8 register_7xx_sprs 6 register_low_BATs 8 register_non_embedded_sprs 8 register_sdr1_sprs 8 
+
+require_rvv 8
+ldst_whole_trans 20 mark_vs_dirty 26 require_rvf 8 require_scale_rvf 6 vext_check_ds 5 vext_check_isa_ill 67 vext_check_ss 6 vreg_ofs 24 
+
+reset_on_second_timeout 7
+clear_tco_status 9 load_tco 9 set_tco_timeout 9 start_tco 9 stop_tco 7 test_end 9 test_init 9 
+
+resp_has_props 3
+do_query 7 resp_get_props 5 resp_get_sve_vls 6 
+
+riscv_socket_fdt_write_id 7
+MACHINE 7 g_free 7 g_strdup_printf 7 qemu_fdt_add_subnode 7 qemu_fdt_setprop 6 qemu_fdt_setprop_cell 5 qemu_fdt_setprop_string 5 
+
+s390_cpu_virt_mem_rw 3
+get_address_from_regs 10 s390_cpu_virt_mem_handle_exc 10 setcc 10 
+
+s390_swap_bfp_rounding_mode 3
+handle_exceptions 24 round_from_m34 24 s390_restore_bfp_rounding_mode 58 
+
+save_gpr 3
+dest_gpr 62 do_sed_cond 7 form_gva 19 
+
+scsi_req_continue 3
+scsi_req_enqueue 11 scsi_req_get_buf 5 scsi_req_new 9 
+
+send_data 6
+match_rx_tx_data 5 qtest_init 8 qtest_quit 8 qtest_readl 8 qtest_writel 5 read_data 8 
+
+send_dma_request 3
+g_assertion_message_cmpnum 5 get_pci_device 5 test_bmdma_teardown 5 
+
+serial_hd 3
+pl011_create 5 qdev_prop_set_chr 35 serial_mm_init 26 
+
+set_address 3
+get_address 18 get_length 6 set_length 6 
+
+set_float_exception_flags 5
+float128_muladd 8 float32_default_nan 39 float64_default_nan 37 get_float_exception_flags 30 set_x86_rounding_mode 7 
+
+set_fpr 4
+gen_compute_fprf_float64 21 gen_helper_compute_fprf_float64 6 rD 48 tcg_temp_new_i64 52 
+
+set_l2_bitmap 4
+get_cluster_table 5 get_l2_bitmap 10 get_l2_entry 10 has_subclusters 5 
+
+set_l2_entry 3
+get_l2_entry 12 has_subclusters 5 qcow2_cache_entry_mark_dirty 5 
+
+set_length 3
+get_address 6 get_length 6 set_address 6 
+
+set_tco_timeout 7
+clear_tco_status 9 load_tco 9 reset_on_second_timeout 9 start_tco 9 stop_tco 7 test_end 9 test_init 9 
+
+setup 5
+write_str 5 xs_impl_delete 5 xs_impl_read 5 xs_impl_unwatch 5 xs_impl_watch 5 
+
+sextract32 3
+deposit32 58 extract32 125 shl_2 10 
+
+simd_data 5
+do_srshr 16 do_urshr 16 extract32 104 simd_maxsz 73 simd_oprsz 323 
+
+simd_maxsz 6
+clear_tail 244 simd_data 73 simd_oprsz 243 vext_set_elems_1s 54 vext_vm 54 vext_vta 54 
+
+simd_oprsz 6
+clear_high 282 clear_tail 242 extract32 90 simd_data 323 simd_maxsz 243 sve_cont_ldst_elements 5 
+
+socket_connect 3
+error_free_or_abort 5 g_assertion_message_cmpnum 7 socket_listen 12 
+
+socket_set_fast_reuse 3
+bind 5 close 6 qemu_socket 6 
+
+start_tco 7
+clear_tco_status 9 load_tco 9 reset_on_second_timeout 9 set_tco_timeout 9 stop_tco 7 test_end 9 test_init 9 
+
+stat_to_qid 5
+get_fid 7 pdu_complete 15 pdu_marshal 16 pdu_unmarshal 8 put_fid 8 
+
+stop_tco 7
+clear_tco_status 7 load_tco 7 reset_on_second_timeout 7 set_tco_timeout 7 start_tco 7 test_end 9 test_init 9 
+
+store_reg 4
+arm_dc_feature 32 load_reg 113 tcg_temp_new_i32 23 vfp_access_check 20 
+
+strcmp 5
+error_setg_internal 24 g_free 23 name_is_illegal 9 qdict_get_str 27 qtest_get_arch 28 
+
+strerror 3
+error_report 112 fprintf 72 printf 22 
+
+strlen 7
+fw_cfg_add_string 5 g_free 38 g_strdup_printf 23 memcpy 85 readline_add_completion_of 12 readline_set_completion_index 19 strncmp 22 
+
+sve_access_check 7
+cpu_reg 21 do_cntp 6 do_mem_zpz 6 pred_full_reg_offset 32 pred_full_reg_size 9 vec_full_reg_offset 45 vec_full_reg_size 51 
+
+sysbus_connect_irq 7
+SYS_BUS_DEVICE 179 get_sse_irq_in 7 gpex_set_irq_num 7 qdev_get_gpio_in 99 sysbus_mmio_map 22 sysbus_realize 22 sysbus_realize_and_unref 58 
+
+sysbus_init_mmio 5
+SYS_BUS_DEVICE 441 memory_region_add_subregion 22 memory_region_init 40 memory_region_init_io 358 sysbus_init_irq 87 
+
+sysbus_mmio_get_region 3
+SYS_BUS_DEVICE 110 memory_region_add_subregion 67 sysbus_realize_and_unref 20 
+
+sysbus_mmio_map 3
+SYS_BUS_DEVICE 157 sysbus_connect_irq 22 sysbus_realize_and_unref 63 
+
+sysbus_realize 3
+SYS_BUS_DEVICE 121 qdev_realize 29 sysbus_connect_irq 22 
+
+sysbus_realize_and_unref 4
+SYS_BUS_DEVICE 178 sysbus_connect_irq 58 sysbus_mmio_get_region 20 sysbus_mmio_map 63 
+
+t_gen_mov_preg_TN 3
+cris_cc_mask 8 cris_prepare_jmp 7 tcg_constant_i32 7 
+
+target_exception_dump 4
+cpu_exec 12 do_syscall 13 env_cpu 13 process_pending_signals 13 
+
+tbi_check 3
+extract32 5 extract64 7 tcma_check 14 
+
+tcg_constant_i32 13
+gen_helper_fcircadd 20 gen_helper_inb 5 gen_helper_mul_h 21 gen_helper_mulm_h 5 gen_helper_mve_vrint_rm_h 5 gen_helper_mve_vrint_rm_s 5 gen_helper_raise_exception 14 gen_set_usr_field 9 get_field1 31 simd_desc 42 t_gen_mov_preg_TN 7 tcg_gen_movcond_i32 284 tcg_gen_st_i32 21 
+
+tcg_constant_i64 4
+gen_crc 8 tcg_gen_movcond_i64 267 tcg_gen_rotl_i64 7 tcg_gen_sub_i64 31 
+
+tcg_gen_add_i32 10
+gen_helper_fbrev 20 gen_log_reg_write 76 get_result_gpr 76 tcg_gen_mov_i32 153 tcg_gen_movi_i32 78 tcg_gen_or_i32 37 tcg_gen_sextract_i32 43 tcg_gen_shli_i32 85 tcg_gen_xor_i32 126 tcg_temp_new_i32 476 
+
+tcg_gen_add_i64 11
+gen_sat_i64_ovfl 58 tcg_gen_addi_i64 20 tcg_gen_ext_i32_i64 43 tcg_gen_extract_i64 23 tcg_gen_extrl_i64_i32 29 tcg_gen_mov_i64 103 tcg_gen_mul_i64 20 tcg_gen_sari_i64 23 tcg_gen_sextract_i64 133 tcg_gen_shli_i64 117 tcg_temp_new_i64 744 
+
+tcg_gen_addi_i32 12
+gen_helper_v8m_stackcheck 11 gen_load_store_alignment 8 gen_log_reg_write 78 gen_qemu_ld64_i64 10 gen_qemu_st64_i64 10 get_result_gpr 77 load_reg_var 10 tcg_gen_mov_i32 216 tcg_gen_movi_i32 25 tcg_gen_qemu_ld_i32 21 tcg_gen_shli_i32 27 tcg_temp_new_i32 512 
+
+tcg_gen_addi_i64 8
+gpr_src 20 help_branch 14 read_cpu_reg_sp 22 tcg_gen_add_i64 20 tcg_gen_qemu_ld_i64 20 tcg_gen_sari_i64 35 tcg_gen_shli_i64 34 tcg_temp_new_i64 229 
+
+tcg_gen_addi_ptr 7
+ctx_future_vreg_off 255 pred_full_reg_offset 21 tcg_gen_gvec_mov 47 tcg_temp_ebb_new_ptr 11 tcg_temp_free_ptr 11 tcg_temp_new_ptr 374 vreg_src_off 248 
+
+tcg_gen_and_i32 3
+tcg_gen_mov_i32 26 tcg_gen_or_i32 42 tcg_temp_new_i32 190 
+
+tcg_gen_andi_i32 17
+gen_ZNSf 20 gen_cond_jumpr 9 gen_sub_CHf 16 gen_sub_Vf 16 tcg_gen_brcondi_i32 244 tcg_gen_gvec_sars 5 tcg_gen_gvec_shls 5 tcg_gen_mov_i32 49 tcg_gen_movcond_i32 49 tcg_gen_movi_i32 20 tcg_gen_not_i32 82 tcg_gen_or_i32 186 tcg_gen_shl_i32 28 tcg_gen_shli_i32 47 tcg_gen_shri_i32 23 tcg_gen_xori_i32 80 tcg_temp_new_i32 755 
+
+tcg_gen_andi_i64 7
+tcg_gen_muli_i64 12 tcg_gen_or_i64 141 tcg_gen_shl_i64 23 tcg_gen_shli_i64 22 tcg_gen_shr_i64 23 tcg_gen_shri_i64 50 tcg_temp_new_i64 169 
+
+tcg_gen_brcond_i64 3
+gen_new_label 145 gen_set_label 145 tcg_gen_brcondi_i64 256 
+
+tcg_gen_brcondi_i32 6
+gen_new_label 439 gen_set_label 438 tcg_gen_andi_i32 244 tcg_gen_extract_i32 155 tcg_gen_xori_i32 66 tcg_temp_new_i32 417 
+
+tcg_gen_brcondi_i64 4
+gen_new_label 169 gen_set_label 169 tcg_gen_brcond_i64 256 tcg_temp_new_i64 23 
+
+tcg_gen_call1 3
+tcgv_i32_temp 128 tcgv_i64_temp 167 tcgv_ptr_temp 165 
+
+tcg_gen_call2 3
+tcgv_i32_temp 818 tcgv_i64_temp 1048 tcgv_ptr_temp 744 
+
+tcg_gen_call3 3
+tcgv_i32_temp 1925 tcgv_i64_temp 1557 tcgv_ptr_temp 2945 
+
+tcg_gen_call4 3
+tcgv_i32_temp 3990 tcgv_i64_temp 1217 tcgv_ptr_temp 8637 
+
+tcg_gen_call5 3
+tcgv_i32_temp 1506 tcgv_i64_temp 145 tcgv_ptr_temp 3941 
+
+tcg_gen_call6 3
+tcgv_i32_temp 1241 tcgv_i64_temp 729 tcgv_ptr_temp 5489 
+
+tcg_gen_concat_i32_i64 3
+gen_log_reg_write_pair 169 get_result_gpr_pair 169 tcg_temp_new_i64 452 
+
+tcg_gen_deposit_i32 3
+tcg_gen_extrl_i64_i32 37 tcg_gen_movi_i32 54 tcg_temp_new_i32 161 
+
+tcg_gen_deposit_i64 5
+gen_sat_i64_ovfl 93 tcg_gen_ext_i32_i64 32 tcg_gen_extu_i32_i64 23 tcg_gen_sextract_i64 94 tcg_temp_new_i64 313 
+
+tcg_gen_ext16s_i32 4
+gen_helper_mul_h 84 gen_helper_mulm_h 20 tcg_gen_sari_i32 25 tcg_temp_new_i32 45 
+
+tcg_gen_ext_i32_i64 19
+tcg_gen_add_i64 43 tcg_gen_deposit_i64 32 tcg_gen_extract_i64 27 tcg_gen_mov_i32 61 tcg_gen_movcond_i64 65 tcg_gen_mul_i32 175 tcg_gen_mul_i64 64 tcg_gen_neg_i32 55 tcg_gen_sar_i64 23 tcg_gen_setcondi_i32 58 tcg_gen_sextract_i32 23 tcg_gen_sextract_i64 249 tcg_gen_shl_i64 59 tcg_gen_shr_i64 36 tcg_gen_sub_i64 34 tcg_gen_subfi_i64 13 tcg_gen_subi_i32 21 tcg_temp_new_i32 292 tcg_temp_new_i64 389 
+
+tcg_gen_extract_i32 4
+tcg_gen_brcondi_i32 155 tcg_gen_mul_i32 110 tcg_gen_not_i32 74 tcg_temp_new_i32 403 
+
+tcg_gen_extract_i64 9
+tcg_gen_add_i64 23 tcg_gen_ext_i32_i64 27 tcg_gen_extrl_i64_i32 35 tcg_gen_extu_i32_i64 49 tcg_gen_movcond_i64 28 tcg_gen_sar_i64 28 tcg_gen_shli_i64 26 tcg_gen_sub_i64 70 tcg_temp_new_i64 277 
+
+tcg_gen_extrl_i64_i32 12
+gen_sat_i64_ovfl 51 tcg_gen_add_i64 29 tcg_gen_deposit_i32 37 tcg_gen_extract_i64 35 tcg_gen_mov_i32 236 tcg_gen_movcond_i64 20 tcg_gen_mul_i32 80 tcg_gen_setcond_i64 26 tcg_gen_sextract_i64 130 tcg_gen_sub_i64 24 tcg_temp_new_i32 383 tcg_temp_new_i64 383 
+
+tcg_gen_extu_i32_i64 9
+tcg_gen_deposit_i64 23 tcg_gen_extract_i64 49 tcg_gen_movcond_i64 62 tcg_gen_mul_i32 48 tcg_gen_setcondi_i32 53 tcg_gen_shl_i64 27 tcg_gen_shr_i64 26 tcg_temp_new_i32 152 tcg_temp_new_i64 192 
+
+tcg_gen_gvec_3_ptr 3
+deposit32 24 fpstatus_ptr 46 vreg_ofs 69 
+
+tcg_gen_gvec_mov 4
+ctx_future_vreg_off 54 get_result_qreg 30 tcg_gen_addi_ptr 47 vreg_src_off 135 
+
+tcg_gen_ld_i64 3
+help_branch 7 tcg_gen_st_i64 44 tcg_temp_new_i64 46 
+
+tcg_gen_ld_vec 3
+tcg_gen_st_vec 16 tcg_temp_free_vec 10 tcg_temp_new_vec 10 
+
+tcg_gen_mov_i32 31
+gen_helper_fbrev 40 gen_helper_fcircadd 80 gen_load_store_alignment 8 gen_log_reg_write 347 gen_store1 58 gen_store2 77 gen_store4 61 gen_store8 26 gen_sub_CHf 5 gen_sub_Vf 5 gen_vreg_load 38 gen_vreg_masked_store 8 gen_vreg_store 30 get_result_gpr 349 probe_noshuf_load 203 tcg_gen_add_i32 153 tcg_gen_addi_i32 216 tcg_gen_and_i32 26 tcg_gen_andi_i32 49 tcg_gen_ext_i32_i64 61 tcg_gen_extrl_i64_i32 236 tcg_gen_movi_i32 30 tcg_gen_neg_i32 50 tcg_gen_or_i32 24 tcg_gen_qemu_ld_i32 24 tcg_gen_qemu_ld_i64 40 tcg_gen_setcondi_i32 56 tcg_gen_shli_i32 31 tcg_gen_sub_i32 38 tcg_gen_xor_i32 24 tcg_temp_new_i32 1648 
+
+tcg_gen_mov_i64 4
+tcg_gen_add_i64 103 tcg_gen_or_i64 38 tcg_gen_sub_i64 65 tcg_temp_new_i64 302 
+
+tcg_gen_movcond_i32 4
+tcg_constant_i32 284 tcg_gen_andi_i32 49 tcg_gen_setcondi_i32 27 tcg_temp_new_i32 243 
+
+tcg_gen_movcond_i64 15
+tcg_constant_i64 267 tcg_gen_divu_i64 5 tcg_gen_ext_i32_i64 65 tcg_gen_extract_i64 28 tcg_gen_extrl_i64_i32 20 tcg_gen_extu_i32_i64 62 tcg_gen_rem_i64 5 tcg_gen_remu_i64 5 tcg_gen_sar_i64 93 tcg_gen_shl_i64 284 tcg_gen_shli_i64 22 tcg_gen_shr_i64 145 tcg_gen_sub_i64 61 tcg_gen_subfi_i64 15 tcg_temp_new_i64 447 
+
+tcg_gen_movi_i32 8
+probe_noshuf_load 36 tcg_gen_add_i32 78 tcg_gen_addi_i32 25 tcg_gen_andi_i32 20 tcg_gen_deposit_i32 54 tcg_gen_mov_i32 30 tcg_gen_qemu_ld_i32 29 tcg_temp_new_i32 290 
+
+tcg_gen_mul_i32 6
+tcg_gen_ext_i32_i64 175 tcg_gen_extract_i32 110 tcg_gen_extrl_i64_i32 80 tcg_gen_extu_i32_i64 48 tcg_gen_sextract_i32 261 tcg_temp_new_i32 731 
+
+tcg_gen_mul_i64 6
+tcg_gen_add_i64 20 tcg_gen_ext_i32_i64 64 tcg_gen_sextract_i64 84 tcg_gen_shli_i64 51 tcg_gen_sub_i64 22 tcg_temp_new_i64 340 
+
+tcg_gen_neg_i32 4
+tcg_gen_ext_i32_i64 55 tcg_gen_mov_i32 50 tcg_gen_setcondi_i32 56 tcg_temp_new_i32 147 
+
+tcg_gen_not_i32 3
+tcg_gen_andi_i32 82 tcg_gen_extract_i32 74 tcg_temp_new_i32 186 
+
+tcg_gen_or_i32 8
+tcg_gen_add_i32 37 tcg_gen_and_i32 42 tcg_gen_andi_i32 186 tcg_gen_mov_i32 24 tcg_gen_shli_i32 130 tcg_gen_shri_i32 28 tcg_gen_xor_i32 64 tcg_temp_new_i32 313 
+
+tcg_gen_or_i64 6
+tcg_gen_and_i64 21 tcg_gen_andi_i64 141 tcg_gen_mov_i64 38 tcg_gen_shli_i64 115 tcg_gen_shri_i64 30 tcg_temp_new_i64 291 
+
+tcg_gen_qemu_ld_i128 3
+get_mem_index 5 tcg_gen_extr_i128_i64 6 tcg_temp_new_i128 7 
+
+tcg_gen_qemu_ld_i32 6
+gen_load_store_alignment 16 probe_noshuf_load 386 tcg_gen_addi_i32 21 tcg_gen_mov_i32 24 tcg_gen_movi_i32 29 tcg_temp_new_i32 313 
+
+tcg_gen_qemu_ld_i64 8
+gen_op_addr_add 8 gen_ri2 5 get_mem_index 58 probe_noshuf_load 94 tcg_gen_addi_i64 20 tcg_gen_mov_i32 40 tcg_temp_new_i32 56 tcg_temp_new_i64 127 
+
+tcg_gen_qemu_st_i128 3
+get_mem_index 6 tcg_gen_concat_i64_i128 8 tcg_temp_new_i128 8 
+
+tcg_gen_sar_i64 4
+tcg_gen_ext_i32_i64 23 tcg_gen_extract_i64 28 tcg_gen_movcond_i64 93 tcg_temp_new_i64 108 
+
+tcg_gen_sari_i32 4
+gen_helper_mul_h 84 gen_helper_mulm_h 20 tcg_gen_ext16s_i32 25 tcg_temp_new_i32 73 
+
+tcg_gen_sari_i64 5
+gen_sat_i64_ovfl 31 tcg_gen_add_i64 23 tcg_gen_addi_i64 35 tcg_gen_shli_i64 20 tcg_temp_new_i64 190 
+
+tcg_gen_setcondi_i32 6
+tcg_gen_ext_i32_i64 58 tcg_gen_extu_i32_i64 53 tcg_gen_mov_i32 56 tcg_gen_movcond_i32 27 tcg_gen_neg_i32 56 tcg_temp_new_i32 214 
+
+tcg_gen_sextract_i32 7
+gen_store1 53 gen_store2 79 tcg_gen_add_i32 43 tcg_gen_ext_i32_i64 23 tcg_gen_mul_i32 261 tcg_gen_sub_i32 20 tcg_temp_new_i32 378 
+
+tcg_gen_sextract_i64 8
+tcg_gen_add_i64 133 tcg_gen_deposit_i64 94 tcg_gen_ext_i32_i64 249 tcg_gen_extrl_i64_i32 130 tcg_gen_mul_i64 84 tcg_gen_shli_i64 92 tcg_gen_sub_i64 71 tcg_temp_new_i64 683 
+
+tcg_gen_shl_i64 6
+tcg_gen_andi_i64 23 tcg_gen_ext_i32_i64 59 tcg_gen_extu_i32_i64 27 tcg_gen_movcond_i64 284 tcg_gen_shli_i64 23 tcg_temp_new_i64 263 
+
+tcg_gen_shli_i32 6
+tcg_gen_add_i32 85 tcg_gen_addi_i32 27 tcg_gen_andi_i32 47 tcg_gen_mov_i32 31 tcg_gen_or_i32 130 tcg_temp_new_i32 343 
+
+tcg_gen_shli_i64 12
+tcg_gen_add_i64 117 tcg_gen_addi_i64 34 tcg_gen_andi_i64 22 tcg_gen_extract_i64 26 tcg_gen_movcond_i64 22 tcg_gen_mul_i64 51 tcg_gen_or_i64 115 tcg_gen_sari_i64 20 tcg_gen_sextract_i64 92 tcg_gen_shl_i64 23 tcg_gen_sub_i64 39 tcg_temp_new_i64 602 
+
+tcg_gen_shr_i64 6
+tcg_gen_andi_i64 23 tcg_gen_ext_i32_i64 36 tcg_gen_extu_i32_i64 26 tcg_gen_movcond_i64 145 tcg_gen_subfi_i64 12 tcg_temp_new_i64 186 
+
+tcg_gen_shri_i32 3
+tcg_gen_andi_i32 23 tcg_gen_or_i32 28 tcg_temp_new_i32 146 
+
+tcg_gen_shri_i64 3
+tcg_gen_andi_i64 50 tcg_gen_or_i64 30 tcg_temp_new_i64 149 
+
+tcg_gen_st_vec 3
+tcg_gen_ld_vec 16 tcg_temp_free_vec 10 tcg_temp_new_vec 10 
+
+tcg_gen_sub_i32 5
+gen_sub_CHf 24 gen_sub_Vf 24 tcg_gen_mov_i32 38 tcg_gen_sextract_i32 20 tcg_temp_new_i32 234 
+
+tcg_gen_sub_i64 11
+gen_sat_i64_ovfl 28 tcg_constant_i64 31 tcg_gen_ext_i32_i64 34 tcg_gen_extract_i64 70 tcg_gen_extrl_i64_i32 24 tcg_gen_mov_i64 65 tcg_gen_movcond_i64 61 tcg_gen_mul_i64 22 tcg_gen_sextract_i64 71 tcg_gen_shli_i64 39 tcg_temp_new_i64 441 
+
+tcg_gen_subfi_i64 4
+tcg_gen_ext_i32_i64 13 tcg_gen_movcond_i64 15 tcg_gen_shr_i64 12 tcg_temp_new_i64 35 
+
+tcg_gen_xor_i32 5
+tcg_gen_add_i32 126 tcg_gen_andc_i32 65 tcg_gen_mov_i32 24 tcg_gen_or_i32 64 tcg_temp_new_i32 151 
+
+tcg_gen_xori_i32 3
+tcg_gen_andi_i32 80 tcg_gen_brcondi_i32 66 tcg_temp_new_i32 91 
+
+tcg_temp_free_vec 3
+tcg_gen_ld_vec 10 tcg_gen_st_vec 10 tcg_temp_new_vec 24 
+
+tcg_temp_new_i128 4
+tcg_gen_concat_i64_i128 14 tcg_gen_extr_i128_i64 15 tcg_gen_qemu_ld_i128 7 tcg_gen_qemu_st_i128 8 
+
+tcg_temp_new_i32 100
+cris_alu 23 crisv10_prepare_memaddr 6 do_pred_flags 9 gen_ZNSf 9 gen_aa32_ld_i32 12 gen_addr_reg_index 73 gen_addr_spe_imm_index 18 gen_cond_jump 19 gen_cond_jumpr 9 gen_helper_fbrev 20 gen_helper_fcircadd 60 gen_helper_mul_h 84 gen_helper_mulm_h 20 gen_helper_vfp_adds 6 gen_helper_vfp_muls 7 gen_helper_vfp_negs 13 gen_load_fpr32 13 gen_load_mxu_gpr 44 gen_load_store_alignment 13 gen_log_pred_write 108 gen_mov_reg_FCC1 10 gen_qemu_ld16u 5 gen_qemu_ld64_i64 6 gen_qemu_st64_i64 6 gen_read_ireg 20 gen_read_reg 44 gen_sat_i32_ovfl 49 gen_sat_i64_ovfl 157 gen_satu_i32_ovfl 10 gen_satu_i64_ovfl 11 gen_set_usr_field_if 190 gen_store1 129 gen_store2 179 gen_store4 71 gen_store8 31 gen_store_fpr32 11 gen_store_mxu_gpr 37 gen_sub_CHf 8 gen_sub_Vf 8 gen_vreg_load 57 gen_vreg_masked_store 12 gen_vreg_store 45 load_reg_var 6 probe_noshuf_load 239 read_neon_element32 18 read_vec_element_i32 24 rx_gen_ld 8 rx_gen_st 9 rx_load_source 11 store_reg 23 t_gen_mov_TN_preg 5 tcg_gen_abs_i32 5 tcg_gen_add_i32 476 tcg_gen_addi_i32 512 tcg_gen_and_i32 190 tcg_gen_andc_i32 54 tcg_gen_andi_i32 755 tcg_gen_atomic_cmpxchg_i32 8 tcg_gen_brcondi_i32 417 tcg_gen_deposit_i32 161 tcg_gen_ext16s_i32 45 tcg_gen_ext16u_i32 17 tcg_gen_ext_i32_i64 292 tcg_gen_extract_i32 403 tcg_gen_extrl_i64_i32 383 tcg_gen_extu_i32_i64 152 tcg_gen_gvec_sars 5 tcg_gen_gvec_shls 5 tcg_gen_ld_i32 25 tcg_gen_mov_i32 1648 tcg_gen_movcond_i32 243 tcg_gen_movi_i32 290 tcg_gen_mul_i32 731 tcg_gen_muli_i32 13 tcg_gen_neg_i32 147 tcg_gen_not_i32 186 tcg_gen_or_i32 313 tcg_gen_ori_i32 32 tcg_gen_qemu_ld_i32 313 tcg_gen_qemu_ld_i64 56 tcg_gen_qemu_st_i32 47 tcg_gen_sar_i32 17 tcg_gen_sari_i32 73 tcg_gen_setcond_i32 73 tcg_gen_setcondi_i32 214 tcg_gen_sextract_i32 378 tcg_gen_shl_i32 67 tcg_gen_shli_i32 343 tcg_gen_shr_i32 45 tcg_gen_shri_i32 146 tcg_gen_sub_i32 234 tcg_gen_subfi_i32 25 tcg_gen_subi_i32 83 tcg_gen_xor_i32 151 tcg_gen_xori_i32 91 vfp_load_reg32 36 vfp_store_reg32 30 write_fp_sreg 18 write_neon_element32 14 write_vec_element_i32 13 
+
+tcg_temp_new_i64 97
+do_cntp 5 gen_base_offset_addr 18 gen_compute_fprf_float64 21 gen_helper_compute_fprf_float64 6 gen_helper_mul_h 21 gen_helper_mulm_h 5 gen_helper_vfp_addd 7 gen_helper_vfp_muld 7 gen_helper_vfp_negd 7 gen_load_fpr64 18 gen_load_gpr 77 gen_load_gpr64 46 gen_load_gpr_hi 5 gen_move_low32 5 gen_op_addr_add 26 gen_qemu_ld64_i64 8 gen_qemu_st64_i64 8 gen_sat_i64_ovfl 313 gen_satu_i64_ovfl 22 gen_store_fpr64 12 gen_store_gpr 33 gen_store_gpr64 32 get_avr64 27 get_cpu_vsr 39 get_fpr 57 get_vreg64 20 help_branch 7 load_pair 5 read_neon_element64 12 read_vec_element 30 read_vec_element_i64 24 set_avr64 26 set_cpu_vsr 40 set_fpr 52 set_vreg64 18 tcg_gen_abs_i64 23 tcg_gen_add2_i64 82 tcg_gen_add_i64 744 tcg_gen_addi_i64 229 tcg_gen_and_i64 205 tcg_gen_andc_i64 70 tcg_gen_andi_i64 169 tcg_gen_atomic_cmpxchg_i64 9 tcg_gen_brcondi_i64 23 tcg_gen_concat32_i64 14 tcg_gen_concat_i32_i64 452 tcg_gen_deposit_i64 313 tcg_gen_div_i64 14 tcg_gen_divu_i64 13 tcg_gen_ext32s_i64 60 tcg_gen_ext32u_i64 41 tcg_gen_ext_i32_i64 389 tcg_gen_extr_i64_i32 46 tcg_gen_extract2_i64 11 tcg_gen_extract_i64 277 tcg_gen_extrl_i64_i32 383 tcg_gen_extu_i32_i64 192 tcg_gen_gvec_dup_i64 12 tcg_gen_ld_i64 46 tcg_gen_mov_i64 302 tcg_gen_movcond_i64 447 tcg_gen_movi_i64 82 tcg_gen_mul_i64 340 tcg_gen_muls2_i64 10 tcg_gen_mulu2_i64 18 tcg_gen_neg_i64 61 tcg_gen_not_i64 23 tcg_gen_or_i64 291 tcg_gen_qemu_ld_i64 127 tcg_gen_qemu_st_i64 68 tcg_gen_rem_i64 12 tcg_gen_remu_i64 11 tcg_gen_rotl_i64 7 tcg_gen_sar_i64 108 tcg_gen_sari_i64 190 tcg_gen_setcond_i64 121 tcg_gen_setcondi_i64 98 tcg_gen_sextract_i64 683 tcg_gen_shl_i64 263 tcg_gen_shli_i64 602 tcg_gen_shr_i64 186 tcg_gen_shri_i64 149 tcg_gen_smax_i64 17 tcg_gen_smin_i64 6 tcg_gen_st_i64 31 tcg_gen_sub2_i64 5 tcg_gen_sub_i64 441 tcg_gen_subfi_i64 35 tcg_gen_umax_i64 5 tcg_gen_umin_i64 17 tcg_gen_xor_i64 122 vfp_load_reg64 14 vfp_store_reg64 12 write_fp_dreg 19 write_neon_element64 10 write_vec_element 19 write_vec_element_i64 23 
+
+tcg_temp_new_ptr 3
+tcg_gen_add_ptr 9 tcg_gen_addi_ptr 374 tcg_gen_ext_i32_ptr 5 
+
+tcg_temp_new_vec 3
+tcg_gen_ld_vec 10 tcg_gen_st_vec 10 tcg_temp_free_vec 24 
+
+tcg_temp_new_vec_matching 8
+tcg_gen_add_vec 22 tcg_gen_and_vec 23 tcg_gen_cmp_vec 20 tcg_gen_dupi_vec 26 tcg_gen_mul_vec 24 tcg_gen_or_vec 23 tcg_gen_sari_vec 15 tcg_gen_smax_vec 9 
+
+tcgv_i32_temp 7
+tcg_gen_call1 128 tcg_gen_call2 818 tcg_gen_call3 1925 tcg_gen_call4 3990 tcg_gen_call5 1506 tcg_gen_call6 1241 tcg_gen_call7 22 
+
+tcgv_i64_temp 6
+tcg_gen_call1 167 tcg_gen_call2 1048 tcg_gen_call3 1557 tcg_gen_call4 1217 tcg_gen_call5 145 tcg_gen_call6 729 
+
+tcgv_ptr_temp 7
+tcg_gen_call1 165 tcg_gen_call2 744 tcg_gen_call3 2945 tcg_gen_call4 8637 tcg_gen_call5 3941 tcg_gen_call6 5489 tcg_gen_call7 128 
+
+tcma_check 4
+allocation_tag_from_addr 7 extract32 5 extract64 7 tbi_check 14 
+
+test_end 7
+clear_tco_status 9 load_tco 9 reset_on_second_timeout 9 set_tco_timeout 9 start_tco 9 stop_tco 9 test_init 11 
+
+test_init 7
+clear_tco_status 9 load_tco 9 reset_on_second_timeout 9 set_tco_timeout 9 start_tco 9 stop_tco 9 test_end 11 
+
+test_migrate_end 3
+migrate_qmp 5 test_migrate_start 10 wait_for_migration_complete 5 
+
+thunk_convert 3
+lock_user 6 thunk_type_size 8 unlock_user 6 
+
+tim_read 8
+g_assertion_message_cmpnum 12 tim_read_tcsr 6 tim_read_tdr 8 tim_reset 12 tim_timer_bit 10 tim_timer_irq 8 tim_write_tcsr 11 tim_write_ticr 9 
+
+tim_read_tcsr 5
+g_assertion_message_cmpnum 6 tim_read 6 tim_read_tdr 6 tim_reset 6 tim_write_tcsr 5 
+
+tim_read_tdr 8
+g_assertion_message_cmpnum 8 tim_read 8 tim_read_tcsr 6 tim_reset 8 tim_timer_bit 6 tim_timer_irq 5 tim_write_tcsr 7 tim_write_ticr 5 
+
+tim_reset 7
+tim_read 12 tim_read_tcsr 6 tim_read_tdr 8 tim_timer_bit 10 tim_timer_irq 8 tim_write_tcsr 11 tim_write_ticr 9 
+
+tim_timer_bit 7
+g_assertion_message_cmpnum 10 tim_read 10 tim_read_tdr 6 tim_reset 10 tim_timer_irq 8 tim_write_tcsr 10 tim_write_ticr 9 
+
+tim_timer_irq 7
+qtest_get_irq 8 tim_read 8 tim_read_tdr 5 tim_reset 8 tim_timer_bit 8 tim_write_tcsr 8 tim_write_ticr 7 
+
+tim_write_tcsr 7
+tim_read 11 tim_read_tcsr 5 tim_read_tdr 7 tim_reset 11 tim_timer_bit 10 tim_timer_irq 8 tim_write_ticr 9 
+
+tim_write_ticr 6
+tim_read 9 tim_read_tdr 5 tim_reset 9 tim_timer_bit 9 tim_timer_irq 7 tim_write_tcsr 9 
+
+to_qiv 3
+full_name 14 qobject_input_get_keyval 6 qobject_input_get_object 10 
+
+trace_user_do_rt_sigreturn 3
+lock_user 15 target_restore_altstack 15 unlock_user 13 
+
+trace_user_setup_frame 3
+get_sigframe 20 lock_user 11 unlock_user 11 
+
+trace_user_setup_rt_frame 4
+get_sigframe 31 lock_user 17 target_save_altstack 14 unlock_user 15 
+
+tracked_request_begin 3
+bdrv_dec_in_flight 5 bdrv_inc_in_flight 5 tracked_request_end 5 
+
+unlink 4
+g_free 30 mkstemp 10 qauthz_list_file_new 5 qemu_authz_listfile_test_save 5 
+
+unlinkat_preserve_errno 3
+close_preserve_errno 5 local_is_mapped_file_metadata 5 local_opendir_nofollow 5 
+
+unlock_user 11
+get_sigframe 27 ldl_le_p 26 lock_user 481 lock_user_string 11 stl_le_p 29 thunk_convert 6 trace_user_do_rt_sigreturn 13 trace_user_do_sigreturn 9 trace_user_setup_frame 11 trace_user_setup_rt_frame 15 validate_lock_user_string 10 
+
+update_msacsr 3
+check_msacsr_cause 37 clear_msacsr_cause 37 get_enabled_exceptions 78 
+
+usb_packet_setup 3
+usb_ep_get 6 usb_handle_packet 7 usb_packet_addbuf 5 
+
+v9fs_co_lstat 5
+get_fid 5 pdu_complete 11 pdu_marshal 6 pdu_unmarshal 6 put_fid 6 
+
+v9fs_req_init 5
+v9fs_req_send 13 v9fs_req_wait_for_reply 13 v9fs_rlerror 13 v9fs_string_write 8 v9fs_uint32_write 13 
+
+v9fs_req_send 5
+v9fs_req_init 13 v9fs_req_wait_for_reply 13 v9fs_rlerror 13 v9fs_string_write 8 v9fs_uint32_write 13 
+
+v9fs_req_wait_for_reply 5
+v9fs_req_init 13 v9fs_req_send 13 v9fs_rlerror 13 v9fs_string_write 8 v9fs_uint32_write 13 
+
+v9fs_rlerror 6
+g_assertion_message_cmpnum 13 v9fs_req_init 13 v9fs_req_send 13 v9fs_req_wait_for_reply 13 v9fs_string_write 8 v9fs_uint32_write 13 
+
+v9fs_string_write 6
+v9fs_req_init 8 v9fs_req_send 8 v9fs_req_wait_for_reply 8 v9fs_rlerror 8 v9fs_string_size 6 v9fs_uint32_write 5 
+
+v9fs_uint32_write 5
+v9fs_req_init 13 v9fs_req_send 13 v9fs_req_wait_for_reply 13 v9fs_rlerror 13 v9fs_string_write 5 
+
+vec_full_reg_offset 4
+get_field1 62 sve_access_check 45 tcg_gen_gvec_4_ool 18 vec_full_reg_size 72 
+
+vec_full_reg_size 4
+decode_pred_count 7 pred_full_reg_offset 26 sve_access_check 51 vec_full_reg_offset 72 
+
+vext_check_isa_ill 7
+mark_vs_dirty 20 require_rvf 8 require_rvv 67 require_scale_rvf 6 vext_check_ds 5 vext_check_ss 6 vreg_ofs 20 
+
+vext_get_total_elems 4
+vext_max_elems 16 vext_vm 287 vext_vma 284 vext_vta 323 
+
+vext_ldst_stride 3
+__builtin_extract_return_addr 16 ctz64 16 vext_nf 8 
+
+vext_max_elems 5
+ctz64 16 vext_get_total_elems 16 vext_vm 16 vext_vma 19 vext_vta 16 
+
+vext_set_elems_1s 3
+simd_maxsz 54 vext_vma 285 vext_vta 378 
+
+vext_vm 6
+simd_maxsz 54 vext_get_total_elems 287 vext_max_elems 16 vext_vma 373 vext_vta 341 vext_vta_all_1s 103 
+
+vext_vma 6
+vext_get_total_elems 284 vext_max_elems 19 vext_set_elems_1s 285 vext_vm 373 vext_vta 284 vext_vta_all_1s 87 
+
+vext_vta 6
+simd_maxsz 54 vext_get_total_elems 323 vext_max_elems 16 vext_set_elems_1s 378 vext_vm 341 vext_vma 284 
+
+vfp_access_check 9
+add_reg_for_lit 5 arm_dc_feature 41 load_reg 25 mve_check_qreg_bank 22 mve_eci_check 30 mve_no_predication 5 mve_update_and_store_eci 6 mve_update_eci 24 store_reg 20 
+
+vhost_dev_disable_notifiers 4
+DEVICE 20 vhost_dev_enable_notifiers 24 vhost_dev_start 24 vhost_dev_stop 26 
+
+vhost_dev_enable_notifiers 4
+DEVICE 10 vhost_dev_disable_notifiers 24 vhost_dev_start 24 vhost_virtqueue_mask 20 
+
+vhost_dev_start 4
+DEVICE 10 vhost_dev_disable_notifiers 24 vhost_dev_enable_notifiers 24 vhost_virtqueue_mask 20 
+
+virtio_blk_request 10
+guest_free 8 qvirtio_config_readq 7 qvirtio_get_features 7 qvirtio_set_driver_ok 7 qvirtio_set_features 7 qvirtio_wait_used_elem 8 qvirtqueue_add 6 qvirtqueue_cleanup 5 qvirtqueue_kick 8 qvirtqueue_setup 14 
+
+virtqueue_pop 4
+g_free 21 virtio_notify 19 virtio_queue_ready 6 virtqueue_push 36 
+
+virtqueue_push 3
+g_free 24 virtio_notify 29 virtqueue_pop 36 
+
+visit_check_list 4
+visit_end_list 151 visit_is_input 144 visit_next_list 145 visit_start_list 301 
+
+visit_check_struct 11
+error_propagate 286 qmp_marshal_output_HumanReadableText 8 qmp_marshal_output_int 9 qobject_input_visitor_new_qmp 286 qobject_output_visitor_new_qmp 44 visit_complete 44 visit_end_struct 876 visit_free 341 visit_is_input 529 visit_start_struct 1749 visit_type_BlockDirtyBitmap_members 14 
+
+visit_complete 8
+qdict_put_obj 49 qobject_check_type 54 qobject_output_visitor_new 20 qobject_output_visitor_new_qmp 328 visit_check_struct 44 visit_end_struct 44 visit_free 178 visit_start_struct 44 
+
+visit_end_alternate 3
+visit_is_dealloc 18 visit_is_input 18 visit_start_alternate 36 
+
+visit_end_list 4
+visit_check_list 151 visit_is_input 144 visit_next_list 146 visit_start_list 299 
+
+visit_end_struct 10
+qapi_dealloc_visitor_new 286 qobject_input_visitor_new_qmp 286 qobject_output_visitor_new_qmp 44 visit_check_struct 876 visit_complete 44 visit_free 345 visit_is_dealloc 521 visit_is_input 529 visit_start_struct 1402 visit_type_BlockDirtyBitmap_members 7 
+
+visit_free 19
+object_property_set 5 opts_visitor_new 9 qapi_dealloc_visitor_new 1085 qobject_input_visitor_new 24 qobject_input_visitor_new_flat_confused 12 qobject_input_visitor_new_keyval 17 qobject_input_visitor_new_qmp 286 qobject_input_visitor_new_str 5 qobject_output_visitor_new 10 qobject_output_visitor_new_qmp 164 visit_check_struct 341 visit_complete 178 visit_end_struct 345 visit_start_struct 345 visit_type_BlockDirtyBitmap_members 5 visit_type_BlockdevCreateOptions 8 visit_type_BlockdevOptions 8 visit_type_SchemaInfoList 5 visitor_forward_field 5 
+
+visit_is_dealloc 5
+visit_end_alternate 18 visit_end_struct 521 visit_is_input 539 visit_start_alternate 18 visit_start_struct 521 
+
+visit_is_input 10
+visit_check_list 144 visit_check_struct 529 visit_end_alternate 18 visit_end_list 144 visit_end_struct 529 visit_is_dealloc 539 visit_next_list 144 visit_start_alternate 18 visit_start_list 144 visit_start_struct 529 
+
+visit_next_list 4
+visit_check_list 145 visit_end_list 146 visit_is_input 144 visit_start_list 146 
+
+visit_optional 13
+visit_policy_reject 20 visit_policy_skip 20 visit_type_AudiodevPerDirectionOptions_members 7 visit_type_BlockdevOnError 5 visit_type_BlockdevOptionsGenericFormat_members 7 visit_type_BlockdevRef 12 visit_type_ChardevCommon_members 6 visit_type_PreallocMode 5 visit_type_bool 74 visit_type_int 79 visit_type_size 25 visit_type_str 163 visit_type_uint32 26 
+
+visit_start_alternate 4
+error_setg_internal 36 visit_end_alternate 36 visit_is_dealloc 18 visit_is_input 18 
+
+visit_start_list 4
+visit_check_list 301 visit_end_list 299 visit_is_input 144 visit_next_list 146 
+
+visit_start_struct 13
+error_propagate 288 qapi_dealloc_visitor_new 286 qmp_marshal_output_HumanReadableText 8 qmp_marshal_output_int 9 qobject_input_visitor_new_qmp 286 qobject_output_visitor_new_qmp 44 visit_check_struct 1749 visit_complete 44 visit_end_struct 1402 visit_free 345 visit_is_dealloc 521 visit_is_input 529 visit_type_BlockDirtyBitmap_members 14 
+
+visit_type_AudiodevPerDirectionOptions_members 3
+visit_optional 7 visit_type_str 10 visit_type_uint32 12 
+
+visit_type_BlockDirtyBitmap_members 7
+error_propagate 5 qapi_dealloc_visitor_new 5 qobject_input_visitor_new_qmp 5 visit_check_struct 14 visit_end_struct 7 visit_free 5 visit_start_struct 14 
+
+visit_type_BlockdevCreateOptions 6
+bdrv_co_create_file 7 bdrv_co_open 7 qapi_free_BlockdevCreateOptions 7 qdict_rename_keys 6 qobject_input_visitor_new_flat_confused 14 visit_free 8 
+
+visit_type_BlockdevOnError 4
+visit_optional 5 visit_type_bool 10 visit_type_int 10 visit_type_str 10 
+
+visit_type_bool 4
+visit_optional 74 visit_type_BlockdevOnError 10 visit_type_int 40 visit_type_str 66 
+
+visit_type_int 4
+visit_optional 79 visit_type_BlockdevOnError 10 visit_type_bool 40 visit_type_str 92 
+
+visit_type_str 9
+error_set_from_qdev_prop_error 20 g_free 32 visit_optional 163 visit_type_AudiodevPerDirectionOptions_members 10 visit_type_BlockdevOnError 10 visit_type_JobType 10 visit_type_bool 66 visit_type_int 92 visit_type_uint32 66 
+
+visit_type_uint32 3
+visit_optional 26 visit_type_AudiodevPerDirectionOptions_members 12 visit_type_str 66 
+
+vnc_flush 5
+vnc_lock_output 13 vnc_unlock_output 13 vnc_write_u16 10 vnc_write_u32 10 vnc_write_u8 15 
+
+vnc_framebuffer_update 4
+vnc_lock_output 8 vnc_unlock_output 8 vnc_write_u16 8 vnc_write_u8 8 
+
+vnc_lock_output 5
+vnc_flush 13 vnc_framebuffer_update 8 vnc_unlock_output 20 vnc_write_u16 11 vnc_write_u8 14 
+
+vnc_unlock_output 5
+vnc_flush 13 vnc_framebuffer_update 8 vnc_lock_output 20 vnc_write_u16 11 vnc_write_u8 14 
+
+vnc_write_u16 5
+vnc_flush 10 vnc_framebuffer_update 8 vnc_lock_output 11 vnc_unlock_output 11 vnc_write_u8 13 
+
+vnc_write_u8 7
+palette_idx 11 vnc_flush 15 vnc_framebuffer_update 8 vnc_lock_output 14 vnc_unlock_output 14 vnc_write_u16 13 zrle_choose_palette_rle 11 
+
+vreg_ofs 13
+MAXSZ 10 gen_set_rm 39 gen_set_rm_chkfrm 17 mark_vs_dirty 141 opfvv_check 17 opfvv_widen_check 7 opivv_check 19 opivv_cmp_check 6 reduction_check 8 require_rvv 24 tcg_gen_gvec_3_ptr 69 tcg_gen_gvec_4_ptr 384 vext_check_isa_ill 20 
+
+vreg_src_off 10
+ctx_future_vreg_off 342 gen_log_reg_write 27 gen_log_vreg_write_pair 70 gen_vreg_masked_store 24 gen_vreg_store 54 get_result_gpr 27 get_result_qreg 40 tcg_gen_addi_ptr 248 tcg_gen_gvec_cmp 72 tcg_gen_gvec_mov 135 
+
+vscr_init 7
+_spr_register 8 env_archcpu 8 init_excp_7450 6 register_74xx_sprs 8 register_low_BATs 8 register_non_embedded_sprs 8 register_sdr1_sprs 8 
+
+watchdog_read_wtcr 4
+qtest_init 5 qtest_irq_intercept_in 5 qtest_quit 5 watchdog_write_wtcr 10 
+
+watchdog_write_wtcr 4
+qtest_init 5 qtest_irq_intercept_in 5 qtest_quit 5 watchdog_read_wtcr 10 
+
+writeCase_z_extF80M 3
+extF80M_isNaN 20 extF80M_isSignalingNaN 10 extF80M_same 22 
+
+writeCase_z_f128M 3
+f128M_isNaN 20 f128M_isSignalingNaN 10 f128M_same 24 
+
+writeCase_z_f16 3
+f16_isNaN 20 f16_isSignalingNaN 10 f16_same 24 
+
+writeCase_z_f32 3
+f32_isNaN 20 f32_isSignalingNaN 10 f32_same 24 
+
+writeCase_z_f64 3
+f64_isNaN 20 f64_isSignalingNaN 10 f64_same 24 
+
+write_regs 6
+qtest_init 7 qtest_memread 14 qtest_memwrite 14 qtest_quit 7 qtest_readl 7 qtest_writel 7 
+
+write_str 5
+setup 5 xs_impl_delete 5 xs_impl_read 5 xs_impl_unwatch 5 xs_impl_watch 5 
+
+write_vec_element 4
+clear_vec_high 34 fp_access_check 16 read_vec_element 22 tcg_temp_new_i64 19 
+
+write_vec_element_i32 3
+clear_vec_high 30 read_vec_element_i32 13 tcg_temp_new_i32 13 
+
+xA 3
+gen_vsr_ptr 44 xB 49 xT 22 
+
+xB 3
+gen_vsr_ptr 106 xA 49 xT 34 
+
+xT 4
+gen_vsr_ptr 97 set_cpu_vsr 30 xA 22 xB 34 
+
+xs_impl_delete 5
+setup 5 write_str 5 xs_impl_read 5 xs_impl_unwatch 5 xs_impl_watch 5 
+
+xs_impl_read 6
+g_byte_array_new 9 setup 5 write_str 5 xs_impl_delete 5 xs_impl_unwatch 5 xs_impl_watch 5 
+
+xs_impl_unwatch 8
+g_string_free 5 g_string_new 5 g_string_truncate 5 setup 5 write_str 5 xs_impl_delete 5 xs_impl_read 5 xs_impl_watch 10 
+
+xs_impl_watch 8
+g_string_free 5 g_string_new 5 g_string_truncate 5 setup 5 write_str 5 xs_impl_delete 5 xs_impl_read 5 xs_impl_unwatch 10 
+
+zrle_choose_palette_rle 7
+palette_fill 11 palette_idx 11 palette_init 11 palette_put 11 palette_size 11 vnc_write 7 vnc_write_u8 11 
+
