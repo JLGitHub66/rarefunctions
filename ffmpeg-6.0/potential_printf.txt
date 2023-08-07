@@ -1,0 +1,12 @@
+snprintf
+printf
+av_asprintf
+fprintf
+av_bprintf
+vprintf
+writer_printf_printf
+avio_vprintf
+writer_printf_avio
+avio_printf
+vsnprintf
+av_vbprintf

@@ -1,0 +1,411 @@
+align_get_bits 3
+get_bits 25 get_bits1 21 get_bits_left 25 
+
+align_position 3
+avio_rl16 7 avio_rl64 18 avio_skip 6 
+
+av_bprint_finalize 3
+av_bprint_init 74 av_bprintf 30 avio_read_to_bprint 5 
+
+av_bprint_init 4
+av_bprint_finalize 74 av_bprintf 48 avio_read_to_bprint 5 bprint_to_avdict 5 
+
+av_bprintf 5
+auto_sep 5 av_bprint_chars 21 av_bprint_finalize 30 av_bprint_init 48 bprint_to_avdict 5 
+
+av_dict_free 4
+av_dict_parse_string 5 av_dict_set 32 hlsenc_io_open 8 set_http_options 10 
+
+av_dict_set 3
+av_dict_free 32 av_malloc 21 snprintf 46 
+
+av_frame_copy_props 5
+av_frame_is_writable 78 ff_filter_frame 169 ff_framesync_get_frame 13 ff_get_audio_buffer 66 ff_get_video_buffer 123 
+
+av_frame_free 6
+av_frame_alloc 28 ff_bufqueue_get 8 ff_filter_frame 67 ff_get_audio_buffer 31 ff_get_video_buffer 23 ff_inlink_consume_frame 24 
+
+av_frame_ref 4
+av_frame_unref 30 ff_get_buffer 22 ff_print_debug_info 6 ff_reget_buffer 56 
+
+av_free 5
+av_calloc 20 av_malloc 70 av_malloc_array 20 av_mallocz 54 av_strdup 28 
+
+av_freep 5
+av_calloc 24 av_malloc 54 av_malloc_array 21 av_mallocz 53 av_strdup 37 
+
+av_get_channel_layout 3
+av_channel_layout_from_mask 5 av_channel_layout_from_string 5 av_log 6 
+
+av_get_packet 7
+avio_feof 61 avio_r8 22 avio_rb32 22 avio_rl32 34 avio_seek 31 avio_skip 46 avio_tell 59 
+
+av_log 44
+av_bswap32 24 av_expr_parse 21 av_expr_parse_and_eval 9 av_fourcc_make_string 27 av_get_channel_layout 6 av_get_pix_fmt 6 av_get_pix_fmt_name 35 av_image_check_size 32 av_make_error_string 90 av_parse_time 7 av_parse_video_size 5 av_strerror 11 avcodec_get_name 27 avformat_new_stream 30 avio_r8 41 avio_rb32 38 avio_rl32 37 avpriv_fopen_utf8 13 avpriv_mpeg4audio_get_config2 7 avpriv_open 5 avpriv_report_missing_feature 23 avpriv_request_sample 39 bytestream2_get_byte 24 decode_str 5 ff_cbs_init 6 ff_copy_whiteblacklists 5 ff_dca_check_crc 10 ff_get_buffer 27 ff_get_wav_header 8 ff_h2645_packet_split 6 ff_reget_buffer 30 ff_set_dimensions 21 ffformatcontext 33 get_bits 117 get_fps 5 get_ue_golomb_31 12 hlsenc_io_open 5 inflate 13 inflateReset 12 logger 9 new_output_stream 5 strcmp 50 sws_getContext 20 write_manifest 5 
+
+av_malloc 5
+av_dict_set 21 av_free 70 av_freep 54 avio_read 28 memcpy 42 
+
+av_mallocz 3
+av_free 54 av_freep 53 av_opt_set_defaults 14 
+
+av_packet_unref 7
+av_new_packet 24 av_packet_copy_props 13 av_packet_make_writable 5 av_packet_rescale_ts 5 av_read_frame 7 ff_bsf_get_packet_ref 20 ff_cbs_read_packet 5 
+
+av_pix_fmt_desc_get 7
+av_get_bits_per_pixel 15 av_get_padded_bits_per_pixel 15 av_image_fill_linesizes 26 av_image_fill_max_pixsteps 11 av_pix_fmt_count_planes 75 ff_fill_rgba_map 32 isBE 7 
+
+av_strdup 5
+av_dirname 5 av_free 28 av_freep 37 av_strtok 22 ff_format_set_url 5 
+
+avformat_new_stream 8
+av_log 30 avpriv_request_sample 34 avpriv_set_pts_info 223 ff_ape_parse_tag 8 ff_get_extradata 21 ff_subtitles_queue_finalize 19 ff_text_init_avio 5 ffstream 52 
+
+avformat_open_input 3
+av_find_input_format 6 avformat_alloc_context 9 avformat_find_stream_info 6 
+
+avio_feof 11
+av_get_packet 61 avio_r8 71 avio_rb16 20 avio_rb32 45 avio_read 33 avio_rl16 23 avio_rl32 72 avio_seek 45 avio_skip 89 avio_tell 91 ff_get_line 12 
+
+avio_open_dyn_buf 4
+avio_close_dyn_buf 18 avio_write 22 ff_rtp_finalize_packet 7 ffio_free_dyn_buf 21 
+
+avio_r8 13
+av_get_packet 22 av_log 41 avio_feof 71 avio_rb16 29 avio_rb24 39 avio_rb32 46 avio_read 32 avio_rl16 39 avio_rl32 56 avio_seek 32 avio_skip 95 avio_tell 58 decode_str 10 
+
+avio_rb16 6
+avio_feof 20 avio_r8 29 avio_rb32 43 avio_seek 22 avio_skip 43 avio_tell 20 
+
+avio_rb32 12
+av_get_packet 22 av_log 38 avio_feof 45 avio_r8 46 avio_rb16 43 avio_rb24 31 avio_rb64 21 avio_read 21 avio_rl32 46 avio_seek 30 avio_skip 78 avio_tell 42 
+
+avio_read 10
+av_malloc 28 avio_feof 33 avio_r8 32 avio_rb32 21 avio_rl32 32 avio_seek 52 avio_skip 67 avio_tell 47 ffio_limit 12 memcmp 21 
+
+avio_rl16 7
+align_position 7 avio_feof 23 avio_r8 39 avio_rl32 63 avio_seek 29 avio_skip 70 avio_tell 26 
+
+avio_rl32 13
+av_get_packet 34 av_log 37 avio_feof 72 avio_r8 56 avio_rb32 46 avio_read 32 avio_rl16 63 avio_rl64 21 avio_seek 47 avio_skip 138 avio_tell 68 avpriv_set_pts_info 35 ff_get_wav_header 8 
+
+avio_rl64 3
+align_position 18 avio_rl32 21 avio_skip 21 
+
+avio_seek 14
+av_get_packet 31 avio_feof 45 avio_r8 32 avio_rb16 22 avio_rb32 30 avio_read 52 avio_rl16 29 avio_rl32 47 avio_size 34 avio_skip 58 avio_tell 71 avio_wb32 24 avio_wl32 21 ffio_ensure_seekback 20 
+
+avio_skip 12
+align_position 6 av_get_packet 46 avio_feof 89 avio_r8 95 avio_rb16 43 avio_rb32 78 avio_read 67 avio_rl16 70 avio_rl32 138 avio_rl64 21 avio_seek 58 avio_tell 99 
+
+avio_tell 29
+av_get_packet 59 avio_feof 91 avio_r8 58 avio_rb16 20 avio_rb32 42 avio_read 47 avio_rl16 26 avio_rl32 68 avio_seek 71 avio_size 22 avio_skip 99 avio_w8 21 avio_wb16 35 avio_wb32 34 avio_wb64 22 avio_wl32 20 avio_write 27 ff_get_line 11 ff_put_wav_header 6 ffio_get_checksum 9 ffio_limit 5 ffio_read_varlen 13 ffio_wfourcc 30 get_packetheader 6 gxf_write_packet_header 5 put_ebml_void 5 skip_reserved 5 updatePacketSize 10 update_size 159 
+
+avio_w8 9
+avio_tell 21 avio_wb16 30 avio_wb24 32 avio_wb32 54 avio_wl32 21 avio_write 50 ffio_wfourcc 52 put_timestamp 5 update_size 33 
+
+avio_wb16 6
+avio_tell 35 avio_w8 30 avio_wb32 44 avio_write 20 ffio_wfourcc 42 update_size 23 
+
+avio_wb24 3
+avio_w8 32 avio_wb32 23 ffio_wfourcc 23 
+
+avio_wb32 9
+avio_seek 24 avio_tell 34 avio_w8 54 avio_wb16 44 avio_wb24 23 avio_wb64 22 avio_write 37 ffio_wfourcc 105 update_size 80 
+
+avio_wb64 4
+av_double2int 6 avio_tell 22 avio_wb32 22 ffio_wfourcc 22 
+
+avio_wl32 9
+avio_seek 21 avio_tell 20 avio_w8 21 avio_wl16 23 avio_write 43 ff_put_guid 9 ff_put_wav_header 5 ffio_fill 24 ffio_wfourcc 21 
+
+avio_write 12
+avio_get_dyn_buf 37 avio_open_dyn_buf 22 avio_tell 27 avio_w8 50 avio_wb16 20 avio_wb32 37 avio_wl32 43 ffio_wfourcc 47 klv_encode_ber4_length 7 put_v 9 strlen 62 update_size 21 
+
+avpriv_set_pts_info 3
+avformat_new_stream 223 avio_rl32 35 ffstream 43 
+
+bits_read_vlc_be 4
+bits_init8_be 5 bits_left_be 7 bits_read_bit_be 25 bits_read_nz_be 27 
+
+bytestream2_get_be16 4
+bytestream2_get_byte 35 bytestream2_get_bytes_left 42 bytestream2_init 30 bytestream2_skip 28 
+
+bytestream2_get_be32 3
+bytestream2_get_bytes_left 29 bytestream2_init 34 bytestream2_skip 28 
+
+bytestream2_get_buffer 4
+bytestream2_get_byte 23 bytestream2_get_bytes_left 25 bytestream2_init 26 bytestream2_skip 25 
+
+bytestream2_get_byte 11
+av_log 24 bytestream2_get_be16 35 bytestream2_get_buffer 23 bytestream2_get_bytes_left 124 bytestream2_get_le16 44 bytestream2_get_le24 8 bytestream2_get_le32 35 bytestream2_init 77 bytestream2_peek_byte 22 bytestream2_skip 67 bytestream2_tell 24 
+
+bytestream2_get_bytes_left 20
+bytestream2_get_be16 42 bytestream2_get_be16u 22 bytestream2_get_be32 29 bytestream2_get_be32u 12 bytestream2_get_buffer 25 bytestream2_get_bufferu 14 bytestream2_get_byte 124 bytestream2_get_byteu 49 bytestream2_get_le16 47 bytestream2_get_le16u 18 bytestream2_get_le24 10 bytestream2_get_le32 51 bytestream2_init 107 bytestream2_peek_be16 5 bytestream2_peek_byte 18 bytestream2_peek_le32 8 bytestream2_seek 22 bytestream2_skip 98 bytestream2_skipu 21 bytestream2_tell 35 
+
+bytestream2_get_le16 5
+bytestream2_get_byte 44 bytestream2_get_bytes_left 47 bytestream2_get_le32 26 bytestream2_init 39 bytestream2_skip 28 
+
+bytestream2_get_le24 3
+bytestream2_get_byte 8 bytestream2_get_bytes_left 10 bytestream2_get_le32 8 
+
+bytestream2_get_le32 7
+bytestream2_get_byte 35 bytestream2_get_bytes_left 51 bytestream2_get_le16 26 bytestream2_get_le24 8 bytestream2_init 46 bytestream2_skip 52 bytestream2_tell 22 
+
+bytestream2_init 15
+bytestream2_get_be16 30 bytestream2_get_be24 12 bytestream2_get_be32 34 bytestream2_get_buffer 26 bytestream2_get_byte 77 bytestream2_get_bytes_left 107 bytestream2_get_byteu 26 bytestream2_get_le16 39 bytestream2_get_le32 46 bytestream2_seek 24 bytestream2_skip 92 bytestream2_skipu 19 bytestream2_tell 45 ff_amf_read_number 5 ff_amf_read_string 6 
+
+bytestream2_init_writer 6
+bytestream2_get_bytes_left_p 8 bytestream2_put_be16 13 bytestream2_put_be32 9 bytestream2_seek_p 13 bytestream2_skip_p 8 bytestream2_tell_p 15 
+
+bytestream2_peek_byte 3
+bytestream2_get_byte 22 bytestream2_get_bytes_left 18 bytestream2_skip 18 
+
+bytestream2_seek 3
+bytestream2_get_bytes_left 22 bytestream2_init 24 bytestream2_tell 20 
+
+bytestream2_skip 11
+bytestream2_get_be16 28 bytestream2_get_be32 28 bytestream2_get_buffer 25 bytestream2_get_byte 67 bytestream2_get_bytes_left 98 bytestream2_get_le16 28 bytestream2_get_le32 52 bytestream2_init 92 bytestream2_peek_byte 18 bytestream2_peek_le32 7 bytestream2_tell 35 
+
+bytestream2_tell 6
+bytestream2_get_byte 24 bytestream2_get_bytes_left 35 bytestream2_get_le32 22 bytestream2_init 45 bytestream2_seek 20 bytestream2_skip 35 
+
+cbs_h264_read_nal_unit_header 3
+cbs_h264_read_rbsp_trailing_bits 12 ff_cbs_read_unsigned 12 ff_cbs_trace_header 9 
+
+cbs_h264_read_rbsp_trailing_bits 3
+cbs_h264_read_nal_unit_header 12 ff_cbs_read_unsigned 10 ff_cbs_trace_header 6 
+
+cbs_h264_write_nal_unit_header 3
+cbs_h264_write_rbsp_trailing_bits 12 ff_cbs_trace_header 9 ff_cbs_write_unsigned 12 
+
+cbs_h264_write_rbsp_trailing_bits 3
+cbs_h264_write_nal_unit_header 12 ff_cbs_trace_header 6 ff_cbs_write_unsigned 10 
+
+cbs_h265_read_nal_unit_header 3
+cbs_h265_read_rbsp_trailing_bits 10 ff_cbs_read_unsigned 10 ff_cbs_trace_header 6 
+
+cbs_h265_write_nal_unit_header 3
+cbs_h265_write_rbsp_trailing_bits 10 ff_cbs_trace_header 6 ff_cbs_write_unsigned 10 
+
+cbs_read_se_golomb 3
+cbs_read_ue_golomb 33 ff_cbs_read_unsigned 39 ff_cbs_trace_header 10 
+
+cbs_write_se_golomb 3
+cbs_write_ue_golomb 22 ff_cbs_trace_header 10 ff_cbs_write_unsigned 26 
+
+ff_bsf_get_packet_ref 3
+av_packet_make_writable 5 av_packet_unref 20 ff_cbs_read_packet 5 
+
+ff_cbs_read_packet 3
+av_packet_unref 5 ff_bsf_get_packet_ref 5 ff_cbs_fragment_reset 6 
+
+ff_cbs_read_unsigned 7
+cbs_h264_read_nal_unit_header 12 cbs_h264_read_rbsp_trailing_bits 10 cbs_h265_read_nal_unit_header 10 cbs_read_se_golomb 39 cbs_read_ue_golomb 75 ff_cbs_read_signed 15 ff_cbs_trace_header 52 
+
+ff_cbs_trace_header 12
+cbs_h264_read_nal_unit_header 9 cbs_h264_read_rbsp_trailing_bits 6 cbs_h264_write_nal_unit_header 9 cbs_h264_write_rbsp_trailing_bits 6 cbs_h265_read_nal_unit_header 6 cbs_h265_read_rbsp_trailing_bits 5 cbs_h265_write_nal_unit_header 6 cbs_h265_write_rbsp_trailing_bits 5 cbs_read_se_golomb 10 cbs_write_se_golomb 10 ff_cbs_read_unsigned 52 ff_cbs_write_unsigned 52 
+
+ff_cbs_write_unsigned 7
+cbs_h264_write_nal_unit_header 12 cbs_h264_write_rbsp_trailing_bits 10 cbs_h265_write_nal_unit_header 10 cbs_write_se_golomb 26 cbs_write_ue_golomb 50 ff_cbs_trace_header 52 ff_cbs_write_signed 10 
+
+ff_dca_check_crc 5
+av_log 10 ff_dca_seek_bits 8 get_bits 8 get_bits1 8 get_bits_count 8 
+
+ff_dca_seek_bits 3
+ff_dca_check_crc 8 get_bits 11 get_bits1 10 
+
+ff_filter_frame 9
+av_frame_clone 51 av_frame_copy_props 169 av_frame_free 67 av_frame_is_writable 75 ff_filter_execute 32 ff_framesync_dualinput_get 12 ff_get_audio_buffer 186 ff_get_video_buffer 259 ff_outlink_get_status 27 
+
+ff_get_audio_buffer 4
+av_frame_copy_props 66 av_frame_free 31 av_rescale_q 0 ff_filter_frame 186 
+
+ff_get_buffer 3
+av_frame_ref 22 av_log 27 ff_set_dimensions 34 
+
+ff_get_line 3
+avio_feof 12 avio_tell 11 strcspn 10 
+
+ff_get_video_buffer 4
+av_frame_copy_props 123 av_frame_free 23 av_rescale_q 0 ff_filter_frame 259 
+
+ff_id3v2_read 3
+ff_id3v2_free_extra_meta 7 ff_id3v2_parse_apic 12 ff_id3v2_parse_chapters 12 
+
+ff_inlink_acknowledge_status 4
+ff_inlink_consume_frame 40 ff_inlink_consume_samples 31 ff_inlink_request_frame 65 ff_outlink_set_status 125 
+
+ff_inlink_consume_frame 3
+av_frame_free 24 ff_inlink_acknowledge_status 40 ff_inlink_request_frame 37 
+
+ff_inlink_consume_samples 4
+ff_inlink_acknowledge_status 31 ff_inlink_queued_samples 18 ff_inlink_request_frame 30 filter_frame 43 
+
+ff_inlink_request_frame 4
+ff_inlink_acknowledge_status 65 ff_inlink_consume_frame 37 ff_inlink_consume_samples 30 ff_inlink_queued_samples 20 
+
+ff_mpv_frame_end 3
+ff_mpeg_er_frame_start 5 ff_mpv_frame_start 5 ff_print_debug_info 6 
+
+ff_outlink_get_status 4
+ff_filter_frame 27 ff_inlink_set_status 79 ff_outlink_frame_wanted 67 ff_outlink_set_status 71 
+
+ff_put_mpeg4_qpel16_h_lowpass_mmxext 3
+ff_avg_pixels16_l2_mmxext 8 ff_put_mpeg4_qpel16_v_lowpass_mmxext 15 ff_put_pixels16_l2_mmxext 40 
+
+ff_put_mpeg4_qpel8_h_lowpass_mmxext 3
+ff_avg_pixels8_l2_mmxext 8 ff_put_mpeg4_qpel8_v_lowpass_mmxext 15 ff_put_pixels8_l2_mmxext 40 
+
+ff_set_common_formats 7
+ff_add_format 23 ff_all_formats 6 ff_draw_supported_pixel_formats 7 ff_formats_pixdesc_filter 12 ff_set_common_all_samplerates 17 ff_set_common_channel_layouts 12 ff_set_common_samplerates 5 
+
+ff_set_common_formats_from_list 3
+ff_set_common_all_channel_counts 9 ff_set_common_channel_layouts_from_list 7 ff_set_common_samplerates_from_list 8 
+
+ff_subtitles_queue_finalize 3
+avformat_new_stream 19 ff_subtitles_queue_insert 14 ff_text_init_avio 6 
+
+ff_text_init_avio 4
+avformat_new_stream 5 ff_subtitles_queue_finalize 6 ff_text_eof 5 ff_text_pos 5 
+
+ffio_get_checksum 4
+avio_tell 9 ffio_init_checksum 5 get_packetheader 5 skip_reserved 5 
+
+ffio_read_varlen 3
+avio_tell 13 get_packetheader 5 skip_reserved 5 
+
+ffio_wfourcc 9
+avio_tell 30 avio_w8 52 avio_wb16 42 avio_wb24 23 avio_wb32 105 avio_wb64 22 avio_wl32 21 avio_write 47 update_size 77 
+
+ffstream 3
+av_index_search_timestamp 26 avformat_new_stream 52 avpriv_set_pts_info 43 
+
+flush_put_bits 6
+init_put_bits 69 put_bits 66 put_bits_count 25 put_bits_ptr 22 put_bytes_output 31 skip_put_bytes 9 
+
+get_bits 23
+align_get_bits 25 av_log 117 check_marker 11 ff_dca_check_crc 8 ff_dca_seek_bits 11 get_bits1 268 get_bits_count 43 get_bits_left 124 get_bits_long 34 get_bitsz 12 get_sbits 20 get_ue_golomb 12 get_unary 18 get_vlc2 60 init_get_bits 61 init_get_bits8 92 next_start_code_studio 5 show_bits 27 show_bits_long 10 skip_1stop_8data_bits 8 skip_bits 119 skip_bits1 35 skip_bits_long 39 
+
+get_bits1 21
+align_get_bits 21 check_marker 11 decode012 10 ff_dca_check_crc 8 ff_dca_seek_bits 10 get_bits 268 get_bits_count 37 get_bits_left 104 get_bits_long 29 get_se_golomb 15 get_se_golomb_long 5 get_ue_golomb 14 get_ue_golomb_31 12 get_ue_golomb_long 25 get_vlc2 58 init_get_bits 28 init_get_bits8 54 skip_1stop_8data_bits 6 skip_bits 92 skip_bits1 31 skip_bits_long 25 
+
+get_bits_count 8
+ff_dca_check_crc 8 get_bits 43 get_bits1 37 get_bits_left 37 init_get_bits 30 init_get_bits8 37 skip_bits 27 skip_bits_long 20 
+
+get_bits_left 11
+align_get_bits 25 get_bits 124 get_bits1 104 get_bits_count 37 get_bits_long 26 get_vlc2 23 init_get_bits 23 init_get_bits8 45 show_bits 24 skip_bits 46 skip_bits_long 22 
+
+get_bits_long 4
+get_bits 34 get_bits1 29 get_bits_left 26 jpegxl_u32 5 
+
+get_packetheader 4
+avio_tell 6 ffio_get_checksum 5 ffio_read_varlen 5 skip_reserved 5 
+
+get_vlc2 5
+get_bits 60 get_bits1 58 get_bits_left 23 get_xbits 13 vc1_decode_p_block 6 
+
+hlsenc_io_open 4
+av_dict_free 8 av_log 5 hlsenc_io_close 17 set_http_options 16 
+
+init_get_bits 5
+get_bits 61 get_bits1 28 get_bits_count 30 get_bits_left 23 skip_bits 29 
+
+init_get_bits8 6
+get_bits 92 get_bits1 54 get_bits_count 37 get_bits_left 45 skip_bits 46 skip_bits_long 22 
+
+init_put_bits 3
+flush_put_bits 69 put_bits 53 put_bytes_output 25 
+
+klv_encode_ber_length 3
+mxf_write_metadata_key 12 mxf_write_refs_count 5 mxf_write_uuid 12 
+
+memcpy 4
+av_malloc 42 av_new_packet 24 ff_copy_palette 11 memset 49 
+
+mxf_write_metadata_key 3
+klv_encode_ber_length 12 mxf_write_refs_count 5 mxf_write_uuid 12 
+
+mxf_write_refs_count 3
+klv_encode_ber_length 5 mxf_write_metadata_key 5 mxf_write_uuid 5 
+
+mxf_write_uuid 3
+klv_encode_ber_length 12 mxf_write_metadata_key 12 mxf_write_refs_count 5 
+
+put_bits 7
+flush_put_bits 66 init_put_bits 53 put_bits_count 29 put_bits_left 17 put_sbits 27 put_vc2_ue_uint 9 skip_put_bytes 6 
+
+put_bits_count 3
+flush_put_bits 25 put_bits 29 skip_put_bytes 6 
+
+put_pixels2_l2_10 3
+copy_block2_10 8 put_h264_qpel2_h_lowpass_10 14 put_h264_qpel2_v_lowpass_10 6 
+
+put_pixels2_l2_12 3
+copy_block2_12 8 put_h264_qpel2_h_lowpass_12 14 put_h264_qpel2_v_lowpass_12 6 
+
+put_pixels2_l2_14 3
+copy_block2_14 8 put_h264_qpel2_h_lowpass_14 14 put_h264_qpel2_v_lowpass_14 6 
+
+put_pixels2_l2_8 3
+copy_block2_8 8 put_h264_qpel2_h_lowpass_8 14 put_h264_qpel2_v_lowpass_8 6 
+
+put_pixels2_l2_9 3
+copy_block2_9 8 put_h264_qpel2_h_lowpass_9 14 put_h264_qpel2_v_lowpass_9 6 
+
+set_http_options 3
+av_dict_free 10 hlsenc_io_close 6 hlsenc_io_open 16 
+
+show_bits 3
+get_bits 27 get_bits_left 24 skip_bits 25 
+
+show_tags 4
+writer_print_integer 6 writer_print_section_footer 6 writer_print_section_header 6 writer_print_time 5 
+
+skip_1stop_8data_bits 4
+get_bits 8 get_bits1 6 skip_bits 6 skip_bits1 6 
+
+skip_bits 10
+get_bits 119 get_bits1 92 get_bits_count 27 get_bits_left 46 init_get_bits 29 init_get_bits8 46 show_bits 25 skip_1stop_8data_bits 6 skip_bits1 25 skip_bits_long 25 
+
+skip_bits1 4
+get_bits 35 get_bits1 31 skip_1stop_8data_bits 6 skip_bits 25 
+
+skip_bits_long 6
+get_bits 39 get_bits1 25 get_bits_count 20 get_bits_left 22 init_get_bits8 22 skip_bits 25 
+
+skip_line 3
+av_sscanf 6 fgets 6 strncmp 5 
+
+skip_put_bytes 4
+flush_put_bits 9 put_bits 6 put_bits_count 6 put_bits_ptr 7 
+
+skip_reserved 4
+avio_tell 5 ffio_get_checksum 5 ffio_read_varlen 5 get_packetheader 5 
+
+snprintf 5
+av_dict_set 46 avfilter_graph_create_filter 5 draw_text 7 drawtext 6 strlen 28 
+
+strcmp 3
+av_log 50 avio_find_protocol_name 15 ff_amf_read_string 5 
+
+sws_getContext 3
+av_log 20 sws_freeContext 5 sws_scale 10 
+
+update_size 6
+avio_tell 159 avio_w8 33 avio_wb16 23 avio_wb32 80 avio_write 21 ffio_wfourcc 77 
+
+writer_print_integer 6
+show_tags 6 writer_print_rational 6 writer_print_section_footer 13 writer_print_section_header 13 writer_print_string 10 writer_print_time 5 
+
+writer_print_section_footer 5
+show_tags 6 writer_print_integer 13 writer_print_section_header 18 writer_print_string 13 writer_print_time 6 
+
+writer_print_section_header 5
+show_tags 6 writer_print_integer 13 writer_print_section_footer 18 writer_print_string 13 writer_print_time 6 
+
+writer_print_string 4
+writer_print_integer 10 writer_print_section_footer 13 writer_print_section_header 13 writer_print_time 5 
+
+writer_print_time 5
+show_tags 5 writer_print_integer 5 writer_print_section_footer 6 writer_print_section_header 6 writer_print_string 5 
+
