@@ -1,0 +1,63 @@
+1. clang编译linux的官方说明：https://www.kernel.org/doc/html/latest/kbuild/llvm.html
+2. linux内核源码下载：https://www.kernel.org/
+  2.1 5.14-rc4
+  2.2 5.13.7
+3. 检查源代码中scripts/min-tool-version.sh中“llvm”的版本要求，如果已安装的clang版本（如10.0.0）比要求的版本（该文件中的如10.0.1）低，考虑将该文件中的版本改为机器上安装的版本，除非是相差大版本。
+4. 在linux源码目录下，执行：make CC=clang allyesconfig（避免弹出各种需要选Y、n之类的）
+5. 执行：make CC=clang -j N（根据机器情况选择N。）
+   - 执行前参考后续说明。
+   - 在本步，务必使用CC=clang，否则仍然会使用gcc编译。
+   - 在后续的配置步骤，选择y、n几乎没影响，使用默认值即可。
+   - Perform array index bounds checking (UBSAN_BOUNDS) 选择“n”，避免编译消耗过长时间。
+6. 使用自己实现的Pass，在config和编译步骤，均使用CC=“clang -Xclang -load -Xclang <path-to-mypass.so>”
+
+
+使用clang-12编译linux时，无法将"-Xclang ..."放入CC="..."中，可使用CFLAGS_KERNEL选项，如
+make CC=clang CFLAGS_KERNEL="-Xclang -load -Xclang <path-to-so>" -jN
+
+去除llvm.lifetime.start：
+clang -Xclang -disable-lifetime-markers
+## 在build linux时，加入该选项会出错。目前的方式是在pass中把lifetime相关的词去掉或生成结果中删去。
+
+在第4步执行完后，修改源码主目录下.config文件。如果文件中存在如下配置且值为y的，将y改为n：
+CONFIG_STACKPROTECTOR=n
+CONFIG_UBSAN=n
+CONFIG_KASAN=n
+CONFIG_KCOV=n
+CONFIG_KCSAN=n
+CONFIG_GCOV_KERNEL=n
+CONFIG_MTRR_SANITIZER=n
+（如果这些参数附近有类似于HAVE_UBSAN、HAS_UBSAN一类的配置，也可以将y改为n）
+然后执行第5步。
+
+
+clang checkers:
+默认开启的checker（以下不包括unix.Malloc，以防拷贝时将MallocChecker禁用）：
+core.CallAndMessage,core.DivideZero,core.NonNullParamChecker,core.NullDereference,core.NullDereference,core.UndefinedBinaryOperatorResult,core.VLASize,core.uninitialized.ArraySubscript,core.uninitialized.Assign,core.uninitialized.Branch,core.uninitialized.CapturedBlockVariable,core.uninitialized.UndefReturn,cplusplus.InnerPointer,cplusplus.Move,cplusplus.NewDelete,cplusplus.NewDeleteLeaks,cplusplus.PlacementNew,cplusplus.PureVirtualCall,deadcode.DeadStores,nullability.NullPassedToNonnull,nullability.NullReturnedFromNonnull,security.insecureAPI.UncheckedReturn,security.insecureAPI.getpw,security.insecureAPI.gets,security.insecureAPI.mkstemp,security.insecureAPI.mktemp,security.insecureAPI.vfork,unix.API,unix.MallocSizeof,unix.MismatchedDeallocator,unix.Vfork,unix.cstring.BadSizeArg,unix.cstring.NullArg
+
+clang上可直接禁用：
+-Xanalyzer -analyzer-disable-checker -Xanalyzer <以上>
+
+关闭CSA的ipa（较早的dma_fence_put在默认ipa配置下无法检出）：
+## https://clang.llvm.org/docs/analyzer/developer-docs/IPA.html
+-Xanalyzer -analyzer-config -Xanalyzer ipa=none
+
+使用scan-build禁用checker（在linux上未成功）：
+scan-build -disable-checker <以上> -o <结果输出目录> make
+
+### 编译clang-12
+1. 安装llvm-12
+2. 解压clang-12的源码
+3. 新建一个build目录，进入build目录
+4. 执行cmake -DLLVM_CONFIG=<path-to-llvm-config> -DCMAKE_BUILD_TYPE=Release <path-to-clang12-src>
+4.1 如果未安装clang，编译完成之后安装到/usr/local下；
+4.2 如果已经安装了clang，可以在cmake时加上选项 -DCMAKE_INSTALL_PREFIX=<安装目录>
+5. 执行 make -jN，使用N个进程并行编译
+6. make install（自定义的无需权限的安装路径[CMAKE_INSTALL_PREFIX]）或sudo make install
+
+### 编译clang-10
+1. 安装llvm-10
+2. 参考前述编译clang-12的步骤，如果编译到最后出现如undefened reference 'getPollyPluginInfo'错误，使用cmake重新配置，添加选项 -DLLVM_COMMON_LIBS="Polly;PollyISL"，然后重新编译、安装
+2.1 也可以事先检查llvm安装后是否包含libPolly.a和libPollyISL.a（在<LLVM安装目录>/lib中）
+3. 如果编译时或者cmake时提示缺少依赖库，根据提示安装即可（如libxml2、libz等）
+
