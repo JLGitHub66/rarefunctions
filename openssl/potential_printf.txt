@@ -1,0 +1,23 @@
+loading API sequences: E:\Workspace\openssl\data-train\api_sequences.txt
+vfprintf
+BIO_snprintf
+sprintf
+BIO_printf
+fprintf
+BIO_vsnprintf
+BIO_vprintf
+printf
+opt_printf_stderr
+vsnprintf
+indent_printf
+ossl_prov_bio_vprintf
+ossl_prov_bio_printf
+OSSL_FUNC_BIO_vprintf
+test_printf_stderr
+test_vprintf_stderr
+test_vprintf_taperr
+test_printf_taperr
+test_vprintf_tapout
+test_printf_tapout
+test_vprintf_stdout
+test_printf_stdout
