@@ -1,0 +1,25 @@
+static int mov_read_hdlr(MOVContext *c, AVIOContext *pb, MOVAtom atom)
+{ 
+	int ctype = avio_rl32(pb);
+	int64_t title_size; 
+	
+	type = avio_rl32(pb);
+	avio_rb32(pb);
+	avio_rb32(pb);
+	avio_rb32(pb);
+
+	title_size = atom.size - 24;
+	if (title_size > 0) { 
+		title_str = av_malloc(title_size + 1);
+		if (!title_str)
+			return AVERROR(ENOMEM);
+
+	 ret = ffio_read_size(pb, title_str, title_size);
+	 if (ret < 0) {
+	 	av_freep(&title_str);
+	 	return ret;
+	 }
+	 av_freep(&title_str);
+	}
+	return 0;
+}

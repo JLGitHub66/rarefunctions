@@ -1,0 +1,176 @@
+ClassDef:AbstractID3v2FrameData
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:unsynchronisation
+				IdentifierDeclType:boolean
+				Identifier:unsynchronisation
+		FunctionDef:AbstractID3v2FrameData (boolean unsynchronisation)
+			CompoundStatement:
+				ExpressionStatement:this.unsynchronisation = unsynchronisation
+					AssignmentExpression:this.unsynchronisation = unsynchronisation
+						MemberAccess:this.unsynchronisation
+							Identifier:this
+							Identifier:unsynchronisation
+						Identifier:unsynchronisation
+			Identifier:AbstractID3v2FrameData
+			ParameterList:boolean unsynchronisation
+				Parameter:boolean unsynchronisation
+					ParameterType:boolean
+					Identifier:unsynchronisation
+		IdentifierDeclStatement:null
+			IdentifierDecl:synchronisedBytes
+				IdentifierDeclType:byte [ ]
+				Identifier:synchronisedBytes
+		FunctionDef:packAndUnsynchroniseFrameData ()
+			CompoundStatement:
+				IdentifierDeclStatement:byte[] bytes = packFrameData();
+					IdentifierDecl:bytes = packFrameData()
+						IdentifierDeclType:byte [ ]
+						Identifier:bytes
+						AssignmentExpression:bytes = packFrameData()
+							Identifier:bytes
+							CallExpression:packFrameData()
+								Callee:packFrameData
+									Identifier:packFrameData
+								ArgumentList:
+				IfStatement:if (unsynchronisation && BufferTools.sizeUnsynchronisationWouldAdd(bytes) > 0)
+					Condition:unsynchronisation && BufferTools.sizeUnsynchronisationWouldAdd(bytes) > 0
+						AndExpression:unsynchronisation && BufferTools.sizeUnsynchronisationWouldAdd(bytes) > 0
+							Identifier:unsynchronisation
+							RelationalExpression:BufferTools.sizeUnsynchronisationWouldAdd(bytes) > 0
+								CallExpression:BufferTools.sizeUnsynchronisationWouldAdd(bytes)
+									Callee:BufferTools.sizeUnsynchronisationWouldAdd
+										MemberAccess:BufferTools.sizeUnsynchronisationWouldAdd
+											Identifier:BufferTools
+											Identifier:sizeUnsynchronisationWouldAdd
+									ArgumentList:bytes
+										Argument:bytes
+											Identifier:bytes
+								Constant:0
+					CompoundStatement:
+						ReturnStatement:return BufferTools.unsynchroniseBuffer(bytes);
+							CallExpression:BufferTools.unsynchroniseBuffer(bytes)
+								Callee:BufferTools.unsynchroniseBuffer
+									MemberAccess:BufferTools.unsynchroniseBuffer
+										Identifier:BufferTools
+										Identifier:unsynchroniseBuffer
+								ArgumentList:bytes
+									Argument:bytes
+										Identifier:bytes
+				ReturnStatement:return bytes;
+					Identifier:bytes
+			ReturnType:byte[]
+			Identifier:packAndUnsynchroniseFrameData
+			ParameterList:
+		FunctionDef:toBytes ()
+			CompoundStatement:
+				ReturnStatement:return packAndUnsynchroniseFrameData();
+					CallExpression:packAndUnsynchroniseFrameData()
+						Callee:packAndUnsynchroniseFrameData
+							Identifier:packAndUnsynchroniseFrameData
+						ArgumentList:
+			ReturnType:byte[]
+			Identifier:toBytes
+			ParameterList:
+		FunctionDef:hashCode ()
+			CompoundStatement:
+				IdentifierDeclStatement:final int prime = 31;
+					IdentifierDecl:prime = 31
+						IdentifierDeclType:final int
+						Identifier:prime
+						AssignmentExpression:prime = 31
+							Identifier:prime
+							Constant:31
+				IdentifierDeclStatement:int result = 1;
+					IdentifierDecl:result = 1
+						IdentifierDeclType:int
+						Identifier:result
+						AssignmentExpression:result = 1
+							Identifier:result
+							Constant:1
+				ExpressionStatement:result = prime * result + (unsynchronisation ? 1231 : 1237)
+					AssignmentExpression:result = prime * result + (unsynchronisation ? 1231 : 1237)
+						Identifier:result
+						AdditiveExpression:prime * result + (unsynchronisation ? 1231 : 1237)
+							MultiplicativeExpression:prime * result
+								Identifier:prime
+								Identifier:result
+							ConditionalExpression:unsynchronisation ? 1231 : 1237
+								Condition:unsynchronisation
+									Identifier:unsynchronisation
+								Constant:1231
+								Constant:1237
+				ReturnStatement:return result;
+					Identifier:result
+			ReturnType:int
+			Identifier:hashCode
+			ParameterList:
+		FunctionDef:equals (Object obj)
+			CompoundStatement:
+				IfStatement:if (this == obj)
+					Condition:this == obj
+						EqualityExpression:this == obj
+							Identifier:this
+							Identifier:obj
+					ReturnStatement:return true;
+						Identifier:true
+				IfStatement:if (obj == null)
+					Condition:obj == null
+						EqualityExpression:obj == null
+							Identifier:obj
+							Identifier:null
+					ReturnStatement:return false;
+						Identifier:false
+				IfStatement:if (getClass() != obj.getClass())
+					Condition:getClass() != obj.getClass()
+						EqualityExpression:getClass() != obj.getClass()
+							CallExpression:getClass()
+								Callee:getClass
+									Identifier:getClass
+								ArgumentList:
+							CallExpression:obj.getClass()
+								Callee:obj.getClass
+									MemberAccess:obj.getClass
+										Identifier:obj
+										Identifier:getClass
+								ArgumentList:
+					ReturnStatement:return false;
+						Identifier:false
+				IdentifierDeclStatement:AbstractID3v2FrameData other = (AbstractID3v2FrameData) obj;
+					IdentifierDecl:other = (AbstractID3v2FrameData) obj
+						IdentifierDeclType:AbstractID3v2FrameData
+						Identifier:other
+						AssignmentExpression:other = (AbstractID3v2FrameData) obj
+							Identifier:other
+							CastExpression:(AbstractID3v2FrameData) obj
+								CastTarget:AbstractID3v2FrameData
+								Identifier:obj
+				IfStatement:if (unsynchronisation != other.unsynchronisation)
+					Condition:unsynchronisation != other.unsynchronisation
+						EqualityExpression:unsynchronisation != other.unsynchronisation
+							Identifier:unsynchronisation
+							MemberAccess:other.unsynchronisation
+								Identifier:other
+								Identifier:unsynchronisation
+					ReturnStatement:return false;
+						Identifier:false
+				ReturnStatement:return true;
+					Identifier:true
+			ReturnType:boolean
+			Identifier:equals
+			ParameterList:Object obj
+				Parameter:Object obj
+					ParameterType:Object
+					Identifier:obj
+		IdentifierDeclStatement:null
+			IdentifierDecl:InvalidDataException
+				IdentifierDeclType:throws
+				Identifier:InvalidDataException
+		IdentifierDeclStatement:null
+			IdentifierDecl:packFrameData()
+				IdentifierDeclType:abstract byte [ ] ( )
+				Identifier:packFrameData
+		IdentifierDeclStatement:null
+			IdentifierDecl:getLength()
+				IdentifierDeclType:abstract int ( )
+				Identifier:getLength

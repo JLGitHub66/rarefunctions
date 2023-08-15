@@ -1,0 +1,408 @@
+skip_atoi va_arg skip_atoi va_arg va_arg strnlen va_arg va_arg number 
+
+va_start vsprintf va_end 
+
+static_branch_unlikely 
+
+IS_ENABLED VM_WARN_ON_ONCE __slub_debug_enabled 
+
+kfree page_objcgs 
+
+memcg_kmem_enabled get_obj_cgroup_from_current obj_cgroup_charge obj_full_size obj_cgroup_put 
+
+memcg_kmem_enabled likely virt_to_head_page page_objcgs memcg_alloc_page_obj_cgroups obj_cgroup_uncharge obj_full_size obj_to_index obj_cgroup_get page_objcgs mod_objcg_state page_pgdat cache_vmstat_idx obj_full_size obj_cgroup_uncharge obj_full_size obj_cgroup_put 
+
+memcg_kmem_enabled unlikely virt_to_head_page page_objcgs_check obj_to_index obj_cgroup_uncharge obj_full_size mod_objcg_state page_pgdat cache_vmstat_idx obj_full_size obj_cgroup_put 
+
+virt_to_head_page WARN_ONCE PageSlab 
+
+memcg_kmem_enabled memcg_alloc_page_obj_cgroups mod_node_page_state page_pgdat cache_vmstat_idx 
+
+memcg_kmem_enabled memcg_free_page_obj_cgroups mod_node_page_state page_pgdat cache_vmstat_idx 
+
+IS_ENABLED kmem_cache_debug_flags virt_to_cache WARN print_tracking 
+
+might_alloc should_failslab memcg_slab_pre_alloc_hook 
+
+kasan_slab_alloc kasan_has_integrated_init memset kmemleak_alloc_recursive memcg_slab_post_alloc_hook 
+
+static_branch_maybe 
+
+static_branch_maybe 
+
+PageSlobFree 
+
+list_add __SetPageSlobFree 
+
+list_del __ClearPageSlobFree 
+
+slob_next 
+
+__alloc_pages_node alloc_pages mod_node_page_state page_pgdat page_address 
+
+virt_to_page mod_node_page_state page_pgdat __free_pages 
+
+DIV_ROUND_UP slob_next slob_units ALIGN slob_next set_slob set_slob slob_units slob_next set_slob slob_units set_slob slob_units set_slob clear_slob_page_free slob_last 
+
+spin_lock_irqsave page_to_nid DIV_ROUND_UP slob_page_alloc list_is_first list_rotate_to_front spin_unlock_irqrestore slob_new_pages virt_to_page __SetPageSlab spin_lock_irqsave DIV_ROUND_UP INIT_LIST_HEAD set_slob DIV_ROUND_UP DIV_ROUND_UP set_slob_page_free slob_page_alloc BUG_ON spin_unlock_irqrestore unlikely memset 
+
+unlikely ZERO_OR_NULL_PTR BUG_ON virt_to_page DIV_ROUND_UP spin_lock_irqsave DIV_ROUND_UP slob_page_free clear_slob_page_free spin_unlock_irqrestore __ClearPageSlab page_mapcount_reset slob_free_pages slob_page_free set_slob DIV_ROUND_UP set_slob_page_free slob_units slob_next set_slob slob_next slob_next slob_last slob_units set_slob slob_next set_slob slob_units slob_units slob_units set_slob slob_next set_slob slob_units spin_unlock_irqrestore 
+
+max_t might_alloc is_power_of_2 max slob_alloc trace_kmalloc_node get_order likely slob_new_pages trace_kmalloc_node kmemleak_alloc 
+
+__do_kmalloc_node 
+
+__do_kmalloc_node 
+
+__do_kmalloc_node 
+
+trace_kfree unlikely ZERO_OR_NULL_PTR kmemleak_free virt_to_page PageSlab max_t slob_free compound_order mod_node_page_state page_pgdat __free_pages 
+
+BUG_ON unlikely virt_to_page unlikely PageSlab page_size max_t DIV_ROUND_UP 
+
+might_alloc trace_kmem_cache_alloc_node DIV_ROUND_UP 
+
+slob_alloc_node 
+
+slob_alloc_node 
+
+__kmem_cache_free 
+
+kmemleak_free_recursive unlikely call_rcu __kmem_cache_free trace_kmem_cache_free 
+
+pledge die strerror set_log_level init_ignore parse_options log_debug pcre_version memset gettimeofday pcre_config GetSystemInfo log_debug ag_calloc pthread_cond_init die pthread_mutex_init die pthread_mutex_init die pthread_mutex_init die is_lowercase tolower generate_alpha_skip generate_find_skip generate_hash init_wordchar_table is_wordchar is_wordchar ag_asprintf free strlen compile_study search_stream pthread_create die strerror CPU_ZERO CPU_SET pthread_setaffinity_np log_err strerror log_err log_debug log_debug pledge die strerror log_debug init_ignore lstat log_err search_dir cleanup_ignore pthread_mutex_lock pthread_cond_broadcast pthread_mutex_unlock pthread_join die gettimeofday printf pthread_mutex_destroy pclose cleanup_options pthread_cond_destroy pthread_mutex_destroy pthread_mutex_destroy cleanup_ignore free free free free free free 
+
+skip_atoi va_arg skip_atoi va_arg va_arg strnlen va_arg va_arg number 
+
+va_start vsprintf va_end 
+
+seq_hex_dump 
+
+min_t warn_or_seq_printf kasan_disable_current warn_or_seq_hex_dump kasan_reset_tag kasan_enable_current 
+
+color_white time_before_eq 
+
+jiffies_to_msecs warn_or_seq_printf warn_or_seq_printf hex_dump_object warn_or_seq_printf warn_or_seq_printf 
+
+pr_notice pr_notice pr_notice pr_notice pr_notice pr_notice pr_notice stack_trace_print 
+
+kmemleak_warn dump_object_info 
+
+atomic_inc_not_zero 
+
+kmem_cache_alloc raw_spin_lock_irqsave list_first_entry_or_null typeof list_del pr_warn_once raw_spin_unlock_irqrestore 
+
+ARRAY_SIZE kmem_cache_free raw_spin_lock_irqsave list_add raw_spin_unlock_irqrestore 
+
+hlist_del kmem_cache_free mem_pool_free 
+
+atomic_dec_and_test WARN_ON call_rcu free_object_rcu 
+
+rcu_read_lock raw_spin_lock_irqsave lookup_object raw_spin_unlock_irqrestore get_object rcu_read_unlock 
+
+rb_erase list_del_rcu 
+
+raw_spin_lock_irqsave lookup_object __remove_object raw_spin_unlock_irqrestore 
+
+stack_trace_save 
+
+mem_pool_alloc pr_warn kmemleak_disable INIT_LIST_HEAD INIT_LIST_HEAD INIT_HLIST_HEAD raw_spin_lock_init atomic_set in_hardirq strncpy in_serving_softirq strncpy strncpy __save_stack_trace raw_spin_lock_irqsave kasan_reset_tag min max kmemleak_stop dump_object_info kmem_cache_free rb_link_node rb_insert_color list_add_tail_rcu raw_spin_unlock_irqrestore 
+
+WARN_ON WARN_ON atomic_read raw_spin_lock_irqsave raw_spin_unlock_irqrestore put_object 
+
+find_and_remove_object kmemleak_warn __delete_object 
+
+find_and_remove_object kmemleak_warn create_object create_object __delete_object 
+
+raw_spin_lock_irqsave __paint_it raw_spin_unlock_irqrestore 
+
+find_and_get_object kmemleak_warn paint_it put_object 
+
+paint_ptr 
+
+paint_ptr 
+
+find_and_get_object kmemleak_warn kmem_cache_alloc raw_spin_lock_irqsave pr_warn_once kmemleak_warn dump_object_info kmem_cache_free INIT_HLIST_NODE hlist_add_head raw_spin_unlock_irqrestore put_object 
+
+find_and_get_object kmemleak_warn raw_spin_lock_irqsave raw_spin_unlock_irqrestore put_object 
+
+find_and_get_object kmemleak_warn raw_spin_lock_irqsave raw_spin_unlock_irqrestore put_object 
+
+pr_debug IS_ERR create_object 
+
+pr_debug IS_ERR for_each_possible_cpu per_cpu_ptr 
+
+pr_debug create_object object_set_excess_ref 
+
+pr_debug IS_ERR delete_object_full 
+
+pr_debug IS_ERR delete_object_part 
+
+pr_debug IS_ERR for_each_possible_cpu per_cpu_ptr 
+
+pr_debug IS_ERR_OR_NULL find_and_get_object kmemleak_warn raw_spin_lock_irqsave __save_stack_trace raw_spin_unlock_irqrestore put_object 
+
+pr_debug IS_ERR make_gray_object 
+
+pr_debug IS_ERR make_black_object 
+
+pr_debug IS_ERR add_scan_area 
+
+pr_debug IS_ERR object_no_scan 
+
+IS_ENABLED PHYS_PFN kmemleak_alloc __va 
+
+IS_ENABLED PHYS_PFN kmemleak_free_part __va 
+
+IS_ENABLED PHYS_PFN kmemleak_not_leak __va 
+
+IS_ENABLED PHYS_PFN kmemleak_ignore __va 
+
+kasan_disable_current kcsan_disable_current crc32 kasan_reset_tag kasan_enable_current kcsan_enable_current 
+
+color_white color_gray WARN_ON get_object list_add_tail 
+
+signal_pending kthread_should_stop 
+
+PTR_ALIGN raw_spin_lock_irqsave scan_should_stop kasan_disable_current kasan_reset_tag kasan_enable_current kasan_reset_tag lookup_object raw_spin_lock_nested color_gray update_refs raw_spin_unlock lookup_object raw_spin_lock_nested update_refs raw_spin_unlock raw_spin_unlock_irqrestore 
+
+min scan_block cond_resched 
+
+raw_spin_lock_irqsave hlist_empty min scan_block raw_spin_unlock_irqrestore cond_resched raw_spin_lock_irqsave hlist_for_each_entry raw_spin_unlock_irqrestore 
+
+list_entry typeof cond_resched scan_should_stop scan_object list_entry typeof list_del put_object WARN_ON list_empty 
+
+rcu_read_lock raw_spin_lock_irqsave atomic_read pr_debug atomic_read dump_object_info color_gray get_object list_add_tail raw_spin_unlock_irqrestore rcu_read_unlock for_each_possible_cpu per_cpu_offset per_cpu_offset get_online_mems zone_end_pfn pfn_to_online_page page_zone page_count scan_block cond_resched put_online_mems rcu_read_lock try_get_task_stack scan_block put_task_stack rcu_read_unlock scan_gray_list rcu_read_lock raw_spin_lock_irqsave color_white update_checksum get_object list_add_tail raw_spin_unlock_irqrestore rcu_read_unlock scan_gray_list scan_should_stop rcu_read_lock raw_spin_lock_irqsave unreferenced_object print_unreferenced raw_spin_unlock_irqrestore rcu_read_unlock pr_info 
+
+IS_ENABLED pr_info set_user_nice msecs_to_jiffies kthread_should_stop schedule_timeout_interruptible kthread_should_stop READ_ONCE mutex_lock kmemleak_scan mutex_unlock kthread_should_stop schedule_timeout_interruptible pr_info 
+
+kthread_run IS_ERR pr_warn 
+
+kthread_stop 
+
+mutex_lock_interruptible ERR_PTR rcu_read_lock get_object 
+
+get_object put_object 
+
+IS_ERR rcu_read_unlock mutex_unlock put_object 
+
+raw_spin_lock_irqsave unreferenced_object print_unreferenced raw_spin_unlock_irqrestore 
+
+seq_open 
+
+kstrtoul find_and_get_object pr_info raw_spin_lock_irqsave dump_object_info raw_spin_unlock_irqrestore put_object 
+
+rcu_read_lock raw_spin_lock_irqsave unreferenced_object __paint_it raw_spin_unlock_irqrestore rcu_read_unlock 
+
+min strncpy_from_user mutex_lock_interruptible strncmp kmemleak_clear __kmemleak_do_cleanup strncmp kmemleak_disable strncmp strncmp strncmp start_scan_thread strncmp stop_scan_thread strncmp kstrtouint stop_scan_thread WRITE_ONCE msecs_to_jiffies start_scan_thread strncmp kmemleak_scan strncmp dump_str_object_info mutex_unlock 
+
+__remove_object __delete_object 
+
+stop_scan_thread mutex_lock mutex_unlock __kmemleak_do_cleanup pr_info 
+
+cmpxchg schedule_work pr_info 
+
+strcmp kmemleak_disable strcmp 
+
+kmemleak_disable msecs_to_jiffies msecs_to_jiffies KMEM_CACHE KMEM_CACHE create_object create_object create_object 
+
+debugfs_create_file schedule_work IS_ENABLED mutex_lock start_scan_thread mutex_unlock pr_info 
+
+dma_write dma_read 
+
+omap_readl omap_writel 
+
+dma_omap1 BUG omap_readl omap_writel 
+
+dma_read dma_write dma_read dma_write dma_read dma_write dma_write dma_write 
+
+dma_omap15xx dma_read dma_write 
+
+dma_read dma_write dma_read dma_write dma_write dma_write dma_write 
+
+dma_read dma_write 
+
+dma_read BUG dma_write 
+
+dma_read dma_write dma_read dma_write dma_write dma_write dma_write 
+
+dma_read dma_write 
+
+dma_read BUG dma_write 
+
+dma_read dma_write 
+
+dma_read dma_write 
+
+dma_read omap_disable_channel_irq dma_write 
+
+WARN strcmp spin_lock_irqsave spin_unlock_irqrestore clear_lch_regs spin_unlock_irqrestore dma_omap16xx set_gdma_dev dma_write dma_write 
+
+pr_err omap_disable_channel_irq dma_write spin_lock_irqsave spin_unlock_irqrestore 
+
+local_irq_save clear_dma local_irq_restore 
+
+dma_omap15xx dma_write dma_write omap_dma_in_1510_mode enable_lnk memset enable_lnk omap_enable_channel_irq IS_DMA_ERRATA dma_write omap_enable_channel_irq dma_read IS_DMA_ERRATA mb dma_write 
+
+omap_disable_channel_irq dma_read IS_DMA_ERRATA dma_read DMA_SYSCONFIG_MIDLEMODE dma_write dma_read dma_write dma_read udelay dma_read pr_err dma_write dma_write mb omap_dma_in_1510_mode memset disable_lnk 
+
+dma_omap15xx dma_read dma_read IS_DMA_ERRATA dma_read dma_omap15xx likely dma_read dma_read dma_read dma_read 
+
+dma_omap15xx dma_read dma_read dma_omap15xx dma_read unlikely dma_read dma_read 
+
+dma_read 
+
+omap_lcd_dma_running dma_read 
+
+dma_read unlikely pr_warn unlikely pr_warn unlikely pr_warn likely likely dma_chan[ch].callback 
+
+omap1_dma_handle_ch omap1_dma_handle_ch 
+
+dev_err devm_kcalloc omap_clear_dma sprintf platform_get_irq_byname request_irq pr_info show_dma_caps 
+
+platform_get_irq free_irq 
+
+platform_driver_register 
+
+platform_driver_unregister 
+
+get_option 
+
+class_to_shost spin_lock_irqsave snprintf spin_unlock_irqrestore 
+
+scsi_sg_count scsi_bufflen 
+
+le16_to_cpu TW_OP_OUT twa_aen_read_queue twa_aen_sync_time twa_aen_queue_event twa_aen_read_queue twa_free_request_id clear_bit 
+
+memset memset memset cpu_to_le32 TW_CPU_TO_SGL TW_PRINTK twa_scsiop_execute_scsi TW_PRINTK twa_poll_response TW_PRINTK le16_to_cpu twa_aen_queue_event 
+
+sprintf le16_to_cpu memset TW_SEV_OUT ktime_get_real_seconds strlen strlen memcpy strlen 
+
+memset memset memset cpu_to_le32 TW_CPU_TO_SGL twa_scsiop_execute_scsi TW_PRINTK 
+
+memset TW_OPSGL_IN TW_CPU_TO_SGL cpu_to_le32 cpu_to_le16 memset cpu_to_le16 cpu_to_le16 cpu_to_le16 ktime_get_real_seconds div_u64_rem twa_post_command_packet 
+
+dma_alloc_coherent TW_PRINTK TW_PRINTK dma_free_coherent memset 
+
+twa_initconnection TW_PRINTK twa_initconnection TW_PRINTK TW_PRINTK TW_PRINTK strlcpy 
+
+file_inode iminor mutex_lock mutex_lock_interruptible copy_from_user dma_alloc_coherent copy_from_user spin_lock_irqsave twa_get_request_id twa_load_sgl memcpy twa_post_command_packet spin_unlock_irqrestore wait_event_timeout twa_reset_device_extension memcpy spin_lock_irqsave twa_free_request_id spin_unlock_irqrestore memcpy memcpy memcpy memcpy memcpy ktime_get ktime_after ktime_add_ms ktime_ms_delta copy_to_user dma_free_coherent mutex_unlock mutex_unlock 
+
+capable iminor 
+
+TW_PRINTK writel TW_CONTROL_REG_ADDR TW_PRINTK writel TW_CONTROL_REG_ADDR pci_write_config_word test_bit TW_PRINTK writel TW_CONTROL_REG_ADDR TW_PRINTK 
+
+readl TW_STATUS_REG_ADDR readl TW_RESPONSE_QUEUE_REG_ADDR readl TW_STATUS_REG_ADDR 
+
+readl TW_RESPONSE_QUEUE_REG_ADDR_LARGE msleep time_after msleep 
+
+strlen le16_to_cpu memcpy 
+
+dma_free_coherent dma_free_coherent kfree 
+
+memset TW_OPSGL_IN cpu_to_le16 memset cpu_to_le16 cpu_to_le16 cpu_to_le16 TW_CPU_TO_SGL cpu_to_le32 twa_post_command_packet twa_poll_response 
+
+memset TW_OPRES_IN cpu_to_le16 cpu_to_le32 cpu_to_le16 cpu_to_le16 cpu_to_le16 cpu_to_le16 twa_post_command_packet twa_poll_response TW_PRINTK le16_to_cpu le16_to_cpu le16_to_cpu le16_to_cpu le32_to_cpu 
+
+twa_allocate_memory TW_PRINTK twa_allocate_memory TW_PRINTK kcalloc TW_PRINTK mutex_init init_waitqueue_head 
+
+spin_lock readl TW_STATUS_REG_ADDR test_bit twa_check_bits twa_decode_bits TW_CLEAR_ALL_INTERRUPTS TW_CLEAR_HOST_INTERRUPT TW_CLEAR_ATTENTION_INTERRUPT test_and_set_bit twa_get_request_id twa_aen_read_queue twa_free_request_id clear_bit TW_MASK_COMMAND_INTERRUPT TW_PRINTK TW_CLEAR_ALL_INTERRUPTS twa_post_command_packet readl TW_RESPONSE_QUEUE_REG_ADDR TW_RESID_OUT twa_fill_sense twa_fill_sense TW_PRINTK TW_CLEAR_ALL_INTERRUPTS twa_aen_complete TW_PRINTK wake_up twa_scsiop_execute_scsi_complete scsi_sg_count le32_to_cpu scsi_bufflen scsi_set_resid scsi_bufflen twa_command_mapped scsi_dma_unmap scsi_done twa_free_request_id readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits TW_CLEAR_ALL_INTERRUPTS spin_unlock IRQ_RETVAL 
+
+TW_OP_OUT TW_REQ_LUN_IN TW_LUN_OUT TW_CPU_TO_SGL cpu_to_le32 TW_REQ_LUN_IN TW_LUN_OUT TW_SGL_OUT TW_SGL_OUT TW_CPU_TO_SGL cpu_to_le32 
+
+twa_poll_status_gone readl TW_RESPONSE_QUEUE_REG_ADDR TW_RESID_OUT TW_PRINTK TW_OP_OUT twa_fill_sense twa_fill_sense 
+
+readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits time_after msleep 
+
+readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits time_after msleep 
+
+writel TW_COMMAND_QUEUE_REG_ADDR_LARGE readl TW_STATUS_REG_ADDR twa_check_bits twa_decode_bits TW_UNMASK_COMMAND_INTERRUPT writel TW_COMMAND_QUEUE_REG_ADDR_LARGE writel TW_COMMAND_QUEUE_REG_ADDR writel TW_COMMAND_QUEUE_REG_ADDR writel TW_COMMAND_QUEUE_REG_ADDR 
+
+set_bit TW_DISABLE_INTERRUPTS TW_MASK_COMMAND_INTERRUPT spin_lock_irqsave twa_command_mapped scsi_dma_unmap scsi_done spin_unlock_irqrestore twa_reset_sequence TW_ENABLE_AND_CLEAR_INTERRUPTS clear_bit 
+
+TW_SOFT_RESET twa_empty_response_queue_large TW_PRINTK twa_poll_status TW_PRINTK twa_empty_response_queue TW_PRINTK twa_check_srl TW_PRINTK twa_aen_drain_queue TW_PRINTK 
+
+sector_div sector_div 
+
+sdev_printk mutex_lock twa_reset_device_extension TW_PRINTK mutex_unlock 
+
+test_bit done twa_get_request_id twa_scsiop_execute_scsi twa_command_mapped scsi_dma_unmap twa_free_request_id twa_command_mapped scsi_dma_unmap done twa_free_request_id 
+
+TW_OPRES_IN memcpy memcpy TW_REQ_LUN_IN TW_REQ_LUN_IN scsi_sg_count twa_command_mapped scsi_sg_copy_to_buffer TW_CPU_TO_SGL cpu_to_le32 scsi_dma_map TW_CPU_TO_SGL sg_dma_address cpu_to_le32 sg_dma_len TW_CPU_TO_SGL TW_PRINTK TW_REQ_LUN_IN scsi_sg_count TW_CPU_TO_SGL TW_PRINTK TW_REQ_LUN_IN scsi_sg_count twa_post_command_packet twa_post_command_packet 
+
+twa_command_mapped scsi_sg_count scsi_sg_copy_from_buffer 
+
+TW_DISABLE_INTERRUPTS free_irq twa_initconnection TW_PRINTK TW_CLEAR_ALL_INTERRUPTS 
+
+pci_get_drvdata __twa_shutdown 
+
+blk_queue_rq_timeout 
+
+pci_enable_device TW_PRINTK pci_set_master pci_try_set_mwi dma_set_mask_and_coherent DMA_BIT_MASK dma_set_mask_and_coherent DMA_BIT_MASK TW_PRINTK scsi_host_alloc TW_PRINTK twa_initialize_device_extension TW_PRINTK pci_request_regions TW_PRINTK pci_resource_start pci_resource_len pci_resource_start pci_resource_len ioremap TW_PRINTK TW_DISABLE_INTERRUPTS twa_reset_sequence TW_MAX_LUNS scsi_add_host TW_PRINTK pci_set_drvdata pci_enable_msi set_bit request_irq TW_PRINTK TW_ENABLE_AND_CLEAR_INTERRUPTS scsi_scan_host register_chrdev TW_PRINTK test_bit pci_disable_msi scsi_remove_host iounmap pci_release_regions twa_free_device_extension scsi_host_put pci_disable_device 
+
+pci_get_drvdata scsi_remove_host unregister_chrdev __twa_shutdown test_bit pci_disable_msi iounmap pci_release_regions twa_free_device_extension scsi_host_put pci_disable_device 
+
+to_pci_dev pci_get_drvdata TW_DISABLE_INTERRUPTS free_irq test_bit pci_disable_msi twa_initconnection TW_PRINTK TW_CLEAR_ALL_INTERRUPTS 
+
+to_pci_dev pci_get_drvdata pci_try_set_mwi dma_set_mask_and_coherent DMA_BIT_MASK dma_set_mask_and_coherent DMA_BIT_MASK TW_PRINTK twa_reset_sequence request_irq TW_PRINTK test_bit pci_enable_msi TW_ENABLE_AND_CLEAR_INTERRUPTS scsi_remove_host 
+
+pci_register_driver 
+
+pci_unregister_driver 
+
+printf printf printf printf printf printf printf printf __raw_writeq IOADDR __raw_readq IOADDR __raw_writeq V_SPC_CFG_SRC1 IOADDR __raw_writeq V_SPC_CFG_SRC1 IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR 
+
+__raw_writeq IOADDR __raw_readq IOADDR __raw_readq IOADDR __raw_readq IOADDR __raw_readq IOADDR __raw_readq IOADDR __raw_readq IOADDR pr_debug __raw_writeq IOADDR wake_up_interruptible arm_tb pr_debug __raw_writeq IOADDR wake_up_interruptible wake_up_interruptible 
+
+printk 
+
+xchg pr_debug request_irq __raw_readq IOADDR __raw_writeq V_SPC_CFG_SRC1 IOADDR request_irq free_irq __raw_writeq IOADDR A_BCM1480_IMR_REGISTER __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR __raw_writeq IOADDR arm_tb pr_debug 
+
+pr_debug pr_debug wait_event_interruptible pr_debug free_irq free_irq pr_debug 
+
+iminor xchg memset vzalloc wmb init_waitqueue_head init_waitqueue_head mutex_init wmb 
+
+iminor mutex_lock sbprof_zbprof_stop vfree wmb mutex_unlock 
+
+access_ok mutex_lock __copy_to_user mutex_unlock pr_debug mutex_unlock 
+
+mutex_lock sbprof_zbprof_start mutex_unlock mutex_lock sbprof_zbprof_stop mutex_unlock wait_event_interruptible put_user 
+
+register_chrdev class_create IS_ERR PTR_ERR device_create MKDEV IS_ERR PTR_ERR wmb pr_info class_destroy unregister_chrdev 
+
+device_destroy MKDEV unregister_chrdev class_destroy 
+
+ath11k_pcic_read32 ath11k_dbg ath11k_pcic_write32 mdelay 
+
+ath11k_pcic_write32 
+
+ath11k_pcic_write32 
+
+ath11k_pcic_write32 
+
+ath11k_pcic_write32 
+
+ath11k_mhi_reset_txvecdb ath11k_mhi_reset_txvecstatus ath11k_mhi_reset_rxvecdb ath11k_mhi_reset_rxvecstatus 
+
+ath11k_pcic_get_user_msi_assignment ath11k_dbg kcalloc test_bit ath11k_pci_get_msi_irq 
+
+dev_get_drvdata ath11k_dbg ath11k_mhi_op_callback_to_str ath11k_warn test_bit queue_work 
+
+readl 
+
+writel 
+
+of_find_node_by_type of_address_to_resource of_node_put 
+
+mhi_alloc_controller ath11k_core_create_firmware_path ath11k_mhi_get_msi ath11k_err mhi_free_controller test_bit test_bit ath11k_mhi_read_addr_from_dt ath11k_err mhi_free_controller mhi_register_controller ath11k_err mhi_free_controller 
+
+mhi_unregister_controller kfree mhi_free_controller 
+
+mhi_prepare_for_power_up ath11k_warn mhi_sync_power_up ath11k_warn 
+
+mhi_power_down mhi_unprepare_after_power_down 
+
+mhi_pm_suspend ath11k_warn 
+
+mhi_pm_resume_force ath11k_warn 
+

@@ -1,0 +1,4530 @@
+IdentifierDeclStatement:null
+	IdentifierDecl:noop_backing_dev_info
+		IdentifierDeclType:struct backing_dev_info
+		Identifier:noop_backing_dev_info
+IdentifierDeclStatement:null
+	IdentifierDecl:*bdi_wq
+		IdentifierDeclType:struct workqueue_struct *
+		Identifier:bdi_wq
+IdentifierDeclStatement:null
+	IdentifierDecl:*bdi_debug_root
+		IdentifierDeclType:struct dentry *
+		Identifier:bdi_debug_root
+FunctionDef:bdi_debug_init ()
+	CompoundStatement:
+		ExpressionStatement:bdi_debug_root = debugfs_create_dir("bdi", NULL)
+			AssignmentExpression:bdi_debug_root = debugfs_create_dir("bdi", NULL)
+				Identifier:bdi_debug_root
+				CallExpression:debugfs_create_dir("bdi", NULL)
+					Callee:debugfs_create_dir
+						Identifier:debugfs_create_dir
+					ArgumentList:"bdi"
+						Argument:"bdi"
+							Constant:"bdi"
+						Argument:NULL
+							Identifier:NULL
+	ReturnType:static void
+	Identifier:bdi_debug_init
+	ParameterList:
+FunctionDef:bdi_debug_stats_show (struct seq_file *m , void *v)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = m->private;
+			IdentifierDecl:*bdi = m->private
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = m->private
+					Identifier:bdi
+					PtrMemberAccess:m->private
+						Identifier:m
+						Identifier:private
+		IdentifierDeclStatement:struct bdi_writeback *wb = &bdi->wb;
+			IdentifierDecl:*wb = &bdi->wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+				AssignmentExpression:*wb = &bdi->wb
+					Identifier:wb
+					UnaryOperationExpression:&bdi->wb
+						UnaryOperator:&
+						PtrMemberAccess:bdi->wb
+							Identifier:bdi
+							Identifier:wb
+		IdentifierDeclStatement:unsigned long background_thresh;
+			IdentifierDecl:background_thresh
+				IdentifierDeclType:unsigned long
+				Identifier:background_thresh
+		IdentifierDeclStatement:unsigned long dirty_thresh;
+			IdentifierDecl:dirty_thresh
+				IdentifierDeclType:unsigned long
+				Identifier:dirty_thresh
+		IdentifierDeclStatement:unsigned long wb_thresh;
+			IdentifierDecl:wb_thresh
+				IdentifierDeclType:unsigned long
+				Identifier:wb_thresh
+		IdentifierDeclStatement:unsigned long nr_dirty, nr_io, nr_more_io, nr_dirty_time;
+			IdentifierDecl:nr_dirty
+				IdentifierDeclType:unsigned long
+				Identifier:nr_dirty
+			IdentifierDecl:nr_io
+				IdentifierDeclType:unsigned long
+				Identifier:nr_io
+			IdentifierDecl:nr_more_io
+				IdentifierDeclType:unsigned long
+				Identifier:nr_more_io
+			IdentifierDecl:nr_dirty_time
+				IdentifierDeclType:unsigned long
+				Identifier:nr_dirty_time
+		IdentifierDeclStatement:struct inode *inode;
+			IdentifierDecl:*inode
+				IdentifierDeclType:struct inode *
+				Identifier:inode
+		ExpressionStatement:nr_dirty = nr_io = nr_more_io = nr_dirty_time = 0
+			AssignmentExpression:nr_dirty = nr_io = nr_more_io = nr_dirty_time = 0
+				Identifier:nr_dirty
+				AssignmentExpression:nr_io = nr_more_io = nr_dirty_time = 0
+					Identifier:nr_io
+					AssignmentExpression:nr_more_io = nr_dirty_time = 0
+						Identifier:nr_more_io
+						AssignmentExpression:nr_dirty_time = 0
+							Identifier:nr_dirty_time
+							Constant:0
+		ExpressionStatement:spin_lock(&wb->list_lock)
+			CallExpression:spin_lock(&wb->list_lock)
+				Callee:spin_lock
+					Identifier:spin_lock
+				ArgumentList:&wb->list_lock
+					Argument:&wb->list_lock
+						UnaryOperationExpression:&wb->list_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->list_lock
+								Identifier:wb
+								Identifier:list_lock
+		Statement:list_for_each_entry
+		Statement:(
+		Statement:inode
+		Statement:,
+		Statement:&
+		Statement:wb
+		Statement:->
+		Statement:b_dirty
+		Statement:,
+		Statement:i_io_list
+		Statement:)
+		ExpressionStatement:nr_dirty++
+			PostIncDecOperationExpression:nr_dirty++
+				Identifier:nr_dirty
+				IncDec:++
+		Statement:list_for_each_entry
+		Statement:(
+		Statement:inode
+		Statement:,
+		Statement:&
+		Statement:wb
+		Statement:->
+		Statement:b_io
+		Statement:,
+		Statement:i_io_list
+		Statement:)
+		ExpressionStatement:nr_io++
+			PostIncDecOperationExpression:nr_io++
+				Identifier:nr_io
+				IncDec:++
+		Statement:list_for_each_entry
+		Statement:(
+		Statement:inode
+		Statement:,
+		Statement:&
+		Statement:wb
+		Statement:->
+		Statement:b_more_io
+		Statement:,
+		Statement:i_io_list
+		Statement:)
+		ExpressionStatement:nr_more_io++
+			PostIncDecOperationExpression:nr_more_io++
+				Identifier:nr_more_io
+				IncDec:++
+		Statement:list_for_each_entry
+		Statement:(
+		Statement:inode
+		Statement:,
+		Statement:&
+		Statement:wb
+		Statement:->
+		Statement:b_dirty_time
+		Statement:,
+		Statement:i_io_list
+		Statement:)
+		IfStatement:if (inode->i_state & I_DIRTY_TIME)
+			Condition:inode->i_state & I_DIRTY_TIME
+				BitAndExpression:inode->i_state & I_DIRTY_TIME
+					PtrMemberAccess:inode->i_state
+						Identifier:inode
+						Identifier:i_state
+					Identifier:I_DIRTY_TIME
+			ExpressionStatement:nr_dirty_time++
+				PostIncDecOperationExpression:nr_dirty_time++
+					Identifier:nr_dirty_time
+					IncDec:++
+		ExpressionStatement:spin_unlock(&wb->list_lock)
+			CallExpression:spin_unlock(&wb->list_lock)
+				Callee:spin_unlock
+					Identifier:spin_unlock
+				ArgumentList:&wb->list_lock
+					Argument:&wb->list_lock
+						UnaryOperationExpression:&wb->list_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->list_lock
+								Identifier:wb
+								Identifier:list_lock
+		ExpressionStatement:global_dirty_limits(&background_thresh, &dirty_thresh)
+			CallExpression:global_dirty_limits(&background_thresh, &dirty_thresh)
+				Callee:global_dirty_limits
+					Identifier:global_dirty_limits
+				ArgumentList:&background_thresh
+					Argument:&background_thresh
+						UnaryOperationExpression:&background_thresh
+							UnaryOperator:&
+							Identifier:background_thresh
+					Argument:&dirty_thresh
+						UnaryOperationExpression:&dirty_thresh
+							UnaryOperator:&
+							Identifier:dirty_thresh
+		ExpressionStatement:wb_thresh = wb_calc_thresh(wb, dirty_thresh)
+			AssignmentExpression:wb_thresh = wb_calc_thresh(wb, dirty_thresh)
+				Identifier:wb_thresh
+				CallExpression:wb_calc_thresh(wb, dirty_thresh)
+					Callee:wb_calc_thresh
+						Identifier:wb_calc_thresh
+					ArgumentList:wb
+						Argument:wb
+							Identifier:wb
+						Argument:dirty_thresh
+							Identifier:dirty_thresh
+		Statement:define
+		Statement:K
+		Statement:(
+		Statement:x
+		Statement:)
+		Statement:(
+		Statement:(
+		Statement:x
+		Statement:)
+		Statement:<<
+		Statement:(
+		Statement:PAGE_SHIFT
+		Statement:-
+		Statement:10
+		Statement:)
+		Statement:)
+		Statement:seq_printf
+		Statement:(
+		Statement:m
+		Statement:,
+		Statement:"BdiWriteback:       %10lu kB\n"
+		Statement:"BdiReclaimable:     %10lu kB\n"
+		Statement:"BdiDirtyThresh:     %10lu kB\n"
+		Statement:"DirtyThresh:        %10lu kB\n"
+		Statement:"BackgroundThresh:   %10lu kB\n"
+		Statement:"BdiDirtied:         %10lu kB\n"
+		Statement:"BdiWritten:         %10lu kB\n"
+		Statement:"BdiWriteBandwidth:  %10lu kBps\n"
+		Statement:"b_dirty:            %10lu\n"
+		Statement:"b_io:               %10lu\n"
+		Statement:"b_more_io:          %10lu\n"
+		Statement:"b_dirty_time:       %10lu\n"
+		Statement:"bdi_list:           %10u\n"
+		Statement:"state:              %10lx\n"
+		Statement:,
+		Statement:(
+		Statement:unsigned
+		Statement:long
+		Statement:)
+		Statement:K
+		Statement:(
+		Statement:wb_stat
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:WB_WRITEBACK
+		Statement:)
+		Statement:)
+		Statement:,
+		Statement:(
+		Statement:unsigned
+		Statement:long
+		Statement:)
+		Statement:K
+		Statement:(
+		Statement:wb_stat
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:WB_RECLAIMABLE
+		Statement:)
+		Statement:)
+		Statement:,
+		Statement:K
+		Statement:(
+		Statement:wb_thresh
+		Statement:)
+		Statement:,
+		Statement:K
+		Statement:(
+		Statement:dirty_thresh
+		Statement:)
+		Statement:,
+		Statement:K
+		Statement:(
+		Statement:background_thresh
+		Statement:)
+		Statement:,
+		Statement:(
+		Statement:unsigned
+		Statement:long
+		Statement:)
+		Statement:K
+		Statement:(
+		Statement:wb_stat
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:WB_DIRTIED
+		Statement:)
+		Statement:)
+		Statement:,
+		Statement:(
+		Statement:unsigned
+		Statement:long
+		Statement:)
+		Statement:K
+		Statement:(
+		Statement:wb_stat
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:WB_WRITTEN
+		Statement:)
+		Statement:)
+		Statement:,
+		Statement:(
+		Statement:unsigned
+		Statement:long
+		Statement:)
+		Statement:K
+		Statement:(
+		Statement:wb
+		Statement:->
+		Statement:write_bandwidth
+		Statement:)
+		Statement:,
+		Statement:nr_dirty
+		Statement:,
+		Statement:nr_io
+		Statement:,
+		Statement:nr_more_io
+		Statement:,
+		Statement:nr_dirty_time
+		Statement:,
+		Statement:!
+		Statement:list_empty
+		Statement:(
+		Statement:&
+		Statement:bdi
+		Statement:->
+		Statement:bdi_list
+		Statement:)
+		Statement:,
+		Statement:bdi
+		Statement:->
+		Statement:wb
+		Statement:.
+		Statement:state
+		Statement:)
+		ExpressionStatement:
+		Statement:undef
+		Statement:K
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static int
+	Identifier:bdi_debug_stats_show
+	ParameterList:struct seq_file *m , void *v
+		Parameter:struct seq_file *m
+			ParameterType:struct seq_file *
+			Identifier:m
+		Parameter:void *v
+			ParameterType:void *
+			Identifier:v
+FunctionDef:bdi_debug_register (struct backing_dev_info *bdi , const char *name)
+	CompoundStatement:
+		ExpressionStatement:bdi->debug_dir = debugfs_create_dir(name, bdi_debug_root)
+			AssignmentExpression:bdi->debug_dir = debugfs_create_dir(name, bdi_debug_root)
+				PtrMemberAccess:bdi->debug_dir
+					Identifier:bdi
+					Identifier:debug_dir
+				CallExpression:debugfs_create_dir(name, bdi_debug_root)
+					Callee:debugfs_create_dir
+						Identifier:debugfs_create_dir
+					ArgumentList:name
+						Argument:name
+							Identifier:name
+						Argument:bdi_debug_root
+							Identifier:bdi_debug_root
+		ExpressionStatement:debugfs_create_file("stats", 0444, bdi->debug_dir, bdi,\t\t\t    &bdi_debug_stats_fops)
+			CallExpression:debugfs_create_file("stats", 0444, bdi->debug_dir, bdi,\t\t\t    &bdi_debug_stats_fops)
+				Callee:debugfs_create_file
+					Identifier:debugfs_create_file
+				ArgumentList:"stats"
+					Argument:"stats"
+						Constant:"stats"
+					Argument:0444
+						Constant:0444
+					Argument:bdi->debug_dir
+						PtrMemberAccess:bdi->debug_dir
+							Identifier:bdi
+							Identifier:debug_dir
+					Argument:bdi
+						Identifier:bdi
+					Argument:&bdi_debug_stats_fops
+						UnaryOperationExpression:&bdi_debug_stats_fops
+							UnaryOperator:&
+							Identifier:bdi_debug_stats_fops
+	ReturnType:static void
+	Identifier:bdi_debug_register
+	ParameterList:struct backing_dev_info *bdi , const char *name
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:const char *name
+			ParameterType:const char *
+			Identifier:name
+FunctionDef:bdi_debug_unregister (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:debugfs_remove_recursive(bdi->debug_dir)
+			CallExpression:debugfs_remove_recursive(bdi->debug_dir)
+				Callee:debugfs_remove_recursive
+					Identifier:debugfs_remove_recursive
+				ArgumentList:bdi->debug_dir
+					Argument:bdi->debug_dir
+						PtrMemberAccess:bdi->debug_dir
+							Identifier:bdi
+							Identifier:debug_dir
+	ReturnType:static void
+	Identifier:bdi_debug_unregister
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:bdi_debug_init ()
+	CompoundStatement:
+	ReturnType:inline void
+	Identifier:bdi_debug_init
+	ParameterList:
+FunctionDef:bdi_debug_register (struct backing_dev_info *bdi , const char *name)
+	CompoundStatement:
+	ReturnType:static inline void
+	Identifier:bdi_debug_register
+	ParameterList:struct backing_dev_info *bdi , const char *name
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:const char *name
+			ParameterType:const char *
+			Identifier:name
+FunctionDef:bdi_debug_unregister (struct backing_dev_info *bdi)
+	CompoundStatement:
+	ReturnType:static inline void
+	Identifier:bdi_debug_unregister
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:read_ahead_kb_store (struct device *dev , struct device_attribute *attr , const char *buf , size_t count)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = dev_get_drvdata(dev);
+			IdentifierDecl:*bdi = dev_get_drvdata(dev)
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = dev_get_drvdata(dev)
+					Identifier:bdi
+					CallExpression:dev_get_drvdata(dev)
+						Callee:dev_get_drvdata
+							Identifier:dev_get_drvdata
+						ArgumentList:dev
+							Argument:dev
+								Identifier:dev
+		IdentifierDeclStatement:unsigned long read_ahead_kb;
+			IdentifierDecl:read_ahead_kb
+				IdentifierDeclType:unsigned long
+				Identifier:read_ahead_kb
+		IdentifierDeclStatement:ssize_t ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:ssize_t
+				Identifier:ret
+		ExpressionStatement:ret = kstrtoul(buf, 10, &read_ahead_kb)
+			AssignmentExpression:ret = kstrtoul(buf, 10, &read_ahead_kb)
+				Identifier:ret
+				CallExpression:kstrtoul(buf, 10, &read_ahead_kb)
+					Callee:kstrtoul
+						Identifier:kstrtoul
+					ArgumentList:buf
+						Argument:buf
+							Identifier:buf
+						Argument:10
+							Constant:10
+						Argument:&read_ahead_kb
+							UnaryOperationExpression:&read_ahead_kb
+								UnaryOperator:&
+								Identifier:read_ahead_kb
+		IfStatement:if (ret < 0)
+			Condition:ret < 0
+				RelationalExpression:ret < 0
+					Identifier:ret
+					Constant:0
+			ReturnStatement:return ret;
+				Identifier:ret
+		ExpressionStatement:bdi->ra_pages = read_ahead_kb >> (PAGE_SHIFT - 10)
+			AssignmentExpression:bdi->ra_pages = read_ahead_kb >> (PAGE_SHIFT - 10)
+				PtrMemberAccess:bdi->ra_pages
+					Identifier:bdi
+					Identifier:ra_pages
+				ShiftExpression:read_ahead_kb >> (PAGE_SHIFT - 10)
+					Identifier:read_ahead_kb
+					AdditiveExpression:PAGE_SHIFT - 10
+						Identifier:PAGE_SHIFT
+						Constant:10
+		ReturnStatement:return count;
+			Identifier:count
+	ReturnType:endifstatic ssize_t
+	Identifier:read_ahead_kb_store
+	ParameterList:struct device *dev , struct device_attribute *attr , const char *buf , size_t count
+		Parameter:struct device *dev
+			ParameterType:struct device *
+			Identifier:dev
+		Parameter:struct device_attribute *attr
+			ParameterType:struct device_attribute *
+			Identifier:attr
+		Parameter:const char *buf
+			ParameterType:const char *
+			Identifier:buf
+		Parameter:size_t count
+			ParameterType:size_t
+			Identifier:count
+FunctionDef:_show (struct device *dev , struct device_attribute *attr , char *page)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = dev_get_drvdata(dev);
+			IdentifierDecl:*bdi = dev_get_drvdata(dev)
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = dev_get_drvdata(dev)
+					Identifier:bdi
+					CallExpression:dev_get_drvdata(dev)
+						Callee:dev_get_drvdata
+							Identifier:dev_get_drvdata
+						ArgumentList:dev
+							Argument:dev
+								Identifier:dev
+		ReturnStatement:return snprintf(page, PAGE_SIZE-1, "%lld\n", (long long)expr);
+			CallExpression:snprintf(page, PAGE_SIZE-1, "%lld\n", (long long)expr)
+				Callee:snprintf
+					Identifier:snprintf
+				ArgumentList:page
+					Argument:page
+						Identifier:page
+					Argument:PAGE_SIZE-1
+						AdditiveExpression:PAGE_SIZE-1
+							Identifier:PAGE_SIZE
+							Constant:1
+					Argument:"%lld\n"
+						Constant:"%lld\n"
+					Argument:(long long)expr
+						CastExpression:(long long)expr
+							CastTarget:long long
+							Identifier:expr
+	ReturnType:static ssize_t name
+	Identifier:_show
+	ParameterList:struct device *dev , struct device_attribute *attr , char *page
+		Parameter:struct device *dev
+			ParameterType:struct device *
+			Identifier:dev
+		Parameter:struct device_attribute *attr
+			ParameterType:struct device_attribute *
+			Identifier:attr
+		Parameter:char *page
+			ParameterType:char *
+			Identifier:page
+FunctionDef:min_ratio_store (struct device *dev , struct device_attribute *attr , const char *buf , size_t count)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = dev_get_drvdata(dev);
+			IdentifierDecl:*bdi = dev_get_drvdata(dev)
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = dev_get_drvdata(dev)
+					Identifier:bdi
+					CallExpression:dev_get_drvdata(dev)
+						Callee:dev_get_drvdata
+							Identifier:dev_get_drvdata
+						ArgumentList:dev
+							Argument:dev
+								Identifier:dev
+		IdentifierDeclStatement:unsigned int ratio;
+			IdentifierDecl:ratio
+				IdentifierDeclType:unsigned int
+				Identifier:ratio
+		IdentifierDeclStatement:ssize_t ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:ssize_t
+				Identifier:ret
+		ExpressionStatement:ret = kstrtouint(buf, 10, &ratio)
+			AssignmentExpression:ret = kstrtouint(buf, 10, &ratio)
+				Identifier:ret
+				CallExpression:kstrtouint(buf, 10, &ratio)
+					Callee:kstrtouint
+						Identifier:kstrtouint
+					ArgumentList:buf
+						Argument:buf
+							Identifier:buf
+						Argument:10
+							Constant:10
+						Argument:&ratio
+							UnaryOperationExpression:&ratio
+								UnaryOperator:&
+								Identifier:ratio
+		IfStatement:if (ret < 0)
+			Condition:ret < 0
+				RelationalExpression:ret < 0
+					Identifier:ret
+					Constant:0
+			ReturnStatement:return ret;
+				Identifier:ret
+		ExpressionStatement:ret = bdi_set_min_ratio(bdi, ratio)
+			AssignmentExpression:ret = bdi_set_min_ratio(bdi, ratio)
+				Identifier:ret
+				CallExpression:bdi_set_min_ratio(bdi, ratio)
+					Callee:bdi_set_min_ratio
+						Identifier:bdi_set_min_ratio
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+						Argument:ratio
+							Identifier:ratio
+		IfStatement:if (!ret)
+			Condition:!ret
+				UnaryOperationExpression:!ret
+					UnaryOperator:!
+					Identifier:ret
+			ExpressionStatement:ret = count
+				AssignmentExpression:ret = count
+					Identifier:ret
+					Identifier:count
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:static ssize_t
+	Identifier:min_ratio_store
+	ParameterList:struct device *dev , struct device_attribute *attr , const char *buf , size_t count
+		Parameter:struct device *dev
+			ParameterType:struct device *
+			Identifier:dev
+		Parameter:struct device_attribute *attr
+			ParameterType:struct device_attribute *
+			Identifier:attr
+		Parameter:const char *buf
+			ParameterType:const char *
+			Identifier:buf
+		Parameter:size_t count
+			ParameterType:size_t
+			Identifier:count
+FunctionDef:max_ratio_store (struct device *dev , struct device_attribute *attr , const char *buf , size_t count)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = dev_get_drvdata(dev);
+			IdentifierDecl:*bdi = dev_get_drvdata(dev)
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = dev_get_drvdata(dev)
+					Identifier:bdi
+					CallExpression:dev_get_drvdata(dev)
+						Callee:dev_get_drvdata
+							Identifier:dev_get_drvdata
+						ArgumentList:dev
+							Argument:dev
+								Identifier:dev
+		IdentifierDeclStatement:unsigned int ratio;
+			IdentifierDecl:ratio
+				IdentifierDeclType:unsigned int
+				Identifier:ratio
+		IdentifierDeclStatement:ssize_t ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:ssize_t
+				Identifier:ret
+		ExpressionStatement:ret = kstrtouint(buf, 10, &ratio)
+			AssignmentExpression:ret = kstrtouint(buf, 10, &ratio)
+				Identifier:ret
+				CallExpression:kstrtouint(buf, 10, &ratio)
+					Callee:kstrtouint
+						Identifier:kstrtouint
+					ArgumentList:buf
+						Argument:buf
+							Identifier:buf
+						Argument:10
+							Constant:10
+						Argument:&ratio
+							UnaryOperationExpression:&ratio
+								UnaryOperator:&
+								Identifier:ratio
+		IfStatement:if (ret < 0)
+			Condition:ret < 0
+				RelationalExpression:ret < 0
+					Identifier:ret
+					Constant:0
+			ReturnStatement:return ret;
+				Identifier:ret
+		ExpressionStatement:ret = bdi_set_max_ratio(bdi, ratio)
+			AssignmentExpression:ret = bdi_set_max_ratio(bdi, ratio)
+				Identifier:ret
+				CallExpression:bdi_set_max_ratio(bdi, ratio)
+					Callee:bdi_set_max_ratio
+						Identifier:bdi_set_max_ratio
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+						Argument:ratio
+							Identifier:ratio
+		IfStatement:if (!ret)
+			Condition:!ret
+				UnaryOperationExpression:!ret
+					UnaryOperator:!
+					Identifier:ret
+			ExpressionStatement:ret = count
+				AssignmentExpression:ret = count
+					Identifier:ret
+					Identifier:count
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:static ssize_t
+	Identifier:max_ratio_store
+	ParameterList:struct device *dev , struct device_attribute *attr , const char *buf , size_t count
+		Parameter:struct device *dev
+			ParameterType:struct device *
+			Identifier:dev
+		Parameter:struct device_attribute *attr
+			ParameterType:struct device_attribute *
+			Identifier:attr
+		Parameter:const char *buf
+			ParameterType:const char *
+			Identifier:buf
+		Parameter:size_t count
+			ParameterType:size_t
+			Identifier:count
+FunctionDef:stable_pages_required_show (struct device *dev , struct device_attribute *attr , char *page)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi = dev_get_drvdata(dev);
+			IdentifierDecl:*bdi = dev_get_drvdata(dev)
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+				AssignmentExpression:*bdi = dev_get_drvdata(dev)
+					Identifier:bdi
+					CallExpression:dev_get_drvdata(dev)
+						Callee:dev_get_drvdata
+							Identifier:dev_get_drvdata
+						ArgumentList:dev
+							Argument:dev
+								Identifier:dev
+		ReturnStatement:return snprintf(page, PAGE_SIZE-1, "%d\n",\t\t\tbdi_cap_stable_pages_required(bdi) ? 1 : 0);
+			CallExpression:snprintf(page, PAGE_SIZE-1, "%d\n",\t\t\tbdi_cap_stable_pages_required(bdi) ? 1 : 0)
+				Callee:snprintf
+					Identifier:snprintf
+				ArgumentList:page
+					Argument:page
+						Identifier:page
+					Argument:PAGE_SIZE-1
+						AdditiveExpression:PAGE_SIZE-1
+							Identifier:PAGE_SIZE
+							Constant:1
+					Argument:"%d\n"
+						Constant:"%d\n"
+					Argument:bdi_cap_stable_pages_required(bdi) ? 1 : 0
+						ConditionalExpression:bdi_cap_stable_pages_required(bdi) ? 1 : 0
+							Condition:bdi_cap_stable_pages_required(bdi)
+								CallExpression:bdi_cap_stable_pages_required(bdi)
+									Callee:bdi_cap_stable_pages_required
+										Identifier:bdi_cap_stable_pages_required
+									ArgumentList:bdi
+										Argument:bdi
+											Identifier:bdi
+							Constant:1
+							Constant:0
+	ReturnType:static ssize_t
+	Identifier:stable_pages_required_show
+	ParameterList:struct device *dev , struct device_attribute *attr , char *page
+		Parameter:struct device *dev
+			ParameterType:struct device *
+			Identifier:dev
+		Parameter:struct device_attribute *attr
+			ParameterType:struct device_attribute *
+			Identifier:attr
+		Parameter:char *page
+			ParameterType:char *
+			Identifier:page
+IdentifierDeclStatement:null
+	IdentifierDecl:*bdi_dev_attrs[]
+		IdentifierDeclType:struct attribute * [ ]
+		Identifier:bdi_dev_attrs
+FunctionDef:bdi_class_init ()
+	CompoundStatement:
+		ExpressionStatement:bdi_class = class_create(THIS_MODULE, "bdi")
+			AssignmentExpression:bdi_class = class_create(THIS_MODULE, "bdi")
+				Identifier:bdi_class
+				CallExpression:class_create(THIS_MODULE, "bdi")
+					Callee:class_create
+						Identifier:class_create
+					ArgumentList:THIS_MODULE
+						Argument:THIS_MODULE
+							Identifier:THIS_MODULE
+						Argument:"bdi"
+							Constant:"bdi"
+		IfStatement:if (IS_ERR(bdi_class))
+			Condition:IS_ERR(bdi_class)
+				CallExpression:IS_ERR(bdi_class)
+					Callee:IS_ERR
+						Identifier:IS_ERR
+					ArgumentList:bdi_class
+						Argument:bdi_class
+							Identifier:bdi_class
+			ReturnStatement:return PTR_ERR(bdi_class);
+				CallExpression:PTR_ERR(bdi_class)
+					Callee:PTR_ERR
+						Identifier:PTR_ERR
+					ArgumentList:bdi_class
+						Argument:bdi_class
+							Identifier:bdi_class
+		ExpressionStatement:bdi_class->dev_groups = bdi_dev_groups
+			AssignmentExpression:bdi_class->dev_groups = bdi_dev_groups
+				PtrMemberAccess:bdi_class->dev_groups
+					Identifier:bdi_class
+					Identifier:dev_groups
+				Identifier:bdi_dev_groups
+		ExpressionStatement:bdi_debug_init()
+			CallExpression:bdi_debug_init()
+				Callee:bdi_debug_init
+					Identifier:bdi_debug_init
+				ArgumentList:
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static __init int
+	Identifier:bdi_class_init
+	ParameterList:
+IdentifierDeclStatement:null
+	IdentifierDecl:bdi_init(struct backing_dev_info *bdi)
+		IdentifierDeclType:int ( struct backing_dev_info * bdi )
+		Identifier:bdi_init
+FunctionDef:default_bdi_init ()
+	CompoundStatement:
+		IdentifierDeclStatement:int err;
+			IdentifierDecl:err
+				IdentifierDeclType:int
+				Identifier:err
+		ExpressionStatement:bdi_wq = alloc_workqueue("writeback", WQ_MEM_RECLAIM | WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS, 0)
+			AssignmentExpression:bdi_wq = alloc_workqueue("writeback", WQ_MEM_RECLAIM | WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS, 0)
+				Identifier:bdi_wq
+				CallExpression:alloc_workqueue("writeback", WQ_MEM_RECLAIM | WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS, 0)
+					Callee:alloc_workqueue
+						Identifier:alloc_workqueue
+					ArgumentList:"writeback"
+						Argument:"writeback"
+							Constant:"writeback"
+						Argument:WQ_MEM_RECLAIM | WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS
+							InclusiveOrExpression:WQ_MEM_RECLAIM | WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS
+								Identifier:WQ_MEM_RECLAIM
+								InclusiveOrExpression:WQ_FREEZABLE |\t\t\t\t\t      WQ_UNBOUND | WQ_SYSFS
+									Identifier:WQ_FREEZABLE
+									InclusiveOrExpression:WQ_UNBOUND | WQ_SYSFS
+										Identifier:WQ_UNBOUND
+										Identifier:WQ_SYSFS
+						Argument:0
+							Constant:0
+		IfStatement:if (!bdi_wq)
+			Condition:!bdi_wq
+				UnaryOperationExpression:!bdi_wq
+					UnaryOperator:!
+					Identifier:bdi_wq
+			ReturnStatement:return -ENOMEM;
+				UnaryOperationExpression:-ENOMEM
+					UnaryOperator:-
+					Identifier:ENOMEM
+		ExpressionStatement:err = bdi_init(&noop_backing_dev_info)
+			AssignmentExpression:err = bdi_init(&noop_backing_dev_info)
+				Identifier:err
+				CallExpression:bdi_init(&noop_backing_dev_info)
+					Callee:bdi_init
+						Identifier:bdi_init
+					ArgumentList:&noop_backing_dev_info
+						Argument:&noop_backing_dev_info
+							UnaryOperationExpression:&noop_backing_dev_info
+								UnaryOperator:&
+								Identifier:noop_backing_dev_info
+		ReturnStatement:return err;
+			Identifier:err
+	ReturnType:static int __init
+	Identifier:default_bdi_init
+	ParameterList:
+FunctionDef:wb_wakeup_delayed (struct bdi_writeback *wb)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long timeout;
+			IdentifierDecl:timeout
+				IdentifierDeclType:unsigned long
+				Identifier:timeout
+		ExpressionStatement:timeout = msecs_to_jiffies(dirty_writeback_interval * 10)
+			AssignmentExpression:timeout = msecs_to_jiffies(dirty_writeback_interval * 10)
+				Identifier:timeout
+				CallExpression:msecs_to_jiffies(dirty_writeback_interval * 10)
+					Callee:msecs_to_jiffies
+						Identifier:msecs_to_jiffies
+					ArgumentList:dirty_writeback_interval * 10
+						Argument:dirty_writeback_interval * 10
+							MultiplicativeExpression:dirty_writeback_interval * 10
+								Identifier:dirty_writeback_interval
+								Constant:10
+		ExpressionStatement:spin_lock_bh(&wb->work_lock)
+			CallExpression:spin_lock_bh(&wb->work_lock)
+				Callee:spin_lock_bh
+					Identifier:spin_lock_bh
+				ArgumentList:&wb->work_lock
+					Argument:&wb->work_lock
+						UnaryOperationExpression:&wb->work_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_lock
+								Identifier:wb
+								Identifier:work_lock
+		IfStatement:if (test_bit(WB_registered, &wb->state))
+			Condition:test_bit(WB_registered, &wb->state)
+				CallExpression:test_bit(WB_registered, &wb->state)
+					Callee:test_bit
+						Identifier:test_bit
+					ArgumentList:WB_registered
+						Argument:WB_registered
+							Identifier:WB_registered
+						Argument:&wb->state
+							UnaryOperationExpression:&wb->state
+								UnaryOperator:&
+								PtrMemberAccess:wb->state
+									Identifier:wb
+									Identifier:state
+			ExpressionStatement:queue_delayed_work(bdi_wq, &wb->dwork, timeout)
+				CallExpression:queue_delayed_work(bdi_wq, &wb->dwork, timeout)
+					Callee:queue_delayed_work
+						Identifier:queue_delayed_work
+					ArgumentList:bdi_wq
+						Argument:bdi_wq
+							Identifier:bdi_wq
+						Argument:&wb->dwork
+							UnaryOperationExpression:&wb->dwork
+								UnaryOperator:&
+								PtrMemberAccess:wb->dwork
+									Identifier:wb
+									Identifier:dwork
+						Argument:timeout
+							Identifier:timeout
+		ExpressionStatement:spin_unlock_bh(&wb->work_lock)
+			CallExpression:spin_unlock_bh(&wb->work_lock)
+				Callee:spin_unlock_bh
+					Identifier:spin_unlock_bh
+				ArgumentList:&wb->work_lock
+					Argument:&wb->work_lock
+						UnaryOperationExpression:&wb->work_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_lock
+								Identifier:wb
+								Identifier:work_lock
+	ReturnType:void
+	Identifier:wb_wakeup_delayed
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+FunctionDef:wb_init (struct bdi_writeback *wb , struct backing_dev_info *bdi , int blkcg_id , gfp_t gfp)
+	CompoundStatement:
+		IdentifierDeclStatement:int i, err;
+			IdentifierDecl:i
+				IdentifierDeclType:int
+				Identifier:i
+			IdentifierDecl:err
+				IdentifierDeclType:int
+				Identifier:err
+		ExpressionStatement:memset(wb, 0, sizeof(*wb))
+			CallExpression:memset(wb, 0, sizeof(*wb))
+				Callee:memset
+					Identifier:memset
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+					Argument:0
+						Constant:0
+					Argument:sizeof(*wb)
+						SizeofExpression:sizeof(*wb)
+							Sizeof:sizeof
+							UnaryOperationExpression:*wb
+								UnaryOperator:*
+								Identifier:wb
+		IfStatement:if (wb != &bdi->wb)
+			Condition:wb != &bdi->wb
+				EqualityExpression:wb != &bdi->wb
+					Identifier:wb
+					UnaryOperationExpression:&bdi->wb
+						UnaryOperator:&
+						PtrMemberAccess:bdi->wb
+							Identifier:bdi
+							Identifier:wb
+			ExpressionStatement:bdi_get(bdi)
+				CallExpression:bdi_get(bdi)
+					Callee:bdi_get
+						Identifier:bdi_get
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+		ExpressionStatement:wb->bdi = bdi
+			AssignmentExpression:wb->bdi = bdi
+				PtrMemberAccess:wb->bdi
+					Identifier:wb
+					Identifier:bdi
+				Identifier:bdi
+		ExpressionStatement:wb->last_old_flush = jiffies
+			AssignmentExpression:wb->last_old_flush = jiffies
+				PtrMemberAccess:wb->last_old_flush
+					Identifier:wb
+					Identifier:last_old_flush
+				Identifier:jiffies
+		ExpressionStatement:INIT_LIST_HEAD(&wb->b_dirty)
+			CallExpression:INIT_LIST_HEAD(&wb->b_dirty)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&wb->b_dirty
+					Argument:&wb->b_dirty
+						UnaryOperationExpression:&wb->b_dirty
+							UnaryOperator:&
+							PtrMemberAccess:wb->b_dirty
+								Identifier:wb
+								Identifier:b_dirty
+		ExpressionStatement:INIT_LIST_HEAD(&wb->b_io)
+			CallExpression:INIT_LIST_HEAD(&wb->b_io)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&wb->b_io
+					Argument:&wb->b_io
+						UnaryOperationExpression:&wb->b_io
+							UnaryOperator:&
+							PtrMemberAccess:wb->b_io
+								Identifier:wb
+								Identifier:b_io
+		ExpressionStatement:INIT_LIST_HEAD(&wb->b_more_io)
+			CallExpression:INIT_LIST_HEAD(&wb->b_more_io)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&wb->b_more_io
+					Argument:&wb->b_more_io
+						UnaryOperationExpression:&wb->b_more_io
+							UnaryOperator:&
+							PtrMemberAccess:wb->b_more_io
+								Identifier:wb
+								Identifier:b_more_io
+		ExpressionStatement:INIT_LIST_HEAD(&wb->b_dirty_time)
+			CallExpression:INIT_LIST_HEAD(&wb->b_dirty_time)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&wb->b_dirty_time
+					Argument:&wb->b_dirty_time
+						UnaryOperationExpression:&wb->b_dirty_time
+							UnaryOperator:&
+							PtrMemberAccess:wb->b_dirty_time
+								Identifier:wb
+								Identifier:b_dirty_time
+		ExpressionStatement:spin_lock_init(&wb->list_lock)
+			CallExpression:spin_lock_init(&wb->list_lock)
+				Callee:spin_lock_init
+					Identifier:spin_lock_init
+				ArgumentList:&wb->list_lock
+					Argument:&wb->list_lock
+						UnaryOperationExpression:&wb->list_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->list_lock
+								Identifier:wb
+								Identifier:list_lock
+		ExpressionStatement:wb->bw_time_stamp = jiffies
+			AssignmentExpression:wb->bw_time_stamp = jiffies
+				PtrMemberAccess:wb->bw_time_stamp
+					Identifier:wb
+					Identifier:bw_time_stamp
+				Identifier:jiffies
+		ExpressionStatement:wb->balanced_dirty_ratelimit = INIT_BW
+			AssignmentExpression:wb->balanced_dirty_ratelimit = INIT_BW
+				PtrMemberAccess:wb->balanced_dirty_ratelimit
+					Identifier:wb
+					Identifier:balanced_dirty_ratelimit
+				Identifier:INIT_BW
+		ExpressionStatement:wb->dirty_ratelimit = INIT_BW
+			AssignmentExpression:wb->dirty_ratelimit = INIT_BW
+				PtrMemberAccess:wb->dirty_ratelimit
+					Identifier:wb
+					Identifier:dirty_ratelimit
+				Identifier:INIT_BW
+		ExpressionStatement:wb->write_bandwidth = INIT_BW
+			AssignmentExpression:wb->write_bandwidth = INIT_BW
+				PtrMemberAccess:wb->write_bandwidth
+					Identifier:wb
+					Identifier:write_bandwidth
+				Identifier:INIT_BW
+		ExpressionStatement:wb->avg_write_bandwidth = INIT_BW
+			AssignmentExpression:wb->avg_write_bandwidth = INIT_BW
+				PtrMemberAccess:wb->avg_write_bandwidth
+					Identifier:wb
+					Identifier:avg_write_bandwidth
+				Identifier:INIT_BW
+		ExpressionStatement:spin_lock_init(&wb->work_lock)
+			CallExpression:spin_lock_init(&wb->work_lock)
+				Callee:spin_lock_init
+					Identifier:spin_lock_init
+				ArgumentList:&wb->work_lock
+					Argument:&wb->work_lock
+						UnaryOperationExpression:&wb->work_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_lock
+								Identifier:wb
+								Identifier:work_lock
+		ExpressionStatement:INIT_LIST_HEAD(&wb->work_list)
+			CallExpression:INIT_LIST_HEAD(&wb->work_list)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&wb->work_list
+					Argument:&wb->work_list
+						UnaryOperationExpression:&wb->work_list
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_list
+								Identifier:wb
+								Identifier:work_list
+		ExpressionStatement:INIT_DELAYED_WORK(&wb->dwork, wb_workfn)
+			CallExpression:INIT_DELAYED_WORK(&wb->dwork, wb_workfn)
+				Callee:INIT_DELAYED_WORK
+					Identifier:INIT_DELAYED_WORK
+				ArgumentList:&wb->dwork
+					Argument:&wb->dwork
+						UnaryOperationExpression:&wb->dwork
+							UnaryOperator:&
+							PtrMemberAccess:wb->dwork
+								Identifier:wb
+								Identifier:dwork
+					Argument:wb_workfn
+						Identifier:wb_workfn
+		ExpressionStatement:wb->dirty_sleep = jiffies
+			AssignmentExpression:wb->dirty_sleep = jiffies
+				PtrMemberAccess:wb->dirty_sleep
+					Identifier:wb
+					Identifier:dirty_sleep
+				Identifier:jiffies
+		ExpressionStatement:wb->congested = wb_congested_get_create(bdi, blkcg_id, gfp)
+			AssignmentExpression:wb->congested = wb_congested_get_create(bdi, blkcg_id, gfp)
+				PtrMemberAccess:wb->congested
+					Identifier:wb
+					Identifier:congested
+				CallExpression:wb_congested_get_create(bdi, blkcg_id, gfp)
+					Callee:wb_congested_get_create
+						Identifier:wb_congested_get_create
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+						Argument:blkcg_id
+							Identifier:blkcg_id
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (!wb->congested)
+			Condition:!wb->congested
+				UnaryOperationExpression:!wb->congested
+					UnaryOperator:!
+					PtrMemberAccess:wb->congested
+						Identifier:wb
+						Identifier:congested
+			CompoundStatement:
+				ExpressionStatement:err = -ENOMEM
+					AssignmentExpression:err = -ENOMEM
+						Identifier:err
+						UnaryOperationExpression:-ENOMEM
+							UnaryOperator:-
+							Identifier:ENOMEM
+				GotoStatement:goto out_put_bdi;
+					Identifier:out_put_bdi
+		ExpressionStatement:err = fprop_local_init_percpu(&wb->completions, gfp)
+			AssignmentExpression:err = fprop_local_init_percpu(&wb->completions, gfp)
+				Identifier:err
+				CallExpression:fprop_local_init_percpu(&wb->completions, gfp)
+					Callee:fprop_local_init_percpu
+						Identifier:fprop_local_init_percpu
+					ArgumentList:&wb->completions
+						Argument:&wb->completions
+							UnaryOperationExpression:&wb->completions
+								UnaryOperator:&
+								PtrMemberAccess:wb->completions
+									Identifier:wb
+									Identifier:completions
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (err)
+			Condition:err
+				Identifier:err
+			GotoStatement:goto out_put_cong;
+				Identifier:out_put_cong
+		ForStatement:for (i = 0; i < NR_WB_STAT_ITEMS; i++)
+			ForInit:i = 0;
+				AssignmentExpression:i = 0
+					Identifier:i
+					Constant:0
+			Condition:i < NR_WB_STAT_ITEMS
+				RelationalExpression:i < NR_WB_STAT_ITEMS
+					Identifier:i
+					Identifier:NR_WB_STAT_ITEMS
+			PostIncDecOperationExpression:i++
+				Identifier:i
+				IncDec:++
+			CompoundStatement:
+				ExpressionStatement:err = percpu_counter_init(&wb->stat[i], 0, gfp)
+					AssignmentExpression:err = percpu_counter_init(&wb->stat[i], 0, gfp)
+						Identifier:err
+						CallExpression:percpu_counter_init(&wb->stat[i], 0, gfp)
+							Callee:percpu_counter_init
+								Identifier:percpu_counter_init
+							ArgumentList:&wb->stat[i]
+								Argument:&wb->stat[i]
+									UnaryOperationExpression:&wb->stat[i]
+										UnaryOperator:&
+										ArrayIndexing:wb->stat[i]
+											PtrMemberAccess:wb->stat
+												Identifier:wb
+												Identifier:stat
+											Identifier:i
+								Argument:0
+									Constant:0
+								Argument:gfp
+									Identifier:gfp
+				IfStatement:if (err)
+					Condition:err
+						Identifier:err
+					GotoStatement:goto out_destroy_stat;
+						Identifier:out_destroy_stat
+		ReturnStatement:return 0;
+			Constant:0
+		Label:out_destroy_stat:
+			Identifier:out_destroy_stat
+		WhileStatement:while (i--)
+			Condition:i--
+				PostIncDecOperationExpression:i--
+					Identifier:i
+					IncDec:--
+			ExpressionStatement:percpu_counter_destroy(&wb->stat[i])
+				CallExpression:percpu_counter_destroy(&wb->stat[i])
+					Callee:percpu_counter_destroy
+						Identifier:percpu_counter_destroy
+					ArgumentList:&wb->stat[i]
+						Argument:&wb->stat[i]
+							UnaryOperationExpression:&wb->stat[i]
+								UnaryOperator:&
+								ArrayIndexing:wb->stat[i]
+									PtrMemberAccess:wb->stat
+										Identifier:wb
+										Identifier:stat
+									Identifier:i
+		ExpressionStatement:fprop_local_destroy_percpu(&wb->completions)
+			CallExpression:fprop_local_destroy_percpu(&wb->completions)
+				Callee:fprop_local_destroy_percpu
+					Identifier:fprop_local_destroy_percpu
+				ArgumentList:&wb->completions
+					Argument:&wb->completions
+						UnaryOperationExpression:&wb->completions
+							UnaryOperator:&
+							PtrMemberAccess:wb->completions
+								Identifier:wb
+								Identifier:completions
+		Label:out_put_cong:
+			Identifier:out_put_cong
+		ExpressionStatement:wb_congested_put(wb->congested)
+			CallExpression:wb_congested_put(wb->congested)
+				Callee:wb_congested_put
+					Identifier:wb_congested_put
+				ArgumentList:wb->congested
+					Argument:wb->congested
+						PtrMemberAccess:wb->congested
+							Identifier:wb
+							Identifier:congested
+		Label:out_put_bdi:
+			Identifier:out_put_bdi
+		IfStatement:if (wb != &bdi->wb)
+			Condition:wb != &bdi->wb
+				EqualityExpression:wb != &bdi->wb
+					Identifier:wb
+					UnaryOperationExpression:&bdi->wb
+						UnaryOperator:&
+						PtrMemberAccess:bdi->wb
+							Identifier:bdi
+							Identifier:wb
+			ExpressionStatement:bdi_put(bdi)
+				CallExpression:bdi_put(bdi)
+					Callee:bdi_put
+						Identifier:bdi_put
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+		ReturnStatement:return err;
+			Identifier:err
+	ReturnType:static int
+	Identifier:wb_init
+	ParameterList:struct bdi_writeback *wb , struct backing_dev_info *bdi , int blkcg_id , gfp_t gfp
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:int blkcg_id
+			ParameterType:int
+			Identifier:blkcg_id
+		Parameter:gfp_t gfp
+			ParameterType:gfp_t
+			Identifier:gfp
+IdentifierDeclStatement:null
+	IdentifierDecl:cgwb_remove_from_bdi_list(struct bdi_writeback *wb)
+		IdentifierDeclType:void ( struct bdi_writeback * wb )
+		Identifier:cgwb_remove_from_bdi_list
+FunctionDef:wb_shutdown (struct bdi_writeback *wb)
+	CompoundStatement:
+		Statement:/* Make sure nobody queues further work */
+		ExpressionStatement:spin_lock_bh(&wb->work_lock)
+			CallExpression:spin_lock_bh(&wb->work_lock)
+				Callee:spin_lock_bh
+					Identifier:spin_lock_bh
+				ArgumentList:&wb->work_lock
+					Argument:&wb->work_lock
+						UnaryOperationExpression:&wb->work_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_lock
+								Identifier:wb
+								Identifier:work_lock
+		IfStatement:if (!test_and_clear_bit(WB_registered, &wb->state))
+			Condition:!test_and_clear_bit(WB_registered, &wb->state)
+				UnaryOperationExpression:!test_and_clear_bit(WB_registered, &wb->state)
+					UnaryOperator:!
+					CallExpression:test_and_clear_bit(WB_registered, &wb->state)
+						Callee:test_and_clear_bit
+							Identifier:test_and_clear_bit
+						ArgumentList:WB_registered
+							Argument:WB_registered
+								Identifier:WB_registered
+							Argument:&wb->state
+								UnaryOperationExpression:&wb->state
+									UnaryOperator:&
+									PtrMemberAccess:wb->state
+										Identifier:wb
+										Identifier:state
+			CompoundStatement:
+				ExpressionStatement:spin_unlock_bh(&wb->work_lock)
+					CallExpression:spin_unlock_bh(&wb->work_lock)
+						Callee:spin_unlock_bh
+							Identifier:spin_unlock_bh
+						ArgumentList:&wb->work_lock
+							Argument:&wb->work_lock
+								UnaryOperationExpression:&wb->work_lock
+									UnaryOperator:&
+									PtrMemberAccess:wb->work_lock
+										Identifier:wb
+										Identifier:work_lock
+				ReturnStatement:return;
+		ExpressionStatement:spin_unlock_bh(&wb->work_lock)
+			CallExpression:spin_unlock_bh(&wb->work_lock)
+				Callee:spin_unlock_bh
+					Identifier:spin_unlock_bh
+				ArgumentList:&wb->work_lock
+					Argument:&wb->work_lock
+						UnaryOperationExpression:&wb->work_lock
+							UnaryOperator:&
+							PtrMemberAccess:wb->work_lock
+								Identifier:wb
+								Identifier:work_lock
+		ExpressionStatement:cgwb_remove_from_bdi_list(wb)
+			CallExpression:cgwb_remove_from_bdi_list(wb)
+				Callee:cgwb_remove_from_bdi_list
+					Identifier:cgwb_remove_from_bdi_list
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		Statement:/*\t * Drain work list and shutdown the delayed_work.  !WB_registered\t * tells wb_workfn() that @wb is dying and its work_list needs to\t * be drained no matter what.\t */
+		ExpressionStatement:mod_delayed_work(bdi_wq, &wb->dwork, 0)
+			CallExpression:mod_delayed_work(bdi_wq, &wb->dwork, 0)
+				Callee:mod_delayed_work
+					Identifier:mod_delayed_work
+				ArgumentList:bdi_wq
+					Argument:bdi_wq
+						Identifier:bdi_wq
+					Argument:&wb->dwork
+						UnaryOperationExpression:&wb->dwork
+							UnaryOperator:&
+							PtrMemberAccess:wb->dwork
+								Identifier:wb
+								Identifier:dwork
+					Argument:0
+						Constant:0
+		ExpressionStatement:flush_delayed_work(&wb->dwork)
+			CallExpression:flush_delayed_work(&wb->dwork)
+				Callee:flush_delayed_work
+					Identifier:flush_delayed_work
+				ArgumentList:&wb->dwork
+					Argument:&wb->dwork
+						UnaryOperationExpression:&wb->dwork
+							UnaryOperator:&
+							PtrMemberAccess:wb->dwork
+								Identifier:wb
+								Identifier:dwork
+		ExpressionStatement:WARN_ON(!list_empty(&wb->work_list))
+			CallExpression:WARN_ON(!list_empty(&wb->work_list))
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:!list_empty(&wb->work_list)
+					Argument:!list_empty(&wb->work_list)
+						UnaryOperationExpression:!list_empty(&wb->work_list)
+							UnaryOperator:!
+							CallExpression:list_empty(&wb->work_list)
+								Callee:list_empty
+									Identifier:list_empty
+								ArgumentList:&wb->work_list
+									Argument:&wb->work_list
+										UnaryOperationExpression:&wb->work_list
+											UnaryOperator:&
+											PtrMemberAccess:wb->work_list
+												Identifier:wb
+												Identifier:work_list
+	ReturnType:static void
+	Identifier:wb_shutdown
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+FunctionDef:wb_exit (struct bdi_writeback *wb)
+	CompoundStatement:
+		IdentifierDeclStatement:int i;
+			IdentifierDecl:i
+				IdentifierDeclType:int
+				Identifier:i
+		ExpressionStatement:WARN_ON(delayed_work_pending(&wb->dwork))
+			CallExpression:WARN_ON(delayed_work_pending(&wb->dwork))
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:delayed_work_pending(&wb->dwork)
+					Argument:delayed_work_pending(&wb->dwork)
+						CallExpression:delayed_work_pending(&wb->dwork)
+							Callee:delayed_work_pending
+								Identifier:delayed_work_pending
+							ArgumentList:&wb->dwork
+								Argument:&wb->dwork
+									UnaryOperationExpression:&wb->dwork
+										UnaryOperator:&
+										PtrMemberAccess:wb->dwork
+											Identifier:wb
+											Identifier:dwork
+		ForStatement:for (i = 0; i < NR_WB_STAT_ITEMS; i++)
+			ForInit:i = 0;
+				AssignmentExpression:i = 0
+					Identifier:i
+					Constant:0
+			Condition:i < NR_WB_STAT_ITEMS
+				RelationalExpression:i < NR_WB_STAT_ITEMS
+					Identifier:i
+					Identifier:NR_WB_STAT_ITEMS
+			PostIncDecOperationExpression:i++
+				Identifier:i
+				IncDec:++
+			ExpressionStatement:percpu_counter_destroy(&wb->stat[i])
+				CallExpression:percpu_counter_destroy(&wb->stat[i])
+					Callee:percpu_counter_destroy
+						Identifier:percpu_counter_destroy
+					ArgumentList:&wb->stat[i]
+						Argument:&wb->stat[i]
+							UnaryOperationExpression:&wb->stat[i]
+								UnaryOperator:&
+								ArrayIndexing:wb->stat[i]
+									PtrMemberAccess:wb->stat
+										Identifier:wb
+										Identifier:stat
+									Identifier:i
+		ExpressionStatement:fprop_local_destroy_percpu(&wb->completions)
+			CallExpression:fprop_local_destroy_percpu(&wb->completions)
+				Callee:fprop_local_destroy_percpu
+					Identifier:fprop_local_destroy_percpu
+				ArgumentList:&wb->completions
+					Argument:&wb->completions
+						UnaryOperationExpression:&wb->completions
+							UnaryOperator:&
+							PtrMemberAccess:wb->completions
+								Identifier:wb
+								Identifier:completions
+		ExpressionStatement:wb_congested_put(wb->congested)
+			CallExpression:wb_congested_put(wb->congested)
+				Callee:wb_congested_put
+					Identifier:wb_congested_put
+				ArgumentList:wb->congested
+					Argument:wb->congested
+						PtrMemberAccess:wb->congested
+							Identifier:wb
+							Identifier:congested
+		IfStatement:if (wb != &wb->bdi->wb)
+			Condition:wb != &wb->bdi->wb
+				EqualityExpression:wb != &wb->bdi->wb
+					Identifier:wb
+					UnaryOperationExpression:&wb->bdi->wb
+						UnaryOperator:&
+						PtrMemberAccess:wb->bdi->wb
+							PtrMemberAccess:wb->bdi
+								Identifier:wb
+								Identifier:bdi
+							Identifier:wb
+			ExpressionStatement:bdi_put(wb->bdi)
+				CallExpression:bdi_put(wb->bdi)
+					Callee:bdi_put
+						Identifier:bdi_put
+					ArgumentList:wb->bdi
+						Argument:wb->bdi
+							PtrMemberAccess:wb->bdi
+								Identifier:wb
+								Identifier:bdi
+	ReturnType:static void
+	Identifier:wb_exit
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+IdentifierDeclStatement:null
+	IdentifierDecl:*cgwb_release_wq
+		IdentifierDeclType:struct workqueue_struct *
+		Identifier:cgwb_release_wq
+FunctionDef:wb_congested_get_create (struct backing_dev_info *bdi , int blkcg_id , gfp_t gfp)
+	CompoundStatement:
+		IdentifierDeclStatement:struct bdi_writeback_congested *new_congested = NULL, *congested;
+			IdentifierDecl:*new_congested = NULL
+				IdentifierDeclType:struct bdi_writeback_congested *
+				Identifier:new_congested
+				AssignmentExpression:*new_congested = NULL
+					Identifier:new_congested
+					Identifier:NULL
+			IdentifierDecl:*congested
+				IdentifierDeclType:struct bdi_writeback_congested *
+				Identifier:congested
+		IdentifierDeclStatement:struct rb_node **node, *parent;
+			IdentifierDecl:**node
+				IdentifierDeclType:struct rb_node * *
+				Identifier:node
+			IdentifierDecl:*parent
+				IdentifierDeclType:struct rb_node *
+				Identifier:parent
+		IdentifierDeclStatement:unsigned long flags;
+			IdentifierDecl:flags
+				IdentifierDeclType:unsigned long
+				Identifier:flags
+		Label:retry:
+			Identifier:retry
+		ExpressionStatement:spin_lock_irqsave(&cgwb_lock, flags)
+			CallExpression:spin_lock_irqsave(&cgwb_lock, flags)
+				Callee:spin_lock_irqsave
+					Identifier:spin_lock_irqsave
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		ExpressionStatement:node = &bdi->cgwb_congested_tree.rb_node
+			AssignmentExpression:node = &bdi->cgwb_congested_tree.rb_node
+				Identifier:node
+				UnaryOperationExpression:&bdi->cgwb_congested_tree.rb_node
+					UnaryOperator:&
+					MemberAccess:bdi->cgwb_congested_tree.rb_node
+						PtrMemberAccess:bdi->cgwb_congested_tree
+							Identifier:bdi
+							Identifier:cgwb_congested_tree
+						Identifier:rb_node
+		ExpressionStatement:parent = NULL
+			AssignmentExpression:parent = NULL
+				Identifier:parent
+				Identifier:NULL
+		WhileStatement:while (*node != NULL)
+			Condition:*node != NULL
+				EqualityExpression:*node != NULL
+					UnaryOperationExpression:*node
+						UnaryOperator:*
+						Identifier:node
+					Identifier:NULL
+			CompoundStatement:
+				ExpressionStatement:parent = *node
+					AssignmentExpression:parent = *node
+						Identifier:parent
+						UnaryOperationExpression:*node
+							UnaryOperator:*
+							Identifier:node
+				Statement:congested
+				Statement:=
+				Statement:rb_entry
+				Statement:(
+				Statement:parent
+				Statement:,
+				Statement:struct
+				Statement:bdi_writeback_congested
+				Statement:,
+				Statement:rb_node
+				Statement:)
+				ExpressionStatement:
+				IfStatement:if (congested->blkcg_id < blkcg_id)
+					Condition:congested->blkcg_id < blkcg_id
+						RelationalExpression:congested->blkcg_id < blkcg_id
+							PtrMemberAccess:congested->blkcg_id
+								Identifier:congested
+								Identifier:blkcg_id
+							Identifier:blkcg_id
+					ExpressionStatement:node = &parent->rb_left
+						AssignmentExpression:node = &parent->rb_left
+							Identifier:node
+							UnaryOperationExpression:&parent->rb_left
+								UnaryOperator:&
+								PtrMemberAccess:parent->rb_left
+									Identifier:parent
+									Identifier:rb_left
+		IfStatement:if (new_congested)
+			Condition:new_congested
+				Identifier:new_congested
+			CompoundStatement:
+				Statement:/* !found and storage for new one already allocated, insert */
+				ExpressionStatement:congested = new_congested
+					AssignmentExpression:congested = new_congested
+						Identifier:congested
+						Identifier:new_congested
+				ExpressionStatement:rb_link_node(&congested->rb_node, parent, node)
+					CallExpression:rb_link_node(&congested->rb_node, parent, node)
+						Callee:rb_link_node
+							Identifier:rb_link_node
+						ArgumentList:&congested->rb_node
+							Argument:&congested->rb_node
+								UnaryOperationExpression:&congested->rb_node
+									UnaryOperator:&
+									PtrMemberAccess:congested->rb_node
+										Identifier:congested
+										Identifier:rb_node
+							Argument:parent
+								Identifier:parent
+							Argument:node
+								Identifier:node
+				ExpressionStatement:rb_insert_color(&congested->rb_node, &bdi->cgwb_congested_tree)
+					CallExpression:rb_insert_color(&congested->rb_node, &bdi->cgwb_congested_tree)
+						Callee:rb_insert_color
+							Identifier:rb_insert_color
+						ArgumentList:&congested->rb_node
+							Argument:&congested->rb_node
+								UnaryOperationExpression:&congested->rb_node
+									UnaryOperator:&
+									PtrMemberAccess:congested->rb_node
+										Identifier:congested
+										Identifier:rb_node
+							Argument:&bdi->cgwb_congested_tree
+								UnaryOperationExpression:&bdi->cgwb_congested_tree
+									UnaryOperator:&
+									PtrMemberAccess:bdi->cgwb_congested_tree
+										Identifier:bdi
+										Identifier:cgwb_congested_tree
+				ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+					CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+						Callee:spin_unlock_irqrestore
+							Identifier:spin_unlock_irqrestore
+						ArgumentList:&cgwb_lock
+							Argument:&cgwb_lock
+								UnaryOperationExpression:&cgwb_lock
+									UnaryOperator:&
+									Identifier:cgwb_lock
+							Argument:flags
+								Identifier:flags
+				ReturnStatement:return congested;
+					Identifier:congested
+		ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+			CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+				Callee:spin_unlock_irqrestore
+					Identifier:spin_unlock_irqrestore
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		Statement:/* allocate storage for new one and retry */
+		ExpressionStatement:new_congested = kzalloc(sizeof(*new_congested), gfp)
+			AssignmentExpression:new_congested = kzalloc(sizeof(*new_congested), gfp)
+				Identifier:new_congested
+				CallExpression:kzalloc(sizeof(*new_congested), gfp)
+					Callee:kzalloc
+						Identifier:kzalloc
+					ArgumentList:sizeof(*new_congested)
+						Argument:sizeof(*new_congested)
+							SizeofExpression:sizeof(*new_congested)
+								Sizeof:sizeof
+								UnaryOperationExpression:*new_congested
+									UnaryOperator:*
+									Identifier:new_congested
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (!new_congested)
+			Condition:!new_congested
+				UnaryOperationExpression:!new_congested
+					UnaryOperator:!
+					Identifier:new_congested
+			ReturnStatement:return NULL;
+				Identifier:NULL
+		ExpressionStatement:refcount_set(&new_congested->refcnt, 1)
+			CallExpression:refcount_set(&new_congested->refcnt, 1)
+				Callee:refcount_set
+					Identifier:refcount_set
+				ArgumentList:&new_congested->refcnt
+					Argument:&new_congested->refcnt
+						UnaryOperationExpression:&new_congested->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:new_congested->refcnt
+								Identifier:new_congested
+								Identifier:refcnt
+					Argument:1
+						Constant:1
+		ExpressionStatement:new_congested->__bdi = bdi
+			AssignmentExpression:new_congested->__bdi = bdi
+				PtrMemberAccess:new_congested->__bdi
+					Identifier:new_congested
+					Identifier:__bdi
+				Identifier:bdi
+		ExpressionStatement:new_congested->blkcg_id = blkcg_id
+			AssignmentExpression:new_congested->blkcg_id = blkcg_id
+				PtrMemberAccess:new_congested->blkcg_id
+					Identifier:new_congested
+					Identifier:blkcg_id
+				Identifier:blkcg_id
+		GotoStatement:goto retry;
+			Identifier:retry
+		Label:found:
+			Identifier:found
+		ExpressionStatement:refcount_inc(&congested->refcnt)
+			CallExpression:refcount_inc(&congested->refcnt)
+				Callee:refcount_inc
+					Identifier:refcount_inc
+				ArgumentList:&congested->refcnt
+					Argument:&congested->refcnt
+						UnaryOperationExpression:&congested->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:congested->refcnt
+								Identifier:congested
+								Identifier:refcnt
+		ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+			CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+				Callee:spin_unlock_irqrestore
+					Identifier:spin_unlock_irqrestore
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		ExpressionStatement:kfree(new_congested)
+			CallExpression:kfree(new_congested)
+				Callee:kfree
+					Identifier:kfree
+				ArgumentList:new_congested
+					Argument:new_congested
+						Identifier:new_congested
+		ReturnStatement:return congested;
+			Identifier:congested
+	ReturnType:struct bdi_writeback_congested *
+	Identifier:wb_congested_get_create
+	ParameterList:struct backing_dev_info *bdi , int blkcg_id , gfp_t gfp
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:int blkcg_id
+			ParameterType:int
+			Identifier:blkcg_id
+		Parameter:gfp_t gfp
+			ParameterType:gfp_t
+			Identifier:gfp
+FunctionDef:wb_congested_put (struct bdi_writeback_congested *congested)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long flags;
+			IdentifierDecl:flags
+				IdentifierDeclType:unsigned long
+				Identifier:flags
+		IfStatement:if (!refcount_dec_and_lock_irqsave(&congested->refcnt, &cgwb_lock, &flags))
+			Condition:!refcount_dec_and_lock_irqsave(&congested->refcnt, &cgwb_lock, &flags)
+				UnaryOperationExpression:!refcount_dec_and_lock_irqsave(&congested->refcnt, &cgwb_lock, &flags)
+					UnaryOperator:!
+					CallExpression:refcount_dec_and_lock_irqsave(&congested->refcnt, &cgwb_lock, &flags)
+						Callee:refcount_dec_and_lock_irqsave
+							Identifier:refcount_dec_and_lock_irqsave
+						ArgumentList:&congested->refcnt
+							Argument:&congested->refcnt
+								UnaryOperationExpression:&congested->refcnt
+									UnaryOperator:&
+									PtrMemberAccess:congested->refcnt
+										Identifier:congested
+										Identifier:refcnt
+							Argument:&cgwb_lock
+								UnaryOperationExpression:&cgwb_lock
+									UnaryOperator:&
+									Identifier:cgwb_lock
+							Argument:&flags
+								UnaryOperationExpression:&flags
+									UnaryOperator:&
+									Identifier:flags
+			ReturnStatement:return;
+		Statement:/* bdi might already have been destroyed leaving @congested unlinked */
+		IfStatement:if (congested->__bdi)
+			Condition:congested->__bdi
+				PtrMemberAccess:congested->__bdi
+					Identifier:congested
+					Identifier:__bdi
+			CompoundStatement:
+				ExpressionStatement:rb_erase(&congested->rb_node,\t\t\t &congested->__bdi->cgwb_congested_tree)
+					CallExpression:rb_erase(&congested->rb_node,\t\t\t &congested->__bdi->cgwb_congested_tree)
+						Callee:rb_erase
+							Identifier:rb_erase
+						ArgumentList:&congested->rb_node
+							Argument:&congested->rb_node
+								UnaryOperationExpression:&congested->rb_node
+									UnaryOperator:&
+									PtrMemberAccess:congested->rb_node
+										Identifier:congested
+										Identifier:rb_node
+							Argument:&congested->__bdi->cgwb_congested_tree
+								UnaryOperationExpression:&congested->__bdi->cgwb_congested_tree
+									UnaryOperator:&
+									PtrMemberAccess:congested->__bdi->cgwb_congested_tree
+										PtrMemberAccess:congested->__bdi
+											Identifier:congested
+											Identifier:__bdi
+										Identifier:cgwb_congested_tree
+				ExpressionStatement:congested->__bdi = NULL
+					AssignmentExpression:congested->__bdi = NULL
+						PtrMemberAccess:congested->__bdi
+							Identifier:congested
+							Identifier:__bdi
+						Identifier:NULL
+		ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+			CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+				Callee:spin_unlock_irqrestore
+					Identifier:spin_unlock_irqrestore
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		ExpressionStatement:kfree(congested)
+			CallExpression:kfree(congested)
+				Callee:kfree
+					Identifier:kfree
+				ArgumentList:congested
+					Argument:congested
+						Identifier:congested
+	ReturnType:void
+	Identifier:wb_congested_put
+	ParameterList:struct bdi_writeback_congested *congested
+		Parameter:struct bdi_writeback_congested *congested
+			ParameterType:struct bdi_writeback_congested *
+			Identifier:congested
+FunctionDef:cgwb_release_workfn (struct work_struct *work)
+	CompoundStatement:
+		Statement:struct
+		Statement:bdi_writeback
+		Statement:*
+		Statement:wb
+		Statement:=
+		Statement:container_of
+		Statement:(
+		Statement:work
+		Statement:,
+		Statement:struct
+		Statement:bdi_writeback
+		Statement:,
+		Statement:release_work
+		Statement:)
+		ExpressionStatement:
+		IdentifierDeclStatement:struct blkcg *blkcg = css_to_blkcg(wb->blkcg_css);
+			IdentifierDecl:*blkcg = css_to_blkcg(wb->blkcg_css)
+				IdentifierDeclType:struct blkcg *
+				Identifier:blkcg
+				AssignmentExpression:*blkcg = css_to_blkcg(wb->blkcg_css)
+					Identifier:blkcg
+					CallExpression:css_to_blkcg(wb->blkcg_css)
+						Callee:css_to_blkcg
+							Identifier:css_to_blkcg
+						ArgumentList:wb->blkcg_css
+							Argument:wb->blkcg_css
+								PtrMemberAccess:wb->blkcg_css
+									Identifier:wb
+									Identifier:blkcg_css
+		ExpressionStatement:mutex_lock(&wb->bdi->cgwb_release_mutex)
+			CallExpression:mutex_lock(&wb->bdi->cgwb_release_mutex)
+				Callee:mutex_lock
+					Identifier:mutex_lock
+				ArgumentList:&wb->bdi->cgwb_release_mutex
+					Argument:&wb->bdi->cgwb_release_mutex
+						UnaryOperationExpression:&wb->bdi->cgwb_release_mutex
+							UnaryOperator:&
+							PtrMemberAccess:wb->bdi->cgwb_release_mutex
+								PtrMemberAccess:wb->bdi
+									Identifier:wb
+									Identifier:bdi
+								Identifier:cgwb_release_mutex
+		ExpressionStatement:wb_shutdown(wb)
+			CallExpression:wb_shutdown(wb)
+				Callee:wb_shutdown
+					Identifier:wb_shutdown
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		ExpressionStatement:css_put(wb->memcg_css)
+			CallExpression:css_put(wb->memcg_css)
+				Callee:css_put
+					Identifier:css_put
+				ArgumentList:wb->memcg_css
+					Argument:wb->memcg_css
+						PtrMemberAccess:wb->memcg_css
+							Identifier:wb
+							Identifier:memcg_css
+		ExpressionStatement:css_put(wb->blkcg_css)
+			CallExpression:css_put(wb->blkcg_css)
+				Callee:css_put
+					Identifier:css_put
+				ArgumentList:wb->blkcg_css
+					Argument:wb->blkcg_css
+						PtrMemberAccess:wb->blkcg_css
+							Identifier:wb
+							Identifier:blkcg_css
+		ExpressionStatement:mutex_unlock(&wb->bdi->cgwb_release_mutex)
+			CallExpression:mutex_unlock(&wb->bdi->cgwb_release_mutex)
+				Callee:mutex_unlock
+					Identifier:mutex_unlock
+				ArgumentList:&wb->bdi->cgwb_release_mutex
+					Argument:&wb->bdi->cgwb_release_mutex
+						UnaryOperationExpression:&wb->bdi->cgwb_release_mutex
+							UnaryOperator:&
+							PtrMemberAccess:wb->bdi->cgwb_release_mutex
+								PtrMemberAccess:wb->bdi
+									Identifier:wb
+									Identifier:bdi
+								Identifier:cgwb_release_mutex
+		Statement:/* triggers blkg destruction if cgwb_refcnt becomes zero */
+		ExpressionStatement:blkcg_cgwb_put(blkcg)
+			CallExpression:blkcg_cgwb_put(blkcg)
+				Callee:blkcg_cgwb_put
+					Identifier:blkcg_cgwb_put
+				ArgumentList:blkcg
+					Argument:blkcg
+						Identifier:blkcg
+		ExpressionStatement:fprop_local_destroy_percpu(&wb->memcg_completions)
+			CallExpression:fprop_local_destroy_percpu(&wb->memcg_completions)
+				Callee:fprop_local_destroy_percpu
+					Identifier:fprop_local_destroy_percpu
+				ArgumentList:&wb->memcg_completions
+					Argument:&wb->memcg_completions
+						UnaryOperationExpression:&wb->memcg_completions
+							UnaryOperator:&
+							PtrMemberAccess:wb->memcg_completions
+								Identifier:wb
+								Identifier:memcg_completions
+		ExpressionStatement:percpu_ref_exit(&wb->refcnt)
+			CallExpression:percpu_ref_exit(&wb->refcnt)
+				Callee:percpu_ref_exit
+					Identifier:percpu_ref_exit
+				ArgumentList:&wb->refcnt
+					Argument:&wb->refcnt
+						UnaryOperationExpression:&wb->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:wb->refcnt
+								Identifier:wb
+								Identifier:refcnt
+		ExpressionStatement:wb_exit(wb)
+			CallExpression:wb_exit(wb)
+				Callee:wb_exit
+					Identifier:wb_exit
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		ExpressionStatement:kfree_rcu(wb, rcu)
+			CallExpression:kfree_rcu(wb, rcu)
+				Callee:kfree_rcu
+					Identifier:kfree_rcu
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+					Argument:rcu
+						Identifier:rcu
+	ReturnType:static void
+	Identifier:cgwb_release_workfn
+	ParameterList:struct work_struct *work
+		Parameter:struct work_struct *work
+			ParameterType:struct work_struct *
+			Identifier:work
+FunctionDef:cgwb_release (struct percpu_ref *refcnt)
+	CompoundStatement:
+		Statement:struct
+		Statement:bdi_writeback
+		Statement:*
+		Statement:wb
+		Statement:=
+		Statement:container_of
+		Statement:(
+		Statement:refcnt
+		Statement:,
+		Statement:struct
+		Statement:bdi_writeback
+		Statement:,
+		Statement:refcnt
+		Statement:)
+		ExpressionStatement:
+		ExpressionStatement:queue_work(cgwb_release_wq, &wb->release_work)
+			CallExpression:queue_work(cgwb_release_wq, &wb->release_work)
+				Callee:queue_work
+					Identifier:queue_work
+				ArgumentList:cgwb_release_wq
+					Argument:cgwb_release_wq
+						Identifier:cgwb_release_wq
+					Argument:&wb->release_work
+						UnaryOperationExpression:&wb->release_work
+							UnaryOperator:&
+							PtrMemberAccess:wb->release_work
+								Identifier:wb
+								Identifier:release_work
+	ReturnType:static void
+	Identifier:cgwb_release
+	ParameterList:struct percpu_ref *refcnt
+		Parameter:struct percpu_ref *refcnt
+			ParameterType:struct percpu_ref *
+			Identifier:refcnt
+FunctionDef:cgwb_kill (struct bdi_writeback *wb)
+	CompoundStatement:
+		ExpressionStatement:lockdep_assert_held(&cgwb_lock)
+			CallExpression:lockdep_assert_held(&cgwb_lock)
+				Callee:lockdep_assert_held
+					Identifier:lockdep_assert_held
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		ExpressionStatement:WARN_ON(!radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id))
+			CallExpression:WARN_ON(!radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id))
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:!radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id)
+					Argument:!radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id)
+						UnaryOperationExpression:!radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id)
+							UnaryOperator:!
+							CallExpression:radix_tree_delete(&wb->bdi->cgwb_tree, wb->memcg_css->id)
+								Callee:radix_tree_delete
+									Identifier:radix_tree_delete
+								ArgumentList:&wb->bdi->cgwb_tree
+									Argument:&wb->bdi->cgwb_tree
+										UnaryOperationExpression:&wb->bdi->cgwb_tree
+											UnaryOperator:&
+											PtrMemberAccess:wb->bdi->cgwb_tree
+												PtrMemberAccess:wb->bdi
+													Identifier:wb
+													Identifier:bdi
+												Identifier:cgwb_tree
+									Argument:wb->memcg_css->id
+										PtrMemberAccess:wb->memcg_css->id
+											PtrMemberAccess:wb->memcg_css
+												Identifier:wb
+												Identifier:memcg_css
+											Identifier:id
+		ExpressionStatement:list_del(&wb->memcg_node)
+			CallExpression:list_del(&wb->memcg_node)
+				Callee:list_del
+					Identifier:list_del
+				ArgumentList:&wb->memcg_node
+					Argument:&wb->memcg_node
+						UnaryOperationExpression:&wb->memcg_node
+							UnaryOperator:&
+							PtrMemberAccess:wb->memcg_node
+								Identifier:wb
+								Identifier:memcg_node
+		ExpressionStatement:list_del(&wb->blkcg_node)
+			CallExpression:list_del(&wb->blkcg_node)
+				Callee:list_del
+					Identifier:list_del
+				ArgumentList:&wb->blkcg_node
+					Argument:&wb->blkcg_node
+						UnaryOperationExpression:&wb->blkcg_node
+							UnaryOperator:&
+							PtrMemberAccess:wb->blkcg_node
+								Identifier:wb
+								Identifier:blkcg_node
+		ExpressionStatement:percpu_ref_kill(&wb->refcnt)
+			CallExpression:percpu_ref_kill(&wb->refcnt)
+				Callee:percpu_ref_kill
+					Identifier:percpu_ref_kill
+				ArgumentList:&wb->refcnt
+					Argument:&wb->refcnt
+						UnaryOperationExpression:&wb->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:wb->refcnt
+								Identifier:wb
+								Identifier:refcnt
+	ReturnType:static void
+	Identifier:cgwb_kill
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+FunctionDef:cgwb_remove_from_bdi_list (struct bdi_writeback *wb)
+	CompoundStatement:
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		ExpressionStatement:list_del_rcu(&wb->bdi_node)
+			CallExpression:list_del_rcu(&wb->bdi_node)
+				Callee:list_del_rcu
+					Identifier:list_del_rcu
+				ArgumentList:&wb->bdi_node
+					Argument:&wb->bdi_node
+						UnaryOperationExpression:&wb->bdi_node
+							UnaryOperator:&
+							PtrMemberAccess:wb->bdi_node
+								Identifier:wb
+								Identifier:bdi_node
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+	ReturnType:static void
+	Identifier:cgwb_remove_from_bdi_list
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+FunctionDef:cgwb_create (struct backing_dev_info *bdi , struct cgroup_subsys_state *memcg_css , gfp_t gfp)
+	CompoundStatement:
+		IdentifierDeclStatement:struct mem_cgroup *memcg;
+			IdentifierDecl:*memcg
+				IdentifierDeclType:struct mem_cgroup *
+				Identifier:memcg
+		IdentifierDeclStatement:struct cgroup_subsys_state *blkcg_css;
+			IdentifierDecl:*blkcg_css
+				IdentifierDeclType:struct cgroup_subsys_state *
+				Identifier:blkcg_css
+		IdentifierDeclStatement:struct blkcg *blkcg;
+			IdentifierDecl:*blkcg
+				IdentifierDeclType:struct blkcg *
+				Identifier:blkcg
+		IdentifierDeclStatement:struct list_head *memcg_cgwb_list, *blkcg_cgwb_list;
+			IdentifierDecl:*memcg_cgwb_list
+				IdentifierDeclType:struct list_head *
+				Identifier:memcg_cgwb_list
+			IdentifierDecl:*blkcg_cgwb_list
+				IdentifierDeclType:struct list_head *
+				Identifier:blkcg_cgwb_list
+		IdentifierDeclStatement:struct bdi_writeback *wb;
+			IdentifierDecl:*wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+		IdentifierDeclStatement:unsigned long flags;
+			IdentifierDecl:flags
+				IdentifierDeclType:unsigned long
+				Identifier:flags
+		IdentifierDeclStatement:int ret = 0;
+			IdentifierDecl:ret = 0
+				IdentifierDeclType:int
+				Identifier:ret
+				AssignmentExpression:ret = 0
+					Identifier:ret
+					Constant:0
+		ExpressionStatement:memcg = mem_cgroup_from_css(memcg_css)
+			AssignmentExpression:memcg = mem_cgroup_from_css(memcg_css)
+				Identifier:memcg
+				CallExpression:mem_cgroup_from_css(memcg_css)
+					Callee:mem_cgroup_from_css
+						Identifier:mem_cgroup_from_css
+					ArgumentList:memcg_css
+						Argument:memcg_css
+							Identifier:memcg_css
+		ExpressionStatement:blkcg_css = cgroup_get_e_css(memcg_css->cgroup, &io_cgrp_subsys)
+			AssignmentExpression:blkcg_css = cgroup_get_e_css(memcg_css->cgroup, &io_cgrp_subsys)
+				Identifier:blkcg_css
+				CallExpression:cgroup_get_e_css(memcg_css->cgroup, &io_cgrp_subsys)
+					Callee:cgroup_get_e_css
+						Identifier:cgroup_get_e_css
+					ArgumentList:memcg_css->cgroup
+						Argument:memcg_css->cgroup
+							PtrMemberAccess:memcg_css->cgroup
+								Identifier:memcg_css
+								Identifier:cgroup
+						Argument:&io_cgrp_subsys
+							UnaryOperationExpression:&io_cgrp_subsys
+								UnaryOperator:&
+								Identifier:io_cgrp_subsys
+		ExpressionStatement:blkcg = css_to_blkcg(blkcg_css)
+			AssignmentExpression:blkcg = css_to_blkcg(blkcg_css)
+				Identifier:blkcg
+				CallExpression:css_to_blkcg(blkcg_css)
+					Callee:css_to_blkcg
+						Identifier:css_to_blkcg
+					ArgumentList:blkcg_css
+						Argument:blkcg_css
+							Identifier:blkcg_css
+		ExpressionStatement:memcg_cgwb_list = &memcg->cgwb_list
+			AssignmentExpression:memcg_cgwb_list = &memcg->cgwb_list
+				Identifier:memcg_cgwb_list
+				UnaryOperationExpression:&memcg->cgwb_list
+					UnaryOperator:&
+					PtrMemberAccess:memcg->cgwb_list
+						Identifier:memcg
+						Identifier:cgwb_list
+		ExpressionStatement:blkcg_cgwb_list = &blkcg->cgwb_list
+			AssignmentExpression:blkcg_cgwb_list = &blkcg->cgwb_list
+				Identifier:blkcg_cgwb_list
+				UnaryOperationExpression:&blkcg->cgwb_list
+					UnaryOperator:&
+					PtrMemberAccess:blkcg->cgwb_list
+						Identifier:blkcg
+						Identifier:cgwb_list
+		Statement:/* look up again under lock and discard on blkcg mismatch */
+		ExpressionStatement:spin_lock_irqsave(&cgwb_lock, flags)
+			CallExpression:spin_lock_irqsave(&cgwb_lock, flags)
+				Callee:spin_lock_irqsave
+					Identifier:spin_lock_irqsave
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		ExpressionStatement:wb = radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+			AssignmentExpression:wb = radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+				Identifier:wb
+				CallExpression:radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+					Callee:radix_tree_lookup
+						Identifier:radix_tree_lookup
+					ArgumentList:&bdi->cgwb_tree
+						Argument:&bdi->cgwb_tree
+							UnaryOperationExpression:&bdi->cgwb_tree
+								UnaryOperator:&
+								PtrMemberAccess:bdi->cgwb_tree
+									Identifier:bdi
+									Identifier:cgwb_tree
+						Argument:memcg_css->id
+							PtrMemberAccess:memcg_css->id
+								Identifier:memcg_css
+								Identifier:id
+		IfStatement:if (wb && wb->blkcg_css != blkcg_css)
+			Condition:wb && wb->blkcg_css != blkcg_css
+				AndExpression:wb && wb->blkcg_css != blkcg_css
+					Identifier:wb
+					EqualityExpression:wb->blkcg_css != blkcg_css
+						PtrMemberAccess:wb->blkcg_css
+							Identifier:wb
+							Identifier:blkcg_css
+						Identifier:blkcg_css
+			CompoundStatement:
+				ExpressionStatement:cgwb_kill(wb)
+					CallExpression:cgwb_kill(wb)
+						Callee:cgwb_kill
+							Identifier:cgwb_kill
+						ArgumentList:wb
+							Argument:wb
+								Identifier:wb
+				ExpressionStatement:wb = NULL
+					AssignmentExpression:wb = NULL
+						Identifier:wb
+						Identifier:NULL
+		ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+			CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+				Callee:spin_unlock_irqrestore
+					Identifier:spin_unlock_irqrestore
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		IfStatement:if (wb)
+			Condition:wb
+				Identifier:wb
+			GotoStatement:goto out_put;
+				Identifier:out_put
+		Statement:/* need to create a new one */
+		ExpressionStatement:wb = kmalloc(sizeof(*wb), gfp)
+			AssignmentExpression:wb = kmalloc(sizeof(*wb), gfp)
+				Identifier:wb
+				CallExpression:kmalloc(sizeof(*wb), gfp)
+					Callee:kmalloc
+						Identifier:kmalloc
+					ArgumentList:sizeof(*wb)
+						Argument:sizeof(*wb)
+							SizeofExpression:sizeof(*wb)
+								Sizeof:sizeof
+								UnaryOperationExpression:*wb
+									UnaryOperator:*
+									Identifier:wb
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (!wb)
+			Condition:!wb
+				UnaryOperationExpression:!wb
+					UnaryOperator:!
+					Identifier:wb
+			CompoundStatement:
+				ExpressionStatement:ret = -ENOMEM
+					AssignmentExpression:ret = -ENOMEM
+						Identifier:ret
+						UnaryOperationExpression:-ENOMEM
+							UnaryOperator:-
+							Identifier:ENOMEM
+				GotoStatement:goto out_put;
+					Identifier:out_put
+		ExpressionStatement:ret = wb_init(wb, bdi, blkcg_css->id, gfp)
+			AssignmentExpression:ret = wb_init(wb, bdi, blkcg_css->id, gfp)
+				Identifier:ret
+				CallExpression:wb_init(wb, bdi, blkcg_css->id, gfp)
+					Callee:wb_init
+						Identifier:wb_init
+					ArgumentList:wb
+						Argument:wb
+							Identifier:wb
+						Argument:bdi
+							Identifier:bdi
+						Argument:blkcg_css->id
+							PtrMemberAccess:blkcg_css->id
+								Identifier:blkcg_css
+								Identifier:id
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (ret)
+			Condition:ret
+				Identifier:ret
+			GotoStatement:goto err_free;
+				Identifier:err_free
+		ExpressionStatement:ret = percpu_ref_init(&wb->refcnt, cgwb_release, 0, gfp)
+			AssignmentExpression:ret = percpu_ref_init(&wb->refcnt, cgwb_release, 0, gfp)
+				Identifier:ret
+				CallExpression:percpu_ref_init(&wb->refcnt, cgwb_release, 0, gfp)
+					Callee:percpu_ref_init
+						Identifier:percpu_ref_init
+					ArgumentList:&wb->refcnt
+						Argument:&wb->refcnt
+							UnaryOperationExpression:&wb->refcnt
+								UnaryOperator:&
+								PtrMemberAccess:wb->refcnt
+									Identifier:wb
+									Identifier:refcnt
+						Argument:cgwb_release
+							Identifier:cgwb_release
+						Argument:0
+							Constant:0
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (ret)
+			Condition:ret
+				Identifier:ret
+			GotoStatement:goto err_wb_exit;
+				Identifier:err_wb_exit
+		ExpressionStatement:ret = fprop_local_init_percpu(&wb->memcg_completions, gfp)
+			AssignmentExpression:ret = fprop_local_init_percpu(&wb->memcg_completions, gfp)
+				Identifier:ret
+				CallExpression:fprop_local_init_percpu(&wb->memcg_completions, gfp)
+					Callee:fprop_local_init_percpu
+						Identifier:fprop_local_init_percpu
+					ArgumentList:&wb->memcg_completions
+						Argument:&wb->memcg_completions
+							UnaryOperationExpression:&wb->memcg_completions
+								UnaryOperator:&
+								PtrMemberAccess:wb->memcg_completions
+									Identifier:wb
+									Identifier:memcg_completions
+						Argument:gfp
+							Identifier:gfp
+		IfStatement:if (ret)
+			Condition:ret
+				Identifier:ret
+			GotoStatement:goto err_ref_exit;
+				Identifier:err_ref_exit
+		ExpressionStatement:wb->memcg_css = memcg_css
+			AssignmentExpression:wb->memcg_css = memcg_css
+				PtrMemberAccess:wb->memcg_css
+					Identifier:wb
+					Identifier:memcg_css
+				Identifier:memcg_css
+		ExpressionStatement:wb->blkcg_css = blkcg_css
+			AssignmentExpression:wb->blkcg_css = blkcg_css
+				PtrMemberAccess:wb->blkcg_css
+					Identifier:wb
+					Identifier:blkcg_css
+				Identifier:blkcg_css
+		ExpressionStatement:INIT_WORK(&wb->release_work, cgwb_release_workfn)
+			CallExpression:INIT_WORK(&wb->release_work, cgwb_release_workfn)
+				Callee:INIT_WORK
+					Identifier:INIT_WORK
+				ArgumentList:&wb->release_work
+					Argument:&wb->release_work
+						UnaryOperationExpression:&wb->release_work
+							UnaryOperator:&
+							PtrMemberAccess:wb->release_work
+								Identifier:wb
+								Identifier:release_work
+					Argument:cgwb_release_workfn
+						Identifier:cgwb_release_workfn
+		ExpressionStatement:set_bit(WB_registered, &wb->state)
+			CallExpression:set_bit(WB_registered, &wb->state)
+				Callee:set_bit
+					Identifier:set_bit
+				ArgumentList:WB_registered
+					Argument:WB_registered
+						Identifier:WB_registered
+					Argument:&wb->state
+						UnaryOperationExpression:&wb->state
+							UnaryOperator:&
+							PtrMemberAccess:wb->state
+								Identifier:wb
+								Identifier:state
+		Statement:/*\t * The root wb determines the registered state of the whole bdi and\t * memcg_cgwb_list and blkcg_cgwb_list's next pointers indicate\t * whether they're still online.  Don't link @wb if any is dead.\t * See wb_memcg_offline() and wb_blkcg_offline().\t */
+		ExpressionStatement:ret = -ENODEV
+			AssignmentExpression:ret = -ENODEV
+				Identifier:ret
+				UnaryOperationExpression:-ENODEV
+					UnaryOperator:-
+					Identifier:ENODEV
+		ExpressionStatement:spin_lock_irqsave(&cgwb_lock, flags)
+			CallExpression:spin_lock_irqsave(&cgwb_lock, flags)
+				Callee:spin_lock_irqsave
+					Identifier:spin_lock_irqsave
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		IfStatement:if (test_bit(WB_registered, &bdi->wb.state) &&\t    blkcg_cgwb_list->next && memcg_cgwb_list->next)
+			Condition:test_bit(WB_registered, &bdi->wb.state) &&\t    blkcg_cgwb_list->next && memcg_cgwb_list->next
+				AndExpression:test_bit(WB_registered, &bdi->wb.state) &&\t    blkcg_cgwb_list->next && memcg_cgwb_list->next
+					CallExpression:test_bit(WB_registered, &bdi->wb.state)
+						Callee:test_bit
+							Identifier:test_bit
+						ArgumentList:WB_registered
+							Argument:WB_registered
+								Identifier:WB_registered
+							Argument:&bdi->wb.state
+								UnaryOperationExpression:&bdi->wb.state
+									UnaryOperator:&
+									MemberAccess:bdi->wb.state
+										PtrMemberAccess:bdi->wb
+											Identifier:bdi
+											Identifier:wb
+										Identifier:state
+					AndExpression:blkcg_cgwb_list->next && memcg_cgwb_list->next
+						PtrMemberAccess:blkcg_cgwb_list->next
+							Identifier:blkcg_cgwb_list
+							Identifier:next
+						PtrMemberAccess:memcg_cgwb_list->next
+							Identifier:memcg_cgwb_list
+							Identifier:next
+			CompoundStatement:
+				Statement:/* we might have raced another instance of this function */
+				ExpressionStatement:ret = radix_tree_insert(&bdi->cgwb_tree, memcg_css->id, wb)
+					AssignmentExpression:ret = radix_tree_insert(&bdi->cgwb_tree, memcg_css->id, wb)
+						Identifier:ret
+						CallExpression:radix_tree_insert(&bdi->cgwb_tree, memcg_css->id, wb)
+							Callee:radix_tree_insert
+								Identifier:radix_tree_insert
+							ArgumentList:&bdi->cgwb_tree
+								Argument:&bdi->cgwb_tree
+									UnaryOperationExpression:&bdi->cgwb_tree
+										UnaryOperator:&
+										PtrMemberAccess:bdi->cgwb_tree
+											Identifier:bdi
+											Identifier:cgwb_tree
+								Argument:memcg_css->id
+									PtrMemberAccess:memcg_css->id
+										Identifier:memcg_css
+										Identifier:id
+								Argument:wb
+									Identifier:wb
+				IfStatement:if (!ret)
+					Condition:!ret
+						UnaryOperationExpression:!ret
+							UnaryOperator:!
+							Identifier:ret
+					CompoundStatement:
+						ExpressionStatement:list_add_tail_rcu(&wb->bdi_node, &bdi->wb_list)
+							CallExpression:list_add_tail_rcu(&wb->bdi_node, &bdi->wb_list)
+								Callee:list_add_tail_rcu
+									Identifier:list_add_tail_rcu
+								ArgumentList:&wb->bdi_node
+									Argument:&wb->bdi_node
+										UnaryOperationExpression:&wb->bdi_node
+											UnaryOperator:&
+											PtrMemberAccess:wb->bdi_node
+												Identifier:wb
+												Identifier:bdi_node
+									Argument:&bdi->wb_list
+										UnaryOperationExpression:&bdi->wb_list
+											UnaryOperator:&
+											PtrMemberAccess:bdi->wb_list
+												Identifier:bdi
+												Identifier:wb_list
+						ExpressionStatement:list_add(&wb->memcg_node, memcg_cgwb_list)
+							CallExpression:list_add(&wb->memcg_node, memcg_cgwb_list)
+								Callee:list_add
+									Identifier:list_add
+								ArgumentList:&wb->memcg_node
+									Argument:&wb->memcg_node
+										UnaryOperationExpression:&wb->memcg_node
+											UnaryOperator:&
+											PtrMemberAccess:wb->memcg_node
+												Identifier:wb
+												Identifier:memcg_node
+									Argument:memcg_cgwb_list
+										Identifier:memcg_cgwb_list
+						ExpressionStatement:list_add(&wb->blkcg_node, blkcg_cgwb_list)
+							CallExpression:list_add(&wb->blkcg_node, blkcg_cgwb_list)
+								Callee:list_add
+									Identifier:list_add
+								ArgumentList:&wb->blkcg_node
+									Argument:&wb->blkcg_node
+										UnaryOperationExpression:&wb->blkcg_node
+											UnaryOperator:&
+											PtrMemberAccess:wb->blkcg_node
+												Identifier:wb
+												Identifier:blkcg_node
+									Argument:blkcg_cgwb_list
+										Identifier:blkcg_cgwb_list
+						ExpressionStatement:blkcg_cgwb_get(blkcg)
+							CallExpression:blkcg_cgwb_get(blkcg)
+								Callee:blkcg_cgwb_get
+									Identifier:blkcg_cgwb_get
+								ArgumentList:blkcg
+									Argument:blkcg
+										Identifier:blkcg
+						ExpressionStatement:css_get(memcg_css)
+							CallExpression:css_get(memcg_css)
+								Callee:css_get
+									Identifier:css_get
+								ArgumentList:memcg_css
+									Argument:memcg_css
+										Identifier:memcg_css
+						ExpressionStatement:css_get(blkcg_css)
+							CallExpression:css_get(blkcg_css)
+								Callee:css_get
+									Identifier:css_get
+								ArgumentList:blkcg_css
+									Argument:blkcg_css
+										Identifier:blkcg_css
+		ExpressionStatement:spin_unlock_irqrestore(&cgwb_lock, flags)
+			CallExpression:spin_unlock_irqrestore(&cgwb_lock, flags)
+				Callee:spin_unlock_irqrestore
+					Identifier:spin_unlock_irqrestore
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+					Argument:flags
+						Identifier:flags
+		IfStatement:if (ret)
+			Condition:ret
+				Identifier:ret
+			CompoundStatement:
+				IfStatement:if (ret == -EEXIST)
+					Condition:ret == -EEXIST
+						EqualityExpression:ret == -EEXIST
+							Identifier:ret
+							UnaryOperationExpression:-EEXIST
+								UnaryOperator:-
+								Identifier:EEXIST
+					ExpressionStatement:ret = 0
+						AssignmentExpression:ret = 0
+							Identifier:ret
+							Constant:0
+				GotoStatement:goto err_fprop_exit;
+					Identifier:err_fprop_exit
+		GotoStatement:goto out_put;
+			Identifier:out_put
+		Label:err_fprop_exit:
+			Identifier:err_fprop_exit
+		ExpressionStatement:fprop_local_destroy_percpu(&wb->memcg_completions)
+			CallExpression:fprop_local_destroy_percpu(&wb->memcg_completions)
+				Callee:fprop_local_destroy_percpu
+					Identifier:fprop_local_destroy_percpu
+				ArgumentList:&wb->memcg_completions
+					Argument:&wb->memcg_completions
+						UnaryOperationExpression:&wb->memcg_completions
+							UnaryOperator:&
+							PtrMemberAccess:wb->memcg_completions
+								Identifier:wb
+								Identifier:memcg_completions
+		Label:err_ref_exit:
+			Identifier:err_ref_exit
+		ExpressionStatement:percpu_ref_exit(&wb->refcnt)
+			CallExpression:percpu_ref_exit(&wb->refcnt)
+				Callee:percpu_ref_exit
+					Identifier:percpu_ref_exit
+				ArgumentList:&wb->refcnt
+					Argument:&wb->refcnt
+						UnaryOperationExpression:&wb->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:wb->refcnt
+								Identifier:wb
+								Identifier:refcnt
+		Label:err_wb_exit:
+			Identifier:err_wb_exit
+		ExpressionStatement:wb_exit(wb)
+			CallExpression:wb_exit(wb)
+				Callee:wb_exit
+					Identifier:wb_exit
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		Label:err_free:
+			Identifier:err_free
+		ExpressionStatement:kfree(wb)
+			CallExpression:kfree(wb)
+				Callee:kfree
+					Identifier:kfree
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		Label:out_put:
+			Identifier:out_put
+		ExpressionStatement:css_put(blkcg_css)
+			CallExpression:css_put(blkcg_css)
+				Callee:css_put
+					Identifier:css_put
+				ArgumentList:blkcg_css
+					Argument:blkcg_css
+						Identifier:blkcg_css
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:static int
+	Identifier:cgwb_create
+	ParameterList:struct backing_dev_info *bdi , struct cgroup_subsys_state *memcg_css , gfp_t gfp
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:struct cgroup_subsys_state *memcg_css
+			ParameterType:struct cgroup_subsys_state *
+			Identifier:memcg_css
+		Parameter:gfp_t gfp
+			ParameterType:gfp_t
+			Identifier:gfp
+FunctionDef:wb_get_create (struct backing_dev_info *bdi , struct cgroup_subsys_state *memcg_css , gfp_t gfp)
+	CompoundStatement:
+		IdentifierDeclStatement:struct bdi_writeback *wb;
+			IdentifierDecl:*wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+		ExpressionStatement:might_sleep_if(gfpflags_allow_blocking(gfp))
+			CallExpression:might_sleep_if(gfpflags_allow_blocking(gfp))
+				Callee:might_sleep_if
+					Identifier:might_sleep_if
+				ArgumentList:gfpflags_allow_blocking(gfp)
+					Argument:gfpflags_allow_blocking(gfp)
+						CallExpression:gfpflags_allow_blocking(gfp)
+							Callee:gfpflags_allow_blocking
+								Identifier:gfpflags_allow_blocking
+							ArgumentList:gfp
+								Argument:gfp
+									Identifier:gfp
+		IfStatement:if (!memcg_css->parent)
+			Condition:!memcg_css->parent
+				UnaryOperationExpression:!memcg_css->parent
+					UnaryOperator:!
+					PtrMemberAccess:memcg_css->parent
+						Identifier:memcg_css
+						Identifier:parent
+			ReturnStatement:return &bdi->wb;
+				UnaryOperationExpression:&bdi->wb
+					UnaryOperator:&
+					PtrMemberAccess:bdi->wb
+						Identifier:bdi
+						Identifier:wb
+		DoStatement:do
+			CompoundStatement:
+				ExpressionStatement:rcu_read_lock()
+					CallExpression:rcu_read_lock()
+						Callee:rcu_read_lock
+							Identifier:rcu_read_lock
+						ArgumentList:
+				ExpressionStatement:wb = radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+					AssignmentExpression:wb = radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+						Identifier:wb
+						CallExpression:radix_tree_lookup(&bdi->cgwb_tree, memcg_css->id)
+							Callee:radix_tree_lookup
+								Identifier:radix_tree_lookup
+							ArgumentList:&bdi->cgwb_tree
+								Argument:&bdi->cgwb_tree
+									UnaryOperationExpression:&bdi->cgwb_tree
+										UnaryOperator:&
+										PtrMemberAccess:bdi->cgwb_tree
+											Identifier:bdi
+											Identifier:cgwb_tree
+								Argument:memcg_css->id
+									PtrMemberAccess:memcg_css->id
+										Identifier:memcg_css
+										Identifier:id
+				IfStatement:if (wb)
+					Condition:wb
+						Identifier:wb
+					CompoundStatement:
+						IdentifierDeclStatement:struct cgroup_subsys_state *blkcg_css;
+							IdentifierDecl:*blkcg_css
+								IdentifierDeclType:struct cgroup_subsys_state *
+								Identifier:blkcg_css
+						Statement:/* see whether the blkcg association has changed */
+						ExpressionStatement:blkcg_css = cgroup_get_e_css(memcg_css->cgroup,\t\t\t\t\t\t     &io_cgrp_subsys)
+							AssignmentExpression:blkcg_css = cgroup_get_e_css(memcg_css->cgroup,\t\t\t\t\t\t     &io_cgrp_subsys)
+								Identifier:blkcg_css
+								CallExpression:cgroup_get_e_css(memcg_css->cgroup,\t\t\t\t\t\t     &io_cgrp_subsys)
+									Callee:cgroup_get_e_css
+										Identifier:cgroup_get_e_css
+									ArgumentList:memcg_css->cgroup
+										Argument:memcg_css->cgroup
+											PtrMemberAccess:memcg_css->cgroup
+												Identifier:memcg_css
+												Identifier:cgroup
+										Argument:&io_cgrp_subsys
+											UnaryOperationExpression:&io_cgrp_subsys
+												UnaryOperator:&
+												Identifier:io_cgrp_subsys
+						IfStatement:if (unlikely(wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb)))
+							Condition:unlikely(wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb))
+								CallExpression:unlikely(wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb))
+									Callee:unlikely
+										Identifier:unlikely
+									ArgumentList:wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb)
+										Argument:wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb)
+											OrExpression:wb->blkcg_css != blkcg_css ||\t\t\t\t     !wb_tryget(wb)
+												EqualityExpression:wb->blkcg_css != blkcg_css
+													PtrMemberAccess:wb->blkcg_css
+														Identifier:wb
+														Identifier:blkcg_css
+													Identifier:blkcg_css
+												UnaryOperationExpression:!wb_tryget(wb)
+													UnaryOperator:!
+													CallExpression:wb_tryget(wb)
+														Callee:wb_tryget
+															Identifier:wb_tryget
+														ArgumentList:wb
+															Argument:wb
+																Identifier:wb
+							ExpressionStatement:wb = NULL
+								AssignmentExpression:wb = NULL
+									Identifier:wb
+									Identifier:NULL
+						ExpressionStatement:css_put(blkcg_css)
+							CallExpression:css_put(blkcg_css)
+								Callee:css_put
+									Identifier:css_put
+								ArgumentList:blkcg_css
+									Argument:blkcg_css
+										Identifier:blkcg_css
+				ExpressionStatement:rcu_read_unlock()
+					CallExpression:rcu_read_unlock()
+						Callee:rcu_read_unlock
+							Identifier:rcu_read_unlock
+						ArgumentList:
+			Condition:!wb && !cgwb_create(bdi, memcg_css, gfp)
+				AndExpression:!wb && !cgwb_create(bdi, memcg_css, gfp)
+					UnaryOperationExpression:!wb
+						UnaryOperator:!
+						Identifier:wb
+					UnaryOperationExpression:!cgwb_create(bdi, memcg_css, gfp)
+						UnaryOperator:!
+						CallExpression:cgwb_create(bdi, memcg_css, gfp)
+							Callee:cgwb_create
+								Identifier:cgwb_create
+							ArgumentList:bdi
+								Argument:bdi
+									Identifier:bdi
+								Argument:memcg_css
+									Identifier:memcg_css
+								Argument:gfp
+									Identifier:gfp
+		ReturnStatement:return wb;
+			Identifier:wb
+	ReturnType:struct bdi_writeback *
+	Identifier:wb_get_create
+	ParameterList:struct backing_dev_info *bdi , struct cgroup_subsys_state *memcg_css , gfp_t gfp
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:struct cgroup_subsys_state *memcg_css
+			ParameterType:struct cgroup_subsys_state *
+			Identifier:memcg_css
+		Parameter:gfp_t gfp
+			ParameterType:gfp_t
+			Identifier:gfp
+FunctionDef:cgwb_bdi_init (struct backing_dev_info *bdi)
+	CompoundStatement:
+		IdentifierDeclStatement:int ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:int
+				Identifier:ret
+		ExpressionStatement:INIT_RADIX_TREE(&bdi->cgwb_tree, GFP_ATOMIC)
+			CallExpression:INIT_RADIX_TREE(&bdi->cgwb_tree, GFP_ATOMIC)
+				Callee:INIT_RADIX_TREE
+					Identifier:INIT_RADIX_TREE
+				ArgumentList:&bdi->cgwb_tree
+					Argument:&bdi->cgwb_tree
+						UnaryOperationExpression:&bdi->cgwb_tree
+							UnaryOperator:&
+							PtrMemberAccess:bdi->cgwb_tree
+								Identifier:bdi
+								Identifier:cgwb_tree
+					Argument:GFP_ATOMIC
+						Identifier:GFP_ATOMIC
+		ExpressionStatement:bdi->cgwb_congested_tree = RB_ROOT
+			AssignmentExpression:bdi->cgwb_congested_tree = RB_ROOT
+				PtrMemberAccess:bdi->cgwb_congested_tree
+					Identifier:bdi
+					Identifier:cgwb_congested_tree
+				Identifier:RB_ROOT
+		ExpressionStatement:mutex_init(&bdi->cgwb_release_mutex)
+			CallExpression:mutex_init(&bdi->cgwb_release_mutex)
+				Callee:mutex_init
+					Identifier:mutex_init
+				ArgumentList:&bdi->cgwb_release_mutex
+					Argument:&bdi->cgwb_release_mutex
+						UnaryOperationExpression:&bdi->cgwb_release_mutex
+							UnaryOperator:&
+							PtrMemberAccess:bdi->cgwb_release_mutex
+								Identifier:bdi
+								Identifier:cgwb_release_mutex
+		ExpressionStatement:init_rwsem(&bdi->wb_switch_rwsem)
+			CallExpression:init_rwsem(&bdi->wb_switch_rwsem)
+				Callee:init_rwsem
+					Identifier:init_rwsem
+				ArgumentList:&bdi->wb_switch_rwsem
+					Argument:&bdi->wb_switch_rwsem
+						UnaryOperationExpression:&bdi->wb_switch_rwsem
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_switch_rwsem
+								Identifier:bdi
+								Identifier:wb_switch_rwsem
+		ExpressionStatement:ret = wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+			AssignmentExpression:ret = wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+				Identifier:ret
+				CallExpression:wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+					Callee:wb_init
+						Identifier:wb_init
+					ArgumentList:&bdi->wb
+						Argument:&bdi->wb
+							UnaryOperationExpression:&bdi->wb
+								UnaryOperator:&
+								PtrMemberAccess:bdi->wb
+									Identifier:bdi
+									Identifier:wb
+						Argument:bdi
+							Identifier:bdi
+						Argument:1
+							Constant:1
+						Argument:GFP_KERNEL
+							Identifier:GFP_KERNEL
+		IfStatement:if (!ret)
+			Condition:!ret
+				UnaryOperationExpression:!ret
+					UnaryOperator:!
+					Identifier:ret
+			CompoundStatement:
+				ExpressionStatement:bdi->wb.memcg_css = &root_mem_cgroup->css
+					AssignmentExpression:bdi->wb.memcg_css = &root_mem_cgroup->css
+						MemberAccess:bdi->wb.memcg_css
+							PtrMemberAccess:bdi->wb
+								Identifier:bdi
+								Identifier:wb
+							Identifier:memcg_css
+						UnaryOperationExpression:&root_mem_cgroup->css
+							UnaryOperator:&
+							PtrMemberAccess:root_mem_cgroup->css
+								Identifier:root_mem_cgroup
+								Identifier:css
+				ExpressionStatement:bdi->wb.blkcg_css = blkcg_root_css
+					AssignmentExpression:bdi->wb.blkcg_css = blkcg_root_css
+						MemberAccess:bdi->wb.blkcg_css
+							PtrMemberAccess:bdi->wb
+								Identifier:bdi
+								Identifier:wb
+							Identifier:blkcg_css
+						Identifier:blkcg_root_css
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:static int
+	Identifier:cgwb_bdi_init
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_bdi_unregister (struct backing_dev_info *bdi)
+	CompoundStatement:
+		IdentifierDeclStatement:struct radix_tree_iter iter;
+			IdentifierDecl:iter
+				IdentifierDeclType:struct radix_tree_iter
+				Identifier:iter
+		IdentifierDeclStatement:void **slot;
+			IdentifierDecl:**slot
+				IdentifierDeclType:void * *
+				Identifier:slot
+		IdentifierDeclStatement:struct bdi_writeback *wb;
+			IdentifierDecl:*wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+		ExpressionStatement:WARN_ON(test_bit(WB_registered, &bdi->wb.state))
+			CallExpression:WARN_ON(test_bit(WB_registered, &bdi->wb.state))
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:test_bit(WB_registered, &bdi->wb.state)
+					Argument:test_bit(WB_registered, &bdi->wb.state)
+						CallExpression:test_bit(WB_registered, &bdi->wb.state)
+							Callee:test_bit
+								Identifier:test_bit
+							ArgumentList:WB_registered
+								Argument:WB_registered
+									Identifier:WB_registered
+								Argument:&bdi->wb.state
+									UnaryOperationExpression:&bdi->wb.state
+										UnaryOperator:&
+										MemberAccess:bdi->wb.state
+											PtrMemberAccess:bdi->wb
+												Identifier:bdi
+												Identifier:wb
+											Identifier:state
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		Statement:radix_tree_for_each_slot
+		Statement:(
+		Statement:slot
+		Statement:,
+		Statement:&
+		Statement:bdi
+		Statement:->
+		Statement:cgwb_tree
+		Statement:,
+		Statement:&
+		Statement:iter
+		Statement:,
+		Statement:0
+		Statement:)
+		ExpressionStatement:cgwb_kill(*slot)
+			CallExpression:cgwb_kill(*slot)
+				Callee:cgwb_kill
+					Identifier:cgwb_kill
+				ArgumentList:*slot
+					Argument:*slot
+						UnaryOperationExpression:*slot
+							UnaryOperator:*
+							Identifier:slot
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		ExpressionStatement:mutex_lock(&bdi->cgwb_release_mutex)
+			CallExpression:mutex_lock(&bdi->cgwb_release_mutex)
+				Callee:mutex_lock
+					Identifier:mutex_lock
+				ArgumentList:&bdi->cgwb_release_mutex
+					Argument:&bdi->cgwb_release_mutex
+						UnaryOperationExpression:&bdi->cgwb_release_mutex
+							UnaryOperator:&
+							PtrMemberAccess:bdi->cgwb_release_mutex
+								Identifier:bdi
+								Identifier:cgwb_release_mutex
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		WhileStatement:while (!list_empty(&bdi->wb_list))
+			Condition:!list_empty(&bdi->wb_list)
+				UnaryOperationExpression:!list_empty(&bdi->wb_list)
+					UnaryOperator:!
+					CallExpression:list_empty(&bdi->wb_list)
+						Callee:list_empty
+							Identifier:list_empty
+						ArgumentList:&bdi->wb_list
+							Argument:&bdi->wb_list
+								UnaryOperationExpression:&bdi->wb_list
+									UnaryOperator:&
+									PtrMemberAccess:bdi->wb_list
+										Identifier:bdi
+										Identifier:wb_list
+			CompoundStatement:
+				Statement:wb
+				Statement:=
+				Statement:list_first_entry
+				Statement:(
+				Statement:&
+				Statement:bdi
+				Statement:->
+				Statement:wb_list
+				Statement:,
+				Statement:struct
+				Statement:bdi_writeback
+				Statement:,
+				Statement:bdi_node
+				Statement:)
+				ExpressionStatement:
+				ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+					CallExpression:spin_unlock_irq(&cgwb_lock)
+						Callee:spin_unlock_irq
+							Identifier:spin_unlock_irq
+						ArgumentList:&cgwb_lock
+							Argument:&cgwb_lock
+								UnaryOperationExpression:&cgwb_lock
+									UnaryOperator:&
+									Identifier:cgwb_lock
+				ExpressionStatement:wb_shutdown(wb)
+					CallExpression:wb_shutdown(wb)
+						Callee:wb_shutdown
+							Identifier:wb_shutdown
+						ArgumentList:wb
+							Argument:wb
+								Identifier:wb
+				ExpressionStatement:spin_lock_irq(&cgwb_lock)
+					CallExpression:spin_lock_irq(&cgwb_lock)
+						Callee:spin_lock_irq
+							Identifier:spin_lock_irq
+						ArgumentList:&cgwb_lock
+							Argument:&cgwb_lock
+								UnaryOperationExpression:&cgwb_lock
+									UnaryOperator:&
+									Identifier:cgwb_lock
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		ExpressionStatement:mutex_unlock(&bdi->cgwb_release_mutex)
+			CallExpression:mutex_unlock(&bdi->cgwb_release_mutex)
+				Callee:mutex_unlock
+					Identifier:mutex_unlock
+				ArgumentList:&bdi->cgwb_release_mutex
+					Argument:&bdi->cgwb_release_mutex
+						UnaryOperationExpression:&bdi->cgwb_release_mutex
+							UnaryOperator:&
+							PtrMemberAccess:bdi->cgwb_release_mutex
+								Identifier:bdi
+								Identifier:cgwb_release_mutex
+	ReturnType:static void
+	Identifier:cgwb_bdi_unregister
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:wb_memcg_offline (struct mem_cgroup *memcg)
+	CompoundStatement:
+		IdentifierDeclStatement:struct list_head *memcg_cgwb_list = &memcg->cgwb_list;
+			IdentifierDecl:*memcg_cgwb_list = &memcg->cgwb_list
+				IdentifierDeclType:struct list_head *
+				Identifier:memcg_cgwb_list
+				AssignmentExpression:*memcg_cgwb_list = &memcg->cgwb_list
+					Identifier:memcg_cgwb_list
+					UnaryOperationExpression:&memcg->cgwb_list
+						UnaryOperator:&
+						PtrMemberAccess:memcg->cgwb_list
+							Identifier:memcg
+							Identifier:cgwb_list
+		IdentifierDeclStatement:struct bdi_writeback *wb, *next;
+			IdentifierDecl:*wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+			IdentifierDecl:*next
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:next
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		Statement:list_for_each_entry_safe
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:next
+		Statement:,
+		Statement:memcg_cgwb_list
+		Statement:,
+		Statement:memcg_node
+		Statement:)
+		ExpressionStatement:cgwb_kill(wb)
+			CallExpression:cgwb_kill(wb)
+				Callee:cgwb_kill
+					Identifier:cgwb_kill
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		ExpressionStatement:memcg_cgwb_list->next = NULL
+			AssignmentExpression:memcg_cgwb_list->next = NULL
+				PtrMemberAccess:memcg_cgwb_list->next
+					Identifier:memcg_cgwb_list
+					Identifier:next
+				Identifier:NULL
+		Statement:/* prevent new wb's */
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+	ReturnType:void
+	Identifier:wb_memcg_offline
+	ParameterList:struct mem_cgroup *memcg
+		Parameter:struct mem_cgroup *memcg
+			ParameterType:struct mem_cgroup *
+			Identifier:memcg
+FunctionDef:wb_blkcg_offline (struct blkcg *blkcg)
+	CompoundStatement:
+		IdentifierDeclStatement:struct bdi_writeback *wb, *next;
+			IdentifierDecl:*wb
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:wb
+			IdentifierDecl:*next
+				IdentifierDeclType:struct bdi_writeback *
+				Identifier:next
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		Statement:list_for_each_entry_safe
+		Statement:(
+		Statement:wb
+		Statement:,
+		Statement:next
+		Statement:,
+		Statement:&
+		Statement:blkcg
+		Statement:->
+		Statement:cgwb_list
+		Statement:,
+		Statement:blkcg_node
+		Statement:)
+		ExpressionStatement:cgwb_kill(wb)
+			CallExpression:cgwb_kill(wb)
+				Callee:cgwb_kill
+					Identifier:cgwb_kill
+				ArgumentList:wb
+					Argument:wb
+						Identifier:wb
+		ExpressionStatement:blkcg->cgwb_list.next = NULL
+			AssignmentExpression:blkcg->cgwb_list.next = NULL
+				MemberAccess:blkcg->cgwb_list.next
+					PtrMemberAccess:blkcg->cgwb_list
+						Identifier:blkcg
+						Identifier:cgwb_list
+					Identifier:next
+				Identifier:NULL
+		Statement:/* prevent new wb's */
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+	ReturnType:void
+	Identifier:wb_blkcg_offline
+	ParameterList:struct blkcg *blkcg
+		Parameter:struct blkcg *blkcg
+			ParameterType:struct blkcg *
+			Identifier:blkcg
+FunctionDef:cgwb_bdi_exit (struct backing_dev_info *bdi)
+	CompoundStatement:
+		IdentifierDeclStatement:struct rb_node *rbn;
+			IdentifierDecl:*rbn
+				IdentifierDeclType:struct rb_node *
+				Identifier:rbn
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		WhileStatement:while ((rbn = rb_first(&bdi->cgwb_congested_tree)))
+			Condition:rbn = rb_first(&bdi->cgwb_congested_tree)
+				AssignmentExpression:rbn = rb_first(&bdi->cgwb_congested_tree)
+					Identifier:rbn
+					CallExpression:rb_first(&bdi->cgwb_congested_tree)
+						Callee:rb_first
+							Identifier:rb_first
+						ArgumentList:&bdi->cgwb_congested_tree
+							Argument:&bdi->cgwb_congested_tree
+								UnaryOperationExpression:&bdi->cgwb_congested_tree
+									UnaryOperator:&
+									PtrMemberAccess:bdi->cgwb_congested_tree
+										Identifier:bdi
+										Identifier:cgwb_congested_tree
+			CompoundStatement:
+				Statement:struct
+				Statement:bdi_writeback_congested
+				Statement:*
+				Statement:congested
+				Statement:=
+				Statement:rb_entry
+				Statement:(
+				Statement:rbn
+				Statement:,
+				Statement:struct
+				Statement:bdi_writeback_congested
+				Statement:,
+				Statement:rb_node
+				Statement:)
+				ExpressionStatement:
+				ExpressionStatement:rb_erase(rbn, &bdi->cgwb_congested_tree)
+					CallExpression:rb_erase(rbn, &bdi->cgwb_congested_tree)
+						Callee:rb_erase
+							Identifier:rb_erase
+						ArgumentList:rbn
+							Argument:rbn
+								Identifier:rbn
+							Argument:&bdi->cgwb_congested_tree
+								UnaryOperationExpression:&bdi->cgwb_congested_tree
+									UnaryOperator:&
+									PtrMemberAccess:bdi->cgwb_congested_tree
+										Identifier:bdi
+										Identifier:cgwb_congested_tree
+				ExpressionStatement:congested->__bdi = NULL
+					AssignmentExpression:congested->__bdi = NULL
+						PtrMemberAccess:congested->__bdi
+							Identifier:congested
+							Identifier:__bdi
+						Identifier:NULL
+				Statement:/* mark @congested unlinked */
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+	ReturnType:static void
+	Identifier:cgwb_bdi_exit
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_bdi_register (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:spin_lock_irq(&cgwb_lock)
+			CallExpression:spin_lock_irq(&cgwb_lock)
+				Callee:spin_lock_irq
+					Identifier:spin_lock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+		ExpressionStatement:list_add_tail_rcu(&bdi->wb.bdi_node, &bdi->wb_list)
+			CallExpression:list_add_tail_rcu(&bdi->wb.bdi_node, &bdi->wb_list)
+				Callee:list_add_tail_rcu
+					Identifier:list_add_tail_rcu
+				ArgumentList:&bdi->wb.bdi_node
+					Argument:&bdi->wb.bdi_node
+						UnaryOperationExpression:&bdi->wb.bdi_node
+							UnaryOperator:&
+							MemberAccess:bdi->wb.bdi_node
+								PtrMemberAccess:bdi->wb
+									Identifier:bdi
+									Identifier:wb
+								Identifier:bdi_node
+					Argument:&bdi->wb_list
+						UnaryOperationExpression:&bdi->wb_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_list
+								Identifier:bdi
+								Identifier:wb_list
+		ExpressionStatement:spin_unlock_irq(&cgwb_lock)
+			CallExpression:spin_unlock_irq(&cgwb_lock)
+				Callee:spin_unlock_irq
+					Identifier:spin_unlock_irq
+				ArgumentList:&cgwb_lock
+					Argument:&cgwb_lock
+						UnaryOperationExpression:&cgwb_lock
+							UnaryOperator:&
+							Identifier:cgwb_lock
+	ReturnType:static void
+	Identifier:cgwb_bdi_register
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_init ()
+	CompoundStatement:
+		Statement:/*\t * There can be many concurrent release work items overwhelming\t * system_wq.  Put them in a separate wq and limit concurrency.\t * There's no point in executing many of these in parallel.\t */
+		ExpressionStatement:cgwb_release_wq = alloc_workqueue("cgwb_release", 0, 1)
+			AssignmentExpression:cgwb_release_wq = alloc_workqueue("cgwb_release", 0, 1)
+				Identifier:cgwb_release_wq
+				CallExpression:alloc_workqueue("cgwb_release", 0, 1)
+					Callee:alloc_workqueue
+						Identifier:alloc_workqueue
+					ArgumentList:"cgwb_release"
+						Argument:"cgwb_release"
+							Constant:"cgwb_release"
+						Argument:0
+							Constant:0
+						Argument:1
+							Constant:1
+		IfStatement:if (!cgwb_release_wq)
+			Condition:!cgwb_release_wq
+				UnaryOperationExpression:!cgwb_release_wq
+					UnaryOperator:!
+					Identifier:cgwb_release_wq
+			ReturnStatement:return -ENOMEM;
+				UnaryOperationExpression:-ENOMEM
+					UnaryOperator:-
+					Identifier:ENOMEM
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static int __init
+	Identifier:cgwb_init
+	ParameterList:
+FunctionDef:cgwb_bdi_init (struct backing_dev_info *bdi)
+	CompoundStatement:
+		IdentifierDeclStatement:int err;
+			IdentifierDecl:err
+				IdentifierDeclType:int
+				Identifier:err
+		ExpressionStatement:bdi->wb_congested = kzalloc(sizeof(*bdi->wb_congested), GFP_KERNEL)
+			AssignmentExpression:bdi->wb_congested = kzalloc(sizeof(*bdi->wb_congested), GFP_KERNEL)
+				PtrMemberAccess:bdi->wb_congested
+					Identifier:bdi
+					Identifier:wb_congested
+				CallExpression:kzalloc(sizeof(*bdi->wb_congested), GFP_KERNEL)
+					Callee:kzalloc
+						Identifier:kzalloc
+					ArgumentList:sizeof(*bdi->wb_congested)
+						Argument:sizeof(*bdi->wb_congested)
+							SizeofExpression:sizeof(*bdi->wb_congested)
+								Sizeof:sizeof
+								UnaryOperationExpression:*bdi->wb_congested
+									UnaryOperator:*
+									PtrMemberAccess:bdi->wb_congested
+										Identifier:bdi
+										Identifier:wb_congested
+						Argument:GFP_KERNEL
+							Identifier:GFP_KERNEL
+		IfStatement:if (!bdi->wb_congested)
+			Condition:!bdi->wb_congested
+				UnaryOperationExpression:!bdi->wb_congested
+					UnaryOperator:!
+					PtrMemberAccess:bdi->wb_congested
+						Identifier:bdi
+						Identifier:wb_congested
+			ReturnStatement:return -ENOMEM;
+				UnaryOperationExpression:-ENOMEM
+					UnaryOperator:-
+					Identifier:ENOMEM
+		ExpressionStatement:refcount_set(&bdi->wb_congested->refcnt, 1)
+			CallExpression:refcount_set(&bdi->wb_congested->refcnt, 1)
+				Callee:refcount_set
+					Identifier:refcount_set
+				ArgumentList:&bdi->wb_congested->refcnt
+					Argument:&bdi->wb_congested->refcnt
+						UnaryOperationExpression:&bdi->wb_congested->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_congested->refcnt
+								PtrMemberAccess:bdi->wb_congested
+									Identifier:bdi
+									Identifier:wb_congested
+								Identifier:refcnt
+					Argument:1
+						Constant:1
+		ExpressionStatement:err = wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+			AssignmentExpression:err = wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+				Identifier:err
+				CallExpression:wb_init(&bdi->wb, bdi, 1, GFP_KERNEL)
+					Callee:wb_init
+						Identifier:wb_init
+					ArgumentList:&bdi->wb
+						Argument:&bdi->wb
+							UnaryOperationExpression:&bdi->wb
+								UnaryOperator:&
+								PtrMemberAccess:bdi->wb
+									Identifier:bdi
+									Identifier:wb
+						Argument:bdi
+							Identifier:bdi
+						Argument:1
+							Constant:1
+						Argument:GFP_KERNEL
+							Identifier:GFP_KERNEL
+		IfStatement:if (err)
+			Condition:err
+				Identifier:err
+			CompoundStatement:
+				ExpressionStatement:wb_congested_put(bdi->wb_congested)
+					CallExpression:wb_congested_put(bdi->wb_congested)
+						Callee:wb_congested_put
+							Identifier:wb_congested_put
+						ArgumentList:bdi->wb_congested
+							Argument:bdi->wb_congested
+								PtrMemberAccess:bdi->wb_congested
+									Identifier:bdi
+									Identifier:wb_congested
+				ReturnStatement:return err;
+					Identifier:err
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static int
+	Identifier:cgwb_bdi_init
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_bdi_unregister (struct backing_dev_info *bdi)
+	CompoundStatement:
+	ReturnType:static void
+	Identifier:cgwb_bdi_unregister
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_bdi_exit (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:wb_congested_put(bdi->wb_congested)
+			CallExpression:wb_congested_put(bdi->wb_congested)
+				Callee:wb_congested_put
+					Identifier:wb_congested_put
+				ArgumentList:bdi->wb_congested
+					Argument:bdi->wb_congested
+						PtrMemberAccess:bdi->wb_congested
+							Identifier:bdi
+							Identifier:wb_congested
+	ReturnType:static void
+	Identifier:cgwb_bdi_exit
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_bdi_register (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:list_add_tail_rcu(&bdi->wb.bdi_node, &bdi->wb_list)
+			CallExpression:list_add_tail_rcu(&bdi->wb.bdi_node, &bdi->wb_list)
+				Callee:list_add_tail_rcu
+					Identifier:list_add_tail_rcu
+				ArgumentList:&bdi->wb.bdi_node
+					Argument:&bdi->wb.bdi_node
+						UnaryOperationExpression:&bdi->wb.bdi_node
+							UnaryOperator:&
+							MemberAccess:bdi->wb.bdi_node
+								PtrMemberAccess:bdi->wb
+									Identifier:bdi
+									Identifier:wb
+								Identifier:bdi_node
+					Argument:&bdi->wb_list
+						UnaryOperationExpression:&bdi->wb_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_list
+								Identifier:bdi
+								Identifier:wb_list
+	ReturnType:static void
+	Identifier:cgwb_bdi_register
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:cgwb_remove_from_bdi_list (struct bdi_writeback *wb)
+	CompoundStatement:
+		ExpressionStatement:list_del_rcu(&wb->bdi_node)
+			CallExpression:list_del_rcu(&wb->bdi_node)
+				Callee:list_del_rcu
+					Identifier:list_del_rcu
+				ArgumentList:&wb->bdi_node
+					Argument:&wb->bdi_node
+						UnaryOperationExpression:&wb->bdi_node
+							UnaryOperator:&
+							PtrMemberAccess:wb->bdi_node
+								Identifier:wb
+								Identifier:bdi_node
+	ReturnType:static void
+	Identifier:cgwb_remove_from_bdi_list
+	ParameterList:struct bdi_writeback *wb
+		Parameter:struct bdi_writeback *wb
+			ParameterType:struct bdi_writeback *
+			Identifier:wb
+FunctionDef:bdi_init (struct backing_dev_info *bdi)
+	CompoundStatement:
+		IdentifierDeclStatement:int ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:int
+				Identifier:ret
+		ExpressionStatement:bdi->dev = NULL
+			AssignmentExpression:bdi->dev = NULL
+				PtrMemberAccess:bdi->dev
+					Identifier:bdi
+					Identifier:dev
+				Identifier:NULL
+		ExpressionStatement:kref_init(&bdi->refcnt)
+			CallExpression:kref_init(&bdi->refcnt)
+				Callee:kref_init
+					Identifier:kref_init
+				ArgumentList:&bdi->refcnt
+					Argument:&bdi->refcnt
+						UnaryOperationExpression:&bdi->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:bdi->refcnt
+								Identifier:bdi
+								Identifier:refcnt
+		ExpressionStatement:bdi->min_ratio = 0
+			AssignmentExpression:bdi->min_ratio = 0
+				PtrMemberAccess:bdi->min_ratio
+					Identifier:bdi
+					Identifier:min_ratio
+				Constant:0
+		ExpressionStatement:bdi->max_ratio = 100
+			AssignmentExpression:bdi->max_ratio = 100
+				PtrMemberAccess:bdi->max_ratio
+					Identifier:bdi
+					Identifier:max_ratio
+				Constant:100
+		ExpressionStatement:bdi->max_prop_frac = FPROP_FRAC_BASE
+			AssignmentExpression:bdi->max_prop_frac = FPROP_FRAC_BASE
+				PtrMemberAccess:bdi->max_prop_frac
+					Identifier:bdi
+					Identifier:max_prop_frac
+				Identifier:FPROP_FRAC_BASE
+		ExpressionStatement:INIT_LIST_HEAD(&bdi->bdi_list)
+			CallExpression:INIT_LIST_HEAD(&bdi->bdi_list)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&bdi->bdi_list
+					Argument:&bdi->bdi_list
+						UnaryOperationExpression:&bdi->bdi_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->bdi_list
+								Identifier:bdi
+								Identifier:bdi_list
+		ExpressionStatement:INIT_LIST_HEAD(&bdi->wb_list)
+			CallExpression:INIT_LIST_HEAD(&bdi->wb_list)
+				Callee:INIT_LIST_HEAD
+					Identifier:INIT_LIST_HEAD
+				ArgumentList:&bdi->wb_list
+					Argument:&bdi->wb_list
+						UnaryOperationExpression:&bdi->wb_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_list
+								Identifier:bdi
+								Identifier:wb_list
+		ExpressionStatement:init_waitqueue_head(&bdi->wb_waitq)
+			CallExpression:init_waitqueue_head(&bdi->wb_waitq)
+				Callee:init_waitqueue_head
+					Identifier:init_waitqueue_head
+				ArgumentList:&bdi->wb_waitq
+					Argument:&bdi->wb_waitq
+						UnaryOperationExpression:&bdi->wb_waitq
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb_waitq
+								Identifier:bdi
+								Identifier:wb_waitq
+		ExpressionStatement:ret = cgwb_bdi_init(bdi)
+			AssignmentExpression:ret = cgwb_bdi_init(bdi)
+				Identifier:ret
+				CallExpression:cgwb_bdi_init(bdi)
+					Callee:cgwb_bdi_init
+						Identifier:cgwb_bdi_init
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:static int
+	Identifier:bdi_init
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:bdi_alloc_node (gfp_t gfp_mask , int node_id)
+	CompoundStatement:
+		IdentifierDeclStatement:struct backing_dev_info *bdi;
+			IdentifierDecl:*bdi
+				IdentifierDeclType:struct backing_dev_info *
+				Identifier:bdi
+		ExpressionStatement:bdi = kmalloc_node(sizeof(struct backing_dev_info),\t\t\t   gfp_mask | __GFP_ZERO, node_id)
+			AssignmentExpression:bdi = kmalloc_node(sizeof(struct backing_dev_info),\t\t\t   gfp_mask | __GFP_ZERO, node_id)
+				Identifier:bdi
+				CallExpression:kmalloc_node(sizeof(struct backing_dev_info),\t\t\t   gfp_mask | __GFP_ZERO, node_id)
+					Callee:kmalloc_node
+						Identifier:kmalloc_node
+					ArgumentList:sizeof(struct backing_dev_info)
+						Argument:sizeof(struct backing_dev_info)
+							SizeofExpression:sizeof(struct backing_dev_info)
+								Sizeof:sizeof
+								SizeofOperand:struct backing_dev_info
+						Argument:gfp_mask | __GFP_ZERO
+							InclusiveOrExpression:gfp_mask | __GFP_ZERO
+								Identifier:gfp_mask
+								Identifier:__GFP_ZERO
+						Argument:node_id
+							Identifier:node_id
+		IfStatement:if (!bdi)
+			Condition:!bdi
+				UnaryOperationExpression:!bdi
+					UnaryOperator:!
+					Identifier:bdi
+			ReturnStatement:return NULL;
+				Identifier:NULL
+		IfStatement:if (bdi_init(bdi))
+			Condition:bdi_init(bdi)
+				CallExpression:bdi_init(bdi)
+					Callee:bdi_init
+						Identifier:bdi_init
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+			CompoundStatement:
+				ExpressionStatement:kfree(bdi)
+					CallExpression:kfree(bdi)
+						Callee:kfree
+							Identifier:kfree
+						ArgumentList:bdi
+							Argument:bdi
+								Identifier:bdi
+				ReturnStatement:return NULL;
+					Identifier:NULL
+		ReturnStatement:return bdi;
+			Identifier:bdi
+	ReturnType:struct backing_dev_info *
+	Identifier:bdi_alloc_node
+	ParameterList:gfp_t gfp_mask , int node_id
+		Parameter:gfp_t gfp_mask
+			ParameterType:gfp_t
+			Identifier:gfp_mask
+		Parameter:int node_id
+			ParameterType:int
+			Identifier:node_id
+FunctionDef:bdi_register_va (struct backing_dev_info *bdi , const char *fmt , va_list args)
+	CompoundStatement:
+		IdentifierDeclStatement:struct device *dev;
+			IdentifierDecl:*dev
+				IdentifierDeclType:struct device *
+				Identifier:dev
+		IfStatement:if (bdi->dev)
+			Condition:bdi->dev
+				PtrMemberAccess:bdi->dev
+					Identifier:bdi
+					Identifier:dev
+			Statement:/* The driver needs to use separate queues per device */
+		ReturnStatement:return 0;
+			Constant:0
+		ExpressionStatement:dev = device_create_vargs(bdi_class, NULL, MKDEV(0, 0), bdi, fmt, args)
+			AssignmentExpression:dev = device_create_vargs(bdi_class, NULL, MKDEV(0, 0), bdi, fmt, args)
+				Identifier:dev
+				CallExpression:device_create_vargs(bdi_class, NULL, MKDEV(0, 0), bdi, fmt, args)
+					Callee:device_create_vargs
+						Identifier:device_create_vargs
+					ArgumentList:bdi_class
+						Argument:bdi_class
+							Identifier:bdi_class
+						Argument:NULL
+							Identifier:NULL
+						Argument:MKDEV(0, 0)
+							CallExpression:MKDEV(0, 0)
+								Callee:MKDEV
+									Identifier:MKDEV
+								ArgumentList:0
+									Argument:0
+										Constant:0
+									Argument:0
+										Constant:0
+						Argument:bdi
+							Identifier:bdi
+						Argument:fmt
+							Identifier:fmt
+						Argument:args
+							Identifier:args
+		IfStatement:if (IS_ERR(dev))
+			Condition:IS_ERR(dev)
+				CallExpression:IS_ERR(dev)
+					Callee:IS_ERR
+						Identifier:IS_ERR
+					ArgumentList:dev
+						Argument:dev
+							Identifier:dev
+			ReturnStatement:return PTR_ERR(dev);
+				CallExpression:PTR_ERR(dev)
+					Callee:PTR_ERR
+						Identifier:PTR_ERR
+					ArgumentList:dev
+						Argument:dev
+							Identifier:dev
+		ExpressionStatement:cgwb_bdi_register(bdi)
+			CallExpression:cgwb_bdi_register(bdi)
+				Callee:cgwb_bdi_register
+					Identifier:cgwb_bdi_register
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+		ExpressionStatement:bdi->dev = dev
+			AssignmentExpression:bdi->dev = dev
+				PtrMemberAccess:bdi->dev
+					Identifier:bdi
+					Identifier:dev
+				Identifier:dev
+		ExpressionStatement:bdi_debug_register(bdi, dev_name(dev))
+			CallExpression:bdi_debug_register(bdi, dev_name(dev))
+				Callee:bdi_debug_register
+					Identifier:bdi_debug_register
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+					Argument:dev_name(dev)
+						CallExpression:dev_name(dev)
+							Callee:dev_name
+								Identifier:dev_name
+							ArgumentList:dev
+								Argument:dev
+									Identifier:dev
+		ExpressionStatement:set_bit(WB_registered, &bdi->wb.state)
+			CallExpression:set_bit(WB_registered, &bdi->wb.state)
+				Callee:set_bit
+					Identifier:set_bit
+				ArgumentList:WB_registered
+					Argument:WB_registered
+						Identifier:WB_registered
+					Argument:&bdi->wb.state
+						UnaryOperationExpression:&bdi->wb.state
+							UnaryOperator:&
+							MemberAccess:bdi->wb.state
+								PtrMemberAccess:bdi->wb
+									Identifier:bdi
+									Identifier:wb
+								Identifier:state
+		ExpressionStatement:spin_lock_bh(&bdi_lock)
+			CallExpression:spin_lock_bh(&bdi_lock)
+				Callee:spin_lock_bh
+					Identifier:spin_lock_bh
+				ArgumentList:&bdi_lock
+					Argument:&bdi_lock
+						UnaryOperationExpression:&bdi_lock
+							UnaryOperator:&
+							Identifier:bdi_lock
+		ExpressionStatement:list_add_tail_rcu(&bdi->bdi_list, &bdi_list)
+			CallExpression:list_add_tail_rcu(&bdi->bdi_list, &bdi_list)
+				Callee:list_add_tail_rcu
+					Identifier:list_add_tail_rcu
+				ArgumentList:&bdi->bdi_list
+					Argument:&bdi->bdi_list
+						UnaryOperationExpression:&bdi->bdi_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->bdi_list
+								Identifier:bdi
+								Identifier:bdi_list
+					Argument:&bdi_list
+						UnaryOperationExpression:&bdi_list
+							UnaryOperator:&
+							Identifier:bdi_list
+		ExpressionStatement:spin_unlock_bh(&bdi_lock)
+			CallExpression:spin_unlock_bh(&bdi_lock)
+				Callee:spin_unlock_bh
+					Identifier:spin_unlock_bh
+				ArgumentList:&bdi_lock
+					Argument:&bdi_lock
+						UnaryOperationExpression:&bdi_lock
+							UnaryOperator:&
+							Identifier:bdi_lock
+		ExpressionStatement:trace_writeback_bdi_register(bdi)
+			CallExpression:trace_writeback_bdi_register(bdi)
+				Callee:trace_writeback_bdi_register
+					Identifier:trace_writeback_bdi_register
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:int
+	Identifier:bdi_register_va
+	ParameterList:struct backing_dev_info *bdi , const char *fmt , va_list args
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:const char *fmt
+			ParameterType:const char *
+			Identifier:fmt
+		Parameter:va_list args
+			ParameterType:va_list
+			Identifier:args
+FunctionDef:bdi_register (struct backing_dev_info *bdi , const char *fmt)
+	CompoundStatement:
+		IdentifierDeclStatement:va_list args;
+			IdentifierDecl:args
+				IdentifierDeclType:va_list
+				Identifier:args
+		IdentifierDeclStatement:int ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:int
+				Identifier:ret
+		ExpressionStatement:va_start(args, fmt)
+			CallExpression:va_start(args, fmt)
+				Callee:va_start
+					Identifier:va_start
+				ArgumentList:args
+					Argument:args
+						Identifier:args
+					Argument:fmt
+						Identifier:fmt
+		ExpressionStatement:ret = bdi_register_va(bdi, fmt, args)
+			AssignmentExpression:ret = bdi_register_va(bdi, fmt, args)
+				Identifier:ret
+				CallExpression:bdi_register_va(bdi, fmt, args)
+					Callee:bdi_register_va
+						Identifier:bdi_register_va
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+						Argument:fmt
+							Identifier:fmt
+						Argument:args
+							Identifier:args
+		ExpressionStatement:va_end(args)
+			CallExpression:va_end(args)
+				Callee:va_end
+					Identifier:va_end
+				ArgumentList:args
+					Argument:args
+						Identifier:args
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:int
+	Identifier:bdi_register
+	ParameterList:struct backing_dev_info *bdi , const char *fmt
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:const char *fmt
+			ParameterType:const char *
+			Identifier:fmt
+FunctionDef:bdi_register_owner (struct backing_dev_info *bdi , struct device *owner)
+	CompoundStatement:
+		IdentifierDeclStatement:int rc;
+			IdentifierDecl:rc
+				IdentifierDeclType:int
+				Identifier:rc
+		ExpressionStatement:rc = bdi_register(bdi, "%u:%u", MAJOR(owner->devt), MINOR(owner->devt))
+			AssignmentExpression:rc = bdi_register(bdi, "%u:%u", MAJOR(owner->devt), MINOR(owner->devt))
+				Identifier:rc
+				CallExpression:bdi_register(bdi, "%u:%u", MAJOR(owner->devt), MINOR(owner->devt))
+					Callee:bdi_register
+						Identifier:bdi_register
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+						Argument:"%u:%u"
+							Constant:"%u:%u"
+						Argument:MAJOR(owner->devt)
+							CallExpression:MAJOR(owner->devt)
+								Callee:MAJOR
+									Identifier:MAJOR
+								ArgumentList:owner->devt
+									Argument:owner->devt
+										PtrMemberAccess:owner->devt
+											Identifier:owner
+											Identifier:devt
+						Argument:MINOR(owner->devt)
+							CallExpression:MINOR(owner->devt)
+								Callee:MINOR
+									Identifier:MINOR
+								ArgumentList:owner->devt
+									Argument:owner->devt
+										PtrMemberAccess:owner->devt
+											Identifier:owner
+											Identifier:devt
+		IfStatement:if (rc)
+			Condition:rc
+				Identifier:rc
+			ReturnStatement:return rc;
+				Identifier:rc
+		Statement:/* Leaking owner reference... */
+		ExpressionStatement:WARN_ON(bdi->owner)
+			CallExpression:WARN_ON(bdi->owner)
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:bdi->owner
+					Argument:bdi->owner
+						PtrMemberAccess:bdi->owner
+							Identifier:bdi
+							Identifier:owner
+		ExpressionStatement:bdi->owner = owner
+			AssignmentExpression:bdi->owner = owner
+				PtrMemberAccess:bdi->owner
+					Identifier:bdi
+					Identifier:owner
+				Identifier:owner
+		ExpressionStatement:get_device(owner)
+			CallExpression:get_device(owner)
+				Callee:get_device
+					Identifier:get_device
+				ArgumentList:owner
+					Argument:owner
+						Identifier:owner
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:int
+	Identifier:bdi_register_owner
+	ParameterList:struct backing_dev_info *bdi , struct device *owner
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+		Parameter:struct device *owner
+			ParameterType:struct device *
+			Identifier:owner
+FunctionDef:bdi_remove_from_list (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:spin_lock_bh(&bdi_lock)
+			CallExpression:spin_lock_bh(&bdi_lock)
+				Callee:spin_lock_bh
+					Identifier:spin_lock_bh
+				ArgumentList:&bdi_lock
+					Argument:&bdi_lock
+						UnaryOperationExpression:&bdi_lock
+							UnaryOperator:&
+							Identifier:bdi_lock
+		ExpressionStatement:list_del_rcu(&bdi->bdi_list)
+			CallExpression:list_del_rcu(&bdi->bdi_list)
+				Callee:list_del_rcu
+					Identifier:list_del_rcu
+				ArgumentList:&bdi->bdi_list
+					Argument:&bdi->bdi_list
+						UnaryOperationExpression:&bdi->bdi_list
+							UnaryOperator:&
+							PtrMemberAccess:bdi->bdi_list
+								Identifier:bdi
+								Identifier:bdi_list
+		ExpressionStatement:spin_unlock_bh(&bdi_lock)
+			CallExpression:spin_unlock_bh(&bdi_lock)
+				Callee:spin_unlock_bh
+					Identifier:spin_unlock_bh
+				ArgumentList:&bdi_lock
+					Argument:&bdi_lock
+						UnaryOperationExpression:&bdi_lock
+							UnaryOperator:&
+							Identifier:bdi_lock
+		ExpressionStatement:synchronize_rcu_expedited()
+			CallExpression:synchronize_rcu_expedited()
+				Callee:synchronize_rcu_expedited
+					Identifier:synchronize_rcu_expedited
+				ArgumentList:
+	ReturnType:static void
+	Identifier:bdi_remove_from_list
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:bdi_unregister (struct backing_dev_info *bdi)
+	CompoundStatement:
+		Statement:/* make sure nobody finds us on the bdi_list anymore */
+		ExpressionStatement:bdi_remove_from_list(bdi)
+			CallExpression:bdi_remove_from_list(bdi)
+				Callee:bdi_remove_from_list
+					Identifier:bdi_remove_from_list
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+		ExpressionStatement:wb_shutdown(&bdi->wb)
+			CallExpression:wb_shutdown(&bdi->wb)
+				Callee:wb_shutdown
+					Identifier:wb_shutdown
+				ArgumentList:&bdi->wb
+					Argument:&bdi->wb
+						UnaryOperationExpression:&bdi->wb
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb
+								Identifier:bdi
+								Identifier:wb
+		ExpressionStatement:cgwb_bdi_unregister(bdi)
+			CallExpression:cgwb_bdi_unregister(bdi)
+				Callee:cgwb_bdi_unregister
+					Identifier:cgwb_bdi_unregister
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+		IfStatement:if (bdi->dev)
+			Condition:bdi->dev
+				PtrMemberAccess:bdi->dev
+					Identifier:bdi
+					Identifier:dev
+			CompoundStatement:
+				ExpressionStatement:bdi_debug_unregister(bdi)
+					CallExpression:bdi_debug_unregister(bdi)
+						Callee:bdi_debug_unregister
+							Identifier:bdi_debug_unregister
+						ArgumentList:bdi
+							Argument:bdi
+								Identifier:bdi
+				ExpressionStatement:device_unregister(bdi->dev)
+					CallExpression:device_unregister(bdi->dev)
+						Callee:device_unregister
+							Identifier:device_unregister
+						ArgumentList:bdi->dev
+							Argument:bdi->dev
+								PtrMemberAccess:bdi->dev
+									Identifier:bdi
+									Identifier:dev
+				ExpressionStatement:bdi->dev = NULL
+					AssignmentExpression:bdi->dev = NULL
+						PtrMemberAccess:bdi->dev
+							Identifier:bdi
+							Identifier:dev
+						Identifier:NULL
+		IfStatement:if (bdi->owner)
+			Condition:bdi->owner
+				PtrMemberAccess:bdi->owner
+					Identifier:bdi
+					Identifier:owner
+			CompoundStatement:
+				ExpressionStatement:put_device(bdi->owner)
+					CallExpression:put_device(bdi->owner)
+						Callee:put_device
+							Identifier:put_device
+						ArgumentList:bdi->owner
+							Argument:bdi->owner
+								PtrMemberAccess:bdi->owner
+									Identifier:bdi
+									Identifier:owner
+				ExpressionStatement:bdi->owner = NULL
+					AssignmentExpression:bdi->owner = NULL
+						PtrMemberAccess:bdi->owner
+							Identifier:bdi
+							Identifier:owner
+						Identifier:NULL
+	ReturnType:void
+	Identifier:bdi_unregister
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+FunctionDef:release_bdi (struct kref *ref)
+	CompoundStatement:
+		Statement:struct
+		Statement:backing_dev_info
+		Statement:*
+		Statement:bdi
+		Statement:=
+		Statement:container_of
+		Statement:(
+		Statement:ref
+		Statement:,
+		Statement:struct
+		Statement:backing_dev_info
+		Statement:,
+		Statement:refcnt
+		Statement:)
+		ExpressionStatement:
+		IfStatement:if (test_bit(WB_registered, &bdi->wb.state))
+			Condition:test_bit(WB_registered, &bdi->wb.state)
+				CallExpression:test_bit(WB_registered, &bdi->wb.state)
+					Callee:test_bit
+						Identifier:test_bit
+					ArgumentList:WB_registered
+						Argument:WB_registered
+							Identifier:WB_registered
+						Argument:&bdi->wb.state
+							UnaryOperationExpression:&bdi->wb.state
+								UnaryOperator:&
+								MemberAccess:bdi->wb.state
+									PtrMemberAccess:bdi->wb
+										Identifier:bdi
+										Identifier:wb
+									Identifier:state
+			ExpressionStatement:bdi_unregister(bdi)
+				CallExpression:bdi_unregister(bdi)
+					Callee:bdi_unregister
+						Identifier:bdi_unregister
+					ArgumentList:bdi
+						Argument:bdi
+							Identifier:bdi
+		ExpressionStatement:WARN_ON_ONCE(bdi->dev)
+			CallExpression:WARN_ON_ONCE(bdi->dev)
+				Callee:WARN_ON_ONCE
+					Identifier:WARN_ON_ONCE
+				ArgumentList:bdi->dev
+					Argument:bdi->dev
+						PtrMemberAccess:bdi->dev
+							Identifier:bdi
+							Identifier:dev
+		ExpressionStatement:wb_exit(&bdi->wb)
+			CallExpression:wb_exit(&bdi->wb)
+				Callee:wb_exit
+					Identifier:wb_exit
+				ArgumentList:&bdi->wb
+					Argument:&bdi->wb
+						UnaryOperationExpression:&bdi->wb
+							UnaryOperator:&
+							PtrMemberAccess:bdi->wb
+								Identifier:bdi
+								Identifier:wb
+		ExpressionStatement:cgwb_bdi_exit(bdi)
+			CallExpression:cgwb_bdi_exit(bdi)
+				Callee:cgwb_bdi_exit
+					Identifier:cgwb_bdi_exit
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+		ExpressionStatement:kfree(bdi)
+			CallExpression:kfree(bdi)
+				Callee:kfree
+					Identifier:kfree
+				ArgumentList:bdi
+					Argument:bdi
+						Identifier:bdi
+	ReturnType:static void
+	Identifier:release_bdi
+	ParameterList:struct kref *ref
+		Parameter:struct kref *ref
+			ParameterType:struct kref *
+			Identifier:ref
+FunctionDef:bdi_put (struct backing_dev_info *bdi)
+	CompoundStatement:
+		ExpressionStatement:kref_put(&bdi->refcnt, release_bdi)
+			CallExpression:kref_put(&bdi->refcnt, release_bdi)
+				Callee:kref_put
+					Identifier:kref_put
+				ArgumentList:&bdi->refcnt
+					Argument:&bdi->refcnt
+						UnaryOperationExpression:&bdi->refcnt
+							UnaryOperator:&
+							PtrMemberAccess:bdi->refcnt
+								Identifier:bdi
+								Identifier:refcnt
+					Argument:release_bdi
+						Identifier:release_bdi
+	ReturnType:void
+	Identifier:bdi_put
+	ParameterList:struct backing_dev_info *bdi
+		Parameter:struct backing_dev_info *bdi
+			ParameterType:struct backing_dev_info *
+			Identifier:bdi
+IdentifierDeclStatement:null
+	IdentifierDecl:congestion_wqh[2]
+		IdentifierDeclType:wait_queue_head_t [ 2 ]
+		Identifier:congestion_wqh
+IdentifierDeclStatement:null
+	IdentifierDecl:nr_wb_congested[2]
+		IdentifierDeclType:atomic_t [ 2 ]
+		Identifier:nr_wb_congested
+FunctionDef:clear_wb_congested (struct bdi_writeback_congested *congested , int sync)
+	CompoundStatement:
+		IdentifierDeclStatement:wait_queue_head_t *wqh = &congestion_wqh[sync];
+			IdentifierDecl:*wqh = &congestion_wqh[sync]
+				IdentifierDeclType:wait_queue_head_t *
+				Identifier:wqh
+				AssignmentExpression:*wqh = &congestion_wqh[sync]
+					Identifier:wqh
+					UnaryOperationExpression:&congestion_wqh[sync]
+						UnaryOperator:&
+						ArrayIndexing:congestion_wqh[sync]
+							Identifier:congestion_wqh
+							Identifier:sync
+		IdentifierDeclStatement:enum wb_congested_state bit;
+			IdentifierDecl:bit
+				IdentifierDeclType:enum wb_congested_state
+				Identifier:bit
+		ExpressionStatement:bit = sync ? WB_sync_congested : WB_async_congested
+			AssignmentExpression:bit = sync ? WB_sync_congested : WB_async_congested
+				Identifier:bit
+				ConditionalExpression:sync ? WB_sync_congested : WB_async_congested
+					Condition:sync
+						Identifier:sync
+					Identifier:WB_sync_congested
+					Identifier:WB_async_congested
+		IfStatement:if (test_and_clear_bit(bit, &congested->state))
+			Condition:test_and_clear_bit(bit, &congested->state)
+				CallExpression:test_and_clear_bit(bit, &congested->state)
+					Callee:test_and_clear_bit
+						Identifier:test_and_clear_bit
+					ArgumentList:bit
+						Argument:bit
+							Identifier:bit
+						Argument:&congested->state
+							UnaryOperationExpression:&congested->state
+								UnaryOperator:&
+								PtrMemberAccess:congested->state
+									Identifier:congested
+									Identifier:state
+			ExpressionStatement:atomic_dec(&nr_wb_congested[sync])
+				CallExpression:atomic_dec(&nr_wb_congested[sync])
+					Callee:atomic_dec
+						Identifier:atomic_dec
+					ArgumentList:&nr_wb_congested[sync]
+						Argument:&nr_wb_congested[sync]
+							UnaryOperationExpression:&nr_wb_congested[sync]
+								UnaryOperator:&
+								ArrayIndexing:nr_wb_congested[sync]
+									Identifier:nr_wb_congested
+									Identifier:sync
+		ExpressionStatement:smp_mb__after_atomic()
+			CallExpression:smp_mb__after_atomic()
+				Callee:smp_mb__after_atomic
+					Identifier:smp_mb__after_atomic
+				ArgumentList:
+		IfStatement:if (waitqueue_active(wqh))
+			Condition:waitqueue_active(wqh)
+				CallExpression:waitqueue_active(wqh)
+					Callee:waitqueue_active
+						Identifier:waitqueue_active
+					ArgumentList:wqh
+						Argument:wqh
+							Identifier:wqh
+			ExpressionStatement:wake_up(wqh)
+				CallExpression:wake_up(wqh)
+					Callee:wake_up
+						Identifier:wake_up
+					ArgumentList:wqh
+						Argument:wqh
+							Identifier:wqh
+	ReturnType:void
+	Identifier:clear_wb_congested
+	ParameterList:struct bdi_writeback_congested *congested , int sync
+		Parameter:struct bdi_writeback_congested *congested
+			ParameterType:struct bdi_writeback_congested *
+			Identifier:congested
+		Parameter:int sync
+			ParameterType:int
+			Identifier:sync
+FunctionDef:set_wb_congested (struct bdi_writeback_congested *congested , int sync)
+	CompoundStatement:
+		IdentifierDeclStatement:enum wb_congested_state bit;
+			IdentifierDecl:bit
+				IdentifierDeclType:enum wb_congested_state
+				Identifier:bit
+		ExpressionStatement:bit = sync ? WB_sync_congested : WB_async_congested
+			AssignmentExpression:bit = sync ? WB_sync_congested : WB_async_congested
+				Identifier:bit
+				ConditionalExpression:sync ? WB_sync_congested : WB_async_congested
+					Condition:sync
+						Identifier:sync
+					Identifier:WB_sync_congested
+					Identifier:WB_async_congested
+		IfStatement:if (!test_and_set_bit(bit, &congested->state))
+			Condition:!test_and_set_bit(bit, &congested->state)
+				UnaryOperationExpression:!test_and_set_bit(bit, &congested->state)
+					UnaryOperator:!
+					CallExpression:test_and_set_bit(bit, &congested->state)
+						Callee:test_and_set_bit
+							Identifier:test_and_set_bit
+						ArgumentList:bit
+							Argument:bit
+								Identifier:bit
+							Argument:&congested->state
+								UnaryOperationExpression:&congested->state
+									UnaryOperator:&
+									PtrMemberAccess:congested->state
+										Identifier:congested
+										Identifier:state
+			ExpressionStatement:atomic_inc(&nr_wb_congested[sync])
+				CallExpression:atomic_inc(&nr_wb_congested[sync])
+					Callee:atomic_inc
+						Identifier:atomic_inc
+					ArgumentList:&nr_wb_congested[sync]
+						Argument:&nr_wb_congested[sync]
+							UnaryOperationExpression:&nr_wb_congested[sync]
+								UnaryOperator:&
+								ArrayIndexing:nr_wb_congested[sync]
+									Identifier:nr_wb_congested
+									Identifier:sync
+	ReturnType:void
+	Identifier:set_wb_congested
+	ParameterList:struct bdi_writeback_congested *congested , int sync
+		Parameter:struct bdi_writeback_congested *congested
+			ParameterType:struct bdi_writeback_congested *
+			Identifier:congested
+		Parameter:int sync
+			ParameterType:int
+			Identifier:sync
+FunctionDef:congestion_wait (int sync , long timeout)
+	CompoundStatement:
+		IdentifierDeclStatement:long ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:long
+				Identifier:ret
+		IdentifierDeclStatement:unsigned long start = jiffies;
+			IdentifierDecl:start = jiffies
+				IdentifierDeclType:unsigned long
+				Identifier:start
+				AssignmentExpression:start = jiffies
+					Identifier:start
+					Identifier:jiffies
+		ExpressionStatement:DEFINE_WAIT(wait)
+			CallExpression:DEFINE_WAIT(wait)
+				Callee:DEFINE_WAIT
+					Identifier:DEFINE_WAIT
+				ArgumentList:wait
+					Argument:wait
+						Identifier:wait
+		IdentifierDeclStatement:wait_queue_head_t *wqh = &congestion_wqh[sync];
+			IdentifierDecl:*wqh = &congestion_wqh[sync]
+				IdentifierDeclType:wait_queue_head_t *
+				Identifier:wqh
+				AssignmentExpression:*wqh = &congestion_wqh[sync]
+					Identifier:wqh
+					UnaryOperationExpression:&congestion_wqh[sync]
+						UnaryOperator:&
+						ArrayIndexing:congestion_wqh[sync]
+							Identifier:congestion_wqh
+							Identifier:sync
+		ExpressionStatement:prepare_to_wait(wqh, &wait, TASK_UNINTERRUPTIBLE)
+			CallExpression:prepare_to_wait(wqh, &wait, TASK_UNINTERRUPTIBLE)
+				Callee:prepare_to_wait
+					Identifier:prepare_to_wait
+				ArgumentList:wqh
+					Argument:wqh
+						Identifier:wqh
+					Argument:&wait
+						UnaryOperationExpression:&wait
+							UnaryOperator:&
+							Identifier:wait
+					Argument:TASK_UNINTERRUPTIBLE
+						Identifier:TASK_UNINTERRUPTIBLE
+		ExpressionStatement:ret = io_schedule_timeout(timeout)
+			AssignmentExpression:ret = io_schedule_timeout(timeout)
+				Identifier:ret
+				CallExpression:io_schedule_timeout(timeout)
+					Callee:io_schedule_timeout
+						Identifier:io_schedule_timeout
+					ArgumentList:timeout
+						Argument:timeout
+							Identifier:timeout
+		ExpressionStatement:finish_wait(wqh, &wait)
+			CallExpression:finish_wait(wqh, &wait)
+				Callee:finish_wait
+					Identifier:finish_wait
+				ArgumentList:wqh
+					Argument:wqh
+						Identifier:wqh
+					Argument:&wait
+						UnaryOperationExpression:&wait
+							UnaryOperator:&
+							Identifier:wait
+		ExpressionStatement:trace_writeback_congestion_wait(jiffies_to_usecs(timeout),\t\t\t\t\tjiffies_to_usecs(jiffies - start))
+			CallExpression:trace_writeback_congestion_wait(jiffies_to_usecs(timeout),\t\t\t\t\tjiffies_to_usecs(jiffies - start))
+				Callee:trace_writeback_congestion_wait
+					Identifier:trace_writeback_congestion_wait
+				ArgumentList:jiffies_to_usecs(timeout)
+					Argument:jiffies_to_usecs(timeout)
+						CallExpression:jiffies_to_usecs(timeout)
+							Callee:jiffies_to_usecs
+								Identifier:jiffies_to_usecs
+							ArgumentList:timeout
+								Argument:timeout
+									Identifier:timeout
+					Argument:jiffies_to_usecs(jiffies - start)
+						CallExpression:jiffies_to_usecs(jiffies - start)
+							Callee:jiffies_to_usecs
+								Identifier:jiffies_to_usecs
+							ArgumentList:jiffies - start
+								Argument:jiffies - start
+									AdditiveExpression:jiffies - start
+										Identifier:jiffies
+										Identifier:start
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:long
+	Identifier:congestion_wait
+	ParameterList:int sync , long timeout
+		Parameter:int sync
+			ParameterType:int
+			Identifier:sync
+		Parameter:long timeout
+			ParameterType:long
+			Identifier:timeout
+FunctionDef:wait_iff_congested (int sync , long timeout)
+	CompoundStatement:
+		IdentifierDeclStatement:long ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:long
+				Identifier:ret
+		IdentifierDeclStatement:unsigned long start = jiffies;
+			IdentifierDecl:start = jiffies
+				IdentifierDeclType:unsigned long
+				Identifier:start
+				AssignmentExpression:start = jiffies
+					Identifier:start
+					Identifier:jiffies
+		ExpressionStatement:DEFINE_WAIT(wait)
+			CallExpression:DEFINE_WAIT(wait)
+				Callee:DEFINE_WAIT
+					Identifier:DEFINE_WAIT
+				ArgumentList:wait
+					Argument:wait
+						Identifier:wait
+		IdentifierDeclStatement:wait_queue_head_t *wqh = &congestion_wqh[sync];
+			IdentifierDecl:*wqh = &congestion_wqh[sync]
+				IdentifierDeclType:wait_queue_head_t *
+				Identifier:wqh
+				AssignmentExpression:*wqh = &congestion_wqh[sync]
+					Identifier:wqh
+					UnaryOperationExpression:&congestion_wqh[sync]
+						UnaryOperator:&
+						ArrayIndexing:congestion_wqh[sync]
+							Identifier:congestion_wqh
+							Identifier:sync
+		Statement:/*\t * If there is no congestion, yield if necessary instead\t * of sleeping on the congestion queue\t */
+		IfStatement:if (atomic_read(&nr_wb_congested[sync]) == 0)
+			Condition:atomic_read(&nr_wb_congested[sync]) == 0
+				EqualityExpression:atomic_read(&nr_wb_congested[sync]) == 0
+					CallExpression:atomic_read(&nr_wb_congested[sync])
+						Callee:atomic_read
+							Identifier:atomic_read
+						ArgumentList:&nr_wb_congested[sync]
+							Argument:&nr_wb_congested[sync]
+								UnaryOperationExpression:&nr_wb_congested[sync]
+									UnaryOperator:&
+									ArrayIndexing:nr_wb_congested[sync]
+										Identifier:nr_wb_congested
+										Identifier:sync
+					Constant:0
+			CompoundStatement:
+				ExpressionStatement:cond_resched()
+					CallExpression:cond_resched()
+						Callee:cond_resched
+							Identifier:cond_resched
+						ArgumentList:
+				Statement:/* In case we scheduled, work out time remaining */
+				ExpressionStatement:ret = timeout - (jiffies - start)
+					AssignmentExpression:ret = timeout - (jiffies - start)
+						Identifier:ret
+						AdditiveExpression:timeout - (jiffies - start)
+							Identifier:timeout
+							AdditiveExpression:jiffies - start
+								Identifier:jiffies
+								Identifier:start
+				IfStatement:if (ret < 0)
+					Condition:ret < 0
+						RelationalExpression:ret < 0
+							Identifier:ret
+							Constant:0
+					ExpressionStatement:ret = 0
+						AssignmentExpression:ret = 0
+							Identifier:ret
+							Constant:0
+				GotoStatement:goto out;
+					Identifier:out
+		Statement:/* Sleep until uncongested or a write happens */
+		ExpressionStatement:prepare_to_wait(wqh, &wait, TASK_UNINTERRUPTIBLE)
+			CallExpression:prepare_to_wait(wqh, &wait, TASK_UNINTERRUPTIBLE)
+				Callee:prepare_to_wait
+					Identifier:prepare_to_wait
+				ArgumentList:wqh
+					Argument:wqh
+						Identifier:wqh
+					Argument:&wait
+						UnaryOperationExpression:&wait
+							UnaryOperator:&
+							Identifier:wait
+					Argument:TASK_UNINTERRUPTIBLE
+						Identifier:TASK_UNINTERRUPTIBLE
+		ExpressionStatement:ret = io_schedule_timeout(timeout)
+			AssignmentExpression:ret = io_schedule_timeout(timeout)
+				Identifier:ret
+				CallExpression:io_schedule_timeout(timeout)
+					Callee:io_schedule_timeout
+						Identifier:io_schedule_timeout
+					ArgumentList:timeout
+						Argument:timeout
+							Identifier:timeout
+		ExpressionStatement:finish_wait(wqh, &wait)
+			CallExpression:finish_wait(wqh, &wait)
+				Callee:finish_wait
+					Identifier:finish_wait
+				ArgumentList:wqh
+					Argument:wqh
+						Identifier:wqh
+					Argument:&wait
+						UnaryOperationExpression:&wait
+							UnaryOperator:&
+							Identifier:wait
+		Label:out:
+			Identifier:out
+		ExpressionStatement:trace_writeback_wait_iff_congested(jiffies_to_usecs(timeout),\t\t\t\t\tjiffies_to_usecs(jiffies - start))
+			CallExpression:trace_writeback_wait_iff_congested(jiffies_to_usecs(timeout),\t\t\t\t\tjiffies_to_usecs(jiffies - start))
+				Callee:trace_writeback_wait_iff_congested
+					Identifier:trace_writeback_wait_iff_congested
+				ArgumentList:jiffies_to_usecs(timeout)
+					Argument:jiffies_to_usecs(timeout)
+						CallExpression:jiffies_to_usecs(timeout)
+							Callee:jiffies_to_usecs
+								Identifier:jiffies_to_usecs
+							ArgumentList:timeout
+								Argument:timeout
+									Identifier:timeout
+					Argument:jiffies_to_usecs(jiffies - start)
+						CallExpression:jiffies_to_usecs(jiffies - start)
+							Callee:jiffies_to_usecs
+								Identifier:jiffies_to_usecs
+							ArgumentList:jiffies - start
+								Argument:jiffies - start
+									AdditiveExpression:jiffies - start
+										Identifier:jiffies
+										Identifier:start
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:long
+	Identifier:wait_iff_congested
+	ParameterList:int sync , long timeout
+		Parameter:int sync
+			ParameterType:int
+			Identifier:sync
+		Parameter:long timeout
+			ParameterType:long
+			Identifier:timeout

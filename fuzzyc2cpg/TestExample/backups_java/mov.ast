@@ -1,0 +1,147 @@
+FunctionDef:mov_read_hdlr (MOVContext *c , AVIOContext *pb , MOVAtom atom)
+	CompoundStatement:
+		Statement:[
+		Statement:...
+		Statement:]
+		IdentifierDeclStatement:int64_t title_size;
+			IdentifierDecl:title_size
+				IdentifierDeclType:int64_t
+				Identifier:title_size
+		Statement:[
+		Statement:...
+		Statement:]
+		ExpressionStatement:ctype = avio_rl32(pb)
+			AssignmentExpression:ctype = avio_rl32(pb)
+				Identifier:ctype
+				CallExpression:avio_rl32(pb)
+					Callee:avio_rl32
+						Identifier:avio_rl32
+					ArgumentList:pb
+						Argument:pb
+							Identifier:pb
+		ExpressionStatement:type = avio_rl32(pb)
+			AssignmentExpression:type = avio_rl32(pb)
+				Identifier:type
+				CallExpression:avio_rl32(pb)
+					Callee:avio_rl32
+						Identifier:avio_rl32
+					ArgumentList:pb
+						Argument:pb
+							Identifier:pb
+		ExpressionStatement:avio_rb32(pb)
+			CallExpression:avio_rb32(pb)
+				Callee:avio_rb32
+					Identifier:avio_rb32
+				ArgumentList:pb
+					Argument:pb
+						Identifier:pb
+		ExpressionStatement:avio_rb32(pb)
+			CallExpression:avio_rb32(pb)
+				Callee:avio_rb32
+					Identifier:avio_rb32
+				ArgumentList:pb
+					Argument:pb
+						Identifier:pb
+		ExpressionStatement:avio_rb32(pb)
+			CallExpression:avio_rb32(pb)
+				Callee:avio_rb32
+					Identifier:avio_rb32
+				ArgumentList:pb
+					Argument:pb
+						Identifier:pb
+		ExpressionStatement:title_size = atom.size - 24
+			AssignmentExpression:title_size = atom.size - 24
+				Identifier:title_size
+				AdditiveExpression:atom.size - 24
+					MemberAccess:atom.size
+						Identifier:atom
+						Identifier:size
+					Constant:24
+		IfStatement:if (title_size > 0)
+			Condition:title_size > 0
+				RelationalExpression:title_size > 0
+					Identifier:title_size
+					Constant:0
+			CompoundStatement:
+				Statement:[
+				Statement:...
+				Statement:]
+				ExpressionStatement:title_str = av_malloc(title_size + 1)
+					AssignmentExpression:title_str = av_malloc(title_size + 1)
+						Identifier:title_str
+						CallExpression:av_malloc(title_size + 1)
+							Callee:av_malloc
+								Identifier:av_malloc
+							ArgumentList:title_size + 1
+								Argument:title_size + 1
+									AdditiveExpression:title_size + 1
+										Identifier:title_size
+										Constant:1
+				IfStatement:if (!title_str)
+					Condition:!title_str
+						UnaryOperationExpression:!title_str
+							UnaryOperator:!
+							Identifier:title_str
+					ReturnStatement:return AVERROR(ENOMEM);
+						CallExpression:AVERROR(ENOMEM)
+							Callee:AVERROR
+								Identifier:AVERROR
+							ArgumentList:ENOMEM
+								Argument:ENOMEM
+									Identifier:ENOMEM
+				ExpressionStatement:ret = ffio_read_size(pb, title_str, title_size)
+					AssignmentExpression:ret = ffio_read_size(pb, title_str, title_size)
+						Identifier:ret
+						CallExpression:ffio_read_size(pb, title_str, title_size)
+							Callee:ffio_read_size
+								Identifier:ffio_read_size
+							ArgumentList:pb
+								Argument:pb
+									Identifier:pb
+								Argument:title_str
+									Identifier:title_str
+								Argument:title_size
+									Identifier:title_size
+				IfStatement:if (ret < 0)
+					Condition:ret < 0
+						RelationalExpression:ret < 0
+							Identifier:ret
+							Constant:0
+					CompoundStatement:
+						ExpressionStatement:av_freep(&title_str)
+							CallExpression:av_freep(&title_str)
+								Callee:av_freep
+									Identifier:av_freep
+								ArgumentList:&title_str
+									Argument:&title_str
+										UnaryOperationExpression:&title_str
+											UnaryOperator:&
+											Identifier:title_str
+						ReturnStatement:return ret;
+							Identifier:ret
+				Statement:[
+				Statement:...
+				Statement:]
+				ExpressionStatement:av_freep(&title_str)
+					CallExpression:av_freep(&title_str)
+						Callee:av_freep
+							Identifier:av_freep
+						ArgumentList:&title_str
+							Argument:&title_str
+								UnaryOperationExpression:&title_str
+									UnaryOperator:&
+									Identifier:title_str
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static int
+	Identifier:mov_read_hdlr
+	ParameterList:MOVContext *c , AVIOContext *pb , MOVAtom atom
+		Parameter:MOVContext *c
+			ParameterType:MOVContext *
+			Identifier:c
+		Parameter:AVIOContext *pb
+			ParameterType:AVIOContext *
+			Identifier:pb
+		Parameter:MOVAtom atom
+			ParameterType:MOVAtom
+			Identifier:atom

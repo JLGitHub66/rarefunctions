@@ -1,0 +1,41 @@
+FunctionDef:f ()
+	CompoundStatement:
+		IdentifierDeclStatement:int b = 0;
+			IdentifierDecl:b = 0
+				IdentifierDeclType:int
+				Identifier:b
+				AssignmentExpression:b = 0
+					Identifier:b
+					Constant:0
+		DoStatement:do
+			CompoundStatement:
+				IfStatement:if (!(2))
+					Condition:!(2)
+						UnaryOperationExpression:!(2)
+							UnaryOperator:!
+							Constant:2
+					CompoundStatement:
+						ExpressionStatement:verRaiseVerifyExceptionIfNeeded(INDEBUG( 3))
+							CallExpression:verRaiseVerifyExceptionIfNeeded(INDEBUG( 3))
+								Callee:verRaiseVerifyExceptionIfNeeded
+									Identifier:verRaiseVerifyExceptionIfNeeded
+								ArgumentList:INDEBUG( 3)
+									Argument:INDEBUG( 3)
+										CallExpression:INDEBUG( 3)
+											Callee:INDEBUG
+												Identifier:INDEBUG
+											ArgumentList:3
+												Argument:3
+													Constant:3
+			Condition:0
+				Constant:0
+		ExpressionStatement:printf(1)
+			CallExpression:printf(1)
+				Callee:printf
+					Identifier:printf
+				ArgumentList:1
+					Argument:1
+						Constant:1
+	ReturnType:void
+	Identifier:f
+	ParameterList:

@@ -1,0 +1,159 @@
+{
+    // enhancement nodes/edges that will automatically be derived from the cpg
+    // note: these should *NOT* be written by the language frontend.
+
+    "nodeKeys" : [
+        {"id" : 8, "name": "VALUE", "comment" : "Tag value", "valueType" : "string", "cardinality" : "one"},
+        {"id" : 1002, "name": "IS_METHOD_NEVER_OVERRIDDEN", "comment" : "True if the referenced method is never overridden by the subclasses and false otherwise", "valueType" : "boolean", "cardinality" : "zeroOrOne"}
+    ],
+
+    "edgeKeys" : [
+      {"id": 1, "name" : "ALIAS", "comment" : "Defines whether a PROPAGATE edge creates an alias", "valueType"     : "boolean", "cardinality" : "one" }
+    ],
+
+    "nodeTypes" : [
+      {
+        "id":307,"name" : "IMPLICIT_CALL",
+          "keys" : ["CODE", "NAME", "SIGNATURE", "LINE_NUMBER", "COLUMN_NUMBER", "ORDER"],
+        "comment" : "An implicit call site hidden in a method indicated by METHOD_MAP policy entries",
+        "is": ["CALL_REPR", "TRACKING_POINT"],
+        "outEdges" : []
+      },
+
+        {"id":24, "name": "TAG",
+         "keys": ["NAME", "VALUE"],
+         "comment": "A string tag",
+         "outEdges": []
+        },
+        {
+            "id":40,
+            "name": "NAMESPACE",
+            "keys": ["NAME", "ORDER"],
+            "comment": "This node represents a namespace as a whole whereas the NAMESPACE_BLOCK is used for each grouping occurrence of a namespace in code. Single representing NAMESPACE node is required for easier navigation in the query language",
+          "is" : ["AST_NODE"],
+          "outEdges": []
+        },
+        {
+            "name" : "FILE", "outEdges" : [
+                {"edgeName": "CONTAINS", "inNodes": ["TYPE_DECL", "METHOD"]}
+            ]
+        },
+        { "name": "METHOD",
+          "outEdges" : [
+             {"edgeName": "AST", "inNodes": ["TYPE_DECL", "METHOD", "METHOD_PARAMETER_OUT", "IMPLICIT_CALL"]},
+             {"edgeName": "REACHING_DEF", "inNodes": ["CALL", "RETURN"]},
+             {"edgeName": "CONTAINS", "inNodes": ["CALL", "IDENTIFIER", "LITERAL", "RETURN", "METHOD_REF", "BLOCK", "UNKNOWN"]}
+          ]
+        },
+        { "name" : "BINDING",
+          "keys" : ["IS_METHOD_NEVER_OVERRIDDEN"]
+        },
+        { "name": "RETURN",
+          "outEdges" : [
+             {"edgeName": "REACHING_DEF", "inNodes": ["METHOD_RETURN"]}
+          ]
+        },
+        { "name": "METHOD_PARAMETER_IN",
+          "outEdges" : [
+            {"edgeName": "PROPAGATE", "inNodes": ["METHOD_PARAMETER_OUT", "METHOD_RETURN"]},
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]},
+            {"edgeName": "REACHING_DEF", "inNodes": ["CALL", "RETURN"]},
+            {"edgeName": "PARAMETER_LINK", "inNodes": ["METHOD_PARAMETER_OUT"]}
+          ]
+        },
+        {"id" : 33, "name" : "METHOD_PARAMETER_OUT",
+         "keys": ["CODE", "ORDER", "NAME", "EVALUATION_STRATEGY", "TYPE_FULL_NAME", "LINE_NUMBER", "COLUMN_NUMBER"],
+         "comment" : "This node represents a formal parameter going towards the caller side",
+         "is": ["DECLARATION", "TRACKING_POINT", "AST_NODE"],
+         "outEdges" : [
+           {"edgeName": "TAGGED_BY", "inNodes": ["TAG"]},
+           {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+         ]
+        },
+        { "name": "METHOD_RETURN",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+          ]
+        },
+        {
+            "name": "NAMESPACE_BLOCK",
+            "outEdges": [
+              {"edgeName": "AST", "inNodes": ["TYPE_DECL", "METHOD"]},
+              {"edgeName": "REF", "inNodes": ["NAMESPACE"]}
+            ]
+        },
+        { "name": "METHOD_REF",
+          "outEdges" : [
+            {"edgeName": "REF", "inNodes": ["METHOD"]}
+          ]
+        },
+        { "name": "TYPE",
+          "outEdges" : [
+             {"edgeName": "REF", "inNodes": ["TYPE_DECL"]}
+          ]
+        },
+        { "name": "TYPE_DECL",
+          "outEdges" : [
+             {"edgeName": "AST", "inNodes": ["TYPE_DECL", "METHOD"]},
+             {"edgeName": "INHERITS_FROM", "inNodes": ["TYPE"]},
+             {"edgeName": "ALIAS_OF", "inNodes": ["TYPE"]},
+             {"edgeName": "CONTAINS", "inNodes": ["METHOD"]}
+          ]
+        },
+        { "name": "MEMBER",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+          ]
+        },
+        {"name" : "LITERAL",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+          ]
+        },
+        { "name": "CALL",
+          "outEdges" : [
+            {"edgeName": "REF", "inNodes": ["MEMBER"]},
+            {"edgeName": "CALL", "inNodes": ["METHOD"]},
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]},
+            {"edgeName": "REACHING_DEF", "inNodes": ["CALL", "RETURN"]}
+          ]
+        },
+        { "name": "LOCAL",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]},
+            {"edgeName": "CAPTURED_BY", "inNodes": ["CLOSURE_BINDING"]}
+          ]
+        },
+        {"name" : "IDENTIFIER",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+          ]
+        },
+        {"name" : "BLOCK",
+          "outEdges" : [
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]},
+	    {"edgeName": "REACHING_DEF", "inNodes": ["CALL", "RETURN", "BLOCK"]}
+          ]
+        },
+        {"name" : "UNKNOWN",
+          "outEdges" : [
+            {"edgeName": "REACHING_DEF", "inNodes": ["CALL", "RETURN"]},
+            {"edgeName": "EVAL_TYPE", "inNodes": ["TYPE"]}
+          ]
+        }
+    ],
+
+    "edgeTypes" : [
+        {"id" : 12, "name": "PARAMETER_LINK", "comment" : "Links together corresponding METHOD_PARAMETER_IN and METHOD_PARAMETER_OUT nodes", "keys": []},
+        {"id" : 6, "name" : "CALL", "comment" : "Referencing to e.g. a LOCAL", "keys" : [] },
+        {"id" : 11, "name": "TAGGED_BY", "keys" : [], "comment" : "Edges from nodes to tags"},
+
+        {"id" : 21, "name" : "EVAL_TYPE", "comment" : "Link to evaluation type", "keys" : [] },
+        {"id" : 23, "name" : "INHERITS_FROM", "comment" : "Inheritance relation between types", "keys" : [] },
+        {"id" : 28, "name" : "CONTAINS", "keys" : [], "comment" : "Shortcut over multiple AST edges"},
+        {"id" : 1, "name" : "PROPAGATE", "keys" : ["ALIAS"], "comment" : "Encodes propagation of data from on node to another"},
+        {"id" : 137, "name": "REACHING_DEF", "comment" : "Reaching definition edge", "keys" : []},
+        {"id" : 138, "name" : "ALIAS_OF", "comment" : "Alias relation between types", "keys" : [] }
+    ]
+
+}

@@ -1,0 +1,3036 @@
+{
+  "filename": "gss_mech_switch_from_niejianglei.c",
+  "content": [
+    {
+      "functionDef": {
+        "functionName": "LIST_HEAD"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "DEFINE_SPINLOCK"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_free",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pf",
+                "identifierType": "struct pf_desc *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "pf"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "&",
+                            "operand": {
+                              "unaryExpression": {
+                                "operand": {
+                                  "arrayIndexing": {
+                                    "array": "gm_pfs",
+                                    "index": {
+                                      "identifier": "i"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "expressionStatement": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "identifier": "domain"
+                                  }
+                                }
+                              }
+                            ],
+                            "callee": "auth_domain_put"
+                          }
+                        }
+                      },
+                      "condition": {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "domain"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "unaryExpression": {
+                              "operand": {
+                                "identifier": "auth_domain_name"
+                              }
+                            }
+                          }
+                        ],
+                        "callee": "kfree"
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "auth_domain_name"
+                            }
+                          }
+                        },
+                        "rightOperand": {
+                          "identifier": "NULL"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "static void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "make_auth_domain_name",
+        "parameterList": [
+          {
+            "parameterType": "char *",
+            "parameter": "name"
+          }
+        ],
+        "functionBody": [
+          {},
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "prefix",
+                "identifierType": "char *",
+                "initialValue": "\"gss/\""
+              }
+            ]
+          },
+          {},
+          {},
+          {},
+          {
+            "expressionStatement": {}
+          },
+          {},
+          {},
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "AdditiveExpression": {
+                      "leftOperand": {
+                        "callExpression": {
+                          "argumentList": [
+                            {
+                              "identifier": "name"
+                            }
+                          ],
+                          "callee": "strlen"
+                        }
+                      },
+                      "rightOperand": {
+                        "AdditiveExpression": {
+                          "leftOperand": {
+                            "callExpression": {
+                              "argumentList": [
+                                {
+                                  "identifier": "prefix"
+                                }
+                              ],
+                              "callee": "strlen"
+                            }
+                          },
+                          "rightOperand": {
+                            "constant": "1"
+                          },
+                          "operator": "+"
+                        }
+                      },
+                      "operator": "+"
+                    }
+                  },
+                  {
+                    "identifier": "GFP_KERNEL"
+                  }
+                ],
+                "callee": "kmalloc"
+              }
+            }
+          },
+          {},
+          {},
+          {},
+          {},
+          {
+            "compoundStatement": [
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {
+                "expressionStatement": {}
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {
+                "expressionStatement": {}
+              }
+            ]
+          },
+          {},
+          {},
+          {
+            "expressionStatement": {}
+          }
+        ],
+        "returnType": "static inline char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_svc_setup",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "dom",
+                "identifierType": "struct auth_domain *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pf",
+                "identifierType": "struct pf_desc *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              },
+              {
+                "identifier": "status",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "pf"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "&",
+                            "operand": {
+                              "unaryExpression": {
+                                "operand": {
+                                  "arrayIndexing": {
+                                    "array": "gm_pfs",
+                                    "index": {
+                                      "identifier": "i"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "auth_domain_name"
+                            }
+                          }
+                        },
+                        "rightOperand": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "identifier": "name"
+                                  }
+                                }
+                              }
+                            ],
+                            "callee": "make_auth_domain_name"
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "status"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "-",
+                            "operand": {
+                              "identifier": "ENOMEM"
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "gotoStatement": {
+                          "goto": "out"
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "identifier": "auth_domain_name"
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "NULL"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "dom"
+                        },
+                        "rightOperand": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "identifier": "pseudoflavor"
+                                  }
+                                }
+                              },
+                              {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "identifier": "auth_domain_name"
+                                  }
+                                }
+                              }
+                            ],
+                            "callee": "svcauth_gss_register_pseudoflavor"
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "status"
+                                },
+                                "rightOperand": {
+                                  "callExpression": {
+                                    "argumentList": [
+                                      {
+                                        "identifier": "dom"
+                                      }
+                                    ],
+                                    "callee": "PTR_ERR"
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "out"
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "callExpression": {
+                          "argumentList": [
+                            {
+                              "identifier": "dom"
+                            }
+                          ],
+                          "callee": "IS_ERR"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "domain"
+                            }
+                          }
+                        },
+                        "rightOperand": {
+                          "identifier": "dom"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "constant": "0"
+            }
+          },
+          {
+            "label": "out:"
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "gm"
+                  }
+                ],
+                "callee": "gss_mech_free"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "status"
+            }
+          }
+        ],
+        "returnType": "static int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_register",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "status",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "status"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "gm"
+                      }
+                    ],
+                    "callee": "gss_mech_svc_setup"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "identifier": "status"
+                }
+              },
+              "condition": {
+                "identifier": "status"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "registered_mechs_lock"
+                      }
+                    }
+                  }
+                ],
+                "callee": "spin_lock"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "gm_list"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "registered_mechs"
+                      }
+                    }
+                  }
+                ],
+                "callee": "list_add_rcu"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "registered_mechs_lock"
+                      }
+                    }
+                  }
+                ],
+                "callee": "spin_unlock"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"RPC:       registered gss mechanism %s\\n\""
+                  },
+                  {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_name"
+                      }
+                    }
+                  }
+                ],
+                "callee": "dprintk"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "constant": "0"
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "EXPORT_SYMBOL_GPL"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_unregister",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "registered_mechs_lock"
+                      }
+                    }
+                  }
+                ],
+                "callee": "spin_lock"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "gm_list"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "callee": "list_del_rcu"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "registered_mechs_lock"
+                      }
+                    }
+                  }
+                ],
+                "callee": "spin_unlock"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"RPC:       unregistered gss mechanism %s\\n\""
+                  },
+                  {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_name"
+                      }
+                    }
+                  }
+                ],
+                "callee": "dprintk"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "gm"
+                  }
+                ],
+                "callee": "gss_mech_free"
+              }
+            }
+          }
+        ],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "EXPORT_SYMBOL_GPL"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_get",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_owner"
+                      }
+                    }
+                  }
+                ],
+                "callee": "__module_get"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "EXPORT_SYMBOL"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "_gss_mech_get_by_name",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "name"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pos",
+                "identifierType": "struct gss_api_mech *"
+              },
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_lock"
+              }
+            }
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "compoundStatement": [
+              {
+                "ifStatement": {
+                  "ifBlock": {
+                    "compoundStatement": [
+                      {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "gm"
+                                },
+                                "rightOperand": {
+                                  "identifier": "pos"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          "condition": {
+                            "callExpression": {
+                              "argumentList": [
+                                {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "identifier": "gm_owner"
+                                    }
+                                  }
+                                }
+                              ],
+                              "callee": "try_module_get"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "breakStatement": "break"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "EqualityExpression": {
+                      "leftOperand": {
+                        "constant": "0"
+                      },
+                      "rightOperand": {
+                        "callExpression": {
+                          "argumentList": [
+                            {
+                              "identifier": "name"
+                            },
+                            {
+                              "unaryExpression": {
+                                "operand": {
+                                  "identifier": "gm_name"
+                                }
+                              }
+                            }
+                          ],
+                          "callee": "strcmp"
+                        }
+                      },
+                      "operator": "=="
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_unlock"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "static struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_get_by_name",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "name"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "gm"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "name"
+                      }
+                    ],
+                    "callee": "_gss_mech_get_by_name"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"rpc-auth-gss-%s\""
+                          },
+                          {
+                            "identifier": "name"
+                          }
+                        ],
+                        "callee": "request_module"
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "gm"
+                        },
+                        "rightOperand": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "identifier": "name"
+                              }
+                            ],
+                            "callee": "_gss_mech_get_by_name"
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "identifier": "gm"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_get_by_OID",
+        "parameterList": [
+          {
+            "parameterType": "struct rpcsec_gss_oid *",
+            "parameter": "obj"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pos",
+                "identifierType": "struct gss_api_mech *"
+              },
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "buf",
+                "identifierType": "char [ 32 ]"
+              }
+            ]
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "identifier": "NULL"
+                }
+              },
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "callExpression": {
+                      "argumentList": [
+                        {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "data"
+                            }
+                          }
+                        },
+                        {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "len"
+                            }
+                          }
+                        },
+                        {
+                          "identifier": "buf"
+                        },
+                        {
+                          "sizeofExpression": {
+                            "operator": "sizeof",
+                            "operand": {
+                              "identifier": "buf"
+                            }
+                          }
+                        }
+                      ],
+                      "callee": "sprint_oid"
+                    }
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "<"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"rpc-auth-gss-%s\""
+                  },
+                  {
+                    "identifier": "buf"
+                  }
+                ],
+                "callee": "request_module"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_lock"
+              }
+            }
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "compoundStatement": [
+              {
+                "ifStatement": {
+                  "ifBlock": {
+                    "compoundStatement": [
+                      {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "gm"
+                                        },
+                                        "rightOperand": {
+                                          "identifier": "pos"
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  },
+                                  "condition": {
+                                    "callExpression": {
+                                      "argumentList": [
+                                        {
+                                          "unaryExpression": {
+                                            "operand": {
+                                              "identifier": "gm_owner"
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "callee": "try_module_get"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "breakStatement": "break"
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "constant": "0"
+                              },
+                              "rightOperand": {
+                                "callExpression": {
+                                  "argumentList": [
+                                    {
+                                      "unaryExpression": {
+                                        "operand": {
+                                          "identifier": "data"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "unaryExpression": {
+                                        "operand": {
+                                          "memberAccess": {
+                                            "leftOperand": "gm_oid",
+                                            "rightOperand": "data",
+                                            "operator": "."
+                                          }
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "unaryExpression": {
+                                        "operand": {
+                                          "identifier": "len"
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "callee": "memcmp"
+                                }
+                              },
+                              "operator": "=="
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "EqualityExpression": {
+                      "leftOperand": {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "len"
+                          }
+                        }
+                      },
+                      "rightOperand": {
+                        "unaryExpression": {
+                          "operand": {
+                            "memberAccess": {
+                              "leftOperand": "gm_oid",
+                              "rightOperand": "len",
+                              "operator": "."
+                            }
+                          }
+                        }
+                      },
+                      "operator": "=="
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_unlock"
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "buf"
+                      }
+                    ],
+                    "callee": "trace_rpcgss_oid_to_mech"
+                  }
+                }
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "identifier": "gm"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "mech_supports_pseudoflavor",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "pseudoflavor"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "returnStatement": {
+                          "constant": "1"
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "gm_pfs[i]",
+                                  "rightOperand": "pseudoflavor",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "pseudoflavor"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "constant": "0"
+            }
+          }
+        ],
+        "returnType": "static inline int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "_gss_mech_get_by_pseudoflavor",
+        "parameterList": [
+          {
+            "parameterType": "u32",
+            "parameter": "pseudoflavor"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *",
+                "initialValue": "NULL"
+              },
+              {
+                "identifier": "pos",
+                "identifierType": "struct gss_api_mech *"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_lock"
+              }
+            }
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "compoundStatement": [
+              {
+                "ifStatement": {
+                  "ifBlock": {
+                    "continueStatement": "continue"
+                  },
+                  "condition": {
+                    "unaryOperationExpression": {
+                      "operator": "!",
+                      "operand": {
+                        "callExpression": {
+                          "argumentList": [
+                            {
+                              "identifier": "pos"
+                            },
+                            {
+                              "identifier": "pseudoflavor"
+                            }
+                          ],
+                          "callee": "mech_supports_pseudoflavor"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "ifStatement": {
+                  "ifBlock": {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "gm"
+                        },
+                        "rightOperand": {
+                          "identifier": "pos"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  "condition": {
+                    "callExpression": {
+                      "argumentList": [
+                        {
+                          "unaryExpression": {
+                            "operand": {
+                              "identifier": "gm_owner"
+                            }
+                          }
+                        }
+                      ],
+                      "callee": "try_module_get"
+                    }
+                  }
+                }
+              },
+              {
+                "breakStatement": "break"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [],
+                "callee": "rcu_read_unlock"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "static struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_get_by_pseudoflavor",
+        "parameterList": [
+          {
+            "parameterType": "u32",
+            "parameter": "pseudoflavor"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "gm"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "pseudoflavor"
+                      }
+                    ],
+                    "callee": "_gss_mech_get_by_pseudoflavor"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"rpc-auth-gss-%u\""
+                          },
+                          {
+                            "identifier": "pseudoflavor"
+                          }
+                        ],
+                        "callee": "request_module"
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "gm"
+                        },
+                        "rightOperand": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "identifier": "pseudoflavor"
+                              }
+                            ],
+                            "callee": "_gss_mech_get_by_pseudoflavor"
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "identifier": "gm"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "gm"
+            }
+          }
+        ],
+        "returnType": "struct gss_api_mech *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_svc_to_pseudoflavor",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "qop"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "service"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "returnStatement": {
+                              "unaryExpression": {
+                                "operand": {
+                                  "memberAccess": {
+                                    "leftOperand": "gm_pfs[i]",
+                                    "rightOperand": "pseudoflavor",
+                                    "operator": "."
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "AndExpression": {
+                          "leftOperand": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "memberAccess": {
+                                      "leftOperand": "gm_pfs[i]",
+                                      "rightOperand": "qop",
+                                      "operator": "."
+                                    }
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "identifier": "qop"
+                              },
+                              "operator": "=="
+                            }
+                          },
+                          "rightOperand": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "unaryExpression": {
+                                  "operand": {
+                                    "memberAccess": {
+                                      "leftOperand": "gm_pfs[i]",
+                                      "rightOperand": "service",
+                                      "operator": "."
+                                    }
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "identifier": "service"
+                              },
+                              "operator": "=="
+                            }
+                          },
+                          "operator": "&&"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "RPC_AUTH_MAXFLAVOR"
+            }
+          }
+        ],
+        "returnType": "rpc_authflavor_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_info2flavor",
+        "parameterList": [
+          {
+            "parameterType": "struct rpcsec_gss_info *",
+            "parameter": "info"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pseudoflavor",
+                "identifierType": "rpc_authflavor_t"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "gm"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "unaryOperationExpression": {
+                          "operator": "&",
+                          "operand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "identifier": "oid"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "callee": "gss_mech_get_by_OID"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "identifier": "RPC_AUTH_MAXFLAVOR"
+                }
+              },
+              "condition": {
+                "EqualityExpression": {
+                  "leftOperand": {
+                    "identifier": "gm"
+                  },
+                  "rightOperand": {
+                    "identifier": "NULL"
+                  },
+                  "operator": "=="
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "pseudoflavor"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "gm"
+                      },
+                      {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "qop"
+                          }
+                        }
+                      },
+                      {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "service"
+                          }
+                        }
+                      }
+                    ],
+                    "callee": "gss_svc_to_pseudoflavor"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "gm"
+                  }
+                ],
+                "callee": "gss_mech_put"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "pseudoflavor"
+            }
+          }
+        ],
+        "returnType": "rpc_authflavor_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_flavor2info",
+        "parameterList": [
+          {
+            "parameterType": "rpc_authflavor_t",
+            "parameter": "pseudoflavor"
+          },
+          {
+            "parameterType": "struct rpcsec_gss_info *",
+            "parameter": "info"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "gm",
+                "identifierType": "struct gss_api_mech *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "gm"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "pseudoflavor"
+                      }
+                    ],
+                    "callee": "gss_mech_get_by_pseudoflavor"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "unaryOperationExpression": {
+                    "operator": "-",
+                    "operand": {
+                      "identifier": "ENOENT"
+                    }
+                  }
+                }
+              },
+              "condition": {
+                "EqualityExpression": {
+                  "leftOperand": {
+                    "identifier": "gm"
+                  },
+                  "rightOperand": {
+                    "identifier": "NULL"
+                  },
+                  "operator": "=="
+                }
+              }
+            }
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "callExpression": {
+                                "argumentList": [
+                                  {
+                                    "unaryExpression": {
+                                      "operand": {
+                                        "memberAccess": {
+                                          "leftOperand": "oid",
+                                          "rightOperand": "data",
+                                          "operator": "."
+                                        }
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "unaryExpression": {
+                                      "operand": {
+                                        "memberAccess": {
+                                          "leftOperand": "gm_oid",
+                                          "rightOperand": "data",
+                                          "operator": "."
+                                        }
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "unaryExpression": {
+                                      "operand": {
+                                        "memberAccess": {
+                                          "leftOperand": "gm_oid",
+                                          "rightOperand": "len",
+                                          "operator": "."
+                                        }
+                                      }
+                                    }
+                                  }
+                                ],
+                                "callee": "memcpy"
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "memberAccess": {
+                                        "leftOperand": "oid",
+                                        "rightOperand": "len",
+                                        "operator": "."
+                                      }
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "memberAccess": {
+                                        "leftOperand": "gm_oid",
+                                        "rightOperand": "len",
+                                        "operator": "."
+                                      }
+                                    }
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "identifier": "qop"
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "memberAccess": {
+                                        "leftOperand": "gm_pfs[i]",
+                                        "rightOperand": "qop",
+                                        "operator": "."
+                                      }
+                                    }
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "identifier": "service"
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "unaryExpression": {
+                                    "operand": {
+                                      "memberAccess": {
+                                        "leftOperand": "gm_pfs[i]",
+                                        "rightOperand": "service",
+                                        "operator": "."
+                                      }
+                                    }
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "callExpression": {
+                                "argumentList": [
+                                  {
+                                    "identifier": "gm"
+                                  }
+                                ],
+                                "callee": "gss_mech_put"
+                              }
+                            }
+                          },
+                          {
+                            "returnStatement": {
+                              "constant": "0"
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "gm_pfs[i]",
+                                  "rightOperand": "pseudoflavor",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "pseudoflavor"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "gm"
+                  }
+                ],
+                "callee": "gss_mech_put"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "unaryOperationExpression": {
+                "operator": "-",
+                "operand": {
+                  "identifier": "ENOENT"
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_pseudoflavor_to_service",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "pseudoflavor"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "returnStatement": {
+                          "unaryExpression": {
+                            "operand": {
+                              "memberAccess": {
+                                "leftOperand": "gm_pfs[i]",
+                                "rightOperand": "service",
+                                "operator": "."
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "gm_pfs[i]",
+                                  "rightOperand": "pseudoflavor",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "pseudoflavor"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "constant": "0"
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "EXPORT_SYMBOL"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_pseudoflavor_to_datatouch",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "pseudoflavor"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "returnStatement": {
+                          "unaryExpression": {
+                            "operand": {
+                              "memberAccess": {
+                                "leftOperand": "gm_pfs[i]",
+                                "rightOperand": "datatouch",
+                                "operator": "."
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "gm_pfs[i]",
+                                  "rightOperand": "pseudoflavor",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "pseudoflavor"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "false"
+            }
+          }
+        ],
+        "returnType": "bool"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_service_to_auth_domain_name",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          },
+          {
+            "parameterType": "u32",
+            "parameter": "service"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "unaryExpression": {
+                      "operand": {
+                        "identifier": "gm_pf_num"
+                      }
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "returnStatement": {
+                          "unaryExpression": {
+                            "operand": {
+                              "memberAccess": {
+                                "leftOperand": "gm_pfs[i]",
+                                "rightOperand": "auth_domain_name",
+                                "operator": "."
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryExpression": {
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "gm_pfs[i]",
+                                  "rightOperand": "service",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "identifier": "service"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "postIncDecOperationExpression": {
+                  "operand": {
+                    "identifier": "i"
+                  },
+                  "operator": "++"
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "NULL"
+            }
+          }
+        ],
+        "returnType": "char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_mech_put",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "gm"
+          }
+        ],
+        "functionBody": [
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "unaryExpression": {
+                          "operand": {
+                            "identifier": "gm_owner"
+                          }
+                        }
+                      }
+                    ],
+                    "callee": "module_put"
+                  }
+                }
+              },
+              "condition": {
+                "identifier": "gm"
+              }
+            }
+          }
+        ],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "EXPORT_SYMBOL"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_import_sec_context",
+        "parameterList": [
+          {
+            "parameterType": "const void *",
+            "parameter": "input_token"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "bufsize"
+          },
+          {
+            "parameterType": "struct gss_api_mech *",
+            "parameter": "mech"
+          },
+          {
+            "parameterType": "struct gss_ctx * *",
+            "parameter": "ctx_id"
+          },
+          {
+            "parameterType": "time64_t *",
+            "parameter": "endtime"
+          },
+          {
+            "parameterType": "gfp_t",
+            "parameter": "gfp_mask"
+          }
+        ],
+        "functionBody": [
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "unaryOperationExpression": {
+                    "operator": "-",
+                    "operand": {
+                      "identifier": "ENOMEM"
+                    }
+                  }
+                }
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "AssignmentExpression": {
+                      "leftOperand": {
+                        "unaryOperationExpression": {
+                          "operator": "*",
+                          "operand": {
+                            "identifier": "ctx_id"
+                          }
+                        }
+                      },
+                      "rightOperand": {
+                        "callExpression": {
+                          "argumentList": [
+                            {
+                              "sizeofExpression": {
+                                "operator": "sizeof",
+                                "operand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "identifier": "ctx_id"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "identifier": "gfp_mask"
+                            }
+                          ],
+                          "callee": "kzalloc"
+                        }
+                      },
+                      "operator": "="
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "ptrMemberAccess": {
+                    "leftOperand": "*ctx_id",
+                    "rightOperand": "mech_type",
+                    "operator": "->"
+                  }
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "mech"
+                      }
+                    ],
+                    "callee": "gss_mech_get"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "unaryExpression": {
+                "operand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "input_token"
+                      },
+                      {
+                        "identifier": "bufsize"
+                      },
+                      {
+                        "unaryOperationExpression": {
+                          "operator": "*",
+                          "operand": {
+                            "identifier": "ctx_id"
+                          }
+                        }
+                      },
+                      {
+                        "identifier": "endtime"
+                      },
+                      {
+                        "identifier": "gfp_mask"
+                      }
+                    ],
+                    "callee": "gss_import_sec_context"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_get_mic",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_ctx *",
+            "parameter": "context_handle"
+          },
+          {
+            "parameterType": "struct xdr_buf *",
+            "parameter": "message"
+          },
+          {
+            "parameterType": "struct xdr_netobj *",
+            "parameter": "mic_token"
+          }
+        ],
+        "functionBody": [
+          {
+            "returnStatement": {
+              "unaryExpression": {
+                "operand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "context_handle"
+                      },
+                      {
+                        "identifier": "message"
+                      },
+                      {
+                        "identifier": "mic_token"
+                      }
+                    ],
+                    "callee": "gss_get_mic"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_verify_mic",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_ctx *",
+            "parameter": "context_handle"
+          },
+          {
+            "parameterType": "struct xdr_buf *",
+            "parameter": "message"
+          },
+          {
+            "parameterType": "struct xdr_netobj *",
+            "parameter": "mic_token"
+          }
+        ],
+        "functionBody": [
+          {
+            "returnStatement": {
+              "unaryExpression": {
+                "operand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "context_handle"
+                      },
+                      {
+                        "identifier": "message"
+                      },
+                      {
+                        "identifier": "mic_token"
+                      }
+                    ],
+                    "callee": "gss_verify_mic"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_wrap",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_ctx *",
+            "parameter": "ctx_id"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "offset"
+          },
+          {
+            "parameterType": "struct xdr_buf *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "struct page * *",
+            "parameter": "inpages"
+          }
+        ],
+        "functionBody": [
+          {
+            "returnStatement": {
+              "unaryExpression": {
+                "operand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "ctx_id"
+                      },
+                      {
+                        "identifier": "offset"
+                      },
+                      {
+                        "identifier": "buf"
+                      },
+                      {
+                        "identifier": "inpages"
+                      }
+                    ],
+                    "callee": "gss_wrap"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_unwrap",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_ctx *",
+            "parameter": "ctx_id"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "offset"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "len"
+          },
+          {
+            "parameterType": "struct xdr_buf *",
+            "parameter": "buf"
+          }
+        ],
+        "functionBody": [
+          {
+            "returnStatement": {
+              "unaryExpression": {
+                "operand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "ctx_id"
+                      },
+                      {
+                        "identifier": "offset"
+                      },
+                      {
+                        "identifier": "len"
+                      },
+                      {
+                        "identifier": "buf"
+                      }
+                    ],
+                    "callee": "gss_unwrap"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "gss_delete_sec_context",
+        "parameterList": [
+          {
+            "parameterType": "struct gss_ctx * *",
+            "parameter": "context_handle"
+          }
+        ],
+        "functionBody": [
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"RPC:       gss_delete_sec_context deleting %p\\n\""
+                  },
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "*",
+                      "operand": {
+                        "identifier": "context_handle"
+                      }
+                    }
+                  }
+                ],
+                "callee": "dprintk"
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "identifier": "GSS_S_NO_CONTEXT"
+                }
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "unaryOperationExpression": {
+                      "operator": "*",
+                      "operand": {
+                        "identifier": "context_handle"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "u32"
+      }
+    }
+  ]
+}

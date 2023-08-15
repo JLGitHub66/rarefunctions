@@ -1,0 +1,175 @@
+StructDef:test_parman_prio
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:parman_prio
+				IdentifierDeclType:struct parman_prio
+				Identifier:parman_prio
+		IdentifierDeclStatement:null
+			IdentifierDecl:priority
+				IdentifierDeclType:unsigned long
+				Identifier:priority
+StructDef:test_parman_item
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:parman_item
+				IdentifierDeclType:struct parman_item
+				Identifier:parman_item
+		IdentifierDeclStatement:null
+			IdentifierDecl:*prio
+				IdentifierDeclType:struct test_parman_prio *
+				Identifier:prio
+		IdentifierDeclStatement:null
+			IdentifierDecl:used
+				IdentifierDeclType:bool
+				Identifier:used
+StructDef:test_parman
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:*parman
+				IdentifierDeclType:struct parman *
+				Identifier:parman
+		IdentifierDeclStatement:null
+			IdentifierDecl:**prio_array
+				IdentifierDeclType:struct test_parman_item * *
+				Identifier:prio_array
+		IdentifierDeclStatement:null
+			IdentifierDecl:prio_array_limit
+				IdentifierDeclType:unsigned long
+				Identifier:prio_array_limit
+		IdentifierDeclStatement:null
+			IdentifierDecl:prios[BIT(TEST_PARMAN_PRIO_SHIFT)]
+				IdentifierDeclType:struct test_parman_prio [ BIT ( TEST_PARMAN_PRIO_SHIFT ) ]
+				Identifier:prios
+		IdentifierDeclStatement:null
+			IdentifierDecl:items[BIT(TEST_PARMAN_ITEM_SHIFT)]
+				IdentifierDeclType:struct test_parman_item [ BIT ( TEST_PARMAN_ITEM_SHIFT ) ]
+				Identifier:items
+		IdentifierDeclStatement:null
+			IdentifierDecl:rnd
+				IdentifierDeclType:struct rnd_state
+				Identifier:rnd
+		IdentifierDeclStatement:null
+			IdentifierDecl:run_budget
+				IdentifierDeclType:unsigned long
+				Identifier:run_budget
+		IdentifierDeclStatement:null
+			IdentifierDecl:bulk_budget
+				IdentifierDeclType:unsigned long
+				Identifier:bulk_budget
+		IdentifierDeclStatement:null
+			IdentifierDecl:bulk_noop
+				IdentifierDeclType:bool
+				Identifier:bulk_noop
+		IdentifierDeclStatement:null
+			IdentifierDecl:used_items
+				IdentifierDeclType:unsigned int
+				Identifier:used_items
+FunctionDef:test_parman_resize (void *priv , unsigned long new_count)
+	ReturnType:static int
+	Identifier:test_parman_resize
+	ParameterList:void *priv , unsigned long new_count
+		Parameter:void *priv
+			ParameterType:void *
+			Identifier:priv
+		Parameter:unsigned long new_count
+			ParameterType:unsigned long
+			Identifier:new_count
+FunctionDef:test_parman_rnd_init (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_rnd_init
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_rnd_get (struct test_parman *test_parman)
+	ReturnType:static u32
+	Identifier:test_parman_rnd_get
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_priority_gen (struct test_parman *test_parman)
+	ReturnType:static unsigned long
+	Identifier:test_parman_priority_gen
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_prios_init (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_prios_init
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_prios_fini (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_prios_fini
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_items_init (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_items_init
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_items_fini (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_items_fini
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_create (const struct parman_ops *ops)
+	ReturnType:static struct test_parman *
+	Identifier:test_parman_create
+	ParameterList:const struct parman_ops *ops
+		Parameter:const struct parman_ops *ops
+			ParameterType:const struct parman_ops *
+			Identifier:ops
+FunctionDef:test_parman_destroy (struct test_parman *test_parman)
+	ReturnType:static void
+	Identifier:test_parman_destroy
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_run_check_budgets (struct test_parman *test_parman)
+	ReturnType:static bool
+	Identifier:test_parman_run_check_budgets
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_run (struct test_parman *test_parman)
+	ReturnType:static int
+	Identifier:test_parman_run
+	ParameterList:struct test_parman *test_parman
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+FunctionDef:test_parman_check_array (struct test_parman *test_parman , bool gaps_allowed)
+	ReturnType:static int
+	Identifier:test_parman_check_array
+	ParameterList:struct test_parman *test_parman , bool gaps_allowed
+		Parameter:struct test_parman *test_parman
+			ParameterType:struct test_parman *
+			Identifier:test_parman
+		Parameter:bool gaps_allowed
+			ParameterType:bool
+			Identifier:gaps_allowed
+FunctionDef:test_parman_lsort ()
+	ReturnType:static int
+	Identifier:test_parman_lsort
+	ParameterList:
+FunctionDef:test_parman_init ()
+	ReturnType:static int __init
+	Identifier:test_parman_init
+	ParameterList:
+FunctionDef:test_parman_exit ()
+	ReturnType:static void __exit
+	Identifier:test_parman_exit
+	ParameterList:

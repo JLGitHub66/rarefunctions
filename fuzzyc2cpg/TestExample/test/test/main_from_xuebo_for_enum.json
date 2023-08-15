@@ -1,0 +1,3671 @@
+{
+  "filename": "main_from_xuebo_for_enum.c",
+  "content": [
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "print_mtx",
+          "identifierType": "pthread_mutex_t"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "log_level",
+        "definition": {
+          "compoundStatement": []
+        }
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "set_log_level",
+        "parameterList": [
+          {
+            "parameterType": "enum log_level",
+            "parameter": "threshold"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "log_debug",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "log_msg",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "log_warn",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "log_err",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "vplog",
+        "parameterList": [
+          {
+            "parameterType": "const unsigned int",
+            "parameter": "level"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          },
+          {
+            "parameterType": "va_list",
+            "parameter": "args"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "plog",
+        "parameterList": [
+          {
+            "parameterType": "const unsigned int",
+            "parameter": "level"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "student",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "no",
+                  "identifierType": "char [ 20 ]"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "name",
+                  "identifierType": "char [ 20 ]"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "sex",
+                  "identifierType": "char [ 5 ]"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "age",
+                  "identifierType": "int"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "stu1",
+          "identifierType": "struct student"
+        },
+        {
+          "identifier": "stu2",
+          "identifierType": "struct student"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "case_behavior",
+        "definition": {
+          "compoundStatement": []
+        }
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "path_print_behavior",
+        "definition": {
+          "compoundStatement": []
+        }
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ackmate",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ackmate_dir_filter",
+                  "identifierType": "pcre *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ackmate_dir_filter_extra",
+                  "identifierType": "pcre_extra *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "after",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "before",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "casing",
+                  "identifierType": "enum case_behavior"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "file_search_string",
+                  "identifierType": "const char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "match_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "file_search_regex",
+                  "identifierType": "pcre *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "file_search_regex_extra",
+                  "identifierType": "pcre_extra *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "color",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "color_line_number",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "color_match",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "color_path",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "color_win_ansi",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "column",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "context",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "follow_symlinks",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "invert_match",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "literal",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "literal_starts_wordchar",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "literal_ends_wordchar",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "max_matches_per_file",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "max_search_depth",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "mmap",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "multiline",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "one_dev",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "only_matching",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "path_sep",
+                  "identifierType": "char"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "path_to_ignore",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_break",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_count",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_filename_only",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_nonmatching_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_path",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_all_paths",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_line_numbers",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "print_long_lines",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "passthrough",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "re",
+                  "identifierType": "pcre *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "re_extra",
+                  "identifierType": "pcre_extra *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "recurse_dirs",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "search_all_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "skip_vcs_ignores",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "search_binary_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "search_zip_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "search_hidden_files",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "search_stream",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "stats",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "stream_line_num",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "match_found",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "stdout_inode",
+                  "identifierType": "ino_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "query",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "query_len",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "pager",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "paths_len",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "parallel",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "use_thread_affinity",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "vimgrep",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "width",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "word_regexp",
+                  "identifierType": "int"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "workers",
+                  "identifierType": "int"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "cli_options",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "opts",
+          "identifierType": "cli_options"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "option_t",
+          "identifierType": "struct option"
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "usage",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_version",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "init_options",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "parse_options",
+        "parameterList": [
+          {
+            "parameterType": "int",
+            "parameter": "argc"
+          },
+          {
+            "parameterType": "char * *",
+            "parameter": "argv"
+          },
+          {
+            "parameterType": "char * *",
+            "parameter": "base_paths[]"
+          },
+          {
+            "parameterType": "char * *",
+            "parameter": "paths[]"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "cleanup_options",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": []
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "ag_compression_type",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "is_zipped",
+        "parameterList": [
+          {
+            "parameterType": "const void *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "buf_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ag_compression_type"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "decompress",
+        "parameterList": [
+          {
+            "parameterType": "const ag_compression_type",
+            "parameter": "zip_type"
+          },
+          {
+            "parameterType": "const void *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "buf_len"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "dir_full_path"
+          },
+          {
+            "parameterType": "int *",
+            "parameter": "new_buf_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "decompress_open",
+        "parameterList": [
+          {
+            "parameterType": "int",
+            "parameter": "fd"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "mode"
+          },
+          {
+            "parameterType": "ag_compression_type",
+            "parameter": "ctype"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "FILE *"
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "ignores",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "extensions",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "extensions_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "names",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "names_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "slash_names",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "slash_names_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "regexes",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "regexes_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "invert_regexes",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "invert_regexes_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "slash_regexes",
+                  "identifierType": "char * *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "slash_regexes_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "dirname",
+                  "identifierType": "const char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "dirname_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "abs_path",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "abs_path_len",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "parent",
+                  "identifierType": "struct ignores *"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "ignores",
+          "identifierType": "struct ignores"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "root_ignores",
+          "identifierType": "ignores *"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "evil_hardcoded_ignore_files[]",
+          "identifierType": "const char *"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "ignore_pattern_files[]",
+          "identifierType": "const char *"
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "init_ignore",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "parent"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "dirname"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "dirname_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ignores *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "cleanup_ignore",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "ig"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "add_ignore_pattern",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "ig"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "pattern"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "load_ignore_patterns",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "ig"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "filename_filter",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const struct dirent *",
+            "parameter": "dir"
+          },
+          {
+            "parameterType": "void *",
+            "parameter": "baton"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_empty",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "ig"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "out_fd",
+          "identifierType": "FILE *"
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_malloc",
+        "parameterList": [
+          {
+            "parameterType": "size_t",
+            "parameter": "size"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_realloc",
+        "parameterList": [
+          {
+            "parameterType": "void *",
+            "parameter": "ptr"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "size"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_calloc",
+        "parameterList": [
+          {
+            "parameterType": "size_t",
+            "parameter": "nelem"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "elsize"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_strdup",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_strndup",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "size"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "char *"
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "start",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "end",
+                  "identifierType": "size_t"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "match_t",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "total_bytes",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "total_files",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "total_matches",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "total_file_matches",
+                  "identifierType": "size_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "time_start",
+                  "identifierType": "struct timeval"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "time_end",
+                  "identifierType": "struct timeval"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "ag_stats",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "stats",
+          "identifierType": "ag_stats"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "as_chars",
+                  "identifierType": "char [ sizeof ( uint16_t ) ]"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "as_word",
+                  "identifierType": "uint16_t"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "word_t",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "free_strings",
+        "parameterList": [
+          {
+            "parameterType": "char * *",
+            "parameter": "strs"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "strs_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "generate_alpha_skip",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "find"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "f_len"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "skip_lookup[]"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_prefix",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "s_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "pos"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "suffix_len",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "s_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "pos"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "generate_find_skip",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "find"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "f_len"
+          },
+          {
+            "parameterType": "size_t * *",
+            "parameter": "skip_lookup"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "generate_hash",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "find"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "f_len"
+          },
+          {
+            "parameterType": "uint8_t *",
+            "parameter": "H"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_max",
+        "parameterList": [
+          {
+            "parameterType": "size_t",
+            "parameter": "a"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "b"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_min",
+        "parameterList": [
+          {
+            "parameterType": "size_t",
+            "parameter": "a"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "b"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "boyer_moore_strnstr",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "find"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "s_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "f_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "alpha_skip_lookup[]"
+          },
+          {
+            "parameterType": "const size_t *",
+            "parameter": "find_skip_lookup"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_insensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "const char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "hash_strnstr",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "find"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "s_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "f_len"
+          },
+          {
+            "parameterType": "uint8_t *",
+            "parameter": "h_table"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "case_sensitive"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "const char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "invert_matches",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_len"
+          },
+          {
+            "parameterType": "match_t",
+            "parameter": "matches[]"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "matches_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "realloc_matches",
+        "parameterList": [
+          {
+            "parameterType": "match_t * *",
+            "parameter": "matches"
+          },
+          {
+            "parameterType": "size_t *",
+            "parameter": "matches_size"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "matches_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "compile_study",
+        "parameterList": [
+          {
+            "parameterType": "pcre * *",
+            "parameter": "re"
+          },
+          {
+            "parameterType": "pcre_extra * *",
+            "parameter": "re_extra"
+          },
+          {
+            "parameterType": "char *",
+            "parameter": "q"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "pcre_opts"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "study_opts"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_binary",
+        "parameterList": [
+          {
+            "parameterType": "const void *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_regex",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "query"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_fnmatch",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "filename"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "binary_search",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "needle"
+          },
+          {
+            "parameterType": "char * *",
+            "parameter": "haystack"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "start"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "end"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "init_wordchar_table",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_wordchar",
+        "parameterList": [
+          {
+            "parameterType": "char",
+            "parameter": "ch"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_lowercase",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_directory",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const struct dirent *",
+            "parameter": "d"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_symlink",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const struct dirent *",
+            "parameter": "d"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "is_named_pipe",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const struct dirent *",
+            "parameter": "d"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "die",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "ag_asprintf",
+        "parameterList": [
+          {
+            "parameterType": "char * *",
+            "parameter": "ret"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "buf_getline",
+        "parameterList": [
+          {
+            "parameterType": "const char * *",
+            "parameter": "line"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_len"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_offset"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ssize_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "fgetln",
+        "parameterList": [
+          {
+            "parameterType": "FILE *",
+            "parameter": "fp"
+          },
+          {
+            "parameterType": "size_t *",
+            "parameter": "lenp"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "getline",
+        "parameterList": [
+          {
+            "parameterType": "char * *",
+            "parameter": "lineptr"
+          },
+          {
+            "parameterType": "size_t *",
+            "parameter": "n"
+          },
+          {
+            "parameterType": "FILE *",
+            "parameter": "stream"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ssize_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "realpath",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "char *",
+            "parameter": "resolved_path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "strlcpy",
+        "parameterList": [
+          {
+            "parameterType": "char *",
+            "parameter": "dest"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "src"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "size"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "vasprintf",
+        "parameterList": [
+          {
+            "parameterType": "char * *",
+            "parameter": "ret"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          },
+          {
+            "parameterType": "va_list",
+            "parameter": "args"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_init_context",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_cleanup_context",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_context_append",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "line"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_trailing_context",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "n"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_path",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const char",
+            "parameter": "sep"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_path_count",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const char",
+            "parameter": "sep"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "count"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_line",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "buf_pos"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "prev_line_offset"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_binary_file_matches",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_file_matches",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_len"
+          },
+          {
+            "parameterType": "const match_t",
+            "parameter": "matches[]"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "matches_len"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_line_number",
+        "parameterList": [
+          {
+            "parameterType": "size_t",
+            "parameter": "line"
+          },
+          {
+            "parameterType": "const char",
+            "parameter": "sep"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_column_number",
+        "parameterList": [
+          {
+            "parameterType": "const match_t",
+            "parameter": "matches[]"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "last_printed_match"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "prev_line_offset"
+          },
+          {
+            "parameterType": "const char",
+            "parameter": "sep"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "print_file_separator",
+        "parameterList": [
+          {
+            "parameterType": "void",
+            "parameter": "<anonymous>"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "normalize_path",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "const char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "windows_use_ansi",
+        "parameterList": [
+          {
+            "parameterType": "int",
+            "parameter": "use_ansi"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "fprintf_w32",
+        "parameterList": [
+          {
+            "parameterType": "FILE *",
+            "parameter": "fp"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "format"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "int"
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "uint32_t",
+          "identifierType": "unsigned int"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "uint8_t",
+          "identifierType": "unsigned char"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "UT_hash_bucket",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hh_head",
+                  "identifierType": "struct UT_hash_handle *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "count",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "expand_mult",
+                  "identifierType": "unsigned"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "UT_hash_bucket",
+          "identifierType": "UT_hash_bucket"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "UT_hash_table",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "buckets",
+                  "identifierType": "UT_hash_bucket *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "num_buckets",
+                  "identifierType": "unsigned"
+                },
+                {
+                  "identifier": "log2_num_buckets",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "num_items",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "tail",
+                  "identifierType": "struct UT_hash_handle *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hho",
+                  "identifierType": "ptrdiff_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ideal_chain_maxlen",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "nonideal_items",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ineff_expands",
+                  "identifierType": "unsigned"
+                },
+                {
+                  "identifier": "noexpand",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "signature",
+                  "identifierType": "uint32_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "bloom_sig",
+                  "identifierType": "uint32_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "bloom_bv",
+                  "identifierType": "uint8_t *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "bloom_nbits",
+                  "identifierType": "char"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "UT_hash_table",
+          "identifierType": "UT_hash_table"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "UT_hash_handle",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "tbl",
+                  "identifierType": "struct UT_hash_table *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "prev",
+                  "identifierType": "void *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "next",
+                  "identifierType": "void *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hh_prev",
+                  "identifierType": "struct UT_hash_handle *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hh_next",
+                  "identifierType": "struct UT_hash_handle *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "key",
+                  "identifierType": "void *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "keylen",
+                  "identifierType": "unsigned"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hashv",
+                  "identifierType": "unsigned"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "UT_hash_handle",
+          "identifierType": "UT_hash_handle"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "alpha_skip_lookup",
+          "identifierType": "size_t [ 256 ]"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "find_skip_lookup",
+          "identifierType": "size_t *"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "work_queue_t",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "path",
+                  "identifierType": "char *"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "next",
+                  "identifierType": "struct work_queue_t *"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "work_queue_t",
+          "identifierType": "struct work_queue_t"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "work_queue",
+          "identifierType": "work_queue_t *"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "work_queue_tail",
+          "identifierType": "work_queue_t *"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "done_adding_files",
+          "identifierType": "int"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "files_ready",
+          "identifierType": "pthread_cond_t"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "stats_mtx",
+          "identifierType": "pthread_mutex_t"
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "work_queue_mtx",
+          "identifierType": "pthread_mutex_t"
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "dev",
+                  "identifierType": "dev_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "ino",
+                  "identifierType": "ino_t"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "dirkey_t",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "key",
+                  "identifierType": "dirkey_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "hh",
+                  "identifierType": "UT_hash_handle"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "symdir_t",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "symhash",
+          "identifierType": "symdir_t *"
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "search_buf",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const size_t",
+            "parameter": "buf_len"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "dir_full_path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ssize_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "search_stream",
+        "parameterList": [
+          {
+            "parameterType": "FILE *",
+            "parameter": "stream"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "ssize_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "search_file",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "file_full_path"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "search_file_worker",
+        "parameterList": [
+          {
+            "parameterType": "void *",
+            "parameter": "i"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "search_dir",
+        "parameterList": [
+          {
+            "parameterType": "ignores *",
+            "parameter": "ig"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "base_path"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "path"
+          },
+          {
+            "parameterType": "const int",
+            "parameter": "depth"
+          },
+          {
+            "parameterType": "dev_t",
+            "parameter": "original_dev"
+          }
+        ],
+        "functionBody": [],
+        "returnType": "void"
+      }
+    },
+    {
+      "classDefStatement": {
+        "className": "<unnamed>",
+        "definition": {
+          "compoundStatement": [
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "thread",
+                  "identifierType": "pthread_t"
+                }
+              ]
+            },
+            {
+              "identifierDeclStatement": [
+                {
+                  "identifier": "id",
+                  "identifierType": "int"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "identifierDeclStatement": [
+        {
+          "identifier": "worker_t",
+          "identifierType": ""
+        }
+      ]
+    },
+    {
+      "functionDef": {
+        "functionName": "main",
+        "parameterList": [
+          {
+            "parameterType": "int",
+            "parameter": "argc"
+          },
+          {
+            "parameterType": "char * *",
+            "parameter": "argv"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "base_paths",
+                "identifierType": "char * *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "paths",
+                "identifierType": "char * *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "pcre_opts",
+                "identifierType": "int",
+                "initialValue": "PCRE_MULTILINE"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "study_opts",
+                "identifierType": "int",
+                "initialValue": "0"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "workers",
+                "identifierType": "worker_t *",
+                "initialValue": "NULL"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "workers_len",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "num_cores",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"pledge: %s\""
+                          },
+                          {
+                            "callExpression": {
+                              "argumentList": [
+                                {
+                                  "identifier": "errno"
+                                }
+                              ],
+                              "callee": "strerror"
+                            }
+                          }
+                        ],
+                        "callee": "die"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "EqualityExpression": {
+                  "leftOperand": {
+                    "callExpression": {
+                      "argumentList": [
+                        {
+                          "constant": "\"stdio rpath proc exec\""
+                        },
+                        {
+                          "identifier": "NULL"
+                        }
+                      ],
+                      "callee": "pledge"
+                    }
+                  },
+                  "rightOperand": {
+                    "unaryOperationExpression": {
+                      "operator": "-",
+                      "operand": {
+                        "constant": "1"
+                      }
+                    }
+                  },
+                  "operator": "=="
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "LOG_LEVEL_WARN"
+                  }
+                ],
+                "callee": "set_log_level"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "work_queue"
+                },
+                "rightOperand": {
+                  "identifier": "NULL"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "work_queue_tail"
+                },
+                "rightOperand": {
+                  "identifier": "NULL"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "root_ignores"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "NULL"
+                      },
+                      {
+                        "constant": "\"\""
+                      },
+                      {
+                        "constant": "0"
+                      }
+                    ],
+                    "callee": "init_ignore"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "out_fd"
+                },
+                "rightOperand": {
+                  "identifier": "stdout"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "argc"
+                  },
+                  {
+                    "identifier": "argv"
+                  },
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "base_paths"
+                      }
+                    }
+                  },
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "paths"
+                      }
+                    }
+                  }
+                ],
+                "callee": "parse_options"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"PCRE Version: %s\""
+                  },
+                  {
+                    "callExpression": {
+                      "argumentList": [],
+                      "callee": "pcre_version"
+                    }
+                  }
+                ],
+                "callee": "log_debug"
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "unaryOperationExpression": {
+                              "operator": "&",
+                              "operand": {
+                                "identifier": "stats"
+                              }
+                            }
+                          },
+                          {
+                            "constant": "0"
+                          },
+                          {
+                            "sizeofExpression": {
+                              "operator": "sizeof",
+                              "operand": {
+                                "identifier": "stats"
+                              }
+                            }
+                          }
+                        ],
+                        "callee": "memset"
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "unaryOperationExpression": {
+                              "operator": "&",
+                              "operand": {
+                                "memberAccess": {
+                                  "leftOperand": "stats",
+                                  "rightOperand": "time_start",
+                                  "operator": "."
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "identifier": "NULL"
+                          }
+                        ],
+                        "callee": "gettimeofday"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "memberAccess": {
+                  "leftOperand": "opts",
+                  "rightOperand": "stats",
+                  "operator": "."
+                }
+              }
+            }
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "has_jit",
+                "identifierType": "int",
+                "initialValue": "0"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "PCRE_CONFIG_JIT"
+                  },
+                  {
+                    "unaryOperationExpression": {
+                      "operator": "&",
+                      "operand": {
+                        "identifier": "has_jit"
+                      }
+                    }
+                  }
+                ],
+                "callee": "pcre_config"
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "study_opts"
+                        },
+                        "rightOperand": {
+                          "identifier": "PCRE_STUDY_JIT_COMPILE"
+                        },
+                        "operator": "|="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "identifier": "has_jit"
+              }
+            }
+          },
+          {
+            "compoundStatement": [
+              {
+                "identifierDeclStatement": [
+                  {
+                    "identifier": "si",
+                    "identifierType": "SYSTEM_INFO"
+                  }
+                ]
+              },
+              {
+                "expressionStatement": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "unaryOperationExpression": {
+                          "operator": "&",
+                          "operand": {
+                            "identifier": "si"
+                          }
+                        }
+                      }
+                    ],
+                    "callee": "GetSystemInfo"
+                  }
+                }
+              },
+              {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "identifier": "num_cores"
+                    },
+                    "rightOperand": {
+                      "memberAccess": {
+                        "leftOperand": "si",
+                        "rightOperand": "dwNumberOfProcessors",
+                        "operator": "."
+                      }
+                    },
+                    "operator": "="
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "workers_len"
+                },
+                "rightOperand": {
+                  "conditionalExpression": {
+                    "condition": {
+                      "RelationalExpression": {
+                        "leftOperand": {
+                          "identifier": "num_cores"
+                        },
+                        "rightOperand": {
+                          "constant": "8"
+                        },
+                        "operator": "<"
+                      }
+                    },
+                    "trueExpression": {
+                      "identifier": "num_cores"
+                    },
+                    "falseExpression": {
+                      "constant": "8"
+                    }
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "postIncDecOperationExpression": {
+                        "operand": {
+                          "identifier": "workers_len"
+                        },
+                        "operator": "--"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "memberAccess": {
+                  "leftOperand": "opts",
+                  "rightOperand": "literal",
+                  "operator": "."
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "workers_len"
+                        },
+                        "rightOperand": {
+                          "memberAccess": {
+                            "leftOperand": "opts",
+                            "rightOperand": "workers",
+                            "operator": "."
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "memberAccess": {
+                  "leftOperand": "opts",
+                  "rightOperand": "workers",
+                  "operator": "."
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "workers_len"
+                        },
+                        "rightOperand": {
+                          "constant": "1"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "workers_len"
+                  },
+                  "rightOperand": {
+                    "constant": "1"
+                  },
+                  "operator": "<"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "constant": "\"Using %i workers\""
+                  },
+                  {
+                    "identifier": "workers_len"
+                  }
+                ],
+                "callee": "log_debug"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "done_adding_files"
+                },
+                "rightOperand": {
+                  "constant": "0"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "workers"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "workers_len"
+                      },
+                      {
+                        "sizeofExpression": {
+                          "operator": "sizeof",
+                          "operand": {
+                            "identifier": "worker_t"
+                          }
+                        }
+                      }
+                    ],
+                    "callee": "ag_calloc"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"pthread_cond_init failed!\""
+                          }
+                        ],
+                        "callee": "die"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "callExpression": {
+                  "argumentList": [
+                    {
+                      "unaryOperationExpression": {
+                        "operator": "&",
+                        "operand": {
+                          "identifier": "files_ready"
+                        }
+                      }
+                    },
+                    {
+                      "identifier": "NULL"
+                    }
+                  ],
+                  "callee": "pthread_cond_init"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"pthread_mutex_init failed!\""
+                          }
+                        ],
+                        "callee": "die"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "callExpression": {
+                  "argumentList": [
+                    {
+                      "unaryOperationExpression": {
+                        "operator": "&",
+                        "operand": {
+                          "identifier": "print_mtx"
+                        }
+                      }
+                    },
+                    {
+                      "identifier": "NULL"
+                    }
+                  ],
+                  "callee": "pthread_mutex_init"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"pthread_mutex_init failed!\""
+                          }
+                        ],
+                        "callee": "die"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "AndExpression": {
+                  "leftOperand": {
+                    "memberAccess": {
+                      "leftOperand": "opts",
+                      "rightOperand": "stats",
+                      "operator": "."
+                    }
+                  },
+                  "rightOperand": {
+                    "callExpression": {
+                      "argumentList": [
+                        {
+                          "unaryOperationExpression": {
+                            "operator": "&",
+                            "operand": {
+                              "identifier": "stats_mtx"
+                            }
+                          }
+                        },
+                        {
+                          "identifier": "NULL"
+                        }
+                      ],
+                      "callee": "pthread_mutex_init"
+                    }
+                  },
+                  "operator": "&&"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "callExpression": {
+                        "argumentList": [
+                          {
+                            "constant": "\"pthread_mutex_init failed!\""
+                          }
+                        ],
+                        "callee": "die"
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "callExpression": {
+                  "argumentList": [
+                    {
+                      "unaryOperationExpression": {
+                        "operator": "&",
+                        "operand": {
+                          "identifier": "work_queue_mtx"
+                        }
+                      }
+                    },
+                    {
+                      "identifier": "NULL"
+                    }
+                  ],
+                  "callee": "pthread_mutex_init"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "memberAccess": {
+                            "leftOperand": "opts",
+                            "rightOperand": "casing",
+                            "operator": "."
+                          }
+                        },
+                        "rightOperand": {
+                          "conditionalExpression": {
+                            "condition": {
+                              "callExpression": {
+                                "argumentList": [
+                                  {
+                                    "memberAccess": {
+                                      "leftOperand": "opts",
+                                      "rightOperand": "query",
+                                      "operator": "."
+                                    }
+                                  }
+                                ],
+                                "callee": "is_lowercase"
+                              }
+                            },
+                            "trueExpression": {
+                              "identifier": "CASE_INSENSITIVE"
+                            },
+                            "falseExpression": {
+                              "identifier": "CASE_SENSITIVE"
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "EqualityExpression": {
+                  "leftOperand": {
+                    "memberAccess": {
+                      "leftOperand": "opts",
+                      "rightOperand": "casing",
+                      "operator": "."
+                    }
+                  },
+                  "rightOperand": {
+                    "identifier": "CASE_SMART"
+                  },
+                  "operator": "=="
+                }
+              }
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3284 @@
+IdentifierDeclStatement:null
+	IdentifierDecl:**mem_section
+		IdentifierDeclType:ifdef CONFIG_SPARSEMEM_EXTREMEstruct mem_section * *
+		Identifier:mem_section
+FunctionDef:page_to_nid (const struct page *page)
+	CompoundStatement:
+		ReturnStatement:return section_to_node_table[page_to_section(page)];
+			ArrayIndexing:section_to_node_table[page_to_section(page)]
+				Identifier:section_to_node_table
+				CallExpression:page_to_section(page)
+					Callee:page_to_section
+						Identifier:page_to_section
+					ArgumentList:page
+						Argument:page
+							Identifier:page
+	ReturnType:endifint
+	Identifier:page_to_nid
+	ParameterList:const struct page *page
+		Parameter:const struct page *page
+			ParameterType:const struct page *
+			Identifier:page
+FunctionDef:set_section_nid (unsigned long section_nr , int nid)
+	CompoundStatement:
+		ExpressionStatement:section_to_node_table[section_nr] = nid
+			AssignmentExpression:section_to_node_table[section_nr] = nid
+				ArrayIndexing:section_to_node_table[section_nr]
+					Identifier:section_to_node_table
+					Identifier:section_nr
+				Identifier:nid
+	ReturnType:static void
+	Identifier:set_section_nid
+	ParameterList:unsigned long section_nr , int nid
+		Parameter:unsigned long section_nr
+			ParameterType:unsigned long
+			Identifier:section_nr
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:set_section_nid (unsigned long section_nr , int nid)
+	CompoundStatement:
+	ReturnType:static inline void
+	Identifier:set_section_nid
+	ParameterList:unsigned long section_nr , int nid
+		Parameter:unsigned long section_nr
+			ParameterType:unsigned long
+			Identifier:section_nr
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:sparse_index_alloc (int nid)
+	CompoundStatement:
+		IdentifierDeclStatement:struct mem_section *section = NULL;
+			IdentifierDecl:*section = NULL
+				IdentifierDeclType:struct mem_section *
+				Identifier:section
+				AssignmentExpression:*section = NULL
+					Identifier:section
+					Identifier:NULL
+		IdentifierDeclStatement:unsigned long array_size = SECTIONS_PER_ROOT *\t\t\t\t   sizeof(struct mem_section);
+			IdentifierDecl:array_size = SECTIONS_PER_ROOT *\t\t\t\t   sizeof(struct mem_section)
+				IdentifierDeclType:unsigned long
+				Identifier:array_size
+				AssignmentExpression:array_size = SECTIONS_PER_ROOT *\t\t\t\t   sizeof(struct mem_section)
+					Identifier:array_size
+					MultiplicativeExpression:SECTIONS_PER_ROOT *\t\t\t\t   sizeof(struct mem_section)
+						Identifier:SECTIONS_PER_ROOT
+						SizeofExpression:sizeof(struct mem_section)
+							Sizeof:sizeof
+							SizeofOperand:struct mem_section
+		IfStatement:if (slab_is_available())
+			Condition:slab_is_available()
+				CallExpression:slab_is_available()
+					Callee:slab_is_available
+						Identifier:slab_is_available
+					ArgumentList:
+			CompoundStatement:
+				ExpressionStatement:section = kzalloc_node(array_size, GFP_KERNEL, nid)
+					AssignmentExpression:section = kzalloc_node(array_size, GFP_KERNEL, nid)
+						Identifier:section
+						CallExpression:kzalloc_node(array_size, GFP_KERNEL, nid)
+							Callee:kzalloc_node
+								Identifier:kzalloc_node
+							ArgumentList:array_size
+								Argument:array_size
+									Identifier:array_size
+								Argument:GFP_KERNEL
+									Identifier:GFP_KERNEL
+								Argument:nid
+									Identifier:nid
+		ReturnStatement:return section;
+			Identifier:section
+	ReturnType:struct mem_section __ref *
+	Identifier:sparse_index_alloc
+	ParameterList:int nid
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:sparse_index_init (unsigned long section_nr , int nid)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long root = SECTION_NR_TO_ROOT(section_nr);
+			IdentifierDecl:root = SECTION_NR_TO_ROOT(section_nr)
+				IdentifierDeclType:unsigned long
+				Identifier:root
+				AssignmentExpression:root = SECTION_NR_TO_ROOT(section_nr)
+					Identifier:root
+					CallExpression:SECTION_NR_TO_ROOT(section_nr)
+						Callee:SECTION_NR_TO_ROOT
+							Identifier:SECTION_NR_TO_ROOT
+						ArgumentList:section_nr
+							Argument:section_nr
+								Identifier:section_nr
+		IdentifierDeclStatement:struct mem_section *section;
+			IdentifierDecl:*section
+				IdentifierDeclType:struct mem_section *
+				Identifier:section
+		Statement:/*\t * An existing section is possible in the sub-section hotplug\t * case. First hot-add instantiates, follow-on hot-add reuses\t * the existing section.\t *\t * The mem_hotplug_lock resolves the apparent race below.\t */
+		IfStatement:if (mem_section[root])
+			Condition:mem_section[root]
+				ArrayIndexing:mem_section[root]
+					Identifier:mem_section
+					Identifier:root
+			ReturnStatement:return 0;
+				Constant:0
+		ExpressionStatement:section = sparse_index_alloc(nid)
+			AssignmentExpression:section = sparse_index_alloc(nid)
+				Identifier:section
+				CallExpression:sparse_index_alloc(nid)
+					Callee:sparse_index_alloc
+						Identifier:sparse_index_alloc
+					ArgumentList:nid
+						Argument:nid
+							Identifier:nid
+		IfStatement:if (!section)
+			Condition:!section
+				UnaryOperationExpression:!section
+					UnaryOperator:!
+					Identifier:section
+			ReturnStatement:return -ENOMEM;
+				UnaryOperationExpression:-ENOMEM
+					UnaryOperator:-
+					Identifier:ENOMEM
+		ExpressionStatement:mem_section[root] = section
+			AssignmentExpression:mem_section[root] = section
+				ArrayIndexing:mem_section[root]
+					Identifier:mem_section
+					Identifier:root
+				Identifier:section
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static int __meminit
+	Identifier:sparse_index_init
+	ParameterList:unsigned long section_nr , int nid
+		Parameter:unsigned long section_nr
+			ParameterType:unsigned long
+			Identifier:section_nr
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:sparse_index_init (unsigned long section_nr , int nid)
+	CompoundStatement:
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:static inline int
+	Identifier:sparse_index_init
+	ParameterList:unsigned long section_nr , int nid
+		Parameter:unsigned long section_nr
+			ParameterType:unsigned long
+			Identifier:section_nr
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:__section_nr (struct mem_section *ms)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long root_nr;
+			IdentifierDecl:root_nr
+				IdentifierDeclType:unsigned long
+				Identifier:root_nr
+		IdentifierDeclStatement:struct mem_section *root = NULL;
+			IdentifierDecl:*root = NULL
+				IdentifierDeclType:struct mem_section *
+				Identifier:root
+				AssignmentExpression:*root = NULL
+					Identifier:root
+					Identifier:NULL
+		ForStatement:for (root_nr = 0; root_nr < NR_SECTION_ROOTS; root_nr++)
+			ForInit:root_nr = 0;
+				AssignmentExpression:root_nr = 0
+					Identifier:root_nr
+					Constant:0
+			Condition:root_nr < NR_SECTION_ROOTS
+				RelationalExpression:root_nr < NR_SECTION_ROOTS
+					Identifier:root_nr
+					Identifier:NR_SECTION_ROOTS
+			PostIncDecOperationExpression:root_nr++
+				Identifier:root_nr
+				IncDec:++
+			CompoundStatement:
+				ExpressionStatement:root = __nr_to_section(root_nr * SECTIONS_PER_ROOT)
+					AssignmentExpression:root = __nr_to_section(root_nr * SECTIONS_PER_ROOT)
+						Identifier:root
+						CallExpression:__nr_to_section(root_nr * SECTIONS_PER_ROOT)
+							Callee:__nr_to_section
+								Identifier:__nr_to_section
+							ArgumentList:root_nr * SECTIONS_PER_ROOT
+								Argument:root_nr * SECTIONS_PER_ROOT
+									MultiplicativeExpression:root_nr * SECTIONS_PER_ROOT
+										Identifier:root_nr
+										Identifier:SECTIONS_PER_ROOT
+				IfStatement:if (!root)
+					Condition:!root
+						UnaryOperationExpression:!root
+							UnaryOperator:!
+							Identifier:root
+					ContinueStatement:continue;
+				IfStatement:if ((ms >= root) && (ms < (root + SECTIONS_PER_ROOT)))
+					Condition:(ms >= root) && (ms < (root + SECTIONS_PER_ROOT))
+						AndExpression:(ms >= root) && (ms < (root + SECTIONS_PER_ROOT))
+							RelationalExpression:ms >= root
+								Identifier:ms
+								Identifier:root
+							RelationalExpression:ms < (root + SECTIONS_PER_ROOT)
+								Identifier:ms
+								AdditiveExpression:root + SECTIONS_PER_ROOT
+									Identifier:root
+									Identifier:SECTIONS_PER_ROOT
+					BreakStatement:break;
+		ExpressionStatement:VM_BUG_ON(!root)
+			CallExpression:VM_BUG_ON(!root)
+				Callee:VM_BUG_ON
+					Identifier:VM_BUG_ON
+				ArgumentList:!root
+					Argument:!root
+						UnaryOperationExpression:!root
+							UnaryOperator:!
+							Identifier:root
+		ReturnStatement:return (root_nr * SECTIONS_PER_ROOT) + (ms - root);
+			AdditiveExpression:(root_nr * SECTIONS_PER_ROOT) + (ms - root)
+				MultiplicativeExpression:root_nr * SECTIONS_PER_ROOT
+					Identifier:root_nr
+					Identifier:SECTIONS_PER_ROOT
+				AdditiveExpression:ms - root
+					Identifier:ms
+					Identifier:root
+	ReturnType:endif#ifdef CONFIG_SPARSEMEM_EXTREMEunsigned long
+	Identifier:__section_nr
+	ParameterList:struct mem_section *ms
+		Parameter:struct mem_section *ms
+			ParameterType:struct mem_section *
+			Identifier:ms
+FunctionDef:__section_nr (struct mem_section *ms)
+	CompoundStatement:
+		ReturnStatement:return (unsigned long)(ms - mem_section[0]);
+			CastExpression:(unsigned long)(ms - mem_section[0])
+				CastTarget:unsigned long
+				AdditiveExpression:ms - mem_section[0]
+					Identifier:ms
+					ArrayIndexing:mem_section[0]
+						Identifier:mem_section
+						Constant:0
+	ReturnType:elseunsigned long
+	Identifier:__section_nr
+	ParameterList:struct mem_section *ms
+		Parameter:struct mem_section *ms
+			ParameterType:struct mem_section *
+			Identifier:ms
+FunctionDef:sparse_encode_early_nid (int nid)
+	CompoundStatement:
+		ReturnStatement:return (nid << SECTION_NID_SHIFT);
+			ShiftExpression:nid << SECTION_NID_SHIFT
+				Identifier:nid
+				Identifier:SECTION_NID_SHIFT
+	ReturnType:static inline unsigned long
+	Identifier:sparse_encode_early_nid
+	ParameterList:int nid
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:sparse_early_nid (struct mem_section *section)
+	CompoundStatement:
+		ReturnStatement:return (section->section_mem_map >> SECTION_NID_SHIFT);
+			ShiftExpression:section->section_mem_map >> SECTION_NID_SHIFT
+				PtrMemberAccess:section->section_mem_map
+					Identifier:section
+					Identifier:section_mem_map
+				Identifier:SECTION_NID_SHIFT
+	ReturnType:static inline int
+	Identifier:sparse_early_nid
+	ParameterList:struct mem_section *section
+		Parameter:struct mem_section *section
+			ParameterType:struct mem_section *
+			Identifier:section
+FunctionDef:mminit_validate_memmodel_limits (unsigned long *start_pfn , unsigned long *end_pfn)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long max_sparsemem_pfn = 1UL << (MAX_PHYSMEM_BITS-PAGE_SHIFT);
+			IdentifierDecl:max_sparsemem_pfn = 1UL << (MAX_PHYSMEM_BITS-PAGE_SHIFT)
+				IdentifierDeclType:unsigned long
+				Identifier:max_sparsemem_pfn
+				AssignmentExpression:max_sparsemem_pfn = 1UL << (MAX_PHYSMEM_BITS-PAGE_SHIFT)
+					Identifier:max_sparsemem_pfn
+					ShiftExpression:1UL << (MAX_PHYSMEM_BITS-PAGE_SHIFT)
+						Constant:1UL
+						AdditiveExpression:MAX_PHYSMEM_BITS-PAGE_SHIFT
+							Identifier:MAX_PHYSMEM_BITS
+							Identifier:PAGE_SHIFT
+		Statement:/*\t * Sanity checks - do not allow an architecture to pass\t * in larger pfns than the maximum scope of sparsemem:\t */
+		IfStatement:if (*start_pfn > max_sparsemem_pfn)
+			Condition:*start_pfn > max_sparsemem_pfn
+				RelationalExpression:*start_pfn > max_sparsemem_pfn
+					UnaryOperationExpression:*start_pfn
+						UnaryOperator:*
+						Identifier:start_pfn
+					Identifier:max_sparsemem_pfn
+			CompoundStatement:
+				ExpressionStatement:mminit_dprintk(MMINIT_WARNING, "pfnvalidation",\t\t\t"Start of range %lu -> %lu exceeds SPARSEMEM max %lu\n",\t\t\t*start_pfn, *end_pfn, max_sparsemem_pfn)
+					CallExpression:mminit_dprintk(MMINIT_WARNING, "pfnvalidation",\t\t\t"Start of range %lu -> %lu exceeds SPARSEMEM max %lu\n",\t\t\t*start_pfn, *end_pfn, max_sparsemem_pfn)
+						Callee:mminit_dprintk
+							Identifier:mminit_dprintk
+						ArgumentList:MMINIT_WARNING
+							Argument:MMINIT_WARNING
+								Identifier:MMINIT_WARNING
+							Argument:"pfnvalidation"
+								Constant:"pfnvalidation"
+							Argument:"Start of range %lu -> %lu exceeds SPARSEMEM max %lu\n"
+								Constant:"Start of range %lu -> %lu exceeds SPARSEMEM max %lu\n"
+							Argument:*start_pfn
+								UnaryOperationExpression:*start_pfn
+									UnaryOperator:*
+									Identifier:start_pfn
+							Argument:*end_pfn
+								UnaryOperationExpression:*end_pfn
+									UnaryOperator:*
+									Identifier:end_pfn
+							Argument:max_sparsemem_pfn
+								Identifier:max_sparsemem_pfn
+				ExpressionStatement:WARN_ON_ONCE(1)
+					CallExpression:WARN_ON_ONCE(1)
+						Callee:WARN_ON_ONCE
+							Identifier:WARN_ON_ONCE
+						ArgumentList:1
+							Argument:1
+								Constant:1
+				ExpressionStatement:*start_pfn = max_sparsemem_pfn
+					AssignmentExpression:*start_pfn = max_sparsemem_pfn
+						UnaryOperationExpression:*start_pfn
+							UnaryOperator:*
+							Identifier:start_pfn
+						Identifier:max_sparsemem_pfn
+				ExpressionStatement:*end_pfn = max_sparsemem_pfn
+					AssignmentExpression:*end_pfn = max_sparsemem_pfn
+						UnaryOperationExpression:*end_pfn
+							UnaryOperator:*
+							Identifier:end_pfn
+						Identifier:max_sparsemem_pfn
+	ReturnType:void __meminit
+	Identifier:mminit_validate_memmodel_limits
+	ParameterList:unsigned long *start_pfn , unsigned long *end_pfn
+		Parameter:unsigned long *start_pfn
+			ParameterType:unsigned long *
+			Identifier:start_pfn
+		Parameter:unsigned long *end_pfn
+			ParameterType:unsigned long *
+			Identifier:end_pfn
+IdentifierDeclStatement:null
+	IdentifierDecl:__highest_present_section_nr
+		IdentifierDeclType:unsigned long
+		Identifier:__highest_present_section_nr
+FunctionDef:section_mark_present (struct mem_section *ms)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long section_nr = __section_nr(ms);
+			IdentifierDecl:section_nr = __section_nr(ms)
+				IdentifierDeclType:unsigned long
+				Identifier:section_nr
+				AssignmentExpression:section_nr = __section_nr(ms)
+					Identifier:section_nr
+					CallExpression:__section_nr(ms)
+						Callee:__section_nr
+							Identifier:__section_nr
+						ArgumentList:ms
+							Argument:ms
+								Identifier:ms
+		IfStatement:if (section_nr > __highest_present_section_nr)
+			Condition:section_nr > __highest_present_section_nr
+				RelationalExpression:section_nr > __highest_present_section_nr
+					Identifier:section_nr
+					Identifier:__highest_present_section_nr
+			ExpressionStatement:__highest_present_section_nr = section_nr
+				AssignmentExpression:__highest_present_section_nr = section_nr
+					Identifier:__highest_present_section_nr
+					Identifier:section_nr
+		ExpressionStatement:ms->section_mem_map |= SECTION_MARKED_PRESENT
+			AssignmentExpression:ms->section_mem_map |= SECTION_MARKED_PRESENT
+				PtrMemberAccess:ms->section_mem_map
+					Identifier:ms
+					Identifier:section_mem_map
+				Identifier:SECTION_MARKED_PRESENT
+	ReturnType:static void
+	Identifier:section_mark_present
+	ParameterList:struct mem_section *ms
+		Parameter:struct mem_section *ms
+			ParameterType:struct mem_section *
+			Identifier:ms
+FunctionDef:next_present_section_nr (unsigned long section_nr)
+	CompoundStatement:
+		DoStatement:do
+			CompoundStatement:
+				ExpressionStatement:section_nr++
+					PostIncDecOperationExpression:section_nr++
+						Identifier:section_nr
+						IncDec:++
+				IfStatement:if (present_section_nr(section_nr))
+					Condition:present_section_nr(section_nr)
+						CallExpression:present_section_nr(section_nr)
+							Callee:present_section_nr
+								Identifier:present_section_nr
+							ArgumentList:section_nr
+								Argument:section_nr
+									Identifier:section_nr
+					ReturnStatement:return section_nr;
+						Identifier:section_nr
+			Condition:section_nr <= __highest_present_section_nr
+				RelationalExpression:section_nr <= __highest_present_section_nr
+					Identifier:section_nr
+					Identifier:__highest_present_section_nr
+		ReturnStatement:return -1;
+			UnaryOperationExpression:-1
+				UnaryOperator:-
+				Constant:1
+	ReturnType:static inline unsigned long
+	Identifier:next_present_section_nr
+	ParameterList:unsigned long section_nr
+		Parameter:unsigned long section_nr
+			ParameterType:unsigned long
+			Identifier:section_nr
+FunctionDef:first_present_section_nr ()
+	CompoundStatement:
+		ReturnStatement:return next_present_section_nr(-1);
+			CallExpression:next_present_section_nr(-1)
+				Callee:next_present_section_nr
+					Identifier:next_present_section_nr
+				ArgumentList:-1
+					Argument:-1
+						UnaryOperationExpression:-1
+							UnaryOperator:-
+							Constant:1
+	ReturnType:static inline unsigned long
+	Identifier:first_present_section_nr
+	ParameterList:
+FunctionDef:subsection_mask_set (unsigned long *map , unsigned long pfn , unsigned long nr_pages)
+	CompoundStatement:
+		IdentifierDeclStatement:int idx = subsection_map_index(pfn);
+			IdentifierDecl:idx = subsection_map_index(pfn)
+				IdentifierDeclType:int
+				Identifier:idx
+				AssignmentExpression:idx = subsection_map_index(pfn)
+					Identifier:idx
+					CallExpression:subsection_map_index(pfn)
+						Callee:subsection_map_index
+							Identifier:subsection_map_index
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+		IdentifierDeclStatement:int end = subsection_map_index(pfn + nr_pages - 1);
+			IdentifierDecl:end = subsection_map_index(pfn + nr_pages - 1)
+				IdentifierDeclType:int
+				Identifier:end
+				AssignmentExpression:end = subsection_map_index(pfn + nr_pages - 1)
+					Identifier:end
+					CallExpression:subsection_map_index(pfn + nr_pages - 1)
+						Callee:subsection_map_index
+							Identifier:subsection_map_index
+						ArgumentList:pfn + nr_pages - 1
+							Argument:pfn + nr_pages - 1
+								AdditiveExpression:pfn + nr_pages - 1
+									Identifier:pfn
+									AdditiveExpression:nr_pages - 1
+										Identifier:nr_pages
+										Constant:1
+		ExpressionStatement:bitmap_set(map, idx, end - idx + 1)
+			CallExpression:bitmap_set(map, idx, end - idx + 1)
+				Callee:bitmap_set
+					Identifier:bitmap_set
+				ArgumentList:map
+					Argument:map
+						Identifier:map
+					Argument:idx
+						Identifier:idx
+					Argument:end - idx + 1
+						AdditiveExpression:end - idx + 1
+							Identifier:end
+							AdditiveExpression:idx + 1
+								Identifier:idx
+								Constant:1
+	ReturnType:void
+	Identifier:subsection_mask_set
+	ParameterList:unsigned long *map , unsigned long pfn , unsigned long nr_pages
+		Parameter:unsigned long *map
+			ParameterType:unsigned long *
+			Identifier:map
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+FunctionDef:subsection_map_init (unsigned long pfn , unsigned long nr_pages)
+	CompoundStatement:
+		IdentifierDeclStatement:int end_sec = pfn_to_section_nr(pfn + nr_pages - 1);
+			IdentifierDecl:end_sec = pfn_to_section_nr(pfn + nr_pages - 1)
+				IdentifierDeclType:int
+				Identifier:end_sec
+				AssignmentExpression:end_sec = pfn_to_section_nr(pfn + nr_pages - 1)
+					Identifier:end_sec
+					CallExpression:pfn_to_section_nr(pfn + nr_pages - 1)
+						Callee:pfn_to_section_nr
+							Identifier:pfn_to_section_nr
+						ArgumentList:pfn + nr_pages - 1
+							Argument:pfn + nr_pages - 1
+								AdditiveExpression:pfn + nr_pages - 1
+									Identifier:pfn
+									AdditiveExpression:nr_pages - 1
+										Identifier:nr_pages
+										Constant:1
+		IdentifierDeclStatement:unsigned long nr, start_sec = pfn_to_section_nr(pfn);
+			IdentifierDecl:nr
+				IdentifierDeclType:unsigned long
+				Identifier:nr
+			IdentifierDecl:start_sec = pfn_to_section_nr(pfn)
+				IdentifierDeclType:unsigned long
+				Identifier:start_sec
+				AssignmentExpression:start_sec = pfn_to_section_nr(pfn)
+					Identifier:start_sec
+					CallExpression:pfn_to_section_nr(pfn)
+						Callee:pfn_to_section_nr
+							Identifier:pfn_to_section_nr
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+		IfStatement:if (!nr_pages)
+			Condition:!nr_pages
+				UnaryOperationExpression:!nr_pages
+					UnaryOperator:!
+					Identifier:nr_pages
+			ReturnStatement:return;
+		ForStatement:for (nr = start_sec; nr <= end_sec; nr++)
+			ForInit:nr = start_sec;
+				AssignmentExpression:nr = start_sec
+					Identifier:nr
+					Identifier:start_sec
+			Condition:nr <= end_sec
+				RelationalExpression:nr <= end_sec
+					Identifier:nr
+					Identifier:end_sec
+			PostIncDecOperationExpression:nr++
+				Identifier:nr
+				IncDec:++
+			CompoundStatement:
+				IdentifierDeclStatement:struct mem_section *ms;
+					IdentifierDecl:*ms
+						IdentifierDeclType:struct mem_section *
+						Identifier:ms
+				IdentifierDeclStatement:unsigned long pfns;
+					IdentifierDecl:pfns
+						IdentifierDeclType:unsigned long
+						Identifier:pfns
+				ExpressionStatement:pfns = min(nr_pages, PAGES_PER_SECTION\t\t\t\t- (pfn & ~PAGE_SECTION_MASK))
+					AssignmentExpression:pfns = min(nr_pages, PAGES_PER_SECTION\t\t\t\t- (pfn & ~PAGE_SECTION_MASK))
+						Identifier:pfns
+						CallExpression:min(nr_pages, PAGES_PER_SECTION\t\t\t\t- (pfn & ~PAGE_SECTION_MASK))
+							Callee:min
+								Identifier:min
+							ArgumentList:nr_pages
+								Argument:nr_pages
+									Identifier:nr_pages
+								Argument:PAGES_PER_SECTION\t\t\t\t- (pfn & ~PAGE_SECTION_MASK)
+									AdditiveExpression:PAGES_PER_SECTION\t\t\t\t- (pfn & ~PAGE_SECTION_MASK)
+										Identifier:PAGES_PER_SECTION
+										BitAndExpression:pfn & ~PAGE_SECTION_MASK
+											Identifier:pfn
+											Identifier:~PAGE_SECTION_MASK
+				ExpressionStatement:ms = __nr_to_section(nr)
+					AssignmentExpression:ms = __nr_to_section(nr)
+						Identifier:ms
+						CallExpression:__nr_to_section(nr)
+							Callee:__nr_to_section
+								Identifier:__nr_to_section
+							ArgumentList:nr
+								Argument:nr
+									Identifier:nr
+				ExpressionStatement:subsection_mask_set(ms->usage->subsection_map, pfn, pfns)
+					CallExpression:subsection_mask_set(ms->usage->subsection_map, pfn, pfns)
+						Callee:subsection_mask_set
+							Identifier:subsection_mask_set
+						ArgumentList:ms->usage->subsection_map
+							Argument:ms->usage->subsection_map
+								PtrMemberAccess:ms->usage->subsection_map
+									PtrMemberAccess:ms->usage
+										Identifier:ms
+										Identifier:usage
+									Identifier:subsection_map
+							Argument:pfn
+								Identifier:pfn
+							Argument:pfns
+								Identifier:pfns
+				ExpressionStatement:pr_debug("%s: sec: %lu pfns: %lu set(%d, %d)\n", __func__, nr,\t\t\t\tpfns, subsection_map_index(pfn),\t\t\t\tsubsection_map_index(pfn + pfns - 1))
+					CallExpression:pr_debug("%s: sec: %lu pfns: %lu set(%d, %d)\n", __func__, nr,\t\t\t\tpfns, subsection_map_index(pfn),\t\t\t\tsubsection_map_index(pfn + pfns - 1))
+						Callee:pr_debug
+							Identifier:pr_debug
+						ArgumentList:"%s: sec: %lu pfns: %lu set(%d, %d)\n"
+							Argument:"%s: sec: %lu pfns: %lu set(%d, %d)\n"
+								Constant:"%s: sec: %lu pfns: %lu set(%d, %d)\n"
+							Argument:__func__
+								Identifier:__func__
+							Argument:nr
+								Identifier:nr
+							Argument:pfns
+								Identifier:pfns
+							Argument:subsection_map_index(pfn)
+								CallExpression:subsection_map_index(pfn)
+									Callee:subsection_map_index
+										Identifier:subsection_map_index
+									ArgumentList:pfn
+										Argument:pfn
+											Identifier:pfn
+							Argument:subsection_map_index(pfn + pfns - 1)
+								CallExpression:subsection_map_index(pfn + pfns - 1)
+									Callee:subsection_map_index
+										Identifier:subsection_map_index
+									ArgumentList:pfn + pfns - 1
+										Argument:pfn + pfns - 1
+											AdditiveExpression:pfn + pfns - 1
+												Identifier:pfn
+												AdditiveExpression:pfns - 1
+													Identifier:pfns
+													Constant:1
+				ExpressionStatement:pfn += pfns
+					AssignmentExpression:pfn += pfns
+						Identifier:pfn
+						Identifier:pfns
+				ExpressionStatement:nr_pages -= pfns
+					AssignmentExpression:nr_pages -= pfns
+						Identifier:nr_pages
+						Identifier:pfns
+	ReturnType:void __init
+	Identifier:subsection_map_init
+	ParameterList:unsigned long pfn , unsigned long nr_pages
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+FunctionDef:memory_present (int nid , unsigned long start , unsigned long end)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long pfn;
+			IdentifierDecl:pfn
+				IdentifierDeclType:unsigned long
+				Identifier:pfn
+		Statement:ifdef
+		Statement:CONFIG_SPARSEMEM_EXTREME
+		IfStatement:if (unlikely(!mem_section))
+			Condition:unlikely(!mem_section)
+				CallExpression:unlikely(!mem_section)
+					Callee:unlikely
+						Identifier:unlikely
+					ArgumentList:!mem_section
+						Argument:!mem_section
+							UnaryOperationExpression:!mem_section
+								UnaryOperator:!
+								Identifier:mem_section
+			CompoundStatement:
+				IdentifierDeclStatement:unsigned long size, align;
+					IdentifierDecl:size
+						IdentifierDeclType:unsigned long
+						Identifier:size
+					IdentifierDecl:align
+						IdentifierDeclType:unsigned long
+						Identifier:align
+				ExpressionStatement:size = sizeof(struct mem_section*) * NR_SECTION_ROOTS
+					AssignmentExpression:size = sizeof(struct mem_section*) * NR_SECTION_ROOTS
+						Identifier:size
+						MultiplicativeExpression:sizeof(struct mem_section*) * NR_SECTION_ROOTS
+							SizeofExpression:sizeof(struct mem_section*)
+								Sizeof:sizeof
+								SizeofOperand:struct mem_section*
+							Identifier:NR_SECTION_ROOTS
+				ExpressionStatement:align = 1 << (INTERNODE_CACHE_SHIFT)
+					AssignmentExpression:align = 1 << (INTERNODE_CACHE_SHIFT)
+						Identifier:align
+						ShiftExpression:1 << (INTERNODE_CACHE_SHIFT)
+							Constant:1
+							Identifier:INTERNODE_CACHE_SHIFT
+				ExpressionStatement:mem_section = memblock_alloc(size, align)
+					AssignmentExpression:mem_section = memblock_alloc(size, align)
+						Identifier:mem_section
+						CallExpression:memblock_alloc(size, align)
+							Callee:memblock_alloc
+								Identifier:memblock_alloc
+							ArgumentList:size
+								Argument:size
+									Identifier:size
+								Argument:align
+									Identifier:align
+				IfStatement:if (!mem_section)
+					Condition:!mem_section
+						UnaryOperationExpression:!mem_section
+							UnaryOperator:!
+							Identifier:mem_section
+					ExpressionStatement:panic("%s: Failed to allocate %lu bytes align=0x%lx\n",\t\t\t      __func__, size, align)
+						CallExpression:panic("%s: Failed to allocate %lu bytes align=0x%lx\n",\t\t\t      __func__, size, align)
+							Callee:panic
+								Identifier:panic
+							ArgumentList:"%s: Failed to allocate %lu bytes align=0x%lx\n"
+								Argument:"%s: Failed to allocate %lu bytes align=0x%lx\n"
+									Constant:"%s: Failed to allocate %lu bytes align=0x%lx\n"
+								Argument:__func__
+									Identifier:__func__
+								Argument:size
+									Identifier:size
+								Argument:align
+									Identifier:align
+		Statement:endif
+		ExpressionStatement:start &= PAGE_SECTION_MASK
+			AssignmentExpression:start &= PAGE_SECTION_MASK
+				Identifier:start
+				Identifier:PAGE_SECTION_MASK
+		ExpressionStatement:mminit_validate_memmodel_limits(&start, &end)
+			CallExpression:mminit_validate_memmodel_limits(&start, &end)
+				Callee:mminit_validate_memmodel_limits
+					Identifier:mminit_validate_memmodel_limits
+				ArgumentList:&start
+					Argument:&start
+						UnaryOperationExpression:&start
+							UnaryOperator:&
+							Identifier:start
+					Argument:&end
+						UnaryOperationExpression:&end
+							UnaryOperator:&
+							Identifier:end
+		ForStatement:for (pfn = start; pfn < end; pfn += PAGES_PER_SECTION)
+			ForInit:pfn = start;
+				AssignmentExpression:pfn = start
+					Identifier:pfn
+					Identifier:start
+			Condition:pfn < end
+				RelationalExpression:pfn < end
+					Identifier:pfn
+					Identifier:end
+			AssignmentExpression:pfn += PAGES_PER_SECTION
+				Identifier:pfn
+				Identifier:PAGES_PER_SECTION
+			CompoundStatement:
+				IdentifierDeclStatement:unsigned long section = pfn_to_section_nr(pfn);
+					IdentifierDecl:section = pfn_to_section_nr(pfn)
+						IdentifierDeclType:unsigned long
+						Identifier:section
+						AssignmentExpression:section = pfn_to_section_nr(pfn)
+							Identifier:section
+							CallExpression:pfn_to_section_nr(pfn)
+								Callee:pfn_to_section_nr
+									Identifier:pfn_to_section_nr
+								ArgumentList:pfn
+									Argument:pfn
+										Identifier:pfn
+				IdentifierDeclStatement:struct mem_section *ms;
+					IdentifierDecl:*ms
+						IdentifierDeclType:struct mem_section *
+						Identifier:ms
+				ExpressionStatement:sparse_index_init(section, nid)
+					CallExpression:sparse_index_init(section, nid)
+						Callee:sparse_index_init
+							Identifier:sparse_index_init
+						ArgumentList:section
+							Argument:section
+								Identifier:section
+							Argument:nid
+								Identifier:nid
+				ExpressionStatement:set_section_nid(section, nid)
+					CallExpression:set_section_nid(section, nid)
+						Callee:set_section_nid
+							Identifier:set_section_nid
+						ArgumentList:section
+							Argument:section
+								Identifier:section
+							Argument:nid
+								Identifier:nid
+				ExpressionStatement:ms = __nr_to_section(section)
+					AssignmentExpression:ms = __nr_to_section(section)
+						Identifier:ms
+						CallExpression:__nr_to_section(section)
+							Callee:__nr_to_section
+								Identifier:__nr_to_section
+							ArgumentList:section
+								Argument:section
+									Identifier:section
+				IfStatement:if (!ms->section_mem_map)
+					Condition:!ms->section_mem_map
+						UnaryOperationExpression:!ms->section_mem_map
+							UnaryOperator:!
+							PtrMemberAccess:ms->section_mem_map
+								Identifier:ms
+								Identifier:section_mem_map
+					CompoundStatement:
+						ExpressionStatement:ms->section_mem_map = sparse_encode_early_nid(nid) |\t\t\t\t\t\t\tSECTION_IS_ONLINE
+							AssignmentExpression:ms->section_mem_map = sparse_encode_early_nid(nid) |\t\t\t\t\t\t\tSECTION_IS_ONLINE
+								PtrMemberAccess:ms->section_mem_map
+									Identifier:ms
+									Identifier:section_mem_map
+								InclusiveOrExpression:sparse_encode_early_nid(nid) |\t\t\t\t\t\t\tSECTION_IS_ONLINE
+									CallExpression:sparse_encode_early_nid(nid)
+										Callee:sparse_encode_early_nid
+											Identifier:sparse_encode_early_nid
+										ArgumentList:nid
+											Argument:nid
+												Identifier:nid
+									Identifier:SECTION_IS_ONLINE
+						ExpressionStatement:section_mark_present(ms)
+							CallExpression:section_mark_present(ms)
+								Callee:section_mark_present
+									Identifier:section_mark_present
+								ArgumentList:ms
+									Argument:ms
+										Identifier:ms
+	ReturnType:void __init
+	Identifier:memory_present
+	ParameterList:int nid , unsigned long start , unsigned long end
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:unsigned long start
+			ParameterType:unsigned long
+			Identifier:start
+		Parameter:unsigned long end
+			ParameterType:unsigned long
+			Identifier:end
+FunctionDef:memblocks_present ()
+	CompoundStatement:
+		IdentifierDeclStatement:struct memblock_region *reg;
+			IdentifierDecl:*reg
+				IdentifierDeclType:struct memblock_region *
+				Identifier:reg
+		Statement:for_each_memblock
+		Statement:(
+		Statement:memory
+		Statement:,
+		Statement:reg
+		Statement:)
+		CompoundStatement:
+			ExpressionStatement:memory_present(memblock_get_region_node(reg),\t\t\t       memblock_region_memory_base_pfn(reg),\t\t\t       memblock_region_memory_end_pfn(reg))
+				CallExpression:memory_present(memblock_get_region_node(reg),\t\t\t       memblock_region_memory_base_pfn(reg),\t\t\t       memblock_region_memory_end_pfn(reg))
+					Callee:memory_present
+						Identifier:memory_present
+					ArgumentList:memblock_get_region_node(reg)
+						Argument:memblock_get_region_node(reg)
+							CallExpression:memblock_get_region_node(reg)
+								Callee:memblock_get_region_node
+									Identifier:memblock_get_region_node
+								ArgumentList:reg
+									Argument:reg
+										Identifier:reg
+						Argument:memblock_region_memory_base_pfn(reg)
+							CallExpression:memblock_region_memory_base_pfn(reg)
+								Callee:memblock_region_memory_base_pfn
+									Identifier:memblock_region_memory_base_pfn
+								ArgumentList:reg
+									Argument:reg
+										Identifier:reg
+						Argument:memblock_region_memory_end_pfn(reg)
+							CallExpression:memblock_region_memory_end_pfn(reg)
+								Callee:memblock_region_memory_end_pfn
+									Identifier:memblock_region_memory_end_pfn
+								ArgumentList:reg
+									Argument:reg
+										Identifier:reg
+	ReturnType:void __init
+	Identifier:memblocks_present
+	ParameterList:
+FunctionDef:sparse_encode_mem_map (struct page *mem_map , unsigned long pnum)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long coded_mem_map =\t\t(unsigned long)(mem_map - (section_nr_to_pfn(pnum)));
+			IdentifierDecl:coded_mem_map =\t\t(unsigned long)(mem_map - (section_nr_to_pfn(pnum)))
+				IdentifierDeclType:unsigned long
+				Identifier:coded_mem_map
+				AssignmentExpression:coded_mem_map =\t\t(unsigned long)(mem_map - (section_nr_to_pfn(pnum)))
+					Identifier:coded_mem_map
+					CastExpression:(unsigned long)(mem_map - (section_nr_to_pfn(pnum)))
+						CastTarget:unsigned long
+						AdditiveExpression:mem_map - (section_nr_to_pfn(pnum))
+							Identifier:mem_map
+							CallExpression:section_nr_to_pfn(pnum)
+								Callee:section_nr_to_pfn
+									Identifier:section_nr_to_pfn
+								ArgumentList:pnum
+									Argument:pnum
+										Identifier:pnum
+		ExpressionStatement:BUILD_BUG_ON(SECTION_MAP_LAST_BIT > (1UL<<PFN_SECTION_SHIFT))
+			CallExpression:BUILD_BUG_ON(SECTION_MAP_LAST_BIT > (1UL<<PFN_SECTION_SHIFT))
+				Callee:BUILD_BUG_ON
+					Identifier:BUILD_BUG_ON
+				ArgumentList:SECTION_MAP_LAST_BIT > (1UL<<PFN_SECTION_SHIFT)
+					Argument:SECTION_MAP_LAST_BIT > (1UL<<PFN_SECTION_SHIFT)
+						RelationalExpression:SECTION_MAP_LAST_BIT > (1UL<<PFN_SECTION_SHIFT)
+							Identifier:SECTION_MAP_LAST_BIT
+							ShiftExpression:1UL<<PFN_SECTION_SHIFT
+								Constant:1UL
+								Identifier:PFN_SECTION_SHIFT
+		ExpressionStatement:BUG_ON(coded_mem_map & ~SECTION_MAP_MASK)
+			CallExpression:BUG_ON(coded_mem_map & ~SECTION_MAP_MASK)
+				Callee:BUG_ON
+					Identifier:BUG_ON
+				ArgumentList:coded_mem_map & ~SECTION_MAP_MASK
+					Argument:coded_mem_map & ~SECTION_MAP_MASK
+						BitAndExpression:coded_mem_map & ~SECTION_MAP_MASK
+							Identifier:coded_mem_map
+							Identifier:~SECTION_MAP_MASK
+		ReturnStatement:return coded_mem_map;
+			Identifier:coded_mem_map
+	ReturnType:static unsigned long
+	Identifier:sparse_encode_mem_map
+	ParameterList:struct page *mem_map , unsigned long pnum
+		Parameter:struct page *mem_map
+			ParameterType:struct page *
+			Identifier:mem_map
+		Parameter:unsigned long pnum
+			ParameterType:unsigned long
+			Identifier:pnum
+FunctionDef:sparse_decode_mem_map (unsigned long coded_mem_map , unsigned long pnum)
+	CompoundStatement:
+		Statement:/* mask off the extra low bits of information */
+		ExpressionStatement:coded_mem_map &= SECTION_MAP_MASK
+			AssignmentExpression:coded_mem_map &= SECTION_MAP_MASK
+				Identifier:coded_mem_map
+				Identifier:SECTION_MAP_MASK
+		ReturnStatement:return ((struct page *)coded_mem_map) + section_nr_to_pfn(pnum);
+			AdditiveExpression:((struct page *)coded_mem_map) + section_nr_to_pfn(pnum)
+				CastExpression:(struct page *)coded_mem_map
+					CastTarget:struct page *
+					Identifier:coded_mem_map
+				CallExpression:section_nr_to_pfn(pnum)
+					Callee:section_nr_to_pfn
+						Identifier:section_nr_to_pfn
+					ArgumentList:pnum
+						Argument:pnum
+							Identifier:pnum
+	ReturnType:struct page *
+	Identifier:sparse_decode_mem_map
+	ParameterList:unsigned long coded_mem_map , unsigned long pnum
+		Parameter:unsigned long coded_mem_map
+			ParameterType:unsigned long
+			Identifier:coded_mem_map
+		Parameter:unsigned long pnum
+			ParameterType:unsigned long
+			Identifier:pnum
+FunctionDef:sparse_init_one_section (struct mem_section *ms , unsigned long pnum , struct page *mem_map , struct mem_section_usage *usage , unsigned long flags)
+	CompoundStatement:
+		ExpressionStatement:ms->section_mem_map &= ~SECTION_MAP_MASK
+			AssignmentExpression:ms->section_mem_map &= ~SECTION_MAP_MASK
+				PtrMemberAccess:ms->section_mem_map
+					Identifier:ms
+					Identifier:section_mem_map
+				Identifier:~SECTION_MAP_MASK
+		ExpressionStatement:ms->section_mem_map |= sparse_encode_mem_map(mem_map, pnum)\t\t| SECTION_HAS_MEM_MAP | flags
+			AssignmentExpression:ms->section_mem_map |= sparse_encode_mem_map(mem_map, pnum)\t\t| SECTION_HAS_MEM_MAP | flags
+				PtrMemberAccess:ms->section_mem_map
+					Identifier:ms
+					Identifier:section_mem_map
+				InclusiveOrExpression:sparse_encode_mem_map(mem_map, pnum)\t\t| SECTION_HAS_MEM_MAP | flags
+					CallExpression:sparse_encode_mem_map(mem_map, pnum)
+						Callee:sparse_encode_mem_map
+							Identifier:sparse_encode_mem_map
+						ArgumentList:mem_map
+							Argument:mem_map
+								Identifier:mem_map
+							Argument:pnum
+								Identifier:pnum
+					InclusiveOrExpression:SECTION_HAS_MEM_MAP | flags
+						Identifier:SECTION_HAS_MEM_MAP
+						Identifier:flags
+		ExpressionStatement:ms->usage = usage
+			AssignmentExpression:ms->usage = usage
+				PtrMemberAccess:ms->usage
+					Identifier:ms
+					Identifier:usage
+				Identifier:usage
+	ReturnType:static void __meminit
+	Identifier:sparse_init_one_section
+	ParameterList:struct mem_section *ms , unsigned long pnum , struct page *mem_map , struct mem_section_usage *usage , unsigned long flags
+		Parameter:struct mem_section *ms
+			ParameterType:struct mem_section *
+			Identifier:ms
+		Parameter:unsigned long pnum
+			ParameterType:unsigned long
+			Identifier:pnum
+		Parameter:struct page *mem_map
+			ParameterType:struct page *
+			Identifier:mem_map
+		Parameter:struct mem_section_usage *usage
+			ParameterType:struct mem_section_usage *
+			Identifier:usage
+		Parameter:unsigned long flags
+			ParameterType:unsigned long
+			Identifier:flags
+FunctionDef:usemap_size ()
+	CompoundStatement:
+		ReturnStatement:return BITS_TO_LONGS(SECTION_BLOCKFLAGS_BITS) * sizeof(unsigned long);
+			MultiplicativeExpression:BITS_TO_LONGS(SECTION_BLOCKFLAGS_BITS) * sizeof(unsigned long)
+				CallExpression:BITS_TO_LONGS(SECTION_BLOCKFLAGS_BITS)
+					Callee:BITS_TO_LONGS
+						Identifier:BITS_TO_LONGS
+					ArgumentList:SECTION_BLOCKFLAGS_BITS
+						Argument:SECTION_BLOCKFLAGS_BITS
+							Identifier:SECTION_BLOCKFLAGS_BITS
+				SizeofExpression:sizeof(unsigned long)
+					Sizeof:sizeof
+					SizeofOperand:unsigned long
+	ReturnType:static unsigned long
+	Identifier:usemap_size
+	ParameterList:
+FunctionDef:mem_section_usage_size ()
+	CompoundStatement:
+		ReturnStatement:return sizeof(struct mem_section_usage) + usemap_size();
+			AdditiveExpression:sizeof(struct mem_section_usage) + usemap_size()
+				SizeofExpression:sizeof(struct mem_section_usage)
+					Sizeof:sizeof
+					SizeofOperand:struct mem_section_usage
+				CallExpression:usemap_size()
+					Callee:usemap_size
+						Identifier:usemap_size
+					ArgumentList:
+	ReturnType:size_t
+	Identifier:mem_section_usage_size
+	ParameterList:
+FunctionDef:__initsparse_early_usemaps_alloc_pgdat_section (struct pglist_data *pgdat , unsigned long size)
+	CompoundStatement:
+		IdentifierDeclStatement:struct mem_section_usage *usage;
+			IdentifierDecl:*usage
+				IdentifierDeclType:struct mem_section_usage *
+				Identifier:usage
+		IdentifierDeclStatement:unsigned long goal, limit;
+			IdentifierDecl:goal
+				IdentifierDeclType:unsigned long
+				Identifier:goal
+			IdentifierDecl:limit
+				IdentifierDeclType:unsigned long
+				Identifier:limit
+		IdentifierDeclStatement:int nid;
+			IdentifierDecl:nid
+				IdentifierDeclType:int
+				Identifier:nid
+		Statement:/*\t * A page may contain usemaps for other sections preventing the\t * page being freed and making a section unremovable while\t * other sections referencing the usemap remain active. Similarly,\t * a pgdat can prevent a section being removed. If section A\t * contains a pgdat and section B contains the usemap, both\t * sections become inter-dependent. This allocates usemaps\t * from the same section as the pgdat where possible to avoid\t * this problem.\t */
+		ExpressionStatement:goal = __pa(pgdat) & (PAGE_SECTION_MASK << PAGE_SHIFT)
+			AssignmentExpression:goal = __pa(pgdat) & (PAGE_SECTION_MASK << PAGE_SHIFT)
+				Identifier:goal
+				BitAndExpression:__pa(pgdat) & (PAGE_SECTION_MASK << PAGE_SHIFT)
+					CallExpression:__pa(pgdat)
+						Callee:__pa
+							Identifier:__pa
+						ArgumentList:pgdat
+							Argument:pgdat
+								Identifier:pgdat
+					ShiftExpression:PAGE_SECTION_MASK << PAGE_SHIFT
+						Identifier:PAGE_SECTION_MASK
+						Identifier:PAGE_SHIFT
+		ExpressionStatement:limit = goal + (1UL << PA_SECTION_SHIFT)
+			AssignmentExpression:limit = goal + (1UL << PA_SECTION_SHIFT)
+				Identifier:limit
+				AdditiveExpression:goal + (1UL << PA_SECTION_SHIFT)
+					Identifier:goal
+					ShiftExpression:1UL << PA_SECTION_SHIFT
+						Constant:1UL
+						Identifier:PA_SECTION_SHIFT
+		ExpressionStatement:nid = early_pfn_to_nid(goal >> PAGE_SHIFT)
+			AssignmentExpression:nid = early_pfn_to_nid(goal >> PAGE_SHIFT)
+				Identifier:nid
+				CallExpression:early_pfn_to_nid(goal >> PAGE_SHIFT)
+					Callee:early_pfn_to_nid
+						Identifier:early_pfn_to_nid
+					ArgumentList:goal >> PAGE_SHIFT
+						Argument:goal >> PAGE_SHIFT
+							ShiftExpression:goal >> PAGE_SHIFT
+								Identifier:goal
+								Identifier:PAGE_SHIFT
+		Label:again:
+			Identifier:again
+		ExpressionStatement:usage = memblock_alloc_try_nid(size, SMP_CACHE_BYTES, goal, limit, nid)
+			AssignmentExpression:usage = memblock_alloc_try_nid(size, SMP_CACHE_BYTES, goal, limit, nid)
+				Identifier:usage
+				CallExpression:memblock_alloc_try_nid(size, SMP_CACHE_BYTES, goal, limit, nid)
+					Callee:memblock_alloc_try_nid
+						Identifier:memblock_alloc_try_nid
+					ArgumentList:size
+						Argument:size
+							Identifier:size
+						Argument:SMP_CACHE_BYTES
+							Identifier:SMP_CACHE_BYTES
+						Argument:goal
+							Identifier:goal
+						Argument:limit
+							Identifier:limit
+						Argument:nid
+							Identifier:nid
+		IfStatement:if (!usage && limit)
+			Condition:!usage && limit
+				AndExpression:!usage && limit
+					UnaryOperationExpression:!usage
+						UnaryOperator:!
+						Identifier:usage
+					Identifier:limit
+			CompoundStatement:
+				ExpressionStatement:limit = 0
+					AssignmentExpression:limit = 0
+						Identifier:limit
+						Constant:0
+				GotoStatement:goto again;
+					Identifier:again
+		ReturnStatement:return usage;
+			Identifier:usage
+	ReturnType:struct mem_section_usage *
+	Identifier:__initsparse_early_usemaps_alloc_pgdat_section
+	ParameterList:struct pglist_data *pgdat , unsigned long size
+		Parameter:struct pglist_data *pgdat
+			ParameterType:struct pglist_data *
+			Identifier:pgdat
+		Parameter:unsigned long size
+			ParameterType:unsigned long
+			Identifier:size
+FunctionDef:check_usemap_section_nr (int nid , struct mem_section_usage *usage)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long usemap_snr, pgdat_snr;
+			IdentifierDecl:usemap_snr
+				IdentifierDeclType:unsigned long
+				Identifier:usemap_snr
+			IdentifierDecl:pgdat_snr
+				IdentifierDeclType:unsigned long
+				Identifier:pgdat_snr
+		Statement:static
+		IdentifierDeclStatement:unsigned long old_usemap_snr;
+			IdentifierDecl:old_usemap_snr
+				IdentifierDeclType:unsigned long
+				Identifier:old_usemap_snr
+		Statement:static
+		IdentifierDeclStatement:unsigned long old_pgdat_snr;
+			IdentifierDecl:old_pgdat_snr
+				IdentifierDeclType:unsigned long
+				Identifier:old_pgdat_snr
+		IdentifierDeclStatement:struct pglist_data *pgdat = NODE_DATA(nid);
+			IdentifierDecl:*pgdat = NODE_DATA(nid)
+				IdentifierDeclType:struct pglist_data *
+				Identifier:pgdat
+				AssignmentExpression:*pgdat = NODE_DATA(nid)
+					Identifier:pgdat
+					CallExpression:NODE_DATA(nid)
+						Callee:NODE_DATA
+							Identifier:NODE_DATA
+						ArgumentList:nid
+							Argument:nid
+								Identifier:nid
+		IdentifierDeclStatement:int usemap_nid;
+			IdentifierDecl:usemap_nid
+				IdentifierDeclType:int
+				Identifier:usemap_nid
+		Statement:/* First call */
+		IfStatement:if (!old_usemap_snr)
+			Condition:!old_usemap_snr
+				UnaryOperationExpression:!old_usemap_snr
+					UnaryOperator:!
+					Identifier:old_usemap_snr
+			CompoundStatement:
+				ExpressionStatement:old_usemap_snr = NR_MEM_SECTIONS
+					AssignmentExpression:old_usemap_snr = NR_MEM_SECTIONS
+						Identifier:old_usemap_snr
+						Identifier:NR_MEM_SECTIONS
+				ExpressionStatement:old_pgdat_snr = NR_MEM_SECTIONS
+					AssignmentExpression:old_pgdat_snr = NR_MEM_SECTIONS
+						Identifier:old_pgdat_snr
+						Identifier:NR_MEM_SECTIONS
+		ExpressionStatement:usemap_snr = pfn_to_section_nr(__pa(usage) >> PAGE_SHIFT)
+			AssignmentExpression:usemap_snr = pfn_to_section_nr(__pa(usage) >> PAGE_SHIFT)
+				Identifier:usemap_snr
+				CallExpression:pfn_to_section_nr(__pa(usage) >> PAGE_SHIFT)
+					Callee:pfn_to_section_nr
+						Identifier:pfn_to_section_nr
+					ArgumentList:__pa(usage) >> PAGE_SHIFT
+						Argument:__pa(usage) >> PAGE_SHIFT
+							ShiftExpression:__pa(usage) >> PAGE_SHIFT
+								CallExpression:__pa(usage)
+									Callee:__pa
+										Identifier:__pa
+									ArgumentList:usage
+										Argument:usage
+											Identifier:usage
+								Identifier:PAGE_SHIFT
+		ExpressionStatement:pgdat_snr = pfn_to_section_nr(__pa(pgdat) >> PAGE_SHIFT)
+			AssignmentExpression:pgdat_snr = pfn_to_section_nr(__pa(pgdat) >> PAGE_SHIFT)
+				Identifier:pgdat_snr
+				CallExpression:pfn_to_section_nr(__pa(pgdat) >> PAGE_SHIFT)
+					Callee:pfn_to_section_nr
+						Identifier:pfn_to_section_nr
+					ArgumentList:__pa(pgdat) >> PAGE_SHIFT
+						Argument:__pa(pgdat) >> PAGE_SHIFT
+							ShiftExpression:__pa(pgdat) >> PAGE_SHIFT
+								CallExpression:__pa(pgdat)
+									Callee:__pa
+										Identifier:__pa
+									ArgumentList:pgdat
+										Argument:pgdat
+											Identifier:pgdat
+								Identifier:PAGE_SHIFT
+		IfStatement:if (usemap_snr == pgdat_snr)
+			Condition:usemap_snr == pgdat_snr
+				EqualityExpression:usemap_snr == pgdat_snr
+					Identifier:usemap_snr
+					Identifier:pgdat_snr
+			ReturnStatement:return;
+		IfStatement:if (old_usemap_snr == usemap_snr && old_pgdat_snr == pgdat_snr)
+			Condition:old_usemap_snr == usemap_snr && old_pgdat_snr == pgdat_snr
+				AndExpression:old_usemap_snr == usemap_snr && old_pgdat_snr == pgdat_snr
+					EqualityExpression:old_usemap_snr == usemap_snr
+						Identifier:old_usemap_snr
+						Identifier:usemap_snr
+					EqualityExpression:old_pgdat_snr == pgdat_snr
+						Identifier:old_pgdat_snr
+						Identifier:pgdat_snr
+			Statement:/* skip redundant message */
+		ReturnStatement:return;
+		ExpressionStatement:old_usemap_snr = usemap_snr
+			AssignmentExpression:old_usemap_snr = usemap_snr
+				Identifier:old_usemap_snr
+				Identifier:usemap_snr
+		ExpressionStatement:old_pgdat_snr = pgdat_snr
+			AssignmentExpression:old_pgdat_snr = pgdat_snr
+				Identifier:old_pgdat_snr
+				Identifier:pgdat_snr
+		ExpressionStatement:usemap_nid = sparse_early_nid(__nr_to_section(usemap_snr))
+			AssignmentExpression:usemap_nid = sparse_early_nid(__nr_to_section(usemap_snr))
+				Identifier:usemap_nid
+				CallExpression:sparse_early_nid(__nr_to_section(usemap_snr))
+					Callee:sparse_early_nid
+						Identifier:sparse_early_nid
+					ArgumentList:__nr_to_section(usemap_snr)
+						Argument:__nr_to_section(usemap_snr)
+							CallExpression:__nr_to_section(usemap_snr)
+								Callee:__nr_to_section
+									Identifier:__nr_to_section
+								ArgumentList:usemap_snr
+									Argument:usemap_snr
+										Identifier:usemap_snr
+		IfStatement:if (usemap_nid != nid)
+			Condition:usemap_nid != nid
+				EqualityExpression:usemap_nid != nid
+					Identifier:usemap_nid
+					Identifier:nid
+			CompoundStatement:
+				ExpressionStatement:pr_info("node %d must be removed before remove section %ld\n",\t\t\tnid, usemap_snr)
+					CallExpression:pr_info("node %d must be removed before remove section %ld\n",\t\t\tnid, usemap_snr)
+						Callee:pr_info
+							Identifier:pr_info
+						ArgumentList:"node %d must be removed before remove section %ld\n"
+							Argument:"node %d must be removed before remove section %ld\n"
+								Constant:"node %d must be removed before remove section %ld\n"
+							Argument:nid
+								Identifier:nid
+							Argument:usemap_snr
+								Identifier:usemap_snr
+				ReturnStatement:return;
+		Statement:/*\t * There is a circular dependency.\t * Some platforms allow un-removable section because they will just\t * gather other removable sections for dynamic partitioning.\t * Just notify un-removable section's number here.\t */
+		ExpressionStatement:pr_info("Section %ld and %ld (node %d) have a circular dependency on usemap and pgdat allocations\n",\t\tusemap_snr, pgdat_snr, nid)
+			CallExpression:pr_info("Section %ld and %ld (node %d) have a circular dependency on usemap and pgdat allocations\n",\t\tusemap_snr, pgdat_snr, nid)
+				Callee:pr_info
+					Identifier:pr_info
+				ArgumentList:"Section %ld and %ld (node %d) have a circular dependency on usemap and pgdat allocations\n"
+					Argument:"Section %ld and %ld (node %d) have a circular dependency on usemap and pgdat allocations\n"
+						Constant:"Section %ld and %ld (node %d) have a circular dependency on usemap and pgdat allocations\n"
+					Argument:usemap_snr
+						Identifier:usemap_snr
+					Argument:pgdat_snr
+						Identifier:pgdat_snr
+					Argument:nid
+						Identifier:nid
+	ReturnType:static void __init
+	Identifier:check_usemap_section_nr
+	ParameterList:int nid , struct mem_section_usage *usage
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:struct mem_section_usage *usage
+			ParameterType:struct mem_section_usage *
+			Identifier:usage
+FunctionDef:__initsparse_early_usemaps_alloc_pgdat_section (struct pglist_data *pgdat , unsigned long size)
+	CompoundStatement:
+		ReturnStatement:return memblock_alloc_node(size, SMP_CACHE_BYTES, pgdat->node_id);
+			CallExpression:memblock_alloc_node(size, SMP_CACHE_BYTES, pgdat->node_id)
+				Callee:memblock_alloc_node
+					Identifier:memblock_alloc_node
+				ArgumentList:size
+					Argument:size
+						Identifier:size
+					Argument:SMP_CACHE_BYTES
+						Identifier:SMP_CACHE_BYTES
+					Argument:pgdat->node_id
+						PtrMemberAccess:pgdat->node_id
+							Identifier:pgdat
+							Identifier:node_id
+	ReturnType:struct mem_section_usage *
+	Identifier:__initsparse_early_usemaps_alloc_pgdat_section
+	ParameterList:struct pglist_data *pgdat , unsigned long size
+		Parameter:struct pglist_data *pgdat
+			ParameterType:struct pglist_data *
+			Identifier:pgdat
+		Parameter:unsigned long size
+			ParameterType:unsigned long
+			Identifier:size
+FunctionDef:check_usemap_section_nr (int nid , struct mem_section_usage *usage)
+	CompoundStatement:
+	ReturnType:static void __init
+	Identifier:check_usemap_section_nr
+	ParameterList:int nid , struct mem_section_usage *usage
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:struct mem_section_usage *usage
+			ParameterType:struct mem_section_usage *
+			Identifier:usage
+FunctionDef:section_map_size ()
+	CompoundStatement:
+		ReturnStatement:return ALIGN(sizeof(struct page) * PAGES_PER_SECTION, PMD_SIZE);
+			CallExpression:ALIGN(sizeof(struct page) * PAGES_PER_SECTION, PMD_SIZE)
+				Callee:ALIGN
+					Identifier:ALIGN
+				ArgumentList:sizeof(struct page) * PAGES_PER_SECTION
+					Argument:sizeof(struct page) * PAGES_PER_SECTION
+						MultiplicativeExpression:sizeof(struct page) * PAGES_PER_SECTION
+							SizeofExpression:sizeof(struct page)
+								Sizeof:sizeof
+								SizeofOperand:struct page
+							Identifier:PAGES_PER_SECTION
+					Argument:PMD_SIZE
+						Identifier:PMD_SIZE
+	ReturnType:unsigned long __init
+	Identifier:section_map_size
+	ParameterList:
+FunctionDef:section_map_size ()
+	CompoundStatement:
+		ReturnStatement:return PAGE_ALIGN(sizeof(struct page) * PAGES_PER_SECTION);
+			CallExpression:PAGE_ALIGN(sizeof(struct page) * PAGES_PER_SECTION)
+				Callee:PAGE_ALIGN
+					Identifier:PAGE_ALIGN
+				ArgumentList:sizeof(struct page) * PAGES_PER_SECTION
+					Argument:sizeof(struct page) * PAGES_PER_SECTION
+						MultiplicativeExpression:sizeof(struct page) * PAGES_PER_SECTION
+							SizeofExpression:sizeof(struct page)
+								Sizeof:sizeof
+								SizeofOperand:struct page
+							Identifier:PAGES_PER_SECTION
+	ReturnType:unsigned long __init
+	Identifier:section_map_size
+	ParameterList:
+FunctionDef:__populate_section_memmap (unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long size = section_map_size();
+			IdentifierDecl:size = section_map_size()
+				IdentifierDeclType:unsigned long
+				Identifier:size
+				AssignmentExpression:size = section_map_size()
+					Identifier:size
+					CallExpression:section_map_size()
+						Callee:section_map_size
+							Identifier:section_map_size
+						ArgumentList:
+		IdentifierDeclStatement:struct page *map = sparse_buffer_alloc(size);
+			IdentifierDecl:*map = sparse_buffer_alloc(size)
+				IdentifierDeclType:struct page *
+				Identifier:map
+				AssignmentExpression:*map = sparse_buffer_alloc(size)
+					Identifier:map
+					CallExpression:sparse_buffer_alloc(size)
+						Callee:sparse_buffer_alloc
+							Identifier:sparse_buffer_alloc
+						ArgumentList:size
+							Argument:size
+								Identifier:size
+		IdentifierDeclStatement:phys_addr_t addr = __pa(MAX_DMA_ADDRESS);
+			IdentifierDecl:addr = __pa(MAX_DMA_ADDRESS)
+				IdentifierDeclType:phys_addr_t
+				Identifier:addr
+				AssignmentExpression:addr = __pa(MAX_DMA_ADDRESS)
+					Identifier:addr
+					CallExpression:__pa(MAX_DMA_ADDRESS)
+						Callee:__pa
+							Identifier:__pa
+						ArgumentList:MAX_DMA_ADDRESS
+							Argument:MAX_DMA_ADDRESS
+								Identifier:MAX_DMA_ADDRESS
+		IfStatement:if (map)
+			Condition:map
+				Identifier:map
+			ReturnStatement:return map;
+				Identifier:map
+		ExpressionStatement:map = memblock_alloc_try_nid(size,\t\t\t\t\t  PAGE_SIZE, addr,\t\t\t\t\t  MEMBLOCK_ALLOC_ACCESSIBLE, nid)
+			AssignmentExpression:map = memblock_alloc_try_nid(size,\t\t\t\t\t  PAGE_SIZE, addr,\t\t\t\t\t  MEMBLOCK_ALLOC_ACCESSIBLE, nid)
+				Identifier:map
+				CallExpression:memblock_alloc_try_nid(size,\t\t\t\t\t  PAGE_SIZE, addr,\t\t\t\t\t  MEMBLOCK_ALLOC_ACCESSIBLE, nid)
+					Callee:memblock_alloc_try_nid
+						Identifier:memblock_alloc_try_nid
+					ArgumentList:size
+						Argument:size
+							Identifier:size
+						Argument:PAGE_SIZE
+							Identifier:PAGE_SIZE
+						Argument:addr
+							Identifier:addr
+						Argument:MEMBLOCK_ALLOC_ACCESSIBLE
+							Identifier:MEMBLOCK_ALLOC_ACCESSIBLE
+						Argument:nid
+							Identifier:nid
+		IfStatement:if (!map)
+			Condition:!map
+				UnaryOperationExpression:!map
+					UnaryOperator:!
+					Identifier:map
+			ExpressionStatement:panic("%s: Failed to allocate %lu bytes align=0x%lx nid=%d from=%pa\n",\t\t      __func__, size, PAGE_SIZE, nid, &addr)
+				CallExpression:panic("%s: Failed to allocate %lu bytes align=0x%lx nid=%d from=%pa\n",\t\t      __func__, size, PAGE_SIZE, nid, &addr)
+					Callee:panic
+						Identifier:panic
+					ArgumentList:"%s: Failed to allocate %lu bytes align=0x%lx nid=%d from=%pa\n"
+						Argument:"%s: Failed to allocate %lu bytes align=0x%lx nid=%d from=%pa\n"
+							Constant:"%s: Failed to allocate %lu bytes align=0x%lx nid=%d from=%pa\n"
+						Argument:__func__
+							Identifier:__func__
+						Argument:size
+							Identifier:size
+						Argument:PAGE_SIZE
+							Identifier:PAGE_SIZE
+						Argument:nid
+							Identifier:nid
+						Argument:&addr
+							UnaryOperationExpression:&addr
+								UnaryOperator:&
+								Identifier:addr
+		ReturnStatement:return map;
+			Identifier:map
+	ReturnType:struct page __init *
+	Identifier:__populate_section_memmap
+	ParameterList:unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+IdentifierDeclStatement:null
+	IdentifierDecl:__meminitdata
+		IdentifierDeclType:sparsemap_buf
+		Identifier:__meminitdata
+IdentifierDeclStatement:null
+	IdentifierDecl:__meminitdata
+		IdentifierDeclType:sparsemap_buf_end
+		Identifier:__meminitdata
+FunctionDef:sparse_buffer_init (unsigned long size , int nid)
+	CompoundStatement:
+		IdentifierDeclStatement:phys_addr_t addr = __pa(MAX_DMA_ADDRESS);
+			IdentifierDecl:addr = __pa(MAX_DMA_ADDRESS)
+				IdentifierDeclType:phys_addr_t
+				Identifier:addr
+				AssignmentExpression:addr = __pa(MAX_DMA_ADDRESS)
+					Identifier:addr
+					CallExpression:__pa(MAX_DMA_ADDRESS)
+						Callee:__pa
+							Identifier:__pa
+						ArgumentList:MAX_DMA_ADDRESS
+							Argument:MAX_DMA_ADDRESS
+								Identifier:MAX_DMA_ADDRESS
+		ExpressionStatement:WARN_ON(sparsemap_buf)
+			CallExpression:WARN_ON(sparsemap_buf)
+				Callee:WARN_ON
+					Identifier:WARN_ON
+				ArgumentList:sparsemap_buf
+					Argument:sparsemap_buf
+						Identifier:sparsemap_buf
+		Statement:/* forgot to call sparse_buffer_fini()? */
+		ExpressionStatement:sparsemap_buf =\t\tmemblock_alloc_try_nid_raw(size, PAGE_SIZE,\t\t\t\t\t\taddr,\t\t\t\t\t\tMEMBLOCK_ALLOC_ACCESSIBLE, nid)
+			AssignmentExpression:sparsemap_buf =\t\tmemblock_alloc_try_nid_raw(size, PAGE_SIZE,\t\t\t\t\t\taddr,\t\t\t\t\t\tMEMBLOCK_ALLOC_ACCESSIBLE, nid)
+				Identifier:sparsemap_buf
+				CallExpression:memblock_alloc_try_nid_raw(size, PAGE_SIZE,\t\t\t\t\t\taddr,\t\t\t\t\t\tMEMBLOCK_ALLOC_ACCESSIBLE, nid)
+					Callee:memblock_alloc_try_nid_raw
+						Identifier:memblock_alloc_try_nid_raw
+					ArgumentList:size
+						Argument:size
+							Identifier:size
+						Argument:PAGE_SIZE
+							Identifier:PAGE_SIZE
+						Argument:addr
+							Identifier:addr
+						Argument:MEMBLOCK_ALLOC_ACCESSIBLE
+							Identifier:MEMBLOCK_ALLOC_ACCESSIBLE
+						Argument:nid
+							Identifier:nid
+		ExpressionStatement:sparsemap_buf_end = sparsemap_buf + size
+			AssignmentExpression:sparsemap_buf_end = sparsemap_buf + size
+				Identifier:sparsemap_buf_end
+				AdditiveExpression:sparsemap_buf + size
+					Identifier:sparsemap_buf
+					Identifier:size
+	ReturnType:static void __init
+	Identifier:sparse_buffer_init
+	ParameterList:unsigned long size , int nid
+		Parameter:unsigned long size
+			ParameterType:unsigned long
+			Identifier:size
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+FunctionDef:sparse_buffer_fini ()
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long size = sparsemap_buf_end - sparsemap_buf;
+			IdentifierDecl:size = sparsemap_buf_end - sparsemap_buf
+				IdentifierDeclType:unsigned long
+				Identifier:size
+				AssignmentExpression:size = sparsemap_buf_end - sparsemap_buf
+					Identifier:size
+					AdditiveExpression:sparsemap_buf_end - sparsemap_buf
+						Identifier:sparsemap_buf_end
+						Identifier:sparsemap_buf
+		IfStatement:if (sparsemap_buf && size > 0)
+			Condition:sparsemap_buf && size > 0
+				AndExpression:sparsemap_buf && size > 0
+					Identifier:sparsemap_buf
+					RelationalExpression:size > 0
+						Identifier:size
+						Constant:0
+			ExpressionStatement:memblock_free_early(__pa(sparsemap_buf), size)
+				CallExpression:memblock_free_early(__pa(sparsemap_buf), size)
+					Callee:memblock_free_early
+						Identifier:memblock_free_early
+					ArgumentList:__pa(sparsemap_buf)
+						Argument:__pa(sparsemap_buf)
+							CallExpression:__pa(sparsemap_buf)
+								Callee:__pa
+									Identifier:__pa
+								ArgumentList:sparsemap_buf
+									Argument:sparsemap_buf
+										Identifier:sparsemap_buf
+						Argument:size
+							Identifier:size
+		ExpressionStatement:sparsemap_buf = NULL
+			AssignmentExpression:sparsemap_buf = NULL
+				Identifier:sparsemap_buf
+				Identifier:NULL
+	ReturnType:static void __init
+	Identifier:sparse_buffer_fini
+	ParameterList:
+FunctionDef:sparse_buffer_alloc (unsigned long size)
+	CompoundStatement:
+		IdentifierDeclStatement:void *ptr = NULL;
+			IdentifierDecl:*ptr = NULL
+				IdentifierDeclType:void *
+				Identifier:ptr
+				AssignmentExpression:*ptr = NULL
+					Identifier:ptr
+					Identifier:NULL
+		IfStatement:if (sparsemap_buf)
+			Condition:sparsemap_buf
+				Identifier:sparsemap_buf
+			CompoundStatement:
+				ExpressionStatement:ptr = PTR_ALIGN(sparsemap_buf, size)
+					AssignmentExpression:ptr = PTR_ALIGN(sparsemap_buf, size)
+						Identifier:ptr
+						CallExpression:PTR_ALIGN(sparsemap_buf, size)
+							Callee:PTR_ALIGN
+								Identifier:PTR_ALIGN
+							ArgumentList:sparsemap_buf
+								Argument:sparsemap_buf
+									Identifier:sparsemap_buf
+								Argument:size
+									Identifier:size
+				IfStatement:if (ptr + size > sparsemap_buf_end)
+					Condition:ptr + size > sparsemap_buf_end
+						RelationalExpression:ptr + size > sparsemap_buf_end
+							AdditiveExpression:ptr + size
+								Identifier:ptr
+								Identifier:size
+							Identifier:sparsemap_buf_end
+					ExpressionStatement:ptr = NULL
+						AssignmentExpression:ptr = NULL
+							Identifier:ptr
+							Identifier:NULL
+		ReturnStatement:return ptr;
+			Identifier:ptr
+	ReturnType:__meminit
+	Identifier:sparse_buffer_alloc
+	ParameterList:unsigned long size
+		Parameter:unsigned long size
+			ParameterType:unsigned long
+			Identifier:size
+FunctionDef:vmemmap_populate_print_last ()
+	CompoundStatement:
+	ReturnType:void __weak __meminit
+	Identifier:vmemmap_populate_print_last
+	ParameterList:
+FunctionDef:sparse_init_nid (int nid , unsigned long pnum_begin , unsigned long pnum_end , unsigned long map_count)
+	CompoundStatement:
+		IdentifierDeclStatement:struct mem_section_usage *usage;
+			IdentifierDecl:*usage
+				IdentifierDeclType:struct mem_section_usage *
+				Identifier:usage
+		IdentifierDeclStatement:unsigned long pnum;
+			IdentifierDecl:pnum
+				IdentifierDeclType:unsigned long
+				Identifier:pnum
+		IdentifierDeclStatement:struct page *map;
+			IdentifierDecl:*map
+				IdentifierDeclType:struct page *
+				Identifier:map
+		ExpressionStatement:usage = sparse_early_usemaps_alloc_pgdat_section(NODE_DATA(nid),\t\t\tmem_section_usage_size() * map_count)
+			AssignmentExpression:usage = sparse_early_usemaps_alloc_pgdat_section(NODE_DATA(nid),\t\t\tmem_section_usage_size() * map_count)
+				Identifier:usage
+				CallExpression:sparse_early_usemaps_alloc_pgdat_section(NODE_DATA(nid),\t\t\tmem_section_usage_size() * map_count)
+					Callee:sparse_early_usemaps_alloc_pgdat_section
+						Identifier:sparse_early_usemaps_alloc_pgdat_section
+					ArgumentList:NODE_DATA(nid)
+						Argument:NODE_DATA(nid)
+							CallExpression:NODE_DATA(nid)
+								Callee:NODE_DATA
+									Identifier:NODE_DATA
+								ArgumentList:nid
+									Argument:nid
+										Identifier:nid
+						Argument:mem_section_usage_size() * map_count
+							MultiplicativeExpression:mem_section_usage_size() * map_count
+								CallExpression:mem_section_usage_size()
+									Callee:mem_section_usage_size
+										Identifier:mem_section_usage_size
+									ArgumentList:
+								Identifier:map_count
+		IfStatement:if (!usage)
+			Condition:!usage
+				UnaryOperationExpression:!usage
+					UnaryOperator:!
+					Identifier:usage
+			CompoundStatement:
+				ExpressionStatement:pr_err("%s: node[%d] usemap allocation failed", __func__, nid)
+					CallExpression:pr_err("%s: node[%d] usemap allocation failed", __func__, nid)
+						Callee:pr_err
+							Identifier:pr_err
+						ArgumentList:"%s: node[%d] usemap allocation failed"
+							Argument:"%s: node[%d] usemap allocation failed"
+								Constant:"%s: node[%d] usemap allocation failed"
+							Argument:__func__
+								Identifier:__func__
+							Argument:nid
+								Identifier:nid
+				GotoStatement:goto failed;
+					Identifier:failed
+		ExpressionStatement:sparse_buffer_init(map_count * section_map_size(), nid)
+			CallExpression:sparse_buffer_init(map_count * section_map_size(), nid)
+				Callee:sparse_buffer_init
+					Identifier:sparse_buffer_init
+				ArgumentList:map_count * section_map_size()
+					Argument:map_count * section_map_size()
+						MultiplicativeExpression:map_count * section_map_size()
+							Identifier:map_count
+							CallExpression:section_map_size()
+								Callee:section_map_size
+									Identifier:section_map_size
+								ArgumentList:
+					Argument:nid
+						Identifier:nid
+		Statement:for_each_present_section_nr
+		Statement:(
+		Statement:pnum_begin
+		Statement:,
+		Statement:pnum
+		Statement:)
+		CompoundStatement:
+			IdentifierDeclStatement:unsigned long pfn = section_nr_to_pfn(pnum);
+				IdentifierDecl:pfn = section_nr_to_pfn(pnum)
+					IdentifierDeclType:unsigned long
+					Identifier:pfn
+					AssignmentExpression:pfn = section_nr_to_pfn(pnum)
+						Identifier:pfn
+						CallExpression:section_nr_to_pfn(pnum)
+							Callee:section_nr_to_pfn
+								Identifier:section_nr_to_pfn
+							ArgumentList:pnum
+								Argument:pnum
+									Identifier:pnum
+			IfStatement:if (pnum >= pnum_end)
+				Condition:pnum >= pnum_end
+					RelationalExpression:pnum >= pnum_end
+						Identifier:pnum
+						Identifier:pnum_end
+				BreakStatement:break;
+			ExpressionStatement:map = __populate_section_memmap(pfn, PAGES_PER_SECTION,\t\t\t\tnid, NULL)
+				AssignmentExpression:map = __populate_section_memmap(pfn, PAGES_PER_SECTION,\t\t\t\tnid, NULL)
+					Identifier:map
+					CallExpression:__populate_section_memmap(pfn, PAGES_PER_SECTION,\t\t\t\tnid, NULL)
+						Callee:__populate_section_memmap
+							Identifier:__populate_section_memmap
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+							Argument:PAGES_PER_SECTION
+								Identifier:PAGES_PER_SECTION
+							Argument:nid
+								Identifier:nid
+							Argument:NULL
+								Identifier:NULL
+			IfStatement:if (!map)
+				Condition:!map
+					UnaryOperationExpression:!map
+						UnaryOperator:!
+						Identifier:map
+				CompoundStatement:
+					ExpressionStatement:pr_err("%s: node[%d] memory map backing failed. Some memory will not be available.",\t\t\t       __func__, nid)
+						CallExpression:pr_err("%s: node[%d] memory map backing failed. Some memory will not be available.",\t\t\t       __func__, nid)
+							Callee:pr_err
+								Identifier:pr_err
+							ArgumentList:"%s: node[%d] memory map backing failed. Some memory will not be available."
+								Argument:"%s: node[%d] memory map backing failed. Some memory will not be available."
+									Constant:"%s: node[%d] memory map backing failed. Some memory will not be available."
+								Argument:__func__
+									Identifier:__func__
+								Argument:nid
+									Identifier:nid
+					ExpressionStatement:pnum_begin = pnum
+						AssignmentExpression:pnum_begin = pnum
+							Identifier:pnum_begin
+							Identifier:pnum
+					GotoStatement:goto failed;
+						Identifier:failed
+			ExpressionStatement:check_usemap_section_nr(nid, usage)
+				CallExpression:check_usemap_section_nr(nid, usage)
+					Callee:check_usemap_section_nr
+						Identifier:check_usemap_section_nr
+					ArgumentList:nid
+						Argument:nid
+							Identifier:nid
+						Argument:usage
+							Identifier:usage
+			ExpressionStatement:sparse_init_one_section(__nr_to_section(pnum), pnum, map, usage,\t\t\t\tSECTION_IS_EARLY)
+				CallExpression:sparse_init_one_section(__nr_to_section(pnum), pnum, map, usage,\t\t\t\tSECTION_IS_EARLY)
+					Callee:sparse_init_one_section
+						Identifier:sparse_init_one_section
+					ArgumentList:__nr_to_section(pnum)
+						Argument:__nr_to_section(pnum)
+							CallExpression:__nr_to_section(pnum)
+								Callee:__nr_to_section
+									Identifier:__nr_to_section
+								ArgumentList:pnum
+									Argument:pnum
+										Identifier:pnum
+						Argument:pnum
+							Identifier:pnum
+						Argument:map
+							Identifier:map
+						Argument:usage
+							Identifier:usage
+						Argument:SECTION_IS_EARLY
+							Identifier:SECTION_IS_EARLY
+			ExpressionStatement:usage = (void *) usage + mem_section_usage_size()
+				AssignmentExpression:usage = (void *) usage + mem_section_usage_size()
+					Identifier:usage
+					AdditiveExpression:(void *) usage + mem_section_usage_size()
+						CastExpression:(void *) usage
+							CastTarget:void *
+							Identifier:usage
+						CallExpression:mem_section_usage_size()
+							Callee:mem_section_usage_size
+								Identifier:mem_section_usage_size
+							ArgumentList:
+		ExpressionStatement:sparse_buffer_fini()
+			CallExpression:sparse_buffer_fini()
+				Callee:sparse_buffer_fini
+					Identifier:sparse_buffer_fini
+				ArgumentList:
+		ReturnStatement:return;
+		Label:failed:
+			Identifier:failed
+		Statement:/* We failed to allocate, mark all the following pnums as not present */
+		Statement:for_each_present_section_nr
+		Statement:(
+		Statement:pnum_begin
+		Statement:,
+		Statement:pnum
+		Statement:)
+		CompoundStatement:
+			IdentifierDeclStatement:struct mem_section *ms;
+				IdentifierDecl:*ms
+					IdentifierDeclType:struct mem_section *
+					Identifier:ms
+			IfStatement:if (pnum >= pnum_end)
+				Condition:pnum >= pnum_end
+					RelationalExpression:pnum >= pnum_end
+						Identifier:pnum
+						Identifier:pnum_end
+				BreakStatement:break;
+			ExpressionStatement:ms = __nr_to_section(pnum)
+				AssignmentExpression:ms = __nr_to_section(pnum)
+					Identifier:ms
+					CallExpression:__nr_to_section(pnum)
+						Callee:__nr_to_section
+							Identifier:__nr_to_section
+						ArgumentList:pnum
+							Argument:pnum
+								Identifier:pnum
+			ExpressionStatement:ms->section_mem_map = 0
+				AssignmentExpression:ms->section_mem_map = 0
+					PtrMemberAccess:ms->section_mem_map
+						Identifier:ms
+						Identifier:section_mem_map
+					Constant:0
+	ReturnType:static void __init
+	Identifier:sparse_init_nid
+	ParameterList:int nid , unsigned long pnum_begin , unsigned long pnum_end , unsigned long map_count
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:unsigned long pnum_begin
+			ParameterType:unsigned long
+			Identifier:pnum_begin
+		Parameter:unsigned long pnum_end
+			ParameterType:unsigned long
+			Identifier:pnum_end
+		Parameter:unsigned long map_count
+			ParameterType:unsigned long
+			Identifier:map_count
+FunctionDef:sparse_init ()
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long pnum_begin = first_present_section_nr();
+			IdentifierDecl:pnum_begin = first_present_section_nr()
+				IdentifierDeclType:unsigned long
+				Identifier:pnum_begin
+				AssignmentExpression:pnum_begin = first_present_section_nr()
+					Identifier:pnum_begin
+					CallExpression:first_present_section_nr()
+						Callee:first_present_section_nr
+							Identifier:first_present_section_nr
+						ArgumentList:
+		IdentifierDeclStatement:int nid_begin = sparse_early_nid(__nr_to_section(pnum_begin));
+			IdentifierDecl:nid_begin = sparse_early_nid(__nr_to_section(pnum_begin))
+				IdentifierDeclType:int
+				Identifier:nid_begin
+				AssignmentExpression:nid_begin = sparse_early_nid(__nr_to_section(pnum_begin))
+					Identifier:nid_begin
+					CallExpression:sparse_early_nid(__nr_to_section(pnum_begin))
+						Callee:sparse_early_nid
+							Identifier:sparse_early_nid
+						ArgumentList:__nr_to_section(pnum_begin)
+							Argument:__nr_to_section(pnum_begin)
+								CallExpression:__nr_to_section(pnum_begin)
+									Callee:__nr_to_section
+										Identifier:__nr_to_section
+									ArgumentList:pnum_begin
+										Argument:pnum_begin
+											Identifier:pnum_begin
+		IdentifierDeclStatement:unsigned long pnum_end, map_count = 1;
+			IdentifierDecl:pnum_end
+				IdentifierDeclType:unsigned long
+				Identifier:pnum_end
+			IdentifierDecl:map_count = 1
+				IdentifierDeclType:unsigned long
+				Identifier:map_count
+				AssignmentExpression:map_count = 1
+					Identifier:map_count
+					Constant:1
+		Statement:/* Setup pageblock_order for HUGETLB_PAGE_SIZE_VARIABLE */
+		ExpressionStatement:set_pageblock_order()
+			CallExpression:set_pageblock_order()
+				Callee:set_pageblock_order
+					Identifier:set_pageblock_order
+				ArgumentList:
+		Statement:for_each_present_section_nr
+		Statement:(
+		Statement:pnum_begin
+		Statement:+
+		Statement:1
+		Statement:,
+		Statement:pnum_end
+		Statement:)
+		CompoundStatement:
+			IdentifierDeclStatement:int nid = sparse_early_nid(__nr_to_section(pnum_end));
+				IdentifierDecl:nid = sparse_early_nid(__nr_to_section(pnum_end))
+					IdentifierDeclType:int
+					Identifier:nid
+					AssignmentExpression:nid = sparse_early_nid(__nr_to_section(pnum_end))
+						Identifier:nid
+						CallExpression:sparse_early_nid(__nr_to_section(pnum_end))
+							Callee:sparse_early_nid
+								Identifier:sparse_early_nid
+							ArgumentList:__nr_to_section(pnum_end)
+								Argument:__nr_to_section(pnum_end)
+									CallExpression:__nr_to_section(pnum_end)
+										Callee:__nr_to_section
+											Identifier:__nr_to_section
+										ArgumentList:pnum_end
+											Argument:pnum_end
+												Identifier:pnum_end
+			IfStatement:if (nid == nid_begin)
+				Condition:nid == nid_begin
+					EqualityExpression:nid == nid_begin
+						Identifier:nid
+						Identifier:nid_begin
+				CompoundStatement:
+					ExpressionStatement:map_count++
+						PostIncDecOperationExpression:map_count++
+							Identifier:map_count
+							IncDec:++
+					ContinueStatement:continue;
+			Statement:/* Init node with sections in range [pnum_begin, pnum_end) */
+			ExpressionStatement:sparse_init_nid(nid_begin, pnum_begin, pnum_end, map_count)
+				CallExpression:sparse_init_nid(nid_begin, pnum_begin, pnum_end, map_count)
+					Callee:sparse_init_nid
+						Identifier:sparse_init_nid
+					ArgumentList:nid_begin
+						Argument:nid_begin
+							Identifier:nid_begin
+						Argument:pnum_begin
+							Identifier:pnum_begin
+						Argument:pnum_end
+							Identifier:pnum_end
+						Argument:map_count
+							Identifier:map_count
+			ExpressionStatement:nid_begin = nid
+				AssignmentExpression:nid_begin = nid
+					Identifier:nid_begin
+					Identifier:nid
+			ExpressionStatement:pnum_begin = pnum_end
+				AssignmentExpression:pnum_begin = pnum_end
+					Identifier:pnum_begin
+					Identifier:pnum_end
+			ExpressionStatement:map_count = 1
+				AssignmentExpression:map_count = 1
+					Identifier:map_count
+					Constant:1
+		Statement:/* cover the last node */
+		ExpressionStatement:sparse_init_nid(nid_begin, pnum_begin, pnum_end, map_count)
+			CallExpression:sparse_init_nid(nid_begin, pnum_begin, pnum_end, map_count)
+				Callee:sparse_init_nid
+					Identifier:sparse_init_nid
+				ArgumentList:nid_begin
+					Argument:nid_begin
+						Identifier:nid_begin
+					Argument:pnum_begin
+						Identifier:pnum_begin
+					Argument:pnum_end
+						Identifier:pnum_end
+					Argument:map_count
+						Identifier:map_count
+		ExpressionStatement:vmemmap_populate_print_last()
+			CallExpression:vmemmap_populate_print_last()
+				Callee:vmemmap_populate_print_last
+					Identifier:vmemmap_populate_print_last
+				ArgumentList:
+	ReturnType:void __init
+	Identifier:sparse_init
+	ParameterList:
+FunctionDef:online_mem_sections (unsigned long start_pfn , unsigned long end_pfn)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long pfn;
+			IdentifierDecl:pfn
+				IdentifierDeclType:unsigned long
+				Identifier:pfn
+		ForStatement:for (pfn = start_pfn; pfn < end_pfn; pfn += PAGES_PER_SECTION)
+			ForInit:pfn = start_pfn;
+				AssignmentExpression:pfn = start_pfn
+					Identifier:pfn
+					Identifier:start_pfn
+			Condition:pfn < end_pfn
+				RelationalExpression:pfn < end_pfn
+					Identifier:pfn
+					Identifier:end_pfn
+			AssignmentExpression:pfn += PAGES_PER_SECTION
+				Identifier:pfn
+				Identifier:PAGES_PER_SECTION
+			CompoundStatement:
+				IdentifierDeclStatement:unsigned long section_nr = pfn_to_section_nr(pfn);
+					IdentifierDecl:section_nr = pfn_to_section_nr(pfn)
+						IdentifierDeclType:unsigned long
+						Identifier:section_nr
+						AssignmentExpression:section_nr = pfn_to_section_nr(pfn)
+							Identifier:section_nr
+							CallExpression:pfn_to_section_nr(pfn)
+								Callee:pfn_to_section_nr
+									Identifier:pfn_to_section_nr
+								ArgumentList:pfn
+									Argument:pfn
+										Identifier:pfn
+				IdentifierDeclStatement:struct mem_section *ms;
+					IdentifierDecl:*ms
+						IdentifierDeclType:struct mem_section *
+						Identifier:ms
+				Statement:/* onlining code should never touch invalid ranges */
+				IfStatement:if (WARN_ON(!valid_section_nr(section_nr)))
+					Condition:WARN_ON(!valid_section_nr(section_nr))
+						CallExpression:WARN_ON(!valid_section_nr(section_nr))
+							Callee:WARN_ON
+								Identifier:WARN_ON
+							ArgumentList:!valid_section_nr(section_nr)
+								Argument:!valid_section_nr(section_nr)
+									UnaryOperationExpression:!valid_section_nr(section_nr)
+										UnaryOperator:!
+										CallExpression:valid_section_nr(section_nr)
+											Callee:valid_section_nr
+												Identifier:valid_section_nr
+											ArgumentList:section_nr
+												Argument:section_nr
+													Identifier:section_nr
+					ContinueStatement:continue;
+				ExpressionStatement:ms = __nr_to_section(section_nr)
+					AssignmentExpression:ms = __nr_to_section(section_nr)
+						Identifier:ms
+						CallExpression:__nr_to_section(section_nr)
+							Callee:__nr_to_section
+								Identifier:__nr_to_section
+							ArgumentList:section_nr
+								Argument:section_nr
+									Identifier:section_nr
+				ExpressionStatement:ms->section_mem_map |= SECTION_IS_ONLINE
+					AssignmentExpression:ms->section_mem_map |= SECTION_IS_ONLINE
+						PtrMemberAccess:ms->section_mem_map
+							Identifier:ms
+							Identifier:section_mem_map
+						Identifier:SECTION_IS_ONLINE
+	ReturnType:void
+	Identifier:online_mem_sections
+	ParameterList:unsigned long start_pfn , unsigned long end_pfn
+		Parameter:unsigned long start_pfn
+			ParameterType:unsigned long
+			Identifier:start_pfn
+		Parameter:unsigned long end_pfn
+			ParameterType:unsigned long
+			Identifier:end_pfn
+FunctionDef:offline_mem_sections (unsigned long start_pfn , unsigned long end_pfn)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long pfn;
+			IdentifierDecl:pfn
+				IdentifierDeclType:unsigned long
+				Identifier:pfn
+		ForStatement:for (pfn = start_pfn; pfn < end_pfn; pfn += PAGES_PER_SECTION)
+			ForInit:pfn = start_pfn;
+				AssignmentExpression:pfn = start_pfn
+					Identifier:pfn
+					Identifier:start_pfn
+			Condition:pfn < end_pfn
+				RelationalExpression:pfn < end_pfn
+					Identifier:pfn
+					Identifier:end_pfn
+			AssignmentExpression:pfn += PAGES_PER_SECTION
+				Identifier:pfn
+				Identifier:PAGES_PER_SECTION
+			CompoundStatement:
+				IdentifierDeclStatement:unsigned long section_nr = pfn_to_section_nr(pfn);
+					IdentifierDecl:section_nr = pfn_to_section_nr(pfn)
+						IdentifierDeclType:unsigned long
+						Identifier:section_nr
+						AssignmentExpression:section_nr = pfn_to_section_nr(pfn)
+							Identifier:section_nr
+							CallExpression:pfn_to_section_nr(pfn)
+								Callee:pfn_to_section_nr
+									Identifier:pfn_to_section_nr
+								ArgumentList:pfn
+									Argument:pfn
+										Identifier:pfn
+				IdentifierDeclStatement:struct mem_section *ms;
+					IdentifierDecl:*ms
+						IdentifierDeclType:struct mem_section *
+						Identifier:ms
+				Statement:/*\t\t * TODO this needs some double checking. Offlining code makes\t\t * sure to check pfn_valid but those checks might be just bogus\t\t */
+				IfStatement:if (WARN_ON(!valid_section_nr(section_nr)))
+					Condition:WARN_ON(!valid_section_nr(section_nr))
+						CallExpression:WARN_ON(!valid_section_nr(section_nr))
+							Callee:WARN_ON
+								Identifier:WARN_ON
+							ArgumentList:!valid_section_nr(section_nr)
+								Argument:!valid_section_nr(section_nr)
+									UnaryOperationExpression:!valid_section_nr(section_nr)
+										UnaryOperator:!
+										CallExpression:valid_section_nr(section_nr)
+											Callee:valid_section_nr
+												Identifier:valid_section_nr
+											ArgumentList:section_nr
+												Argument:section_nr
+													Identifier:section_nr
+					ContinueStatement:continue;
+				ExpressionStatement:ms = __nr_to_section(section_nr)
+					AssignmentExpression:ms = __nr_to_section(section_nr)
+						Identifier:ms
+						CallExpression:__nr_to_section(section_nr)
+							Callee:__nr_to_section
+								Identifier:__nr_to_section
+							ArgumentList:section_nr
+								Argument:section_nr
+									Identifier:section_nr
+				ExpressionStatement:ms->section_mem_map &= ~SECTION_IS_ONLINE
+					AssignmentExpression:ms->section_mem_map &= ~SECTION_IS_ONLINE
+						PtrMemberAccess:ms->section_mem_map
+							Identifier:ms
+							Identifier:section_mem_map
+						Identifier:~SECTION_IS_ONLINE
+	ReturnType:void
+	Identifier:offline_mem_sections
+	ParameterList:unsigned long start_pfn , unsigned long end_pfn
+		Parameter:unsigned long start_pfn
+			ParameterType:unsigned long
+			Identifier:start_pfn
+		Parameter:unsigned long end_pfn
+			ParameterType:unsigned long
+			Identifier:end_pfn
+FunctionDef:populate_section_memmap (unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap)
+	CompoundStatement:
+		ReturnStatement:return __populate_section_memmap(pfn, nr_pages, nid, altmap);
+			CallExpression:__populate_section_memmap(pfn, nr_pages, nid, altmap)
+				Callee:__populate_section_memmap
+					Identifier:__populate_section_memmap
+				ArgumentList:pfn
+					Argument:pfn
+						Identifier:pfn
+					Argument:nr_pages
+						Identifier:nr_pages
+					Argument:nid
+						Identifier:nid
+					Argument:altmap
+						Identifier:altmap
+	ReturnType:struct page *
+	Identifier:populate_section_memmap
+	ParameterList:unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:depopulate_section_memmap (unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long start = (unsigned long) pfn_to_page(pfn);
+			IdentifierDecl:start = (unsigned long) pfn_to_page(pfn)
+				IdentifierDeclType:unsigned long
+				Identifier:start
+				AssignmentExpression:start = (unsigned long) pfn_to_page(pfn)
+					Identifier:start
+					CastExpression:(unsigned long) pfn_to_page(pfn)
+						CastTarget:unsigned long
+						CallExpression:pfn_to_page(pfn)
+							Callee:pfn_to_page
+								Identifier:pfn_to_page
+							ArgumentList:pfn
+								Argument:pfn
+									Identifier:pfn
+		IdentifierDeclStatement:unsigned long end = start + nr_pages * sizeof(struct page);
+			IdentifierDecl:end = start + nr_pages * sizeof(struct page)
+				IdentifierDeclType:unsigned long
+				Identifier:end
+				AssignmentExpression:end = start + nr_pages * sizeof(struct page)
+					Identifier:end
+					AdditiveExpression:start + nr_pages * sizeof(struct page)
+						Identifier:start
+						MultiplicativeExpression:nr_pages * sizeof(struct page)
+							Identifier:nr_pages
+							SizeofExpression:sizeof(struct page)
+								Sizeof:sizeof
+								SizeofOperand:struct page
+		ExpressionStatement:vmemmap_free(start, end, altmap)
+			CallExpression:vmemmap_free(start, end, altmap)
+				Callee:vmemmap_free
+					Identifier:vmemmap_free
+				ArgumentList:start
+					Argument:start
+						Identifier:start
+					Argument:end
+						Identifier:end
+					Argument:altmap
+						Identifier:altmap
+	ReturnType:static void
+	Identifier:depopulate_section_memmap
+	ParameterList:unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:free_map_bootmem (struct page *memmap)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long start = (unsigned long)memmap;
+			IdentifierDecl:start = (unsigned long)memmap
+				IdentifierDeclType:unsigned long
+				Identifier:start
+				AssignmentExpression:start = (unsigned long)memmap
+					Identifier:start
+					CastExpression:(unsigned long)memmap
+						CastTarget:unsigned long
+						Identifier:memmap
+		IdentifierDeclStatement:unsigned long end = (unsigned long)(memmap + PAGES_PER_SECTION);
+			IdentifierDecl:end = (unsigned long)(memmap + PAGES_PER_SECTION)
+				IdentifierDeclType:unsigned long
+				Identifier:end
+				AssignmentExpression:end = (unsigned long)(memmap + PAGES_PER_SECTION)
+					Identifier:end
+					CastExpression:(unsigned long)(memmap + PAGES_PER_SECTION)
+						CastTarget:unsigned long
+						AdditiveExpression:memmap + PAGES_PER_SECTION
+							Identifier:memmap
+							Identifier:PAGES_PER_SECTION
+		ExpressionStatement:vmemmap_free(start, end, NULL)
+			CallExpression:vmemmap_free(start, end, NULL)
+				Callee:vmemmap_free
+					Identifier:vmemmap_free
+				ArgumentList:start
+					Argument:start
+						Identifier:start
+					Argument:end
+						Identifier:end
+					Argument:NULL
+						Identifier:NULL
+	ReturnType:static void
+	Identifier:free_map_bootmem
+	ParameterList:struct page *memmap
+		Parameter:struct page *memmap
+			ParameterType:struct page *
+			Identifier:memmap
+FunctionDef:populate_section_memmap (unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap)
+	CompoundStatement:
+		IdentifierDeclStatement:struct page *page, *ret;
+			IdentifierDecl:*page
+				IdentifierDeclType:struct page *
+				Identifier:page
+			IdentifierDecl:*ret
+				IdentifierDeclType:struct page *
+				Identifier:ret
+		IdentifierDeclStatement:unsigned long memmap_size = sizeof(struct page) * PAGES_PER_SECTION;
+			IdentifierDecl:memmap_size = sizeof(struct page) * PAGES_PER_SECTION
+				IdentifierDeclType:unsigned long
+				Identifier:memmap_size
+				AssignmentExpression:memmap_size = sizeof(struct page) * PAGES_PER_SECTION
+					Identifier:memmap_size
+					MultiplicativeExpression:sizeof(struct page) * PAGES_PER_SECTION
+						SizeofExpression:sizeof(struct page)
+							Sizeof:sizeof
+							SizeofOperand:struct page
+						Identifier:PAGES_PER_SECTION
+		ExpressionStatement:page = alloc_pages(GFP_KERNEL|__GFP_NOWARN, get_order(memmap_size))
+			AssignmentExpression:page = alloc_pages(GFP_KERNEL|__GFP_NOWARN, get_order(memmap_size))
+				Identifier:page
+				CallExpression:alloc_pages(GFP_KERNEL|__GFP_NOWARN, get_order(memmap_size))
+					Callee:alloc_pages
+						Identifier:alloc_pages
+					ArgumentList:GFP_KERNEL|__GFP_NOWARN
+						Argument:GFP_KERNEL|__GFP_NOWARN
+							InclusiveOrExpression:GFP_KERNEL|__GFP_NOWARN
+								Identifier:GFP_KERNEL
+								Identifier:__GFP_NOWARN
+						Argument:get_order(memmap_size)
+							CallExpression:get_order(memmap_size)
+								Callee:get_order
+									Identifier:get_order
+								ArgumentList:memmap_size
+									Argument:memmap_size
+										Identifier:memmap_size
+		IfStatement:if (page)
+			Condition:page
+				Identifier:page
+			GotoStatement:goto got_map_page;
+				Identifier:got_map_page
+		ExpressionStatement:ret = vmalloc(memmap_size)
+			AssignmentExpression:ret = vmalloc(memmap_size)
+				Identifier:ret
+				CallExpression:vmalloc(memmap_size)
+					Callee:vmalloc
+						Identifier:vmalloc
+					ArgumentList:memmap_size
+						Argument:memmap_size
+							Identifier:memmap_size
+		IfStatement:if (ret)
+			Condition:ret
+				Identifier:ret
+			GotoStatement:goto got_map_ptr;
+				Identifier:got_map_ptr
+		ReturnStatement:return NULL;
+			Identifier:NULL
+		Label:got_map_page:
+			Identifier:got_map_page
+		ExpressionStatement:ret = (struct page *)pfn_to_kaddr(page_to_pfn(page))
+			AssignmentExpression:ret = (struct page *)pfn_to_kaddr(page_to_pfn(page))
+				Identifier:ret
+				CastExpression:(struct page *)pfn_to_kaddr(page_to_pfn(page))
+					CastTarget:struct page *
+					CallExpression:pfn_to_kaddr(page_to_pfn(page))
+						Callee:pfn_to_kaddr
+							Identifier:pfn_to_kaddr
+						ArgumentList:page_to_pfn(page)
+							Argument:page_to_pfn(page)
+								CallExpression:page_to_pfn(page)
+									Callee:page_to_pfn
+										Identifier:page_to_pfn
+									ArgumentList:page
+										Argument:page
+											Identifier:page
+		Label:got_map_ptr:
+			Identifier:got_map_ptr
+		ReturnStatement:return ret;
+			Identifier:ret
+	ReturnType:elsestruct page *
+	Identifier:populate_section_memmap
+	ParameterList:unsigned long pfn , unsigned long nr_pages , int nid , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:depopulate_section_memmap (unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap)
+	CompoundStatement:
+		IdentifierDeclStatement:struct page *memmap = pfn_to_page(pfn);
+			IdentifierDecl:*memmap = pfn_to_page(pfn)
+				IdentifierDeclType:struct page *
+				Identifier:memmap
+				AssignmentExpression:*memmap = pfn_to_page(pfn)
+					Identifier:memmap
+					CallExpression:pfn_to_page(pfn)
+						Callee:pfn_to_page
+							Identifier:pfn_to_page
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+		IfStatement:if (is_vmalloc_addr(memmap))
+			Condition:is_vmalloc_addr(memmap)
+				CallExpression:is_vmalloc_addr(memmap)
+					Callee:is_vmalloc_addr
+						Identifier:is_vmalloc_addr
+					ArgumentList:memmap
+						Argument:memmap
+							Identifier:memmap
+			ExpressionStatement:vfree(memmap)
+				CallExpression:vfree(memmap)
+					Callee:vfree
+						Identifier:vfree
+					ArgumentList:memmap
+						Argument:memmap
+							Identifier:memmap
+	ReturnType:static void
+	Identifier:depopulate_section_memmap
+	ParameterList:unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:free_map_bootmem (struct page *memmap)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long maps_section_nr, removing_section_nr, i;
+			IdentifierDecl:maps_section_nr
+				IdentifierDeclType:unsigned long
+				Identifier:maps_section_nr
+			IdentifierDecl:removing_section_nr
+				IdentifierDeclType:unsigned long
+				Identifier:removing_section_nr
+			IdentifierDecl:i
+				IdentifierDeclType:unsigned long
+				Identifier:i
+		IdentifierDeclStatement:unsigned long magic, nr_pages;
+			IdentifierDecl:magic
+				IdentifierDeclType:unsigned long
+				Identifier:magic
+			IdentifierDecl:nr_pages
+				IdentifierDeclType:unsigned long
+				Identifier:nr_pages
+		IdentifierDeclStatement:struct page *page = virt_to_page(memmap);
+			IdentifierDecl:*page = virt_to_page(memmap)
+				IdentifierDeclType:struct page *
+				Identifier:page
+				AssignmentExpression:*page = virt_to_page(memmap)
+					Identifier:page
+					CallExpression:virt_to_page(memmap)
+						Callee:virt_to_page
+							Identifier:virt_to_page
+						ArgumentList:memmap
+							Argument:memmap
+								Identifier:memmap
+		ExpressionStatement:nr_pages = PAGE_ALIGN(PAGES_PER_SECTION * sizeof(struct page))\t\t>> PAGE_SHIFT
+			AssignmentExpression:nr_pages = PAGE_ALIGN(PAGES_PER_SECTION * sizeof(struct page))\t\t>> PAGE_SHIFT
+				Identifier:nr_pages
+				ShiftExpression:PAGE_ALIGN(PAGES_PER_SECTION * sizeof(struct page))\t\t>> PAGE_SHIFT
+					CallExpression:PAGE_ALIGN(PAGES_PER_SECTION * sizeof(struct page))
+						Callee:PAGE_ALIGN
+							Identifier:PAGE_ALIGN
+						ArgumentList:PAGES_PER_SECTION * sizeof(struct page)
+							Argument:PAGES_PER_SECTION * sizeof(struct page)
+								MultiplicativeExpression:PAGES_PER_SECTION * sizeof(struct page)
+									Identifier:PAGES_PER_SECTION
+									SizeofExpression:sizeof(struct page)
+										Sizeof:sizeof
+										SizeofOperand:struct page
+					Identifier:PAGE_SHIFT
+		ForStatement:for (i = 0; i < nr_pages; i++, page++)
+			ForInit:i = 0;
+				AssignmentExpression:i = 0
+					Identifier:i
+					Constant:0
+			Condition:i < nr_pages
+				RelationalExpression:i < nr_pages
+					Identifier:i
+					Identifier:nr_pages
+			Expression:i++, page++
+				PostIncDecOperationExpression:i++
+					Identifier:i
+					IncDec:++
+				PostIncDecOperationExpression:page++
+					Identifier:page
+					IncDec:++
+			CompoundStatement:
+				ExpressionStatement:magic = (unsigned long) page->freelist
+					AssignmentExpression:magic = (unsigned long) page->freelist
+						Identifier:magic
+						CastExpression:(unsigned long) page->freelist
+							CastTarget:unsigned long
+							PtrMemberAccess:page->freelist
+								Identifier:page
+								Identifier:freelist
+				ExpressionStatement:BUG_ON(magic == NODE_INFO)
+					CallExpression:BUG_ON(magic == NODE_INFO)
+						Callee:BUG_ON
+							Identifier:BUG_ON
+						ArgumentList:magic == NODE_INFO
+							Argument:magic == NODE_INFO
+								EqualityExpression:magic == NODE_INFO
+									Identifier:magic
+									Identifier:NODE_INFO
+				ExpressionStatement:maps_section_nr = pfn_to_section_nr(page_to_pfn(page))
+					AssignmentExpression:maps_section_nr = pfn_to_section_nr(page_to_pfn(page))
+						Identifier:maps_section_nr
+						CallExpression:pfn_to_section_nr(page_to_pfn(page))
+							Callee:pfn_to_section_nr
+								Identifier:pfn_to_section_nr
+							ArgumentList:page_to_pfn(page)
+								Argument:page_to_pfn(page)
+									CallExpression:page_to_pfn(page)
+										Callee:page_to_pfn
+											Identifier:page_to_pfn
+										ArgumentList:page
+											Argument:page
+												Identifier:page
+				ExpressionStatement:removing_section_nr = page_private(page)
+					AssignmentExpression:removing_section_nr = page_private(page)
+						Identifier:removing_section_nr
+						CallExpression:page_private(page)
+							Callee:page_private
+								Identifier:page_private
+							ArgumentList:page
+								Argument:page
+									Identifier:page
+				Statement:/*\t\t * When this function is called, the removing section is\t\t * logical offlined state. This means all pages are isolated\t\t * from page allocator. If removing section's memmap is placed\t\t * on the same section, it must not be freed.\t\t * If it is freed, page allocator may allocate it which will\t\t * be removed physically soon.\t\t */
+				IfStatement:if (maps_section_nr != removing_section_nr)
+					Condition:maps_section_nr != removing_section_nr
+						EqualityExpression:maps_section_nr != removing_section_nr
+							Identifier:maps_section_nr
+							Identifier:removing_section_nr
+					ExpressionStatement:put_page_bootmem(page)
+						CallExpression:put_page_bootmem(page)
+							Callee:put_page_bootmem
+								Identifier:put_page_bootmem
+							ArgumentList:page
+								Argument:page
+									Identifier:page
+	ReturnType:static void
+	Identifier:free_map_bootmem
+	ParameterList:struct page *memmap
+		Parameter:struct page *memmap
+			ParameterType:struct page *
+			Identifier:memmap
+FunctionDef:section_deactivate (unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap)
+	CompoundStatement:
+		Statement:DECLARE_BITMAP
+		Statement:(
+		Statement:map
+		Statement:,
+		Statement:SUBSECTIONS_PER_SECTION
+		Statement:)
+		Statement:=
+		CompoundStatement:
+			Statement:0
+		ExpressionStatement:
+		Statement:DECLARE_BITMAP
+		Statement:(
+		Statement:tmp
+		Statement:,
+		Statement:SUBSECTIONS_PER_SECTION
+		Statement:)
+		Statement:=
+		CompoundStatement:
+			Statement:0
+		ExpressionStatement:
+		IdentifierDeclStatement:struct mem_section *ms = __pfn_to_section(pfn);
+			IdentifierDecl:*ms = __pfn_to_section(pfn)
+				IdentifierDeclType:struct mem_section *
+				Identifier:ms
+				AssignmentExpression:*ms = __pfn_to_section(pfn)
+					Identifier:ms
+					CallExpression:__pfn_to_section(pfn)
+						Callee:__pfn_to_section
+							Identifier:__pfn_to_section
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+		IdentifierDeclStatement:bool section_is_early = early_section(ms);
+			IdentifierDecl:section_is_early = early_section(ms)
+				IdentifierDeclType:bool
+				Identifier:section_is_early
+				AssignmentExpression:section_is_early = early_section(ms)
+					Identifier:section_is_early
+					CallExpression:early_section(ms)
+						Callee:early_section
+							Identifier:early_section
+						ArgumentList:ms
+							Argument:ms
+								Identifier:ms
+		IdentifierDeclStatement:struct page *memmap = NULL;
+			IdentifierDecl:*memmap = NULL
+				IdentifierDeclType:struct page *
+				Identifier:memmap
+				AssignmentExpression:*memmap = NULL
+					Identifier:memmap
+					Identifier:NULL
+		IdentifierDeclStatement:unsigned long *subsection_map = ms->usage\t\t? &ms->usage->subsection_map[0] : NULL;
+			IdentifierDecl:*subsection_map = ms->usage\t\t? &ms->usage->subsection_map[0] : NULL
+				IdentifierDeclType:unsigned long *
+				Identifier:subsection_map
+				AssignmentExpression:*subsection_map = ms->usage\t\t? &ms->usage->subsection_map[0] : NULL
+					Identifier:subsection_map
+					ConditionalExpression:ms->usage\t\t? &ms->usage->subsection_map[0] : NULL
+						Condition:ms->usage
+							PtrMemberAccess:ms->usage
+								Identifier:ms
+								Identifier:usage
+						UnaryOperationExpression:&ms->usage->subsection_map[0]
+							UnaryOperator:&
+							ArrayIndexing:ms->usage->subsection_map[0]
+								PtrMemberAccess:ms->usage->subsection_map
+									PtrMemberAccess:ms->usage
+										Identifier:ms
+										Identifier:usage
+									Identifier:subsection_map
+								Constant:0
+						Identifier:NULL
+		ExpressionStatement:subsection_mask_set(map, pfn, nr_pages)
+			CallExpression:subsection_mask_set(map, pfn, nr_pages)
+				Callee:subsection_mask_set
+					Identifier:subsection_mask_set
+				ArgumentList:map
+					Argument:map
+						Identifier:map
+					Argument:pfn
+						Identifier:pfn
+					Argument:nr_pages
+						Identifier:nr_pages
+		IfStatement:if (subsection_map)
+			Condition:subsection_map
+				Identifier:subsection_map
+			ExpressionStatement:bitmap_and(tmp, map, subsection_map, SUBSECTIONS_PER_SECTION)
+				CallExpression:bitmap_and(tmp, map, subsection_map, SUBSECTIONS_PER_SECTION)
+					Callee:bitmap_and
+						Identifier:bitmap_and
+					ArgumentList:tmp
+						Argument:tmp
+							Identifier:tmp
+						Argument:map
+							Identifier:map
+						Argument:subsection_map
+							Identifier:subsection_map
+						Argument:SUBSECTIONS_PER_SECTION
+							Identifier:SUBSECTIONS_PER_SECTION
+		IfStatement:if (WARN(!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION),\t\t\t\t"section already deactivated (%#lx + %ld)\n",\t\t\t\tpfn, nr_pages))
+			Condition:WARN(!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION),\t\t\t\t"section already deactivated (%#lx + %ld)\n",\t\t\t\tpfn, nr_pages)
+				CallExpression:WARN(!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION),\t\t\t\t"section already deactivated (%#lx + %ld)\n",\t\t\t\tpfn, nr_pages)
+					Callee:WARN
+						Identifier:WARN
+					ArgumentList:!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION)
+						Argument:!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION)
+							OrExpression:!subsection_map || !bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION)
+								UnaryOperationExpression:!subsection_map
+									UnaryOperator:!
+									Identifier:subsection_map
+								UnaryOperationExpression:!bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION)
+									UnaryOperator:!
+									CallExpression:bitmap_equal(tmp, map, SUBSECTIONS_PER_SECTION)
+										Callee:bitmap_equal
+											Identifier:bitmap_equal
+										ArgumentList:tmp
+											Argument:tmp
+												Identifier:tmp
+											Argument:map
+												Identifier:map
+											Argument:SUBSECTIONS_PER_SECTION
+												Identifier:SUBSECTIONS_PER_SECTION
+						Argument:"section already deactivated (%#lx + %ld)\n"
+							Constant:"section already deactivated (%#lx + %ld)\n"
+						Argument:pfn
+							Identifier:pfn
+						Argument:nr_pages
+							Identifier:nr_pages
+			ReturnStatement:return;
+		Statement:/*\t * There are 3 cases to handle across two configurations\t * (SPARSEMEM_VMEMMAP={y,n}):\t *\t * 1/ deactivation of a partial hot-added section (only possible\t * in the SPARSEMEM_VMEMMAP=y case).\t *    a/ section was present at memory init\t *    b/ section was hot-added post memory init\t * 2/ deactivation of a complete hot-added section\t * 3/ deactivation of a complete section from memory init\t *\t * For 1/, when subsection_map does not empty we will not be\t * freeing the usage map, but still need to free the vmemmap\t * range.\t *\t * For 2/ and 3/ the SPARSEMEM_VMEMMAP={y,n} cases are unified\t */
+		ExpressionStatement:bitmap_xor(subsection_map, map, subsection_map, SUBSECTIONS_PER_SECTION)
+			CallExpression:bitmap_xor(subsection_map, map, subsection_map, SUBSECTIONS_PER_SECTION)
+				Callee:bitmap_xor
+					Identifier:bitmap_xor
+				ArgumentList:subsection_map
+					Argument:subsection_map
+						Identifier:subsection_map
+					Argument:map
+						Identifier:map
+					Argument:subsection_map
+						Identifier:subsection_map
+					Argument:SUBSECTIONS_PER_SECTION
+						Identifier:SUBSECTIONS_PER_SECTION
+		IfStatement:if (bitmap_empty(subsection_map, SUBSECTIONS_PER_SECTION))
+			Condition:bitmap_empty(subsection_map, SUBSECTIONS_PER_SECTION)
+				CallExpression:bitmap_empty(subsection_map, SUBSECTIONS_PER_SECTION)
+					Callee:bitmap_empty
+						Identifier:bitmap_empty
+					ArgumentList:subsection_map
+						Argument:subsection_map
+							Identifier:subsection_map
+						Argument:SUBSECTIONS_PER_SECTION
+							Identifier:SUBSECTIONS_PER_SECTION
+			CompoundStatement:
+				IdentifierDeclStatement:unsigned long section_nr = pfn_to_section_nr(pfn);
+					IdentifierDecl:section_nr = pfn_to_section_nr(pfn)
+						IdentifierDeclType:unsigned long
+						Identifier:section_nr
+						AssignmentExpression:section_nr = pfn_to_section_nr(pfn)
+							Identifier:section_nr
+							CallExpression:pfn_to_section_nr(pfn)
+								Callee:pfn_to_section_nr
+									Identifier:pfn_to_section_nr
+								ArgumentList:pfn
+									Argument:pfn
+										Identifier:pfn
+				IfStatement:if (!section_is_early)
+					Condition:!section_is_early
+						UnaryOperationExpression:!section_is_early
+							UnaryOperator:!
+							Identifier:section_is_early
+					CompoundStatement:
+						ExpressionStatement:kfree(ms->usage)
+							CallExpression:kfree(ms->usage)
+								Callee:kfree
+									Identifier:kfree
+								ArgumentList:ms->usage
+									Argument:ms->usage
+										PtrMemberAccess:ms->usage
+											Identifier:ms
+											Identifier:usage
+						ExpressionStatement:ms->usage = NULL
+							AssignmentExpression:ms->usage = NULL
+								PtrMemberAccess:ms->usage
+									Identifier:ms
+									Identifier:usage
+								Identifier:NULL
+				ExpressionStatement:memmap = sparse_decode_mem_map(ms->section_mem_map, section_nr)
+					AssignmentExpression:memmap = sparse_decode_mem_map(ms->section_mem_map, section_nr)
+						Identifier:memmap
+						CallExpression:sparse_decode_mem_map(ms->section_mem_map, section_nr)
+							Callee:sparse_decode_mem_map
+								Identifier:sparse_decode_mem_map
+							ArgumentList:ms->section_mem_map
+								Argument:ms->section_mem_map
+									PtrMemberAccess:ms->section_mem_map
+										Identifier:ms
+										Identifier:section_mem_map
+								Argument:section_nr
+									Identifier:section_nr
+				ExpressionStatement:ms->section_mem_map = sparse_encode_mem_map(NULL, section_nr)
+					AssignmentExpression:ms->section_mem_map = sparse_encode_mem_map(NULL, section_nr)
+						PtrMemberAccess:ms->section_mem_map
+							Identifier:ms
+							Identifier:section_mem_map
+						CallExpression:sparse_encode_mem_map(NULL, section_nr)
+							Callee:sparse_encode_mem_map
+								Identifier:sparse_encode_mem_map
+							ArgumentList:NULL
+								Argument:NULL
+									Identifier:NULL
+								Argument:section_nr
+									Identifier:section_nr
+		IfStatement:if (section_is_early && memmap)
+			Condition:section_is_early && memmap
+				AndExpression:section_is_early && memmap
+					Identifier:section_is_early
+					Identifier:memmap
+			ExpressionStatement:free_map_bootmem(memmap)
+				CallExpression:free_map_bootmem(memmap)
+					Callee:free_map_bootmem
+						Identifier:free_map_bootmem
+					ArgumentList:memmap
+						Argument:memmap
+							Identifier:memmap
+	ReturnType:static void
+	Identifier:section_deactivate
+	ParameterList:unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:section_activate (int nid , unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap)
+	CompoundStatement:
+		Statement:DECLARE_BITMAP
+		Statement:(
+		Statement:map
+		Statement:,
+		Statement:SUBSECTIONS_PER_SECTION
+		Statement:)
+		Statement:=
+		CompoundStatement:
+			Statement:0
+		ExpressionStatement:
+		IdentifierDeclStatement:struct mem_section *ms = __pfn_to_section(pfn);
+			IdentifierDecl:*ms = __pfn_to_section(pfn)
+				IdentifierDeclType:struct mem_section *
+				Identifier:ms
+				AssignmentExpression:*ms = __pfn_to_section(pfn)
+					Identifier:ms
+					CallExpression:__pfn_to_section(pfn)
+						Callee:__pfn_to_section
+							Identifier:__pfn_to_section
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+		IdentifierDeclStatement:struct mem_section_usage *usage = NULL;
+			IdentifierDecl:*usage = NULL
+				IdentifierDeclType:struct mem_section_usage *
+				Identifier:usage
+				AssignmentExpression:*usage = NULL
+					Identifier:usage
+					Identifier:NULL
+		IdentifierDeclStatement:unsigned long *subsection_map;
+			IdentifierDecl:*subsection_map
+				IdentifierDeclType:unsigned long *
+				Identifier:subsection_map
+		IdentifierDeclStatement:struct page *memmap;
+			IdentifierDecl:*memmap
+				IdentifierDeclType:struct page *
+				Identifier:memmap
+		IdentifierDeclStatement:int rc = 0;
+			IdentifierDecl:rc = 0
+				IdentifierDeclType:int
+				Identifier:rc
+				AssignmentExpression:rc = 0
+					Identifier:rc
+					Constant:0
+		ExpressionStatement:subsection_mask_set(map, pfn, nr_pages)
+			CallExpression:subsection_mask_set(map, pfn, nr_pages)
+				Callee:subsection_mask_set
+					Identifier:subsection_mask_set
+				ArgumentList:map
+					Argument:map
+						Identifier:map
+					Argument:pfn
+						Identifier:pfn
+					Argument:nr_pages
+						Identifier:nr_pages
+		IfStatement:if (!ms->usage)
+			Condition:!ms->usage
+				UnaryOperationExpression:!ms->usage
+					UnaryOperator:!
+					PtrMemberAccess:ms->usage
+						Identifier:ms
+						Identifier:usage
+			CompoundStatement:
+				ExpressionStatement:usage = kzalloc(mem_section_usage_size(), GFP_KERNEL)
+					AssignmentExpression:usage = kzalloc(mem_section_usage_size(), GFP_KERNEL)
+						Identifier:usage
+						CallExpression:kzalloc(mem_section_usage_size(), GFP_KERNEL)
+							Callee:kzalloc
+								Identifier:kzalloc
+							ArgumentList:mem_section_usage_size()
+								Argument:mem_section_usage_size()
+									CallExpression:mem_section_usage_size()
+										Callee:mem_section_usage_size
+											Identifier:mem_section_usage_size
+										ArgumentList:
+								Argument:GFP_KERNEL
+									Identifier:GFP_KERNEL
+				IfStatement:if (!usage)
+					Condition:!usage
+						UnaryOperationExpression:!usage
+							UnaryOperator:!
+							Identifier:usage
+					ReturnStatement:return ERR_PTR(-ENOMEM);
+						CallExpression:ERR_PTR(-ENOMEM)
+							Callee:ERR_PTR
+								Identifier:ERR_PTR
+							ArgumentList:-ENOMEM
+								Argument:-ENOMEM
+									UnaryOperationExpression:-ENOMEM
+										UnaryOperator:-
+										Identifier:ENOMEM
+				ExpressionStatement:ms->usage = usage
+					AssignmentExpression:ms->usage = usage
+						PtrMemberAccess:ms->usage
+							Identifier:ms
+							Identifier:usage
+						Identifier:usage
+		ExpressionStatement:subsection_map = &ms->usage->subsection_map[0]
+			AssignmentExpression:subsection_map = &ms->usage->subsection_map[0]
+				Identifier:subsection_map
+				UnaryOperationExpression:&ms->usage->subsection_map[0]
+					UnaryOperator:&
+					ArrayIndexing:ms->usage->subsection_map[0]
+						PtrMemberAccess:ms->usage->subsection_map
+							PtrMemberAccess:ms->usage
+								Identifier:ms
+								Identifier:usage
+							Identifier:subsection_map
+						Constant:0
+		IfStatement:if (bitmap_empty(map, SUBSECTIONS_PER_SECTION))
+			Condition:bitmap_empty(map, SUBSECTIONS_PER_SECTION)
+				CallExpression:bitmap_empty(map, SUBSECTIONS_PER_SECTION)
+					Callee:bitmap_empty
+						Identifier:bitmap_empty
+					ArgumentList:map
+						Argument:map
+							Identifier:map
+						Argument:SUBSECTIONS_PER_SECTION
+							Identifier:SUBSECTIONS_PER_SECTION
+			ExpressionStatement:rc = -EINVAL
+				AssignmentExpression:rc = -EINVAL
+					Identifier:rc
+					UnaryOperationExpression:-EINVAL
+						UnaryOperator:-
+						Identifier:EINVAL
+		IfStatement:if (rc)
+			Condition:rc
+				Identifier:rc
+			CompoundStatement:
+				IfStatement:if (usage)
+					Condition:usage
+						Identifier:usage
+					ExpressionStatement:ms->usage = NULL
+						AssignmentExpression:ms->usage = NULL
+							PtrMemberAccess:ms->usage
+								Identifier:ms
+								Identifier:usage
+							Identifier:NULL
+				ExpressionStatement:kfree(usage)
+					CallExpression:kfree(usage)
+						Callee:kfree
+							Identifier:kfree
+						ArgumentList:usage
+							Argument:usage
+								Identifier:usage
+				ReturnStatement:return ERR_PTR(rc);
+					CallExpression:ERR_PTR(rc)
+						Callee:ERR_PTR
+							Identifier:ERR_PTR
+						ArgumentList:rc
+							Argument:rc
+								Identifier:rc
+		Statement:/*\t * The early init code does not consider partially populated\t * initial sections, it simply assumes that memory will never be\t * referenced.  If we hot-add memory into such a section then we\t * do not need to populate the memmap and can simply reuse what\t * is already there.\t */
+		IfStatement:if (nr_pages < PAGES_PER_SECTION && early_section(ms))
+			Condition:nr_pages < PAGES_PER_SECTION && early_section(ms)
+				AndExpression:nr_pages < PAGES_PER_SECTION && early_section(ms)
+					RelationalExpression:nr_pages < PAGES_PER_SECTION
+						Identifier:nr_pages
+						Identifier:PAGES_PER_SECTION
+					CallExpression:early_section(ms)
+						Callee:early_section
+							Identifier:early_section
+						ArgumentList:ms
+							Argument:ms
+								Identifier:ms
+			ReturnStatement:return pfn_to_page(pfn);
+				CallExpression:pfn_to_page(pfn)
+					Callee:pfn_to_page
+						Identifier:pfn_to_page
+					ArgumentList:pfn
+						Argument:pfn
+							Identifier:pfn
+		ExpressionStatement:memmap = populate_section_memmap(pfn, nr_pages, nid, altmap)
+			AssignmentExpression:memmap = populate_section_memmap(pfn, nr_pages, nid, altmap)
+				Identifier:memmap
+				CallExpression:populate_section_memmap(pfn, nr_pages, nid, altmap)
+					Callee:populate_section_memmap
+						Identifier:populate_section_memmap
+					ArgumentList:pfn
+						Argument:pfn
+							Identifier:pfn
+						Argument:nr_pages
+							Identifier:nr_pages
+						Argument:nid
+							Identifier:nid
+						Argument:altmap
+							Identifier:altmap
+		IfStatement:if (!memmap)
+			Condition:!memmap
+				UnaryOperationExpression:!memmap
+					UnaryOperator:!
+					Identifier:memmap
+			CompoundStatement:
+				ExpressionStatement:section_deactivate(pfn, nr_pages, altmap)
+					CallExpression:section_deactivate(pfn, nr_pages, altmap)
+						Callee:section_deactivate
+							Identifier:section_deactivate
+						ArgumentList:pfn
+							Argument:pfn
+								Identifier:pfn
+							Argument:nr_pages
+								Identifier:nr_pages
+							Argument:altmap
+								Identifier:altmap
+				ReturnStatement:return ERR_PTR(-ENOMEM);
+					CallExpression:ERR_PTR(-ENOMEM)
+						Callee:ERR_PTR
+							Identifier:ERR_PTR
+						ArgumentList:-ENOMEM
+							Argument:-ENOMEM
+								UnaryOperationExpression:-ENOMEM
+									UnaryOperator:-
+									Identifier:ENOMEM
+		ReturnStatement:return memmap;
+			Identifier:memmap
+	ReturnType:__meminit
+	Identifier:section_activate
+	ParameterList:int nid , unsigned long pfn , unsigned long nr_pages , struct vmem_altmap *altmap
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:sparse_add_section (int nid , unsigned long start_pfn , unsigned long nr_pages , struct vmem_altmap *altmap)
+	CompoundStatement:
+		IdentifierDeclStatement:unsigned long section_nr = pfn_to_section_nr(start_pfn);
+			IdentifierDecl:section_nr = pfn_to_section_nr(start_pfn)
+				IdentifierDeclType:unsigned long
+				Identifier:section_nr
+				AssignmentExpression:section_nr = pfn_to_section_nr(start_pfn)
+					Identifier:section_nr
+					CallExpression:pfn_to_section_nr(start_pfn)
+						Callee:pfn_to_section_nr
+							Identifier:pfn_to_section_nr
+						ArgumentList:start_pfn
+							Argument:start_pfn
+								Identifier:start_pfn
+		IdentifierDeclStatement:struct mem_section *ms;
+			IdentifierDecl:*ms
+				IdentifierDeclType:struct mem_section *
+				Identifier:ms
+		IdentifierDeclStatement:struct page *memmap;
+			IdentifierDecl:*memmap
+				IdentifierDeclType:struct page *
+				Identifier:memmap
+		IdentifierDeclStatement:int ret;
+			IdentifierDecl:ret
+				IdentifierDeclType:int
+				Identifier:ret
+		ExpressionStatement:ret = sparse_index_init(section_nr, nid)
+			AssignmentExpression:ret = sparse_index_init(section_nr, nid)
+				Identifier:ret
+				CallExpression:sparse_index_init(section_nr, nid)
+					Callee:sparse_index_init
+						Identifier:sparse_index_init
+					ArgumentList:section_nr
+						Argument:section_nr
+							Identifier:section_nr
+						Argument:nid
+							Identifier:nid
+		IfStatement:if (ret < 0)
+			Condition:ret < 0
+				RelationalExpression:ret < 0
+					Identifier:ret
+					Constant:0
+			ReturnStatement:return ret;
+				Identifier:ret
+		ExpressionStatement:memmap = section_activate(nid, start_pfn, nr_pages, altmap)
+			AssignmentExpression:memmap = section_activate(nid, start_pfn, nr_pages, altmap)
+				Identifier:memmap
+				CallExpression:section_activate(nid, start_pfn, nr_pages, altmap)
+					Callee:section_activate
+						Identifier:section_activate
+					ArgumentList:nid
+						Argument:nid
+							Identifier:nid
+						Argument:start_pfn
+							Identifier:start_pfn
+						Argument:nr_pages
+							Identifier:nr_pages
+						Argument:altmap
+							Identifier:altmap
+		IfStatement:if (IS_ERR(memmap))
+			Condition:IS_ERR(memmap)
+				CallExpression:IS_ERR(memmap)
+					Callee:IS_ERR
+						Identifier:IS_ERR
+					ArgumentList:memmap
+						Argument:memmap
+							Identifier:memmap
+			ReturnStatement:return PTR_ERR(memmap);
+				CallExpression:PTR_ERR(memmap)
+					Callee:PTR_ERR
+						Identifier:PTR_ERR
+					ArgumentList:memmap
+						Argument:memmap
+							Identifier:memmap
+		Statement:/*\t * Poison uninitialized struct pages in order to catch invalid flags\t * combinations.\t */
+		ExpressionStatement:page_init_poison(pfn_to_page(start_pfn), sizeof(struct page) * nr_pages)
+			CallExpression:page_init_poison(pfn_to_page(start_pfn), sizeof(struct page) * nr_pages)
+				Callee:page_init_poison
+					Identifier:page_init_poison
+				ArgumentList:pfn_to_page(start_pfn)
+					Argument:pfn_to_page(start_pfn)
+						CallExpression:pfn_to_page(start_pfn)
+							Callee:pfn_to_page
+								Identifier:pfn_to_page
+							ArgumentList:start_pfn
+								Argument:start_pfn
+									Identifier:start_pfn
+					Argument:sizeof(struct page) * nr_pages
+						MultiplicativeExpression:sizeof(struct page) * nr_pages
+							SizeofExpression:sizeof(struct page)
+								Sizeof:sizeof
+								SizeofOperand:struct page
+							Identifier:nr_pages
+		ExpressionStatement:ms = __pfn_to_section(start_pfn)
+			AssignmentExpression:ms = __pfn_to_section(start_pfn)
+				Identifier:ms
+				CallExpression:__pfn_to_section(start_pfn)
+					Callee:__pfn_to_section
+						Identifier:__pfn_to_section
+					ArgumentList:start_pfn
+						Argument:start_pfn
+							Identifier:start_pfn
+		ExpressionStatement:set_section_nid(section_nr, nid)
+			CallExpression:set_section_nid(section_nr, nid)
+				Callee:set_section_nid
+					Identifier:set_section_nid
+				ArgumentList:section_nr
+					Argument:section_nr
+						Identifier:section_nr
+					Argument:nid
+						Identifier:nid
+		ExpressionStatement:section_mark_present(ms)
+			CallExpression:section_mark_present(ms)
+				Callee:section_mark_present
+					Identifier:section_mark_present
+				ArgumentList:ms
+					Argument:ms
+						Identifier:ms
+		Statement:/* Align memmap to section boundary in the subsection case */
+		IfStatement:if (section_nr_to_pfn(section_nr) != start_pfn)
+			Condition:section_nr_to_pfn(section_nr) != start_pfn
+				EqualityExpression:section_nr_to_pfn(section_nr) != start_pfn
+					CallExpression:section_nr_to_pfn(section_nr)
+						Callee:section_nr_to_pfn
+							Identifier:section_nr_to_pfn
+						ArgumentList:section_nr
+							Argument:section_nr
+								Identifier:section_nr
+					Identifier:start_pfn
+			ExpressionStatement:memmap = pfn_to_kaddr(section_nr_to_pfn(section_nr))
+				AssignmentExpression:memmap = pfn_to_kaddr(section_nr_to_pfn(section_nr))
+					Identifier:memmap
+					CallExpression:pfn_to_kaddr(section_nr_to_pfn(section_nr))
+						Callee:pfn_to_kaddr
+							Identifier:pfn_to_kaddr
+						ArgumentList:section_nr_to_pfn(section_nr)
+							Argument:section_nr_to_pfn(section_nr)
+								CallExpression:section_nr_to_pfn(section_nr)
+									Callee:section_nr_to_pfn
+										Identifier:section_nr_to_pfn
+									ArgumentList:section_nr
+										Argument:section_nr
+											Identifier:section_nr
+		ExpressionStatement:sparse_init_one_section(ms, section_nr, memmap, ms->usage, 0)
+			CallExpression:sparse_init_one_section(ms, section_nr, memmap, ms->usage, 0)
+				Callee:sparse_init_one_section
+					Identifier:sparse_init_one_section
+				ArgumentList:ms
+					Argument:ms
+						Identifier:ms
+					Argument:section_nr
+						Identifier:section_nr
+					Argument:memmap
+						Identifier:memmap
+					Argument:ms->usage
+						PtrMemberAccess:ms->usage
+							Identifier:ms
+							Identifier:usage
+					Argument:0
+						Constant:0
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:int __meminit
+	Identifier:sparse_add_section
+	ParameterList:int nid , unsigned long start_pfn , unsigned long nr_pages , struct vmem_altmap *altmap
+		Parameter:int nid
+			ParameterType:int
+			Identifier:nid
+		Parameter:unsigned long start_pfn
+			ParameterType:unsigned long
+			Identifier:start_pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap
+FunctionDef:clear_hwpoisoned_pages (struct page *memmap , int nr_pages)
+	CompoundStatement:
+		IdentifierDeclStatement:int i;
+			IdentifierDecl:i
+				IdentifierDeclType:int
+				Identifier:i
+		IfStatement:if (!memmap)
+			Condition:!memmap
+				UnaryOperationExpression:!memmap
+					UnaryOperator:!
+					Identifier:memmap
+			ReturnStatement:return;
+		Statement:/*\t * A further optimization is to have per section refcounted\t * num_poisoned_pages.  But that would need more space per memmap, so\t * for now just do a quick global check to speed up this routine in the\t * absence of bad pages.\t */
+		IfStatement:if (atomic_long_read(&num_poisoned_pages) == 0)
+			Condition:atomic_long_read(&num_poisoned_pages) == 0
+				EqualityExpression:atomic_long_read(&num_poisoned_pages) == 0
+					CallExpression:atomic_long_read(&num_poisoned_pages)
+						Callee:atomic_long_read
+							Identifier:atomic_long_read
+						ArgumentList:&num_poisoned_pages
+							Argument:&num_poisoned_pages
+								UnaryOperationExpression:&num_poisoned_pages
+									UnaryOperator:&
+									Identifier:num_poisoned_pages
+					Constant:0
+			ReturnStatement:return;
+		ForStatement:for (i = 0; i < nr_pages; i++)
+			ForInit:i = 0;
+				AssignmentExpression:i = 0
+					Identifier:i
+					Constant:0
+			Condition:i < nr_pages
+				RelationalExpression:i < nr_pages
+					Identifier:i
+					Identifier:nr_pages
+			PostIncDecOperationExpression:i++
+				Identifier:i
+				IncDec:++
+			CompoundStatement:
+				IfStatement:if (PageHWPoison(&memmap[i]))
+					Condition:PageHWPoison(&memmap[i])
+						CallExpression:PageHWPoison(&memmap[i])
+							Callee:PageHWPoison
+								Identifier:PageHWPoison
+							ArgumentList:&memmap[i]
+								Argument:&memmap[i]
+									UnaryOperationExpression:&memmap[i]
+										UnaryOperator:&
+										ArrayIndexing:memmap[i]
+											Identifier:memmap
+											Identifier:i
+					CompoundStatement:
+						ExpressionStatement:atomic_long_sub(1, &num_poisoned_pages)
+							CallExpression:atomic_long_sub(1, &num_poisoned_pages)
+								Callee:atomic_long_sub
+									Identifier:atomic_long_sub
+								ArgumentList:1
+									Argument:1
+										Constant:1
+									Argument:&num_poisoned_pages
+										UnaryOperationExpression:&num_poisoned_pages
+											UnaryOperator:&
+											Identifier:num_poisoned_pages
+						ExpressionStatement:ClearPageHWPoison(&memmap[i])
+							CallExpression:ClearPageHWPoison(&memmap[i])
+								Callee:ClearPageHWPoison
+									Identifier:ClearPageHWPoison
+								ArgumentList:&memmap[i]
+									Argument:&memmap[i]
+										UnaryOperationExpression:&memmap[i]
+											UnaryOperator:&
+											ArrayIndexing:memmap[i]
+												Identifier:memmap
+												Identifier:i
+	ReturnType:ifdef CONFIG_MEMORY_FAILUREstatic void
+	Identifier:clear_hwpoisoned_pages
+	ParameterList:struct page *memmap , int nr_pages
+		Parameter:struct page *memmap
+			ParameterType:struct page *
+			Identifier:memmap
+		Parameter:int nr_pages
+			ParameterType:int
+			Identifier:nr_pages
+FunctionDef:clear_hwpoisoned_pages (struct page *memmap , int nr_pages)
+	CompoundStatement:
+	ReturnType:inline void
+	Identifier:clear_hwpoisoned_pages
+	ParameterList:struct page *memmap , int nr_pages
+		Parameter:struct page *memmap
+			ParameterType:struct page *
+			Identifier:memmap
+		Parameter:int nr_pages
+			ParameterType:int
+			Identifier:nr_pages
+FunctionDef:sparse_remove_section (struct mem_section *ms , unsigned long pfn , unsigned long nr_pages , unsigned long map_offset , struct vmem_altmap *altmap)
+	CompoundStatement:
+		ExpressionStatement:clear_hwpoisoned_pages(pfn_to_page(pfn) + map_offset,\t\t\tnr_pages - map_offset)
+			CallExpression:clear_hwpoisoned_pages(pfn_to_page(pfn) + map_offset,\t\t\tnr_pages - map_offset)
+				Callee:clear_hwpoisoned_pages
+					Identifier:clear_hwpoisoned_pages
+				ArgumentList:pfn_to_page(pfn) + map_offset
+					Argument:pfn_to_page(pfn) + map_offset
+						AdditiveExpression:pfn_to_page(pfn) + map_offset
+							CallExpression:pfn_to_page(pfn)
+								Callee:pfn_to_page
+									Identifier:pfn_to_page
+								ArgumentList:pfn
+									Argument:pfn
+										Identifier:pfn
+							Identifier:map_offset
+					Argument:nr_pages - map_offset
+						AdditiveExpression:nr_pages - map_offset
+							Identifier:nr_pages
+							Identifier:map_offset
+		ExpressionStatement:section_deactivate(pfn, nr_pages, altmap)
+			CallExpression:section_deactivate(pfn, nr_pages, altmap)
+				Callee:section_deactivate
+					Identifier:section_deactivate
+				ArgumentList:pfn
+					Argument:pfn
+						Identifier:pfn
+					Argument:nr_pages
+						Identifier:nr_pages
+					Argument:altmap
+						Identifier:altmap
+	ReturnType:endifvoid
+	Identifier:sparse_remove_section
+	ParameterList:struct mem_section *ms , unsigned long pfn , unsigned long nr_pages , unsigned long map_offset , struct vmem_altmap *altmap
+		Parameter:struct mem_section *ms
+			ParameterType:struct mem_section *
+			Identifier:ms
+		Parameter:unsigned long pfn
+			ParameterType:unsigned long
+			Identifier:pfn
+		Parameter:unsigned long nr_pages
+			ParameterType:unsigned long
+			Identifier:nr_pages
+		Parameter:unsigned long map_offset
+			ParameterType:unsigned long
+			Identifier:map_offset
+		Parameter:struct vmem_altmap *altmap
+			ParameterType:struct vmem_altmap *
+			Identifier:altmap

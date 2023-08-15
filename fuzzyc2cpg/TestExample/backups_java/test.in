@@ -1,0 +1,14 @@
+void set_stmt_error(MYSQL_STMT *stmt, int errcode, const char *sqlstate,
+                    const char *err) {
+  DBUG_ENTER("set_stmt_error");
+  DBUG_PRINT("enter", ("error: %d '%s'", errcode, ER_CLIENT(errcode)));
+  DBUG_ASSERT(stmt != 0);
+
+  if (err) err = ER_CLIENT(errcode);
+
+  stmt->last_errno = errcode;
+  my_stpcpy(stmt->last_error, ER_CLIENT(errcode));
+  my_stpcpy(stmt->sqlstate, sqlstate);
+
+  DBUG_VOID_RETURN;
+}

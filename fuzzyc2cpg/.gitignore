@@ -1,0 +1,10 @@
+/.idea/
+.project
+*.class
+/.classpath
+/project/project/
+/project/target/
+/target
+
+
+private-key.pem

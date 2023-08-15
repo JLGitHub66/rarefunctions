@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include "a.h"
+
+
+
+#ifndef
+foo();
+#endif
+
+#if
+#ifdef
+
+#else
+#elif
+
+
+
+void f() {
+  int b = 0;
+    do                                                                                                                 
+    {                                                                                                                  
+        if (!(2))                                                                                                   
+        {                                                                                                              
+            verRaiseVerifyExceptionIfNeeded(INDEBUG( 3));                                                             
+        }                                                                                                              
+    } while (0);
+  printf(1);
+}
+

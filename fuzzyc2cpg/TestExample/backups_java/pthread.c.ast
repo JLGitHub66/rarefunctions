@@ -1,0 +1,102 @@
+FunctionDef:thread_run (void* _val)
+	CompoundStatement:
+		ExpressionStatement:pthread_detach(pthread_self())
+			CallExpression:pthread_detach(pthread_self())
+				Callee:pthread_detach
+					Identifier:pthread_detach
+				ArgumentList:pthread_self()
+					Argument:pthread_self()
+						CallExpression:pthread_self()
+							Callee:pthread_self
+								Identifier:pthread_self
+							ArgumentList:
+		ExpressionStatement:printf("%s\n", (char*)_val)
+			CallExpression:printf("%s\n", (char*)_val)
+				Callee:printf
+					Identifier:printf
+				ArgumentList:"%s\n"
+					Argument:"%s\n"
+						Constant:"%s\n"
+					Argument:(char*)_val
+						CastExpression:(char*)_val
+							CastTarget:char*
+							Identifier:_val
+		ReturnStatement:return NULL;
+			Identifier:NULL
+	ReturnType:void*
+	Identifier:thread_run
+	ParameterList:void* _val
+		Parameter:void* _val
+			ParameterType:void *
+			Identifier:_val
+FunctionDef:main ()
+	CompoundStatement:
+		IdentifierDeclStatement:pthread_t tid;
+			IdentifierDecl:tid
+				IdentifierDeclType:pthread_t
+				Identifier:tid
+		IdentifierDeclStatement:int tret = pthread_create(&tid, NULL, thread_run, "thread_run~~~~~");
+			IdentifierDecl:tret = pthread_create(&tid, NULL, thread_run, "thread_run~~~~~")
+				IdentifierDeclType:int
+				Identifier:tret
+				AssignmentExpression:tret = pthread_create(&tid, NULL, thread_run, "thread_run~~~~~")
+					Identifier:tret
+					CallExpression:pthread_create(&tid, NULL, thread_run, "thread_run~~~~~")
+						Callee:pthread_create
+							Identifier:pthread_create
+						ArgumentList:&tid
+							Argument:&tid
+								UnaryOperationExpression:&tid
+									UnaryOperator:&
+									Identifier:tid
+							Argument:NULL
+								Identifier:NULL
+							Argument:thread_run
+								Identifier:thread_run
+							Argument:"thread_run~~~~~"
+								Constant:"thread_run~~~~~"
+		IfStatement:if (tret == 0)
+			Condition:tret == 0
+				EqualityExpression:tret == 0
+					Identifier:tret
+					Constant:0
+			CompoundStatement:
+				ExpressionStatement:sleep(1)
+					CallExpression:sleep(1)
+						Callee:sleep
+							Identifier:sleep
+						ArgumentList:1
+							Argument:1
+								Constant:1
+				IdentifierDeclStatement:int ret = pthread_join(tid, NULL);
+					IdentifierDecl:ret = pthread_join(tid, NULL)
+						IdentifierDeclType:int
+						Identifier:ret
+						AssignmentExpression:ret = pthread_join(tid, NULL)
+							Identifier:ret
+							CallExpression:pthread_join(tid, NULL)
+								Callee:pthread_join
+									Identifier:pthread_join
+								ArgumentList:tid
+									Argument:tid
+										Identifier:tid
+									Argument:NULL
+										Identifier:NULL
+				IfStatement:if (ret == 0)
+					Condition:ret == 0
+						EqualityExpression:ret == 0
+							Identifier:ret
+							Constant:0
+					CompoundStatement:
+						ExpressionStatement:printf("pthread_join success\n")
+							CallExpression:printf("pthread_join success\n")
+								Callee:printf
+									Identifier:printf
+								ArgumentList:"pthread_join success\n"
+									Argument:"pthread_join success\n"
+										Constant:"pthread_join success\n"
+						ReturnStatement:return ret;
+							Identifier:ret
+	ReturnType:int
+	Identifier:main
+	ParameterList:

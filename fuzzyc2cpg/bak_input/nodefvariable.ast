@@ -1,0 +1,16 @@
+FunctionDef:main ()
+	CompoundStatement:
+		IfStatement:if(x > 5)
+			Condition:x > 5
+				RelationalExpression:x > 5
+					Identifier:x
+					Constant:5
+			ExpressionStatement:y --
+				PostIncDecOperationExpression:y --
+					Identifier:y
+					IncDec:--
+		ReturnStatement:return c;
+			Identifier:c
+	ReturnType:int
+	Identifier:main
+	ParameterList:

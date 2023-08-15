@@ -1,0 +1,50 @@
+ClassDef:MyStruct
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:x
+				IdentifierDeclType:int
+				Identifier:x
+		IdentifierDeclStatement:null
+			IdentifierDecl:y
+				IdentifierDeclType:int
+				Identifier:y
+FunctionDef:main (int argc , char **argv)
+	CompoundStatement:
+		IdentifierDeclStatement:int c = 8;
+			IdentifierDecl:c = 8
+				IdentifierDeclType:int
+				Identifier:c
+				AssignmentExpression:c = 8
+					Identifier:c
+					Constant:8
+		IfStatement:if(argc > 1 && argv[1] != NULL)
+			Condition:argc > 1 && argv[1] != NULL
+				AndExpression:argc > 1 && argv[1] != NULL
+					RelationalExpression:argc > 1
+						Identifier:argc
+						Constant:1
+					EqualityExpression:argv[1] != NULL
+						ArrayIndexing:argv[1]
+							Identifier:argv
+							Constant:1
+						Identifier:NULL
+			CompoundStatement:
+				ExpressionStatement:printf("foo")
+					CallExpression:printf("foo")
+						Callee:printf
+							Identifier:printf
+						ArgumentList:"foo"
+							Argument:"foo"
+								Constant:"foo"
+		ExpressionStatement:
+		ReturnStatement:return 0;
+			Constant:0
+	ReturnType:int
+	Identifier:main
+	ParameterList:int argc , char **argv
+		Parameter:int argc
+			ParameterType:int
+			Identifier:argc
+		Parameter:char **argv
+			ParameterType:char * *
+			Identifier:argv

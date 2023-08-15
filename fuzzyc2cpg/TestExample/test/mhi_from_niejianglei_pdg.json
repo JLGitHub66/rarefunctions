@@ -1,0 +1,1251 @@
+{"functions": [{
+  "function" : "module_init",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@8406",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_free_bulk",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2bd2",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_column_number",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f49",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "plog",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ca1",
+  "PDG" : [
+  ]
+},{
+  "function" : "slabinfo_write",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f7b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "log_msg",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c85",
+  "PDG" : [
+  ]
+},{
+  "function" : "get_slabinfo",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f6b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "slabinfo_show_stats",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f73",
+  "PDG" : [
+  ]
+},{
+  "function" : "vplog",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c97",
+  "PDG" : [
+  ]
+},{
+  "function" : "___cache_free",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@238c",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_file_matches",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f35",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "log_err",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c91",
+  "PDG" : [
+  ]
+},{
+  "function" : "slob_free_pages",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2b50",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_path_count",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f1c",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_binary_file_matches",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f2f",
+  "PDG" : [
+  ]
+},{
+  "function" : "log_warn",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c8b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_SPINLOCK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2488",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_line",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f26",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_set_mhictrl_reset",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a2d1",
+  "PDG" : [
+  ]
+},{
+  "function" : "module_param_named",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e63",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "log_debug",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c7f",
+  "PDG" : [
+  ]
+},{
+  "function" : "slab_kmem_cache_release",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f58",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "set_log_level",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2c79",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_line_number",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f41",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_shrink",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f51",
+  "PDG" : [
+  ]
+},{
+  "function" : "core_initcall",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a2c2",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_SPINLOCK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2488",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_path",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f14",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_release",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f4b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_DESCRIPTION",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c7c",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_SPINLOCK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2488",
+  "PDG" : [
+  ]
+},{
+  "function" : "ATTRIBUTE_GROUPS",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5dc9",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_shutdown",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f44",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_context_append",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f03",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_cleanup_context",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2efe",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_init_context",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ef9",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "module_exit",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@840d",
+  "PDG" : [
+  ]
+},{
+  "function" : "vasprintf",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2eee",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_ALIAS_CHARDEV_MAJOR",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@8414",
+  "PDG" : [
+  ]
+},{
+  "function" : "strlcpy",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ee4",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "realpath",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2edc",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_stop",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a60d",
+  "PDG" : [
+  ]
+},{
+  "function" : "getline",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ed1",
+  "PDG" : [
+  ]
+},{
+  "function" : "fs_initcall",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a27b",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "fgetln",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ec8",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "find_mergeable",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ef9",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "buf_getline",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ebc",
+  "PDG" : [
+  ]
+},{
+  "function" : "__setup",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5b6a",
+  "PDG" : [
+  ]
+},{
+  "function" : "slab_unmergeable",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ef2",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_asprintf",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2eb4",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "die",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2eae",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "create_boot_cache",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ee4",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_named_pipe",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2ea5",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "create_kmalloc_cache",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ed7",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_symlink",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e9c",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_AUTHOR",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@841b",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_MUTEX",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c6e",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_create",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ece",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_directory",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e93",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_LICENSE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c83",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_RAW_SPINLOCK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e55",
+  "PDG" : [
+  ]
+},{
+  "function" : "kmalloc_fix_flags",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ec8",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_lowercase",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e8c",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "kmalloc_slab",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1ebf",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "init_wordchar_table",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e80",
+  "PDG" : [
+  ]
+},{
+  "function" : "create_kmalloc_caches",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1eb9",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "arch_initcall",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5b26",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_free_bulk",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2bd2",
+  "PDG" : [
+  ]
+},{
+  "function" : "SIMPLE_DEV_PM_OPS",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@7d4f",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_fnmatch",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e6e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_DEVICE_TABLE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@7d46",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_regex",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e67",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_binary",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e5e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_register",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a4a1",
+  "PDG" : [
+  ]
+},{
+  "function" : "compile_study",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e51",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "realloc_matches",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e47",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_HASHTABLE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@8506",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_LICENSE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c83",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_STATIC_PERCPU_RWSEM",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@84ff",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_VERSION",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c8a",
+  "PDG" : [
+  ]
+},{
+  "function" : "invert_matches",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e3b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "late_initcall",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5065",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_PER_CPU",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@84f6",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "hash_strnstr",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e2d",
+  "PDG" : [
+  ]
+},{
+  "function" : "lm_get_owner",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@878d",
+  "PDG" : [
+  ]
+},{
+  "function" : "early_initcall",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@84ea",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "boyer_moore_strnstr",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e1e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_min",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e17",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "twa_string_lookup",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5d63",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_max",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e10",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_zipped",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d20",
+  "PDG" : [
+  ]
+},{
+  "function" : "generate_hash",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e04",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_write_reg",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a44b",
+  "PDG" : [
+  ]
+},{
+  "function" : "memcg_slab_show",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2378",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "slab_stop",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2370",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "slab_start",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@235d",
+  "PDG" : [
+  ]
+},{
+  "function" : "slab_next",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2366",
+  "PDG" : [
+  ]
+},{
+  "function" : "slob_free",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2b47",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_read_reg",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a434",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_wordchar",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e85",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_prefix",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2de0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "generate_alpha_skip",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2dd5",
+  "PDG" : [
+  ]
+},{
+  "function" : "suffix_len",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2dec",
+  "PDG" : [
+  ]
+},{
+  "function" : "free_strings",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2dcd",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "generate_find_skip",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2df8",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "__do_kmalloc_node",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2b1a",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_strndup",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2dac",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_status_cb",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a3f5",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_strdup",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2da5",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_calloc",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d9d",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_realloc",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d95",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ag_malloc",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d8e",
+  "PDG" : [
+  ]
+},{
+  "function" : "early_param",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@4fb9",
+  "PDG" : [
+  ]
+},{
+  "function" : "is_empty",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d87",
+  "PDG" : [
+  ]
+},{
+  "function" : "LIST_HEAD",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@3e4e",
+  "PDG" : [
+  ]
+},{
+  "function" : "filename_filter",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d7c",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_runtime_put",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a3c5",
+  "PDG" : [
+  ]
+},{
+  "function" : "load_ignore_patterns",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d74",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_runtime_get",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a3bb",
+  "PDG" : [
+  ]
+},{
+  "function" : "add_ignore_pattern",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d6c",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "cleanup_ignore",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d66",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_LICENSE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c83",
+  "PDG" : [
+  ]
+},{
+  "function" : "init_ignore",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d5c",
+  "PDG" : [
+  ]
+},{
+  "function" : "setup_kmalloc_cache_index_table",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1eb4",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_AUTHOR",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@841b",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_resume",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a645",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "module_exit",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@840d",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_PARM_DESC",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c9b",
+  "PDG" : [
+  ]
+},{
+  "function" : "binary_search",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2e75",
+  "PDG" : [
+  ]
+},{
+  "function" : "module_init",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@8406",
+  "PDG" : [
+  ]
+},{
+  "function" : "mod_objcg_state",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@201d",
+  "PDG" : [
+  ]
+},{
+  "function" : "module_param",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c91",
+  "PDG" : [
+  ]
+},{
+  "function" : "debugfs_slab_release",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@240c",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_alloc_bulk",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2be4",
+  "PDG" : [
+  ]
+},{
+  "function" : "decompress_open",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d38",
+  "PDG" : [
+  ]
+},{
+  "function" : "search_dir",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2fd5",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_suspend",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a61f",
+  "PDG" : [
+  ]
+},{
+  "function" : "DECLARE_WORK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@4f5c",
+  "PDG" : [
+  ]
+},{
+  "function" : "search_file_worker",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2fcf",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_DESCRIPTION",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c7c",
+  "PDG" : [
+  ]
+},{
+  "function" : "decompress",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d29",
+  "PDG" : [
+  ]
+},{
+  "function" : "search_file",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2fc9",
+  "PDG" : [
+  ]
+},{
+  "function" : "MODULE_AUTHOR",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@841b",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "search_stream",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2fc0",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_MUTEX",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@5c6e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "cleanup_options",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d18",
+  "PDG" : [
+  ]
+},{
+  "function" : "search_buf",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2fb6",
+  "PDG" : [
+  ]
+},{
+  "function" : "parse_options",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d0e",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "init_options",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d09",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_version",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2d04",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL_GPL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@46b0",
+  "PDG" : [
+  ]
+},{
+  "function" : "validate_slab_cache",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1fc8",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "DEFINE_SPINLOCK",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2488",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_start",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a5cf",
+  "PDG" : [
+  ]
+},{
+  "function" : "DECLARE_STATIC_KEY_FALSE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1fb9",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_clear_vector",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a329",
+  "PDG" : [
+  ]
+},{
+  "function" : "DECLARE_STATIC_KEY_TRUE",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1fb2",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_empty",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@1f3d",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_unregister",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a5b5",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "fprintf_w32",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f65",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "windows_use_ansi",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f5f",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "EXPORT_SYMBOL",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@51ee",
+  "PDG" : [
+  ]
+},{
+  "function" : "normalize_path",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f59",
+  "PDG" : [
+  ]
+},{
+  "function" : "__kmem_cache_alloc_bulk",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2be4",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_file_separator",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f54",
+  "PDG" : [
+  ]
+},{
+  "function" : "print_trailing_context",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@2f0b",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_reset_txvecstatus",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a2ff",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_reset_txvecdb",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a2f1",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_read_addr_from_dt",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a45b",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_op_callback_to_str",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a3cc",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_get_msi",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a33c",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_reset_rxvecstatus",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a31b",
+  "PDG" : [
+  ]
+},{
+  "function" : "ath11k_mhi_reset_rxvecdb",
+  "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method@a30d",
+  "PDG" : [
+  ]
+}]}

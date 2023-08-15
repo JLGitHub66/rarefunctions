@@ -1,0 +1,3607 @@
+{
+  "filename": "stdio_from_xuebo.c",
+  "content": [
+    {
+      "functionDef": {
+        "functionName": "strnlen",
+        "parameterList": [
+          {
+            "parameterType": "const char *",
+            "parameter": "s"
+          },
+          {
+            "parameterType": "size_t",
+            "parameter": "count"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "sc",
+                "identifierType": "const char *"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "AndExpression": {
+                  "leftOperand": {
+                    "postIncDecOperationExpression": {
+                      "operand": {
+                        "identifier": "count"
+                      },
+                      "operator": "--"
+                    }
+                  },
+                  "rightOperand": {
+                    "EqualityExpression": {
+                      "leftOperand": {
+                        "unaryOperationExpression": {
+                          "operator": "*",
+                          "operand": {
+                            "identifier": "sc"
+                          }
+                        }
+                      },
+                      "rightOperand": {
+                        "constant": "'\\0'"
+                      },
+                      "operator": "!="
+                    }
+                  },
+                  "operator": "&&"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "sc"
+                  },
+                  "rightOperand": {
+                    "identifier": "s"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "expressionStatement": {}
+              },
+              "forLoop": {
+                "unaryExpression": {
+                  "operator": "++",
+                  "operand": {
+                    "identifier": "sc"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "AdditiveExpression": {
+                "leftOperand": {
+                  "identifier": "sc"
+                },
+                "rightOperand": {
+                  "identifier": "s"
+                },
+                "operator": "-"
+              }
+            }
+          }
+        ],
+        "returnType": "size_t"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "skip_atoi",
+        "parameterList": [
+          {
+            "parameterType": "const char * *",
+            "parameter": "s"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              },
+              {
+                "identifier": "c",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "AndExpression": {
+                  "leftOperand": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "constant": "'0'"
+                      },
+                      "rightOperand": {
+                        "AssignmentExpression": {
+                          "leftOperand": {
+                            "identifier": "c"
+                          },
+                          "rightOperand": {
+                            "unaryOperationExpression": {
+                              "operator": "*",
+                              "operand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "s"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "operator": "="
+                        }
+                      },
+                      "operator": "<="
+                    }
+                  },
+                  "rightOperand": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "identifier": "c"
+                      },
+                      "rightOperand": {
+                        "constant": "'9'"
+                      },
+                      "operator": "<="
+                    }
+                  },
+                  "operator": "&&"
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "identifier": "i"
+                    },
+                    "rightOperand": {
+                      "AdditiveExpression": {
+                        "leftOperand": {
+                          "MultiplicativeExpression": {
+                            "leftOperand": {
+                              "identifier": "i"
+                            },
+                            "rightOperand": {
+                              "constant": "10"
+                            },
+                            "operator": "*"
+                          }
+                        },
+                        "rightOperand": {
+                          "AdditiveExpression": {
+                            "leftOperand": {
+                              "identifier": "c"
+                            },
+                            "rightOperand": {
+                              "constant": "'0'"
+                            },
+                            "operator": "-"
+                          }
+                        },
+                        "operator": "+"
+                      }
+                    },
+                    "operator": "="
+                  }
+                }
+              },
+              "forLoop": {
+                "unaryExpression": {
+                  "operator": "++",
+                  "operand": {
+                    "unaryOperationExpression": {
+                      "operator": "*",
+                      "operand": {
+                        "identifier": "s"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "i"
+            }
+          }
+        ],
+        "returnType": "static int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "number",
+        "parameterList": [
+          {
+            "parameterType": "char *",
+            "parameter": "str"
+          },
+          {
+            "parameterType": "unsigned long long",
+            "parameter": "num"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "base"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "size"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "precision"
+          },
+          {
+            "parameterType": "int",
+            "parameter": "type"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "c",
+                "identifierType": "char"
+              },
+              {
+                "identifier": "sign",
+                "identifierType": "char"
+              },
+              {
+                "identifier": "tmp",
+                "identifierType": "char [ 66 ]"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "digits",
+                "identifierType": "const char *",
+                "initialValue": "\"0123456789abcdefghijklmnopqrstuvwxyz\""
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "identifier": "digits"
+                    },
+                    "rightOperand": {
+                      "constant": "\"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\""
+                    },
+                    "operator": "="
+                  }
+                }
+              },
+              "condition": {
+                "BitAndExpression": {
+                  "leftOperand": {
+                    "identifier": "type"
+                  },
+                  "rightOperand": {
+                    "constant": "64"
+                  },
+                  "operator": "&"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "identifier": "type"
+                    },
+                    "rightOperand": {
+                      "identifier": "~1"
+                    },
+                    "operator": "&="
+                  }
+                }
+              },
+              "condition": {
+                "BitAndExpression": {
+                  "leftOperand": {
+                    "identifier": "type"
+                  },
+                  "rightOperand": {
+                    "constant": "16"
+                  },
+                  "operator": "&"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "returnStatement": {
+                  "constant": "0"
+                }
+              },
+              "condition": {
+                "OrExpression": {
+                  "leftOperand": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "identifier": "base"
+                      },
+                      "rightOperand": {
+                        "constant": "2"
+                      },
+                      "operator": "<"
+                    }
+                  },
+                  "rightOperand": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "identifier": "base"
+                      },
+                      "rightOperand": {
+                        "constant": "36"
+                      },
+                      "operator": ">"
+                    }
+                  },
+                  "operator": "||"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "c"
+                },
+                "rightOperand": {
+                  "conditionalExpression": {
+                    "condition": {
+                      "BitAndExpression": {
+                        "leftOperand": {
+                          "identifier": "type"
+                        },
+                        "rightOperand": {
+                          "constant": "1"
+                        },
+                        "operator": "&"
+                      }
+                    },
+                    "trueExpression": {
+                      "constant": "'0'"
+                    },
+                    "falseExpression": {
+                      "constant": "' '"
+                    }
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "sign"
+                },
+                "rightOperand": {
+                  "constant": "0"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "sign"
+                                },
+                                "rightOperand": {
+                                  "constant": "'-'"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "num"
+                                },
+                                "rightOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "-",
+                                    "operand": {
+                                      "castExpression": {
+                                        "originalExpression": {
+                                          "identifier": "num"
+                                        },
+                                        "target": "signed long long"
+                                      }
+                                    }
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "postIncDecOperationExpression": {
+                                "operand": {
+                                  "identifier": "size"
+                                },
+                                "operator": "--"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "RelationalExpression": {
+                          "leftOperand": {
+                            "castExpression": {
+                              "originalExpression": {
+                                "identifier": "num"
+                              },
+                              "target": "signed long long"
+                            }
+                          },
+                          "rightOperand": {
+                            "constant": "0"
+                          },
+                          "operator": "<"
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "sign"
+                                    },
+                                    "rightOperand": {
+                                      "constant": "'+'"
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              {
+                                "expressionStatement": {
+                                  "postIncDecOperationExpression": {
+                                    "operand": {
+                                      "identifier": "size"
+                                    },
+                                    "operator": "--"
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "BitAndExpression": {
+                              "leftOperand": {
+                                "identifier": "type"
+                              },
+                              "rightOperand": {
+                                "constant": "4"
+                              },
+                              "operator": "&"
+                            }
+                          },
+                          "elseBlock": {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "compoundStatement": [
+                                  {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "sign"
+                                        },
+                                        "rightOperand": {
+                                          "constant": "' '"
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "expressionStatement": {
+                                      "postIncDecOperationExpression": {
+                                        "operand": {
+                                          "identifier": "size"
+                                        },
+                                        "operator": "--"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              "condition": {
+                                "BitAndExpression": {
+                                  "leftOperand": {
+                                    "identifier": "type"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "8"
+                                  },
+                                  "operator": "&"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "BitAndExpression": {
+                  "leftOperand": {
+                    "identifier": "type"
+                  },
+                  "rightOperand": {
+                    "constant": "2"
+                  },
+                  "operator": "&"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "expressionStatement": {
+                          "AssignmentExpression": {
+                            "leftOperand": {
+                              "identifier": "size"
+                            },
+                            "rightOperand": {
+                              "constant": "2"
+                            },
+                            "operator": "-="
+                          }
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "identifier": "base"
+                          },
+                          "rightOperand": {
+                            "constant": "16"
+                          },
+                          "operator": "=="
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "expressionStatement": {
+                              "postIncDecOperationExpression": {
+                                "operand": {
+                                  "identifier": "size"
+                                },
+                                "operator": "--"
+                              }
+                            }
+                          },
+                          "condition": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "identifier": "base"
+                              },
+                              "rightOperand": {
+                                "constant": "8"
+                              },
+                              "operator": "=="
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "BitAndExpression": {
+                  "leftOperand": {
+                    "identifier": "type"
+                  },
+                  "rightOperand": {
+                    "constant": "32"
+                  },
+                  "operator": "&"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "i"
+                },
+                "rightOperand": {
+                  "constant": "0"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "arrayIndexing": {
+                        "array": "tmp",
+                        "index": {
+                          "postIncDecOperationExpression": {
+                            "operand": {
+                              "identifier": "i"
+                            },
+                            "operator": "++"
+                          }
+                        }
+                      }
+                    },
+                    "rightOperand": {
+                      "constant": "'0'"
+                    },
+                    "operator": "="
+                  }
+                }
+              },
+              "condition": {
+                "EqualityExpression": {
+                  "leftOperand": {
+                    "identifier": "num"
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": "=="
+                }
+              },
+              "elseBlock": {
+                "whileStatement": {
+                  "condition": {
+                    "EqualityExpression": {
+                      "leftOperand": {
+                        "identifier": "num"
+                      },
+                      "rightOperand": {
+                        "constant": "0"
+                      },
+                      "operator": "!="
+                    }
+                  },
+                  "whileBlock": {
+                    "compoundStatement": [
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {
+                        "compoundStatement": [
+                          {
+                            "identifierDeclStatement": [
+                              {
+                                "identifier": "__base",
+                                "identifierType": "unsigned int",
+                                "initialValue": "base"
+                              }
+                            ]
+                          },
+                          {
+                            "identifierDeclStatement": [
+                              {
+                                "identifier": "__rem",
+                                "identifierType": "unsigned int"
+                              }
+                            ]
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "__rem"
+                                },
+                                "rightOperand": {
+                                  "MultiplicativeExpression": {
+                                    "leftOperand": {
+                                      "castExpression": {
+                                        "originalExpression": {
+                                          "identifier": "num"
+                                        },
+                                        "target": "unsigned long long"
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "identifier": "__base"
+                                    },
+                                    "operator": "%"
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "num"
+                                },
+                                "rightOperand": {
+                                  "MultiplicativeExpression": {
+                                    "leftOperand": {
+                                      "castExpression": {
+                                        "originalExpression": {
+                                          "identifier": "num"
+                                        },
+                                        "target": "unsigned long long"
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "identifier": "__base"
+                                    },
+                                    "operator": "/"
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "identifier": "__rem"
+                            }
+                          }
+                        ]
+                      },
+                      {},
+                      {},
+                      {
+                        "expressionStatement": {}
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "identifier": "precision"
+                    },
+                    "rightOperand": {
+                      "identifier": "i"
+                    },
+                    "operator": "="
+                  }
+                }
+              },
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "identifier": "precision"
+                  },
+                  "operator": ">"
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "size"
+                },
+                "rightOperand": {
+                  "identifier": "precision"
+                },
+                "operator": "-="
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "whileStatement": {
+                  "condition": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "postIncDecOperationExpression": {
+                          "operand": {
+                            "identifier": "size"
+                          },
+                          "operator": "--"
+                        }
+                      },
+                      "rightOperand": {
+                        "constant": "0"
+                      },
+                      "operator": ">"
+                    }
+                  },
+                  "whileBlock": {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "*",
+                            "operand": {
+                              "postIncDecOperationExpression": {
+                                "operand": {
+                                  "identifier": "str"
+                                },
+                                "operator": "++"
+                              }
+                            }
+                          }
+                        },
+                        "rightOperand": {
+                          "constant": "' '"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                }
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "BitAndExpression": {
+                      "leftOperand": {
+                        "identifier": "type"
+                      },
+                      "rightOperand": {
+                        "AdditiveExpression": {
+                          "leftOperand": {
+                            "constant": "1"
+                          },
+                          "rightOperand": {
+                            "constant": "16"
+                          },
+                          "operator": "+"
+                        }
+                      },
+                      "operator": "&"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "unaryOperationExpression": {
+                        "operator": "*",
+                        "operand": {
+                          "postIncDecOperationExpression": {
+                            "operand": {
+                              "identifier": "str"
+                            },
+                            "operator": "++"
+                          }
+                        }
+                      }
+                    },
+                    "rightOperand": {
+                      "identifier": "sign"
+                    },
+                    "operator": "="
+                  }
+                }
+              },
+              "condition": {
+                "identifier": "sign"
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "expressionStatement": {
+                          "AssignmentExpression": {
+                            "leftOperand": {
+                              "unaryOperationExpression": {
+                                "operator": "*",
+                                "operand": {
+                                  "postIncDecOperationExpression": {
+                                    "operand": {
+                                      "identifier": "str"
+                                    },
+                                    "operator": "++"
+                                  }
+                                }
+                              }
+                            },
+                            "rightOperand": {
+                              "constant": "'0'"
+                            },
+                            "operator": "="
+                          }
+                        }
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "identifier": "base"
+                          },
+                          "rightOperand": {
+                            "constant": "8"
+                          },
+                          "operator": "=="
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "constant": "'0'"
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "arrayIndexing": {
+                                        "array": "digits",
+                                        "index": {
+                                          "constant": "33"
+                                        }
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "identifier": "base"
+                              },
+                              "rightOperand": {
+                                "constant": "16"
+                              },
+                              "operator": "=="
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "condition": {
+                "BitAndExpression": {
+                  "leftOperand": {
+                    "identifier": "type"
+                  },
+                  "rightOperand": {
+                    "constant": "32"
+                  },
+                  "operator": "&"
+                }
+              }
+            }
+          },
+          {
+            "ifStatement": {
+              "ifBlock": {
+                "whileStatement": {
+                  "condition": {
+                    "RelationalExpression": {
+                      "leftOperand": {
+                        "postIncDecOperationExpression": {
+                          "operand": {
+                            "identifier": "size"
+                          },
+                          "operator": "--"
+                        }
+                      },
+                      "rightOperand": {
+                        "constant": "0"
+                      },
+                      "operator": ">"
+                    }
+                  },
+                  "whileBlock": {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "*",
+                            "operand": {
+                              "postIncDecOperationExpression": {
+                                "operand": {
+                                  "identifier": "str"
+                                },
+                                "operator": "++"
+                              }
+                            }
+                          }
+                        },
+                        "rightOperand": {
+                          "identifier": "c"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                }
+              },
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "!",
+                  "operand": {
+                    "BitAndExpression": {
+                      "leftOperand": {
+                        "identifier": "type"
+                      },
+                      "rightOperand": {
+                        "constant": "16"
+                      },
+                      "operator": "&"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "whileStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "identifier": "i"
+                  },
+                  "rightOperand": {
+                    "postIncDecOperationExpression": {
+                      "operand": {
+                        "identifier": "precision"
+                      },
+                      "operator": "--"
+                    }
+                  },
+                  "operator": "<"
+                }
+              },
+              "whileBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "unaryOperationExpression": {
+                        "operator": "*",
+                        "operand": {
+                          "postIncDecOperationExpression": {
+                            "operand": {
+                              "identifier": "str"
+                            },
+                            "operator": "++"
+                          }
+                        }
+                      }
+                    },
+                    "rightOperand": {
+                      "constant": "'0'"
+                    },
+                    "operator": "="
+                  }
+                }
+              }
+            }
+          },
+          {
+            "whileStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "postIncDecOperationExpression": {
+                      "operand": {
+                        "identifier": "i"
+                      },
+                      "operator": "--"
+                    }
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": ">"
+                }
+              },
+              "whileBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "unaryOperationExpression": {
+                        "operator": "*",
+                        "operand": {
+                          "postIncDecOperationExpression": {
+                            "operand": {
+                              "identifier": "str"
+                            },
+                            "operator": "++"
+                          }
+                        }
+                      }
+                    },
+                    "rightOperand": {
+                      "arrayIndexing": {
+                        "array": "tmp",
+                        "index": {
+                          "identifier": "i"
+                        }
+                      }
+                    },
+                    "operator": "="
+                  }
+                }
+              }
+            }
+          },
+          {
+            "whileStatement": {
+              "condition": {
+                "RelationalExpression": {
+                  "leftOperand": {
+                    "postIncDecOperationExpression": {
+                      "operand": {
+                        "identifier": "size"
+                      },
+                      "operator": "--"
+                    }
+                  },
+                  "rightOperand": {
+                    "constant": "0"
+                  },
+                  "operator": ">"
+                }
+              },
+              "whileBlock": {
+                "expressionStatement": {
+                  "AssignmentExpression": {
+                    "leftOperand": {
+                      "unaryOperationExpression": {
+                        "operator": "*",
+                        "operand": {
+                          "postIncDecOperationExpression": {
+                            "operand": {
+                              "identifier": "str"
+                            },
+                            "operator": "++"
+                          }
+                        }
+                      }
+                    },
+                    "rightOperand": {
+                      "constant": "' '"
+                    },
+                    "operator": "="
+                  }
+                }
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "str"
+            }
+          }
+        ],
+        "returnType": "static char *"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "vsprintf",
+        "parameterList": [
+          {
+            "parameterType": "char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          },
+          {
+            "parameterType": "va_list",
+            "parameter": "args"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "len",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "num",
+                "identifierType": "unsigned long long"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              },
+              {
+                "identifier": "base",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "str",
+                "identifierType": "char *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "s",
+                "identifierType": "const char *"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "flags",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "field_width",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "precision",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "qualifier",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "forStatement": {
+              "condition": {
+                "unaryOperationExpression": {
+                  "operator": "*",
+                  "operand": {
+                    "identifier": "fmt"
+                  }
+                }
+              },
+              "forInit": {
+                "AssignmentExpression": {
+                  "leftOperand": {
+                    "identifier": "str"
+                  },
+                  "rightOperand": {
+                    "identifier": "buf"
+                  },
+                  "operator": "="
+                }
+              },
+              "forBlock": {
+                "compoundStatement": [
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "postIncDecOperationExpression": {
+                                        "operand": {
+                                          "identifier": "str"
+                                        },
+                                        "operator": "++"
+                                      }
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "identifier": "fmt"
+                                    }
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryOperationExpression": {
+                              "operator": "*",
+                              "operand": {
+                                "identifier": "fmt"
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "constant": "'%'"
+                          },
+                          "operator": "!="
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "flags"
+                        },
+                        "rightOperand": {
+                          "constant": "0"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "label": "repeat:"
+                  },
+                  {
+                    "expressionStatement": {
+                      "unaryExpression": {
+                        "operator": "++",
+                        "operand": {
+                          "identifier": "fmt"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "switchStatement": {
+                      "condition": {
+                        "unaryOperationExpression": {
+                          "operator": "*",
+                          "operand": {
+                            "identifier": "fmt"
+                          }
+                        }
+                      },
+                      "switchBlock": {
+                        "compoundStatement": [
+                          {
+                            "label": "case '-':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "16"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "repeat"
+                            }
+                          },
+                          {
+                            "label": "case '+':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "4"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "repeat"
+                            }
+                          },
+                          {
+                            "label": "case ' ':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "8"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "repeat"
+                            }
+                          },
+                          {
+                            "label": "case '#':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "32"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "repeat"
+                            }
+                          },
+                          {
+                            "label": "case '0':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "1"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "gotoStatement": {
+                              "goto": "repeat"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "field_width"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "-",
+                            "operand": {
+                              "constant": "1"
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "expressionStatement": {
+                          "AssignmentExpression": {
+                            "leftOperand": {
+                              "identifier": "field_width"
+                            },
+                            "rightOperand": {
+                              "callExpression": {
+                                "argumentList": [
+                                  {
+                                    "unaryOperationExpression": {
+                                      "operator": "&",
+                                      "operand": {
+                                        "identifier": "fmt"
+                                      }
+                                    }
+                                  }
+                                ],
+                                "callee": "skip_atoi"
+                              }
+                            },
+                            "operator": "="
+                          }
+                        }
+                      },
+                      "condition": {
+                        "AndExpression": {
+                          "leftOperand": {
+                            "RelationalExpression": {
+                              "leftOperand": {
+                                "constant": "'0'"
+                              },
+                              "rightOperand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "fmt"
+                                  }
+                                }
+                              },
+                              "operator": "<="
+                            }
+                          },
+                          "rightOperand": {
+                            "RelationalExpression": {
+                              "leftOperand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "fmt"
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "constant": "'9'"
+                              },
+                              "operator": "<="
+                            }
+                          },
+                          "operator": "&&"
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {
+                                "expressionStatement": {
+                                  "unaryExpression": {
+                                    "operator": "++",
+                                    "operand": {
+                                      "identifier": "fmt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "field_width"
+                                    },
+                                    "rightOperand": {
+                                      "callExpression": {
+                                        "argumentList": [
+                                          {
+                                            "identifier": "args"
+                                          },
+                                          {
+                                            "identifier": "int"
+                                          }
+                                        ],
+                                        "callee": "va_arg"
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "compoundStatement": [
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "identifier": "field_width"
+                                            },
+                                            "rightOperand": {
+                                              "unaryOperationExpression": {
+                                                "operator": "-",
+                                                "operand": {
+                                                  "identifier": "field_width"
+                                                }
+                                              }
+                                            },
+                                            "operator": "="
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "identifier": "flags"
+                                            },
+                                            "rightOperand": {
+                                              "constant": "16"
+                                            },
+                                            "operator": "|="
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "condition": {
+                                    "RelationalExpression": {
+                                      "leftOperand": {
+                                        "identifier": "field_width"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "0"
+                                      },
+                                      "operator": "<"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "fmt"
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "constant": "'*'"
+                              },
+                              "operator": "=="
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "precision"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "-",
+                            "operand": {
+                              "constant": "1"
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "unaryExpression": {
+                                "operator": "++",
+                                "operand": {
+                                  "identifier": "fmt"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "precision"
+                                    },
+                                    "rightOperand": {
+                                      "callExpression": {
+                                        "argumentList": [
+                                          {
+                                            "unaryOperationExpression": {
+                                              "operator": "&",
+                                              "operand": {
+                                                "identifier": "fmt"
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "callee": "skip_atoi"
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "AndExpression": {
+                                  "leftOperand": {
+                                    "RelationalExpression": {
+                                      "leftOperand": {
+                                        "constant": "'0'"
+                                      },
+                                      "rightOperand": {
+                                        "unaryOperationExpression": {
+                                          "operator": "*",
+                                          "operand": {
+                                            "identifier": "fmt"
+                                          }
+                                        }
+                                      },
+                                      "operator": "<="
+                                    }
+                                  },
+                                  "rightOperand": {
+                                    "RelationalExpression": {
+                                      "leftOperand": {
+                                        "unaryOperationExpression": {
+                                          "operator": "*",
+                                          "operand": {
+                                            "identifier": "fmt"
+                                          }
+                                        }
+                                      },
+                                      "rightOperand": {
+                                        "constant": "'9'"
+                                      },
+                                      "operator": "<="
+                                    }
+                                  },
+                                  "operator": "&&"
+                                }
+                              },
+                              "elseBlock": {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "compoundStatement": [
+                                      {
+                                        "expressionStatement": {
+                                          "unaryExpression": {
+                                            "operator": "++",
+                                            "operand": {
+                                              "identifier": "fmt"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "identifier": "precision"
+                                            },
+                                            "rightOperand": {
+                                              "callExpression": {
+                                                "argumentList": [
+                                                  {
+                                                    "identifier": "args"
+                                                  },
+                                                  {
+                                                    "identifier": "int"
+                                                  }
+                                                ],
+                                                "callee": "va_arg"
+                                              }
+                                            },
+                                            "operator": "="
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "condition": {
+                                    "EqualityExpression": {
+                                      "leftOperand": {
+                                        "unaryOperationExpression": {
+                                          "operator": "*",
+                                          "operand": {
+                                            "identifier": "fmt"
+                                          }
+                                        }
+                                      },
+                                      "rightOperand": {
+                                        "constant": "'*'"
+                                      },
+                                      "operator": "=="
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "precision"
+                                    },
+                                    "rightOperand": {
+                                      "constant": "0"
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "RelationalExpression": {
+                                  "leftOperand": {
+                                    "identifier": "precision"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "0"
+                                  },
+                                  "operator": "<"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "unaryOperationExpression": {
+                              "operator": "*",
+                              "operand": {
+                                "identifier": "fmt"
+                              }
+                            }
+                          },
+                          "rightOperand": {
+                            "constant": "'.'"
+                          },
+                          "operator": "=="
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "qualifier"
+                        },
+                        "rightOperand": {
+                          "unaryOperationExpression": {
+                            "operator": "-",
+                            "operand": {
+                              "constant": "1"
+                            }
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "qualifier"
+                                },
+                                "rightOperand": {
+                                  "constant": "'q'"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "fmt"
+                                },
+                                "rightOperand": {
+                                  "constant": "2"
+                                },
+                                "operator": "+="
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "AndExpression": {
+                          "leftOperand": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "fmt"
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "constant": "'l'"
+                              },
+                              "operator": "=="
+                            }
+                          },
+                          "rightOperand": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "AdditiveExpression": {
+                                      "leftOperand": {
+                                        "identifier": "fmt"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "1"
+                                      },
+                                      "operator": "+"
+                                    }
+                                  }
+                                }
+                              },
+                              "rightOperand": {
+                                "constant": "'l'"
+                              },
+                              "operator": "=="
+                            }
+                          },
+                          "operator": "&&"
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "qualifier"
+                                    },
+                                    "rightOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "identifier": "fmt"
+                                        }
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              {
+                                "expressionStatement": {
+                                  "unaryExpression": {
+                                    "operator": "++",
+                                    "operand": {
+                                      "identifier": "fmt"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "OrExpression": {
+                              "leftOperand": {
+                                "EqualityExpression": {
+                                  "leftOperand": {
+                                    "unaryOperationExpression": {
+                                      "operator": "*",
+                                      "operand": {
+                                        "identifier": "fmt"
+                                      }
+                                    }
+                                  },
+                                  "rightOperand": {
+                                    "constant": "'h'"
+                                  },
+                                  "operator": "=="
+                                }
+                              },
+                              "rightOperand": {
+                                "OrExpression": {
+                                  "leftOperand": {
+                                    "EqualityExpression": {
+                                      "leftOperand": {
+                                        "unaryOperationExpression": {
+                                          "operator": "*",
+                                          "operand": {
+                                            "identifier": "fmt"
+                                          }
+                                        }
+                                      },
+                                      "rightOperand": {
+                                        "constant": "'l'"
+                                      },
+                                      "operator": "=="
+                                    }
+                                  },
+                                  "rightOperand": {
+                                    "OrExpression": {
+                                      "leftOperand": {
+                                        "EqualityExpression": {
+                                          "leftOperand": {
+                                            "unaryOperationExpression": {
+                                              "operator": "*",
+                                              "operand": {
+                                                "identifier": "fmt"
+                                              }
+                                            }
+                                          },
+                                          "rightOperand": {
+                                            "constant": "'L'"
+                                          },
+                                          "operator": "=="
+                                        }
+                                      },
+                                      "rightOperand": {
+                                        "EqualityExpression": {
+                                          "leftOperand": {
+                                            "unaryOperationExpression": {
+                                              "operator": "*",
+                                              "operand": {
+                                                "identifier": "fmt"
+                                              }
+                                            }
+                                          },
+                                          "rightOperand": {
+                                            "constant": "'Z'"
+                                          },
+                                          "operator": "=="
+                                        }
+                                      },
+                                      "operator": "||"
+                                    }
+                                  },
+                                  "operator": "||"
+                                }
+                              },
+                              "operator": "||"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "base"
+                        },
+                        "rightOperand": {
+                          "constant": "10"
+                        },
+                        "operator": "="
+                      }
+                    }
+                  },
+                  {
+                    "switchStatement": {
+                      "condition": {
+                        "unaryOperationExpression": {
+                          "operator": "*",
+                          "operand": {
+                            "identifier": "fmt"
+                          }
+                        }
+                      },
+                      "switchBlock": {
+                        "compoundStatement": [
+                          {
+                            "label": "case 'c':"
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "whileStatement": {
+                                  "condition": {
+                                    "RelationalExpression": {
+                                      "leftOperand": {
+                                        "unaryExpression": {
+                                          "operator": "--",
+                                          "operand": {
+                                            "identifier": "field_width"
+                                          }
+                                        }
+                                      },
+                                      "rightOperand": {
+                                        "constant": "0"
+                                      },
+                                      "operator": ">"
+                                    }
+                                  },
+                                  "whileBlock": {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "unaryOperationExpression": {
+                                            "operator": "*",
+                                            "operand": {
+                                              "postIncDecOperationExpression": {
+                                                "operand": {
+                                                  "identifier": "str"
+                                                },
+                                                "operator": "++"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "rightOperand": {
+                                          "constant": "' '"
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "unaryOperationExpression": {
+                                  "operator": "!",
+                                  "operand": {
+                                    "BitAndExpression": {
+                                      "leftOperand": {
+                                        "identifier": "flags"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "16"
+                                      },
+                                      "operator": "&"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "postIncDecOperationExpression": {
+                                        "operand": {
+                                          "identifier": "str"
+                                        },
+                                        "operator": "++"
+                                      }
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "castExpression": {
+                                    "originalExpression": {
+                                      "callExpression": {
+                                        "argumentList": [
+                                          {
+                                            "identifier": "args"
+                                          },
+                                          {
+                                            "identifier": "int"
+                                          }
+                                        ],
+                                        "callee": "va_arg"
+                                      }
+                                    },
+                                    "target": "unsigned char"
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "whileStatement": {
+                              "condition": {
+                                "RelationalExpression": {
+                                  "leftOperand": {
+                                    "unaryExpression": {
+                                      "operator": "--",
+                                      "operand": {
+                                        "identifier": "field_width"
+                                      }
+                                    }
+                                  },
+                                  "rightOperand": {
+                                    "constant": "0"
+                                  },
+                                  "operator": ">"
+                                }
+                              },
+                              "whileBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "constant": "' '"
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          },
+                          {
+                            "label": "case 's':"
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {
+                            "expressionStatement": {}
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "s"
+                                    },
+                                    "rightOperand": {
+                                      "constant": "\"<NULL>\""
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "unaryOperationExpression": {
+                                  "operator": "!",
+                                  "operand": {
+                                    "identifier": "s"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "len"
+                                },
+                                "rightOperand": {
+                                  "callExpression": {
+                                    "argumentList": [
+                                      {
+                                        "identifier": "s"
+                                      },
+                                      {
+                                        "identifier": "precision"
+                                      }
+                                    ],
+                                    "callee": "strnlen"
+                                  }
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "whileStatement": {
+                                  "condition": {
+                                    "RelationalExpression": {
+                                      "leftOperand": {
+                                        "identifier": "len"
+                                      },
+                                      "rightOperand": {
+                                        "postIncDecOperationExpression": {
+                                          "operand": {
+                                            "identifier": "field_width"
+                                          },
+                                          "operator": "--"
+                                        }
+                                      },
+                                      "operator": "<"
+                                    }
+                                  },
+                                  "whileBlock": {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "unaryOperationExpression": {
+                                            "operator": "*",
+                                            "operand": {
+                                              "postIncDecOperationExpression": {
+                                                "operand": {
+                                                  "identifier": "str"
+                                                },
+                                                "operator": "++"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "rightOperand": {
+                                          "constant": "' '"
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "unaryOperationExpression": {
+                                  "operator": "!",
+                                  "operand": {
+                                    "BitAndExpression": {
+                                      "leftOperand": {
+                                        "identifier": "flags"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "16"
+                                      },
+                                      "operator": "&"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "forStatement": {
+                              "condition": {
+                                "RelationalExpression": {
+                                  "leftOperand": {
+                                    "identifier": "i"
+                                  },
+                                  "rightOperand": {
+                                    "identifier": "len"
+                                  },
+                                  "operator": "<"
+                                }
+                              },
+                              "forInit": {
+                                "AssignmentExpression": {
+                                  "leftOperand": {
+                                    "identifier": "i"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "0"
+                                  },
+                                  "operator": "="
+                                }
+                              },
+                              "forBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "s"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "forLoop": {
+                                "unaryExpression": {
+                                  "operator": "++",
+                                  "operand": {
+                                    "identifier": "i"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "whileStatement": {
+                              "condition": {
+                                "RelationalExpression": {
+                                  "leftOperand": {
+                                    "identifier": "len"
+                                  },
+                                  "rightOperand": {
+                                    "postIncDecOperationExpression": {
+                                      "operand": {
+                                        "identifier": "field_width"
+                                      },
+                                      "operator": "--"
+                                    }
+                                  },
+                                  "operator": "<"
+                                }
+                              },
+                              "whileBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "constant": "' '"
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          },
+                          {
+                            "label": "case 'p':"
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "compoundStatement": [
+                                  {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "field_width"
+                                        },
+                                        "rightOperand": {
+                                          "MultiplicativeExpression": {
+                                            "leftOperand": {
+                                              "constant": "2"
+                                            },
+                                            "rightOperand": {
+                                              "sizeofExpression": {
+                                                "operator": "sizeof",
+                                                "operand": {}
+                                              }
+                                            },
+                                            "operator": "*"
+                                          }
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "flags"
+                                        },
+                                        "rightOperand": {
+                                          "constant": "1"
+                                        },
+                                        "operator": "|="
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              "condition": {
+                                "EqualityExpression": {
+                                  "leftOperand": {
+                                    "identifier": "field_width"
+                                  },
+                                  "rightOperand": {
+                                    "unaryOperationExpression": {
+                                      "operator": "-",
+                                      "operand": {
+                                        "constant": "1"
+                                      }
+                                    }
+                                  },
+                                  "operator": "=="
+                                }
+                              }
+                            }
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {
+                            "expressionStatement": {}
+                          },
+                          {
+                            "continueStatement": "continue"
+                          },
+                          {
+                            "label": "case 'n':"
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "compoundStatement": [
+                                  {
+                                    "identifierDeclStatement": [
+                                      {
+                                        "identifier": "ip",
+                                        "identifierType": "long *",
+                                        "initialValue": "va_arg"
+                                      }
+                                    ]
+                                  },
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {
+                                    "expressionStatement": {}
+                                  },
+                                  {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "unaryOperationExpression": {
+                                            "operator": "*",
+                                            "operand": {
+                                              "identifier": "ip"
+                                            }
+                                          }
+                                        },
+                                        "rightOperand": {
+                                          "AdditiveExpression": {
+                                            "leftOperand": {
+                                              "identifier": "str"
+                                            },
+                                            "rightOperand": {
+                                              "identifier": "buf"
+                                            },
+                                            "operator": "-"
+                                          }
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              "condition": {
+                                "EqualityExpression": {
+                                  "leftOperand": {
+                                    "identifier": "qualifier"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "'l'"
+                                  },
+                                  "operator": "=="
+                                }
+                              },
+                              "elseBlock": {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "compoundStatement": [
+                                      {
+                                        "identifierDeclStatement": [
+                                          {
+                                            "identifier": "ip",
+                                            "identifierType": "size_t *",
+                                            "initialValue": "va_arg"
+                                          }
+                                        ]
+                                      },
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {
+                                        "expressionStatement": {}
+                                      },
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "unaryOperationExpression": {
+                                                "operator": "*",
+                                                "operand": {
+                                                  "identifier": "ip"
+                                                }
+                                              }
+                                            },
+                                            "rightOperand": {
+                                              "AdditiveExpression": {
+                                                "leftOperand": {
+                                                  "identifier": "str"
+                                                },
+                                                "rightOperand": {
+                                                  "identifier": "buf"
+                                                },
+                                                "operator": "-"
+                                              }
+                                            },
+                                            "operator": "="
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "condition": {
+                                    "EqualityExpression": {
+                                      "leftOperand": {
+                                        "identifier": "qualifier"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "'Z'"
+                                      },
+                                      "operator": "=="
+                                    }
+                                  },
+                                  "elseBlock": {
+                                    "compoundStatement": [
+                                      {
+                                        "identifierDeclStatement": [
+                                          {
+                                            "identifier": "ip",
+                                            "identifierType": "int *",
+                                            "initialValue": "va_arg"
+                                          }
+                                        ]
+                                      },
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {
+                                        "expressionStatement": {}
+                                      },
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "unaryOperationExpression": {
+                                                "operator": "*",
+                                                "operand": {
+                                                  "identifier": "ip"
+                                                }
+                                              }
+                                            },
+                                            "rightOperand": {
+                                              "AdditiveExpression": {
+                                                "leftOperand": {
+                                                  "identifier": "str"
+                                                },
+                                                "rightOperand": {
+                                                  "identifier": "buf"
+                                                },
+                                                "operator": "-"
+                                              }
+                                            },
+                                            "operator": "="
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          },
+                          {
+                            "label": "case '%':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "postIncDecOperationExpression": {
+                                        "operand": {
+                                          "identifier": "str"
+                                        },
+                                        "operator": "++"
+                                      }
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "constant": "'%'"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          },
+                          {
+                            "label": "case 'o':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "base"
+                                },
+                                "rightOperand": {
+                                  "constant": "8"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "breakStatement": "break"
+                          },
+                          {
+                            "label": "case 'X':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "64"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "label": "case 'x':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "base"
+                                },
+                                "rightOperand": {
+                                  "constant": "16"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "breakStatement": "break"
+                          },
+                          {
+                            "label": "case 'd':"
+                          },
+                          {
+                            "label": "case 'i':"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "identifier": "flags"
+                                },
+                                "rightOperand": {
+                                  "constant": "2"
+                                },
+                                "operator": "|="
+                              }
+                            }
+                          },
+                          {
+                            "label": "case 'u':"
+                          },
+                          {
+                            "breakStatement": "break"
+                          },
+                          {
+                            "label": "default:"
+                          },
+                          {
+                            "expressionStatement": {
+                              "AssignmentExpression": {
+                                "leftOperand": {
+                                  "unaryOperationExpression": {
+                                    "operator": "*",
+                                    "operand": {
+                                      "postIncDecOperationExpression": {
+                                        "operand": {
+                                          "identifier": "str"
+                                        },
+                                        "operator": "++"
+                                      }
+                                    }
+                                  }
+                                },
+                                "rightOperand": {
+                                  "constant": "'%'"
+                                },
+                                "operator": "="
+                              }
+                            }
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "postIncDecOperationExpression": {
+                                            "operand": {
+                                              "identifier": "str"
+                                            },
+                                            "operator": "++"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "rightOperand": {
+                                      "unaryOperationExpression": {
+                                        "operator": "*",
+                                        "operand": {
+                                          "identifier": "fmt"
+                                        }
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "unaryOperationExpression": {
+                                  "operator": "*",
+                                  "operand": {
+                                    "identifier": "fmt"
+                                  }
+                                }
+                              },
+                              "elseBlock": {
+                                "expressionStatement": {
+                                  "unaryExpression": {
+                                    "operator": "--",
+                                    "operand": {
+                                      "identifier": "fmt"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "continueStatement": "continue"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "ifStatement": {
+                      "ifBlock": {
+                        "compoundStatement": [
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {
+                            "expressionStatement": {}
+                          },
+                          {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "expressionStatement": {
+                                  "AssignmentExpression": {
+                                    "leftOperand": {
+                                      "identifier": "num"
+                                    },
+                                    "rightOperand": {
+                                      "castExpression": {
+                                        "originalExpression": {
+                                          "identifier": "num"
+                                        },
+                                        "target": "signed long"
+                                      }
+                                    },
+                                    "operator": "="
+                                  }
+                                }
+                              },
+                              "condition": {
+                                "BitAndExpression": {
+                                  "leftOperand": {
+                                    "identifier": "flags"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "2"
+                                  },
+                                  "operator": "&"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "condition": {
+                        "EqualityExpression": {
+                          "leftOperand": {
+                            "identifier": "qualifier"
+                          },
+                          "rightOperand": {
+                            "constant": "'l'"
+                          },
+                          "operator": "=="
+                        }
+                      },
+                      "elseBlock": {
+                        "ifStatement": {
+                          "ifBlock": {
+                            "compoundStatement": [
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {
+                                "expressionStatement": {}
+                              },
+                              {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "num"
+                                        },
+                                        "rightOperand": {
+                                          "castExpression": {
+                                            "originalExpression": {
+                                              "identifier": "num"
+                                            },
+                                            "target": "signed long long"
+                                          }
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  },
+                                  "condition": {
+                                    "BitAndExpression": {
+                                      "leftOperand": {
+                                        "identifier": "flags"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "2"
+                                      },
+                                      "operator": "&"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "condition": {
+                            "EqualityExpression": {
+                              "leftOperand": {
+                                "identifier": "qualifier"
+                              },
+                              "rightOperand": {
+                                "constant": "'q'"
+                              },
+                              "operator": "=="
+                            }
+                          },
+                          "elseBlock": {
+                            "ifStatement": {
+                              "ifBlock": {
+                                "compoundStatement": [
+                                  {
+                                    "expressionStatement": {
+                                      "AssignmentExpression": {
+                                        "leftOperand": {
+                                          "identifier": "num"
+                                        },
+                                        "rightOperand": {
+                                          "callExpression": {
+                                            "argumentList": [
+                                              {
+                                                "identifier": "args"
+                                              },
+                                              {
+                                                "identifier": "size_t"
+                                              }
+                                            ],
+                                            "callee": "va_arg"
+                                          }
+                                        },
+                                        "operator": "="
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              "condition": {
+                                "EqualityExpression": {
+                                  "leftOperand": {
+                                    "identifier": "qualifier"
+                                  },
+                                  "rightOperand": {
+                                    "constant": "'Z'"
+                                  },
+                                  "operator": "=="
+                                }
+                              },
+                              "elseBlock": {
+                                "ifStatement": {
+                                  "ifBlock": {
+                                    "compoundStatement": [
+                                      {
+                                        "expressionStatement": {
+                                          "AssignmentExpression": {
+                                            "leftOperand": {
+                                              "identifier": "num"
+                                            },
+                                            "rightOperand": {
+                                              "castExpression": {
+                                                "originalExpression": {
+                                                  "callExpression": {
+                                                    "argumentList": [
+                                                      {
+                                                        "identifier": "args"
+                                                      },
+                                                      {
+                                                        "identifier": "int"
+                                                      }
+                                                    ],
+                                                    "callee": "va_arg"
+                                                  }
+                                                },
+                                                "target": "unsigned short"
+                                              }
+                                            },
+                                            "operator": "="
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "ifStatement": {
+                                          "ifBlock": {
+                                            "expressionStatement": {
+                                              "AssignmentExpression": {
+                                                "leftOperand": {
+                                                  "identifier": "num"
+                                                },
+                                                "rightOperand": {
+                                                  "castExpression": {
+                                                    "originalExpression": {
+                                                      "identifier": "num"
+                                                    },
+                                                    "target": "signed short"
+                                                  }
+                                                },
+                                                "operator": "="
+                                              }
+                                            }
+                                          },
+                                          "condition": {
+                                            "BitAndExpression": {
+                                              "leftOperand": {
+                                                "identifier": "flags"
+                                              },
+                                              "rightOperand": {
+                                                "constant": "2"
+                                              },
+                                              "operator": "&"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "condition": {
+                                    "EqualityExpression": {
+                                      "leftOperand": {
+                                        "identifier": "qualifier"
+                                      },
+                                      "rightOperand": {
+                                        "constant": "'h'"
+                                      },
+                                      "operator": "=="
+                                    }
+                                  },
+                                  "elseBlock": {
+                                    "compoundStatement": [
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {},
+                                      {
+                                        "identifierDeclStatement": [
+                                          {
+                                            "identifier": "int",
+                                            "identifierType": "unsigned"
+                                          }
+                                        ]
+                                      },
+                                      {},
+                                      {
+                                        "expressionStatement": {}
+                                      },
+                                      {
+                                        "ifStatement": {
+                                          "ifBlock": {
+                                            "expressionStatement": {
+                                              "AssignmentExpression": {
+                                                "leftOperand": {
+                                                  "identifier": "num"
+                                                },
+                                                "rightOperand": {
+                                                  "castExpression": {
+                                                    "originalExpression": {
+                                                      "identifier": "num"
+                                                    },
+                                                    "target": "signed int"
+                                                  }
+                                                },
+                                                "operator": "="
+                                              }
+                                            }
+                                          },
+                                          "condition": {
+                                            "BitAndExpression": {
+                                              "leftOperand": {
+                                                "identifier": "flags"
+                                              },
+                                              "rightOperand": {
+                                                "constant": "2"
+                                              },
+                                              "operator": "&"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "expressionStatement": {
+                      "AssignmentExpression": {
+                        "leftOperand": {
+                          "identifier": "str"
+                        },
+                        "rightOperand": {
+                          "callExpression": {
+                            "argumentList": [
+                              {
+                                "identifier": "str"
+                              },
+                              {
+                                "identifier": "num"
+                              },
+                              {
+                                "identifier": "base"
+                              },
+                              {
+                                "identifier": "field_width"
+                              },
+                              {
+                                "identifier": "precision"
+                              },
+                              {
+                                "identifier": "flags"
+                              }
+                            ],
+                            "callee": "number"
+                          }
+                        },
+                        "operator": "="
+                      }
+                    }
+                  }
+                ]
+              },
+              "forLoop": {
+                "unaryExpression": {
+                  "operator": "++",
+                  "operand": {
+                    "identifier": "fmt"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "unaryOperationExpression": {
+                    "operator": "*",
+                    "operand": {
+                      "identifier": "str"
+                    }
+                  }
+                },
+                "rightOperand": {
+                  "constant": "'\\0'"
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "AdditiveExpression": {
+                "leftOperand": {
+                  "identifier": "str"
+                },
+                "rightOperand": {
+                  "identifier": "buf"
+                },
+                "operator": "-"
+              }
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    },
+    {
+      "functionDef": {
+        "functionName": "sprintf",
+        "parameterList": [
+          {
+            "parameterType": "char *",
+            "parameter": "buf"
+          },
+          {
+            "parameterType": "const char *",
+            "parameter": "fmt"
+          }
+        ],
+        "functionBody": [
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "args",
+                "identifierType": "va_list"
+              }
+            ]
+          },
+          {
+            "identifierDeclStatement": [
+              {
+                "identifier": "i",
+                "identifierType": "int"
+              }
+            ]
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "args"
+                  },
+                  {
+                    "identifier": "fmt"
+                  }
+                ],
+                "callee": "va_start"
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "AssignmentExpression": {
+                "leftOperand": {
+                  "identifier": "i"
+                },
+                "rightOperand": {
+                  "callExpression": {
+                    "argumentList": [
+                      {
+                        "identifier": "buf"
+                      },
+                      {
+                        "identifier": "fmt"
+                      },
+                      {
+                        "identifier": "args"
+                      }
+                    ],
+                    "callee": "vsprintf"
+                  }
+                },
+                "operator": "="
+              }
+            }
+          },
+          {
+            "expressionStatement": {
+              "callExpression": {
+                "argumentList": [
+                  {
+                    "identifier": "args"
+                  }
+                ],
+                "callee": "va_end"
+              }
+            }
+          },
+          {
+            "returnStatement": {
+              "identifier": "i"
+            }
+          }
+        ],
+        "returnType": "int"
+      }
+    }
+  ]
+}

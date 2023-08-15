@@ -1,0 +1,12 @@
+void f(){
+	
+	do                                                                                                                 
+    {                                                                                                                  
+        if (!(2))                                                                                                   
+        {                                                                                                              
+            verRaiseVerifyExceptionIfNeeded(INDEBUG( 3));                                                             
+        }                                                                                                              
+    } while (0);
+    int b = 0;
+    printf(1);
+}

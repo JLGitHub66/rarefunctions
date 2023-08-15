@@ -1,0 +1,5 @@
+Build Number: 8b0e260
+Project Version: 0.17.1
+Build Date: 2014-06-25T12:08:51
+
+QuietlyReturnTypeProcessor.class: 3418

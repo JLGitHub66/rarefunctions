@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include "a.h"
+
+
+
+#ifndef
+foo();
+#endif
+
+#if
+#ifdef
+
+#else
+#elif
+
+#define Verify(cond, msg)                                                                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        if (!(cond))                                                                                                   \
+        {                                                                                                              \
+            verRaiseVerifyExceptionIfNeeded(INDEBUG(msg) DEBUGARG(__FILE__) DEBUGARG(__LINE__));                       \
+        }                                                                                                              \
+    } while (0)
+
+#define a 1
+
+void f() {
+  int b = 0;
+  Verify(2, 3);
+  printf(a);
+}
+
+
+FunctionDef:f ()
+	CompoundStatement:
+		IdentifierDeclStatement:int b = 0;
+			IdentifierDecl:b = 0
+				IdentifierDeclType:int
+				Identifier:b
+				AssignmentExpression:b = 0
+					Identifier:b
+					Constant:0
+		ExpressionStatement:Verify(2, 3)
+			CallExpression:Verify(2, 3)
+				Callee:Verify
+					Identifier:Verify
+				ArgumentList:2
+					Argument:2
+						Constant:2
+					Argument:3
+						Constant:3
+		ExpressionStatement:printf(a)
+			CallExpression:printf(a)
+				Callee:printf
+					Identifier:printf
+				ArgumentList:a
+					Argument:a
+						Identifier:a
+	ReturnType:void
+	Identifier:f
+	ParameterList:

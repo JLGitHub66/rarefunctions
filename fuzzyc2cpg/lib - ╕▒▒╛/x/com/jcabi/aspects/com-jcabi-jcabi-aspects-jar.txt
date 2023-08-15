@@ -1,0 +1,22 @@
+Build Number: 8b0e260
+Project Version: 0.17.1
+Build Date: 2014-06-25T12:08:51
+
+Async.class: 421
+Cacheable$Flush.class: 555
+Cacheable$FlushAfter.class: 517
+Cacheable$FlushBefore.class: 519
+Cacheable.class: 842
+Immutable$Array.class: 506
+Immutable.class: 505
+LogExceptions.class: 437
+Loggable$Quiet.class: 502
+Loggable.class: 1103
+Parallel.class: 485
+Quietly.class: 425
+RetryOnFailure.class: 858
+ScheduleWithFixedDelay.class: 767
+Timeable.class: 589
+Tv.class: 742
+UnitedThrow$None.class: 444
+UnitedThrow.class: 675

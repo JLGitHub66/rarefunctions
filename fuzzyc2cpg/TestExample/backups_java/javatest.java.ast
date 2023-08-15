@@ -1,0 +1,25 @@
+IdentifierDeclStatement:null
+	IdentifierDecl:mypack
+		IdentifierDeclType:package
+		Identifier:mypack
+ClassDef:Test
+	CompoundStatement:
+		FunctionDef:main (String[] args)
+			CompoundStatement:
+				ExpressionStatement:System.out.println("Hello World!")
+					CallExpression:System.out.println("Hello World!")
+						Callee:System.out.println
+							MemberAccess:System.out.println
+								MemberAccess:System.out
+									Identifier:System
+									Identifier:out
+								Identifier:println
+						ArgumentList:"Hello World!"
+							Argument:"Hello World!"
+								Constant:"Hello World!"
+			ReturnType:static void
+			Identifier:main
+			ParameterList:String[] args
+				Parameter:String[] args
+					ParameterType:String [ ]
+					Identifier:args

@@ -1,0 +1,23 @@
+    QString stmt_file = QString("CREATE TABLE %1(id int primary key, path text, "
+                                "cfg_start int, cfg_end int)").arg(TABLE_FILE);
+    
+    QString stmt_fun = QString("CREATE TABLE %1(id int primary key, name text, cfg int)").arg(TABLE_FUNCTION);
+
+
+    QString stmt_cfg = QString("CREATE TABLE %1(id int primary key, name text, file_id int, "
+                               "line_start int, line_end int, var_start int, var_end int, "
+                               "arg_start int, arg_end int, "
+                               "bb_start int, bb_end int)").arg(TABLE_CFG);
+    
+
+    QString stmt_bb = QString("CREATE TABLE %1(id int primary key, lindex int, gs_start int, gs_end int, succs text)").arg(TABLE_BASIC_BLOCK);
+    
+
+    QString stmt_var = QString("CREATE TABLE %1(id int primary key, lindex int, name text, "
+                               "type int, op0 int, op1 int, tid int)").arg(TABLE_VARIABLE);
+    
+
+    QString stmt_gimple = QString("CREATE TABLE %1(id int primary key, lindex int, type int, line int, gs text)").arg(TABLE_GIMPLE);
+
+&& (mapping(astNode).location.toString == astNode.getLocationString)
+System.out.println(astNode.getEscapedCodeStr + "  " +astNode.getLocationString)

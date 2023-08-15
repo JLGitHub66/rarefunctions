@@ -1,0 +1,27 @@
+Build Number: 032fa6f
+Project Version: 0.14.3
+Build Date: 2014-08-29T18:47:58
+
+ExceptionDecor.class: 2066
+SecretDecor.class: 2268
+DecorsManager.class: 4576
+MulticolorLayout.class: 5856
+DomDecor.class: 3402
+VerboseProcess$Monitor.class: 2320
+ListDecor.class: 2822
+PreFormatter.class: 3933
+Logger$1.class: 1192
+MsDecor.class: 2968
+TextDecor.class: 2314
+SizeDecor.class: 3206
+NanoDecor.class: 2880
+VerboseThreads$Wrap.class: 1156
+TypeDecor.class: 1703
+DecorException.class: 1372
+VerboseProcess.class: 6562
+Logger.class: 4535
+VerboseThreads$Group.class: 817
+VerboseRunnable.class: 4243
+VerboseRunnable$1.class: 1258
+VerboseThreads.class: 3711
+ObjectDecor.class: 1662

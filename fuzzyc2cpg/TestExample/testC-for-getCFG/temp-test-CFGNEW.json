@@ -1,0 +1,12 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "label": "CFG of temp-test.c",
+  "type": "Control Flow Graph (CFG)",
+  "file": "temp-test.c",
+  "nodes": [
+  ],
+
+  "edges": [
+  ]
+}

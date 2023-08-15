@@ -1,0 +1,38 @@
+FunctionDef:main ()
+	CompoundStatement:
+		Statement:/* try */
+		IdentifierDeclStatement:int x,y,z=0;
+			IdentifierDecl:x
+				IdentifierDeclType:int
+				Identifier:x
+			IdentifierDecl:y
+				IdentifierDeclType:int
+				Identifier:y
+			IdentifierDecl:z=0
+				IdentifierDeclType:int
+				Identifier:z
+				AssignmentExpression:z=0
+					Identifier:z
+					Constant:0
+		IfStatement:if(x>0)
+			Condition:x>0
+				RelationalExpression:x>0
+					Identifier:x
+					Constant:0
+			CompoundStatement:
+				ExpressionStatement:y\t= malloc(x)
+					AssignmentExpression:y\t= malloc(x)
+						Identifier:y
+						CallExpression:malloc(x)
+							Callee:malloc
+								Identifier:malloc
+							ArgumentList:x
+								Argument:x
+									Identifier:x
+		Statement:free
+		Statement:(
+		Statement:y
+		Statement:)
+	ReturnType:int
+	Identifier:main
+	ParameterList:

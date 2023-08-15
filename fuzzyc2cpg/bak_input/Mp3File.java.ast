@@ -1,0 +1,1040 @@
+ClassDef:Mp3File
+	CompoundStatement:
+		IdentifierDeclStatement:null
+			IdentifierDecl:DEFAULT_BUFFER_LENGTH
+				IdentifierDeclType:final int
+				Identifier:DEFAULT_BUFFER_LENGTH
+		IdentifierDeclStatement:null
+			IdentifierDecl:MINIMUM_BUFFER_LENGTH
+				IdentifierDeclType:final int
+				Identifier:MINIMUM_BUFFER_LENGTH
+		IdentifierDeclStatement:null
+			IdentifierDecl:XING_MARKER_OFFSET_1
+				IdentifierDeclType:final int
+				Identifier:XING_MARKER_OFFSET_1
+		IdentifierDeclStatement:null
+			IdentifierDecl:XING_MARKER_OFFSET_2
+				IdentifierDeclType:final int
+				Identifier:XING_MARKER_OFFSET_2
+		IdentifierDeclStatement:null
+			IdentifierDecl:XING_MARKER_OFFSET_3
+				IdentifierDeclType:final int
+				Identifier:XING_MARKER_OFFSET_3
+		IdentifierDeclStatement:null
+			IdentifierDecl:bufferLength
+				IdentifierDeclType:int
+				Identifier:bufferLength
+		IdentifierDeclStatement:null
+			IdentifierDecl:xingOffset
+				IdentifierDeclType:int
+				Identifier:xingOffset
+		IdentifierDeclStatement:null
+			IdentifierDecl:startOffset
+				IdentifierDeclType:int
+				Identifier:startOffset
+		IdentifierDeclStatement:null
+			IdentifierDecl:endOffset
+				IdentifierDeclType:int
+				Identifier:endOffset
+		IdentifierDeclStatement:null
+			IdentifierDecl:frameCount
+				IdentifierDeclType:int
+				Identifier:frameCount
+		IdentifierDeclStatement:null
+			IdentifierDecl:bitrates
+				IdentifierDeclType:Map < Integer , MutableInteger >
+				Identifier:bitrates
+		IdentifierDeclStatement:null
+			IdentifierDecl:xingBitrate
+				IdentifierDeclType:int
+				Identifier:xingBitrate
+		IdentifierDeclStatement:null
+			IdentifierDecl:bitrate
+				IdentifierDeclType:double
+				Identifier:bitrate
+		IdentifierDeclStatement:null
+			IdentifierDecl:channelMode
+				IdentifierDeclType:String
+				Identifier:channelMode
+		IdentifierDeclStatement:null
+			IdentifierDecl:emphasis
+				IdentifierDeclType:String
+				Identifier:emphasis
+		IdentifierDeclStatement:null
+			IdentifierDecl:layer
+				IdentifierDeclType:String
+				Identifier:layer
+		IdentifierDeclStatement:null
+			IdentifierDecl:modeExtension
+				IdentifierDeclType:String
+				Identifier:modeExtension
+		IdentifierDeclStatement:null
+			IdentifierDecl:sampleRate
+				IdentifierDeclType:int
+				Identifier:sampleRate
+		IdentifierDeclStatement:null
+			IdentifierDecl:copyright
+				IdentifierDeclType:boolean
+				Identifier:copyright
+		IdentifierDeclStatement:null
+			IdentifierDecl:original
+				IdentifierDeclType:boolean
+				Identifier:original
+		IdentifierDeclStatement:null
+			IdentifierDecl:version
+				IdentifierDeclType:String
+				Identifier:version
+		IdentifierDeclStatement:null
+			IdentifierDecl:id3v1Tag
+				IdentifierDeclType:ID3v1
+				Identifier:id3v1Tag
+		IdentifierDeclStatement:null
+			IdentifierDecl:id3v2Tag
+				IdentifierDeclType:ID3v2
+				Identifier:id3v2Tag
+		IdentifierDeclStatement:null
+			IdentifierDecl:customTag
+				IdentifierDeclType:byte [ ]
+				Identifier:customTag
+		IdentifierDeclStatement:null
+			IdentifierDecl:scanFile
+				IdentifierDeclType:boolean
+				Identifier:scanFile
+		FunctionDef:Mp3File ()
+			CompoundStatement:
+			Identifier:Mp3File
+			ParameterList:
+		FunctionDef:preScanFile (SeekableByteChannel seekableByteChannel)
+			CompoundStatement:
+				IdentifierDeclStatement:ByteBuffer byteBuffer = ByteBuffer.allocate(AbstractID3v2Tag.HEADER_LENGTH);
+					IdentifierDecl:byteBuffer = ByteBuffer.allocate(AbstractID3v2Tag.HEADER_LENGTH)
+						IdentifierDeclType:ByteBuffer
+						Identifier:byteBuffer
+						AssignmentExpression:byteBuffer = ByteBuffer.allocate(AbstractID3v2Tag.HEADER_LENGTH)
+							Identifier:byteBuffer
+							CallExpression:ByteBuffer.allocate(AbstractID3v2Tag.HEADER_LENGTH)
+								Callee:ByteBuffer.allocate
+									MemberAccess:ByteBuffer.allocate
+										Identifier:ByteBuffer
+										Identifier:allocate
+								ArgumentList:AbstractID3v2Tag.HEADER_LENGTH
+									Argument:AbstractID3v2Tag.HEADER_LENGTH
+										MemberAccess:AbstractID3v2Tag.HEADER_LENGTH
+											Identifier:AbstractID3v2Tag
+											Identifier:HEADER_LENGTH
+				TryStatement:try
+					CompoundStatement:
+						ExpressionStatement:seekableByteChannel.position(0)
+							CallExpression:seekableByteChannel.position(0)
+								Callee:seekableByteChannel.position
+									MemberAccess:seekableByteChannel.position
+										Identifier:seekableByteChannel
+										Identifier:position
+								ArgumentList:0
+									Argument:0
+										Constant:0
+						ExpressionStatement:byteBuffer.clear()
+							CallExpression:byteBuffer.clear()
+								Callee:byteBuffer.clear
+									MemberAccess:byteBuffer.clear
+										Identifier:byteBuffer
+										Identifier:clear
+								ArgumentList:
+						IdentifierDeclStatement:int bytesRead = seekableByteChannel.read(byteBuffer);
+							IdentifierDecl:bytesRead = seekableByteChannel.read(byteBuffer)
+								IdentifierDeclType:int
+								Identifier:bytesRead
+								AssignmentExpression:bytesRead = seekableByteChannel.read(byteBuffer)
+									Identifier:bytesRead
+									CallExpression:seekableByteChannel.read(byteBuffer)
+										Callee:seekableByteChannel.read
+											MemberAccess:seekableByteChannel.read
+												Identifier:seekableByteChannel
+												Identifier:read
+										ArgumentList:byteBuffer
+											Argument:byteBuffer
+												Identifier:byteBuffer
+						IfStatement:if (bytesRead == AbstractID3v2Tag.HEADER_LENGTH)
+							Condition:bytesRead == AbstractID3v2Tag.HEADER_LENGTH
+								EqualityExpression:bytesRead == AbstractID3v2Tag.HEADER_LENGTH
+									Identifier:bytesRead
+									MemberAccess:AbstractID3v2Tag.HEADER_LENGTH
+										Identifier:AbstractID3v2Tag
+										Identifier:HEADER_LENGTH
+							CompoundStatement:
+								TryStatement:try
+									CompoundStatement:
+										IdentifierDeclStatement:byte[] bytes = byteBuffer.array();
+											IdentifierDecl:bytes = byteBuffer.array()
+												IdentifierDeclType:byte [ ]
+												Identifier:bytes
+												AssignmentExpression:bytes = byteBuffer.array()
+													Identifier:bytes
+													CallExpression:byteBuffer.array()
+														Callee:byteBuffer.array
+															MemberAccess:byteBuffer.array
+																Identifier:byteBuffer
+																Identifier:array
+														ArgumentList:
+										ExpressionStatement:ID3v2TagFactory.sanityCheckTag(bytes)
+											CallExpression:ID3v2TagFactory.sanityCheckTag(bytes)
+												Callee:ID3v2TagFactory.sanityCheckTag
+													MemberAccess:ID3v2TagFactory.sanityCheckTag
+														Identifier:ID3v2TagFactory
+														Identifier:sanityCheckTag
+												ArgumentList:bytes
+													Argument:bytes
+														Identifier:bytes
+										ReturnStatement:return AbstractID3v2Tag.HEADER_LENGTH + BufferTools.unpackSynchsafeInteger(bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3]);
+											AdditiveExpression:AbstractID3v2Tag.HEADER_LENGTH + BufferTools.unpackSynchsafeInteger(bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3])
+												MemberAccess:AbstractID3v2Tag.HEADER_LENGTH
+													Identifier:AbstractID3v2Tag
+													Identifier:HEADER_LENGTH
+												CallExpression:BufferTools.unpackSynchsafeInteger(bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2], bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3])
+													Callee:BufferTools.unpackSynchsafeInteger
+														MemberAccess:BufferTools.unpackSynchsafeInteger
+															Identifier:BufferTools
+															Identifier:unpackSynchsafeInteger
+													ArgumentList:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET]
+														Argument:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET]
+															ArrayIndexing:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET]
+																Identifier:bytes
+																MemberAccess:AbstractID3v2Tag.DATA_LENGTH_OFFSET
+																	Identifier:AbstractID3v2Tag
+																	Identifier:DATA_LENGTH_OFFSET
+														Argument:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1]
+															ArrayIndexing:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1]
+																Identifier:bytes
+																AdditiveExpression:AbstractID3v2Tag.DATA_LENGTH_OFFSET + 1
+																	MemberAccess:AbstractID3v2Tag.DATA_LENGTH_OFFSET
+																		Identifier:AbstractID3v2Tag
+																		Identifier:DATA_LENGTH_OFFSET
+																	Constant:1
+														Argument:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2]
+															ArrayIndexing:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2]
+																Identifier:bytes
+																AdditiveExpression:AbstractID3v2Tag.DATA_LENGTH_OFFSET + 2
+																	MemberAccess:AbstractID3v2Tag.DATA_LENGTH_OFFSET
+																		Identifier:AbstractID3v2Tag
+																		Identifier:DATA_LENGTH_OFFSET
+																	Constant:2
+														Argument:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3]
+															ArrayIndexing:bytes[AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3]
+																Identifier:bytes
+																AdditiveExpression:AbstractID3v2Tag.DATA_LENGTH_OFFSET + 3
+																	MemberAccess:AbstractID3v2Tag.DATA_LENGTH_OFFSET
+																		Identifier:AbstractID3v2Tag
+																		Identifier:DATA_LENGTH_OFFSET
+																	Constant:3
+								Statement:catch
+								Statement:(
+								Statement:NoSuchTagException
+								Statement:|
+								Statement:UnsupportedTagException
+								Statement:e
+								Statement:)
+								CompoundStatement:
+									Statement:/
+									Statement:/
+									DoStatement:do
+										Statement:nothing
+					CatchList:
+						CatchStatement:catch (IOException e)
+							CompoundStatement:
+								Statement:/
+								Statement:/
+								DoStatement:do
+									Statement:nothing
+				ReturnStatement:return 0;
+					Constant:0
+			ReturnType:int
+			Identifier:preScanFile
+			ParameterList:SeekableByteChannel seekableByteChannel
+				Parameter:SeekableByteChannel seekableByteChannel
+					ParameterType:SeekableByteChannel
+					Identifier:seekableByteChannel
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:fileOffset
+				IdentifierDeclType:int
+				Identifier:fileOffset
+		IdentifierDeclStatement:null
+			IdentifierDecl:lastBlock
+				IdentifierDeclType:boolean
+				Identifier:lastBlock
+		IdentifierDeclStatement:null
+			IdentifierDecl:lastOffset
+				IdentifierDeclType:int
+				Identifier:lastOffset
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytesRead
+				IdentifierDeclType:int
+				Identifier:bytesRead
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytes
+				IdentifierDeclType:byte [ ]
+				Identifier:bytes
+		IdentifierDeclStatement:null
+			IdentifierDecl:offset
+				IdentifierDeclType:int
+				Identifier:offset
+		FunctionDef:scanBlockForStart (byte[] bytes , int bytesRead , int absoluteOffset , int offset)
+			CompoundStatement:
+				WhileStatement:while (offset < bytesRead - MINIMUM_BUFFER_LENGTH)
+					Condition:offset < bytesRead - MINIMUM_BUFFER_LENGTH
+						RelationalExpression:offset < bytesRead - MINIMUM_BUFFER_LENGTH
+							Identifier:offset
+							AdditiveExpression:bytesRead - MINIMUM_BUFFER_LENGTH
+								Identifier:bytesRead
+								Identifier:MINIMUM_BUFFER_LENGTH
+					CompoundStatement:
+						IfStatement:if (bytes[offset] == (byte) 0xFF && (bytes[offset + 1] & (byte) 0xE0) == (byte) 0xE0)
+							Condition:bytes[offset] == (byte) 0xFF && (bytes[offset + 1] & (byte) 0xE0) == (byte) 0xE0
+								AndExpression:bytes[offset] == (byte) 0xFF && (bytes[offset + 1] & (byte) 0xE0) == (byte) 0xE0
+									EqualityExpression:bytes[offset] == (byte) 0xFF
+										ArrayIndexing:bytes[offset]
+											Identifier:bytes
+											Identifier:offset
+										CastExpression:(byte) 0xFF
+											CastTarget:byte
+											Constant:0xFF
+									EqualityExpression:(bytes[offset + 1] & (byte) 0xE0) == (byte) 0xE0
+										BitAndExpression:bytes[offset + 1] & (byte) 0xE0
+											ArrayIndexing:bytes[offset + 1]
+												Identifier:bytes
+												AdditiveExpression:offset + 1
+													Identifier:offset
+													Constant:1
+											CastExpression:(byte) 0xE0
+												CastTarget:byte
+												Constant:0xE0
+										CastExpression:(byte) 0xE0
+											CastTarget:byte
+											Constant:0xE0
+							CompoundStatement:
+								TryStatement:try
+									CompoundStatement:
+										IdentifierDeclStatement:MpegFrame frame = new MpegFrame(bytes[offset], bytes[offset + 1], bytes[offset + 2], bytes[offset + 3]);
+											IdentifierDecl:frame = new MpegFrame(bytes[offset], bytes[offset + 1], bytes[offset + 2], bytes[offset + 3])
+												IdentifierDeclType:MpegFrame
+												Identifier:frame
+												AssignmentExpression:frame = new MpegFrame(bytes[offset], bytes[offset + 1], bytes[offset + 2], bytes[offset + 3])
+													Identifier:frame
+													Expression:bytes[offset], bytes[offset + 1], bytes[offset + 2], bytes[offset + 3]
+														ArrayIndexing:bytes[offset]
+															Identifier:bytes
+															Identifier:offset
+														Expression:bytes[offset + 1], bytes[offset + 2], bytes[offset + 3]
+															ArrayIndexing:bytes[offset + 1]
+																Identifier:bytes
+																AdditiveExpression:offset + 1
+																	Identifier:offset
+																	Constant:1
+															Expression:bytes[offset + 2], bytes[offset + 3]
+																ArrayIndexing:bytes[offset + 2]
+																	Identifier:bytes
+																	AdditiveExpression:offset + 2
+																		Identifier:offset
+																		Constant:2
+																ArrayIndexing:bytes[offset + 3]
+																	Identifier:bytes
+																	AdditiveExpression:offset + 3
+																		Identifier:offset
+																		Constant:3
+										IfStatement:if (xingOffset < 0 && isXingFrame(bytes, offset))
+											Condition:xingOffset < 0 && isXingFrame(bytes, offset)
+												AndExpression:xingOffset < 0 && isXingFrame(bytes, offset)
+													RelationalExpression:xingOffset < 0
+														Identifier:xingOffset
+														Constant:0
+													CallExpression:isXingFrame(bytes, offset)
+														Callee:isXingFrame
+															Identifier:isXingFrame
+														ArgumentList:bytes
+															Argument:bytes
+																Identifier:bytes
+															Argument:offset
+																Identifier:offset
+											CompoundStatement:
+												ExpressionStatement:xingOffset = absoluteOffset + offset
+													AssignmentExpression:xingOffset = absoluteOffset + offset
+														Identifier:xingOffset
+														AdditiveExpression:absoluteOffset + offset
+															Identifier:absoluteOffset
+															Identifier:offset
+												ExpressionStatement:xingBitrate = frame.getBitrate()
+													AssignmentExpression:xingBitrate = frame.getBitrate()
+														Identifier:xingBitrate
+														CallExpression:frame.getBitrate()
+															Callee:frame.getBitrate
+																MemberAccess:frame.getBitrate
+																	Identifier:frame
+																	Identifier:getBitrate
+															ArgumentList:
+												ExpressionStatement:offset += frame.getLengthInBytes()
+													AssignmentExpression:offset += frame.getLengthInBytes()
+														Identifier:offset
+														CallExpression:frame.getLengthInBytes()
+															Callee:frame.getLengthInBytes
+																MemberAccess:frame.getLengthInBytes
+																	Identifier:frame
+																	Identifier:getLengthInBytes
+															ArgumentList:
+									CatchList:
+										CatchStatement:catch (InvalidDataException e)
+											CompoundStatement:
+												ExpressionStatement:offset++
+													PostIncDecOperationExpression:offset++
+														Identifier:offset
+														IncDec:++
+				ReturnStatement:return offset;
+					Identifier:offset
+			ReturnType:int
+			Identifier:scanBlockForStart
+			ParameterList:byte[] bytes , int bytesRead , int absoluteOffset , int offset
+				Parameter:byte[] bytes
+					ParameterType:byte [ ]
+					Identifier:bytes
+				Parameter:int bytesRead
+					ParameterType:int
+					Identifier:bytesRead
+				Parameter:int absoluteOffset
+					ParameterType:int
+					Identifier:absoluteOffset
+				Parameter:int offset
+					ParameterType:int
+					Identifier:offset
+		IdentifierDeclStatement:null
+			IdentifierDecl:frame
+				IdentifierDeclType:MpegFrame
+				Identifier:frame
+		IdentifierDeclStatement:null
+			IdentifierDecl:newEndOffset
+				IdentifierDeclType:int
+				Identifier:newEndOffset
+		FunctionDef:maxEndOffset ()
+			CompoundStatement:
+				IdentifierDeclStatement:int maxEndOffset = (int) getLength();
+					IdentifierDecl:maxEndOffset = (int) getLength()
+						IdentifierDeclType:int
+						Identifier:maxEndOffset
+						AssignmentExpression:maxEndOffset = (int) getLength()
+							Identifier:maxEndOffset
+							CastExpression:(int) getLength()
+								CastTarget:int
+								CallExpression:getLength()
+									Callee:getLength
+										Identifier:getLength
+									ArgumentList:
+				IfStatement:if (hasId3v1Tag())
+					Condition:hasId3v1Tag()
+						CallExpression:hasId3v1Tag()
+							Callee:hasId3v1Tag
+								Identifier:hasId3v1Tag
+							ArgumentList:
+					ExpressionStatement:maxEndOffset -= ID3v1Tag.TAG_LENGTH
+						AssignmentExpression:maxEndOffset -= ID3v1Tag.TAG_LENGTH
+							Identifier:maxEndOffset
+							MemberAccess:ID3v1Tag.TAG_LENGTH
+								Identifier:ID3v1Tag
+								Identifier:TAG_LENGTH
+				ReturnStatement:return maxEndOffset;
+					Identifier:maxEndOffset
+			ReturnType:int
+			Identifier:maxEndOffset
+			ParameterList:
+		FunctionDef:isXingFrame (byte[] bytes , int offset)
+			CompoundStatement:
+				IfStatement:if (bytes.length >= offset + XING_MARKER_OFFSET_1 + 3)
+					Condition:bytes.length >= offset + XING_MARKER_OFFSET_1 + 3
+						RelationalExpression:bytes.length >= offset + XING_MARKER_OFFSET_1 + 3
+							MemberAccess:bytes.length
+								Identifier:bytes
+								Identifier:length
+							AdditiveExpression:offset + XING_MARKER_OFFSET_1 + 3
+								Identifier:offset
+								AdditiveExpression:XING_MARKER_OFFSET_1 + 3
+									Identifier:XING_MARKER_OFFSET_1
+									Constant:3
+					CompoundStatement:
+						IfStatement:if ("Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)))
+							Condition:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4))
+								CallExpression:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4))
+									Callee:"Xing".equals
+										MemberAccess:"Xing".equals
+											Constant:"Xing"
+											Identifier:equals
+									ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+										Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+											CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+												Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+													MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+														Identifier:BufferTools
+														Identifier:byteBufferToStringIgnoringEncodingIssues
+												ArgumentList:bytes
+													Argument:bytes
+														Identifier:bytes
+													Argument:offset + XING_MARKER_OFFSET_1
+														AdditiveExpression:offset + XING_MARKER_OFFSET_1
+															Identifier:offset
+															Identifier:XING_MARKER_OFFSET_1
+													Argument:4
+														Constant:4
+							ReturnStatement:return true;
+								Identifier:true
+						IfStatement:if ("Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)))
+							Condition:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4))
+								CallExpression:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4))
+									Callee:"Info".equals
+										MemberAccess:"Info".equals
+											Constant:"Info"
+											Identifier:equals
+									ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+										Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+											CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_1, 4)
+												Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+													MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+														Identifier:BufferTools
+														Identifier:byteBufferToStringIgnoringEncodingIssues
+												ArgumentList:bytes
+													Argument:bytes
+														Identifier:bytes
+													Argument:offset + XING_MARKER_OFFSET_1
+														AdditiveExpression:offset + XING_MARKER_OFFSET_1
+															Identifier:offset
+															Identifier:XING_MARKER_OFFSET_1
+													Argument:4
+														Constant:4
+							ReturnStatement:return true;
+								Identifier:true
+						IfStatement:if (bytes.length >= offset + XING_MARKER_OFFSET_2 + 3)
+							Condition:bytes.length >= offset + XING_MARKER_OFFSET_2 + 3
+								RelationalExpression:bytes.length >= offset + XING_MARKER_OFFSET_2 + 3
+									MemberAccess:bytes.length
+										Identifier:bytes
+										Identifier:length
+									AdditiveExpression:offset + XING_MARKER_OFFSET_2 + 3
+										Identifier:offset
+										AdditiveExpression:XING_MARKER_OFFSET_2 + 3
+											Identifier:XING_MARKER_OFFSET_2
+											Constant:3
+							CompoundStatement:
+								IfStatement:if ("Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)))
+									Condition:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4))
+										CallExpression:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4))
+											Callee:"Xing".equals
+												MemberAccess:"Xing".equals
+													Constant:"Xing"
+													Identifier:equals
+											ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+												Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+													CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+														Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+															MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																Identifier:BufferTools
+																Identifier:byteBufferToStringIgnoringEncodingIssues
+														ArgumentList:bytes
+															Argument:bytes
+																Identifier:bytes
+															Argument:offset + XING_MARKER_OFFSET_2
+																AdditiveExpression:offset + XING_MARKER_OFFSET_2
+																	Identifier:offset
+																	Identifier:XING_MARKER_OFFSET_2
+															Argument:4
+																Constant:4
+									ReturnStatement:return true;
+										Identifier:true
+								IfStatement:if ("Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)))
+									Condition:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4))
+										CallExpression:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4))
+											Callee:"Info".equals
+												MemberAccess:"Info".equals
+													Constant:"Info"
+													Identifier:equals
+											ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+												Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+													CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_2, 4)
+														Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+															MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																Identifier:BufferTools
+																Identifier:byteBufferToStringIgnoringEncodingIssues
+														ArgumentList:bytes
+															Argument:bytes
+																Identifier:bytes
+															Argument:offset + XING_MARKER_OFFSET_2
+																AdditiveExpression:offset + XING_MARKER_OFFSET_2
+																	Identifier:offset
+																	Identifier:XING_MARKER_OFFSET_2
+															Argument:4
+																Constant:4
+									ReturnStatement:return true;
+										Identifier:true
+								IfStatement:if (bytes.length >= offset + XING_MARKER_OFFSET_3 + 3)
+									Condition:bytes.length >= offset + XING_MARKER_OFFSET_3 + 3
+										RelationalExpression:bytes.length >= offset + XING_MARKER_OFFSET_3 + 3
+											MemberAccess:bytes.length
+												Identifier:bytes
+												Identifier:length
+											AdditiveExpression:offset + XING_MARKER_OFFSET_3 + 3
+												Identifier:offset
+												AdditiveExpression:XING_MARKER_OFFSET_3 + 3
+													Identifier:XING_MARKER_OFFSET_3
+													Constant:3
+									CompoundStatement:
+										IfStatement:if ("Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)))
+											Condition:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4))
+												CallExpression:"Xing".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4))
+													Callee:"Xing".equals
+														MemberAccess:"Xing".equals
+															Constant:"Xing"
+															Identifier:equals
+													ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+														Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+															CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+																Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																	MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																		Identifier:BufferTools
+																		Identifier:byteBufferToStringIgnoringEncodingIssues
+																ArgumentList:bytes
+																	Argument:bytes
+																		Identifier:bytes
+																	Argument:offset + XING_MARKER_OFFSET_3
+																		AdditiveExpression:offset + XING_MARKER_OFFSET_3
+																			Identifier:offset
+																			Identifier:XING_MARKER_OFFSET_3
+																	Argument:4
+																		Constant:4
+											ReturnStatement:return true;
+												Identifier:true
+										IfStatement:if ("Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)))
+											Condition:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4))
+												CallExpression:"Info".equals(BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4))
+													Callee:"Info".equals
+														MemberAccess:"Info".equals
+															Constant:"Info"
+															Identifier:equals
+													ArgumentList:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+														Argument:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+															CallExpression:BufferTools.byteBufferToStringIgnoringEncodingIssues(bytes, offset + XING_MARKER_OFFSET_3, 4)
+																Callee:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																	MemberAccess:BufferTools.byteBufferToStringIgnoringEncodingIssues
+																		Identifier:BufferTools
+																		Identifier:byteBufferToStringIgnoringEncodingIssues
+																ArgumentList:bytes
+																	Argument:bytes
+																		Identifier:bytes
+																	Argument:offset + XING_MARKER_OFFSET_3
+																		AdditiveExpression:offset + XING_MARKER_OFFSET_3
+																			Identifier:offset
+																			Identifier:XING_MARKER_OFFSET_3
+																	Argument:4
+																		Constant:4
+											ReturnStatement:return true;
+												Identifier:true
+				ReturnStatement:return false;
+					Identifier:false
+			ReturnType:boolean
+			Identifier:isXingFrame
+			ParameterList:byte[] bytes , int offset
+				Parameter:byte[] bytes
+					ParameterType:byte [ ]
+					Identifier:bytes
+				Parameter:int offset
+					ParameterType:int
+					Identifier:offset
+		FunctionDef:addBitrate (final int bitrate)
+			CompoundStatement:
+				IdentifierDeclStatement:MutableInteger count = bitrates.get(bitrate);
+					IdentifierDecl:count = bitrates.get(bitrate)
+						IdentifierDeclType:MutableInteger
+						Identifier:count
+						AssignmentExpression:count = bitrates.get(bitrate)
+							Identifier:count
+							CallExpression:bitrates.get(bitrate)
+								Callee:bitrates.get
+									MemberAccess:bitrates.get
+										Identifier:bitrates
+										Identifier:get
+								ArgumentList:bitrate
+									Argument:bitrate
+										Identifier:bitrate
+				IfStatement:if (count != null)
+					Condition:count != null
+						EqualityExpression:count != null
+							Identifier:count
+							Identifier:null
+					CompoundStatement:
+						ExpressionStatement:count.increment()
+							CallExpression:count.increment()
+								Callee:count.increment
+									MemberAccess:count.increment
+										Identifier:count
+										Identifier:increment
+								ArgumentList:
+				ExpressionStatement:this.bitrate = ((this.bitrate * (frameCount - 1)) + bitrate) / frameCount
+					AssignmentExpression:this.bitrate = ((this.bitrate * (frameCount - 1)) + bitrate) / frameCount
+						MemberAccess:this.bitrate
+							Identifier:this
+							Identifier:bitrate
+						MultiplicativeExpression:((this.bitrate * (frameCount - 1)) + bitrate) / frameCount
+							AdditiveExpression:(this.bitrate * (frameCount - 1)) + bitrate
+								MultiplicativeExpression:this.bitrate * (frameCount - 1)
+									MemberAccess:this.bitrate
+										Identifier:this
+										Identifier:bitrate
+									AdditiveExpression:frameCount - 1
+										Identifier:frameCount
+										Constant:1
+								Identifier:bitrate
+							Identifier:frameCount
+			ReturnType:void
+			Identifier:addBitrate
+			ParameterList:final int bitrate
+				Parameter:final int bitrate
+					ParameterType:final int
+					Identifier:bitrate
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytesRead
+				IdentifierDeclType:int
+				Identifier:bytesRead
+		IdentifierDeclStatement:null
+			IdentifierDecl:bufferLength
+				IdentifierDeclType:int
+				Identifier:bufferLength
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytesRead
+				IdentifierDeclType:int
+				Identifier:bytesRead
+		IdentifierDeclStatement:null
+			IdentifierDecl:bufferLength
+				IdentifierDeclType:int
+				Identifier:bufferLength
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytesRead
+				IdentifierDeclType:int
+				Identifier:bytesRead
+		FunctionDef:getFrameCount ()
+			CompoundStatement:
+				ReturnStatement:return frameCount;
+					Identifier:frameCount
+			ReturnType:int
+			Identifier:getFrameCount
+			ParameterList:
+		FunctionDef:getStartOffset ()
+			CompoundStatement:
+				ReturnStatement:return startOffset;
+					Identifier:startOffset
+			ReturnType:int
+			Identifier:getStartOffset
+			ParameterList:
+		FunctionDef:getEndOffset ()
+			CompoundStatement:
+				ReturnStatement:return endOffset;
+					Identifier:endOffset
+			ReturnType:int
+			Identifier:getEndOffset
+			ParameterList:
+		FunctionDef:getLengthInMilliseconds ()
+			CompoundStatement:
+				ReturnStatement:return (long) (((endOffset - startOffset) * (8.0 / bitrate)) + 0.5);
+					CastExpression:(long) (((endOffset - startOffset) * (8.0 / bitrate)) + 0.5)
+						CastTarget:long
+						AdditiveExpression:((endOffset - startOffset) * (8.0 / bitrate)) + 0.5
+							MultiplicativeExpression:(endOffset - startOffset) * (8.0 / bitrate)
+								AdditiveExpression:endOffset - startOffset
+									Identifier:endOffset
+									Identifier:startOffset
+								MultiplicativeExpression:8.0 / bitrate
+									Constant:8.0
+									Identifier:bitrate
+							Constant:0.5
+			ReturnType:long
+			Identifier:getLengthInMilliseconds
+			ParameterList:
+		FunctionDef:getLengthInSeconds ()
+			CompoundStatement:
+				ReturnStatement:return ((getLengthInMilliseconds() + 500) / 1000);
+					MultiplicativeExpression:(getLengthInMilliseconds() + 500) / 1000
+						AdditiveExpression:getLengthInMilliseconds() + 500
+							CallExpression:getLengthInMilliseconds()
+								Callee:getLengthInMilliseconds
+									Identifier:getLengthInMilliseconds
+								ArgumentList:
+							Constant:500
+						Constant:1000
+			ReturnType:long
+			Identifier:getLengthInSeconds
+			ParameterList:
+		FunctionDef:isVbr ()
+			CompoundStatement:
+				ReturnStatement:return bitrates.size() > 1;
+					RelationalExpression:bitrates.size() > 1
+						CallExpression:bitrates.size()
+							Callee:bitrates.size
+								MemberAccess:bitrates.size
+									Identifier:bitrates
+									Identifier:size
+							ArgumentList:
+						Constant:1
+			ReturnType:boolean
+			Identifier:isVbr
+			ParameterList:
+		FunctionDef:getBitrate ()
+			CompoundStatement:
+				ReturnStatement:return (int) (bitrate + 0.5);
+					CastExpression:(int) (bitrate + 0.5)
+						CastTarget:int
+						AdditiveExpression:bitrate + 0.5
+							Identifier:bitrate
+							Constant:0.5
+			ReturnType:int
+			Identifier:getBitrate
+			ParameterList:
+		FunctionDef:getBitrates ()
+			CompoundStatement:
+				ReturnStatement:return bitrates;
+					Identifier:bitrates
+			ReturnType:Map<Integer, MutableInteger>
+			Identifier:getBitrates
+			ParameterList:
+		FunctionDef:getChannelMode ()
+			CompoundStatement:
+				ReturnStatement:return channelMode;
+					Identifier:channelMode
+			ReturnType:String
+			Identifier:getChannelMode
+			ParameterList:
+		FunctionDef:isCopyright ()
+			CompoundStatement:
+				ReturnStatement:return copyright;
+					Identifier:copyright
+			ReturnType:boolean
+			Identifier:isCopyright
+			ParameterList:
+		FunctionDef:getEmphasis ()
+			CompoundStatement:
+				ReturnStatement:return emphasis;
+					Identifier:emphasis
+			ReturnType:String
+			Identifier:getEmphasis
+			ParameterList:
+		FunctionDef:getLayer ()
+			CompoundStatement:
+				ReturnStatement:return layer;
+					Identifier:layer
+			ReturnType:String
+			Identifier:getLayer
+			ParameterList:
+		FunctionDef:getModeExtension ()
+			CompoundStatement:
+				ReturnStatement:return modeExtension;
+					Identifier:modeExtension
+			ReturnType:String
+			Identifier:getModeExtension
+			ParameterList:
+		FunctionDef:isOriginal ()
+			CompoundStatement:
+				ReturnStatement:return original;
+					Identifier:original
+			ReturnType:boolean
+			Identifier:isOriginal
+			ParameterList:
+		FunctionDef:getSampleRate ()
+			CompoundStatement:
+				ReturnStatement:return sampleRate;
+					Identifier:sampleRate
+			ReturnType:int
+			Identifier:getSampleRate
+			ParameterList:
+		FunctionDef:getVersion ()
+			CompoundStatement:
+				ReturnStatement:return version;
+					Identifier:version
+			ReturnType:String
+			Identifier:getVersion
+			ParameterList:
+		FunctionDef:hasXingFrame ()
+			CompoundStatement:
+				ReturnStatement:return (xingOffset >= 0);
+					RelationalExpression:xingOffset >= 0
+						Identifier:xingOffset
+						Constant:0
+			ReturnType:boolean
+			Identifier:hasXingFrame
+			ParameterList:
+		FunctionDef:getXingOffset ()
+			CompoundStatement:
+				ReturnStatement:return xingOffset;
+					Identifier:xingOffset
+			ReturnType:int
+			Identifier:getXingOffset
+			ParameterList:
+		FunctionDef:getXingBitrate ()
+			CompoundStatement:
+				ReturnStatement:return xingBitrate;
+					Identifier:xingBitrate
+			ReturnType:int
+			Identifier:getXingBitrate
+			ParameterList:
+		FunctionDef:hasId3v1Tag ()
+			CompoundStatement:
+				ReturnStatement:return id3v1Tag != null;
+					EqualityExpression:id3v1Tag != null
+						Identifier:id3v1Tag
+						Identifier:null
+			ReturnType:boolean
+			Identifier:hasId3v1Tag
+			ParameterList:
+		FunctionDef:getId3v1Tag ()
+			CompoundStatement:
+				ReturnStatement:return id3v1Tag;
+					Identifier:id3v1Tag
+			ReturnType:ID3v1
+			Identifier:getId3v1Tag
+			ParameterList:
+		FunctionDef:setId3v1Tag (ID3v1 id3v1Tag)
+			CompoundStatement:
+				ExpressionStatement:this.id3v1Tag = id3v1Tag
+					AssignmentExpression:this.id3v1Tag = id3v1Tag
+						MemberAccess:this.id3v1Tag
+							Identifier:this
+							Identifier:id3v1Tag
+						Identifier:id3v1Tag
+			ReturnType:void
+			Identifier:setId3v1Tag
+			ParameterList:ID3v1 id3v1Tag
+				Parameter:ID3v1 id3v1Tag
+					ParameterType:ID3v1
+					Identifier:id3v1Tag
+		FunctionDef:removeId3v1Tag ()
+			CompoundStatement:
+				ExpressionStatement:this.id3v1Tag = null
+					AssignmentExpression:this.id3v1Tag = null
+						MemberAccess:this.id3v1Tag
+							Identifier:this
+							Identifier:id3v1Tag
+						Identifier:null
+			ReturnType:void
+			Identifier:removeId3v1Tag
+			ParameterList:
+		FunctionDef:hasId3v2Tag ()
+			CompoundStatement:
+				ReturnStatement:return id3v2Tag != null;
+					EqualityExpression:id3v2Tag != null
+						Identifier:id3v2Tag
+						Identifier:null
+			ReturnType:boolean
+			Identifier:hasId3v2Tag
+			ParameterList:
+		FunctionDef:getId3v2Tag ()
+			CompoundStatement:
+				ReturnStatement:return id3v2Tag;
+					Identifier:id3v2Tag
+			ReturnType:ID3v2
+			Identifier:getId3v2Tag
+			ParameterList:
+		FunctionDef:setId3v2Tag (ID3v2 id3v2Tag)
+			CompoundStatement:
+				ExpressionStatement:this.id3v2Tag = id3v2Tag
+					AssignmentExpression:this.id3v2Tag = id3v2Tag
+						MemberAccess:this.id3v2Tag
+							Identifier:this
+							Identifier:id3v2Tag
+						Identifier:id3v2Tag
+			ReturnType:void
+			Identifier:setId3v2Tag
+			ParameterList:ID3v2 id3v2Tag
+				Parameter:ID3v2 id3v2Tag
+					ParameterType:ID3v2
+					Identifier:id3v2Tag
+		FunctionDef:removeId3v2Tag ()
+			CompoundStatement:
+				ExpressionStatement:this.id3v2Tag = null
+					AssignmentExpression:this.id3v2Tag = null
+						MemberAccess:this.id3v2Tag
+							Identifier:this
+							Identifier:id3v2Tag
+						Identifier:null
+			ReturnType:void
+			Identifier:removeId3v2Tag
+			ParameterList:
+		FunctionDef:hasCustomTag ()
+			CompoundStatement:
+				ReturnStatement:return customTag != null;
+					EqualityExpression:customTag != null
+						Identifier:customTag
+						Identifier:null
+			ReturnType:boolean
+			Identifier:hasCustomTag
+			ParameterList:
+		FunctionDef:getCustomTag ()
+			CompoundStatement:
+				ReturnStatement:return customTag;
+					Identifier:customTag
+			ReturnType:byte[]
+			Identifier:getCustomTag
+			ParameterList:
+		FunctionDef:setCustomTag (byte[] customTag)
+			CompoundStatement:
+				ExpressionStatement:this.customTag = customTag
+					AssignmentExpression:this.customTag = customTag
+						MemberAccess:this.customTag
+							Identifier:this
+							Identifier:customTag
+						Identifier:customTag
+			ReturnType:void
+			Identifier:setCustomTag
+			ParameterList:byte[] customTag
+				Parameter:byte[] customTag
+					ParameterType:byte [ ]
+					Identifier:customTag
+		FunctionDef:removeCustomTag ()
+			CompoundStatement:
+				ExpressionStatement:this.customTag = null
+					AssignmentExpression:this.customTag = null
+						MemberAccess:this.customTag
+							Identifier:this
+							Identifier:customTag
+						Identifier:null
+			ReturnType:void
+			Identifier:removeCustomTag
+			ParameterList:
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:filePos
+				IdentifierDeclType:int
+				Identifier:filePos
+		IdentifierDeclStatement:null
+			IdentifierDecl:byteBuffer
+				IdentifierDeclType:ByteBuffer
+				Identifier:byteBuffer
+		IdentifierDeclStatement:null
+			IdentifierDecl:bytesRead
+				IdentifierDeclType:int
+				Identifier:bytesRead

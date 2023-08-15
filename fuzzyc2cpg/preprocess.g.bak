@@ -1,0 +1,408 @@
+grammar preprocess;
+//lexer grammar preprocess;
+ 
+options{
+    language=Java;
+    output = AST;
+}
+ 
+@lexer::header {
+//package com.mm.antlrv3demo;
+ 
+import java.io.*;
+import java.util.*;
+}
+ 
+@parser::header {
+//package com.mm.antlrv3demo;
+}
+ 
+@lexer::members {
+    //public static TokenStreamSelector selector; // must be assigned externally
+    protected static Integer ifState = 1; // -1: no-else false, 0:false, 1: true
+    protected static List ifStates = new ArrayList(); // holds nested if conditions
+    protected static Map globalDefineMap = new Hashtable(); // holds the globalDefineMap
+    protected Map globalDefineArgsMap = new Hashtable(); // holds the args for a macro call
+    /*
+    public void uponEOF() throws TokenStreamException, CharStreamException {
+        try {
+            selector.pop(); // return to old lexer/stream
+            selector.retry();
+        } catch (NoSuchElementException e) {
+            // return a real EOF if nothing in stack
+        }
+    }
+    */
+ 
+    protected static boolean isReplacingDefineContent = false;
+     
+    class SaveStruct {
+      SaveStruct(CharStream input){
+        this.input = input;
+        this.marker = input.mark();
+      }
+      public CharStream input;
+      public int marker;
+     }
+     Stack<SaveStruct> includes = new Stack<SaveStruct>();
+      
+    // class SaveStruct_defines {
+      // SaveStruct(CharStream input){
+        // this.input = input;
+        // this.marker = input.mark();
+      // }
+      // public CharStream input;
+      // public int marker;
+     // }
+     // Stack<SaveStruct_defines> definesSaveStruct = new Stack<SaveStruct_defines>();
+  
+    // We should override this method for handling EOF of included file
+     public Token nextToken(){
+       Token token = super.nextToken();
+  
+       if(token.getType() == Token.EOF && !includes.empty()){
+        // We've got EOF and have non empty stack.
+         SaveStruct ss = includes.pop();
+         setCharStream(ss.input);
+         input.rewind(ss.marker);
+         //this should be used instead of super [like below] to handle exits from nested includes
+         //it matters, when the 'include' token is the last in previous stream (using super, lexer 'crashes' returning EOF token)
+         token = this.nextToken();
+       }
+  
+      // Skip first token after switching on another input.
+      // You need to use this rather than super as there may be nested include files
+       if(((CommonToken)token).getStartIndex() < 0)
+         token = this.nextToken();
+  
+       return token;
+     }
+}
+
+
+
+COMMENT
+    :   ('//' ~('\n'|'\r')* '\r'? '\n') {skip();}
+    |   ('/*' ( options {greedy=false;} : . )* '*/') {skip();}
+    ;
+ 
+// and lexer rule
+INCLUDE    :    ('#include' (WS)? STRING) |
+		('#include' (WS)? '<'( ESC_SEQ | ~('\\'|'>') )* '>'  )
+		
+/*
+{
+    String name = f.getText();
+    name = name.substring(1,name.length()-1);
+    try {
+        // save current lexer's state
+        SaveStruct ss = new SaveStruct(input);
+        includes.push(ss);
+  
+        // switch on new input stream
+        setCharStream(new ANTLRFileStream(name));
+        reset();
+ 
+    } catch(Exception fnf) { throw new Error("Cannot open file " + name); }
+}*/;
+/*
+fragment
+NON_CR_LF   :   ~('\r'|'\n');
+ 
+fragment
+TAB_SPACE
+    :   (' ' | '\t');
+*/
+ 
+//DIRECTIVE     :   ('#define' WS* defineMacro=ID WS* defineText=STRING)
+//DIRECTIVE     :   ('#define' WS* defineMacro=ID WS* defineText=( NON_CR_LF+ | (NON_CR_LF* (TAB_SPACE+ '\\' '\r'? '\n' NON_CR_LF+)*) ) )
+ 
+ 
+fragment
+//MACRO_TEXT :    ( (('\\'){skip();System.out.println("skip line tail back slash");} '\r'? '\n')
+//MACRO_TEXT :    ( ('\\'{$channel=HIDDEN;System.out.println("set back slash to hidden");} '\r'? '\n')
+//MACRO_TEXT :    ( (('\\'){setText("");System.out.println("set back slash to empty");} '\r'? '\n')
+MACRO_TEXT :    (('\\' '\r'? '\n') | (~('\r'|'\n')))*;
+//MACRO_TEXT :    (('\\' '\r'? '\n') | (~('\n')))*;
+//MACRO_TEXT :    (('\\' '\n') | (~('\n')))*;
+//MACRO_TEXT :    (('\\' '\n') | (~('\n' | '\r')))*;
+//MACRO_TEXT :    ( ('\\' '\r'? '\n') | (~('\r'|'\n')))* -> ( ('\r'? '\n') | (~('\r'|'\n')))*;
+//MACRO_TEXT :    (('\\'{setText("");} '\r'? '\n') | (~('\r'|'\n')))*;
+/*
+MACRO_TEXT :    ((('\\' '\r'? '\n') | (~('\r'|'\n')))*)
+    {
+        String origMultiLineStr = getText();
+        String newMultiLineStr = origMultiLineStr.replace("\\", "");
+        setText(newMultiLineStr);
+    };
+*/
+//MACRO_TEXT :    ( (('\\' '\r'? '\n')=>('\r' '\n')) | (~('\r'|'\n')))*;
+ 
+ 
+DIRECTIVE
+@init{
+    List args = new ArrayList();
+    boolean condition = true;
+     
+    String arg0Text = "";
+    String arg1Text = "";
+    String definedContent = "";
+    String defineId = "";
+}
+@after{
+//SETTEXT(GETTEXT()->substring(GETTEXT(),1,GETTEXT()->len-1))
+//String processedTokenStr = GETTEXT();
+//String processedTokenStr = state.text;
+//String processedTokenStr = getText();
+//String processedTokenStr = this.getText();
+//System.out.println("after process, whole token string is" + processedTokenStr);
+ 
+}
+:   ('#define' WS* defineMacro=RAW_IDENTIFIER
+    {
+        args.add(""); // first element will hold the macro text
+    }
+        (
+            ( '(' // get arguments if you find them (no spaces before left paren)
+                (WS)? (defineArg0=RAW_IDENTIFIER (WS)? {arg0Text = defineArg0.getText(); args.add(arg0Text);})?
+                ( ',' (WS)? defineArg1=RAW_IDENTIFIER (WS)? {arg1Text = defineArg1.getText(); args.add(arg1Text);} )*
+              ')'
+            | ' '|'\t'|'\f'
+            )
+            ( options{greedy=true;}: ' '|'\t'|'\f' )*
+            // store the text verbatim - tokenize when called
+            macroText=MACRO_TEXT
+            {
+                definedContent = macroText.getText();
+                definedContent = definedContent.replace("\\", ""); // remove mutile line define last's '\'
+                args.set(0, definedContent);
+            }
+        )? '\r'? '\n'
+    {
+        defineId = defineMacro.getText();
+        globalDefineMap.put(defineId, args );
+        skip();
+         
+        //process the define content, to check whether it contain the previous define
+        //if yes, then process it
+ 
+        // // save current lexer's state
+        // SaveStruct ss = new SaveStruct(input);
+        // includes.push(ss);
+        // // switch on new input stream
+        // setCharStream(new ANTLRStringStream(definedContent));
+        // reset();
+         
+        // isReplacingDefineContent = true;
+    }
+    )
+    /*
+    {
+        //process the define content, to check whether it contain the previous define
+        //if yes, then process it
+ 
+        // save current lexer's state
+        SaveStruct ss = new SaveStruct(input);
+        includes.push(ss);
+        // switch on new input stream
+        setCharStream(new ANTLRStringStream(definedContent));
+        reset();
+         
+        //after replacement
+        //update the define map -> replace to the replaced text
+        String processedDefineContent = macroText.getText();
+        args.set(0, processedDefineContent);
+        globalDefineMap.put(defineId, args );
+        skip();
+    }
+    */;
+ 
+IDENTIFIER
+@init{
+    List define = new ArrayList();
+    List foundArgs = new ArrayList();
+     
+    String callArg0Text = "";
+    String callArg1Text = "";
+}
+@after{
+//String curCallParaText = getText();
+//  if(foundArgs.size() == 0)
+//  {
+//      //remove () if no para
+//      setText("");
+//  }
+} :
+    identifier=RAW_IDENTIFIER
+    {
+        String IdText = (String)identifier.getText();
+     
+        // see if this is a macro argument
+        define = (List)globalDefineArgsMap.get(IdText);
+        while(define != null)
+        {
+            //if define not null, then find recursively to get para's real value
+            String firstParaValue = (String)define.get(0);
+            if(globalDefineArgsMap.containsKey(firstParaValue))
+            {
+                define = (List)globalDefineArgsMap.get(firstParaValue);
+            }
+            else
+            {
+                break;
+            }
+        }
+         
+        if (define==null) {
+            // see if this is a macro call
+            define = (List)globalDefineMap.get(IdText);
+             
+            //System.out.println("normal define call=" + IdText);
+        }
+        else
+        {
+            //is define args replacement
+            isReplacingDefineContent = true;
+     
+            //System.out.println("normal define args call=" + (String)define.get(0));
+        }
+    }
+    ( {(define!=null) && (define.size()>=1)}?=> (WS|COMMENT)?
+        // take in arguments if macro call requires them
+        '('
+        WS*
+        callArg0=EXPR
+        {
+            callArg0Text = callArg0.getText();
+            //foundArgs.add(callArg0Text);
+            //maybe whitespace, so need trim here
+            if(!callArg0Text.isEmpty() && !callArg0Text.trim().isEmpty())
+            {
+                foundArgs.add(callArg0Text);
+            }
+        }
+        ( COMMA callArg1=EXPR
+        {
+            callArg1Text = callArg1.getText();
+            //foundArgs.add(callArg1Text);
+            //maybe whitespace, so need trim here
+            if(!callArg1Text.isEmpty() && !callArg1Text.trim().isEmpty())
+            {
+                foundArgs.add(callArg1Text);
+            }
+        }
+        )*
+        { foundArgs.size()==define.size()-1 }? // better have right amount
+        WS*
+        ')'
+    | {!((define!=null) && (define.size()>1))}?=>
+    )
+{
+if (define!=null) {
+    String defineText = (String)define.get(0);
+ 
+    if (define.size()==1) {
+        //only have one value in list -> the defineText is the define para content -> just need replace directly
+        setText(defineText);
+    } else {
+        //add new dict pair: (para, call value)
+        for (int i=0;i<foundArgs.size();++i) {
+            // treat macro arguments similar to local defines
+            List arg = new ArrayList();
+            arg.add((String)foundArgs.get(i));
+            globalDefineArgsMap.put( (String)define.get(1+i), arg );
+        }
+ 
+        // save current lexer's state
+        SaveStruct ss = new SaveStruct(input);
+        includes.push(ss);
+ 
+        // switch on new input stream
+        setCharStream(new ANTLRStringStream(defineText));
+        reset();
+    }
+}
+};
+ 
+fragment RAW_IDENTIFIER : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ;
+ 
+NUMBER : ('0'..'9') ('0'..'9'|'a'..'z'|'A'..'Z'|'_')* ; // allow ahpha suffixes on numbers (i.e. L:long)
+ 
+// group symbols into categories to parse EXPR
+LEFT  : '(' | '[' | '{' ;
+RIGHT : ')' | ']' | '}' ;
+COMMA : ',' ;
+OPERATOR : '!' | '#' | '$' | '%' | '&' | '*' | '+' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '\\' | '^' | '`' | '|' | '~' ;
+ 
+ 
+fragment EXPR // allow just about anything without being ambiguous
+    : (WS)? (NUMBER|IDENTIFIER)?
+            (
+                        ( LEFT EXPR ( COMMA EXPR )* RIGHT
+            | STRING
+            | OPERATOR // quotes, COMMA, LEFT, and RIGHT not in here
+            )
+            EXPR
+        )?
+    ;
+ 
+//INT : '0'..'9'+    ;
+ 
+FLOAT
+    :   ('0'..'9')+ '.' ('0'..'9')* EXPONENT?
+    |   '.' ('0'..'9')+ EXPONENT?
+    |   ('0'..'9')+ EXPONENT
+    ;
+ 
+WS  :   ( ' '
+        | '\t'
+        | '\r'
+        | '\n'
+        ) {$channel=HIDDEN;}
+    ;
+ 
+//RestSymbo :   '{' | '}' | '&' | ';' | ',' | '+' | '-' | ')' | '(' | '~' | '/' | '`' | '$' | '@' | '%' | '^' | '#' | '\\' ;
+ 
+STRING
+    :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
+    ;
+ 
+CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
+    ;
+ 
+fragment
+EXPONENT : ('e'|'E') ('+'|'-')? ('0'..'9')+ ;
+ 
+fragment
+HEX_DIGIT : ('0'..'9'|'a'..'f'|'A'..'F') ;
+ 
+fragment
+ESC_SEQ
+    :   '\\' ('b'|'t'|'n'|'f'|'r'|'\"'|'\''|'\\')
+    |   UNICODE_ESC
+    |   OCTAL_ESC
+    ;
+ 
+fragment
+OCTAL_ESC
+    :   '\\' ('0'..'3') ('0'..'7') ('0'..'7')
+    |   '\\' ('0'..'7') ('0'..'7')
+    |   '\\' ('0'..'7')
+    ;
+ 
+fragment
+UNICODE_ESC
+    :   '\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+    ;
+     
+header
+    :   include*;
+include :   INCLUDE;//'#include ' '<' ID ('.h' | '.ddl') '>';
+
+code 	:	('#if'|
+		'#ifdef'|
+		'#ifndef'|
+		include|
+		DIRECTIVE|
+		
+		.)*;

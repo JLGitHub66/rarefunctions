@@ -1,0 +1,33 @@
+Build Number: 8b0e260
+Project Version: 0.17.1
+Build Date: 2014-06-25T12:08:51
+
+ExceptionsLogger.class: 3752
+ImmutabilityChecker$Violation.class: 863
+ImmutabilityChecker.class: 7276
+JoinPointUtils.class: 1254
+MethodAsyncRunner$1.class: 1800
+MethodAsyncRunner.class: 4143
+MethodCacher$1.class: 704
+MethodCacher$Key.class: 4057
+MethodCacher$Tunnel.class: 3419
+MethodCacher.class: 11186
+MethodInterrupter$1.class: 734
+MethodInterrupter$Call.class: 2952
+MethodInterrupter.class: 5378
+MethodLogger$1.class: 1140
+MethodLogger$Marker.class: 3790
+MethodLogger.class: 15632
+MethodScheduler$Service$1.class: 1190
+MethodScheduler$Service.class: 4102
+MethodScheduler.class: 5278
+MethodValidator$1.class: 2646
+MethodValidator.class: 14429
+Mnemos.class: 7496
+NamedThreads.class: 1443
+Parallelizer$1.class: 1589
+Parallelizer$ParallelException.class: 900
+Parallelizer.class: 8409
+QuietExceptionsLogger.class: 4695
+Repeater.class: 8888
+SingleException.class: 6893
