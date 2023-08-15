@@ -1,0 +1,61 @@
+
+
+
+mcb ##a ##_usb ##_xmit_ ##change_ ##bit ##rate put_unaligned_be16 mcb ##a ##_usb ##_xmit_ ##cmd 
+mcb ##a ##_usb ##_get_free_ ##ctx netdev_err 
+mcb ##a ##_usb ##_get_free_ ##ctx mcb ##a ##_usb ##_xmit 
+mcb ##a ##_usb ##_get_free_ ##ctx mcb ##a ##_usb ##_xmit netdev_err 
+mcb ##a ##_usb ##_xmit_ ##cmd mcb ##a ##_usb ##_get_free_ ##ctx netdev_err mcb ##a ##_usb ##_xmit 
+netdev_priv can_dropped_invalid_skb 
+mhi ##_alloc ##_controller ath11k_core ##_create_ ##firmware ##_path ath11k ##_mh ##i ##_get_m ##si test_bit test_bit ath11k ##_mh ##i_read ##_addr ##_from_dt mhi ##_register_controller ath11k_err mhi ##_free_ ##controller 
+of_find_node_by ##_type of_address_to_resource of_node_put 
+ath11k ##_mh ##i_read ##_addr ##_from_dt of_find_node_by ##_type of_address_to_resource of_node_put 
+dev_get_drvdata ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg 
+dev_get_drvdata ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg ath11k_warn 
+dev_get_drvdata trace_ath11k_log_dbg_enabled 
+dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k_warn 
+dev_get_drvdata ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg test_bit 
+dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg 
+dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg ath11k_warn 
+dev_get_drvdata trace_ath11k_log_dbg_enabled test_bit 
+dev_get_drvdata ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg test_bit queue_work 
+dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg test_bit 
+dev_get_drvdata trace_ath11k_log_dbg_enabled test_bit queue_work 
+dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg test_bit queue_work 
+ath11k ##_mh ##i ##_op ##_status_ ##cb dev_get_drvdata trace_ath11k_log_dbg_enabled ath11k ##_mh ##i ##_op ##_callback ##_to_str __ath11k_dbg ath11k_warn test_bit queue_work 
+ath11k_pcic ##_get_user ##_msi ##_assign ##ment __ath11k_dbg kcalloc 
+ath11k_pcic ##_get_user ##_msi ##_assign ##ment trace_ath11k_log_dbg_enabled kcalloc 
+ath11k_pcic ##_get_user ##_msi ##_assign ##ment trace_ath11k_log_dbg_enabled __ath11k_dbg kcalloc 
+ath11k ##_mh ##i ##_get_m ##si ath11k_pcic ##_get_user ##_msi ##_assign ##ment trace_ath11k_log_dbg_enabled __ath11k_dbg kcalloc test_bit ath11k_pci ##_get_m ##si ##_irq 
+ath11k ##_mh ##i ##_reset_ ##tx ##vec ##db ath11k ##_mh ##i ##_reset_ ##tx ##vec ##status ath11k ##_mh ##i ##_reset_ ##rx ##vec ##db ath11k ##_mh ##i ##_reset_ ##rx ##vec ##status 
+ath11k ##_mh ##i ##_clear ##_vector ath11k ##_mh ##i ##_reset_ ##tx ##vec ##db ath11k ##_mh ##i ##_reset_ ##tx ##vec ##status ath11k ##_mh ##i ##_reset_ ##rx ##vec ##db ath11k ##_mh ##i ##_reset_ ##rx ##vec ##status 
+ath11k_pcic ##_read32 __ath11k_dbg ath11k_pcic ##_write32 
+ath11k_pcic ##_read32 trace_ath11k_log_dbg_enabled ath11k_pcic ##_write32 
+ath11k_pcic ##_read32 trace_ath11k_log_dbg_enabled __ath11k_dbg ath11k_pcic ##_write32 
+ath11k ##_mh ##i ##_set_m ##hi ##ctrl ##_reset ath11k_pcic ##_read32 trace_ath11k_log_dbg_enabled __ath11k_dbg ath11k_pcic ##_write32 __const_udelay 
+__pci_register_driver _printk 
+ath11k_pci ##_init __pci_register_driver _printk 
+dev_get_drvdata test_bit ath11k_core ##_resume 
+dev_get_drvdata test_bit __ath11k_dbg 
+dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled 
+dev_get_drvdata test_bit ath11k_core ##_resume ath11k_warn 
+dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled __ath11k_dbg 
+ath11k_pci ##_pm ##_resume dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled __ath11k_dbg ath11k_core ##_resume ath11k_warn 
+dev_get_drvdata test_bit ath11k_core ##_suspend 
+dev_get_drvdata test_bit __ath11k_dbg 
+dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled 
+dev_get_drvdata test_bit ath11k_core ##_suspend ath11k_warn 
+dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled __ath11k_dbg 
+ath11k_pci ##_pm ##_suspend dev_get_drvdata test_bit trace_ath11k_log_dbg_enabled __ath11k_dbg ath11k_core ##_suspend ath11k_warn 
+pci_get_drvdata ath11k_pci ##_power_down 
+ath11k_pci ##_shutdown pci_get_drvdata ath11k_pci ##_power_down 
+pci_get_drvdata ath11k_pci ##_priv ath11k_pci ##_set_irq ##_affinity ##_hint test_bit ath11k_pci ##_power_down ath11k ##_debugfs_ ##soc ##_destroy ath11k_qmi ##_deinit_ ##service ath11k ##_mh ##i ##_unregister ath11k_pcic ##_free_irq ath11k_pci ##_free_m ##si ath11k_pci ##_free_ ##region ath11k_hal_srng ##_deinit ath11k ##_ce_ ##free_p ##ipes ath11k_core ##_free 
+pci_get_drvdata ath11k_pci ##_priv ath11k_pci ##_set_irq ##_affinity ##_hint test_bit set_bit ath11k_core ##_deinit ath11k ##_mh ##i ##_unregister ath11k_pcic ##_free_irq ath11k_pci ##_free_m ##si ath11k_pci ##_free_ ##region ath11k_hal_srng ##_deinit ath11k ##_ce_ ##free_p ##ipes ath11k_core ##_free 
+ath11k_pci ##_remove pci_get_drvdata ath11k_pci ##_priv ath11k_pci ##_set_irq ##_affinity ##_hint test_bit ath11k_pci ##_power_down ath11k ##_debugfs_ ##soc ##_destroy ath11k_qmi ##_deinit_ ##service set_bit ath11k_core ##_deinit ath11k ##_mh ##i ##_unregister ath11k_pcic ##_free_irq ath11k_pci ##_free_m ##si ath11k_pci ##_free_ ##region ath11k_hal_srng ##_deinit ath11k ##_ce_ ##free_p ##ipes ath11k_core ##_free 
+ath11k_core ##_alloc _dev_err 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 ath11k_pci ##_claim ath11k_err ath11k_core ##_free 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 set_bit ath11k_pci ##_claim ath11k_err ath11k_core ##_free 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 ath11k_pci ##_claim __ath11k_dbg _dev_err ath11k_pci ##_free_ ##region ath11k_core ##_free 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 ath11k_pci ##_claim trace_ath11k_log_dbg_enabled _dev_err ath11k_pci ##_free_ ##region ath11k_core ##_free 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 set_bit ath11k_pci ##_claim __ath11k_dbg _dev_err ath11k_pci ##_free_ ##region ath11k_core ##_free 
+ath11k_core ##_alloc pci_set_drvdata ath11k_pci ##_priv pci_set_drvdata spinlock_check __raw_spin_lock_init of_property_read_u32 set_bit ath11k_pci ##_claim trace_ath11k_log_dbg_enabled 
