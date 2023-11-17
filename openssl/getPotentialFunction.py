@@ -21,7 +21,9 @@ rare_funcs = frare.read().split('\n')
 frare.close()
 
 for rare_func in rare_funcs:
-    if "_lock" in rare_func or "lock_" in rare_func:
     #if "alloc" in rare_func or "_new" in rare_func or "new_" in rare_func:
     #if "free" in rare_func or "release" in rare_func or "destory" in rare_func or "put_" in rare_func or "_put" in rare_func:
+    #if rare_func.startswith("lock_") or rare_func.endswith("_lock") or "_lock_" in rare_func:
+    #if rare_func.startswith("unlock_") or rare_func.endswith("_unlock") or "_unlock_" in rare_func:
+    if "printf" in rare_func:
         print(rare_func)
