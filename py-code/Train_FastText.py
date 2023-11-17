@@ -41,4 +41,3 @@ model.train(corpus_file=corpus_file,total_words=total_words,epochs=5)
 
 print('save the model to {}'.format(Foutput))
 model.save(Foutput)
-
