@@ -25,3 +25,4 @@ for rare_func in rare_funcs:
     #if rare_func.startswith("unlock_") or rare_func.endswith("_unlock") or "_unlock_" in rare_func:
     #if "printf" in rare_func:
         print(rare_func)
+        
