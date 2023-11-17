@@ -1,0 +1,15 @@
+av_encryption_init_info_alloc
+ff_h264_alloc_tables
+avfilter_graph_alloc
+av_packet_new_side_data
+alloc_lut
+alloc_buffers
+tq_alloc
+av_encryption_info_alloc
+av_thread_message_queue_alloc
+av_bsf_list_alloc
+alloc_picture_tables
+sws_allocVec
+new_stream
+av_hmac_alloc
+rv34_decoder_alloc
