@@ -63,3 +63,4 @@ for function in functionSubword.keys():
     for subword in subwordList:
         functionSubwordFile.write(subword + " ")
     functionSubwordFile.write("\n\n")
+    
