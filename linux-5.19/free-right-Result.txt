@@ -1,0 +1,5609 @@
+lbmfree
+kfree_hook
+ppm_free
+ksmbd_rpc_id_free
+kmemleak_free_part
+release_appl
+jent_zfree
+__vb2_free_mem
+dpaa2_dpseci_congestion_free
+venus_free
+blkg_free
+___sym_mfree
+fore200e_chunk_free
+sec_alg_resource_free
+tb_ctl_pkg_free
+cb_free
+msrs_free
+hinic_wqs_free
+qm_ctx_free
+efc_els_io_free
+dp_meter_instance_free
+mlxsw_sp_acl_erp_table_free
+free_capabilities
+avc_xperms_free
+iopf_queue_free
+mlx4_buddy_free
+bpf_map_meta_free
+saa7134_pgtable_free
+kvm_dirty_ring_free
+nf_tables_commit_audit_free
+dm_uevent_free
+gb_operation_message_free
+ghes_estatus_cache_free
+mlxsw_pci_mbox_free
+io_rsrc_data_free
+ip_vs_dest_dst_free
+hw_free   #在143个文件中有引用 
+vmbus_release_relid
+mlx5_devlink_free
+atomisp_css_shading_table_free
+gsmi_buf_free
+cs_dsp_buf_free
+zip_data_buf_free
+vc_uniscr_free
+hva_mem_free
+elfcorehdr_free
+free_node   #在7个文件20多个地方引用
+bfa_tskim_free
+mlx5e_int_port_metadata_free
+dma_resv_list_free
+__comedi_buf_free
+io_mem_free
+iscsi_tcp_r2tpool_free
+rds_dma_hdr_free
+snd_emu10k1_voice_free
+eni_free_mem
+snd_util_mem_free
+btrfs_test_free_space_tree  #误报
+i40e_free_q_vector
+snd_gf1_mem_free
+mvs_free
+zip_cmd_qbuf_free
+ice_free_q_vector
+kmemleak_free_part_phys
+bsd_free
+ff_layout_free_ds_ioerr
+kfd_pasid_free
+l2cap_seq_list_free
+iscsi_pool_free
+free_crypto
+cpdma_desc_free
+free_mbox_info
+rgd_free
+closid_free
+xfs_free_buftarg
+udp_tunnel_nic_free
+btrfs_test_free_space_cache
+__mlx4_xrcd_free
+task_release_itt
+cifs_free_hash
+tegra_vde_free_bo
+wg_packet_queue_free
+writeset_free
+tb_ctl_free
+sa_free_ctx_info
+slhc_free
+rpc_free_iostats
+free_choose_arg_map
+nvmet_tcp_free_cmd
+qed_chain_free_pbl
+cq_frag_buf_free
+pci_p2pmem_free_sgl
+nvmet_rdma_free_cmds
+bnx2i_free_ep
+hinic_aeqs_free
+mpi3mr_free_op_req_q_segments
+iwl_phy_db_free
+ath9k_htc_hw_free
+ixgbe_free_q_vector
+mvs_slot_task_free
+jffs2_free_full_dnode  #在6个文件，20处引用
+free_engines  #2个文件，10多处引用
+ca0132_free
+hinic_ceqs_free
+vmlfb_free_vram_area
+nvme_tcp_free_queue
+__mlx4_cq_free_icm
+rxrpc_free_bundle
+nvmet_rdma_free_cmd
+rbio_pool_free
+sram_free_partitions
+device_free_rx_buf
+fsverity_free_hash_request
+__mlx4_srq_free_icm
+SMB2_query_info_free
+ramoops_free_przs
+hl_state_dump_free_sync_objects
+gve_rx_free_buffer
+ecc_free_digits_space
+hci_free_xfer
+unregister_trace_sched_process_free
+register_trace_prio_sched_process_free
+ima_free_key_entry
+ath10k_swap_code_seg_free
+aac_free_safw_ciss_luns
+snd_gf1_free_voice
+free_dma_buf   #在两个不同文件中定义，相应的共有11处引用
+core_alua_free_lu_gp
+tsi148_free_resource
+nilfs_segbuf_free
+rtw89_pci_free_rx_ring
+blk_free_queue_stats
+ixgbevf_free_q_vector
+genradix_free_node
+mlx5dr_icm_free_chunk
+target_free_sgl #一共10处正经引用+一次EXPORT_SYMBOL的引用
+ice_free_prof_mask
+persistent_ram_free
+sja1105_static_config_free
+gssp_free_receive_pages
+jffs2_free_full_dirent  #7个文件、20余处引用
+_edac_mc_free
+gve_rx_free_ring_dqo
+free_ws   #20处
+rvu_free_bitmap
+freeze_workqueues_busy  #误报（不是free）
+hinic_free_cmdq_buf
+icom_free_adapter
+dmatest_free_test_data
+dmabuf_exp_wait_obj_free
+cgroup_sk_free
+qlcnic_free_sds_rings
+gve_tx_free_ring
+gs_free_req
+gve_rx_free_ring
+ocfs2_free_quota_recovery
+psb_mmu_free_pt
+fpu_free_guest_fpstate
+gss_pipe_free
+tb_ring_free
+free_pgpath
+__renesas_usb3_ep_free_request
+mlx5_tc_ct_free_pre_ct
+samsung_dt_free_map
+xfs_alloc_put_freelist  #误报，既不是put也不是free
+vme_master_free
+xfs_defer_ops_capture_free
+qcom_swrm_stream_free_ports
+tpg_free
+ca91cx42_free_resource
+free_loaded_vmcs
+blk_mq_free_tags
+drbd_free_socket
+dbc_free_request
+free_hydration
+binder_node_release
+pci_epc_mem_free_addr
+ima_free_pages
+u_free
+intel_nhlt_free
+wbsd_free_mmc
+free_pg_vec
+drm_file_free
+hpsa_free_sas_node
+free_wq_pages
+xhci_dbc_free_requests
+padata_works_free
+vmbus_free_requestor
+metadata_dst_free_percpu
+ast_drm_freeze  #误报，不是free，是freeze
+dlm_free_ctxt_mem
+rtl8xxxu_free_tx_urb
+tegra_bpmp_free_mrq
+ips_release
+iscsit_free_r2ts_from_list
+binder_selftest_free_buf
+sec_id_free
+snd_emu10k1_free_pages
+vxge_os_dma_free
+free_test_dev_kmod
+gr_free_request
+t4_free_encap_mac_filt
+hpsa_free_sas_port
+ssc_free
+sxgbe_freeze   #误报，不是free
+mlx4_qp_free_icm
+gfx_v8_0_free_microcode
+hidma_ll_free
+asd_free_ddb
+iova_magazine_free
+pqi_free_sas_node
+_filelayout_free_lseg
+nv50_dmac_free
+free_imon_context
+pte_free_kernel
+free_pending_exception
+klp_shadow_free_all
+keyctl_pkey_params_free
+free_sbi    #刚好10次调用
+rtllib_txb_free
+hellcreek_hwtstamp_free
+xgene_free_domains
+nilfs_palloc_abort_free_entry
+brcmf_get_first_free_bsscfgidx  #误报，free是形容词
+__free_zspage
+rq_buf_free
+et131x_tx_dma_memory_free
+raw_cmd_free
+__iio_buffer_free_sysfs_and_mask
+gru_free_gru_context
+imx_media_fim_free
+catpt_ipc_free_stream
+memregion_free
+test_free_pages
+pca9541_release_bus
+z_decomp_free
+free_conn   #20多处调用
+msm_fbdev_free
+shadow_free
+aa_free_ns
+qtd_free
+bio_integrity_free
+arch_gnttab_vfree
+dtsec_free
+sl_free_netdev
+msc_buffer_unlocked_free_unless_used
+z_comp_free
+_ff_layout_free_lseg
+rds_ib_ring_free
+sctp_auth_free
+agp_free_key
+iint_free
+acpi_lpat_free_conversion_table
+efi_free
+tb_domain_freeze_noirq   #误报，不是free
+vp9_free_inst
+dlfb_deferred_vfree
+qedi_free_fp
+snd_util_memhdr_free
+nr_pcp_free
+nfcsim_device_free
+otx2_sq_free_sqbs
+sec_free_civ_resource
+s3c24xx_dma_free_txd
+dw_edma_free_desc
+_rtl_pci_free_tx_ring
+rtw_pci_free_tx_ring
+vsc8584_macsec_free_flow
+qedi_free_sb
+gfx_v9_0_free_microcode
+raid1_free
+free_tx_ring
+alloctest_ref_tracker_free
+__free_engines
+free_crush_name
+sctp_ootb_pkt_free
+ucc_fast_free   #12处调用
+btrfs_bio_free_csum
+hfsplus_bnode_free
+r8712_free_xmitbuf
+stex_hba_free
+mlx5e_free_xdpsq_db
+ldm_frag_free
+tlb_flush_mmu_free
+ip6mr_free_table
+stk1160_free_isoc
+__arm_lpae_free_pages
+tap_free_minor
+tls_sw_free_ctx_rx
+vfio_iommu_resv_free
+cipso_v4_doi_free
+linereq_free
+wil_vif_free
+rtw89_pci_free_tx_wd_ring
+ipmr_free_table
+pwc_iso_free
+nix_txschq_free
+msi2500_iso_free
+xchk_agf_xref_freeblks
+slc_free_netdev
+ip6mr_cache_free
+free_crush_loc
+ipmr_cache_free
+info_bdq_free
+bfa_comp_free
+qed_chain_free_single
+enetc_kfree_si
+alx_free_txbuf
+free_fwp
+pqi_free_sas_port
+fotg210_qtd_free
+gcov_info_free
+swap_free
+dln2_free
+hns_dsaf_free
+ms_lib_free_allocatedarea
+p4d_free
+ata_tdev_free
+goodix_free_irq
+virtio_gpu_free_object
+hns3_free_vector_ring_chain
+gfx_v7_0_free_microcode
+vxge_hw_fifo_txdl_free
+qlist_free_all
+next_free_minor
+azx_free
+z_erofs_free_pcluster
+serio_free_event
+img_ir_free_timing
+padata_free
+trace_binder_free_lru_end
+calipso_doi_free
+skcipher_free_instance_simple
+vring_free_queue
+ops_free_list
+dev_iommu_free
+xchk_directory_free_bestfree  #误报
+nic_free_all_interrupts
+sas_phy_free
+rxrpc_release_sock
+pickup_urb_and_free_priv
+cdns_i3c_master_free_xfer
+blk_mq_free_map_and_rqs
+hnae_free_buffer_detach
+rtw89_pci_free_tx_rings
+videobuf_dma_free
+npa_ctx_free
+chaoskey_free
+ice_free_hw_tbls
+next_free_urb   #误报，free是形容词
+bch_keylist_free
+info_idq_free
+dm_cache_get_free_metadata_block_count  #误报，free是形容词
+pde_free
+skl_dsp_free
+rds_ib_free_frmr
+nfp_net_rx_ring_bufs_free
+pwm_free
+btusb_free_frags
+enetc_msg_psi_free
+hpsa_free_sas_phy
+nix_ctx_free
+sk_psock_free_link
+ionic_txrx_free
+ufs_free_fragments
+pcpu_free_area
+ms_free_l2p_tbl
+ipw2100_snapshot_free
+rgblk_free
+vmw_binding_state_free
+vic_provinfo_free
+efct_xport_free
+batadv_forw_packet_free
+ovs_meter_free
+cx_auto_free
+snd_es1968_free_apu_pair
+iwl_txq_free_tfd   #11处调用
+qed_chain_free_next_ptr
+adm8211_free_rings
+xen_snd_front_evtchnl_free_all
+hinic_pf_to_mgmt_free
+pqi_free_sas_phy
+otx2_free_aura_ptr
+sl_free_bufs
+blk_mq_free_rq_map
+mock_ring_free
+ipc_mux_session_free
+nix_free_all_bandprof
+advansys_release
+free_pg_mapping
+snd_seq_oss_readq_free
+bpf_dispatcher_find_free
+usb_stream_free
+xfs_ag_resv_free
+slab_free
+mlx5e_rss_free
+fuse_dev_free
+get_free_i2c_dev  #误报，这是get，不是free
+ips_freescb  #误报，而且有14处调用
+scsifront_free_ring
+free_io
+testmgr_free_buf  #14处调用
+msc_buffer_free_unless_used
+nfp_abm_qdisc_free
+gameport_free_event
+ima_free_rule
+spi_avmm_bridge_ctx_free
+sec_free_aiv_resource
+gpmc_cs_free
+ff_layout_free_mirror
+pm8001_free
+psz_free_all_zones
+i915_dependency_free
+ips_deallocatescbs
+poll_freewait
+free_arenas
+nfs4_free_state_owners
+spc_free
+__free_domain_allocs
+ath10k_htt_free_txbuff
+nfp_cpp_free
+adapter_sg_tables_free
+netlbl_secattr_free
+enetc_xdp_free
+genl_family_rcv_msg_attrs_free
+mm_free_pgd
+mt76u_free_rx
+kfree_pmc
+seccomp_filter_free
+ucc_slow_free
+em28xx_audio_free_urb
+page_pool_free
+sev_asid_free
+next_free_nid   #误报，free是形容词
+__ufshcd_release
+net_free
+xfs_efi_item_free
+cxgb4_free_mac_filt
+xfs_iext_free_last_leaf
+ice_aq_alloc_free_vsi_list
+sgx_free_va_slot
+dn_fib_free_info
+vortex_eq_free
+__free_pages_ok
+tnode_free
+free_urb    #约20处调用
+devlink_fmsg_free
+free_ldt_struct
+rsc_free
+i915_ttm_free_cached_io_rsgt
+kvm_free_msr_filter
+svc_i3c_master_free_xfer
+nfp_net_tx_ring_bufs_free
+bpf_jit_binary_free  #14处调用
+evtchn_free_ring
+dpcm_be_dai_hw_free
+mt76u_free_tx
+hns3_free_buffer
+ring_buffer_free
+tls_ctx_free
+iscsi_free_session
+swsusp_set_page_free   #误报
+pnfs_free_commit_array
+cfg80211_sme_free
+efc_node_free
+bluecard_release
+dw_i3c_master_free_xfer
+xfs_iwalk_free
+event_trigger_free  #11处调用
+xfs_rui_item_free
+brcms_c_detach_mfree
+_rtw_free_network
+cs8409_free
+hub_free_dev
+svc_rqst_free
+autofs_free_ino
+_ctl_diag_release
+brcmf_fw_nvram_free
+mt7530_free_irq
+free_unref_page_list
+nvmet_ns_free
+xfs_cui_item_free
+__i915_gem_free_object
+cxgb4_mqprio_free_tc
+ed_free
+bcm_vk_free_ctx
+tifm_free_adapter
+pcpu_free_alloc_info
+imx258_free_controls
+dpaa2_dpseci_dpio_free
+blkif_free
+nvme_rdma_free_io_queues
+imx208_free_controls
+_pgd_free
+xfs_bui_item_free
+pci_epf_free_space
+flexcop_dma_free
+velocity_free_rd_ring
+qed_cxt_free_ilt_range
+qede_free_arfs
+e1000e_pm_freeze  #误报，不是free
+c_can_get_tx_free  #误报，free是形容词
+ovs_flow_free
+cgroup_free_root
+gf128mul_free_64k
+__iommu_dma_free
+xfs_dir3_free_verify
+ft_free_cmd
+free_dma_rx_desc_resources
+free_prealloced_shrinker
+esas2r_free_fw_event
+smc_lgr_free
+snd_mixer_oss_free1
+t3_free_qset
+qxl_drm_freeze  #误报，不是free
+bna_tx_free
+gru_free_message  #误报
+sec_alg_free_el
+ufs_freefrags   #误报
+dw_dma_of_controller_free
+lpfc_free_ct_rsp
+ionic_lif_free
+free_opinfo
+mana_gd_free_memory
+rtw_pci_free_rx_ring
+_rtl_pci_free_rx_ring
+dpaa2_eth_free_dpni
+free_ram_pages_type
+mlx4_free_eq
+mv_eh_freeze   #误报
+stream_free
+rtw_fwcd_free
+ata_qc_free
+htab_free_elems
+__mlx4_free_from_zone
+free_pmds
+fifo_free   #误报，free是形容词
+pcf50633_irq_free
+ep_free
+nfp_repr_free
+wakeup_source_free
+s5k4ecgx_free_gpios
+writecache_pop_from_freelist  #误报
+brcmf_sdio_free_glom
+ath11k_hal_srng_src_num_free  #误报
+fib_nh_release
+rio_free_net
+nfp_app_free
+btrfs_trim_free_extents
+btrfs_backref_iter_free
+reqsk_free
+agp_free_memory_wrap
+free_slot   #14个文件中引用
+wl3501_release
+nix_tx_vtag_free
+dummy_free
+inet_twsk_free
+horrible_allowedips_free
+free_minor
+aac_consumer_free
+dpaa2_eth_free_dpbp
+vduse_domain_free_iova
+vmbus_free_ring
+vdec_free_canvas
+free_io_sgl_handle
+aead_geniv_free
+vgpu_free_mm
+free_nested
+dpaa2_dpseci_free
+freeze_super    #误报，且有11处调用
+vb_free
+qed_hw_hwfn_free
+nvkm_falcon_qmgr_seq_release
+csio_hw_free
+null_free_dev
+audit_free_rule
+dlm_release_root_list
+free_cable
+comedi_buf_write_free
+rt8515_v4l2_flash_release
+nfp_net_free
+rx_free_skb
+audit_free_parent
+kimage_free
+fdp1_job_free
+rds_free_mr
+nfs_free_server
+hns3_free_desc
+pci_epc_get_first_free_bar   #误报
+qedf_free_sq
+qlink_free
+pud_free   #在12个文件引用
+cdebbuf_free
+dm_clone_get_free_metadata_block_count  #误报
+bnx2x_frag_free
+qce_dma_release
+ovs_nla_free_flow_actions
+csio_fcoe_free_vnp
+ath11k_hal_srng_dst_num_free   #误报
+moxa_board_deinit
+dbg_chk_lpt_free_spc
+asd_ascb_free_list
+sas_port_free
+ixgbe_release_swfw_sync_X540
+qla24xx_free_purex_item
+ice_free_cq_ring
+fib_free_table
+__free_object
+iavf_free_rss
+ice_vc_fdir_free_prof_all
+_base_allocate_reply_free_dma_pool  #误报
+vmem_altmap_nr_free   #误报
+i40e_free_adminq_arq
+free_watch_adapter
+sugov_policy_free
+xgbe_free_pdata
+aq_free_rxpage
+drmm_kfree
+page_pool_release
+vrf_map_elem_free
+htc_free_txctrl_packet
+ice_free_vfs
+gfs2_jindex_free
+snd_soc_dapm_dai_free_widgets
+free_dmabuf
+isci_free_tag
+mcb_free_dev
+free_tio
+lan9303_alr_cache_find_free  #误报
+mark_free    #误报
+atusb_free_urbs
+bfa_uf_free
+mark_as_free_ex
+ubifs_find_free_leb_for_idx
+_sba_free_request
+wil_vring_free
+trace_cdns3_free_aligned_request
+ddcb_requ_free   #10次调用
+put_fb_to_free   #误报
+acquire_first_free_pipe   #误报
+free_note_info
+_free_hop
+emac_tpd_num_free_descs  #误报
+cxgb4_free_stid
+csio_free_evt
+tgec_free
+free_iommu
+enic_free_affinity_hint
+free_bitset
+io_ctl_free
+sp_free
+fm10k_free_q_vector
+free_iova
+free_zspage
+nvme_free_sgls
+igb_free_q_vector
+xprt_free_allocation
+ext4_kvfree_array_rcu
+free_mgmt_sgl_handle
+free_object
+dsp_free_ports
+nouveau_dmem_page_free_locked
+cw1200_free_common
+megaraid_dealloc_scb
+iwl_mvm_dealloc_snif_sta
+free_rx_ring
+cmdq_free_page
+free_block_entry
+ql_release_to_lrg_buf_free_list
+__reqsk_free
+wlcore_free_hw
+cvm_oct_free_work
+rzg2l_dt_free_map
+ttm_object_device_release
+nfc_llcp_sock_free
+hfsplus_free_fork
+dac_release
+hclge_fd_free_node
+xfs_calc_growrtfree_reservation  #误报
+iavf_free_adminq_arq
+nouveau_pfns_free
+gs_free_requests
+iwl_free_fw_paging
+ssam_event_item_free
+__free_cluster
+bnx2x_iov_free_mem
+radeon_semaphore_free
+svnic_dev_free_desc_ring
+dpaa2_eth_free_dpcon
+mlxsw_sp_counter_free
+isci_tci_free
+sprd_rx_free_buf
+ntb_free_mw
+xen_drm_front_evtchnl_free_all
+i40e_free_adminq_asq
+fscrypt_free_bounce_page
+hns_rcb_common_free_cfg
+ath10k_sdio_free_bus_req
+dlm_force_free_mles
+rvu_npc_freemem
+atomisp_css_morph_table_free
+data_free   #11处调用
+rb_free_aux
+qla82xx_md_free
+free_gigantic_page
+hinic_free_hwif
+htab_elem_free
+xfs_free_perag
+idt_free_pdev
+bdc_free_ep
+rpcrdma_regbuf_free
+pnfs_layout_free_bulk_destroy_list
+hclge_free_vector_ring_chain
+cfg80211_rdev_free_wowlan
+saa7146_pgtable_free
+xgene_enet_free_pagepool
+pnfs_free_lseg
+cgroup_do_freeze   #误报
+wm5100_free_gpio
+wil_freeze_bl   #误报
+__ipr_get_free_ipr_cmnd   #误报
+lpfc_sli_hbqbuf_free_all
+mlxsw_cmd_mbox_free
+context_release
+free_pipe_info
+ima_free_modsig
+qla25xx_free_req_que
+pcpu_free_pages
+nvme_rdma_free_ring
+nvmf_free_options
+audit_free
+llc_sk_free
+binder_delete_free_buffer
+tegra_pcie_port_free
+free_vbs
+az6007_ci_uninit
+mcba_usb_free_ctx
+xfs_mount_free
+i40e_free_vfs
+mlx4_free_icms
+az6027_ci_uninit
+ath11k_hal_free_cont_wrp
+move_freepages    #误报
+vchiq_release_service_internal
+arpc_free
+megasas_free_cmds_fusion
+vector_free_reserved_and_managed
+pqm_uninit
+nv_free_irq
+ath10k_htt_rx_free
+free_shared_memory
+skl_free
+vp9_free_sf_ref_fb
+qed_ooo_free
+enic_free_wq_buf
+qed_free_cdev
+ice_fltr_free_list
+af_alg_free_sg
+pcibios_free_irq
+nvme_rdma_free_qe
+slim_free_txn_tid
+qla25xx_free_rsp_que
+qed_iov_free_vf_igu_sbs
+oxu_murb_free
+iwl_txq_gen2_free_tfd
+ice_free_hw_res
+queue_free_ddcbs
+hinic_wq_free
+obj_free    #15次调用
+kfree_sgl
+hcd_buffer_free
+kfence_free
+dlm_free_msg
+cpia2_deinit_camera_struct
+ath10k_usb_free_pipe_resources
+mega_free_inquiry
+hpfs_claim_free
+rtl2832_sdr_free_urbs
+test_add_free_space_entry   #误报，且有10多次调用
+qtnf_trans_free
+adc3xxx_free_gpio
+mvs_tag_free
+dbuf_free
+scsiback_release_translation_entry
+zs_free
+xprt_dynamic_free_slot
+f2fs_try_to_free_nids
+qedi_free_sq
+dentry_free
+free_spt
+smc_wr_free_link
+sk_msg_free_elem
+xgbe_free_memory
+dfa_free
+lp3943_pwm_free_map
+snd_timer_global_free
+mt7601u_free_rx
+hci_pio_free_ibi_slot
+ionic_vf_dealloc
+efx_ef10_free_piobufs
+xen_free_mfn
+mei_cl_bus_vtag_free
+sec_free_hw_sgl
+iavf_free_adminq_asq
+pcpu_mem_free
+cnic_free_bnx2x_conn_resc
+soft_offline_free_page   #误报
+groups_free
+arcmsr_free_ccb_pool
+mwl8k_release_fw
+free_mmu_map
+hisi_sas_release_tasks
+igc_free_q_vector
+codec_hevc_free_fbc_buffers
+wcd_clsh_ctrl_free
+tls_free_rec
+s5p_free_sg_cpy
+free_scq
+sysv_free_block
+mm_pkey_free
+genl_dumpit_info_free
+nfp_net_close_free_all
+_free_network
+sec_free_req_id
+oxu_qtd_free
+shmem_free_swap
+r8712_free_xmitframe_ex
+arch_free_page
+xen_front_pgdir_shbuf_free
+fscache_free_cookie
+free_balloon_pages
+release_bar
+ceph_mdsc_free_path
+xlog_recover_free_trans
+iwl_mvm_free_nd
+dvb_pll_release
+wfx_free_key
+nfp_prog_free
+rbd_dev_free
+ntfs_cluster_free_from_rl
+usb_dmac_desc_free
+svc_rdma_write_info_free
+tegra_free_domains
+dpaa2_switch_free_dpbp
+ath10k_ce_free_rri
+ath11k_dbring_buffer_release_event
+bnxt_dcb_free
+crypt_free_tfms_aead
+rawdata_f_data_free
+venc_if_deinit
+free_match_list
+free_backoff
+ipmmu_domain_free_context
+nicvf_free_cq_poll
+pci_load_and_free_saved_state
+deferred_free_pages
+sctp_stream_free
+dapm_free_path
+ath11k_ahb_free_ext_irq
+bfad_fcxp_free_mem
+carl9170_free
+ath10k_swap_code_seg_release
+vxge_hw_ring_rxd_free
+usbhsh_ureq_free
+iwl_mvm_free_reorder
+writecache_free_entry
+mmu_free_root_page
+rcar_free_domains
+__task_will_free_mem  #误报
+pmcraid_release_minor
+io_free_file_tables
+__bnx2x_iov_free_vfdb
+free_bprm
+tsi721_bdma_ch_free
+xchk_ag_free
+hinic_devlink_free
+free_module_desc
+ath10k_core_free_board_files
+kfd_process_device_free_bos
+rvu_npa_freemem
+btrfs_delalloc_release_extents
+task_will_free_mem   #误报
+mwifiex_free_priv
+orangefs_bufmap_free
+sja1105_find_free_l2_policer  #误报
+ima_free_atfm
+free_fw_priv
+release_freepages
+iio_kfifo_free
+lt8912_free_i2c
+csio_mb_iq_free
+niu_free_irq
+saa7146_res_free
+dlm_free_pagevec
+nvme_free_prps
+sg_free_append_table
+cdnsp_free_erst
+mlx5e_free_icosq
+netvsc_free_send_slot
+airo_networks_free
+free_wrb_handle
+i40e_free_vf_res
+wil_if_free
+ia_css_dvs2_coefficients_free
+jmb38x_ms_free_host
+free_px
+tls_sw_free_ctx_tx
+vmw_cmdbuf_header_free
+dlm_free_lkb
+ahd_release_seeprom
+unfreeze_array   #误报
+pqi_free_device
+free_pref
+tdp_mmu_free_sp
+ice_aq_free_vsi
+gpmc_free_irq
+rio_release_inb_dbell
+lpfc_free_sgl_list
+core_alua_free_lba_map
+mlx5_adev_idx_free
+td_free
+dlm_free_writequeue
+gve_free_page
+pt3_free_dmabuf
+ath9k_eeprom_release
+ionic_intr_free
+lpfc_release_io_buf
+free_otherend_details
+free_vpid
+pci_free_p2pmem
+bnx2i_free_hba
+qed_iwarp_free_prealloc_ep
+jffs2_free_tmp_dnode_info
+nr_free_zone_pages   #误报
+dpaa2_eth_free_dpio
+binder_alloc_free_buf
+scrub_free_ctx
+nvmet_rdma_free_queue
+xfs_dir2_node_trim_free
+hns_dsaf_free_dev
+dma_free_tx_skbufs
+nfp_flower_free_internal_port_id
+free_cache_attributes
+ice_vsi_free_arrays
+rpc_free_clid
+x509_free_certificate
+shmem_sg_free_table
+qla_enode_free
+perf_free_inbuf
+btrfs_delalloc_release_metadata
+release_stripe_list
+dr_table_uninit_nic
+mpi3mr_free_op_reply_q_segments
+hv_send_resources_released   #误报
+__soc_pcm_hw_free
+pseudo_lock_free
+wm1250_ev1_free
+recent_table_free
+mvs_do_release_task
+mapping_remove_and_free_list
+radix_tree_free_nodes
+cxgb3_free_atid
+brcmf_release_module_param
+ZSTD_freeCCtx
+dm_free_md_mempools
+free_gru_resources
+smb_direct_free_sendmsg
+ath11k_core_free_bdf
+run_free
+lbs_cfg_free
+free_pdev
+cpudl_clear_freecpu   #误报
+mlx5e_free_xdpsq
+in_free_run   #误报
+free_htc_packet_container
+ubifs_fast_find_free  #误报
+snd_soc_jack_free_gpios
+gssp_free_upcall_data
+t4vf_free_vi
+ice_free_res
+s3fwrn5_fw_release_firmware
+free_sess
+nvme_tcp_free_admin_queue
+xfs_dir2_data_use_free   #误报
+dpaa2_eth_dl_free
+hsc_free_list
+sh_pfc_dt_free_map
+mv88e6xxx_g2_watchdog_free
+do_find_free_space   #误报
+net_dm_hw_metadata_free
+e100_free
+bnxt_free_agg_idx
+lbs_free_adapter
+tt3650_ci_uninit
+r8712_free_xmitframe
+uhci_free_qh
+cdns3_free_all_eps
+cffrml_free
+ath6kl_free_cookie
+riocm_ch_free_rxbuf
+ath10k_htt_tx_free_msdu_id
+of_thermal_free_zone
+release_arcbuf
+t4_pktgl_free
+is_free_buddy_page
+svnic_wq_free
+altera_free_domains
+ice_vsig_free
+binder_free_ref
+bnad_res_free
+release_message_sync
+xgbe_free_ring_resources
+mlx4_en_free_frag
+ar_context_release
+vp9_free_all_sf_ref_fb
+svm_free_nested
+mei_cl_dma_free
+ice_vsi_free_irq
+get_free_devid    #误报
+freeary
+hantro_postproc_free
+ivtvfb_release_buffers
+intel_crtc_free_hw_state
+task_freezer    #误报
+au8522_release_state
+kimage_free_pages
+__iommu_dma_free_pages
+ia_css_dvs2_6axis_config_free
+bucket_table_free
+__free_raid_bio
+enetc_msg_free_mbx
+free_pid
+ipheth_free_urbs
+rsi_free
+pch_gbe_free_irq
+imx8mq_mipi_csi_release_icc
+htab_map_free
+acpi_ex_release_mutex_object
+crypto_rfc3686_free
+free_sbd
+mcp251xfd_get_tx_free
+free_dr
+otx2_free_cints
+ahc_freeze_devq   #误报
+shmem_free_inode
+folio_ref_freeze   #误报
+security_xfrm_policy_free
+bch_free
+free_4k
+snd_ak4531_free
+mlx4_free_irqs
+rcu_torture_free
+t4vf_pktgl_free
+csk_mem_free
+virtio_fs_free_devs
+airspy_free_urbs
+ntfs_cluster_free
+snd_rawmidi_kernel_release
+qed_roce_free_cid_pair
+ionic_rx_filter_free
+wm_adsp_release_firmware_files
+lola_free_mixer
+uas_free_streams
+hackrf_free_urbs
+svc_rdma_read_info_free
+rvu_nix_freemem
+netdev_name_node_free
+qedi_free_itt
+target_free_device
+mlxcpld_i2c_wait_for_free   #误报
+vnic_rq_free
+uncore_freerunning_bits   #误报
+mlx5_devcom_release_peer_data
+__sk_free
+flow_offload_free
+cx24117_release_priv
+sctp_outq_free
+qla2x00_els_dcmd2_free
+free_scratch
+nfp_reprs_clean_and_free_by_type
+free_pfhwdev
+m66592_free_request
+ipcomp_free_tfms
+free_urbp_and_urb
+arch_dma_free
+idxd_free_desc
+tpm_cr50_release_locality
+ath10k_htt_rx_ring_free
+hns_nic_free_irq
+virtsnd_pcm_msg_free
+memac_free
+ksmbd_free_user
+qla4xxx_free_ddb
+uvc_free_urb_buffers
+software_node_free
+free_params
+cxgb4_free_eotid
+gsi_evt_ring_id_free
+saa7164_buffer_dealloc_user
+xfs_dir2_data_make_free   #误报
+transport_free_session
+rtw89_pci_free_tx_ring
+sctp_transport_free
+kfree_strarray
+wl1271_rx_filter_free
+efx_pm_freeze   #误报
+xsk_map_node_free
+pm8001_mpi_msg_free_get  #误报
+vcmd_free_pasid
+bnad_tx_res_free
+vnic_wq_free
+efx_ef10_sriov_free_vf_vswitching
+stub_device_free
+bpq_free_device
+free_p2m_page
+t4_free_raw_mac_filt
+fman_muram_free_mem
+ssb_devices_freeze  #误报
+tty_buffer_free
+fnic_wq_free
+ef4_free_rx_buffers
+idma64_desc_free
+cas_free_rxds
+mlx4_mpt_free_icm
+nvme_tcp_free_io_queues
+cdnsp_free_segments_for_ring
+ext4_claim_free_clusters
+free_acl_state
+exynos_drm_ipp_task_free
+hellcreek_ptp_free
+ipw_prom_free
+myri10ge_free_irq
+ring_buffer_free_read_page
+mraid_mm_dealloc_kioc
+inet_hashinfo2_free_mod
+cdns3_free_trb_pool
+mlx4_cq_free_icm
+hns_ppe_common_free_cfg
+genwqe_dev_free
+fotg210_ep_free_request
+dn_dev_free_ifa
+__drbd_free_peer_req
+chtls_reqsk_free
+zram_free_page
+free_sched_groups
+gfx_v10_0_free_microcode
+pkcs7_free_signed_info
+free_policy_dbs_info
+btrfs_delalloc_release_space
+end_free_itds
+__free_extent_tree
+cache_free_handle
+hpsa_cmd_free_and_done
+rvu_free_rsrc_contig
+ravb_tx_free
+xlgmac_free_channels_and_rings
+free_client
+snd_i2c_device_free
+mlx4_srq_free_icm
+mon_buff_area_free
+binder_alloc_prepare_to_free  #误报
+hnae_free_desc
+__nfs_free_delegation
+bt878_mem_free
+__vlan_group_free
+free_mcc_wrb
+aac_free_safw_all_identify_resp
+hpfs_claim_dirband_free
+dfl_id_free
+nilfs_palloc_commit_free_entry
+qlcnic_sriov_free_vlans
+remove_free_dquot
+devres_release_all
+gve_tx_free_ring_dqo
+ext4_mb_pa_free
+fore200e_dma_chunk_free
+eni_vdpa_free_irq
+gfs2_free_extlen
+ice_vsi_free_q_vectors
+ql_free_send_free_list
+pnfs_free_returned_lsegs
+qede_free_fp_array
+ef4_pm_freeze  #误报
+lpfc_mem_free
+dn_free_node
+jme_free_irq
+free_stable_node_chain
+radeon_gart_table_ram_free
+ionic_qcqs_free
+dlm_free_dead_locks
+wl3501_esbq_req_free
+nfp_ccm_free_tag
+vpdma_free_desc_buf
+pm80x_free_irq
+ath11k_hal_free_cont_rdp
+free_session
+bnx2_free_irq
+mpls_rt_free
+arm_smmu_free_sme
+cache_free_zspage
+pin_free
+con2fb_release_oldinfo
+free_idx_lebs
+hidma_free_msis
+mlxsw_sp1_kvdl_part_free
+__release_logical_link
+hwmon_free_attrs
+nfc_llc_free
+tramp_free
+ocelot_pgid_free
+efct_hw_reqtag_pool_free
+tg3_frag_free
+daio_rsc_uninit
+mlx4_free_ownership
+xhci_free_erst
+qedi_free_bdq
+t1_free_sw_modules
+find_first_free_audio   #误报
+irq_pool_free
+release_free_pmem
+iopte_free
+snd_pcm_oss_release_file
+limit_free_user_blocks  #误报
+xencons_free
+efx_ef10_vport_free
+cp_free_rings
+ionic_qcq_free
+stm32f7_i2c_wait_free_bus
+qla4xxx_free_irqs
+ppgtt_free_spt
+wl3501_free_tx_buffer
+snic_free_all_untagged_reqs
+ttm_pool_free_page
+free_slab
+rio_destid_free
+hinic_io_free
+p9stat_free
+saa7164_cmd_free_seqno
+cfg80211_release_pmsr
+ahc_free_scb
+musb_host_free
+nvme_rdma_free_cq
+fir16_free
+vmw_free_relocations
+free_old_xmit_skbs
+run_deallocate_ex
+zram_meta_free
+xen_free_irq
+insert_free_dqentry
+aq_macsec_free
+r8a66597_free_request
+rtw_camid_free
+acc_free_fw
+usb_free_dynids
+hpsa_free_cfgtables
+delayed_free_task
+dpaa2_switch_free_fd
+mcf_edma_irq_free
+amdgpu_dm_connector_add_freesync_modes   #误报
+free_stable_node
+qla4xxx_find_free_chap_index   #误报
+i40e_vsi_free_q_vectors
+snd_via686_free_gameport
+mwifiex_free_adapter
+crypto_acomp_scomp_free_ctx
+hci_conn_params_free
+tty_free_file
+mlxsw_sp_lpm_tree_free
+endpoint_dealloc
+lbtf_free_adapter
+amdgpu_sa_bo_try_free
+free_cc770dev
+otx2_aura_pool_free
+hl_asid_free
+__nfp_repr_free
+saa7146_vfree_destroy_pgtable
+fmvj18x_release
+free_wq_copy_descs
+btrfs_qgroup_free_meta_prealloc
+gntdev_free_map
+xrep_put_freelist
+lapbeth_free_device
+aq_ptp_free
+tree_mod_log_free_eb
+mlx5_vdpa_dealloc_transport_domain
+snd_emux_free
+__arm_v7s_free_table
+apei_resources_release
+pci9118_free_dma
+vp9_add_to_fb_free_list   #误报
+mvs_slot_free
+ima_free_tfm
+free_ipath
+binder_free_transaction
+hpsa_free_irqs
+__local_list_pop_free
+ath10k_usb_free_urb_to_pipe
+free_hop
+SMB2_set_info_free
+gs_free_tx_context
+cm4000_release
+com20020_release
+gve_rx_free_skb
+ntfs_look_free_mft  #误报
+otx2_free_cq_res
+__btrfs_add_free_space  #误报
+stm32_i2c_dma_free
+de_free_rings
+page_ref_freeze   #误报
+fib_trie_free
+mtu3_mem_free
+kasan_slab_free
+mca_bucket_free
+fnic_rq_free
+igbvf_free_tx_resources
+chcr_free_shash
+free_ep
+lpfc_sli4_free_xri
+blk_mq_free_rqs
+ifcvf_free_irq
+bnxt_free_irq
+fl_free
+comedi_free_board_dev
+device_queue_manager_uninit
+sst_free_stream
+release_hw
+uhci_free_urb_priv
+mlx5e_mqprio_rl_free
+diolan_u2c_free
+null_free_page
+release_buffering
+widget_tree_free
+brcmf_free_wiphy
+free_widget_node
+ath10k_pci_free_pipes
+mpi_free_limb_space
+efct_hw_rx_free
+drm_legacy_free_buffer
+csio_mb_eq_ofld_free
+on_freelist   #误报
+omap_vout_free_buffer
+ahc_free
+caif_free_client
+ubifs_lpt_free
+qtnf_topaz_free_xfer_buffers
+gve_rx_free_rings_gqi
+ocfs2_free_slot_info
+btcx_riscmem_free
+es58x_free_urbs
+ath6kl_usb_free_urb_to_pipe
+ssam_nf_refcount_dec_free
+dwc2_hcd_qh_free
+mt7530_free_mdio_irq
+aspeed_video_free_buf
+dma_free_rx_xskbufs
+gve_tx_free_rings_gqi
+cw1200_free_key
+lockdep_free_task
+ivtv_stream_free
+aif_free
+nfs4_free_slot
+lapb_dl_release_l2l3
+gb_lights_channel_free
+dmar_free_hwirq
+qed_int_disable_post_isr_release
+igbvf_free_rx_resources
+btrfs_drop_and_free_fs_root
+__bpf_prog_free
+free_one_page
+free_unused_idx_lebs
+smsc911x_free_resources
+iwl_mvm_find_free_sta_id   #误报
+bcm2711_release_bsc
+vhost_dev_free_iovecs
+sis190_release_board
+nfs_free_client
+sk_free_unlock_clone
+__free_memory_core
+hidma_free
+hns_ppe_uninit_hw
+madvise_free_huge_pmd
+dca_free_domain
+mlx5e_free_rq
+ssam_request_sync_free
+comedi_buf_read_free
+ep_fifo_free
+free_page_ext
+gve_rx_free_rings_dqo
+tw_free_device_extension
+nilfs_palloc_prepare_free_entry  #误报
+cs5535_mfgpt_free_timer
+free_fib_info
+twa_free_request_id
+mlx4_release_eq
+ucb1400_ts_event_release
+qtnf_pcie_free_shm_ipc
+dr_matcher_uninit_nic
+wil_ring_free_edma
+gve_tx_free_rings_dqo
+free_reloc_roots
+kfree_bulk
+snd_soc_compr_components_free
+bch_btree_keys_free
+xfs_calc_ifree_reservation  #误报
+mlxsw_sp_neigh_entry_free
+vfe_release_wm
+drbd_free_resource
+fq_ring_free
+nfp_release_mask_id
+free_atid
+free_pud_table
+mlx5e_free_txqsq
+stex_free_irq
+aa_free_profile
+privcmd_buf_vmapriv_free
+wl1271_free_ap_keys
+ath10k_core_free_firmware_files
+rtw_wdev_free
+gru_free_cpu_resources
+gsi_ring_free
+tc574_release
+hinic_vf_func_free
+iscsit_free_datain_req
+snd_es1968_free_memory
+dpaa2_switch_free_dpio
+qla4xxx_free_ddb_list
+i2c_bus_free
+cnic_free_resc
+__lookup_free_space_inode  #误报
+free_aggr_kprobe
+otx2_free_sq_res
+release_mux
+iscsit_free_r2t
+qed_mcp_free
+radeon_connector_free_edid
+audioformat_free
+efct_hw_reqtag_free
+enetc_free_tx_frame
+free_src_sglist
+mlx5i_uninit_underlay_qp
+dpaa2_eth_free_tx_fd
+free_phys_pg_pack
+btrfs_tree_mod_log_free_eb
+tlan_free_lists
+brcms_release_fw
+saa7164_buffer_dealloc
+gve_free_qpls
+free_hw_descs
+btrfs_free_redirty_list
+drbd_free_peer_reqs
+__free_pages_core
+__xfs_inode_free
+rvu_nix_block_freemem
+pkcs7_free_message
+vp_vdpa_free_irq
+qlge_release_all
+release_devnum
+qla2x00_release_all_sadb
+clean_free_buffer
+pool_free
+bnx2i_free_mp_bdt
+qed_free_pci
+cw1200_pm_deinit
+ath11k_core_free
+free_cmd_box
+ip_vs_service_free
+free_tbufs
+__kmem_cache_free_bulk
+descriptor_list_free
+venus_helper_intbufs_free
+kvm_arch_free_vm
+gpiod_free_commit
+genwqe_free_sync_sgl
+run_deallocate
+pcrypt_free
+htab_lru_push_free
+ipmi_dev_release
+dmz_free_zone
+nvmet_fc_free_tgt_pgs
+wl1251_free_hw
+nfc_mei_phy_free
+pcpu_fc_free
+kfree_sk_msg
+sta_info_free
+t4_free_vi
+xfs_free_file_space
+bd_queue_free
+gss_free_in_token_pages
+edma_free_channel
+free_all_urbs
+tg3_free_rings
+pcan_free
+ecryptfs_msg_ctx_free_to_alloc
+SYM53C500_release
+tree_nodes_free
+bcd2000_free_usb_related_resources
+qla4xxx_mem_free
+xhci_segment_free
+snd_cs4281_free_gameport
+move_to_free_list   #误报
+ila_free_node
+pt1_free_page
+venus_helper_free_dpb_bufs
+delayacct_tsk_free
+cudbg_free_compress_buff
+npc_mcam_free_all_entries
+slab_free_hook
+mlx4_free_mtt_range
+goodix_ts_release_keys
+atm_dev_release_vccs
+wlcore_free_klv_template
+xas_free_nodes
+i40e_release_iwarp_qvlist
+dfl_fpga_enum_info_free
+bnx2fc_free_vport
+goldfish_pipe_device_deinit
+snd_es1688_free
+free_irte
+_t4_l2e_free
+mt7601u_usb_free_buf
+sk_prot_free
+ti_iodelay_pinconf_deinit_dev
+free_r1bio
+bnx2x_free_skbs_cnic
+i915_gem_object_free
+mlx5e_rq_free_shampo
+freeze_array
+sctp_ulpevent_release_owner
+mv88e6xxx_serdes_irq_free
+tf103c_dock_toprow_release
+mlx4_en_free_rx_buf
+usb_urb_free_urbs
+batadv_tt_global_free
+free_hoid
+bnx2x_vf_free_resc
+brcm_msi_free
+wil_free_rx_buff_arr
+ena_free_mgmnt_irq
+mpi3mr_free_mem
+file_free
+lpfc_rq_buf_free
+___cache_free
+free_unref_page
+aac_free_irq
+i40e_free_macvlan_channels
+tc589_release
+free_segs_blk_count_zoned
+release_msg_context
+nfsd4_free_layouts
+otx2_mbox_alloc_msg_nix_txsch_free  #误报
+mvpp2_bm_bufs_free
+move_to_net_ee_or_free
+tb_nvm_free
+qxl_ring_free
+wil_find_free_sring
+find_free_label
+atomic_long_try_cmpxchg_release
+cxgbi_ppm_ppod_release
+sas_free_event
+nfp_cpp_mutex_free
+ice_free_seg
+qtree_release_dquot
+tool_free_mw
+can_release_pages
+qede_free_failed_tx_pkt
+ocelot_fdma_rx_ring_free
+cdnsp_free_endpoint_rings
+mlx5_sf_dealloc
+bnxt_hwrm_vnic_ctx_free
+snd_dg00x_stream_lock_release
+ipr_free_ucode_buffer
+qlcnic_free_tx_rings
+cx231xx_uninit_vbi_isoc
+cxgb4_smt_release
+fd_array_map_free
+mousevsc_free_device
+has_not_enough_free_secs
+cxgb4_port_mirror_free_queues
+binder_deferred_release
+uprobe_free_utask
+mpi_point_free_parts
+mwifiex_insert_cmd_to_free_q   #误报
+wm8996_free_gpio
+bnxt_hwrm_vnic_free
+pcxhr_free
+rndis_free_response
+btrtl_free
+conn_free
+ef4_nic_free_buffer
+crypto_cts_free
+amdgpu_uvd_free_handles
+snd_soc_dapm_free_kcontrol
+bdx_rx_free
+nvme_unfreeze   #误报
+snd_emu10k1_synth_free
+btf_free
+btrfs_free_space_key
+netxen_free_hw_resources
+mlx4_en_free_rx_desc
+ocfs2_free_local_alloc_bits
+beiscsi_free_mem
+release_tar_archive
+nfp_reprs_clean_and_free
+free_in_work_order
+xfs_release
+amdgpu_connector_free_edid
+cifs_free_llist
+t4_sge_free_ethofld_txq
+intel_overlay_release_old_vid
+snic_free_vnic_res
+bttv_dma_free
+musb_free
+napi_free_frags
+fat_free_clusters
+mvpp2_frag_free
+free_vmap_area
+orc_release_scb
+mgslpc_release
+xen_find_free_area
+find_free_tcs
+carl9170_tx_accounting_free
+bnx2i_release_free_cid_que
+tmio_mmc_host_free
+tee_free_ring
+wcn36xx_dxe_free_ctl_blks
+snic_free_intr
+qed_ooo_put_free_buffer
+vme_slave_free
+btrfs_free_fs_roots
+ahc_release_seeprom
+ip_vs_dest_put_and_free
+free_txq
+qedf_cmd_mgr_free
+ipr_free_irqs
+bnx2x_free_fp_mem_cnic
+msi_domain_free_irqs_descs_locked
+free_vmcs
+f2fs_try_to_free_nats
+radix_tree_node_free
+nv50_outp_release
+bnx2x_free_mem
+radeon_vce_free_handles
+free_charger_irq
+ipr_free_mem
+speedtch_release_interfaces
+vnt_free_int_bufs
+free_txpacket
+free_rxqs
+alg_do_release
+btrfs_free_extra_devids
+dt_remember_or_free_map
+make_free_space   #误报
+e1000e_free_rx_resources
+qla4xxx_free_adapter
+airo_release
+free_dev
+wqs_free_page
+snd_cmipci_free_gameport
+netsec_free_dring
+zynqmp_dma_free_descriptors
+mpt_free_fw_memory
+__free_page_ext
+kpp_request_free
+nfs4_free_ol_stateid
+twl_free_request_id
+psz_free_zones
+mlx5e_free_rx_mpwqe
+cryptd_skcipher_free
+__mlx4_free_mtt_range
+typhoon_free_rx_rings
+ahc_freeze_scb
+perf_free_outbuf
+swap_free_cluster
+ioat_free_ring_ent
+binder_alloc_get_free_async_space   #误报
+ext4_free_branches
+release_copro_gpios
+__kfence_free
+mpt3sas_base_free_irq
+omapfb_free_fbmem
+iio_channel_release_all_cb
+myri10ge_free_slices
+free_partial
+kmemleak_free_recursive
+cyberpro_free_fb_info
+line6_midibuf_bytes_free   #误报
+release_port
+efct_device_free
+bnxt_free_mem
+rvu_aq_free
+a6xx_gmu_memory_free
+wm8994_free_irq
+usb_ep_autoconfig_release
+snd_ymfpci_voice_free
+ar5523_free_rx_cmd
+gnttab_release_grant_reference
+bxt_ddi_phy_uninit
+virtio_gpio_free_vqs
+qlcnic_free_lb_filters_mem
+__dma_free_pages
+mod_freesync_calc_v_total_from_refresh   #误报
+aac_free_safw_identify_resp
+fmc_release
+ksz_free_mem
+cpsw_ale_match_free
+efx_mcdi_free_vis
+iwl_mei_free_shared_mem
+cifs_free_ipc
+ip_sock_set_freebind   #误报
+nfs4_fl_free_deviceid
+zd_mac_free_cur_beacon_locked
+stmmac_xdp_release
+nouveau_fence_context_free
+rio_release_outb_dbell
+dma_free_from_pool
+rio_release_inb_mbox
+kfree_at_end
+lpfc_hba_free
+free_dfs_info_array
+__snd_util_mem_free
+free_index
+geth_cleanup_freeq
+g2d_userptr_free_all
+binder_free_buf
+nmclan_release
+hfsplus_free_extents
+mlx5e_free_di_list
+iscsit_free_conn
+chtls_free_skb
+free_SAs
+xprt_free_id
+hv_free_hyperv_page
+cfg80211_free_coloc_ap_list
+dwc2_hcd_release
+radeon_sa_bo_try_free
+btrfs_release_prepared_delayed_node
+vpu_free_ext_mem
+skl_free_queue
+pch_msi_free_hwirq
+dbc_free_ctx
+rio_free_tx
+wcn36xx_dxe_free_mem_pools
+batadv_mcast_mla_list_free
+cnic_free_irq
+selinux_fs_info_free
+xen_smp_intr_free_pv
+io_free_batch_list
+vpdma_free_desc_list
+bnx2i_free_qp_resc
+lpfc_free_vpi
+wil_sring_free
+ext_tree_free_commitdata
+xhci_urb_free_priv
+xfs_alloc_min_freelist   #误报
+xfs_difree_finobt
+tg3_free_consistent
+phy_free_interrupt
+bnx2x_free_irq
+wil_p2p_wdev_free
+hci_free_adv_monitor
+i915_ttm_memcpy_release
+iio_buffers_free_sysfs_and_mask
+snd_timer_free
+wacom_led_groups_release
+__ocfs2_free_slot_info
+bnxt_vf_reps_free
+vhost_scsi_free_evt
+i915_vma_free
+stk_free_sio_buffers
+pseudo_lock_minor_release
+anon_vma_chain_free
+xd_free_l2p_tbl
+__gfs2_free_blocks
+release_evntsel_nmi
+prestera_devlink_free
+cw1200_free_keys
+lan78xx_release_tx_buf
+dissolve_free_huge_page
+ice_mbx_deinit_snapshot
+fsg_common_free_buffers
+rt_fibinfo_free_cpus
+smc_conn_free
+f2fs_free_filename
+gve_adminq_release
+efct_io_pool_free
+null_free_sector
+core_alua_free_lu_gp_mem
+vhost_vdpa_free_domain
+nvkm_vmm_free_insert   #误报
+ice_sched_get_free_qgrp  #误报
+macb_free_consistent
+free_recovery_list
+tnode_free_append   #误报
+dw_pcie_free_msi
+nvme_fc_free_io_queues
+cifs_mid_q_entry_release
+free_rq_cqe
+mt76x2_apply_cal_free_data   #误报
+free_pmd_table
+adap_free_hma_mem
+bm_vk_free
+et131x_adapter_memory_free
+igc_free_irq
+fimc_md_pipelines_free
+amdgpu_vmid_free_reserved
+pcmcia_release_window
+tls_free_partial_record
+gve_free_buf_state
+release_adapter
+ath10k_htc_release_credit
+free_all_tx_skbs
+free_fs_struct
+virtio_balloon_report_free_page  #误报
+conn_free_crypto
+ext4_free_clusters_after_init
+free_multipath
+nvme_tcp_free_crypto
+bnx2x_free_tx_pkt
+mtk_vcodec_fw_release
+wg_allowedips_free
+rhashtable_free_one
+wavefront_freemem   #误报
+ena_free_rx_resources
+gnttab_free_pages
+vmxnet3_free_irqs
+amd8111e_free_skbs
+sa11x0_dma_free_irq
+qed_mcp_nvm_info_free
+xfs_refcount_free_cow_extent
+sun8i_ss_free_flows
+hpsa_free_cmd_pool
+rio_release_outb_mbox
+w1_free_dev
+cas_spare_free
+atomic_long_add_return_release
+ZSTD_cwksp_free
+iscsit_release_commands_from_conn
+enic_free_intr
+fast_isolate_freepages   #误报
+free_iova_fast
+ipr_free_all_resources
+xgbe_free_irqs
+free_conn_bufs
+vlan_dev_free_egress_priority
+refill_free_list    #误报
+hist_elt_data_free
+ena_free_tx_resources
+cw1200_queue_stats_deinit
+pmd_free
+qla2x00_find_free_fcp_nvme_slot   #误报
+ceph_msg_free
+genradix_free_recurse
+gve_adminq_free
+mtk_dma_free
+flexcan_chip_freeze   #误报
+velocity_free_rings
+korina_free_ring
+drm_managed_release
+hclgevf_free_vector
+fm10k_free_q_vectors
+st5_dl_release_l2l3
+free_tcf
+iommu_dma_free_iova
+free_exit_list
+mega_free_sgl
+free_bootmem_page
+__io_uring_free
+e1000_release_eeprom
+b44_free_rings
+mhi_free_bhie_table
+xen_cleanmfnmap_free_pgtbl
+release_cport_descriptors
+__bnx2_free_irq
+ib_uverbs_free_hw_resources
+imx219_free_controls
+rvu_npc_free_mcam_entries
+__efi_memmap_free
+sl3516_ce_free_descs
+filemap_free_folio
+skl_free_dsp
+ath9k_tx99_deinit
+mpt3sas_free_enclosure_list
+ena_free_io_irq
+atp870u_free_tables
+blogic_dealloc_ccb
+led_release
+ccu_pll_free_data
+komeda_release_unclaimed_resources
+wlan_free_wiphy
+ext4_free_data_revoke_credits
+free_metapage
+lwtstate_free
+neo_free_fb_info
+dma_free_rx_skbufs
+btrfs_clear_free_space_tree
+free_stream_context
+lockdep_free_key_range
+free_cell
+maybe_wipe_obj_freeptr
+edma_free_slot
+akcipher_request_free
+smc91c92_release
+iwl_free_rxb
+rtl8723_fw_free_to_go  #误报
+free_rsttbl_idx
+ocfs2_free_refcount_tree
+free_tls_keyid
+__iio_device_attr_deinit
+free_rx_sc
+qxl_hw_surface_dealloc
+cdns3_gadget_ep_free_request
+vnt_free_rx_bufs
+pdc_freeze
+cell_release
+nvmet_fc_free_ls_iod
+xgmac_wait_until_free   #误报
+iwl_pcie_ctxt_info_free
+igc_free_tx_resources
+get_free_scheme_id   #误报
+efx_mcdi_filter_free_rss_context
+make_btree_freeing_key  #误报
+xfs_blockgc_free_quota
+free_node_to_cpumask
+enic_rfs_flw_tbl_free
+fjes_rxframe_release
+amdgpu_virt_release_ras_err_handler_data
+uasp_free_cmdreq
+tee_shm_pool_free
+xenvif_idx_release
+qla_edif_free_sa_ctl
+igc_free_rx_resources
+qla4xxx_free_ddb_index
+nvmet_tcp_free_cmd_buffers
+b43legacy_pio_free
+xfs_btree_free_block
+amdgpu_amdkfd_free_gtt_mem
+mt7915_txwi_free
+amdgpu_vce_free_handles
+bch_bucket_free
+gsc_hpdi_free_dma
+bfa_nw_ioc_sem_release
+cx18_dma_free
+fifo_mem_release
+tracing_map_array_free
+__next_free_blkoff
+acpi_tb_release_table
+nfp_net_pf_free_vnics
+xlgmac_free_rings
+mlx5_hca_caps_free
+cxusb_medion_urbs_free
+mmu_notifier_release
+s3c_fb_release_win
+intel_engines_release
+free_conf
+release_probe
+b43_sdio_free_irq
+bnxt_hwrm_cfa_flow_free
+free_direct_key
+sl811_cs_release
+bnx2_free_mem
+free_drawable
+dirty_freerun_ceiling   #误报
+ocfs2_free_clusters
+dwc3_gadget_free_endpoints
+lpfc_mem_free_all
+mtk_free_dev
+snd_bebob_stream_lock_release
+mmc_test_free_mem
+proc_free_streams
+ext4_mb_generate_from_freelist   #误报
+efct_hw_io_free
+rt2x00debug_file_release
+blk_stat_free_callback
+fotg210_ep_release
+crypt_free_req_aead
+orinoco_mic_free
+xpc_free_msg_slot_uv
+crypto_rfc4309_free
+rose_route_free_lci
+spectrum_cs_release
+btree_node_free
+igb_free_irq
+xlgmac_free_irqs
+stub_free_priv_and_urb
+niu_ldg_free
+xlog_cil_free_logvec
+node_free_immediate
+free_func_state
+brcmf_sdiod_freezer_attach   #误报
+svm_range_free
+ext4_free_metadata_revoke_credits  #误报
+amdgpu_ucode_free_bo
+idxd_wq_free_irq
+sxgbe_release
+drm_event_cancel_free
+ocelot_fdma_tx_ring_free
+dsfree_pages
+qed_iov_vf_mbx_release
+free_thrown
+cipso_v4_cache_entry_free
+wl1271_free_tx_id
+mtk_pcie_free_resources
+tda18271_release
+rdevs_uninit_serial
+free_pgtables
+qdisc_free
+nvme_free_cels
+nfs_free_delegation
+free_io_failure
+atomisp_free_css_parameters
+ahd_freeze_scb
+crypt_free_tfms_skcipher
+selinux_audit_rule_free
+ath10k_htt_tx_free
+hinic_free_hwdev
+amdgpu_amdkfd_free_gws
+atl1c_free_irq
+scmi_xfer_command_release
+qed_ll2_dealloc_buffer
+rd_release_sgl_table
+xilinx_free_msi_domains
+mlx5e_rep_bond_metadata_release
+sec_queue_free_ring_pages
+tda829x_release
+lb_bpf_func_free
+amdgpu_free_extended_power_table
+release_filter
+qrtr_node_release
+snd_soc_dapm_free
+intel_connector_free
+hinic_get_rq_free_wqebbs
+davinci_release_dma_channels
+i2c_hid_free_buffers
+hugetlb_cgroup_free
+drm_dp_mst_deallocate_vcpi
+gnss_serial_free
+__i915_gem_object_release_map
+iwl_dump_ini_list_free
+free_rtllib
+free_reloc_control
+__release_bp_slot
+sock_hash_free_elem
+e1000_free_rx_resources
+_rtl92ee_fw_free_to_go
+__nvmet_fc_free_assocs
+alx_free_napis
+mpi_ec_deinit
+compat_release_entry
+tulip_free_ring
+rxrpc_free_peer
+qed_iov_release_hw_for_vf
+orinoco_cs_release
+cobalt_free_msi
+r8712_free_drv_sw
+cpia2_free_buffers
+mlxsw_pci_rdq_skb_free
+amd8111e_free_ring
+o2hb_free_hb_set
+acpi_tb_release_temp_table
+btrfs_free_reserved_extent
+tag_release_one
+__slab_free
+dissolve_free_huge_pages
+mlxbf2_gpio_lock_release
+cryptd_hash_free
+cnic_free_dev
+qtnf_pearl_free_xfer_buffers
+swap_entry_free
+usbtv_audio_free
+wl12xx_free_rate_policy
+local_free_list
+mei_minor_free
+_rtl88e_fw_free_to_go   #误报
+inet_ehash_locks_free
+crypto_rfc4106_free
+ir_free_table
+xfrm_sk_free_policy
+cas_tx_tiny_free
+ring_free
+cfg80211_rdev_free_coalesce
+ath10k_snoc_free_resources
+uio_free_minor
+nsp_cs_release
+xgene_dma_free_irqs
+ena_com_free_q_entries
+fpga_image_info_free
+__zone_watermark_unusable_free
+au0828_usb_release
+free_rx_buffers
+mlx5_core_eq_free_irqs
+smc_buf_free
+sisusb_free_outbuf
+netdev_tracker_free
+_rtl8821ae_fw_free_to_go   #误报
+ionic_lif_free_phc
+octeon_free_sc_zombie_list
+dpu_rm_release
+__ntfs_cluster_free
+release_refill
+xfs_can_free_eofblocks
+mlx4_en_filter_free
+brcms_free
+dwc3_free_scratch_buffers
+hisi_acc_free_sgl_pool
+fl_release
+sk_filter_release
+pnfs_free_layout_hdr
+dmi_save_release
+mes_v10_1_free_ucode_buffers
+xol_free_insn_slot
+qlcnic_83xx_free_mbx_intr
+nj_release
+enetc_free_msix
+xge_free_irq
+core_scsi3_free_pr_reg_from_nacl
+ray_release
+st_i2c_wait_free_bus   #误报
+xp_release
+nsm_release
+esp_free_lun_tag
+clip6_release_mbox
+sxgbe_free_rx_buffers
+ath11k_dp_pdev_free
+cxgb4_free_eosw_txq
+bnx2x_free_fp_mem
+free_pgd_range
+ima_file_free
+free_fw_buffers
+free_gfar_dev
+bnx2x_release_alr
+slic_free_shmem
+flexcop_device_kfree
+xfs_rtalloc_extent_is_free   #误报
+is_rsrc_free   #误报
+bdc_mem_free
+qgroup_rsv_release_by_qgroup
+bpf_cgroup_storage_free
+vsp1_video_release_buffers
+free_sglist
+jffs2_free_node_frag
+umem_frag_buf_free
+free_dma_tx_desc_resources
+mlxsw_sp_nve_mc_free_entry_find
+tg3_mem_rx_release
+free_dca_provider
+e1000_free_tx_resources
+otx2_mbox_alloc_msg_nix_bandprof_free
+snd_efw_stream_lock_release
+qlcnic_free_adapter_resources
+calipso_cache_entry_free
+beiscsi_free_ep
+drm_legacy_agp_free
+vc4_bo_cache_free_old
+snd_rawmidi_free
+bnx2x_free_tpa_pool
+s3c24xx_dma_phy_free
+typhoon_num_free_tx   #误报
+lpfc_io_free
+cryptd_aead_free
+nf_bridge_info_free
+tw686x_audio_free
+iwl_pcie_free_rbs_pool
+snd_trident_free_pages
+release_metapath
+fme_hdr_ioctl_release_port
+netxen_free_ip_list
+rtw_free_network_nolock
+dm_pool_get_free_metadata_block_count   #误报
+netif_freeze_queues   #误报
+blk_mq_sched_free_rqs
+mt7601u_free_tx
+ath10k_snoc_release_resource
+c67x00_release_td
+i40e_vsi_free_arrays
+pcl818_free_dma
+lpfc_release_nvme_buf
+__bo_search_and_remove_from_free_rbtree   #误报
+try_to_free_low
+qlcnic_free_mac_list
+device_free_info
+blk_mq_free_plug_rqs
+ath10k_pci_free_irq
+qxl_image_free_objects
+nix_free_tx_vtag_entries
+qed_rdma_free
+hmm_bo_free_pages
+get_free_scd   #误报
+crypt_free_req
+num_free_chunks  #误报
+usbtmc_free_int
+bcache_device_free
+freeze_bdev  #误报
+ubifs_find_free_space  #误报
+free_leaf_list
+gfs2_glock_free
+mlx5e_free_cq
+sgx_free_epc_page
+put_free_dqblk
+scsi_free_sgtables
+tx_release
+kvm_free_irq_source_id
+free_unmap_vmap_area
+mcb_release_bus
+eb_release_vmas
+tm6000_free_urb_buffers
+_rtl92c_fw_free_to_go  #误报
+qla_wait_nvme_release_cmd_kref
+msi_free_desc
+btrfs_backref_iter_release
+t4_free_mac_filt
+__bpf_lru_node_move_to_free   #误报
+rtw89_pci_release_tx
+i915_lut_handle_free
+ath10k_mac_vif_beacon_free
+xskq_cons_release_n
+xirc2ps_release
+wnd_is_free   #误报
+iavf_free_misc_irq
+hns3_free_buffer_detach
+xprt_release
+nfp_net_aux_irq_free
+ipc_devlink_deinit
+btrfsic_block_free
+ath9k_hw_deinit
+dpaa2_eth_free_rx_fd
+snd_gf1_mem_xfree
+writecache_add_to_freelist   #误报
+qedi_free_global_queues
+rtw_hal_sdio_max_txoqt_free_space   #误报
+get_free_idx   #误报
+rfcomm_release_dev
+folio_ref_unfreeze  #误报
+mlx4_free_eq_table
+printer_req_free
+mlx5_sf_hw_table_id_free
+fsverity_free_info
+sec_queue_free
+ov7740_free_controls
+hinic_func_to_func_free
+msc_buffer_contig_free
+cmtp_free_block_id
+release_dentry_name_snapshot
+jme_free_rx_resources
+free_insn_slot
+snd_tscm_stream_lock_release
+mvumi_release_fw
+can_free_region   #误报
+nau8824_sema_release
+cn_queue_release_callback
+coda_free_context_buffers
+snd_es1938_free_gameport
+bnx2x_free_mem_cnic
+free_c_can_dev
+carm_free_disk
+xhci_free_host_resources
+typhoon_num_free   #误报
+__release_gpc
+bnx2fc_cmd_mgr_free
+snd_ac97_bus_free
+free_synth_event
+ldm_free_vblks
+kasan_release_vmalloc
+fm10k_free_rx_resources
+fm10k_free_tx_resources
+rtl_free_entries_from_scan_list
+mlxbf_gige_free_irqs
+__lpfc_sli_rpi_release
+dccp_loss_free
+hso_free_net_device
+xsk_tx_peek_release_desc_batch
+ncsi_free_request
+nfs4_cb_free_slot
+collapse_and_free_pmd
+generic_spec_free
+send_free_pages  #误报
+bgmac_dma_free
+aspeed_gpio_copro_release_gpio
+td_free_desc
+adf_ae_fw_release
+free_waiters
+zd_mac_free_cur_beacon
+uinput_request_release_slot
+linehandle_free
+xfs_dir2_free_try_read
+dlm_free_mhandle
+bnx2x_free_mem_bp
+arizona_disable_freerun_sysclk
+bnx2x_release_leader_lock
+usbdux_free_usb_buffers
+netxen_free_dummy_dma
+release_btfs
+p4d_free_pud_page
+atomic_long_fetch_add_release
+ahd_free_scb
+btrfs_free_chunk
+crypto_rfc4543_free
+free_transport
+dpu_core_perf_crtc_release_bw
+fl6_free_socklist
+pcl816_free_dma
+iwl_mvm_find_free_queue   #误报
+tlb_deinitialize
+free_pasid_state
+ddb_buffers_free
+ice_vsi_free_rx_rings
+pvscsi_release_context
+free_all_mem
+trace_xhci_free_dev
+xfs_free_eofblocks
+udl_free_urb_list
+crypto_authenc_esn_free
+free_htab_elem
+gve_free_counter_array
+ixgbe_release_eeprom
+mlx5_free_cmd_msg
+ishtp_cl_release_dma_acked_mem
+efct_release_fc_transport
+xen_pcibk_config_free_dyn_fields
+kvm_free_lapic
+__mlx4_qp_free_icm
+max8925_deinit_charger
+brcmf_p2p_release_p2p_if
+free_schemes_arr
+qlcnic_diag_free_res
+ice_vsi_release_all
+freelQs_empty   #误报
+ia_css_isp_3a_statistics_free
+btrfs_set_free_space_key   #误报
+btrfs_free_log_root_tree
+mxs_auart_free_gpio_irq
+lineevent_free
+snd_azf3328_gameport_free
+nau8825_sema_release
+ubifs_get_free_space_nolock   #误报
+nv50_crc_atomic_release_notifier_contexts
+brcmf_p2p_deinit_discovery
+tool_free_peer_mw
+device_free_td0_ring
+ahc_add_curscb_to_free_list  #误报
+remove_free_dqentry   #误报
+free_dqentry
+usbduxsigma_free_usb_buffers
+bnx2x_free_skbs
+lpfc_nvmet_buf_free
+cc_free_ctx
+mga_freelist_cleanup
+mpt_inactive_raid_list_free
+nested_release_vmcs12
+eni_do_release
+btrfs_add_free_space_unused   #误报
+nilfs_release_super_block
+mlx5e_dealloc_rx_wqe
+release_bp_slot
+ice_sched_get_free_vsi_parent   #误报
+vnt_free_tx_bufs
+sev_free_vcpu
+nfp_cpp_explicit_release
+nvme_fc_free_queue
+bnad_mem_free
+lpfc_free_active_sgl
+raid_class_release
+shash_free_singlespawn_instance
+add_fb_to_free_list    #误报
+_rtl92d_fw_free_to_go   #误报
+audioreach_graph_free_buf
+mwl8k_release_firmware
+free_vbuf
+mxc_jpeg_free_slot_data
+ib_dealloc_xrcd_user
+xge_free_buffers
+gb_lights_light_release
+intel_release_load_detect_pipe
+dlm_release_lockspace
+otx2_free_hw_resources
+ov13b10_free_controls
+dm_cell_release
+xfs_dir2_free_read
+ravb_ring_free
+bnx2fc_free_session_resc
+release_ruleset
+cfv_release_used_buf
+g2d_free_runqueue_node
+sec_free_queue_id
+sun6i_dma_free
+bgmac_dma_tx_free
+fsl_mc_msi_domain_free_irqs
+ixgbe_free_irq
+ixgb_free_rx_resources
+blk_freeze_queue   #误报
+netdev_freemem
+sess_free_buffer
+vmballoon_release_refused_pages
+ahd_freeze_simq   #误报
+get_page_from_free_area   #误报
+mei_cl_free_pending
+shuffle_freelist   #误报
+lpfc_sli4_ras_dma_free
+ahc_build_free_scb_list   #误报
+r128_freelist_reset   #误报
+iio_dealloc_pollfunc
+nfsd_reply_cache_free_locked
+btrfs_free_space_cache_v1_active   #误报
+mn_itree_release
+unusable_free_index   #误报
+xfs_ifree_cluster
+pnfs_layoutreturn_free_lsegs
+sis190_free_phy
+fsi_slave_release_range
+gve_free_page_dqo
+urb_free_priv
+ice_free_prof_id
+release_irq_context
+__cw1200_free_event_queue
+arcmsr_free_irq
+atl1e_free_irq
+__vb2_queue_free
+cc_aead_free
+rtw89_pci_release_rpp
+bcm47xx_nvram_release_contents
+bdx_rxdb_free_elem
+initio_release_scb
+ax25_linkfail_release
+release_task
+rmi_free_function_list
+dmar_free_drhd
+io_free_req
+et131x_free_busy_send_packets
+free_rx_agg
+altera_free_buffers
+deallocate_mst_payload
+sun8i_ce_free_chanlist
+qlcnic_release_diag_lock
+drv_release_buffered_frames
+swiotlb_free
+free_anon_bdev
+igc_free_q_vectors
+snd_motu_stream_lock_release
+swiotlb_release_slots
+pqi_free_irqs
+mlx4_en_free_affinity_hint
+df_v3_6_pmc_release_cntr
+__release_stripe
+add_id_to_freelist
+gve_tx_free_rings
+efi_free_all_buff_pages
+free_solo_dev
+ftrace_free_filter
+free_rings
+lpfc_hba_free_post_buf
+ath9k_hw_releasetxqueue
+mmc_spi_dma_free
+atomic_dec_return_release
+sci_free_dma
+rtw89_pci_release_txwd_skb
+hisi_sas_slot_task_free
+cas_page_free
+free_obsolete_cnodes
+das16_free_dma
+bnx2x_free_fw_stats_mem
+remove_from_free_space_tree
+mwifiex_free_cmd_buffers
+ata_sff_freeze  #误报
+try_to_free_pmd_page
+emac_rx_q_free_descs
+qp_free_queue
+trace_xfs_dqput_free
+vmballoon_release_page_list
+ath11k_dp_rx_tid_mem_free
+packet_free_pending
+security_task_free
+ahd_release_simq
+dvb_free_device
+prestera_hw_counter_block_release
+alias_free_mem_rcu
+vmci_q_header_free_space
+xge_free_pending_skb
+mlx5_fpga_conn_free_recv_bufs
+rbd_free_disk
+mv_port_free_dma_mem
+idt_deinit_dbgfs
+free_ring
+lpfc_els_free_bpl
+aha152x_release_cs
+device_free_rd0_ring
+__kvm_arch_free_vm
+iwl_txq_gen2_free_memory
+tegra30_ahub_free_rx_fifo
+free_dfs_info_param
+btrfs_free_ref_tree_range
+freedev
+free_cpuset
+acpi_tb_release_owner_id
+otx2_mbox_alloc_msg_nix_lf_free
+free_mem
+__hwrm_release_token
+process_free_data_message
+cgroup_freeze
+lpfc_free_iocb_list
+ar5523_free_rx_bufs
+hl_state_dump_free_monitors
+i40e_free_misc_vector
+mei_dmam_ring_free
+iwl_txq_gen2_free
+nfcsim_link_free
+pci_ecam_free
+mgag200_g200wb_release_bmc
+find_free_ioapic_entry   #误报
+ax25_listen_release
+free_inode_elem_list
+i40e_vsi_free_irq
+xskq_cons_release
+nvdimm_free_dpa
+gve_free_queue_page_list
+lpfc_sli4_dealloc_extent
+pciehp_release_ctrl
+tracing_map_elt_free
+pcmcia_free_dynids
+iwl_txq_free_tso_page
+ice_release_global_cfg_lock
+ddb_output_free
+svc_free_res_pages
+free_pte_table
+binder_free_buf_locked
+radeon_uvd_free_handles
+rsa_free_mpi_key
+rtw_free_drv_sw
+lan78xx_free_rx_resources
+ar5523_free_tx_cmd
+writecache_wait_on_freelist  #误报
+ath11k_pci_free_msi
+msi_domain_free_irqs
+svc_udp_release_rqst
+ov13858_free_controls
+kernfs_free_fs_context
+kfree_subsuites_at_end
+reader_release
+blk_free_ext_minor
+free_pasid_states
+snd_ymfpci_free_gameport
+nfs_free_unlinkdata
+mlx5e_free_drop_rq
+rtw_pci_free_tx_ring_skbs
+btrfs_free_log
+ti_sn_pwm_pin_release
+reiserfs_transaction_free_space   #误报
+tifm_free_device
+ngene_release_buffers
+ssam_irq_free
+cnic_free_id
+smc_release_attrib
+hid_free_buffers
+ath9k_hif_usb_dealloc_urbs
+ath10k_snoc_free_irq
+bpf_jit_free
+jme_free_tx_resources
+ath10k_ahb_release_irq_legacy
+xen_9pfs_front_free
+hpsa_free_ioaccel2_cmd_and_bft
+crypto_ccm_free
+lpfc_nvmet_defer_release
+cw1200_debug_release
+ath10k_wmi_free_host_mem
+hclge_free_vector
+free_shared_mem
+snd_dice_stream_lock_release
+bio_crypt_free_ctx
+io_wqe_activate_free_worker
+nvme_start_freeze   #误报
+pud_free_pmd_page
+ext4_mb_free_metadata
+l2t_release
+acpi_memory_device_free
+xfs_trans_free_items
+ib_uverbs_release_ucq
+trace_vmbus_release_relid
+tx_free_irq
+dw9768_release
+mlx5_ctrl_irq_release
+mt7603_has_cal_free_data   #误报
+bt3c_release
+free_user_pages
+nvkm_vmm_free_remove
+_qed_vf_pf_release
+s3c24xx_dma_free_irq
+release_openowner
+ice_vsi_release
+genpd_free_dev_data
+rtw_free_hwxmits
+qlcnic_free_hw_resources
+da7219_free_dai_clks
+rxq_deinit
+ice_vsi_free_tx_rings
+allegro_free_fw_codec
+resource_list_free
+hso_free_interface
+__free_session
+gfs2_free_clones
+mlx5_fc_release
+rcar_drif_release_buf
+qla2x00_free_irqs
+wil_vif_find_free_mid
+meson_free_chanlist
+sp_free_ccp_irq
+bnx2x_vf_free
+pm_release_ib
+kdf_dealloc
+iavf_free_q_vectors
+free_large_kmalloc
+nicvf_free_resources
+free_sbufs
+fbtft_framebuffer_release
+bond_release
+__tcf_idr_release
+nfsd_reply_cache_free
+stmmac_free_tx_skbufs
+cxgbit_free_all_np
+get_node_free_space   #误报
+virtnet_free_queues
+efc_nport_free
+gve_free_rings
+mtk_uart_apdma_free
+sock_map_sk_release
+cache_release
+cpts_release
+mes_v10_1_free_microcode
+crypto_gcm_free
+ahd_free
+device_free_rd1_ring
+free_synth_field
+pvcalls_front_free_map
+brcmusb_usb3_unfreeze_aeq   #误报
+typhoon_fill_free_ring
+qede_free_mem_load
+sec_ctx_base_uninit
+dma_free_pages
+isp_stat_buf_release
+bpf_jit_free_exec
+rxrpc_release_calls_on_socket
+es58x_free_netdevs
+ixgbevf_free_q_vectors
+pmd_free_pte_page
+apf_pageready_slot_free
+free_context
+hsi_release_port
+aal0_buffer_free
+ice_free_tcam_ent
+fou_release
+sched_core_free
+nfp_net_free_frag
+sdio_retune_release
+qbman_bp_info_num_free_bufs   #误报
+crypt_free_req_skcipher
+memslot_rmap_free
+altera_hw_filt_release
+cc_hash_free
+sh_mmcif_release_dma
+vnt_get_free_context
+nvkm_i2c_aux_release
+alx_free_rings
+exec_mm_release
+nft_chain_release_hook
+stk_free_buffers
+flexcan_chip_unfreeze   #误报
+aio_free_ring
+ocfs2_try_to_free_truncate_log
+imgu_mmu_free_page_table
+release_sdio
+igb_free_q_vectors
+ath10k_htt_free_frag_desc
+iio_free_scan_mask
+amdgpu_virt_release_full_gpu
+ptp_qoriq_free
+ath10k_sdio_mbox_free_rx_pkt
+drm_legacy_ctxbitmap_free
+megasas_free_ctrl_mem
+free_ret_instance
+snd_rawmidi_runtime_free
+release_service_messages
+free_area_empty
+cptvf_free_irq_affinity
+__cpdma_chan_free
+mtk_cqdma_hw_deinit
+alx_free_buffers
+rtllib_networks_free
+tb_release_unused_usb3_bandwidth
+mt7530_free_irq_common
+free_moved_vector
+__vxlan_fdb_free
+iwl_pcie_ctxt_info_free_fw_img
+sky2_free_buffers
+ixgb_free_tx_resources
+rcar_i2c_release_dma
+__pagevec_release
+tg3_rx_prodring_free
+aq_nic_free_vectors
+release_ptd_buffers
+hid_free_dynids
+dmabuf_imp_release
+free_var_defs
+mpi_point_release
+btrfs_rm_dev_replace_free_srcdev
+put_free_entry
+bnxt_free_vnics
+free_obsolete_znodes
+stp_master_free
+release_tty
+cci_pci_free_irq
+pipe_release_pipe_num
+mlx4_en_free_tx_buf
+mt8195_afe_deinit_clock
+load_extent_tree_free
+xc4000_release
+free_txqs
+cell_release_no_holder
+cmd_tagged_free
+meson_gpio_irq_release_channel
+ixgbe_free_q_vectors
+hinic_rss_template_free
+crypto_authenc_free
+lan743x_tx_release_desc
+uas_free_unsubmitted_urbs
+xenhcd_free_urb_priv
+kv_freeze_sclk_dpm
+mwifiex_free_cmd_buffer
+request_free_mem_region
+release_frag_chain
+svc_i3c_master_release_slot
+octeon_free_sc_done_list
+__uc_free_load_err_log
+seccomp_notify_free
+lan743x_tx_release_completed_descriptors
+chv_phy_release_cl2_override
+free_local_pdev
+nf_tables_commit_release
+freelbuspath
+dm9000_release_board
+fib_release_info
+free_urbs
+swsusp_unset_page_free   #误报
+free_map_info
+get_free_recvmsg
+tb_deactivate_and_free_tunnel
+qed_iov_free_vfdb
+free_clk
+imm_pb_release
+intel_region_ttm_resource_free
+drbd_free_sock
+__isolate_free_page
+devpts_release
+usdhi6_dma_release
+ath11k_ce_free_pipes
+return_free_pages_to_mm
+vhost_vsock_free
+lpfc_free_els_sgl_list
+ixgbevf_free_irq
+_free_event
+dmfe_free_tx_pkt
+xennet_free_netdev
+otx2_mbox_alloc_msg_npc_mcam_free_entry
+mb_set_largest_free_order
+r5l_recovery_free_ra_pool
+vmci_ctx_rcv_notifications_release
+free_buffer_head
+snd_opl4_free
+tegra30_ahub_free_tx_fifo
+trace_ext4_mb_release_group_pa
+r5l_has_free_space  #误报
+iwl_fw_runtime_free
+qed_resc_free
+ath10k_pci_deinit_irq_legacy
+ksmbd_release_crypto_ctx
+ccp_free_active_cmd
+dsi_tx_buf_free
+r6040_free_txbufs
+__xfs_refcount_cow_free
+xhci_complete_del_and_free_cmd
+neigh_cleanup_and_release
+iio_buffer_demux_free
+gem_free_pages_array
+ft_send_resp_code_and_free
+fm10k_free_all_tx_resources
+exit_mm_release
+enic_free_vnic_resources
+con_free_unimap
+pch_free_dma
+qedi_release_cid_que
+xilinx_cpm_free_interrupts
+fm10k_free_all_rx_resources
+atmel_release
+scrub_free_csums
+free_page_list
+tse_free_rx_buffer
+ice_release_rx_desc
+api_chain_free
+nicvf_free_q_desc_mem
+savage_freelist_init   #误报
+aa_load_ent_free
+btrfs_get_free_objectid  #误报
+__blk_mq_free_map_and_rqs
+vdec_session_release
+iavf_free_all_rx_resources
+bnad_mbox_irq_free
+xfs_alloc_longest_free_extent  #误报
+release_uhci
+lan78xx_free_tx_resources
+wil_release_cpu
+trace_binder_free_lru_start
+iwl_pcie_ctxt_info_gen3_free
+ahd_add_scb_to_free_list  误报
+b44_free_consistent
+ipc_release_irq
+azx_free_streams
+atomic_cmpxchg_release
+btrfs_free_zone_cache
+xfs_free_extent_later
+find_free_extent   #wub 
+psi_cgroup_free
+xgbe_free_rx_data
+qgroup_rsv_release
+ishtp_cl_free_rx_ring
+line6_pcm_release
+xlog_state_release_iclog
+mv88e6xxx_g1_irq_free
+i915_priolist_free
+xfrm6_tunnel_free_spi
+qedi_cm_free_mem
+tls_free_open_rec
+do_release_stripe
+chtls_free_uld
+lpfc_free_sgl_per_hdwq
+release_async_put_domains
+mcam_free_dma_bufs
+xprt_class_release
+rbd_object_map_free
+amd_iommu_free_device
+xfs_trans_free_extent
+free_cgrp_cset_links
+pldmfw_free_priv
+grcan_free_dma_buffers
+drmm_add_final_kfree   #误报
+xa_release
+mlx5e_free_mpwqe_rq_drop_page
+mctp_route_release
+carl9170_release_dev_space
+nft_flowtable_hook_release
+btrfs_remove_free_space_cache
+igbvf_free_irq
+__update_and_free_page
+genwqe_ffdc_buffs_free
+iwl_fw_free_dump_desc
+snd_soc_dapm_free_widget
+ath11k_dp_link_desc_bank_free
+tl_release
+prestera_hw_span_release
+lbs_get_free_cmd_node
+emac_tx_q_descs_free
+aac_fib_map_free
+affs_free_block
+free_area
+reiserfs_free_jh
+pmcraid_release_buffers
+xfs_prep_free_cowblocks
+pciehp_free_irq
+dpaa2_eth_free_rings
+af_alg_free_resources
+move_freelist_tail   #误报
+release_maps
+cb_do_release
+free_all_rx_skbs
+trace_xfs_inode_free_cowblocks_invalid
+gve_free_pending_packet
+mt76_testmode_free_skb
+proc_release_port
+find_free_gmin_subdev_slot   #误报
+release_task_mempolicy
+pnfs_generic_rw_release
+xilinx_cpm_free_irq_domains
+btrfs_remove_free_space_inode
+jbd2_journal_free_reserved
+free_tx_buffers
+mwifiex_deinit_priv_params
+renesas_usb3_dma_free_prd
+hisi_qm_free_qps
+a2150_free_dma
+ocelot_fdma_free_rx_ring
+dma_direct_free
+acpi_fujitsu_laptop_release
+dsi_cio_uninit
+mv_xor_free_chan_resources
+xfs_alloc_get_freelist    #误报
+meson_uart_release_port
+__release_guc_id
+batadv_nc_packet_free
+dmar_free_pci_notify_info
+xdp_release_frame
+tx_free_skb
+free_l2table_index
+emac_mac_rx_tx_rings_free_all
+nv50_instobj_release
+iwl_pcie_ctxt_info_free_paging
+e1000e_release_nvm
+btrfs_init_root_free_objectid   #误报
+tcf_idr_release_unsafe
+snd_pcm_release_substream
+megasas_free_ctrl_dma_buffers
+radeon_agp_head_release
+blk_mq_release_budgets
+free_zbud_page
+ucan_release_context
+hclge_comm_cmd_uninit
+madvise_free_single_vma
+sbp_free_request
+mt7603_apply_cal_free_data   #误报
+release_sibling
+add_to_free_list    #误报
+free_group
+mca_data_free
+mv88e6xxx_g2_irq_free
+ice_vf_vsi_release
+via_dmablit_release_slot
+__mlx4_mpt_free_icm
+ice_unmap_and_free_tx_buf
+iwl_mvm_free_inactive_queue
+audit_free_aux
+release_in_xmit
+xlgmac_free_rx_data
+mmp_tdma_free_descriptor
+pch_vbus_gpio_free
+freetgt   #误报
+i915_ggtt_driver_release
+ubifs_fast_find_freeable   #误报
+comp_ctxt_release
+otx2_free_rcv_seg
+ep_bd_list_free
+acpi_release_global_lock
+xprt_free_bc_request
+rtllib_softmac_free
+find_free_dqentry
+ipr_free_cmd_blks
+snd_soc_dpcm_can_be_free_stop   #误报
+drm_legacy_idlelock_release
+xen_drm_front_gem_free_object_unlocked
+hip04_free_ring
+get_free_grant
+cpt_ucode_release_fw
+drbd_free_pages
+sm_ll_find_common_free_block   #误报
+qed_mcp_trace_free_meta_data
+dvb_vb2_release
+mtu3_gpd_ring_free
+bdx_tx_free
+mtk_star_free_rx_skbs
+sp_free_psp_irq
+mt7915_mcu_get_eeprom_free_block   #误报
+erofs_release_pages
+iscsi_target_nego_release
+xlbd_release_minors
+free_state
+wil_find_free_ring   #误报
+bnxt_free_vf_resources
+mlx4_bf_free
+fdp_nci_release_firmware
+wm8962_free_beep
+fore200e_free_rx_buf
+ttusb_free_iso_urbs
+device_free_rings
+nv50_wndw_atomic_check_release
+binder_insert_free_buffer  #误报
+mhi_free_controller
+add_new_free_space   #误报
+genwqe_release_service_layer
+snd_ff_stream_lock_release
+encode_deallocate
+__smc_release
+release_engine_dce_sw
+free_unref_page_commit
+xfs_difree_inobt
+msi_free_msi_descs
+mesh_plink_free_count   #误报
+pci230_release_shared
+dmap_reinit_add_to_free_pool
+ip6_cork_release
+mlx5_sf_free
+dsa_switch_release_ports
+ppa_pb_release
+xfs_alloc_fix_freelist    #误报
+acpi_ut_release_write_lock
+acpi_ut_release_read_lock
+nf_conntrack_free
+xfs_blockgc_free_dquots
+sun50i_iommu_free_page_table
+prefree_segments   #误报
+xgbe_free_tx_data
+nf_queue_entry_free
+ntb_transport_free_queue
+release_ms_card
+dquot_free_space_nodirty
+vip_gpio_release
+hpsa_free_ioaccel1_cmd_and_bft
+trigger_data_free
+beiscsi_free_irqs
+drm_minor_release
+iop_adma_free_chan_resources
+amdgpu_amdkfd_release_notify
+xfs_bmap_longest_free_extent   #误报
+ceph_free_lockers
+mod_freesync_create   #误报
+i915_ttm_backup_free
+nvme_free_tagset
+dma_pte_free_level
+sock_wfree
+btrfs_qgroup_free_meta_all_pertrans
+apple_pcie_release_device
+iavf_free_all_tx_resources
+decode_deallocate
+sigmadsp_firmware_release
+iavf_release_rx_desc
+free_msi_irqs
+cpudl_set_freecpu   #误报
+gr_free_dma_desc_chain
+release_lockspace
+_qed_cxt_release_cid
+free_rx_slot
+alarmtimer_freezerset  #误报
+fw_free_paged_buf
+sh_mobile_i2c_release_dma
+wsm_release_tx_buffer
+qedf_free_global_queues
+wcn36xx_dxe_ch_free_skbs
+sctp_transport_dst_release
+iscsit_free_all_datain_reqs
+pcmcia_release_io
+gfs2_should_freeze   #误报
+mt76_rx_release_burst
+rx_free_irq
+release_sid
+cmm_cm4000_release
+release_ib_buffer
+sk_msg_free_partial
+__rbd_release_lock
+mptscsih_freeChainBuffers
+pqi_free_ctrl_resources
+mlx5_core_reserved_gid_free
+__bch_bucket_free
+ct_free_msg
+serial8250_release_dma
+free_channel
+e1000_free_all_rx_resources
+release_xd_card
+_action_freerun   #误报
+bdisp_hw_free_filters
+idtcm_read_hotfix_release
+__ovs_ct_free_action
+release_io_space
+dmz_wait_for_free_zones
+ahd_dmamem_free
+nicvf_sq_free_used_descs
+release_posix_timer
+b43_dma_free
+xen_pcibk_release_pci_dev
+intel_engines_free
+rvu_mbox_handler_npc_mcam_free_entry
+b43legacy_dma_free
+nfs4_release_reclaim
+mlx5_free_bfreg
+e1000_release_phy_80003es2lan
+tw686x_audio_dma_free
+ivtv_yuv_next_free   #误报
+qla2x00_free_fcports
+pm8001_mpi_msg_free_set
+xfs_fstrm_free_func
+__dma_release_from_coherent
+xenvif_mcast_addr_list_free
+pcpu_next_md_free_region
+radeon_vm_clear_freed
+bcm_vk_dma_free
+bfad_hal_mem_release
+xhci_free_endpoint_ring
+rxrpc_release_call
+bnx2x_free_rx_sge_range
+trace_pid_list_free
+ipmi_msg_release
+try_to_free_pte_page
+free_dev_ioctl
+tty_release_struct
+vmxnet3_free_pci_resources
+__free_irq
+release_guc_id
+megasas_release_mfi
+sh_mdio_release
+brcmuart_free_bufs
+netxen_release_firmware
+prism2_release
+mlx5_sf_hw_table_hwc_sf_free
+tcp_rtx_queue_unlink_and_free
+do_try_to_free_pages
+megaraid_free_cmd_packets
+lan78xx_free_buf_pool
+snd_opl3_free
+vfio_pci_vf_uninit
+enetc_free_irqs
+qlge_free_irq
+sci_remote_node_table_release_remote_node_index
+is_next_segment_free  #误报
+bcm4908_enet_dma_free
+gru_release_async_resources
+ad7124_find_free_config_slot  #误报
+dispose_cap_releases
+xchk_xattr_freemap  #误报
+asd_free_coherent
+sm750fb_framebuffer_release
+cx18_stream_free
+intel_gvt_free_firmware
+snd_sof_ipc_free
+f2fs_release_discard_addrs
+bnx2x_free_mcast_macs_list
+dwc2_qh_list_free
+rt2x00mmio_free_queue_dma
+release_lock_stateid
+arc_free_rx_queue
+deinit_rsq
+free_dma_pools
+hdmi_uninit_output
+otx2_mbox_alloc_msg_npa_lf_free
+tcp_release_cb
+free_ol_stateid_reaplist
+mlx5dr_buddy_free_mem
+virtcrypto_free_queues
+gve_tx_fifo_release
+free_irq_routing_table
+free_usb_address
+tsi721_bdma_maint_free
+wlcore_save_freed_pkts   #误报
+audit_free_context
+hisi_sas_do_release_task
+ext4_es_free_extent
+ipr_get_free_ipr_cmnd   #误报
+bnxt_free_skbs
+ib_uverbs_flow_resources_free
+ath10k_ahb_clock_deinit
+ci_hdrc_free_dma_aligned_buffer
+cx18_release_stream
+free_dmar_iommu
+ahc_linux_release_simq
+bna_uninit
+cnic_free_dma
+wil_release_reorder_frames
+ice_get_free_res_count   #误报
+ofdpa_group_tbl_entry_free
+wavefront_find_free_sample  #误报
+emac_tx_q_bufs_free
+rtsx_release_cards
+x86_vector_free_irqs
+ena_free_all_io_rx_resources
+bcm2835_pctl_dt_free_map
+nfsd_file_free
+smc_wr_free_link_mem
+cb_pcidas64_free_dma
+efc_nport_free_unreg_vpi
+free_hwxmits
+idtcm_read_major_release   #误报
+fec_enet_free_buffers
+msi_free_msi_descs_range
+cxgb4_matchall_mirror_free
+xfs_blockgc_free_space
+pt_free_irqs
+efct_hw_io_free_common
+release_cis_mem
+trace_ocfs2_free_suballoc_bits
+venc_release_session
+mlx5_vdpa_free_resources
+fm10k_unmap_and_free_tx_resource
+gve_rx_free_rings
+mb_free_blocks
+free_link_state
+crypto_free_acomp
+r820t_release
+ila_release
+tb_free_unplugged_xdomains
+nf_ct_tmpl_free
+lpfc_free_sysfs_attr
+dt_free_map
+tlb_batch_list_free
+xusbatm_release_intf
+i40e_aq_release_resource
+nvkm_i2c_bus_release
+ipw2100_queues_free
+virtnet_freeze_down
+dpaa2_eth_free_channel
+igb_free_all_rx_resources
+ath10k_fw_stats_vdevs_free
+i40e_unmap_and_free_tx_resource
+mt_release_contacts
+sp_free_irqs
+free_pt_lvl
+btf_verifier_env_free
+display_timings_release
+f2fs_build_free_nids   #误报
+xfs_inode_free
+wbsd_release_resources
+ufshcd_dealloc_host
+nft_commit_release
+free_root_bus_devs
+iwl_trans_pcie_free
+free_clear_pte
+velocity_free_dma_rings
+vchiq_free_service_internal
+uli526x_free_tx_pkt
+xfs_free_extent
+free_sge_queues_uld
+stmmac_release
+msc_buffer_multi_free
+pqi_free_ctrl_info
+rtw_release_macid
+dealloc_channel
+atl2_free_irq
+snd_sof_free_debug
+snd_trident_free_gameport
+dma_release_coherent_memory
+lcd2s_wait_buf_free
+iwl_trans_free
+mei_io_tx_list_free_cl
+free_network_nolock
+acpi_dma_controller_free
+__release_z3fold_page
+snd_p16v_free_pm_buffer
+pcnet_release
+octeon_free_ioq_vector
+parport_cs_release
+bnx2fc_free_conn_id
+btrfs_free_block_rsv
+mpt3sas_base_free_resources
+release_io
+saa7146_dma_free
+arm_ccn_pmu_event_release
+dt282x_free_dma
+cc_cipher_free
+do_hw_free
+free_ddcb_queue
+lpfc_release_scsi_buf
+ath10k_snoc_hif_get_free_queue_number   #误报
+pch_gbe_free_tx_resources
+mlx5e_rq_shampo_hd_free
+fnic_fcoe_evlist_free
+chtls_kfree_skb
+ice_find_free_recp_res_idx   #误报
+mlx4_free_hwq_res
+folio_batch_release
+_fsg_common_free_buffers
+igb_free_all_tx_resources
+fnic_free_intr
+xprt_switch_free_id
+ext4_free_blocks
+__mlx4_qp_release_range
+ia_css_isp_dvs_statistics_map_free
+free_fake_cpuc
+b43_pio_free
+mpt3sas_send_diag_release
+ixgbe_release_hw_control
+qedf_free_mp_resc
+pcxhr_chip_free
+mv88e6xxx_hwtstamp_free
+e1000_free_all_tx_resources
+free_the_page
+build_info_free
+clear_free_space_tree
+acomp_request_free
+counter_events_list_free
+hdmi_core_ddc_uninit
+free_eq_pages
+codec_release_pcms
+hinic_deinit_vf_hw
+nfsd4_free_lock_stateid
+pcl812_free_dma
+ionic_qcq_intr_free
+iwl_pcie_free_ict
+dma_pte_free_pagetable
+bpf_jit_prog_release_other
+vivid_fb_release_buffers
+raid_set_free
+vmw_resource_relocations_free
+release_manifest_descriptor
+free_sbridge_dev
+ath11k_dp_free
+rtl8152_release_firmware
+rz_ssi_release_dma_channels
+tda9950_glue_release
+ice_ptp_release_tx_tracker
+__nft_release_tables
+free_priority_group
+i915_gem_object_release_mmap_gtt
+ecl_ishtp_cl_deinit
+iova_magazine_free_pfns
+i40e_vsi_free_rx_resources
+ath11k_wmi_free_dbring_caps
+task_numa_free
+cvm_oct_adjust_skb_to_free   #误报
+xgbe_phy_free_phy_device
+free_pending_td
+tb_free_unplugged_children
+cfusbl_release
+dmabuf_imp_free_storage
+chtls_release_resources
+dss_uninit_overlays
+igc_free_all_rx_resources
+_base_release_memory_pools
+__swap_entry_free_locked
+mlx5e_free_rx_shampo_hd_entry
+add_to_free_space_tree   #误报
+do_slab_free
+ccu_div_free_data
+free_swap_and_cache
+igt_object_release
+__free_extent_buffer
+tx_buffer_free
+binder_release_work
+cgroup_freezer_migrate_task   #误报
+c67x00_release_urb
+smc_wr_free_lgr_mem
+free_user
+mv88e6xxx_irq_poll_free
+irq_domain_free_irqs_hierarchy
+free_page_table
+atomic_add_return_release
+__nft_release_hook
+sgx_vepc_free_page
+rvu_free_hw_resources
+rtw89_phy_ccx_racing_release
+ulite_release
+gve_free_notify_blocks
+free_counter
+sof_pcm_stream_free
+free_pfn_range
+ceph_send_cap_releases
+btrfs_qgroup_free_refroot
+tee_free_cmd_buffer
+cch_deallocate
+unregister_trace_kfree_skb
+cros_ish_deinit
+ia_css_isp_3a_statistics_map_free
+nested_release_evmcs
+atc_pcm_release_resources
+sec_free_mac_resource
+gb_lights_release
+cn10k_free_leaf_profile
+move_freelist_head     #误报
+bnx2x_vfpf_release
+arcmsr_free_pcidev
+trace_xfs_alloc_small_freelist   #误报
+iwlagn_dealloc_agg_txq
+acp6x_deinit
+mscc_ocelot_release_ports
+rocker_dma_ring_bufs_free
+hv_int_desc_free
+fei_attr_free
+hns3_free_rx_cpu_rmap
+amdgpu_release_ras_context
+vsc85xx_coma_mode_release
+stmfts_report_contact_release
+ixgbe_free_all_rx_resources
+free_mlme_ap_info
+tty_release
+dmfe_free_rxbuffer
+igc_free_all_tx_resources
+cyttsp4_release_exclusive
+nfp_net_pf_free_irqs
+is_freesync_video_mode
+fjes_free_irq
+apci3120_dma_free
+qlcnic_release_firmware
+get_free_pipe_id_locked    #误报
+bnx2x_exe_queue_free_elem
+mlx5_fw_tracer_ownership_release
+qp_release_pages
+ni_release_gpct_mite_channel
+acp5x_deinit
+lan78xx_release_rx_buf
+move_freepages_block    #误报
+bcm_vk_free_wkent
+btrfs_truncate_free_space_cache   #误报
+nct7904_bank_release
+free_noa_wait
+fnic_free_vnic_resources
+tse_free_tx_buffer
+fimc_is_free_cpu_memory
+stmmac_release_ptp
+ext4_free_data
+fuse_free_dax_mem_ranges
+iio_dummy_evgen_release_irq
+persistent_ram_free_old
+h264_enc_free_work_buf
+iommu_release_device
+ath9k_hw_btcoex_deinit
+ath10k_fw_extd_stats_peers_free
+release_extent_buffer
+bulkfree_pcp_prepare   #误报
+fifo_free_entries   #误报
+ivtv_udma_free
+rtw_free_assoc_resources_cmd
+tsi721_free_irq
+dc_resource_find_first_free_pll   #误报
+r8712_free_network_queue
+afs_release_lock
+sh_eth_tx_free
+das1800_free_dma
+pkcs1pad_free
+i40e_vsi_free_tx_resources
+cxgbi_ppm_release
+releaseintf
+f2fs_available_free_memory   #误报
+qp_host_free_queue
+sierra_release_urb
+deinit_tsq
+free_user_blocks
+free_region
+ocfs2_free_suballoc_bits   #误报
+xlgmac_free_tx_data
+pci_free_resources
+xfs_inactive_ifree
+atl1_free_ring_resources
+lm3554_gpio_uninit
+platform_msi_free_priv_data
+btrfs_free_space_generation
+ps_device_release_player_id
+cs5535_mfgpt_release_irq
+page_pool_free_frag
+free_sections
+free_bootmem_cpumask_var
+alx_free_irq
+idxd_wq_free_resources
+ath10k_pci_hif_get_free_queue_number   #误报
+cfg80211_dev_free
+mlx4_mpt_release
+dspio_free_dma_chan
+free_iova_mem
+iwl_pcie_rx_free
+__wait_for_free_buffer
+bpf_free_cands
+ena_free_all_io_tx_resources
+atomic_fetch_add_release
+hpsa_cmd_resolve_and_free
+nfp_net_pf_free_vnic
+mwl8k_txq_deinit
+hpda_free_ctlr_info
+octeon_free_sc_buffer_pool
+fec_enet_get_free_txdesc_num
+lpfc_free_nvmet_sgl_list
+devobj_deinit
+vmw_execbuf_release_pinned_bo
+slic_free_rx_queue
+octeon_register_reqtype_free_fn   #误报
+__kmem_cache_release
+mt_release_pending_palms
+qtnf_mac_ext_caps_free
+axnet_release
+ice_free_irq_msix_misc
+free_ldt_pgtables
+detach_cap_releases
+lpfc_sli4_rq_release
+xfs_dir3_free_header_check
+nfs4_free_pages
+qed_slowpath_irq_free
+release_pages_balloon
+huge_free_pages
+otx2_aura_freeptr
+iscsit_free_queue_reqs_for_conn
+tegra_uart_dma_channel_free
+complete_release
+rtl8180_free_rx_ring
+ipw2100_rx_free
+__bo_insert_to_free_rbtree   #误报
+megasas_free_host_crash_buffer
+brcmf_sdiod_try_freeze   #误报
+stm32f7_i2c_get_free_slave_id   #误报
+ni_660x_free_mite_rings
+tls_sw_release_resources_tx
+bnad_rx_res_free
+__mem_cgroup_free
+ZSTD_freeDDictHashSet
+b43legacy_release_firmware
+cn10k_free_all_ipolicers
+free_i7core_dev
+lrw_free_instance
+pci_bridge_release_resources
+mnt_release_group_id
+nvme_release_prp_pools
+notify_on_release
+ixgbevf_free_all_rx_resources
+atmel_lcdfb_free_video_memory
+xhci_free_virt_device
+create_free_space_inode
+free_mmu_pages
+netxen_p3_free_mac_list
+load_free_space_tree
+cfserl_release
+rds_dma_hdrs_free
+cpuhp_lock_release
+via_free_sg_info
+snd_emu10k1_free_efx
+hl_release_firmware
+sctp_ulpevent_release_data
+free_area_init_node   #误报
+pcnet32_free_ring
+xts_free_instance
+qat_crypto_free_instances
+binder_selftest_free_seq
+gfar_free_rx_queues
+requeue_free_frames   #误报
+tty_audit_buf_free
+cpufreq_cpu_release
+snd_ac97_free
+rtw89_fw_free_all_early_h2c
+mwifiex_cfg80211_deinit_p2p
+scratchpad_free
+sci_free_irq
+mlx5e_rq_shampo_hd_info_free
+alcor_hw_uninit
+cls_bpf_free_parms
+idtcm_read_minor_release   #误报
+tty_buffer_free_all
+mhi_deinit_chan_ctxt
+release_stripe_plug
+mwl8k_rxq_deinit
+gen_pool_free_owner
+ipr_get_free_hostrcb
+free_pm_buffer
+mxt_free_object_table
+comedi_set_spriv_auto_free
+ksmbd_release_tree_conn_id
+ixgbevf_free_all_tx_resources
+garp_release_port
+add_to_free_list_tail   #误报
+arch_release_bp_slot
+snd_usb_mixer_free
+rpc_cb_add_xprt_release
+sbp_login_release
+ahc_linux_freeze_simq   #误报
+dump_and_free_wakeref_tracking
+free_inode_nonrcu
+ims_pcu_buffers_free
+aac_release_resources
+prefetch_freepointer   #误报
+arcmsr_free_io_queue
+pch_gbe_free_rx_resources
+uv_bios_mq_watchlist_free
+__mptcp_pm_release_addr_entry
+proc_releaseinterface
+__queue_and_release_pm
+msm_release_dma
+rt2x00lib_free_firmware
+_free_cpntf_state_locked
+free_task_struct
+dpaa2_eth_free_bufs
+nvme_free_host_mem
+ia_css_isp_dvs2_statistics_free
+xfs_inobt_first_free_inode
+free_rx_bufs
+freecom_readdata   #误报（freecom是一个名称）
+io_ring_ctx_free
+r8712_efuse_reg_uninit
+ionic_devlink_free
+ipw_rx_queue_free
+ice_sched_get_free_qparent   #误报
+flush_free_hpage_work   #误报
+nfp_net_rx_rings_free
+__release_sock
+libipw_networks_free
+ixgbe_release_swfw_sync_semaphore
+xfs_trans_free
+delta_get_free_frame   #误报
+mt7615_cal_free_data   #误报
+__dma_direct_free_pages
+fixup_free_space
+ext4_mb_release_context
+rockchip_gem_release_object
+__kmod_config_free
+ath5k_txbuf_free_skb
+cgroup_free
+mrp_release_port
+ath11k_fw_stats_pdevs_free
+rd_release_device_space
+rtw89_pci_free_irq
+acpi_ex_release_all_mutexes
+mlx5_cmd_free_uar
+t4_free_sge_resources
+ath11k_pci_free_region
+rn_acp_deinit
+serial8250_release_rsa_resource
+qlcnic_83xx_diag_free_res
+mlx4_en_free_resources
+snic_release_untagged_req
+smi_port_dma_free
+devm_free_pages
+rtl8180_free_tx_ring
+e1000_free_desc_rings
+qla2x00_free_sysfs_attr
+ZSTD_freeCDict
+pnfs_generic_commit_release
+nicvf_free_rbdr
+omap_mcbsp_free
+nv_release_txskb
+brcmf_sdiod_freezing   #误报
+usb_dvobj_deinit
+free_irq_resources
+__release_extent_node
+cal_release_buffers
+vx2_release_pseudo_dma
+g2h_release_space
+tegra_pcie_deinit_controller
+rtw89_pci_release_fwcmd
+xfs_rtfree_range
+free_otherend_watch
+mtk_thermal_release_periodic_ts
+get_free_buddy   #误报
+bnx2_release_nvram_lock
+sm_metadata_get_nr_free  #误报
+s626_free_dma_buffers
+release_engines
+release_flush
+atl2_free_ring_resources
+freecom_writedata   #误报
+loader_deinit
+sh_eth_ring_free
+cxgb4_port_mirror_free_rxq
+fm10k_qv_free_irq
+free_target_met
+tcp_wmem_free_skb
+ahc_platform_freeze_devq   #误报
+kfd_release_topology_device_list
+nfsd_free_fcache_disposal_net
+hns3_dbg_uninit
+i40e_release_rx_desc
+fec_enet_free_queue
+arc_free_tx_queue
+mdp5_mixer_release
+dm_bio_prison_free_cell
+btrfs_release_delayed_iref
+nilfs_mdt_freeze_buffer   #误报
+bnxt_ethtool_free
+efct_hw_sequence_free
+free_kernel_image_pages
+ntfs_mft_bitmap_find_and_alloc_free_rec_nolock   #误报
+omapfb_free_resources
+bond_release_and_destroy
+ixgbe_free_all_tx_resources
+cm4040_reader_release
+free_optinsn_slot
+btrfs_inode_rsv_release
+bpf_prog_unlock_free
+igb_free_desc_rings
+release_block_group
+ftrace_free_mem
+mmc_test_free_dbgfs_file
+free_context_table
+cxgb_mk_tid_release
+usb_stor_release_resources
+bnx2x_free_fp_mem_at
+ZSTD_freeCCtxContent
+qla4xxx_srb_free_dma
+twl_free_device_extension
+acpi_ev_release_global_lock
+ath11k_ahb_free_irq
+sdw_release_stream
+esparser_vififo_get_free_space  #误报
+try_to_free_buffers
+print_freed_lock_bug    #误报
+hns3_uninit_all_ring
+__arm_smmu_free_bitmap
+vchiq_on_remote_release
+release_probes
+rio_release_dma
+__vxge_hw_channel_free
+mcp251xfd_ring_free
+twa_free_device_extension
+nvmet_fc_free_fcp_iod
+omap_dma_free
+i915_gem_driver_release
+xfs_buf_free
+free_syscall_print_fmt
+xfs_dir2_node_find_freeblk
+v4l2_subdev_release
+xhci_free_stream_info
+__i915_gem_object_free_mmaps
+adapter_remove_and_free_device
+bcmgenet_free_tx_cb
+release_test_data
+bdisp_hw_free_nodes
+snd_pcm_plugin_free
+svc_xprt_release
+ioat_free_chan_resources
+free_descriptor_buffer
+ixgbe_free_desc_rings
+free_cluster
+pnp_release_card_device
+get_free_tx_ccs
+t4_free_uld_rxqs
+snd_soc_dai_hw_free
+release_memory_resource
+qlcnic_sriov_channel_free_check
+lp8727_release_irq
+efx_siena_sriov_free_local
+snd_ali_free_channel_pcm
+bpf_sk_storage_diag_free
+snd_soc_component_compr_free
+amdgpu_virt_free_mm_table
+ath10k_pci_release
+nested_vmx_free_vcpu
+mdp5_pipe_release
+ia_css_morph_table_free
+pci_release_resource
+remove_free_space_extent
+free_state_changes
+coda_free_framebuffers
+get_freelist    #误报
+rtw_hal_deinit
+dbc_erst_free
+clk_core_free_parent_map
+hidma_ll_uninit
+track_data_free
+e1000_release_swflag_ich8lan
+core_scsi3_emulate_pro_release
+ati_remote_free_buffers
+hns3_nic_dealloc_vector_data
+find_free_extent_update_loop   #误报
+excess_prefree_segs   #误报
+paravirt_pgd_free
+amdgpu_vm_clear_freed
+uli526x_free_rxbuffer
+mtip_dma_free
+aq_ring_rx_deinit
+mlx4_en_release_rss_steer
+mlx5_cmd_dealloc_sf
+mei_me_hw_reset_release
+free_map_bootmem
+sctp_ulpevent_release_frag_data
+ena_destroy_and_free_all_xdp_queues
+qed_iwarp_get_free_ep   #误报
+exfat_free_upcase_table
+svc_xprt_release_slot
+sst_free_block
+msb_get_free_block   #误报
+free_btres_lock
+try_release_extent_state
+vfio_config_free
+dwc2_hcd_free
+e1000_unmap_and_free_tx_resource
+ext4_release_io_end
+release_shadow_wa_ctx
+frwr_mr_release
+tnode_free_init   #误报
+snic_unlink_and_release_req
+endio_readpage_release_extent
+ti_adpll_free_resources
+anysee_ci_release
+sdhci_external_dma_release
+hwrm_ring_free_send_msg   #误报
+pqi_free_interrupts
+gfs2_freeze_unlock
+mga_freelist_init     #误报
+ice_free_cpu_rx_rmap
+smsc9420_free_rx_ring
+ioeventfd_release
+regmap_debugfs_free_dump_cache
+ocfs2_local_release_dquot
+dma_direct_free_pages
+sock_kzfree_s
+dn_fib_release_info
+ena_release_bars
+moxtet_irq_free
+free_queues_uld
+cxgbit_free_cdev_np
+ir_raw_event_free
+bnx2x_vf_release
+__snd_device_free
+__bond_release_one
+take_release_locks
+sysfs_slab_release
+enc28j60_get_free_rxfifo   #误报
+xhci_free_container_ctx
+bpf_prog_free
+rtw_pci_release_rsvd_page
+mt76_release_buffered_frames
+mem_cgroup_free
+hw20k2_i2c_uninit
+hda_dsp_stream_free
+npc_mcam_get_free_count   #误报
+irq_release_resources
+lpfc_release_rpi
+__vfree
+mv88e6xxx_ptp_free
+vx_release_pseudo_dma
+iwl_pcie_free_rxq_dma
+ixgbe_release_swfw_sync
+is_tcf_tunnel_release
+objagg_obj_root_id_free
+hisi_zip_release_req_q
+free_cmd_page
+tls_sw_release_resources_rx
+unix_release_addr
+virtio_gpu_vram_free
+free_skb_pool
+free_handle
+gpio_sysfs_free_irq
+xfs_ag_resv_free_extent
+resource_list_free_entry
+pi433_free_minor
+cxgb4_eosw_txq_free_desc
+ci_freeze_sclk_mclk_dpm   #误报
+io_free_page_table
+ovs_ct_free_action
+acpi_ex_release_mutex
+bnx2fc_free_fw_resc
+xprt_release_write
+vmci_transport_free_resources
+intel_pmu_legacy_freezing_lbrs_on_pmi   #误报
+hid_ishtp_cl_deinit
+lpfc_bsg_dma_page_list_free
+iwl_mvm_release_frames
+vnic_dev_free_desc_ring
+trace_page_pool_release
+btrfs_free_reserved_data_space_noquota
+bnx2x_release_firmware
+ahc_dmamem_free
+q6asm_audio_client_free
+ieee80211_networks_free
+qlge_free_rx_buffers
+hinic_func_tbl_dbgfs_uninit
+bnxt_free_one_rx_ring_skbs
+intel_pasid_free_table
+free_initrd_mem
+mlx5_sf_hw_table_sf_free
+btrfs_create_free_space_tree   #误报
+r6040_free_rxbufs
+fanout_release
+as102_free_usb_stream_buffer
+netif_unfreeze_queues   #误报
+enic_free_rx_cpu_rmap
+bnx2x_vf_mbx_release_vf
+rcar_drif_release_queued_bufs
+dwc2_frame_list_free
+tcp_saved_syn_free
+release_sge_txq_uld
+netxen_release_tx_buffers
+mk_tid_release
+free_device_state
+mark_page_lazyfree   #误报
+dsi_uninit_output
+free_pcppages_bulk
+__lockdep_free_key_range
+check_free_page_bad
+free_ga_log
+dquot_free_reserved_space
+crypt_free_tfms
+free_extent_map_tree
+btrfs_free_reserved_data_space
+ca0132_alt_free_active_dma_channels
+xenvif_deinit_queue
+qlcnic_sriov_wait_for_channel_free   #误报
+acpi_pci_link_free_irq
+aq_vec_ring_free
+lpfc_sli4_release_hdwq
+snd_mixart_chip_free
+sa11x0_dma_free_channels
+get_free_segment   #误报
+free_buf_info
+gfs2_freeze_lock   #误报
+release_pte_page
+ceph_flush_cap_releases
+ath10k_fw_stats_peers_free
+free_global_roots
+btrfs_free_stripe_hash_table
+free_root_pointers
+btrfs_free_ref_cache
+btrfs_free_csum_hash
+btrfs_free_block_groups
+btrfs_set_free_space_cache_v1_active   #误报
+btrfs_free_qgroup_config
+calc_available_free_space
+btrfs_trans_release_metadata
+trace_btrfs_chunk_free
+remove_block_group_free_space
+b43_phy_free
+load_free_space_cache   #误报
+find_free_dev_extent    #误报
+hpsa_free_sg_chain_blocks
+hpsa_free_ioaccel2_sg_chain_blocks
+vcc_table_deallocate
+hpsa_free_performant_mode
+venus_pm_release_core
+fragment_free_space
+cyttsp4_free_si_ptrs
+pkt_release_dev
+megaraid_sysfs_free_resources
+wlcore_save_freed_pkts_addr   #误报
+service_buffer_deallocate
+btrfs_release_global_block_rsv
+pmcraid_release_chrdev
+iwl_pcie_free_fw_monitor
+mwifiex_free_curr_bcn
+device_free_td1_ring
+__btrfs_return_cluster_to_free_space   #误报
+sk_msg_free_nocharge
+cxgbi_sock_free_cpl_skbs
+free_space_next_bitmap
+pmcraid_release_cmd_blocks
+hpsa_free_device_info
+populate_free_space_tree   #误报
+free_segments   #误报
+set_free_space_tree_thresholds   #误报
+t4vf_free_sge_resources
+eld_proc_free
+check_free_space    #误报
+btrfs_return_cluster_to_free_space   #误报
+ath10k_ahb_release_reset
+xfs_dir2_free_log_bests
+xhci_free_tt_info
+igb_release_hw_control
+gbaudio_tplg_release
+pmcraid_release_control_blocks
+f2fs_release_ino_entry
+pmcraid_release_host_rrqs
+ice_free_fd_res_cntr
+pqi_free_all_io_requests
+__free_zapped_classes
+drbd_backing_dev_free
+arcmsr_free_sysfs_attr
+wl1271_free_sta
+rbd_pre_release_action
+free_extent_buffer_stale
+netup_spi_release
+load_free_space_bitmaps   #误报
+pmcraid_release_config_buffers
+e1000_release_manageability
+qla24xx_deallocate_vp_id
+usb_release_bos_descriptor
+pqi_ofa_free_host_buffer
+sock_release_ownership
+xfs_dir2_free_log_header
+sec_qm_uninit
+iwl_dealloc_bcast_stations
+free_ep_fback
+saa7164_vbi_buffers_dealloc
+add_block_group_free_space
+ath10k_pci_release_resource
+megasas_release_fusion
+cdnsp_gadget_free_endpoints
+f2fs_clear_prefree_segments
+t4vf_iq_free
+bnxt_free_ntp_fltrs
+btrfs_freeze_block_group   #误报
+efx_ef10_vswitch_free
+hclge_uninit_rxd_adv_layout
+lib80211_crypt_deinit_entries
+atomic_try_cmpxchg_release
+hisi_zip_qm_uninit
+ieee80211_free_sta_keys
+qed_vf_pf_release
+tsi721_doorbell_free
+drbd_release_all_peer_reqs
+dh_free_data
+asd_free_queues
+bnxt_free_all_cp_arrays
+load_free_space_extents   #误报
+ice_eswitch_release
+_ocfs2_free_suballoc_bits  #误报
+t4_iq_free
+amd_deinit_side_info
+kvm_free_memslots
+wil_platform_ops_uninit
+ice_ptp_release
+npc_mcam_free_all_counters
+xen_pcibk_config_free_dev
+cx231xx_release_analog_resources
+iwl_txq_gen2_tx_free
+update_free_space_extent_count   #误报
+get_free_dqblk   #误报
+label_free_switch
+vdec_ctrl_deinit
+oxu_qh_free
+nfs_delegation_test_free_expired
+irq_matrix_free
+nfp_app_vnic_free
+epf_ntb_config_spad_bar_free
+venc_ctrl_deinit
+ccdc_lsc_free_request
+smc_ib_dealloc_protection_domain
+rtw_sec_get_free_cam   #误报
+_rtl_usb_io_handler_release
+lpfc_sli4_dealloc_resource_identifiers
+bdx_fifo_free
+qed_init_free
+slic_free_stat_queue
+seq_free_client1
+free_space_test_bit   #误报（free space是一个整体）
+bnxt_free_cp_rings
+iwl_uninit_drv
+kvm_free_irq_routing
+bnxt_free_ring_grps
+iwl_pcie_tx_free
+kvm_hv_vcpu_uninit
+rlb_deinitialize
+megasas_free_ioc_init_cmd
+trace_nfs4_deviceid_free
+convert_free_space_to_bitmaps   #误报
+hpsa_free_pci_init
+atomisp_uninitialize_modules
+free_local_statfs_inodes
+virtio_gpu_array_put_free_delayed
+iwl_mvm_dealloc_bcast_sta
+kick_dmap_free_worker
+csio_resource_free
+uninit_statfs
+qlcnic_free_irq
+iwl_mvm_get_free_phy_ctxt   #误报
+trace_xfs_filestream_free
+nfsd_file_unhash_and_release_locked
+hisi_qp_memory_uninit
+cdnsp_ring_free
+ahd_platform_free
+b43_release_firmware
+xhci_free_device_endpoint_resources
+e1000_free_irq
+dwc2_release_channel_ddma
+hpfs_get_free_dnodes   #误报
+bnxt_free_vnic_attributes
+hclge_ptp_uninit
+kvm_coalesced_mmio_free
+hisi_qm_pm_uninit
+sym_m_free_dma_mem_cluster
+smc_release_datacs
+cdnsp_free_priv_device
+cx231xx_release_resources
+maybe_release_space
+hclge_uninit_vport_vlan_table
+ath10k_ahb_resource_deinit
+hclge_uninit_mac_table
+hisi_qm_uninit
+btrfs_is_free_space_trimmed   #误报
+ath10k_ahb_rst_ctrl_deinit
+bnxt_free_hwrm_resources
+venus_dbgfs_deinit
+et131x_rx_dma_memory_free
+bnxt_hwrm_resource_free
+trace_xfs_inode_free_eofblocks_invalid
+btrfs_free_excluded_extents
+xeon_deinit_dev
+free_msix_queue_irqs
+lpfc_scsi_free
+efx_mcdi_rx_free_indir_table
+add_new_free_space_info   #误报
+_rtl92e_free_tx_ring
+bnxt_hwrm_func_vf_resource_free
+trace_neigh_cleanup_and_release
+au0828_usb_v4l2_media_release
+bnxt_free_tx_rings
+sec_probe_uninit
+fastrpc_session_free
+qed_ooo_release_all_isles
+unlock_or_release_subpool
+dm_integrity_free_journal_scatterlist
+btrfs_check_trunc_cache_free_space   #误报
+adv7511_uninit_regulators
+sof_widget_list_free
+iwl_eeprom_release_semaphore
+__nft_release_table
+release_open_stateid_locks
+copy_free_space_cache   #误报
+ahc_platform_free
+ath5k_txq_release
+_rtl92e_free_rx_ring
+omapfb_free_all_fbmem
+aq_pci_free_irq_vectors
+mmu_free_memory_caches
+release_entry_list
+binder_transaction_buffer_release
+ionic_bus_free_irq_vectors
+nested_svm_uninit_mmu_context
+ipw_arc_release
+__create_free_space_inode   #误报
+hclge_misc_irq_uninit
+dwc2_desc_list_free
+free_all_descbuffers
+q6asm_audio_client_free_buf
+get_freeobj   #误报
+ovs_nla_free_set_action
+try_to_free_dmap_chunks
+bnxt_free_rx_rings
+free_space_bitmap_size   #误报
+comedi_free_subdevice_minor
+dwc3_free_event_buffers
+xchk_directory_leaf1_bestfree
+gserial_free_port
+mt76_free_pending_txwi
+nv_mgmt_release_sema
+carl9170_release_firmware
+iwl_pcie_free_bd_size
+mtk_hsdma_free_pchan
+nested_ept_uninit_mmu_context
+batadv_tt_roam_list_free
+t3_free_sge_resources
+ath11k_spectral_deinit
+bnx2_release_firmware
+dr_buddy_find_free_seg  #误报
+is_timing_unchanged_for_freesync  #误报
+cxgb4_mqprio_free_hw_resources
+ath11k_qmi_deinit_service
+btrfs_release_block_group
+ice_vf_ctrl_vsi_release
+pvscsi_release_resources
+cdnsp_free_stream_info
+free_space_set_bits  #误报
+free_tty_struct
+free_resource
+rtw_pci_free_irq
+ath11k_reg_free
+brcmf_sdiod_freezer_uncount
+mmc_test_free_result
+ks8842_dealloc_dma_bufs
+ath11k_hal_srng_deinit
+netxen_nic_free_irq
+release_inactive_stripe_list
+amd_ntb_deinit_pci
+amd_deinit_dev
+debug_dma_free_coherent
+cgroup_freeze_task   #误报
+idt_deinit_isr
+visual_deinit
+cx231xx_dev_uninit
+typhoon_num_free_cmd  #误报
+atomic_fetch_or_release
+hclge_state_uninit
+snd_trident_free_voice
+slic_free_tx_queue
+mtk_hsdma_free_active_desc
+dmap_add_to_free_pool   #误报
+ice_free_vsig_tbl
+ntfs_look_for_free_space   #误报
+xfs_iget_check_free_state  #误报
+iwl_trans_freeze_txq_timer #误报
+ath11k_wmi_pdev_dma_ring_buf_release_event
+reiserfs_free_block
+cx231xx_uninit_isoc
+pci230_release_all_resources
+mtk_cqdma_free_active_desc
+qbman_release_desc_set_bpid
+rtw_coex_action_freerun   #误报
+qm_cmd_uninit
+mod_freesync_build_vrr_infopacket  #误报
+tomoyo_memory_free
+bch_journal_free
+brcmf_pcie_release_irq
+lpfc_sli4_cq_event_release_all
+aq_ptp_ring_free
+ms_count_freeblock   #误报
+rtl92e_dm_deinit
+nfp_cpp_area_release
+__device_release_driver
+ice_release_change_lock
+ndev_deinit_debugfs
+release_pte_pages
+idt_deinit_pci
+lpfc_release_scsi_buf_s3
+ice_deinit_lag
+mvneta_txq_hw_deinit
+rtw_pci_dma_release
+xchk_directory_data_bestfree   #误报
+xfs_dir3_free_get_buf
+page_chain_free
+vmw_release_device_late
+mn_hlist_release
+ath10k_qmi_deinit
+ath5k_hw_deinit
+hclge_devlink_uninit
+release_perfctr_nmi
+ath10k_pci_deinit_irq
+ipw2100_release_firmware
+blk_mq_freeze_queue_wait   #误报
+slab_free_freelist_hook
+netxen_free_sw_resources
+ath10k_pci_ce_deinit
+trace_binder_transaction_failed_buffer_release
+qlcnic_free_sw_resources
+mb_buddy_mark_free    #误报
+smsc9420_free_tx_ring
+acrn_ioreq_deinit
+i915_driver_mmio_release
+cdnsp_free_stream_ctx
+ksz_free_desc
+i915_driver_late_release
+ks8851_eeprom_release
+ath5k_desc_free
+trace_irq_matrix_free
+batadv_tt_global_table_free
+iomap_page_release
+esas2r_initmem_free
+cxgb4_get_free_eotid   #误报
+_check_freerun    #误报
+tsi721_port_write_free
+hns_dsaf_ae_uninit
+__dmap_add_to_free_pool   #误报
+qlcnic_release_tx_buffers
+i915_ggtt_driver_late_release
+cx231xx_uninit_bulk
+rockchip_pcie_deinit_phys
+ath10k_modem_deinit
+qlge_release_adapter_resources
+xfs_dir2_data_freeinsert  #误报
+free_cpumasks
+ipw_queue_tx_free_tfd
+hns_ppe_uninit
+bcm_vk_hb_deinit
+hpfs_check_free_dnodes   #误报
+free_vgpu_gm
+usb_free_streams
+venus_firmware_deinit
+ocelot_fdma_deinit
+qedf_free_fcoe_pf_param
+handsfree_ramp   #误报
+ocelot_fdma_netdev_deinit
+batadv_tt_changes_list_free
+ocelot_deinit_timestamp
+ufshcd_release_scsi_cmd
+hinic_free_intr_coalesce
+free_ringmemory
+hclge_pci_uninit
+free_unused_bufs
+qla_edb_node_free
+bnad_rxq_alloc_uninit
+ssp_dai_setup_or_free
+radeon_ring_free_size
+rtw89_hci_deinit
+iscsit_tpg_release_np
+dpaa2_switch_free_bufs
+free_pcp_prepare   #误报
+ath11k_core_deinit
+ocfs2_release_local_quota_bitmaps
+tls_device_free_resources_tx
+typhoon_num_free_resp   #误报
+ia_free_rx
+free_netvsc_device_rcu
+qede_poll_for_freeing_arfs_filters   #误报
+rpc_task_release_transport
+rtw_core_deinit
+brcmf_pcie_release_resource
+qlcnic_release_rx_buffers
+enic_dev_deinit
+tty_release_checks
+hfi_core_deinit
+rtw89_core_deinit
+bnx2x_free_groups
+release_ipu_resources
+tty_release_redirect
+qbman_release_desc_clear
+img_ir_free_timing_dynamic
+dm_pool_get_free_block_count   #误报
+ice_deinit_pf
+batadv_tt_req_list_free
+arch_ftrace_trampoline_free
+batadv_tt_local_table_free
+hpi_instream_host_buffer_free
+btrfsic_dev_state_free
+vmw_release_device_early
+pci_endpoint_test_release_irq
+rtw89_pci_release_busy_txwd
+netxen_release_rx_buffers
+pnfs_free_bucket_lseg
+t4_ofld_eq_free
+pci_release_of_node
+update_and_free_pages_bulk
+free_bufs
+velocity_free_td_ring
+ocelot_deinit
+__release_metadata_snap
+free_unref_page_prepare
+lirc_bpf_free
+check_free_page
+protection_domain_free
+bnxt_free_port_stats
+qed_ooo_get_free_buffer   #误报
+lpfc_bgs_get_uninit_dif_block  #误报
+vc_deallocate
+free_msix_queue_irqs_uld
+mtk_dynamic_irq_release
+find_free_extent_clustered   #误报
+__blk_mq_unfreeze_queue   #误报
+dsi_display_uninit_dsi
+cw1200_free_event_queue
+release_address_handler
+tcf_block_release
+ia_free_tx
+ceph_encode_dentry_release
+free_compound_page
+find_free_extent_unclustered  #误报
+line6_buffer_release
+bond_alb_deinit_slave
+cfg80211_free_nan_func
+mlx5e_free_rx_wqe
+page_reporting_notify_free
+lan743x_gpio_release
+ocfs2_local_alloc_seen_free_bits  #误报
+drm_legacy_agp_release
+rtl_deinit_rfkill
+qbman_swp_release
+coda_free_bitstream_buffer
+geth_fill_freeq   #误报
+lpfc_free_cmd_rsp_buf_per_hdwq
+pci_endpoint_test_free_irq_vectors
+reg_free_request
+cpdma_check_free_tx_desc   #误报
+ci_unfreeze_sclk_mclk_dpm  #误报
+ath10k_fw_deinit
+pcpu_memcg_free_hook
+btrfs_should_fragment_free_space   #误报
+rpc_release_task
+ntfs_mark_rec_free   #误报
+uhci_release_bandwidth
+se_release_vpd_for_dev
+t4_eth_eq_free
+xfs_free_agfl_block
+mhi_deinit_dev_ctxt
+xfs_dir2_data_freefind_verify   #误报
+bnxt_free_rx_skbs
+em28xx_v4l2_media_release
+mwifiex_uninit_sw
+sudmac_free_channel
+__i915_gem_object_release_shmem
+release_manifest_descriptors
+tcp_free_fastopen_req
+rtw89_core_napi_deinit
+rtw_coex_freerun_check   #误报
+rtw_suspend_free_assoc_resource
+xfs_dir2_data_freefind   #误报
+wm8962_free_gpio
+ath11k_fw_stats_vdevs_free
+ggtt_release_guc_top
+sec_release_qp_ctx
+xiic_deinit
+kernel_init_free_pages   #误报
+dsi_pll_uninit
+cifs_fscache_release_inode_cookie
+rtl_deinit_core
+xfs_inode_free_cowblocks
+nix_interface_deinit
+arch_release_task_struct
+mvumi_free_cmds
+hdmi_core_swreset_release
+qede_sync_free_irqs
+mod_freesync_handle_preflip   #误报
+bnxt_free_ring_stats
+brcmf_pcie_release_ringbuffers
+hns_mac_uninit
+iscsit_free_all_ooo_cmdsns
+deinit_hal_dm
+release_last_closed_stateid
+ath11k_fw_stats_bcn_free
+isolate_freepages_block   #误报
+free_cpu_cached_iovas
+ni_660x_release_mite_channel
+xprt_rdma_free_addresses
+xchk_iallocbt_check_cluster_ifree   #误报
+mod_freesync_handle_v_update   #误报
+trace_ext4_mballoc_free
+update_and_free_page
+hclgevf_uninit_rxd_adv_layout
+nvme_mpath_uninit
+skbpoolfree
+brcmf_pcie_release_scratchbuffers
+mlx5_uninit_one
+dwc2_free_bus_bandwidth
+xfs_rmap_free_check_owner
+btrfs_check_data_free_space   #误报
+xfs_inode_free_eofblocks
+iavf_free_queues
+trace_xfs_bmap_free_deferred
+ath10k_fw_stats_pdevs_free
+_ffs_free_dev
+mv88e6xxx_g1_atu_prob_irq_free
+bnx2x_vf_pci_dealloc
+mlx5_fc_pool_free_bulk
+aq_ptp_irq_free
+__load_free_space_cache   #误报
+prealloc_elems_and_freelist
+xfs_reflink_ag_has_free_space  #误报
+rtw_sdio_if1_deinit
+release_user_cpus_ptr
+hash_free_result
+brcmf_sdiod_freezer_count  #误报
+free_tmp_rbuf
+brcmf_fws_hanger_get_free_slot  #误报
+memcg_slab_free_hook
+btrfs_free_extent
+security_inode_free
+__page_cache_release
+dm_cell_visit_release
+ni_release_ao_mite_channel
+ceph_mdsc_release_dir_caps_no_check
+iavf_free_traffic_irqs
+do_free_pages
+rtw_pci_napi_deinit
+mvs_release_task
+atomisp_css_uninit
+nd_mapping_free_labels
+efct_io_pool_io_free
+release_everything
+trace_bcache_btree_node_free
+trace_rpc_clnt_free
+mv88e6xxx_g1_vtu_prob_irq_free
+hci_sock_free_cookie
+rtl2832_sdr_free_stream_bufs
+rtw_usb_if1_deinit
+ath5k_hw_release_tx_queue
+pcs_free_resources
+qtnf_mac_get_free_vif   #误报
+t4_ctrl_eq_free
+s1d13xxxfb_runinit   #误报
+autofs_wait_release
+lpfc_sli4_cq_event_release
+idt_deinit_link
+swap_range_free
+xen_pcibk_config_quirk_release
+ixgbe_release_eeprom_semaphore
+sh_css_sp_uninit_pipeline
+hwrm_cfa_encap_record_free
+rtw89_core_free_sta_pending_ba
+free_block_bdev
+free_single_sgt
+netsec_uninit_pkt_dring
+find_free_space   #误报
+free_sub_pt
+free_reserved_area
+rt2x00queue_free
+unix_release_sock
+btrfs_qgroup_free_data
+dsa_hw_port_list_free
+rcar_drif_release_dmachannels
+sony_release_device_id
+btrfs_free_space_entries   #误报
+ceph_encode_inode_release
+deallocate_doorbell
+icl_display_core_uninit
+efc_register_domain_free_cb
+reset_freesync_config_for_crtc   #误报
+ql_get_from_lrg_buf_free_list   #误报
+xchk_directory_check_freesp    #误报
+irq_release
+wlcore_sysfs_free
+comedi_can_auto_free_spriv    #误报
+brcm_usb_uninit_eohci
+free_task
+intel_ntb_deinit_pci
+sk_msg_check_to_free   #误报
+seccomp_filter_release
+mtk_cqdma_free_inactive_desc
+futex_exit_release
+mvneta_bm_bufs_free
+scs_release
+lpfc_release_scsi_buf_s4
+is_memfree    #误报
+event_free
+bfq_release_process_ref
+get_freepointer_safe   #误报
+wq_free_lockdep
+free_kthread_struct
+hinic_sq_dbgfs_uninit
+dma_release_from_dev_coherent
+btrfs_free_space_bitmaps   #误报
+rtw_os_xmit_resource_free
+btrfs_release_extent_buffer
+ast_vhub_count_free_descs
+ocfs2_mark_lockres_freeing
+mlx5_esw_dl_port_free
+bcm4908_enet_dma_uninit
+mlx5_fc_bulk_get_free_fcs_amount   #误报
+geth_freeq_alloc_map_page   #误报
+deallocate_hqd
+mt76_token_release
+fuse_sync_release
+mt7601u_mcu_cmd_deinit
+ice_free_prof_map
+qlge_free_lbq_buffers
+sprd_pcm_release_dma_channel
+free_tree_refs
+sst_memcpy_free_resources
+free_tgts
+nfs_readpage_release
+saa7164_encoder_buffers_dealloc
+mm_release
+fore200e_uninit_bs_queue
+qla2x00_free_device
+isolate_freepages_range   #误报
+azx_release_device
+release_pebs_buffer
+ccdc_lsc_free_queue
+brcm_usb_uninit_xhci
+phantom_get_free    #误报
+nilfs_dat_commit_free
+ddb_ports_release
+mlx5_mdev_uninit
+sa_free_sa_rx_data
+mb_free_blocks_double   #误报
+free_completed_exception
+usb_free_stream_buffers
+esw_offloads_metadata_uninit
+free_states
+free_swap_cache
+free_oa_buffer
+rtw_hal_dm_deinit
+futex_exec_release
+atomisp_msi_irq_uninit
+blk_mq_release
+ath9k_deinit_channel_context
+mlx5e_free_xdpsq_desc
+free_module_param_attrs
+hackrf_free_stream_bufs
+dbc_ring_free
+iwl_pcie_free_dma_ptr
+ena_free_all_tx_bufs
+kvm_irqfd_release
+brcm_usb_uninit_common
+rt2x00lib_uninitialize
+hwrm_cfa_decap_filter_free
+bnxt_hwrm_stat_ctx_free
+idr_get_free    #误报
+atomisp_acc_release
+airspy_free_stream_bufs
+bnxt_hwrm_free_tunnel_ports
+release_bts_buffer
+hisi_qm_pci_uninit
+ice_free_prof_masks
+niu_free_channels
+bnxt_hwrm_ring_grp_free
+free_request_key_auth
+__sym_mfree
+aq_ptp_ring_deinit
+free_dma_bufs
+vfio_dma_bitmap_free
+rpc_task_release_client
+hclgevf_uninit_mac_list
+nvme_wait_freeze   #误报
+ni_release_ai_mite_channel
+trace_xfs_ag_resv_free_extent
+build_detached_freelist   #误报
+trace_rpc_clnt_release
+dapm_free_widgets
+release_thread
+hclgevf_misc_irq_uninit
+kasan_get_free_meta   #误报
+ocelot_fdma_free_tx_ring
+nfs_release_request
+ia_css_rmgr_refcount_release_vbuf
+qxl_alloc_surface_release_reserved
+cfg80211_cqm_config_free
+switchtec_ntb_deinit_crosslink
+xenhcd_add_id_to_freelist    #误报
+otx2_cptlf_free_irqs_affinity
+mcba_usb_get_free_ctx    #误报
+mtk_hsdma_free_inactive_desc
+igc_release_hw_control
+trace_vector_free_moved
+free_receive_bufs
+rtw_hal_free_xmit_priv
+locks_release_private
+wacom_release_resources
+bnx2_free_rx_skbs
+iio_device_free
+ena_free_all_rx_bufs
+acpi_gpiochip_free_interrupts
+free_blocked_lock
+iwl_mvm_release_frames_from_notif
+ice_deinit_hw
+__unfreeze_partials   #误报
+trace_xprt_release_xprt
+qed_rdma_free_reserved_lkey
+mv88e6xxx_g1_irq_free_common
+cxgb4_get_free_ftid
+hclgevf_uninit_msi
+hinic_dbg_uninit
+device_free_tx_buf
+mlx5e_tx_wi_kfree_fifo_skbs
+iwl_dbg_tlv_fragments_free
+deallocate_vmid
+nvme_tcp_free_async_req
+mlx4_en_uc_steer_release
+free_pipe_config
+btrfs_free_dev_extent
+btrfs_release_extent_buffer_pages
+bch_open_buckets_free
+nvme_dbbuf_dma_free
+release_all_pagetables
+try_to_free_pages
+rbd_dev_image_release
+get_pending_free   #误报
+set_freeobj        #误报
+__mlx4_mpt_release
+hinic_rq_dbgfs_uninit
+ad7879_ts_event_release
+nfsd_netns_free_versions
+rtsx_release_chip
+drm_legacy_ioremapfree
+get_free_tei     #误报
+rtl8xxxu_free_tx_resources
+ttm_bo_wait_free_node
+sched_release_group
+trace_xprt_release_cong
+tmio_mmc_release_dma
+ipw_tx_queue_free
+venus_helper_release_buf_ref
+jack_free_gpios
+fanotify_free_name_event
+batadv_dat_hash_free
+trace_xfs_ag_resv_free_error
+free_gcr3_table
+free_init_pages
+null_free_zoned_dev
+ath9k_deinit_device
+intel_vgpu_free_resource
+go7007_usb_release
+ioam6_sc_release
+i915_gem_freeze_late   #误报
+release_reference_state
+free_tail_pages_check
+tcmu_cmd_free_data
+rt2x00usb_uninitialize
+pnfs_generic_ds_cinfo_release_lseg
+free_page_and_swap_cache
+free_debug_processing
+switchtec_ntb_deinit_db_msg_irq
+ice_sriov_free_msix_res
+i915_gem_freeze   #误报
+is_page_cache_freeable   #误报
+iavf_unmap_and_free_tx_resource
+vmci_transport_release_pending
+pcmcia_release_configuration
+amdgpu_vm_free_mapping
+mvpp2_prs_double_vlan_ai_free_get  #误报
+binder_selftest_free_page
+fanotify_free_perm_event
+mlx4_free_resource_tracker
+ep93xx_free_buffers
+smc_wr_tx_get_free_slot_index   #误报
+fanotify_free_path_event
+dm_cell_release_no_holder
+rc_free_rx_device
+acm_write_buffers_free
+vchiq_release_internal
+trace_find_free_extent    #误报
+core_scsi3_free_all_registrations
+__blk_mq_free_request
+drm_legacy_lock_release
+intel_context_free
+__vsock_release
+rtl8xxxu_free_rx_resources
+intel_context_active_release
+mlx4_mr_free_reserved
+btrfs_space_info_free_bytes_may_use   #误报
+qed_get_igu_free_sb    #误报
+gve_free_stats_report
+dvb_frontend_invoke_release
+xfrm_dev_state_free
+ipw_deinit
+security_xfrm_state_free
+qed_qm_info_free
+mwifiex_pcie_free_buffers
+release_usb_id_switch_open
+unfreeze_partials_cpu   #误报
+fanotify_free_fid_event
+r8712_xmit_resource_free
+ahd_handle_pkt_busfree  #误报
+btrfs_run_delayed_iputs
+btrfs_put_block_group_cache
+btrfs_wait_on_delayed_iputs    #误报
+g2d_put_cmdlist
+skl_tplg_d0i3_put
+core_alua_put_tg_pt_gp_from_name
+coalesce_put_bool  #误报
+scrub_put_recover
+nl80211_put_iftype_akm_suites  #误报
+put_empty_packet   #误报
+rtnl_put_cacheinfo #误报
+mt2032_compute_freq  #误报
+qat_hal_put_rel_nn   #误报
+nl802154_put_capabilities  #误报
+mpt3sas_base_put_smid_nvme_encap  #误报
+skl_put_pvt_id
+vdec_pm_put
+dram_addr_to_input_addr   #误报
+team_nl_team_put
+vlv_cck_put
+nl802154_put_flags   #误报
+nl80211_put_iftypes  #误报
+coalesce_put_u32     #误报
+topstar_input_notify #误报
+vma_compute_subtree_gap  #误报
+usbatm_put_instance
+hpsa_put_ctlr_into_performant_mode  #误报
+fpga_bridges_put
+acpi_pcc_generate_keyinput   #误报
+vpif_input_to_subdev   #误报
+octeon_droq_compute_max_packet_bufs  #误报
+sys_addr_to_input_addr  #误报
+venc_pm_put
+mute_input_7133  #误报
+mute_input_7134  #误报
+put_firmware
+usif_notify_put
+raid5_compute_blocknr  #误报
+xfs_agbtree_compute_maxlevels  #误报
+crypto_kpp_compute_shared_secret  #误报
+ufs_debugfs_put_user_access
+hda_get_autocfg_input_label  #误报
+put_dquot_list
+eeepc_input_notify   #误报
+rtnetlink_put_metrics #误报
+ext4_put_io_end_defer
+letsketch_alloc_input_dev  #误报
+atomisp_file_input_cleanup  #误报
+venus_helper_set_output_resolution  #误报
+erofs_put_metabuf
+pcips2_flush_input  #误报
+wb_put_many
+uinput_ff_upload_from_user   #误报
+venus_helper_set_input_resolution  #误报
+scrub_workers_put
+rndis_put_nr
+hidpp10_extra_mouse_buttons_populate_input  #误报
+bnxt_ulp_put
+svga_compute_pll  #误报
+put_deleg_file
+s5k6aa_set_output_framefmt  #误报
+put_map   #超过10次调用
+kvm_put_guest_fpu
+nfulnl_put_bridge  #误报
+i915_error_puts   #误报
+usb_put_invalidate_rhdev
+ufs_put_device_desc
+hidpp10_wheel_populate_input  #误报
+bna_rxp_put
+mpt_put_msg_frame_hi_pri   #误报
+world_obj_put
+kcov_remote_area_put
+nl80211_put_iface_combinations  #误报
+fm10k_tlv_attr_put_bool   #误报
+apf_put_user_notpresent   #误报
+vdec_output_conf   #误报
+put_cacheinfo   #误报
+put_driver_name_print_type   #误报
+xgpu_ai_mailbox_put_irq
+hidinput_locate_usage  #误报
+xfs_dir2_sf_put_ftype  #误报
+fpga_mgr_put
+devlink_nl_region_snapshots_id_put   #误报
+vou_adjust_input   #误报
+bna_rxq_put
+devlink_nl_region_snapshot_id_put   #误报
+lpfc_mbox_put
+drm_fb_helper_output_poll_changed   #误报
+hl_fences_put
+scarlett2_notify_input_other   #误报
+xfs_alloc_compute_maxlevels    #误报
+aureon_cs8415_put
+devlink_dpipe_action_values_put  #误报
+__lpfc_mbox_cmpl_put
+hda_get_input_pin_label
+dqput_all
+fm10k_tlv_attr_put_le_struct   #误报
+objagg_obj_put
+devlink_dpipe_action_put   #误报
+xfrm_smark_put   #误报
+pvr2_channel_limit_inputs  #误报
+ideapad_input_novokey  #误报
+active_request_put
+__omap3isp_put
+devlink_dpipe_match_put   #误报
+net_dm_hw_entries_put    #误报
+xfs_filestream_put_ag
+wtp_populate_input   #误报
+kvm_put_kvm_no_destroy
+nla_put_nh_group   #误报
+adv7842_g_input_status  #误报
+put_itimerspec64   #误报
+kvm_compute_l1_tsc_offset  #误报
+put_old_itimerspec32   #误报
+ima_putc   #误报
+kdb_putword   #误报
+wacom_led_putimage  #误报
+apf_put_user_ready   #误报
+stm32_pwm_apply_breakinputs  #误报
+xfs_refcountbt_compute_maxlevels  #误报
+sched_core_put_cookie
+devlink_dpipe_match_values_put  #误报
+efi_puts   #误报
+v9fs_put_acl
+cros_ec_keyb_compute_valid_keys  #误报
+ice_vsi_put_qs
+xsk_diag_put_umem   #误报
+mpol_put_task_policy
+nla_put_ssci   #误报
+nl80211_put_mbssid_support    #误报
+iio_buffer_block_put_atomic
+omap4iss_put
+drm_privacy_screen_put
+closure_put_after_sub
+lpfc_mbox_cmpl_put   #误报
+create_input_ctls  #误报
+compute_unpacked_bytes  #误报
+input_event_with_scancode  #误报
+asus_input_notify  #误报
+uvc_v4l2_put_xu_query   #误报
+nfnl_hook_put_nft_chain_info  #误报
+xsk_diag_put_ring   #误报
+devlink_dpipe_fields_put   #误报
+fastrpc_channel_ctx_put
+set_output_and_unmute  #误报
+inet_csk_reqsk_queue_drop_and_put
+put_kctl_with_value
+tx_policy_put
+batadv_dat_put_dhcp   #误报
+komeda_component_verify_inputs  #误报
+cifsFileInfo_put    #超过10次调用
+qtnf_cmd_skb_put_tlv_arr  #误报
+add_auto_cfg_input_pin  #误报
+devlink_resource_size_params_put   #误报
+devlink_trap_metadata_put   #误报
+xfs_rmapbt_compute_maxlevels  #误报
+seq_buf_putmem   #误报
+put_ifaddrmsg   #误报
+svc_pool_map_put
+core_alua_put_lu_gp_from_name
+cfsrvl_put
+__ip_vs_route_output_v6  #误报
+acpiphp_put_context
+put_system
+ufs_put_cylinder
+hidinput_query_battery_capacity  #误报
+put_comm
+net_dm_hw_entry_put   #误报
+input_alloc_absinfo   #误报
+camif_clk_put
+ip6addrlbl_putmsg   #误报
+put_obj
+atomisp_file_input_init   #误报
+pattern_trig_compute_brightness  #误报
+rnbd_put_permit
+fm10k_tlv_attr_put_null_string  #误报
+ctrl_dumppolicy_put_op   #误报
+l2t_put
+dmz_put_zoned_device
+b43_phy_put_into_reset  #误报
+inet_put_port
+xsk_diag_put_info   #误报
+input_ff_upload  #误报
+audit_mark_put_chunk
+vc_uniscr_putc  #误报
+uinput_fetch_next_event  #误报
+__intel_display_power_put_domain  
+__vlan_tun_put  #误报
+uinput_ff_upload_to_user  #误报
+xfs_bmap_compute_maxlevels  #误报
+fm10k_tlv_attr_put_mac_vlan   #误报
+ideapad_input_exit    #误报
+sk_msg_compute_data_pointers  #误报
+perf_swevent_put_recursion_context
+gfx_v7_0_compute_ring_init  #误报
+gfx_v9_0_compute_ring_init  #误报
+devlink_resource_occ_put  #误报
+stp_policy_node_put
+xsk_diag_put_rings_cfg   #误报
+ipq_put
+fill_input_pin_labels   #误报
+mt76_put_txwi
+mei_txe_input_payload_write  #误报
+midi_input_escaped_byte   #误报
+wcd_mbhc_compute_impedance  #误报
+mptcp_event_put_token_and_ssk  #误报
+fuse_conn_put
+hidpp_allocate_input  #误报
+nwl_dsi_deselect_input  #误报
+nsh_key_put_from_nlattr  #误报
+cs_job_put
+ulp_put
+omap3isp_put
+nl80211_put_sar_specs   #误报
+gfx_v8_0_compute_ring_init  #误报
+parse_output_paths  #误报
+nl80211_put_tid_config_support  #误报
+csio_put_rnode
+blk_mq_put_dispatch_budget
+devlink_dpipe_matches_put  #误报
+ib_unregister_device_and_put
+alc269vb_toggle_power_output  #误报
+mlxsw_sp_acl_tcam_region_id_put
+ceph_put_fmode
+dn_route_output_sock  #误报
+bna_rx_put
+qla84xx_put_chip
+elevator_put
+aac_put_safw_scsi_device
+add_output_ctls   #误报
+vsc8584_is_1588_input_clk_configured  #误报
+intel_engine_pm_put_async
+cyttsp4_si_put_log_data   #误报
+devlink_dpipe_value_put   #误报
+test_nodelta_obj_put
+__keyctl_dh_compute  #误报
+pcspkr_input_init   #误报
+hfs_mdb_put
+sony_allocate_output_report  #误报
+devlink_nl_port_function_attrs_put  #误报
+etnaviv_submit_put
+occ_putsram   #误报
+v9fs_put_trans
+svc_put
+rv6xx_compute_count_for_delay  #误报
+pause_put_stats   #误报
+output_userspace  #误报
+rxrpc_put_bundle
+esw_qos_put
+ipu_prg_put_pre
+put_posix_clock
+ovs_nla_put_identifier  #误报
+prestera_acl_ruleset_put
+nl80211_put_signal  #误报
+bkey_put
+igc_put_hw_semaphore
+ip_set_put_byindex
+parse_audio_input_terminal  #误报
+put_ta_refcount
+z_erofs_put_shortlivedpage
+rmi_f54_create_input_map   #误报
+rocker_tlv_put_u64   #误报
+audit_put_parent
+stac9460_2_put
+rbd_dev_parent_put
+hidinput_field_in_collection  #误报
+kcov_put
+x25_route_put
+huawei_wmi_input_exit  #误报
+put_write_access
+__xfs_xattr_put_listent  #误报
+mux_put
+dlci_put
+ufshcd_rpm_put
+ak4xxx_capture_num_inputs #误报
+usbhsp_put_pipe
+i915_vma_put_pages
+tda7419_vol_put_value  #误报
+scsi_put_cdrom_generic_arg  #误报
+sii8620_init_rcp_input_dev  #误报
+sock_diag_put_meminfo  #误报
+nfsd_file_put_noref
+gfx_v10_0_compute_ring_init  #误报
+config_group_put
+drm_gem_object_handle_put_unlocked
+ath10k_wmi_tlv_put_host_mem_chunks  #误报
+arndale_put_of_nodes
+max127_read_input  #误报
+ethnl_put_strz   #误报
+pvr2_context_reset_input_limits  #误报
+pnfs_put_commit_array
+drm_gem_vram_put
+update_output_state #误报
+ilk_compute_pri_wm  #误报
+iwl_mvm_ftm_put_target_v2  #误报
+nl80211_msg_put_channel  #误报
+cffrml_put
+aca_put
+xfs_dir2_sf_put_ino   #误报
+snd_hdsp_midi_output_possible  #误报
+drm_put_dev
+devlink_dpipe_action_value_put  #误报
+mt7615_tx_token_put
+hvfb_putmem
+e1000_put_hw_semaphore_82574
+mlx5e_put_flow_tunnel_id
+compute_syndrome  #误报
+e1000_put_hw_semaphore_82573
+__xprt_put_cong   #误报
+devlink_fmsg_put_name  #误报
+beiscsi_hdl_put_handle
+vchiq_put_completion  #误报
+lt8912_put_dt
+g4x_compute_wm  #误报
+new_analog_input  #误报
+__ip_set_put_byindex
+xpad360w_start_input  #误报
+e1000e_put_hw_semaphore
+lg_dinovo_input_mapping  #误报
+nvmet_subsys_put
+comedi_buf_map_put
+trace_event_put_ref
+pcmcia_put_dev
+joycon_input_create  #误报
+ene_rx_enable_fan_input  #误报
+dvb_ca_private_put
+seq_buf_putmem_hex  #误报
+ilk_compute_spr_wm   #误报
+hidinput_find_field   #误报
+sony_laptop_setup_input #误报
+dn_fib_res_put
+coda_jpeg_put_word   #误报
+mt76_seq_puts_array  #误报
+snd_hdspm_midi_output_possible  #误报
+__async_put_domains_state_ok  #误报
+select_input  #误报
+hidinput_calc_abs_res  #误报
+iommu_put_resv_regions
+snd_rawmidi_output_status  #误报
+intel_runtime_pm_put_raw
+xhci_setup_input_ctx_for_config_ep  #误报
+scrub_put_ctx
+ilk_compute_fbc_wm  #误报
+fw_domains_put
+bttv_input_init  #误报
+u132_ring_put_kref
+dsa_tag_driver_put
+mmput_async
+uinput_validate_absbits  #误报
+ideapad_input_report #误报
+pulse_put
+surface3_spi_create_touch_input #误报
+cm36651_read_output #误报
+percpu_ref_put_many
+is_hp_output #误报
+ip_map_cached_put
+hdspm_compute_period_size #误报
+to_fw_output_mode #误报 
+meson_i2c_put_data #误报
+asus_wmi_input_exit #误报
+smcr_link_put
+rcar_fcp_put
+mei_txe_input_ready_interrupt_enable  #误报
+mvpp2_bm_pool_put
+LZ4_putPositionOnHash #误报
+ilk_compute_cur_wm  #误报
+linereq_put_event  #误报
+key_type_put
+liteuart_putchar  #误报
+seq_put_hex_ll  #误报
+bfqg_put
+nla_put_le32  #误报
+hidinput_setup_battery  #误报
+blk_crypto_put_keyslot
+gth_output_get  #误报
+xbox_remote_input_report  #误报
+seq_put_decimal_ll  #误报
+lpfc_sli_ringpostbuf_put
+mptcp_put_subflow_data  #误报
+devlink_dpipe_match_value_put  #误报
+fscache_put_volume
+prestera_fw_put
+dfl_fpga_port_ops_put
+area_cache_put
+ceph_put_cap_snap
+scrub_parity_put
+sony_laptop_report_input_event  #误报
+bfq_put_cooperator
+vsc8584_set_input_clk_configured #误报
+gfx_v9_0_ring_get_rptr_compute #误报
+mlx5_eswitch_termtbl_put
+nvif_vmm_put
+__put_single_page
+amdgpu_vf_error_put  #误报
+cachefiles_put_object
+xhci_setup_streams_ep_input_ctx  #误报
+qat_hal_put_rel_rd_xfer  #误报
+gntdev_put_pages
+put_ndd
+ovs_ct_put_key  #误报
+usbhsc_clk_put
+tty_put_char  #误报
+iwl_mvm_ftm_put_target_v4  #误报
+nlmsg_put_answer  #误报
+dlm_put_mle
+perf_output_put_handle
+snd_seq_output_ok   #误报
+squashfs_cache_put
+init_input_src  #误报
+hw_adc_input_select  #误报
+gb_pm_runtime_put_noidle
+input_fujitsu_setup  #误报
+nla_put_via  #误报
+mptcp_put_int_option  #误报
+__nf_ct_timeout_put
+ext4_mb_put_pa
+rpcb_put_local
+tap_put_tap_dev
+put_pwq
+hpre_stop_qp_and_put
+mt_touch_input_mapping  #误报
+rv6xx_output_stepping  #误报
+nvme_fc_lport_put
+qat_hal_put_rel_wr_xfer  #误报
+hdsp_set_spdif_input  #误报
+input_mt_drop_unused
+clear_posix_cputimers_work  #误报
+surface3_spi_create_pen_input  #误报
+octeon_setup_output_queues  #误报
+snd_rawmidi_input_status  #误报
+folio_put_refs
+gsmld_output  #误报
+input_ff_effect_from_user  #误报
+afs_put_vlserver
+cachefiles_put_directory
+m560_input_mapping  #误报
+call_update_outputs  #误报
+nf_reject_iphdr_put  #误报
+ti_sn_bridge_gpio_direction_input  #误报
+nr_node_put
+kfd_dec_compute_active  #误报
+e1000_put_hw_semaphore_82571
+cxusb_medion_put
+ap_put
+put_empty_recvmsg
+tipc_bearer_put
+bt3c_put  #误报
+__configure_preview_pp_input  #误报
+put_client_renew
+bu21029_put_chip_in_reset  #误报
+esw_put_dest_tables_loop
+put_user_ifreq   #误报
+blkdev_put_whole
+nla_put_le64  #误报
+mt76_token_put
+xfs_dir2_sf_put_offset   #误报
+init_analog_input  #误报
+scsi_tape_put
+put_page_bootmem
+p8_i2c_occ_putscom  #误报
+vblank_put
+adp5061_set_input_current_limit #误报
+atm_tc_put
+ideapad_input_init  #误报
+devm_gpiod_put_array
+bq24257_set_input_current_limit  #误报
+devlink_fmsg_binary_put  #误报
+put_unbound_pool
+blkdev_put_part
+tty_ldisc_put
+skb_put_le32  #误报
+ath10k_wmi_put_host_mem_chunks  #误报
+virtinput_send_status  #误报
+aq_ptp_skb_put
+audit_put_chunk
+nla_put_msecs  #误报
+scsifront_put_rqid
+tcp_diag_put_md5sig  #误报
+virtio_gpu_resource_id_put
+hdspm_tco_input_check  #误报
+wtp_input_mapping  #误报
+muxnet_put
+fore200e_monitor_puts  #误报
+ip6_route_input_lookup  #误报
+dn_phase3_output  #误报
+put_ldops
+mlx5_put_label_mapping
+nl80211_put_regdom  #误报
+vbg_put_gdev
+msm_gem_submit_put
+mlxsw_sp_router_ul_rif_put
+snd_seq_oss_readq_put_event  #误报
+csk_put
+nf_reject_ip_tcphdr_put  #误报
+b43_put_attenuation_into_ranges  #误报
+acct_put
+vx2_set_input_level  #误报
+blk_mq_put_driver_tag
+lpfc_vmid_put_cs_ctl
+meson_codec_glue_input_hw_params  #误报
+adf_put_admin_msg_sync   #误报
+__configure_capture_pp_input  #误报
+bttv_input_fini  #误报
+virtinput_queue_evtbuf  #误报
+skb_pool_put
+ipu_csi_put
+dev_pm_put_subsys_data
+nfc_llcp_put_ssap
+ax25_output  #误报
+ath_compute_num_delims  #误报
+ovs_nla_put_masked_key  #误报
+ath9k_hw_puttxbuf  #误报
+ipack_put_device
+lcb_put
+nv10_bo_put_tile_region
+put_rxbuf_data_and_resubmit_bulk_urb  #误报
+nfp_fl_lag_put_unprocessed   #误报
+nvme_put_ns_head
+xpad_stop_input
+devlink_dpipe_actions_put  #误报
+bit_reverse_mpeg_output  #误报
+landlock_put_ruleset
+iaputword  #误报
+dlm_lowcomms_put_msg
+cx24120_msg_mpeg_output_global_config  #误报
+hidinput_find_key  #误报
+ma_put
+ops_run_compute6_2  #误报
+bond_compute_features  #误报
+ops_run_compute6_1   #误报
+iwl_mvm_ftm_put_target_v3  #误报
+avic_vcpu_put
+bnx2i_put_rq_buf  #误报
+ppp_channel_bridge_input  #误报
+intel_sdvo_output_cleanup  #误报
+put_workspace
+xfs_extent_busy_put_pag
+put_pipe_version
+tw5864_h264_put_slice_header  #误报
+__put_fd_final
+do_output_route4  #误报
+hugepage_subpool_put_pages
+au0828_s_input  #误报
+bsg_job_put
+txq_put_hdr_tso   #误报
+ipv6_flowlabel_put
+devlink_trap_group_stats_put   #误报
+hsi_put_controller
+svc_put_not_last
+put_ep   #超过10次调用
+wpan_phy_put
+hid_output_field   #误报
+phy_pm_runtime_put
+cifs_put_tcp_super
+xvtc_put
+rtl8192se_gpiobit3_cfg_inputmode   #误报
+alc_register_micmute_input_device  #误报
+tfilter_put
+multi_lrc_context_put
+put_packet   #误报
+LZ4_putPosition  #误报
+tx_ft_put
+ican3_put_echo_skb   #误报
+_sync_pll_output   #误报
+fsnotify_put_group
+pskb_put   #误报
+tipc_sub_put
+put_compat_flock64  #误报
+mt_touch_input_configured  #误报
+mxt_free_input_device  #误报
+devlink_reload_stat_put   #误报
+sony_init_output_report  #误报
+idtcm_sync_pps_output   #误报
+diolan_i2c_put_byte_ack  #误报
+nla_put_sci   #误报
+nla_put_labels  #误报
+disable_input   #误报
+ip_set_put_comment
+mei_txe_is_input_ready  #误报
+snprintf_output_types  #误报
+nfsd4_put_drc_mem
+cxgbit_put_csk
+ati_remote_input_report  #误报
+idxd_wq_put
+hdsp_input_to_output_key  #误报
+nfqnl_put_bridge   #误报
+pvr2_hdw_get_input_available  #误报
+skl_dsp_put_core
+init_output  #误报
+put_tree
+input_key  #误报
+__gfs2_glock_put
+esp6_output_udp_encap  #误报
+ctrl_set_cfg_mpeg_output  #误报
+atmel_sha_hmac_compute_ipad_hash  #误报
+a3dsrc_SetHrtfOutput  #误报
+devlink_fmsg_u8_put  #误报
+v3d_job_put
+vctrl_calc_output_voltage  #误报
+tda18271_toggle_output  #未能
+devlink_resource_put   #误报
+v4l2_fwnode_put_link
+mt7915_tx_token_put
+devlink_fmsg_bool_put  #误报
+clk_bulk_put_all
+compute_max_vf_buses  #误报
+pinctrl_put
+gspca_input_destroy_urb
+input_get_keycode  #误报
+nla_put_secy  #误报
+mkiss_put
+u132_endp_put_kref
+putShortMSB  #误报
+devlink_fmsg_u64_put  #误报
+put_bcc   #误报
+asus_input_exit  #误报
+perf_output_copy_aux  #误报
+ip6_compute_pseudo  #误报
+rxrpc_put_call_slot
+vsp1_device_put
+niu_put_parent
+put_parallel
+rpm_put_suppliers
+ip_set_put_skbinfo  #误报
+get_input_jack_type  #误报
+hsw_compute_linetime_wm  #误报
+lg4ff_adjust_input_event  #误报
+beiscsi_put_wrb_handle
+esw_vport_tbl_put
+put_old_timex32  #误报
+uinput_request_send  #误报
+devmap_managed_enable_put
+nla_put_s64   #误报
+atomisp_css_input_configure_port  #误报
+iputword  #误报
+rpm_put
+madera_init_outputs  #误报
+i915_active_put
+devlink_reload_stats_put  #误报
+esp_output_udp_encap  #误报
+saa7127_set_output_type  #误报
+dm_put_live_table_fast
+skl_put_module
+dn_route_output_key  #误报
+mantis_input_exit  #误报
+hidinput_cleanup_hidinput
+restore_output  #误报
+put_scom  #误报
+cx231xx_set_decoder_video_input  #误报
+lpfc_sli_ringtxcmpl_put  #误报
+snd_hdsp_midi_input_available  #误报
+nl80211_put_sta_rate  #误报
+sem_lock_and_putref
+compute_hozval  #误报
+nbpf_desc_put
+snd_hdspm_midi_input_available  #误报
+sdio_uart_port_put
+mana_hwc_put_msg_index
+tw5864_h264_put_stream_header  #误报
+eeepc_input_exit  #误报
+folio_put_wait_locked
+__skb_put_padto  #误报
+__sysrq_put_key_op  #误报
+ssam_cdev_put
+ppgtt_put_spt
+batadv_orig_node_vlan_put
+bfa_flash_sem_put  #误报
+trace_parser_put
+hinic_sq_put_wqe
+caifd_put
+gfx_v9_0_cp_compute_enable  #误报
+xfer_put
+nvkm_mmu_ptc_put
+xfs_blkdev_put
+ath9k_hw_putrxbuf  #误报
+panfrost_job_put
+mlxfw_mfa2_file_component_put
+mb_cache_entry_put
+ata_host_put
+cpu_rmap_put
+imgu_css_pool_put
+dmabuf_obj_put
+sdtx_device_put
+v3d_perfmon_put
+msm_gpu_crashstate_put
+pdc_desc_put
+dsa_tree_put
+dwc_desc_put
+mlx5e_hairpin_put
+nvmet_fc_tgt_q_put
+axi_desc_put
+batadv_tvlv_handler_put
+prestera_span_put
+nfp_bar_put
+iio_buffer_block_put
+ep93xx_dma_desc_put
+iscsit_put_transport
+td_desc_put
+can_put_proto
+dpcm_path_put
+dec_rlimit_put_ucounts
+inet_putpeer
+mlx5_chains_put_chain_mapping
+objagg_hints_put
+virtio_transport_put_credit
+radeon_i2c_put_byte  #误报
+amdgpu_i2c_put_byte  #误报
+had_substream_put
+skl_compute_wm_params  #误报
+scsi_autopm_put_target
+dax_region_put
+mlx5e_decap_put
+nvme_put_subsystem
+team_mode_put
+o2net_handler_put
+rxrpc_put_peer
+bpf_trampoline_module_put
+msu_buffer_put
+ssam_device_put
+snd_msndmidi_input_drop #误报
+__vb2_buf_dmabuf_put
+spmi_device_put
+rpi_firmware_put
+capiminor_put
+serdev_device_put
+msm_dss_put_clk
+komeda_put_fourcc_list
+zpool_put_driver
+ip_vs_conn_del_put
+zswap_pool_put
+fpga_region_put
+ufshpb_put_map_ctx
+amdgpu_ctx_put
+__mlx5_tc_ct_entry_put
+acpi_tb_put_table
+daio_mgr_put_rsc
+netconsole_target_put
+qedi_put_rq_bdq_buf  #误报
+i40e_put_lump
+ufshpb_put_req
+dm_put_path_selector
+rx_ft_put
+hw_sob_put
+mtk_thermal_put_bank
+teedev_ctx_put
+lima_ctx_put
+ipack_put_carrier
+atmel_put_base_addr
+dict_put   #误报
+nvkm_vmm_ptes_unmap_put
+ksmbd_inode_put
+rbd_put_client
+gss_mech_put
+mlx5e_route_lookup_ipv6_put
+typec_mux_put
+qdisc_put_rtab
+qm_put_pci_res
+mlx5e_route_lookup_ipv4_put
+put_vudc_device
+xgpu_vi_mailbox_put_irq
+rpcauth_put_authops
+cifs_put_writer
+fcloop_nport_put
+dp_aux_put
+nfsd4_put_session
+tomoyo_put_condition
+smc_ism_put_vlan
+evtchn_put
+__put_scom  #误报
+compute_duty_cycle  #误报
+rds_trans_put
+hdlcdrv_hbuf_put  #误报
+unit_put
+sbitmap_put
+p8_i2c_occ_putscom_be  #误报
+phonet_proto_put
+nfs4_file_put_access
+fcloop_tfcp_req_put
+atomisp_file_input_unregister_entities
+charlcd_puts  #误报
+afs_put_volume
+kcopyd_put_pages
+fore200e_monitor_putc  #误报
+prestera_bridge_vlan_put
+__nfp_flower_non_repr_priv_put
+zcomp_stream_put
+macsec_rxsc_put
+macsec_txsa_put
+fwtty_port_put
+rnbd_put_srv_dev
+amp_ctrl_put
+mvneta_xdp_put_buff  #误报
+s5pcsis_clk_put
+pv_eoi_put_user  #误报
+__rpm_put_suppliers
+dp83640_clock_put
+put_policy
+snd_hda_codec_pcm_put
+exynos_drm_gem_put
+xt_rateest_put
+vc4_perfmon_put
+htab_put_fd_value
+fxas21002c_pm_put
+stm_put_protocol
+rnbd_put_sess_dev
+tb_domain_put
+mii_putbit   #误报
+input_ff_destroy
+compute_m_n   #误报
+hidinput_disconnect
+mhi_device_put
+put_type
+ptp_put
+xlog_put_buffer_cancelled
+mlxsw_sp_nexthop6_group_put
+smc_lgr_put
+rdma_lag_put_ah_roce_slave
+sky2_put_idx  #误报
+mpi3mr_fwevt_put
+put_desc
+prestera_flow_block_put
+led_put
+netvsc_devinfo_put
+vlv_compute_wm_level  #误报
+dev_pm_opp_put_regulators
+siox_master_put
+dp_panel_put
+ufs_put_locked_page
+pool_put_pulse_elem
+put_clock_desc
+sps30_serial_put_byte  #误报
+sctp_datamsg_put
+put_eilvt
+mlxsw_sp_bridge_vlan_put
+mvpp2_txq_inc_put
+put_recursion_context
+prestera_counter_block_put
+fw_device_put
+ath10k_wmi_put_start_scan_tlvs  #误报
+hinic_rq_put_wqe
+send_message_put_nacked   #误报
+acp_dsp_stream_put
+put_tree_ref
+mlxsw_sp_nve_mc_list_put
+bcmgenet_put_txcb
+txq_put_data_tso  #误报
+afs_put_server
+__put_system
+wacom_allocate_input  #误报
+batadv_nc_path_put
+queue_async_put_domains_work
+s3c24xx_dma_put_phy
+ath_dynack_compute_ackto  #误报
+put_callchain_entry
+scsi_mq_put_budget
+cnic_put
+qat_hal_put_wakeup_event  #误报
+batadv_tt_req_node_put
+scmi_put_handler
+ocfs2_refcount_tree_put
+__scmi_xfer_put
+vhost_put_used_flags  #误报
+put_space
+afs_put_serverlist
+qrtr_port_put
+put_nsproxy
+snd_gf1_uart_put  #误报
+enetc_put_rx_buff
+key_user_put
+sampler_put
+dm_put_table_device
+maven_compute_deflicker  #误报
+mlxsw_sp_nexthop4_group_put
+nvmet_ctrl_put
+nfs4_fl_put_deviceid
+sgx_encl_put_backing
+mts64_map_midi_input  #误报
+ocfs2_dentry_lock_put
+raw_put_scom  #误报
+destroy_input_system_channel
+svm_migrate_put_vram_page
+stm_put_device
+mlx5_esw_indir_table_put
+mlxsw_sp_rif_subport_put
+destroy_input_system_input_port
+msm_gem_put_vaddr_locked
+btrfs_put_tree_mod_seq
+csi_idmac_put_ipu_resources
+svc_rdma_send_ctxt_put
+nfs4_put_cpntf_state
+iwl_mvm_ftm_put_target  #误报
+llsec_key_put
+tx_desc_unmap_put
+io_put_sq_data
+panfrost_mmu_ctx_put
+hid_compute_report_size  #误报
+w1_family_put
+ishtp_put_device
+mlxsw_sp_acl_tcam_vregion_put
+vhost_put_used   #误报
+igc_put_rx_buffer
+ip_fib_metrics_put
+uvc_v4l2_put_xu_mapping  #误报
+g450_compute_bwlevel  #误报
+DisableRamdacOutput  #误报
+gfx_v9_0_cp_compute_load_microcode  #误报
+vc4_hvs_get_fifo_from_output  #误报
+typec_switch_put
+v3d_put_multisync_post_deps
+put_dec_full4  #误报
+mlxsw_sp_acl_erp_id_put
+dmz_put_chunk_mapping
+put_uts_ns
+prestera_vr_put
+mount_put_conns
+cached_dev_put
+dualsense_send_output_report  #误报
+nfs_put_delegation
+iwl_mvm_ftm_put_target_v8  #误报
+ceph_msgpool_put
+gpio_rcar_config_general_input_output_mode
+btrfs_put_dev_args_from_path
+iwl_mvm_ftm_put_target_common  #误报
+ddb_input_avail  #误报
+br_vlan_put_master
+mlx5_chains_put_chain
+rio_dev_put
+mlxsw_sp_acl_erp_index_put
+ewma_throughput_add   #误报
+igb_put_rx_buffer
+drm_property_change_valid_put
+bnxt_dl_info_put  #误报
+scmi_put_active_handler
+i5400_put_devices
+dlm_put_mle_inuse
+tw5864_input_std_get   #误报
+fastrpc_context_put
+gfx_v10_0_cp_compute_load_microcode  #误报
+iavf_put_rx_buffer
+i915_audio_component_put_power
+put_multi_transaction
