@@ -3,11 +3,10 @@ import os
 
 '''
 Usage:
-    python3 RankingAndSim.py api_sequences.txt
-    api_sequences.txt: the file containing the API sequences.
-    ft.vec: the fastText model trained from the api_sequences.
+    python3 getPotentialFunction.py rare_func.txt
+    api_sequences.txt: the file containing rare functions.
 '''
-parser = argparse.ArgumentParser(description='get single free funcs')
+parser = argparse.ArgumentParser(description='get potential functions with keyword')
 parser.add_argument('rareFuncFile', metavar='known', type=str, 
                     help='The file containing rare function)')
 
